@@ -1,0 +1,98 @@
+/* ==============================================================
+   View Toc
+   style declarations for viewToc.xhtml
+   ==============================================================*/
+/* VIEW TOC */
+/* BLOCK */
+.toc {
+	/* MULTI VOLUME TOC */
+	/* ELEMENT */
+	h4 {}
+	&__multi-volume {}
+	&__mv-group {}
+	&__mv-element {
+	    padding: 10px 0;
+	    border-bottom: 1px solid @middlegray;
+	    transition: all 0s linear;
+	    &:hover {
+	       background-color: @lightgray;
+	    }
+		&.level-0 {
+		    h4 {
+		        display: none;
+		    }
+		}
+		a {}
+		.row {}
+	}
+	&__mv-element-title {}
+	&__mv-element-link {}
+	&__mv-element-img {
+	    text-align: right;
+	    img {
+	        display: inline-block;
+	    }
+	}
+	/* TOC TREEVIEW */
+	/* ELEMENT */
+	&__list {
+	   margin-top: 15px;
+	   border-top: 1px solid @middlegray;
+	   li {
+	       padding: 0 10px;
+	       border-bottom: 1px solid @middlegray;
+	       &:first-child {
+	           padding-left: 5px !important;
+	       }
+	       &:hover {
+	           background-color: @lightgray;
+	           a {
+    	           color: @darkgray;
+	           }
+	       }
+	   }
+	}
+	&__title {
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__number {
+		li {
+		    padding: 0;
+		    border: none;
+		}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+}
+
+
+/* DOWNLOAD MODAL */
+#reCaptchaWrapper {}
+
+div[id*="Modal"] {
+    p {}
+    .email-form {
+        .form-group {
+            p {}
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

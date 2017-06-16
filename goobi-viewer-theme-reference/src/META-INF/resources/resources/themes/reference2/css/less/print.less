@@ -1,0 +1,23 @@
+/* ==============================================================
+   Print CSS
+   style declarations for print views
+   ==============================================================*/
+@media print {
+    * {}
+    a, a:visited {
+        color: #444 !important;
+        text-decoration: underline;
+    }
+    a:link:after {
+        content: "";
+    }
+    abbr[title]:after {
+        content: "";
+    }
+    pre, blockquote {}
+    thead {}
+    tr, img {}
+    @page {}
+    p, h2, h3 {}
+    h2, h3 {}
+}

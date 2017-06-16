@@ -1,0 +1,52 @@
+/* ==============================================================
+   User
+   style declarations for user.xhtml
+   ==============================================================*/
+/* USER */
+/* BLOCK */
+.user {
+	/* ELEMENT */
+	&__local,
+	&__openid {
+	   min-height: 310px;
+	   border: 1px solid @blue;
+	   h3 {
+	       padding: 10px;
+	       color: @white;
+	       border-bottom: 1px solid @blue;
+	       background-color: @blue;
+	   }
+	   p {
+	       padding: 0 10px;
+	   }
+	}
+	&__local {
+	   margin-bottom: 15px;
+	   form {
+	       padding: 0 10px;
+	   }
+	}
+	&__action {
+		.btn {}
+	}
+	&__options {
+	   padding: 0 10px;
+	}
+	&__openid {
+	   nav {
+	       padding: 0 10px;
+	   }
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

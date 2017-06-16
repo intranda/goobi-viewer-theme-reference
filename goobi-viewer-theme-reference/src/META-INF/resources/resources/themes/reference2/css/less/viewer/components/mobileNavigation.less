@@ -1,0 +1,54 @@
+/* ==============================================================
+   Template Navigation
+   style declarations for templateNavigation.xhtml
+   ==============================================================*/
+#toggleMobileNav {
+    .icon-bar {}
+}
+
+#mobileNav {
+    padding: 0;
+    border-top-color: @darkgray;
+    border-bottom-color: @darkgray;
+    background-color: @darkgray;
+    ul {
+        background-color: @white;
+        background-image: url("@{images}/template/mobilenav-bg.png");
+        li {
+            a {
+                color: @darkgray;
+                border-bottom: 1px solid @middlegray;
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: none;
+                    color: @darkgray;
+                    background-color: @lightgray;
+                }
+                &.mainnav-active {
+                    background-color: @lightgray;
+                }
+            }
+            &:hover > ul {}
+            &:last-child {}
+        }
+    }
+    .mainsubnav {
+        h3 {}
+        li {
+            a {}
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

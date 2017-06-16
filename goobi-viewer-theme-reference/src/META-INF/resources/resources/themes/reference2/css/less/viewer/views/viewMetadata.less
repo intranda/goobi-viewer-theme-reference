@@ -1,0 +1,109 @@
+/* ==============================================================
+   View Metadata
+   style declarations for viewMetadata.xhtml 
+   ==============================================================*/
+// metadata
+#metadataElementWrapper {
+    .metadata-element-box {
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 13px;
+        border: 1px solid @blue;
+        .metadata-element {
+            margin-bottom: 5px;
+            padding: 0 0 5px 0;
+            border-bottom: 1px solid @middlegray;
+            &:last-child {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+            .dl-horizontal {
+                margin: 0;
+                dt {
+                    font-family: @fontSansSerifBold;
+                }
+                dd {
+                    .metadata-value {}
+                }
+            }
+        }
+    }
+    .metadata-event-box {
+        .metadata-event {
+            .dl-horizontal {
+                dt {}
+                dd {
+                    .metadata-value {}
+                }
+            }
+        }
+    }
+    .glyphicon {}
+}
+
+// downloads
+#viewMetadataDownloads {
+    ul {
+        li {
+            a {}
+            .btn {}
+            /* BLOCK */
+            &.dl-links {
+                /* ELEMENT */
+                &__mets {}
+                &__mets-all {}
+                &__marcxml {}
+                &__dc {}
+                &__ese {}
+                &__dfg {}
+                &__opac {}
+                &__pdf {}
+                &__epub {}
+            }
+        }
+    }
+}
+
+
+// normdata
+.normdataLink,
+.normdataDetailLink {
+    color: @hoverblue;
+}
+
+.normdata-preloader {}
+
+.closeAllPopovers {}
+
+.normdata-popover {
+    font-size: 13px;
+    border: 1px solid @blue;
+    .normdata-popover-title {
+        color: @white;
+        background-color: @blue;
+        border-bottom: 1px solid @middlegray;
+        h4 {}
+        .normdata-popover-close {
+            color: @white;
+        }
+    }
+    .normdata-popover-content {
+        .dl-horizontal {
+            dt {}
+            dd {}
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

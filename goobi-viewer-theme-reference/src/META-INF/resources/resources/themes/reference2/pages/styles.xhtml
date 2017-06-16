@@ -1,0 +1,321 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+                xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
+                xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+                xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/zlb2/components"
+                template="/resources/themes/#{navigationHelper.theme}/template.html">
+
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{navigationHelper.setCurrentPage('styles')}" />
+            <f:event type="preRenderView" listener="#{navigationHelper.addStaticLinkToBreadcrumb(msg.styles,1)}" />
+            
+            <f:event type="preRenderView" listener="#{searchBean.resetSearchFilter}" />
+        </f:metadata>
+    </ui:define>
+
+    <ui:define name="breadcrumbs">
+        <ui:include src="/resources/includes/breadcrumbs.xhtml" />
+    </ui:define>
+
+    <ui:define name="content">
+        <f:view contentType="text/html" encoding="utf-8">
+            <div id="styles" class="page-wrapp">
+                <h2>Theme Style Sheet</h2>
+                
+                <div class="styles">
+                    <!-- LOGOs -->
+                    <h3 class="styles__heading">Logos</h3>
+                    
+                    <div class="styles__logos">
+                        <figure class="styles__logo">
+                            <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="Customer Logo" />
+                            <figcaption>Standard Logo</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- COLORS -->
+                    <h3 class="styles__heading">Colors</h3>
+                    
+                    <div class="row">
+                        <div class="styles__colors clearfix">                        
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #fff;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #fff</li>
+                                            <li>VAR: @white</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #000;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #000</li>
+                                            <li>VAR: @black</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #222;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #222</li>
+                                            <li>VAR: @lowerblack</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: rgba(0,0,0,.25);"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>RGBA: 0,0,0,0.25</li>
+                                            <li>VAR: @placeholder</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #abbac3;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #abbac3</li>
+                                            <li>VAR: @gray</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #6f6f6f;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #6f6f6f</li>
+                                            <li>VAR: @gray2</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #444;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #444</li>
+                                            <li>VAR: @darkgray</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #d5d5d5;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #d5d5d5</li>
+                                            <li>VAR: @middlegray</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #999;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #999</li>
+                                            <li>VAR: @middlegray2</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #507ebf;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #507ebf</li>
+                                            <li>VAR: @blue</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #69a7ef;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #69a7ef</li>
+                                            <li>VAR: @hoverblue</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FONTS -->
+                    <h3 class="styles__heading">Fonts</h3>
+                    
+                    <div class="styles__fonts">
+                    	<h6>Open Sans</h6>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 100;">OpenSansRegular (100)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 200;">OpenSansRegular (200)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 300;">OpenSansRegular (300)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 400;">OpenSansRegular normal (400)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 500;">OpenSansRegular (500)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 600;">OpenSansRegular (600)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 700;">OpenSansRegular bold (700)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 800;">OpenSansRegular (800)</p>
+                    	
+                    	<p style="font-family: 'OpenSansRegular'; font-weight: 900;">OpenSansRegular (900)</p>
+                    	
+                    	<p style="font-family: 'OpenSansItalic';">OpenSansItalic</p>
+                    	
+                    	<p style="font-family: 'OpenSansSemibold';">OpenSansSemibold</p>
+                    	
+                    	<p style="font-family: 'OpenSansSemiboldItalic';">OpenSansSemiboldItalic</p>
+                    	
+                    	<h6>Roboto Slab</h6>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 100;">RobotoSlabRegular (100)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 200;">RobotoSlabRegular (200)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 300;">RobotoSlabRegular (300)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 400;">RobotoSlabRegular normal (400)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 500;">RobotoSlabRegular (500)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 600;">RobotoSlabRegular (600)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 700;">RobotoSlabRegular bold (700)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 800;">RobotoSlabRegular (800)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabRegular'; font-weight: 900;">RobotoSlabRegular (900)</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabThin';">RobotoSlabThin</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabLight';">RobotoSlabLight</p>
+                    	
+                    	<p style="font-family: 'RobotoSlabBold';">RobotoSlabBold</p>
+                    </div>
+                    
+                    <!-- HEADINGS -->
+                    <h3 class="styles__heading">Headings</h3>
+
+                    <div class="styles__headings">
+                        <h1>Testüberschrift H1</h1>
+                        <h2>Testüberschrift H2</h2>
+                        <h3>Testüberschrift H3</h3>
+                        <h4>Testüberschrift H4</h4>
+                        <h5>Testüberschrift H5</h5>
+                        <h6>Testüberschrift H6</h6>
+                    </div>
+
+                    <!-- TYPO -->
+                    <h3 class="styles__heading">Typo</h3>
+                    
+                    <div class="styles__typo">
+                        <h4 class="styles__spacerheading">Absätze</h4>
+                        <h5 class="styles__subheading">Linksbündig</h5>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                            amet.</p>
+                        
+                        <h5 class="styles__subheading">Zentriert</h5>    
+                        <p class="text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                            amet.</p>
+                            
+                        <h5 class="styles__subheading">Rechtsbündig</h5>
+                        <p class="text-right">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                            amet.</p>
+                            
+                        <h5 class="styles__subheading">Blocksatz</h5>
+                        <p class="text-justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                            amet.</p>
+
+                        <h4 class="styles__spacerheading">Listen</h4>
+                        <ul>
+                            <li>Listenpunkt 1</li>
+                            <li>Listenpunkt 2</li>
+                            <li>Listenpunkt 3</li>
+                            <li>Listenpunkt 4</li>
+                            <li>Listenpunkt 5</li>
+                        </ul>
+                        <ol>
+                            <li>Listenpunkt 1</li>
+                            <li>Listenpunkt 2</li>
+                            <li>Listenpunkt 3</li>
+                            <li>Listenpunkt 4</li>
+                            <li>Listenpunkt 5</li>
+                        </ol>
+                        
+                        <h4 class="styles__spacerheading">Links</h4>
+                        <p><a href="#">Ein Link</a></p>
+
+                        <h4 class="styles__spacerheading">Formatierungen</h4>
+                        <p><i>italic Text</i></p> 
+                        <p><strong>bold/strong Text</strong></p>
+                        <p><small>small text</small></p>
+                        <p><code>code Text</code></p>
+                        <p><pre>pre Text</pre></p>
+                    </div>
+                </div>                
+            </div>
+        </f:view>
+    </ui:define>
+    
+    <ui:define name="sidebar">
+        <widgetComponent:widget_browsing />
+        
+        <widgetComponent:widget_bookshelves addToBookshelfDisplay="false" />
+        
+        <widgetComponent:widget_mySearches />
+        
+        <widgetComponent:widget_crowdsourcing />
+        
+        <widgetComponent:widget_user />        
+    </ui:define>
+
+    <ui:define name="rssFeed">
+        <ui:include src="/resources/includes/rssFeed.xhtml" />
+    </ui:define>
+</ui:composition>

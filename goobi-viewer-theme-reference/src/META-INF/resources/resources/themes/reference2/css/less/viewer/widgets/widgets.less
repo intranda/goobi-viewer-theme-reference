@@ -1,0 +1,47 @@
+/* ==============================================================
+   Widgets
+   style declarations for sidebar widgets
+   ==============================================================*/
+.widget {
+    h3 {
+        margin: 0;
+        padding: 5px 10px;
+        font-family: @fontSerif;
+        font-size: 14px;
+        color: @white;
+        border-bottom: 1px solid @blue;
+        background-color: @blue;
+    }
+    ul {
+        padding: 10px;
+	    border: 1px solid @middlegray;
+	    border-top: none;
+        li {
+            a {
+                &:hover {}
+            }
+            &.active {
+                a {
+                    font-family: @fontSansSerifBold;
+                    color: @darkgray;
+                }
+            }
+        }
+    }
+    dl {
+        dt {}
+        dd {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

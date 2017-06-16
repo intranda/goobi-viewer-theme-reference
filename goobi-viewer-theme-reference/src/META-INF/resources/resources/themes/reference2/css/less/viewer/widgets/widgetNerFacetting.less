@@ -1,0 +1,148 @@
+/* ==============================================================
+   Widget NER Facetting
+   style declarations for widget_nerFacetting.xhtml
+   ==============================================================*/
+#widgetNerFacetting {
+    border: 1px solid @middlegray;
+    h3 {
+        margin: 0;
+        padding: 5px 10px;
+        font-family: @fontSerif;
+        font-size: 14px;
+        color: @white;
+        border-bottom: 1px solid @blue;
+        background-color: @blue;
+    }
+    .facetting-content {
+        .nav-tabs {
+            li {
+                a {
+                    border: none;
+                    border-radius: 0;
+                    border-bottom: 1px solid @middlegray;
+                    .fa {}
+                    .glyphicon {}
+                }
+                &.active {
+                    a {}
+                }
+            }
+        }
+        .tab-content {
+            .tab-pane {
+                &.active {}
+                h4 {}                
+            }
+        }
+    }
+}
+
+/* OVERVIEW & SECTION */
+#overview,
+#section {
+    border: none;
+    .tag-filter-description {}
+    .filter-tags {
+        li {
+            a {
+                &:hover {}
+                &[data-type="person"] {}
+                &[data-type="location"] {}
+                &[data-type="corporation"] {}
+            }
+        }
+    }
+}
+
+/* OVERVIEW */
+#overview {
+    .current-tags {
+        &:before {}
+        .page-tag {
+            &.empty {}
+            &.person {
+                color: @personColor;
+            }
+            &.location {
+                color: @locationColor;
+            }
+            &.corporation {
+                color: @corporationColor;
+            }
+        }
+    }
+    .set-tag-range {}
+    .overview-content {
+        .overview-scale {
+            li {
+                div {}
+                .page-number {
+                    a {
+                        &:hover,
+                        &:active,
+                        &:focus {}
+                    }
+                }
+                .tag-container {
+                    .page-tag {
+                        &:hover {}
+                        &.empty {}
+                        &.person {}
+                        &.location {}
+                        &.corporation {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* SECTION */
+#section {}
+
+#sliderScale {
+    .scale-page {
+        &.start {}
+        &.end {}
+    }
+    .slider-description {}
+    .scale-stripes {
+        li {
+            &.middle {}
+            &:last-child {}
+        }
+    }
+    .scale-section-stripe {}
+}
+
+#sliderVertical {
+    .ui-slider-handle {
+        &:after {}
+        &:focus {}
+        .page-bubble {
+            &:before {}
+        }
+    }
+}
+
+#sectionTags {
+    .page-tag {
+        &:hover {}
+        &.empty {}
+        &.person {}
+        &.location {}
+        &.corporation {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,38 @@
+/* ==============================================================
+   Breadcrumbs
+   style declarations for breadcrumbs.xhtml
+   ==============================================================*/
+/* BREADCRUMBS */
+/* BLOCK */
+.breadcrumbs-wrapper {
+    padding: 10px 0;
+}
+.breadcrumbs {
+    /* ELEMENT */
+    ul {}
+    li {}
+    a, span {}
+    a {}
+    span {}
+    &__starttext {
+        a, span {}
+    }
+    &__starttext + li {
+        a, span {}
+    }
+    &__crumb + li:before {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+    .breadcrumbs-wrapper { display: none; }
+}

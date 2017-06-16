@@ -1,0 +1,80 @@
+/* ==============================================================
+   CMS Template "Masonry"
+   style declarations for cms_template_12_masonry.xhtml
+   ==============================================================*/
+/* TPL MASONRY */
+/* BLOCK */
+.tpl-masonry {
+    h1 {}
+    /* ELEMENT */
+    &__text {
+        margin-bottom: 15px;
+    }
+    .grid {
+        margin-bottom: 15px;
+    }
+    .grid-sizer,
+    .grid-item { 
+        width: 31.33333333%;
+        margin-bottom: 1%;
+        overflow: hidden;
+        img {
+            min-width: 100%;
+        }
+        &:hover {
+            .grid-item-title {
+                opacity: 0;
+            }
+            .grid-item-caption {
+                opacity: 1;
+            }
+        }
+    }
+    .grid-item-title,
+    .grid-item-caption {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        color: @white;
+        background-color: rgba(154, 154, 154, 0.9);
+        transition: all 0.3s linear;
+    }
+    .grid-item-title {
+        bottom: 0;
+        opacity: 1;
+    }
+    .grid-item-caption {
+        bottom: 0;
+        opacity: 0;
+        h4 {
+            margin: 0 0 10px 0;
+        }
+        a {
+            display: block;
+            padding: 0 10px;
+            font-size: 24px;
+            text-align: right;
+            color: @white;
+        }
+    }
+    .gutter-sizer {
+        width: 1%;
+    }
+}
+
+/* MODIFICATION */
+
+//breakpoint for large desktops
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+    .tpl-masonry .grid-item { width: 98%; }
+}

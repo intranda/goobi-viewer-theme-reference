@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.2 http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.2.xsd">
+   
+    <!-- urlMappings -->
+    <url-mapping id="index">
+        <pattern value="/" />
+        <view-id value="/resources/themes/reference2/urlMappings/index.xhtml" />
+        <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
+    </url-mapping>
+    <url-mapping id="index2">
+        <pattern value="/index/" />
+        <view-id value="/resources/themes/reference2/urlMappings/index.xhtml" />
+        <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
+    </url-mapping>
+    <url-mapping id="styles">
+        <pattern value="/styles/" />
+        <view-id value="/resources/themes/reference2/pages/styles.xhtml" />
+        <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
+    </url-mapping>
+    
+    <!-- fullscreen -->
+	<url-mapping id="fullscreen4">
+		<pattern
+			value="/fullscreen/#{action:activeDocumentBean.action}/#{pi:activeDocumentBean.persistentIdentifier}/#{imageToShow:activeDocumentBean.imageToShow}/#{logId:activeDocumentBean.logid}/" />
+		<view-id value="/viewReadingMode.xhtml" />
+		<action onPostback="false">#{activeDocumentBean.open}</action>
+	</url-mapping>
+	<url-mapping id="fullscreen3">
+		<pattern
+			value="/fullscreen/#{pi:activeDocumentBean.persistentIdentifier}/#{imageToShow:activeDocumentBean.imageToShow}/#{logId:activeDocumentBean.logid}/" />
+		<view-id value="/viewReadingMode.xhtml" />
+		<action onPostback="false">#{activeDocumentBean.open}</action>
+	</url-mapping>
+	<url-mapping id="fullscreen2">
+		<pattern
+			value="/fullscreen/#{pi:activeDocumentBean.persistentIdentifier}/#{imageToShow:activeDocumentBean.imageToShow}/" />
+		<view-id value="/viewReadingMode.xhtml" />
+		<action onPostback="false">#{activeDocumentBean.open}</action>
+	</url-mapping>
+
+</pretty-config>

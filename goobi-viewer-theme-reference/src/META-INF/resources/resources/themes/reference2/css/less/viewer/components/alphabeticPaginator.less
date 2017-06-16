@@ -1,0 +1,37 @@
+/* ==============================================================
+   Alphabetic Paginator
+   style declarations for alphabeticPaginator.xhtml
+   ==============================================================*/
+#alphabeticPaginator {
+    ul {
+        li {
+            &.active {
+                a {
+                    line-height: 32px;
+                    font-family: @fontSansSerifBold;
+                    color: @white;
+                    background-color: @blue;
+                }
+            }
+            a {
+                line-height: 30px;
+                border-color: @middlegray;
+                &:hover {
+            		background-color: @lightgray;
+            	}
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {} 

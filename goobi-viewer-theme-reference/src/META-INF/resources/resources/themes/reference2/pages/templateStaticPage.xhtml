@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+                xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+                xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference2/components"
+                template="/resources/themes/#{navigationHelper.theme}/template.html">
+
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{navigationHelper.setCurrentPage('staticpage')}" />
+            <f:event type="preRenderView" listener="#{navigationHelper.addStaticLinkToBreadcrumb(msg.staticpage,1)}" />
+            
+            <f:event type="preRenderView" listener="#{searchBean.resetSearchFilter}" />
+        </f:metadata>
+    </ui:define>
+
+    <ui:define name="breadcrumbs">
+        <ui:include src="/resources/includes/breadcrumbs.xhtml" />
+    </ui:define>
+
+    <ui:define name="content">
+        <f:view contentType="text/html" encoding="utf-8">
+            <div id="staticpage" class="page-wrapp">
+                <h2>Static Page Template</h2>
+                
+            </div>
+        </f:view>
+    </ui:define>
+</ui:composition>

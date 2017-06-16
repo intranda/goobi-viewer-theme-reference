@@ -1,0 +1,93 @@
+/* ==============================================================
+   View Timematrix
+   style declarations for viewTimematrix.xhtml
+   ==============================================================*/
+#timeMatrix {
+    h2 {}
+    p {}
+    h3 {}
+    .timematrix-selection {
+        padding: 52px 50px 10px 39px;
+        border: 1px solid @blue;
+        #slider-range {
+            .ui-slider-range {}
+            .ui-slider-handle {
+                background-color: @blue;
+                .timematrix-slider-bubble-startDate,
+                .timematrix-slider-bubble-endDate {
+                    &:before {}
+                }
+                .timematrix-slider-bubble-startDate {}
+                .timematrix-slider-bubble-endDate {}
+            }
+        }
+    }
+    .btn {
+        margin-right: -40px;
+    }
+}
+
+#timematrixCanvas {
+    .timematrix-box {
+        .timematrix-header {
+            h3 {}
+        }
+        .timematrix-body {
+            .timematrix-thumb {
+                border-color: @middlegray;
+                &:hover {
+                    border-color: @blue;
+                }
+                img {}
+                &.marker:before {
+                    border-color: transparent transparent @blue transparent;
+                }
+            }
+        }
+        .timematrix-footer {}
+    }
+}
+
+.timematrix-popover {
+    border-color: @blue;
+    background-color: @blue;
+    .timematrix-popover-close {}
+    .timematrix-popover-header,
+    .timematrix-popover-body,
+    .timematrix-popover-footer {}
+    .timematrix-popover-header {
+        padding: 5px 10px;
+        color: @white;
+        border-bottom-color: @blue;
+        h4 {
+            line-height: 1.7;
+        }
+    }
+    .timematrix-popover-body {
+        .timematrix-popover-imageloader {}
+        a {
+            img {}
+        }
+    }
+    .timematrix-popover-footer {
+        font-size: 13px;
+        border-top-color: @middlegray;
+        a {
+            color: @white;
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+@media screen and (max-width: 400px) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

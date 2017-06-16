@@ -1,0 +1,71 @@
+/* ==============================================================
+   Admin Backend Tables
+   style declarations for admin backend tables
+   ==============================================================*/
+/* BLOCK */
+.admin-table {
+    /* ELEMENT */
+    ul {}
+    &__action {
+        a, span {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+        span {}
+    }
+    .fa-ban {
+        color: red;
+    }
+    .fa-check-circle-o {
+        color: green;
+    }
+}
+
+/* BOOTSTRAP OVERWRITE */
+.admin-table > thead > tr > th {}
+
+/* ADMIN TABLE IDS */
+/* ALL USER */
+#adminAllUserTable {}
+/* ALL USER GROUPS */
+#adminAllUserGroupsTable {}
+/* IP RANGES */
+#adminIpRangesTable {}
+/* LICENSE TYPES */
+#adminLicenseTypesTable {}
+/* USER COMMENTS */
+#adminUserCommentsTable {}
+/* USER ACTIVITY */
+#adminUserActivityTable {}
+
+/* DATATABLES SORTING */
+.sorting-wrapper {
+    .sort {
+        &:hover {}
+        .fa {}
+    }    
+}
+
+/* DATATABLES FILTER */
+.column-filter-wrapper {
+    .form-group {
+        label {}
+        .input-group {
+            input {}
+            .input-group-addon {}
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,38 @@
+/* ==============================================================
+   Widget Searchfield
+   style declarations for widget_searchField.xhtml
+   ==============================================================*/
+#widgetSearchField {
+    margin: 0;
+    border: 1px solid @middlegray;
+    .form-group {
+        .input-group {
+            input {
+                padding: 6px;
+                border: none;            
+            }
+            .input-group-addon {
+                border-radius: 0;
+                border-color: @blue;
+                background-color: @blue;            
+                input {}
+            }
+        }
+    }
+}
+
+#sidebar #widgetSearchField {
+	margin-bottom: 1.3125rem;
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,97 @@
+/*
+ * general styling
+ */
+html, 
+body {
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+html {}
+
+body {
+    font-family: @fontSansSerif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: @lowerblack;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: @fontSerif;
+}
+
+h1, .h1 {}
+
+h2, .h2 {}
+
+h3, .h3 {}
+
+h4, h5, h6,
+.h4, .h5, .h6 {}
+
+p {}
+
+pre {}
+
+nav ul {}
+
+ul {}
+
+ol {}
+
+ul, ol {}
+
+a {
+    color: @blue;
+    &:hover,
+    &:focus,
+    &:active {
+        color: @darkgray;
+        outline: none !important;
+    }
+}
+button {
+    &:focus,
+    &:active {
+        outline: none !important;
+    }
+}
+strong {
+    font-family: @fontSansSerifBold;
+}
+
+table,
+.table {}
+
+/* CROWDSOURCING */
+/* image map */
+#map {    
+    .ugcBox.highlight {}
+    .ugcBox.focus {}
+    .ugcBox.drawing {}
+    .ugcBox.transforming {}    
+    .wordBox {}
+    .wordBox.drawing {}
+    .wordBox.transforming {}   
+}
+
+.cs-widget-box {
+    h3 {}
+}
+
+/* template.html */
+.content-left {}
+
+.content-right {}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

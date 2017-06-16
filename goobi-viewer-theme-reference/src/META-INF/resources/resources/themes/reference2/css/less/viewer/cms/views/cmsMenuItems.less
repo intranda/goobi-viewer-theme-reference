@@ -1,0 +1,96 @@
+/* ==============================================================
+   CMS Menu Items
+   style declarations for adminCmsMenuItems.xhtml
+   ==============================================================*/
+#cmsMenuItems {
+    h2 {}
+    #addMenuItemWrapper {
+        .btn {}
+    }
+    #menuEditor {
+        h3 {}
+        .menu-editor-left {
+            h4 {}
+            .ui-sortable {
+                li {
+                    a {
+                        span {
+                            &.glyphicon {}
+                        }
+                        &.btn {
+                            .glyphicon {}
+                        }
+                    }
+                    span {
+                        &.glyphicon {}
+                        &.glyphicon-circle-arrow-left {}
+                        &.glyphicon-circle-arrow-right {}
+                    }
+                    &.unpublished {
+                        span {
+                            &.glyphicon-circle-arrow-left {}
+                            &.glyphicon-circle-arrow-right {}
+                        }
+                    }
+                    &.deleted {
+                        span {
+                            &.glyphicon-circle-arrow-left {}
+                            &.glyphicon-circle-arrow-right {}
+                        }
+                    }
+                }
+            }
+        }
+        .menu-editor-right {
+            h4 {}
+            ul {
+                li {
+                    a {
+                        span {
+                            &.glyphicon {}
+                        }
+                    }
+                    span {
+                        &.glyphicon {}
+                        &.glyphicon-circle-arrow-left {}
+                        &.glyphicon-circle-arrow-right {}
+                    }
+                    &.unpublished {
+                        span {}
+                    }
+                    &.deleted {
+                        span {}
+                    }
+                }
+            }
+        }
+    }
+    #saveMenuItemsWrapper {
+        .btn {}
+    }
+    #addMenuItemModal {
+        .modal-header {}
+        .tooltip {
+            .tooltip-inner {}
+        }
+    }
+}
+
+#edit_navigationitem_wrapper {
+    dl {
+        dt {}
+        dd {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

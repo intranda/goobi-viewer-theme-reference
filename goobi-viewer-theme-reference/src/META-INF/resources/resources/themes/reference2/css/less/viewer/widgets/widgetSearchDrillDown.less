@@ -1,0 +1,38 @@
+/* ==============================================================
+   Widget Search Drill Down
+   style declarations for widget_searchDrillDown.xhtml
+   ==============================================================*/
+/* BLOCK */
+.widget-search-drilldown {
+	/* ELEMENT */
+	.widget {
+		ul {}
+		li {
+			&.active {
+				a {
+					font-family: 'OpenSansRegular';
+					color: @darkgray;
+					background-color: @lightgray;
+				}
+				.row {}
+				.col-xs-11,
+				.col-xs-1 {}
+			}
+		}
+		a {}
+	}
+	&__collection {}
+	&__groups {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

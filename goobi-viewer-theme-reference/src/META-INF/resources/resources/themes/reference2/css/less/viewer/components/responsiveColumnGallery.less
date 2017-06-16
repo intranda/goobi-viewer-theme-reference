@@ -1,0 +1,74 @@
+/* ==============================================================
+   Responsive Column Gallery
+   style declarations for responsiveColumnGallery.xhtml
+   ==============================================================*/
+#responsiveColumnGallery {
+    .rcg-col {
+        &.col-1 {}
+        &.col-2 {}
+        &.col-3 {}
+        &.col-4 {}
+        .rcg-image-container {
+            .rcg-image-body {
+                .rcg-image-overlay {}
+                .rcg-image-title {
+                    h4 {}
+                }
+                img {}
+                .lightbox-toggle {
+                    .glyphicon {}                    
+                }
+            }
+            .rcg-image-body:hover {
+                .rcg-image-overlay {}
+                .rcg-image-title {}
+                img {}
+                .lightbox-toggle {}
+            }
+            .rcg-image-footer {
+                p {
+                    a {}
+                }
+            }
+        }
+    }
+}
+
+// responsive column gallery lightbox
+.rcg-lightbox-overlay {
+    .rcg-lightbox-body {
+        .rcg-lightbox-close {
+            .glyphicon {}
+        }
+        .rcg-lightbox-image {
+            img {}
+        }
+        .rcg-lightbox-caption {
+            p {}
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+    #responsiveColumnGallery .rcg-col {
+        &.col-2 {}
+        &.col-3 {}
+        &.col-4 {}
+    }
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+    #responsiveColumnGallery .rcg-col {
+        &.col-2 {}
+        &.col-3 {}
+        &.col-4 {}
+    }
+}

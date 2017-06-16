@@ -1,0 +1,47 @@
+/* ==============================================================
+   ePubs
+   style declarations for ePub.xhtml
+   ==============================================================*/
+#ePubWrapper {
+    padding: 10px;
+    border: 1px solid @blue;
+    h3 {}
+    p {}
+    ul {
+        border-top: 1px solid @middlegray;
+        border-bottom: 1px solid @middlegray;
+        li {
+            min-height: 0;
+            padding: 5px 0;
+            border-bottom: 1px solid @middlegray;
+            &:last-child {
+                border-bottom: none;
+            }
+            .dl-horizontal {
+                min-height: 0;
+                margin: 0;
+                dt {
+                    a {
+                        img {
+                            height: 16px;
+                            margin-top: -2px;
+                        }
+                    }
+                }
+                dd {}
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {} 

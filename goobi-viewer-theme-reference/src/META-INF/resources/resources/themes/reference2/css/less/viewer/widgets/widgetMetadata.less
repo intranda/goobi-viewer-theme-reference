@@ -1,0 +1,37 @@
+/* ==============================================================
+   Widget Metadata
+   style declarations for widget_metadata.xhtml
+   ==============================================================*/
+#widgetMetadata {
+    h3 {}
+    dl {
+        padding: 10px;
+        font-size: 13px;
+        border: 1px solid @middlegray;
+	    border-top: none;
+        dt {
+            font-family: @fontSansSerifBold;
+        }
+        dd {
+            padding-bottom: 0.4375rem;
+            border-bottom: 1px solid @middlegray;
+            &:last-child {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

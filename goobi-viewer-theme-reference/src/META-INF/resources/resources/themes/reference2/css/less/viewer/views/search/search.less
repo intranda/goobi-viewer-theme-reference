@@ -1,0 +1,51 @@
+/* ==============================================================
+   Search
+   style declarations for search.xhtml
+   ==============================================================*/
+#searchgroup {}
+
+.search-wrapp {
+    padding: 15px;
+    border: 1px solid @middlegray;
+    .search-title {
+        h3 {}
+    }
+    .search-input {
+        table {
+            tr {
+                td {
+                    input,
+                    select {}
+                    select {}
+                    &:last-child {}
+                }
+            }
+        }
+    }
+    .search-filter {
+        table {
+            tr {
+                td {
+                    input {}
+                    label {}
+                }
+            }
+        }
+    }
+    .search-action,
+    .search-reset {
+        .btn {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

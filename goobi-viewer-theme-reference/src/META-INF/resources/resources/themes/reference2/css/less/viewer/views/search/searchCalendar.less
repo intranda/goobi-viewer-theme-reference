@@ -1,0 +1,64 @@
+/* ==============================================================
+   Search Calendar
+   style declarations for searchOptions.xhtml 
+   ==============================================================*/
+#searchgroupcalendar {
+    .search-reset {
+        .btn {}
+    }
+    #currentyear {
+        .calendar-year-month-box {
+            height: 285px;
+            border: 1px solid @middlegray;
+            .month-box-name {
+                margin-bottom: 10px;
+                padding: 10px;
+                color: @blue;
+                background-color: @blue;
+                border-bottom: 1px solid @blue;
+            }
+            .month-box-days {
+                padding-bottom: 10px;
+                .month-box-day {}
+            }
+            .month-box-week {
+                border-top: 1px solid @middlegray;
+                .month-box-week-day,
+                .month-box-week-day-empty {}
+                .month-box-week-day {
+                    height: 32px;
+                    padding: 6px 0 5px 0;
+                    a {
+                        display: block;
+                        &.month-box-week-day-active {
+                            color: @blue;
+                            font-family: @fontSansSerifBold;
+                            text-decoration: none;
+                            background-color: @blue;
+                        }
+                    }
+                }
+                .month-box-week-day-empty {
+                    height: 32px;
+                }
+            }
+        }
+    }
+    .search-action {
+        .btn {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+    #searchgroupcalendar #currentyear .calendar-year-month-box { width: 100%; }
+}

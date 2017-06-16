@@ -1,0 +1,39 @@
+/* ==============================================================
+   CMS Template "News Detail"
+   style declarations for cms_template_03_newsdetail.xhtml
+   ==============================================================*/
+/* NEWS DETAIL */
+/* BLOCK */
+.tpl-news-detail {
+    /* ELEMENT */
+    &__date,
+    &__content {
+        margin-bottom: 15px;
+    }
+    &__date {
+        padding: 10px 0;
+    }
+    &__content {}
+    &__image {
+        margin-bottom: 15px;
+        figcaption {
+            padding: 5px 0;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: @middlegray;
+        }
+    }
+    &__text {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,40 @@
+/* ==============================================================
+   Datatable Paginator
+   style declarations for dataTablePaginator.xhtml
+   ==============================================================*/
+/* DATATABLE PAGINATOR */
+/* BLOCK */
+.data-table-paginator {
+    /* ELEMENT */
+    ul {}
+    li {}
+    a, span {}
+    &__page-count {
+        span {}
+        .data-table-paginator__current-page {}
+        .data-table-paginator__input {}
+        .data-table-paginator__total-count {}
+    }
+    &__total-count,
+    &__current-page {}
+    &__current-page {}
+    &__input {
+        input {}
+    }
+    &__total-count {}
+}
+
+#txtMoveTo2,
+input[id*="cmdMoveTo"] {}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

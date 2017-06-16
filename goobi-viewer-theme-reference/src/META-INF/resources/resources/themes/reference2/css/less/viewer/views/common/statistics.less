@@ -1,0 +1,122 @@
+/* ==============================================================
+   Statistics
+   style declarations for statistics.xhtml
+   ==============================================================*/
+.statistics-grid,
+.statistics-grid-row,
+.chart-nearly-completed-table-row,
+.chart-most-active-users-table-row,
+.chart-nearly-completed-inner-table-row,
+.chart-nearly-completed-inner-label-row,
+#chart-nearly-completed,
+.chart-most-active-users-table,
+.chart-nearly-completed-table-cell,
+.chart-most-active-users-table-cell,
+.chart-nearly-completed-table-cell-right,
+.chart-nearly-completed-inner-table-cell-left,
+.chart-nearly-completed-inner-table-cell-right {}
+
+.statistics-grid-row {}
+
+#chart-nearly-completed,
+.chart-most-active-users-table {}
+
+.chart-nearly-completed-table-row,
+.chart-most-active-users-table-row,
+.chart-nearly-completed-inner-table-row,
+.chart-nearly-completed-inner-label-row  {}
+
+.chart-nearly-completed-table-cell,
+.chart-most-active-users-table-cell,
+.chart-nearly-completed-table-cell-right,
+.chart-nearly-completed-inner-table-cell-left,
+.chart-nearly-completed-inner-table-cell-right {}
+
+.chart-most-active-users-table-cell-center {}
+
+.chart-nearly-completed-table-row {}
+
+.chart-nearly-completed-table-cell {}
+
+.chart-nearly-completed-table-cell-right {}
+
+.chart-nearly-completed-inner-table-cell-left,
+.chart-nearly-completed-inner-table-cell-right {}
+
+.chart-nearly-completed-inner-table-cell-left {}
+
+.chart-most-active-users-table-cell {}
+
+.chart-most-active-users-table-cell-center {}
+
+.chart-most-active-users-table-cell-right {}
+
+.rank {}
+
+#statistics {
+    h2 {}
+    .statistics-grid {
+        .statistics-grid-row {
+            .statistic-grid-cell {
+                h3 {}
+                .statistic-chart {}
+            }
+        }
+    }
+    
+    // nearly completed
+    #chart-nearly-completed {
+        .chart-nearly-completed-table-row {
+            .chart-nearly-completed-table-cell {
+                .chart-nearly-completed-label-right {}
+                &.chart-nearly-completed-table-cell-right {
+                    .chart-nearly-completed-inner-label-row {
+                        a {}
+                    }
+                    .chart-nearly-completed-inner-table-row {
+                        .chart-nearly-completed-inner-table-cell {
+                            span {}
+                            &.chart-nearly-completed-inner-table-cell-left {}
+                            &.chart-nearly-completed-inner-table-cell-right {
+                                .progress {
+                                    .bar {
+                                        span {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // most active user
+    #chart-most-active-users {
+        .chart-most-active-users-table-row {
+            .chart-most-active-users-table-cell {
+                span {}
+                &.chart-most-active-users-table-cell-center {
+                    .chart-most-active-users-name-label {}
+                }
+                &.chart-most-active-users-table-cell-right {
+                    .rank {
+                        img {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,73 @@
+/* ==============================================================
+   Main Navigation
+   style declarations for crowdsourcingNavigation.xhtml
+   ==============================================================*/
+#mainnav {
+	background-color: @blue;
+	border-color: @blue;
+	ul {
+		li {
+			a {
+				color: @white;
+				&:hover,
+				&:focus,
+				&:active {
+					color: white;
+				}
+			}
+		}
+	}
+	.dropdown-menu > li {
+		width: 100%;
+		&.divider {
+			min-height: inherit;
+		}
+	}
+	.dropdown-menu > li > a {
+		color: @darkgray;
+		&:hover,
+		&:focus,
+		&:active {
+			color: @darkgray;
+			background-color: @lightgray;
+		}
+	}
+    .navbar-header {
+        .navbar-brand {
+            img {}
+        }
+    }
+    .navbar-collapse {
+        .navbar-right {
+            li {
+                a {
+                    .glyphicon {}
+                }
+            }
+            .dropdown {
+                .dropdown-toggle {}
+                .dropdown-menu {
+                    h4 {}
+                    li {
+                        a {
+                            .glyphicon {}
+                        }
+                    }
+                    .divider {}
+                }
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

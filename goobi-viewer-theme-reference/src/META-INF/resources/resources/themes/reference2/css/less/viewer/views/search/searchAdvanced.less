@@ -1,0 +1,68 @@
+/* ==============================================================
+   Search Advanced
+   style declarations for searchAdvanced.xhtml 
+   ==============================================================*/
+/* SAERCH ADVANCED */
+/* BLOCK */
+.search-advanced {
+    /* ELEMENT */
+    &__group {
+        span.remove {}
+        .remove {}
+    }
+    &__loader {}
+    &__connector {}
+    &__input-group {
+        .form-control__select,
+        input[type="text"] {}
+        input[type="text"] {
+            &:focus {}
+        }
+        .input-group-addon {
+            a {
+                &:hover,
+                &:focus,
+                &:active {}
+            }
+        }
+        .custom-control--select {
+            &:after {}
+            select[disabled] {}
+        }
+        select {}
+        button {}
+        .row .col-sm-1 {}
+    }
+    &__input-col {
+        a {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+        span {}
+    }
+    &__connect-group {}
+    &__add-group {
+        a {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+    }
+    &__action {
+        .btn {}
+    } 
+}
+/* MODIFICATION */    
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

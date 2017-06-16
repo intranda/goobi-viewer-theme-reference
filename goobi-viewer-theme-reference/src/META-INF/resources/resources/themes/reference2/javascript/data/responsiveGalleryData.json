@@ -1,0 +1,56 @@
+[
+	{
+		"image": {
+			"title": "Bildanzeige",
+			"name": "bricks.jpg",
+			"alt": "Bildanzeige",
+			"caption": "Bildanzeige mit OpenSeadragon",
+			"url": "/viewer/image/AC06735253_1927/1/LOG_0004/"
+		}
+	},
+	{
+		"image": {
+			"title": "ePub",
+			"name": "book.jpg",
+			"alt": "ePub",
+			"caption": "ePubs erstellen",
+			"url": "/viewer/metadata/epubtest/1/"
+		}
+	},
+	{
+		"image": {
+			"title": "Normdaten",
+			"name": "sand.jpg",
+			"alt": "Normdaten",
+			"caption": "Normdaten darstellen",
+			"url": "/viewer/!metadata/PPN797939997/1/LOG_0000/"
+		}
+	},
+	{
+		"image": {
+			"title": "Named Entity Recognition",
+			"name": "paperclip.jpg",
+			"alt": "Named Entity Recognition",
+			"caption": "Named Entity Recognition",
+			"url": "/viewer/fulltext/AC09345259_101914/6/"
+		}
+	},	
+	{
+		"image": {
+			"title": "ALTO",
+			"name": "oil.jpg",
+			"alt": "ALTO",
+			"caption": "Volltext im ALTO-Format",
+			"url": "/viewer/fulltext/PPN648829383/29/"
+		}
+	},
+	{
+		"image": {
+			"title": "Crowdsourcing",
+			"name": "beans.jpg",
+			"alt": "Crowdsourcing",
+			"caption": "Crowdsourcing (Anmeldung erforderlich)",
+			"url": "/viewer/crowd/AC06735253_1927/"
+		}
+	}
+]

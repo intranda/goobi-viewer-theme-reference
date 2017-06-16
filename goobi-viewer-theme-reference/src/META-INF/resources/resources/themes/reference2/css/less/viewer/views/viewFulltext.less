@@ -1,0 +1,64 @@
+/* ==============================================================
+   View Fulltext
+   style declarations for viewFulltext.xhtml 
+   ==============================================================*/
+#view_fulltext_wrapp {
+    #fulltext-box {}
+}
+
+// NER-Popovers
+.ner-person {
+    color: @personColor;
+}
+
+.ner-location {
+    color: @locationColor;
+}
+
+.ner-institution {
+    color: @corporationColor;
+}
+
+.ner-trigger,
+.ner-detail-trigger {}
+
+.ner-trigger {
+    .glyphicon {}
+    .ner-popover-pointer {}
+}
+
+.ner-detail-trigger {
+    .ner-detail-loader {}
+}
+
+.ner-popover {}
+
+.ner-popover-close {}
+
+.ner-popover-header {
+    h4 {}
+}
+
+.ner-popover-body {
+    .dl-horizontal {
+        dt {}
+        dd {}
+        .ner-popover-detail {}
+        .ner-popover-detail-header {
+            h4 {}
+        }
+        .ner-popover-detail-body {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

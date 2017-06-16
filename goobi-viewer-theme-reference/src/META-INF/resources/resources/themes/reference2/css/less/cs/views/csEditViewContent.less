@@ -1,0 +1,117 @@
+/* ==============================================================
+   Crowdsourcing edit View Content
+   style declarations for editviewContent.xhtml
+   ==============================================================*/
+/* content left */
+.image-view {
+    .image-map {
+        #map {}     
+    }
+}
+
+/* content right */
+.edit-content-right-title {
+    h3 {}    
+    .progress {}
+    .edit-content-right-history {
+        .btn {}
+    }
+}
+
+.edit-content-right-select-add {
+    h3 {}
+    ul {
+        li {
+            a {}
+        }
+        &.edit-content-right-select-add-first-level {}
+        &.edit-content-right-select-add-second-level {}
+    }
+}
+
+.edit-content-right-add-person {
+	h4 {}
+	form {
+		.form-group {
+			label {}
+			input {}
+		}
+		.btn {}
+	}
+}
+
+.edit-content-right-add-corporation {
+	h4 {}
+	form {
+		.form-group {
+			label {}
+			input {}
+		}
+		.btn {}
+	}
+}
+
+.edit-content-right-add-address {
+	h4 {}
+	form {
+		.form-group {
+			label {}
+			input {}
+		}
+		.btn {}
+	}
+}
+
+.edit-content-right-add-comment {
+	h4 {}
+	form {
+		.form-group {
+			label {}
+			textarea {}
+		}
+		.btn {}
+	}
+}
+
+.edit-content-right-edited-content {
+    h3 {}
+    #displayMetadataBoxesForm {
+        .checkbox {
+            label {
+                input[type="checkbox"] {}
+            }
+        }
+    }
+    #editedContentList li.focus table{}
+    ul {
+        li {
+            #editedContentTable {
+                tr {
+                    td {
+                        &.edited-content-table-first-col {}
+                        &.edited-content-table-second-col {}
+                        &.edited-content-table-third-col {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.edit-content-right-close-current-page {
+    div[class^="col-"] {}
+    .checkbox {}
+    .btn {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {} 

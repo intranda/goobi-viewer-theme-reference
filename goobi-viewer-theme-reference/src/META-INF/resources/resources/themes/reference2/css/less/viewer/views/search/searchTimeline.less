@@ -1,0 +1,79 @@
+/* ==============================================================
+   Search Timeline
+   style declarations for searchOptions.xhtml 
+   ==============================================================*/
+#searchgrouptimeline {
+    .search-reset {
+        .btn {}
+    }
+    #yearbox {
+        .yearline,
+        .year,
+        .monthline,
+        .month,
+        .dayline,
+        .day {}
+        .year,
+        .month,
+        .day {}
+        .yearline {
+            .year {
+                position: relative;
+                top: 1px;
+                padding: 0;
+                a, span {
+                    display: block;
+                }
+                span {}
+                a {
+                    &.year-active {
+                        color: @blue;
+                        border: 1px solid @middlegray;
+                        border-bottom-color: @blue;
+                        background-color: @blue;
+                    } 
+                }
+            }
+        }
+        .monthline {
+            background-color: @blue;
+            border: 1px solid @middlegray;
+            border-bottom-color: @blue;
+            .month {
+                a {
+                    color: @blue;
+                    &.month-active {
+                        font-family: @fontSansSerifBold;
+                    }
+                }
+                span {}
+            }
+        }
+        .dayline {
+            border: 1px solid @middlegray;
+            border-top: none;
+            .day {
+                a, span {}
+                a {
+                    &.day-active {}
+                }
+                span {}
+            }
+        }
+    }
+    .search-action {
+        .btn {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

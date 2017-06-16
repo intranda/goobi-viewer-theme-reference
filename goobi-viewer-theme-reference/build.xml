@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<project name="viewer-theme-reference2" basedir="." default="dist">
+
+
+  <!-- properties -->
+  <property name="filename" value="viewer-theme-reference2"/>
+  <property name="dir.deploy" value="deploy"/>
+  <property name="dir.src" value="src"/>
+  <property name="dir.build" value="build"/>
+
+
+  <!-- Create needed directories -->
+  <target name="createDirs" description="Create needed directories.">
+    <echo>Creating needed directories...</echo>
+    <delete dir="${dir.deploy}"/>
+    <delete dir="${dir.build}"/>
+    <mkdir dir="${dir.deploy}"/>
+    <mkdir dir="${dir.build}"/>
+  </target>
+
+
+  <!-- Store git revision in internal variable -->
+  <target name="git.revision" description="Store git revision in ${repository.version}">
+    <exec executable="git" outputproperty="git.revision" failifexecutionfails="false" errorproperty="">
+      <arg value="describe"/>
+      <arg value="--tags"/>
+      <arg value="--always"/>
+      <arg value="HEAD"/>
+    </exec>
+    <condition property="repository.version" value="${git.revision}" else="unknown">
+      <and>
+        <isset property="git.revision"/>
+        <length string="${git.revision}" trim="yes" length="0" when="greater"/>
+      </and>
+    </condition>
+    <echo> Git revision is: ${git.revision}</echo>
+  </target>
+
+
+  <!-- copy all files to final places -->
+  <target name="jar-gui">
+    <copy todir="${dir.build}/META-INF">
+      <fileset dir="${dir.src}/META-INF"/>
+    </copy>
+    <jar destfile="${dir.deploy}/${filename}-${git.revision}.jar">
+      <manifest>
+        <attribute name="Class-Path" value="${libs.project}"/>
+      </manifest>
+      <zipfileset dir="${dir.build}/"/>
+    </jar>
+    <echo> Cleaning up build dir...</echo>
+    <delete dir="${dir.build}"/>
+  </target>
+
+
+  <!-- Run all targets in appropiate order for clean compile-->
+  <target name="dist" depends="createDirs, git.revision, jar-gui" description="Creating everything for Jenkins."/>
+
+
+</project>

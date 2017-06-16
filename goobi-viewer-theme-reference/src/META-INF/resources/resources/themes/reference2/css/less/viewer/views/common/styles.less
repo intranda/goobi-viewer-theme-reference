@@ -1,0 +1,47 @@
+/* ==============================================================
+   Styles
+   style declarations for styles.xhtml
+   ==============================================================*/
+#styles {}
+
+/* STYLES */
+/* BLOCK */
+.styles {
+    &__button {
+        &:hover,
+        &:focus,
+        &:active { }
+    }
+    &__heading {}
+    &__spacerheading {}
+    &__subheading {}
+    /* ELEMENT */
+    &__logos {}
+    &__logo {
+        figcaption {}
+    }
+    &__colors {}
+    &__color {}
+    &__color-header {}
+    &__color-body {
+        ul {}
+    }
+    &__fonts {}
+    &__headings {}
+    &__typo {}    
+}
+
+/* MODIFICATION */
+.styles__logo--bw {}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

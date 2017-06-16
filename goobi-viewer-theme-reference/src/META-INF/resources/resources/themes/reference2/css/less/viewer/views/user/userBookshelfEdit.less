@@ -1,0 +1,56 @@
+/* ==============================================================
+   User edit Bookshelf
+   style declarations for userBackendEditBookshelf.xhtml
+   ==============================================================*/
+#editBookshelf {
+    h2 {}
+    #userEditBookshelfForm {
+        padding: 10px;
+        border: 1px solid @blue;
+        .form-group {
+            label {}
+            input {}
+        }
+        .btn {
+            float: right;
+            margin: 0;
+        }
+    }
+    h3 {}
+    #single_bookshelf_data_table {
+        thead {
+            tr {
+                th {
+                    &:nth-child(1) {}
+                    &:nth-child(2) {}
+                    &:nth-child(3) {}
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {}
+            }
+        }
+    }
+    #deleteBookshelfWrapp {
+        text-align: right;
+        .btn {}
+    }
+    #editBookshelfItemControlsForm {
+        text-align: right;
+        .btn {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

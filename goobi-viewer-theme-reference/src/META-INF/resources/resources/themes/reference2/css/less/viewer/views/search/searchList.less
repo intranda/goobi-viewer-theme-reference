@@ -1,0 +1,171 @@
+/* ==============================================================
+   SearchList
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST */
+/* VARIABLES */
+@yellow: rgba(255, 255, 0, 0.5);
+
+/* BLOCK */
+.search-list {
+    /* ELEMENT */
+    &__title {
+        h3 {}
+    }
+    &__options {
+        a, button {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+        form {}
+    }
+    &__hitcount,
+    &__rss,
+    &__save-search,
+    &__excel-export {}
+    &__hitcount {}
+    &__rss {}
+    &__save-search {}
+    &__excel-export {
+        a {}
+        .excel-export-loader {
+            img {}
+        }
+    }
+    &__label {}
+    &__current-search {
+        .form-group {}
+        .input-group-addon {
+            a {
+                &:hover,
+                &:focus,
+                &:active {}
+            }
+            &.reset {}
+            &.search {
+                a {}
+            }
+        }
+        .form-control {}
+    }
+    /* LINKS */
+    &__links {
+        button {}
+        form {}
+        a {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+    }
+    /* SORTING */
+    &__sorting {
+        .custom-control {}
+        select {}
+    }
+    /* ADVANCED SEARCH INFO */
+    &__adv-search-info {}
+    &__adv-search-info-back {}
+    /* HITS */
+    &__hits {}
+    &__hit {}
+    &__hit-header {}
+    &__hit-title,
+    &__hit-type,
+    &__hit-info {}
+    &__hit-title {
+        h4 {}
+    }
+    &__hit-thumbnail {
+        img {}
+    }
+    &__hit-type {}
+    &__hit-docstruct {
+        ul {}
+        li {}
+        li + li:before {}
+        a {}
+    }
+    &__hit-text {}
+    &__hit-text-label,
+    &__hit-text-value {}
+    &__hit-text-label {}
+    &__hit-text-value {}
+    &__hit-info {}
+    a[data-toggle="hit-content"],
+    button[data-toggle="hit-content"] {
+        &:hover,
+        &:focus,
+        &:active {}
+        .fa-caret-right {}
+        .fa-caret-down {}
+        &.in {
+            .fa-caret-right {}
+            .fa-caret-down {}
+        }
+        .search-list__loader {}
+        &.active {}
+    }
+    &__hit-content {
+        dl {}
+        dt {}
+        dd {}
+    }
+    &__hit-content-set {}
+    &__hit-content-more {
+        a {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+    }
+    &__struct-title,
+    &__struct-chapter {
+        .fa {}
+    }
+    &__struct-title {
+        h5 {}
+    }
+    &__struct-child-hits {
+        color: @lowerblack;
+        a {
+            color: @lowerblack;
+        }
+    }
+    &__struct-chapter {}
+    &__struct-chapter + .search-list__struct-title  {}
+}
+/* MODIFICATION */
+.search-list--highlight {}
+
+/* STACKED MV THUMBNAIL */
+.stacked-thumbnail {
+    top: 15px;
+}
+
+.stacked-thumbnail-before,
+.stacked-thumbnail-after {
+    top: 15px;
+}
+
+.stacked-thumbnail-after {}
+
+.stacked-thumbnail a img {}
+
+.search-list__current-search .input-group-addon.search {
+    background-color: @blue;
+    border-color: @blue;
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

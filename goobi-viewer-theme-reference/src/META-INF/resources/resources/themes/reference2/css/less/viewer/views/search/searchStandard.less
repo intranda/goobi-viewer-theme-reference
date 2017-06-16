@@ -1,0 +1,101 @@
+/* ==============================================================
+   Search Standard
+   style declarations for searchOptions.xhtml 
+   ==============================================================*/
+/* SEARCH STANDARD */
+/* BLOCK */
+.search-standard {
+    /* ELEMENT */
+    &__help {
+        button {}
+    }
+    &__title {
+        h3 {}
+    }
+    &__input {}
+    &__input-label,
+    &__filter-label {}
+    &__input-label {}
+    &__input-autocomplete {
+        .ui-autocomplete {
+            .ui-autocomplete-input {}
+        }
+    }
+    &__filter {}
+    &__filter-label {}
+    &__filter-radio {}
+    &__filter-link {
+        a {}
+    }
+    &__action {
+        .btn {}
+    }
+    /* MODIFICATION */
+}
+
+/* AUTOCOMPLETE PANEL */
+.ui-autocomplete-panel {
+    ul.ui-autocomplete-items {
+        li.ui-autocomplete-item {
+            span.ui-autocomplete-query {}
+        }
+        li.ui-state-highlight {}
+    }
+}
+
+/* SEARCH HELP MODAL */
+/* BLOCK */
+.search-help {
+    /* ELEMENT */
+    .modal-dialog {}
+    .modal-content {}
+    .modal-header {}
+    .modal-title {}
+    .modal-body {}
+    .panel-group {
+        .panel {}
+    }
+    .panel-heading {}
+    .panel-title {
+        a {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+    }
+    .panel-body {
+        p {
+            &:last-child {}
+            span {}
+        }
+    }
+    .modal-footer {}
+    /* MODIFICATION */
+}
+
+/* SEARCH TILE */
+/* BLOCK */
+.search-tile {
+    /* ELEMENT */
+    &__description {
+        h3 {}
+    }
+    &__icon {}
+    &__input {}
+    &__action {
+        .btn {}
+    }
+    /* MODIFICATION */
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

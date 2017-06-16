@@ -1,0 +1,41 @@
+/* ==============================================================
+   Buttons
+   style declarations for buttons
+   ==============================================================*/
+.btn,
+.btn.ui-button {
+    font-size: 14px;
+    color: @white;
+    border: 1px solid @middlegray;
+    background-color: @blue;
+    &:hover,
+    &:focus,
+    &:active {
+        color: @white;
+        background-color: @hoverblue;
+    }
+}
+
+a.btn {}
+
+input.btn,
+.btn.ui-button {
+    .ui-button-text {}
+    &:hover {
+        .ui-button-text {}
+    }    
+}
+
+.btn-search {}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

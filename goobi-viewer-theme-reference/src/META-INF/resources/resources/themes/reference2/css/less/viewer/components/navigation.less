@@ -1,0 +1,92 @@
+/* ==============================================================
+   Navigation
+   style declarations for navigation.xhtml
+   ==============================================================*/
+/* NAVIGATION */
+/* BLOCK */
+.navigation {
+    max-height: 41px;
+	/* ELEMENT */
+	ul {
+	   max-height: 41px;
+	}
+	li {
+		&.active > a {
+		  background-color: @hoverblue;
+		}
+	}
+	a {
+	   padding: 10px 12px;
+	   color: @white;
+	   background-color: @blue;
+	   &:hover,
+	   &:focus,
+	   &:active {
+	       text-decoration: none;
+	   }
+	   &:hover {
+	       color: @white;
+	       background-color: @hoverblue;
+	   }
+	   &:focus {
+           color: @white;
+           background-color: @hoverblue;
+       }
+       &:active {
+           color: @white;
+       }
+	}
+	.caret {
+	   color: @white;
+	}
+	/* STANDARD MENU */
+	&__submenu-trigger {}
+	&__submenu {
+	   padding: 5px 0;
+	   border-color: @hoverblue;
+	   background-color: @blue;
+	   ul {
+	       max-height: inherit;
+	   }
+	   li {
+	       &.divider {}
+        }
+	   a {
+	       &:focus,
+           &:active {
+               color: @white;
+           }
+	   }
+	   &.in {}
+	   &.level-2,
+	   &.level-3,
+	   &.level-4,
+	   &.level-5 {}
+	}
+	/* MEGA MENU */
+	&__megamenu-trigger {}
+	&__megamenu-wrapper {
+	    &.in {}
+	}
+	&__megamenu-close {
+		.fa {}
+	}
+	&__megamenu-element {
+		&.level-1 {}
+		&.level-2 {}
+	}
+	&__megamenu-heading {}
+	&__megamenu-item {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,49 @@
+/* ==============================================================
+   Change Local
+   style declarations for changeLocal.xhtml
+   ==============================================================*/
+/* BLOCK */
+.change-local {
+    float: right;
+	/* ELEMENT */
+	ul {}
+	li {}
+	a {
+		&.activeLang {}
+	}
+	img {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+    .change-local {
+        float: none;
+        display: none;
+        position: fixed;
+        top: 53px;
+        right: 10px;
+        left: 50%;
+        padding: 10px;
+        border: 1px solid @darkgray;
+        background-color: @white;
+        z-index: 999;
+        li {
+            display: block;
+            float: none;
+            margin: 0 0 3px 0;
+    	}
+    	a {
+			text-align: center;
+			color: @darkgray; 
+		}
+    }
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
