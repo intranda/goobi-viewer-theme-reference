@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<project name="viewer-theme-reference2" basedir="." default="dist">
+<project name="goobi-viewer-theme-reference" basedir="." default="dist">
 
 
   <!-- properties -->
-  <property name="filename" value="viewer-theme-reference2"/>
+  <property name="filename" value="goobi-viewer-theme-reference"/>
   <property name="dir.deploy" value="deploy"/>
   <property name="dir.src" value="src"/>
   <property name="dir.build" value="build"/>
