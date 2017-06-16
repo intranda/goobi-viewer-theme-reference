@@ -9,16 +9,28 @@ We encourage you to fork this project and to build lots of different themes base
 ## Screenshots
 Please find here some screenshot of how the current design of this Reference Theme looks like:
 
-<img src="doc/images/goobi_viewer_theme_reference_advanced_search_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_aggregated_search_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_book_view_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_fulltext_ner_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_home_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_image_display_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_image_thumbnails_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_metadata_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_named_entities_small.png" height="300">
-<img src="doc/images/goobi_viewer_theme_reference_reading_double_pages_small.png" height="300">
+<table>
+<tr>
+<td><img src="doc/images/goobi_viewer_theme_reference_advanced_search_small.png" height="400"></td>
+<td><img src="doc/images/goobi_viewer_theme_reference_aggregated_search_small.png" height="400"></td>
+</tr>
+<tr>
+<td><img src="doc/images/goobi_viewer_theme_reference_book_view_small.png" height="400"></td>
+<td><img src="doc/images/goobi_viewer_theme_reference_fulltext_ner_small.png" height="400"></td>
+</tr>
+<tr>
+<td><img src="doc/images/goobi_viewer_theme_reference_home_small.png" height="400"></td>
+<td><img src="doc/images/goobi_viewer_theme_reference_image_display_small.png" height="400"></td>
+</tr>
+<tr>
+<td><img src="doc/images/goobi_viewer_theme_reference_image_thumbnails_small.png" height="400"></td>
+<td><img src="doc/images/goobi_viewer_theme_reference_metadata_small.png" height="400"></td>
+</tr>
+<tr>
+<td><img src="doc/images/goobi_viewer_theme_reference_named_entities_small.png" height="400"></td>
+<td><img src="doc/images/goobi_viewer_theme_reference_reading_double_pages_small.png" height="400"></td>
+</tr>
+</table>
 
 More screenshots can be found in the folder doc/images. Please try to create comparable screenshots of your own theme in case you fork and publish it too.
 
