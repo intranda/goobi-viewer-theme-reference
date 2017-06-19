@@ -1814,12 +1814,6 @@ strong {
 .reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-elem-wrapp {
   border: none;
 }
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-elem-expand {
-  width: 8%;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-elem-link {
-  width: 92%;
-}
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2184,7 +2178,7 @@ strong {
    style declarations for widget_toc.xhtml
    ==============================================================*/
 #widgetToc .widget-toc-title .widget-toc-title-expand {
-  top: 7px;
+  top: 9px;
   right: 10px;
   padding: 0;
   border: none;
@@ -2199,52 +2193,20 @@ strong {
 #widgetToc .widget-toc-elem-wrapp ul {
   border: none;
 }
-#widgetToc .widget-toc-elem-wrapp ul li.parent .widget-toc-elem-link {
-  border-left: none;
-}
-#widgetToc .widget-toc-elem-wrapp ul li.parent .widget-toc-elem-link a {
-  font-size: 15px;
-}
-#widgetToc .widget-toc-elem-wrapp ul li.last-child .widget-toc-elem-link {
-  border-left: none;
-}
-#widgetToc .widget-toc-elem-wrapp ul li.last-child .widget-toc-elem-link:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 3px;
-  left: 0;
-  width: 0;
-  height: 10px;
-  border-left: 1px dotted #abbac3;
-}
 #widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link {
-  position: relative;
-  padding: 3px 5px 3px 15px;
-  border-left: 1px dotted #abbac3;
   color: #222;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 13px;
-  left: 0;
-  width: 10px;
-  height: 0;
-  border-bottom: 1px dotted #abbac3;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link:hover,
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link:focus,
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link:active {
-  text-decoration: none;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link:hover {
-  background-color: #eee;
 }
 #widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a {
   color: #000;
   font-size: 13px;
+}
+#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:hover,
+#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:focus,
+#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:active {
+  text-decoration: none;
+}
+#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:hover {
+  background-color: #eee;
 }
 #widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a.active {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;

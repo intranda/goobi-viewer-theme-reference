@@ -8,7 +8,7 @@
         h3 {
         }
         .widget-toc-title-expand {
-            top: 7px;
+            top: 9px;
             right: 10px;
             padding: 0;
             border: none;
@@ -26,57 +26,27 @@
         	border: none;
             li {
                 &.parent {
-                    .widget-toc-elem-link {
-                        border-left: none;
-                        a {
-                            font-size: 15px;
-                        }
-                    }
+                    .widget-toc-elem-link {}
                 }
                 &.last-child {
-                    .widget-toc-elem-link {
-                        border-left: none;
-                        &:after {
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            top: 3px;
-                            left: 0;
-                            width: 0;
-                            height: 10px;
-                            border-left: 1px dotted @gray;
-                        }
-                    }
+                    .widget-toc-elem-link {}
                 }
                 .widget-toc-elem-expand {
                     a {}
                 }
                 .widget-toc-elem-link {
-                    position: relative;
-                    padding: 3px 5px 3px 15px;
-                    border-left: 1px dotted @gray;
                     color: @lowerblack;
-                    &:before {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        top: 13px;
-                        left: 0;
-                        width: 10px;
-                        height: 0;
-                        border-bottom: 1px dotted @gray;
-                    }
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        text-decoration: none;
-                    }
-                    &:hover {
-                        background-color: @lightgray;
-                    }
                     a {
                         color: @black;
                         font-size: 13px;
+	                    &:hover,
+	                    &:focus,
+	                    &:active {
+	                        text-decoration: none;
+	                    }
+	                    &:hover {
+	                        background-color: @lightgray;
+	                    }
                         &.active {
                             font-family: @fontSansSerifBold;
                             text-decoration: underline;
