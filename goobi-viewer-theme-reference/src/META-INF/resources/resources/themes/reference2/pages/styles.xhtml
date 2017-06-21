@@ -298,6 +298,86 @@
                         <p><code>code Text</code></p>
                         <p><pre>pre Text</pre></p>
                     </div>
+                    
+                    <!-- CSS HELPER CLASSES  -->
+                    <h3 class="styles__heading">CSS Helper Classes</h3>
+                    
+                    <div class="styles__helper">
+                    	<div class="styles__helper-item">
+	                    	<h4>List reset (ul/ol)</h4>
+							<pre>class="list"</pre>
+							<p>
+								<strong>Emmet: </strong><code>ul.list>li*4>a[href="#"]{Ein Link}</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							<ul class="list">
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+							</ul>
+                    	</div>
+                    
+                    	<div class="styles__helper-item">
+	                    	<h4>Horizontale Liste (ul/ol)</h4>
+	                    	<pre>class="list list--horizontal"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>ul.list.list--horizontal>li*4>a[href="#"]{Ein Link}</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							<ul class="list list--horizontal">
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+							</ul>
+                    	</div>
+                    	
+                    	<div class="styles__helper-item">
+	                    	<h4>Horizontale Liste, zentriert (ul/ol) <small>Muss in einem Block-Element mit "clearfix" sein!</small></h4>
+	                    	<pre>class="list list--horizontal list--center"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>nav.clearfix>ul.list.list--horizontal.list--center>li*4>a[href="#"]{Ein Link}</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							<nav class="clearfix">
+								<ul class="list list--horizontal list--center">
+									<li><a href="#">Ein Link</a></li>
+									<li><a href="#">Ein Link</a></li>
+									<li><a href="#">Ein Link</a></li>
+									<li><a href="#">Ein Link</a></li>
+								</ul>
+							</nav>
+                    	</div>
+                    	
+                    	<div class="styles__helper-item">
+	                    	<h4>Horizontale Liste mit Trenner (ul/ol)</h4>
+	                    	<pre>class="list list--horizontal list--divider"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>ul.list.list--horizontal.list--divider>li*4>a[href="#"]{Ein Link}</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							<ul class="list list--horizontal list--divider">
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+								<li><a href="#">Ein Link</a></li>
+							</ul>
+						</div>
+                    </div>
+                    
+                    <!-- MIXIN TEST -->
+                    <h3 class="styles__heading">LESS Mixin Tests</h3>
+                    
+                    <div class="styles__mixins"></div>
                 </div>                
             </div>
         </f:view>
