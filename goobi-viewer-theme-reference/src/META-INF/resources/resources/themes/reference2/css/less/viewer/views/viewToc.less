@@ -35,35 +35,73 @@
 	}
 	/* TOC TREEVIEW */
 	/* ELEMENT */
-	&__list {
-	   margin-top: 15px;
-	   border-top: 1px solid @middlegray;
-	   li {
-	       padding: 0 10px;
-	       border-bottom: 1px solid @middlegray;
-	       &:first-child {
-	           padding-left: 5px !important;
-	       }
-	       &:hover {
-	           background-color: @lightgray;
-	           a {
-    	           color: @darkgray;
-	           }
-	       }
-	   }
+	&__list-expandable,
+	&__list-full {
+		li {
+			&:first-child {}
+			&:hover {
+				a {}
+			}
+		}
 	}
-	&__title {
+	&__list-expandable-title,
+	&__list-full-title {
 		a {
 			&:hover,
 			&:focus,
 			&:active {}
 		}
 	}
-	&__number {
-		li {
-		    padding: 0;
-		    border: none;
+	&__list-expandable-number,
+	&__list-full-number {
+		li {}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
 		}
+	}
+	/* EXPAND ALL */
+	&__list-expandable-all {
+		ul {}
+		li {}
+		a {}
+	}
+	/* TOC EXPANDABLE */
+	&__list-expandable {}
+	&__list-expandable-elem {
+		&.parent {}
+		&.child {}
+	}
+	&__list-expandable-expand {
+		a {}
+	}
+	&__list-expandable-title {
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__list-expandable-number {
+		li {}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	/* TOC FULL */
+	&__list-full {}
+	&__list-full-title {
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__list-full-number {
+		li {}
 		a {
 			&:hover,
 			&:focus,

@@ -1890,6 +1890,9 @@ strong {
   /* ELEMENT */
   /* TOC TREEVIEW */
   /* ELEMENT */
+  /* EXPAND ALL */
+  /* TOC EXPANDABLE */
+  /* TOC FULL */
 }
 .toc__mv-element {
   padding: 10px 0;
@@ -1907,27 +1910,6 @@ strong {
 }
 .toc__mv-element-img img {
   display: inline-block;
-}
-.toc__list {
-  margin-top: 15px;
-  border-top: 1px solid #d5d5d5;
-}
-.toc__list li {
-  padding: 0 10px;
-  border-bottom: 1px solid #d5d5d5;
-}
-.toc__list li:first-child {
-  padding-left: 5px !important;
-}
-.toc__list li:hover {
-  background-color: #eee;
-}
-.toc__list li:hover a {
-  color: #444;
-}
-.toc__number li {
-  padding: 0;
-  border: none;
 }
 /* DOWNLOAD MODAL */
 /* BREAKPOINT FOR LARGE DESKTOPS */
