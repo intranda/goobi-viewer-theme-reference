@@ -44,63 +44,13 @@
     
     <!-- JavaScript -->   
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/bs/bootstrap.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/datatables.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/jQueryUI-1.11.0/jquery-ui.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/jQueryUI-1.11.0/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/reactiveX/rx.lite.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/q-promises/q.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js"></script>
-    
-	<!-- custom JavaScript -->
-	<script type="text/javascript">
-		// tinyMCE configuration
-        var currLang = '#{navigationHelper.localeString}';
-        var tinyLang = null;
-        
-        switch ( currLang ) {
-            case 'de':
-                tinyLang = 'de';
-                break;
-            case 'es':
-                tinyLang = 'es';
-                break;
-            case 'pt':
-                tinyLang = 'pt_PT';
-                break;
-            case 'ru':
-                tinyLang = 'ru';
-                break;
-        }
-        
-        var tinyConfig = {
-            selector : 'textarea.tinyMCE',
-            width : '100%',
-            height : 200,
-            theme : 'modern',
-            plugins : [
-               "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker", 
-               "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking", 
-               "save table contextmenu directionality emoticons template paste textcolor"
-                
-            ],
-            toolbar : "bold italic underline | forecolor backcolor | fontsizeselect | alignleft aligncenter alignright alignjustify | bullist numlist  | link | code preview",
-            menubar : false,
-            statusbar : false,
-            relative_urls : false,
-            force_br_newlines : false,
-            force_p_newlines : false,
-            forced_root_block : '',
-            setup : function ( ed ) {
-                // listen to changes on tinymce input fields
-                ed.on( 'change input paste', function ( e ) {
-                    tinymce.triggerSave();
-                    createPage.disablePreview( createPageConfig.prevBtn );
-                    createPage.showPreviewDescription( createPageConfig.prevBtn, createPageConfig.prevDescription );
-                } );
-            }
-        };
-	</script>
 </h:head>
 
 <ui:insert name="metadata" />
@@ -236,6 +186,7 @@
         <!-- custom javascript -->
         <script type="text/javascript">
             var currentPage = '#{navigationHelper.currentPage}';
+            var currLang = '#{navigationHelper.localeString}';
         </script>
         <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
     </f:view>
