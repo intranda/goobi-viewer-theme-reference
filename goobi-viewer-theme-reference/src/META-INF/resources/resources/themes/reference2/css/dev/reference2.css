@@ -413,8 +413,6 @@ strong {
   color: #fff;
   border: 1px solid #507ebf;
   background-color: #507ebf;
-  /* background-image is deprecated in 3.1 */
-  background-image: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -490,15 +488,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWER COMPONENTS */
-/* ==============================================================
-   Template Navigation
-   style declarations for templateNavigation.xhtml
-   ==============================================================*/
-/* DEPRECATED SINCE 3.2 */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Navigation
    style declarations for navigation.xhtml
@@ -705,9 +694,6 @@ strong {
 }
 #titleWrapper .title-body form {
   margin-top: 10px;
-}
-#titleWrapper .title-body form .dl-horizontal {
-  /* deprecated since 3.1 */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1473,15 +1459,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User create Account
-   style declarations for userCreateAccount.xhtml
-   ==============================================================*/
-/* DEPRECATED SINCE 3.2 */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    User Data
    style declarations for user.xhtml
    ==============================================================*/
@@ -1490,24 +1467,6 @@ strong {
 .userdata {
   /* ELEMENT */
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   User edit Data
-   style declarations for userBackendEditData.xhtml
-   ==============================================================*/
-/* DEPRECATED SINCE 3.2 */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   User retrieve Account
-   style declarations for userRetrieveAccount.xhtml
-   ==============================================================*/
-/* DEPRECATED SINCE 3.2 */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
