@@ -2616,6 +2616,43 @@ strong {
     width: 98%;
   }
 }
+/* ==============================================================
+   CMS Template Single Collection
+   style declarations for cms_template_13_singleCollection.xhtml
+   ==============================================================*/
+/* TPL SINGLE COLLECTION */
+/* BLOCK */
+.tpl-single-collection {
+  /* ELEMENT */
+}
+.tpl-single-collection__image {
+  position: relative;
+  max-height: 400px;
+  overflow: hidden;
+}
+.tpl-single-collection__image img {
+  width: 100%;
+}
+.tpl-single-collection__image h2 {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  left: 0;
+  margin: 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.tpl-single-collection__description {
+  margin-bottom: 20px;
+  padding: 15px;
+  color: #fff;
+  background-color: #abbac3;
+}
+/* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* CMS COMPONENTS */
 /* ==============================================================
    CMS Component "Collection Tiled"
