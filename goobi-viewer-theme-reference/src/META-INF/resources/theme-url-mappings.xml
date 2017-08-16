@@ -6,17 +6,17 @@
     <!-- urlMappings -->
     <url-mapping id="index">
         <pattern value="/" />
-        <view-id value="/resources/themes/reference2/urlMappings/index.xhtml" />
+        <view-id value="/resources/themes/reference/urlMappings/index.xhtml" />
         <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
     </url-mapping>
     <url-mapping id="index2">
         <pattern value="/index/" />
-        <view-id value="/resources/themes/reference2/urlMappings/index.xhtml" />
+        <view-id value="/resources/themes/reference/urlMappings/index.xhtml" />
         <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
     </url-mapping>
     <url-mapping id="styles">
         <pattern value="/styles/" />
-        <view-id value="/resources/themes/reference2/pages/styles.xhtml" />
+        <view-id value="/resources/themes/reference/pages/styles.xhtml" />
         <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
     </url-mapping>
     

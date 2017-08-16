@@ -1,5 +1,5 @@
 /*****************************************************************************************
- * Custom JavaScript for "reference2"
+ * Custom JavaScript for "reference"
  ****************************************************************************************/
 $( document ).ready( function() {
     var viewerConfig = {

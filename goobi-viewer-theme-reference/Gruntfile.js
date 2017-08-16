@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         theme: {
-            name: 'reference2'
+            name: 'reference'
         },
         pkg: grunt.file.readJSON('package.json'),
         src: {
