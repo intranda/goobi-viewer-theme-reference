@@ -1244,13 +1244,17 @@ strong {
    SearchTermList
    style declarations for searchTermList.xhtml
    ==============================================================*/
-#search_termlistnav {
+/* BLOCK */
+.search-termlist {
+  /* ELEMENT */
+}
+.search-termlist__list {
   border-top: 1px solid #d5d5d5;
 }
-#search_termlistnav ul li {
+.search-termlist__list li {
   border-bottom: 1px solid #d5d5d5;
 }
-#search_termlistnav ul li a:hover {
+.search-termlist__list a:hover {
   color: #444;
   background-color: #eee;
 }

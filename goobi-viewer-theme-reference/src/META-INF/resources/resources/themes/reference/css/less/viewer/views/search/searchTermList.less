@@ -2,19 +2,23 @@
    SearchTermList
    style declarations for searchTermList.xhtml
    ==============================================================*/
-#search_termlistnav {
-    border-top: 1px solid @middlegray;
-    ul {
-        li {
-            border-bottom: 1px solid @middlegray;
-            a {
-                &:hover {
-                    color: @darkgray;
-                    background-color: @lightgray;
-                }
-            }
-        }
-    }
+/* BLOCK */
+.search-termlist {
+	/* ELEMENT */
+	&__message {}
+	&__list {
+	    border-top: 1px solid @middlegray;
+	    ul {}
+	    li {
+	    	border-bottom: 1px solid @middlegray;
+	    }
+	    a {
+	    	&:hover {
+	    		color: @darkgray;
+	    		background-color: @lightgray;
+	    	}
+	    }
+	}	
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
