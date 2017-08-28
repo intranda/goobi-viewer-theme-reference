@@ -1014,12 +1014,6 @@ strong {
 .collection {
   /* ELEMENT */
 }
-.collection__structure .fa {
-  padding: 2px 3px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #507ebf;
-}
 .collection__description-toggle .fa {
   padding: 2px 3px;
   border: 1px solid #d5d5d5;
