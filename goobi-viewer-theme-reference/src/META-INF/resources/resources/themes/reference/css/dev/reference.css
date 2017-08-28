@@ -1127,50 +1127,24 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Search Calendar
-   style declarations for searchOptions.xhtml 
+   style declarations for searchCalendar.xhtml 
    ==============================================================*/
-#searchgroupcalendar #currentyear .calendar-year-month-box {
-  height: 285px;
-  border: 1px solid #d5d5d5;
+/* BLOCK */
+.search-calendar {
+  /* ELEMENT */
+  /* MODIFICATION */
 }
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-name {
-  margin-bottom: 10px;
-  padding: 10px;
-  color: #507ebf;
-  background-color: #507ebf;
-  border-bottom: 1px solid #507ebf;
+.search-calendar__input input {
+  box-shadow: none;
 }
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-days {
-  padding-bottom: 10px;
-}
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-week {
-  border-top: 1px solid #d5d5d5;
-}
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-week .month-box-week-day {
-  height: 32px;
-  padding: 6px 0 5px 0;
-}
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-week .month-box-week-day a {
-  display: block;
-}
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-week .month-box-week-day a.month-box-week-day-active {
-  color: #507ebf;
-  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  background-color: #507ebf;
-}
-#searchgroupcalendar #currentyear .calendar-year-month-box .month-box-week .month-box-week-day-empty {
-  height: 32px;
+.search-calendar__month-day .popover-title {
+  color: #000;
+  line-height: normal;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: 480px) {
-  #searchgroupcalendar #currentyear .calendar-year-month-box {
-    width: 100%;
-  }
-}
 /* ==============================================================
    Search Controls
    style declarations for searchOptions.xhtml 

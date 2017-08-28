@@ -1,56 +1,75 @@
 /* ==============================================================
    Search Calendar
-   style declarations for searchOptions.xhtml 
+   style declarations for searchCalendar.xhtml 
    ==============================================================*/
-#searchgroupcalendar {
-    .search-reset {
+/* BLOCK */
+.search-calendar {
+    /* ELEMENT */
+    .btn {}
+    &__title {
+        h2 {}
+    }
+    &__toggle {
+        &.btn {}
+        &:active,
+        &:focus {}
+    }
+    &__input {
+        input {
+            box-shadow: none;
+        }
+        .form-horizontal {}
+        .form-group {}
+        .col-sm-4 {}
+        .col-sm-8 {}
+        .control-label {}
+        .form-control {}
+    }
+    &__reset {
         .btn {}
     }
-    #currentyear {
-        .calendar-year-month-box {
-            height: 285px;
-            border: 1px solid @middlegray;
-            .month-box-name {
-                margin-bottom: 10px;
-                padding: 10px;
-                color: @blue;
-                background-color: @blue;
-                border-bottom: 1px solid @blue;
-            }
-            .month-box-days {
-                padding-bottom: 10px;
-                .month-box-day {}
-            }
-            .month-box-week {
-                border-top: 1px solid @middlegray;
-                .month-box-week-day,
-                .month-box-week-day-empty {}
-                .month-box-week-day {
-                    height: 32px;
-                    padding: 6px 0 5px 0;
-                    a {
-                        display: block;
-                        &.month-box-week-day-active {
-                            color: @blue;
-                            font-family: @fontSansSerifBold;
-                            text-decoration: none;
-                            background-color: @blue;
-                        }
-                    }
-                }
-                .month-box-week-day-empty {
-                    height: 32px;
-                }
-            }
+    &__months {}
+    &__month {}
+    &__month-title {}
+    &__month-days,
+    &__month-week {}
+    &__month-days span,
+    &__month-day,
+    &__month-day-empty {}
+    &__month-days {
+        span {}
+    }
+    &__month-week {}
+    &__month-day {
+        a, 
+        span,
+        button {}
+        a,
+        button {
+        	&:hover,
+        	&:focus,
+        	&:active {}
+        }
+        .popover-title {
+        	color: @black;
+        	line-height: normal;
         }
     }
-    .search-action {
-        .btn {}
+    &__month-day-empty {}
+    &__action {}
+    &__incomplete {
+        .label {} 
+    }
+    /* MODIFICATION */
+    &__month-day {
+        &.active {
+            a {}
+        }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}
@@ -59,6 +78,4 @@
 @media screen and (max-width: @smallBreakpoint) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {
-    #searchgroupcalendar #currentyear .calendar-year-month-box { width: 100%; }
-}
+@media screen and (max-width: @xSmallBreakpoint) {}
