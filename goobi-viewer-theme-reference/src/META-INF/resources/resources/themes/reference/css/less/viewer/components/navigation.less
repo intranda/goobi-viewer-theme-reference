@@ -11,11 +11,12 @@
 	   max-height: 41px;
 	}
 	li {
-		&.active > a {
+		&.active > a,
+		&.active > button {
 		  background-color: @hoverblue;
 		}
 	}
-	a {
+	a, button {
 	   padding: 10px 12px;
 	   color: @white;
 	   background-color: @blue;
@@ -51,7 +52,7 @@
 	   li {
 	       &.divider {}
         }
-	   a {
+	   a, button {
 	       &:focus,
            &:active {
                color: @white;
