@@ -503,28 +503,36 @@ strong {
 .navigation ul {
   max-height: 41px;
 }
-.navigation li.active > a {
+.navigation li.active > a,
+.navigation li.active > button {
   background-color: #69a7ef;
 }
-.navigation a {
+.navigation a,
+.navigation button {
   padding: 10px 12px;
   color: #fff;
   background-color: #507ebf;
 }
 .navigation a:hover,
+.navigation button:hover,
 .navigation a:focus,
-.navigation a:active {
+.navigation button:focus,
+.navigation a:active,
+.navigation button:active {
   text-decoration: none;
 }
-.navigation a:hover {
+.navigation a:hover,
+.navigation button:hover {
   color: #fff;
   background-color: #69a7ef;
 }
-.navigation a:focus {
+.navigation a:focus,
+.navigation button:focus {
   color: #fff;
   background-color: #69a7ef;
 }
-.navigation a:active {
+.navigation a:active,
+.navigation button:active {
   color: #fff;
 }
 .navigation .caret {
@@ -539,7 +547,9 @@ strong {
   max-height: inherit;
 }
 .navigation__submenu a:focus,
-.navigation__submenu a:active {
+.navigation__submenu button:focus,
+.navigation__submenu a:active,
+.navigation__submenu button:active {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
