@@ -2013,11 +2013,16 @@ strong {
 /* BLOCK */
 .widget-search-drilldown {
   /* ELEMENT */
+  /* COLLAPSE DRILLDOWN */
 }
 .widget-search-drilldown .widget li.active a {
   font-family: 'OpenSansRegular';
   color: #444;
   background-color: #eee;
+}
+.widget-search-drilldown__collapse {
+  border: 1px solid #d5d5d5;
+  border-top: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
