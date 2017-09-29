@@ -12,6 +12,11 @@
     }
     .grid {
         margin-bottom: 15px;
+        opacity: 0;
+        transition: all 0.3s ease-in;
+        &.ready {
+        	opacity: 1;
+        }
     }
     .grid-sizer,
     .grid-item { 

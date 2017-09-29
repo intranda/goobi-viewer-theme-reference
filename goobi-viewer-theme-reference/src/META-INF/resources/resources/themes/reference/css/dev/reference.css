@@ -2548,6 +2548,11 @@ strong {
 }
 .tpl-masonry .grid {
   margin-bottom: 15px;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.tpl-masonry .grid.ready {
+  opacity: 1;
 }
 .tpl-masonry .grid-sizer,
 .tpl-masonry .grid-item {
