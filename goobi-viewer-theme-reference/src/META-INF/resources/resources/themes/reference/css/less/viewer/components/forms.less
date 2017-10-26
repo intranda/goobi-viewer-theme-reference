@@ -2,22 +2,51 @@
    Forms
    style declarations for forms
    ==============================================================*/
-/* BOOTSTRAP CLASSES */
-.form-control {
-    &:focus {}
-}
-
-.form-horizontal {
-    .form-group {
-        label {}
-        .form-control {}
-        .btn {}
-    }
-}
-
 /* INPUT MODIFICATIONS */
 .form-control__select {
     select {}
+    select[disabled="disabled"] {}
+}
+
+/* CUSTOM CONTROL */
+/* BLOCK */
+.custom-control {
+    /* ELEMENT */
+    input[type="checkbox"],
+    input[type="radio"] {
+        &:checked ~ .custom-control__icon .fa-circle-o {}
+        &:checked ~ .custom-control__icon .fa-check-circle-o {}
+    }
+    &__icon {}
+    .fa-check-circle-o {}
+	/* MODIFICATION */
+	&--checkbox {}
+	&--radio {}
+	&--select {
+	    &:after {}
+	    select {}
+	    select[disabled="disabled"] {}
+	}
+}
+
+/* INPUT PLACEHOLDER */
+/* WebKit, Blink, Edge */
+::-webkit-input-placeholder { 
+    color: @placeholder;
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+    color: @placeholder;
+    opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+    color: @placeholder;
+    opacity: 1;
+}
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+    color: @placeholder;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

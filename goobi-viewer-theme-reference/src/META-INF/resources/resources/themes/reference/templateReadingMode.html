@@ -9,7 +9,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
       xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/zlb2/components">
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
 <h:head profile="http://dublincore.org/documents/dcq-html/">
 
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />Zentral- und Landesbibliothek Berlin</title>
+    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />intranda GmbH</title>
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
@@ -68,7 +68,7 @@
                         <div class="reading-mode__navigation-logo">
                             <a href="#{request.contextPath}/">
 								<img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="intranda GmbH Logo" />
-	                            <span>Goobi viewer</span>
+	                            <span>Goobi Viewer</span>
                             </a>
                         </div>
                     </div>
@@ -134,8 +134,8 @@
         
         <!-- CUSTOM JAVASCRIPT -->
         <script type="text/javascript">
-            var currentPage = '#{navigationHelper.currentPage}';
-            var contextPath = '#{request.contextPath}';
+            var currentPage = "#{navigationHelper.currentPage}";
+            var contextPath = "#{request.contextPath}";
             
             $( document ).ready( function() {
                 var readingModeConfig = {

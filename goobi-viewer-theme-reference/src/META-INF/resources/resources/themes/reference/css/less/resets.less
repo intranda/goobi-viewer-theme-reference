@@ -1,23 +1,31 @@
 /* ==============================================================
-   User Data
-   style declarations for user.xhtml
+   Resets for CSS Libs
    ==============================================================*/
-/* USERDATA */
-/* BLOCK */
-.userdata {
-	/* ELEMENT */
-	h3 {}
-	&__gravatar {
-		img {}
+ /* BOOTSTRAP */
+.page-header {}
+.nav-tabs {
+	li {
+		a {}
+		span {}
+		&.active {
+			a {}
+		}
 	}
-	&__data {}
-	&__action {
-		.btn {}
-	}
+}
+.tab-pane {}
+.form-control {
+    &:focus {}
+}
+.form-horizontal {
+    .form-group {
+        label {}
+        .form-control {}
+        .btn {}
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

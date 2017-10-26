@@ -1,23 +1,32 @@
 /* ==============================================================
-   User Data
-   style declarations for user.xhtml
+   Search Help text
+   style declarations for searchHelpText.xhtml
    ==============================================================*/
-/* USERDATA */
+/* SEARCH HELP TEXT */
 /* BLOCK */
-.userdata {
+#searchHelpAccordion {
 	/* ELEMENT */
-	h3 {}
-	&__gravatar {
-		img {}
-	}
-	&__data {}
-	&__action {
-		.btn {}
-	}
+	&.panel-group {
+        .panel {}
+    }
+    .panel-heading {}
+    .panel-title {
+        a {
+            &:hover,
+            &:focus,
+            &:active {}
+        }
+    }
+    .panel-body {
+        p {
+            &:last-child {}
+            span {}
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

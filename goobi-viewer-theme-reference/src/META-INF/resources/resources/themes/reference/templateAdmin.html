@@ -64,18 +64,21 @@
         <span class="Z3988" title="#{activeDocumentBean.viewManager.contextObject}"></span>
         
         <!-- MESSAGES -->
-        <div class="messages">
-            <h:messages infoClass="alert alert-success" errorClass="alert alert-danger" />
-        </div>
+		<div class="messages">
+			<h:messages infoClass="alert alert-success" errorClass="alert alert-danger" />
+		</div>
         
         <!-- MOBILE TOGGLES -->
         <viewerComponent:mobileToggles sidebarPosition="right" />
 
         <!-- MOBILE NAVIGATION -->
         <viewerComponent:mobileNavigation displayDropdown="false" />
+        
+        <!-- OFFCANVAS FADE -->
+        <div class="offcanvas-fade"></div>
 
         <!-- HEADER -->
-        <header id="pageHeader">
+        <header id="pageHeader" class="page-header">
             <div class="top-header">
                 <div class="container">
                     <div class="row">
@@ -149,15 +152,22 @@
         <div id="pageContent" class="page-content">
             <div class="container">
                 <div class="row row-offcanvas row-offcanvas-right">
-                    <main id="main" class="col-xs-12 col-sm-9"> 
+                    <main id="main" class="col-xs-12 col-sm-9 page-content__main">
                         <!-- BREADCRUMBS -->
                         <ui:insert name="breadcrumbs" />
                         
                         <!-- CONTENT --> 
-                        <ui:insert name="content" /> 
+                        <ui:insert name="content" />
                     </main>
 
-                    <aside id="sidebar" class="col-xs-9 col-sm-3 sidebar-offcanvas">
+                    <aside id="sidebar" class="col-xs-9 col-sm-3 page-content__sidebar">
+                    	<!-- CLOSE SIDEBAR ON MOBILE -->
+						<div class="page-content__close-sidebar">
+							<button type="button" class="btn-clean" data-toggle="close-sidebar">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</button>
+						</div>
+                    
                         <!-- SIDEBAR WIDGETS -->
                         <ui:insert name="sidebar" />
 
@@ -188,7 +198,7 @@
             var currentPage = '#{navigationHelper.currentPage}';
             var currentLang = '#{navigationHelper.localeString}';
         </script>
-        <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>        
     </f:view>
     
     <!-- PIWIK -->

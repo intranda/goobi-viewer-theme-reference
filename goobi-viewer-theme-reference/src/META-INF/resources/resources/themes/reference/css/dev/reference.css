@@ -18,8 +18,24 @@
 /* CROWDSOURCING */
 /* MEDIA QUERY BREAK POINTS */
 /* ==============================================================
-   Mixins
+   LESS Mixins
    ==============================================================*/
+/* CLEARFLOATS */
+.mx-clearfloats:before,
+.mx-clearfloats:after {
+  content: " ";
+  display: table;
+}
+.mx-clearfloats:after {
+  clear: both;
+}
+/* BACKGROUND IMAGE */
+/* CSS TRIANGLE */
+/* HIDDEN */
+.mx-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
 /*
  * general styling
  */
@@ -64,12 +80,14 @@ button:active {
 strong {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* CROWDSOURCING */
-/* image map */
-/* template.html */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 52px;
+  }
+}
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Theme Fonts
@@ -101,6 +119,14 @@ strong {
   font-weight: normal;
   font-style: normal;
 }
+/* ==============================================================
+   Resets for CSS Libs
+   ==============================================================*/
+/* BOOTSTRAP */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /*!
  * IE10 viewport hack for Surface/desktop Windows 8 bug
  * Copyright 2014-2015 Twitter, Inc.
@@ -125,36 +151,16 @@ strong {
 @viewport {
   width: device-width;
 }
-.container-fluid {
-  padding: 0;
-}
-.no-padding {
-  padding: 0;
-}
-#mobileToggleWrapper {
-  background-color: #fff;
-}
-#mobileToggleWrapper .customer-header-logo a {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo a:hover,
-#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo img {
-  max-height: 32px;
-}
-#mobileToggleWrapper .btn-toggle {
-  color: #444;
-  border-color: #444;
-}
-#mobileToggleWrapper .btn-toggle:active,
-#mobileToggleWrapper .btn-toggle:focus {
-  outline: none !important;
-}
-#mobileToggleWrapper .language.in:before,
-#mobileToggleWrapper .search.in:before {
-  border-color: transparent transparent #444 transparent;
+/* AJAX LOADER */
+/* OFFCANVAS FADE */
+.offcanvas-fade.in {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 /* TOP HEADER */
 /* BLOCK */
@@ -234,6 +240,20 @@ strong {
   background-color: #507ebf;
   /* ELEMENT */
 }
+/* CONTENT */
+/* BLOCK */
+.page-content {
+  /* ELEMENT */
+}
+.page-content__close-sidebar {
+  display: none;
+  margin-bottom: 1.3125rem;
+}
+.page-content__close-sidebar button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
 /* SIDEBAR */
 #sidebar {
   padding-top: 15px;
@@ -274,115 +294,60 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
-  /* OFF CANVAS */
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
-  .row-offcanvas-right {
-    right: 0;
-  }
-  .row-offcanvas-left {
-    left: 0;
-  }
-  .row-offcanvas-right .sidebar-offcanvas {
-    right: -50%;
-    padding-right: 30px;
-  }
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -50%;
-    padding-left: 30px;
-  }
-  .row-offcanvas-right.active {
-    right: 50%;
-  }
-  .row-offcanvas-left.active {
-    left: 50%;
-  }
-  #main {
-    width: 100%;
-  }
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 50%;
-  }
   /* HEADER */
-  #pageHeader {
-    margin-bottom: 15px;
-  }
-  .top-header__logo,
-  .top-header__nav-links,
-  .header-actions__logo {
-    display: none;
-  }
   .header-actions {
     min-height: inherit;
   }
-  .header-actions__search {
-    float: none;
+  .header-actions__logo {
     display: none;
-    position: fixed;
-    top: 53px;
-    right: 10px;
-    left: 50%;
-    padding: 10px;
-    border: 1px solid #444;
-    background-color: #fff;
-    z-index: 999;
   }
-  .header-actions__search .col-xs-6 {
+  .header-actions__search {
+    padding: 0;
+  }
+  .header-actions__search-advanced {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  /* CONTENT */
+  #main {
     width: 100%;
   }
-  .header-actions__search .col-xs-offset-6 {
-    margin-left: 0;
+  /* SIDEBAR */
+  .page-content #sidebar {
+    position: fixed;
+    float: none;
+    top: 0;
+    right: -50%;
+    bottom: 0;
+    width: 50%;
+    padding: 15px;
+    border-left: 1px solid #d5d5d5;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: all .3s linear;
+    z-index: 1000;
   }
+  .page-content #sidebar.in {
+    right: 0;
+  }
+  .page-content__close-sidebar {
+    display: block;
+  }
+  /* FOOTER */
 }
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
-  .row-offcanvas-right .sidebar-offcanvas {
-    right: -75%;
-    /* 9 columns */
-  }
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -75%;
-    /* 9 columns */
-  }
-  .row-offcanvas-right.active {
-    right: 75%;
-    /* 9 columns */
-  }
-  .row-offcanvas-left.active {
-    left: 75%;
-    /* 9 columns */
-  }
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 75%;
-    /* 9 columns */
-    padding-left: 37px;
-  }
   /* HEADER */
-  .header-actions__search {
-    left: 10px;
+  .top-header {
+    margin-bottom: 15px;
   }
+  /* CONTENT */
   /* SIDEBAR */
-  #sidebar {
-    padding-top: 0;
+  .page-content #sidebar {
+    right: -90%;
+    width: 90%;
   }
   /* FOOTER */
-  #footerNavigation li {
-    display: block;
-    margin: 0;
-    padding: 5px;
-    text-align: center;
-  }
-  #footerNavigation li + li:before {
-    display: none;
-  }
 }
 /* ==============================================================
    Print CSS
@@ -419,9 +384,16 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Inputs
-   style declarations for input elements
+   Forms
+   style declarations for forms
    ==============================================================*/
+/* INPUT MODIFICATIONS */
+/* CUSTOM CONTROL */
+/* BLOCK */
+.custom-control {
+  /* ELEMENT */
+  /* MODIFICATION */
+}
 /* INPUT PLACEHOLDER */
 /* WebKit, Blink, Edge */
 ::-webkit-input-placeholder {
@@ -441,16 +413,6 @@ strong {
 :-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.25);
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Forms
-   style declarations for forms
-   ==============================================================*/
-/* BOOTSTRAP CLASSES */
-/* INPUT MODIFICATIONS */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -551,6 +513,46 @@ strong {
 .navigation__submenu a:active,
 .navigation__submenu button:active {
   color: #fff;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Mobile Toggle Wrapper
+   style declarations for mobileToggles.xhtml
+   ==============================================================*/
+/* MOBILE TOGGLE WRAPPER */
+/* BLOCK */
+#mobileToggleWrapper {
+  border-bottom: 1px solid #444;
+  background-color: #fff;
+  /* ELEMENT */
+}
+#mobileToggleWrapper .customer-header-logo a {
+  color: #444;
+}
+#mobileToggleWrapper .customer-header-logo a:hover,
+#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
+  color: #444;
+}
+#mobileToggleWrapper .customer-header-logo img {
+  max-height: 32px;
+}
+#mobileToggleWrapper .btn-toggle {
+  color: #444;
+  border-color: #444;
+}
+#mobileToggleWrapper .btn-toggle:active,
+#mobileToggleWrapper .btn-toggle:focus {
+  outline: none !important;
+}
+#mobileToggleWrapper .language.in:before,
+#mobileToggleWrapper .search.in:before {
+  border-color: transparent transparent #444 transparent;
+}
+#mobileToggleWrapper .search {
+  display: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -721,6 +723,27 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Image Controls
+   ==============================================================*/
+/* CONTROLS */
+/* BLOCK */
+.image-control {
+  /* ELEMENT */
+}
+.image-control a:hover,
+.image-control span:hover,
+.image-control a:focus,
+.image-control span:focus,
+.image-control a:active,
+.image-control span:active {
+  text-decoration: none;
+  color: #6f6f6f;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    User generated Content
    style declarations for viewImageUserGeneratedContent.xhtml
    ==============================================================*/
@@ -755,6 +778,10 @@ strong {
    User Comments
    style declarations for viewImageComments.xhtml
    ==============================================================*/
+#viewImageComments {
+  /* ADD COMMENT */
+  /* EXSITING COMMENTS */
+}
 #viewImageComments .comments-elem {
   border: 1px solid #507ebf;
 }
@@ -840,27 +867,39 @@ strong {
    Normdata
    style declarations for normdata.xhtml 
    ==============================================================*/
+.normdataLink,
+.normdataDetailLink {
+  color: #69a7ef;
+}
+.normdata-popover {
+  font-size: 13px;
+  border: 1px solid #507ebf;
+}
+.normdata-popover .normdata-popover-title {
+  color: #fff;
+  background-color: #507ebf;
+  border-bottom: 1px solid #d5d5d5;
+}
+.normdata-popover .normdata-popover-title .normdata-popover-close {
+  color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Image Controls
+   Search Help text
+   style declarations for searchHelpText.xhtml
    ==============================================================*/
-/* CONTROLS */
+/* SEARCH HELP TEXT */
 /* BLOCK */
-.image-control {
+#searchHelpAccordion {
   /* ELEMENT */
 }
-.image-control a:hover,
-.image-control span:hover,
-.image-control a:focus,
-.image-control span:focus,
-.image-control a:active,
-.image-control span:active {
-  text-decoration: none;
-  color: #6f6f6f;
-}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* ADMIN VIEWS */
 /* ==============================================================
    Admin 
@@ -1023,6 +1062,7 @@ strong {
 }
 .collection {
   /* ELEMENT */
+  /* MODIFICATION */
 }
 .collection__description-toggle .fa {
   padding: 2px 3px;
@@ -1033,7 +1073,6 @@ strong {
   color: #fff;
   background-color: #f08421;
 }
-/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1086,144 +1125,6 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* SEARCH VIEWS */
 /* ==============================================================
-   Search
-   style declarations for search.xhtml
-   ==============================================================*/
-.search-wrapp {
-  padding: 15px;
-  border: 1px solid #d5d5d5;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Explanation Text
-   style declarations for searchOptions.xhtml 
-   ==============================================================*/
-#simpleSearchExplanationGroup .searchParagraphOpen,
-#simpleSearchExplanationGroup .searchParagraphClosed {
-  margin-bottom: 5px;
-}
-#simpleSearchExplanationGroup .searchParagraphOpen {
-  background-image: url("../../../images/collections/minus.png");
-}
-#simpleSearchExplanationGroup .searchParagraphClosed {
-  background-image: url("../../../images/collections/plus.png");
-}
-#simpleSearchExplanationGroup .searchParagraphText {
-  margin-bottom: 5px;
-  padding: 15px;
-  padding-bottom: 0;
-  border: 1px solid #d5d5d5;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Advanced
-   style declarations for searchAdvanced.xhtml 
-   ==============================================================*/
-/* SAERCH ADVANCED */
-/* BLOCK */
-.search-advanced {
-  /* ELEMENT */
-}
-/* MODIFICATION */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Calendar
-   style declarations for searchCalendar.xhtml 
-   ==============================================================*/
-/* BLOCK */
-.search-calendar {
-  /* ELEMENT */
-  /* MODIFICATION */
-}
-.search-calendar__input input {
-  box-shadow: none;
-}
-.search-calendar__month-day .popover-title {
-  color: #000;
-  line-height: normal;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Controls
-   style declarations for searchOptions.xhtml 
-   ==============================================================*/
-#searchNavigation {
-  position: relative;
-  top: 1px;
-}
-#searchNavigation ul li a,
-#searchNavigation ul li span {
-  color: #507ebf;
-  border: 1px solid #d5d5d5;
-}
-#searchNavigation ul li span {
-  background-color: #fff;
-  border-bottom-color: #fff;
-}
-#searchNavigation ul li a {
-  background-color: #507ebf;
-  border-bottom-color: transparent;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: 480px) {
-  #searchNavigation ul li {
-    display: block;
-    margin: 0;
-  }
-}
-/* ==============================================================
-   SearchList
-   style declarations for searchList.xhtml
-   ==============================================================*/
-/* SEARCH LIST */
-/* VARIABLES */
-/* BLOCK */
-.search-list {
-  /* ELEMENT */
-  /* LINKS */
-  /* SORTING */
-  /* ADVANCED SEARCH INFO */
-  /* HITS */
-}
-.search-list__struct-child-hits {
-  color: #222;
-}
-.search-list__struct-child-hits a {
-  color: #222;
-}
-/* MODIFICATION */
-/* STACKED MV THUMBNAIL */
-.stacked-thumbnail {
-  top: 15px;
-}
-.stacked-thumbnail-before,
-.stacked-thumbnail-after {
-  top: 15px;
-}
-.search-list__current-search .input-group-addon.search {
-  background-color: #507ebf;
-  border-color: #507ebf;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    Search Standard
    style declarations for searchOptions.xhtml 
    ==============================================================*/
@@ -1251,22 +1152,47 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   SearchTermList
-   style declarations for searchTermList.xhtml
+   Search Advanced
+   style declarations for searchAdvanced.xhtml 
    ==============================================================*/
+/* SAERCH ADVANCED */
 /* BLOCK */
-.search-termlist {
+.search-advanced {
   /* ELEMENT */
 }
-.search-termlist__list {
-  border-top: 1px solid #d5d5d5;
+/* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   SearchList
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST */
+/* VARIABLES */
+/* BLOCK */
+.search-list {
+  /* ELEMENT */
+  /* LINKS */
+  /* SORTING */
+  /* ADVANCED SEARCH INFO */
+  /* HITS */
 }
-.search-termlist__list li {
-  border-bottom: 1px solid #d5d5d5;
-}
-.search-termlist__list a:hover {
-  color: #444;
-  background-color: #eee;
+/* MODIFICATION */
+/* STACKED MV THUMBNAIL */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Search Calendar
+   style declarations for searchCalendar.xhtml 
+   ==============================================================*/
+/* BLOCK */
+.search-calendar {
+  /* ELEMENT */
+  /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1274,37 +1200,24 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Search Timeline
-   style declarations for searchOptions.xhtml 
+   style declarations for searchTimeline.xhtml 
    ==============================================================*/
-#searchgrouptimeline #yearbox .yearline .year {
-  position: relative;
-  top: 1px;
-  padding: 0;
+/* BLOCK */
+.search-timeline {
+  /* ELEMENT */
+  /* MODIFICATION */
 }
-#searchgrouptimeline #yearbox .yearline .year a,
-#searchgrouptimeline #yearbox .yearline .year span {
-  display: block;
-}
-#searchgrouptimeline #yearbox .yearline .year a.year-active {
-  color: #507ebf;
-  border: 1px solid #d5d5d5;
-  border-bottom-color: #507ebf;
-  background-color: #507ebf;
-}
-#searchgrouptimeline #yearbox .monthline {
-  background-color: #507ebf;
-  border: 1px solid #d5d5d5;
-  border-bottom-color: #507ebf;
-}
-#searchgrouptimeline #yearbox .monthline .month a {
-  color: #507ebf;
-}
-#searchgrouptimeline #yearbox .monthline .month a.month-active {
-  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-#searchgrouptimeline #yearbox .dayline {
-  border: 1px solid #d5d5d5;
-  border-top: none;
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   SearchTermList
+   style declarations for searchTermList.xhtml
+   ==============================================================*/
+/* BLOCK */
+.search-termlist {
+  /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1406,10 +1319,6 @@ strong {
    User edit Bookshelf
    style declarations for userBackendEditBookshelf.xhtml
    ==============================================================*/
-#editBookshelf #userEditBookshelfForm {
-  padding: 10px;
-  border: 1px solid #507ebf;
-}
 #editBookshelf #userEditBookshelfForm .btn {
   float: right;
   margin: 0;
@@ -1502,6 +1411,7 @@ strong {
    View Metadata
    style declarations for viewMetadata.xhtml 
    ==============================================================*/
+/* METADATA */
 #metadataElementWrapper .metadata-element-box {
   margin-bottom: 15px;
   padding: 10px;
@@ -1524,27 +1434,12 @@ strong {
 #metadataElementWrapper .metadata-element-box .metadata-element .dl-horizontal dt {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+/* DOWNLOADS */
 #viewMetadataDownloads ul li {
   /* BLOCK */
 }
 #viewMetadataDownloads ul li.dl-links {
   /* ELEMENT */
-}
-.normdataLink,
-.normdataDetailLink {
-  color: #69a7ef;
-}
-.normdata-popover {
-  font-size: 13px;
-  border: 1px solid #507ebf;
-}
-.normdata-popover .normdata-popover-title {
-  color: #fff;
-  background-color: #507ebf;
-  border-bottom: 1px solid #d5d5d5;
-}
-.normdata-popover .normdata-popover-title .normdata-popover-close {
-  color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1626,136 +1521,6 @@ strong {
    View Preview
    style declarations for viewPreview.xhtml 
    ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Reading Mode
-   style declarations for viewReadingMode.xhtml 
-   ==============================================================*/
-/* READING MODE */
-/* BLOCK */
-.reading-mode {
-  /* ELEMENT */
-  /* NAVIGATION */
-  /* CONTENT */
-  /* TABS */
-}
-.reading-mode__navigation {
-  border-bottom: 2px solid #507ebf;
-  background-color: #fff;
-}
-.reading-mode__navigation-logo a {
-  color: #444;
-}
-.reading-mode__navigation-logo a:hover,
-.reading-mode__navigation-logo a:focus,
-.reading-mode__navigation-logo a:active {
-  text-decoration: none;
-}
-.reading-mode__navigation-logo img {
-  max-height: 36px;
-}
-.reading-mode__navigation-goback {
-  padding-top: 13px;
-}
-.reading-mode__navigation-goback a {
-  display: block;
-}
-.reading-mode__navigation-goback .fa {
-  padding: 5px;
-}
-.reading-mode__content-sidebar {
-  background-color: #fff;
-}
-.reading-mode__content-sidebar-toggle {
-  border: 1px solid #fff;
-  border-right: none;
-  background-color: #507ebf;
-}
-.reading-mode__content-sidebar-toggle button {
-  color: #fff;
-}
-.reading-mode__content-sidebar-tabs {
-  border-bottom: 1px solid #d5d5d5;
-  overflow: hidden;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs {
-  position: relative;
-  border-bottom-color: #d5d5d5;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs:before {
-  position: absolute;
-  display: block;
-  bottom: -2px;
-  left: 0;
-  width: 1px;
-  height: 2px;
-  background-color: #d5d5d5;
-  z-index: 2;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs li.active a {
-  border: 1px solid #d5d5d5;
-  border-bottom-color: #fff;
-  border-radius: 0;
-  background-color: #fff;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs li a:hover {
-  border: 1px solid #d5d5d5;
-  border-bottom-color: #fff;
-  border-radius: 0;
-  background-color: #fff;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs li a:focus,
-.reading-mode__content-sidebar-tabs .nav-tabs li a:active {
-  outline: none !important;
-}
-.reading-mode__content-sidebar-tabs .tab-content {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  border-top-color: transparent;
-  background-color: #fff;
-  /* WIDGET TOC */
-}
-.reading-mode__content-sidebar-tabs .tab-content .widget {
-  margin: 0;
-  padding: 0;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc {
-  border: none;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title {
-  padding: 5px 0;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:before,
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:after {
-  display: table;
-  content: " ";
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:after {
-  clear: both;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title h3 {
-  display: none;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title-expand {
-  position: relative;
-  float: right;
-  top: 0;
-  right: 0;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title .widget-toc-title-expand li a {
-  color: #507ebf;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title-expand a {
-  display: block;
-  padding-left: 5px;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-elem-wrapp {
-  border: none;
-}
-/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1861,6 +1626,144 @@ strong {
    View Download
    style declarations for viewDownload.xhtml
    ==============================================================*/
+/* DOWNLOAD */
+/* BLOCK */
+.download {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Reading Mode
+   style declarations for viewReadingMode.xhtml 
+   ==============================================================*/
+/* READING MODE */
+/* BLOCK */
+.reading-mode {
+  /* ELEMENT */
+  /* NAVIGATION */
+  /* CONTENT */
+  /* TABS */
+}
+.reading-mode__navigation {
+  border-bottom: 2px solid #507ebf;
+  background-color: #fff;
+}
+.reading-mode__navigation-logo a {
+  color: #444;
+}
+.reading-mode__navigation-logo a:hover,
+.reading-mode__navigation-logo a:focus,
+.reading-mode__navigation-logo a:active {
+  text-decoration: none;
+}
+.reading-mode__navigation-logo img {
+  max-height: 36px;
+}
+.reading-mode__navigation-goback {
+  padding-top: 13px;
+}
+.reading-mode__navigation-goback a {
+  display: block;
+}
+.reading-mode__navigation-goback .fa {
+  padding: 5px;
+}
+.reading-mode__content-sidebar {
+  background-color: #fff;
+}
+.reading-mode__content-sidebar-toggle {
+  border: 1px solid #fff;
+  border-right: none;
+  background-color: #507ebf;
+}
+.reading-mode__content-sidebar-toggle button {
+  color: #fff;
+}
+.reading-mode__content-sidebar-tabs {
+  border-bottom: 1px solid #d5d5d5;
+  overflow: hidden;
+}
+.reading-mode__content-sidebar-tabs .nav-tabs {
+  position: relative;
+  border-bottom-color: #d5d5d5;
+}
+.reading-mode__content-sidebar-tabs .nav-tabs:before {
+  position: absolute;
+  display: block;
+  bottom: -2px;
+  left: 0;
+  width: 1px;
+  height: 2px;
+  background-color: #d5d5d5;
+  z-index: 2;
+}
+.reading-mode__content-sidebar-tabs .nav-tabs li.active a {
+  border: 1px solid #d5d5d5;
+  border-bottom-color: #fff;
+  border-radius: 0;
+  background-color: #fff;
+}
+.reading-mode__content-sidebar-tabs .nav-tabs li a:hover {
+  border: 1px solid #d5d5d5;
+  border-bottom-color: #fff;
+  border-radius: 0;
+  background-color: #fff;
+}
+.reading-mode__content-sidebar-tabs .nav-tabs li a:focus,
+.reading-mode__content-sidebar-tabs .nav-tabs li a:active {
+  outline: none !important;
+}
+.reading-mode__content-sidebar-tabs .tab-content {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-top-color: transparent;
+  background-color: #fff;
+  /* WIDGET TOC */
+}
+.reading-mode__content-sidebar-tabs .tab-content .tab-pane {
+  border: none;
+}
+.reading-mode__content-sidebar-tabs .tab-content .widget {
+  margin: 0;
+  padding: 0;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc {
+  border: none;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title {
+  padding: 5px 0;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:before,
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:after {
+  display: table;
+  content: " ";
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:after {
+  clear: both;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title h3 {
+  display: none;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title-expand {
+  position: relative;
+  float: right;
+  top: 0;
+  right: 0;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title .widget-toc-title-expand li a {
+  color: #507ebf;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title-expand a {
+  display: block;
+  padding-left: 5px;
+}
+.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-elem-wrapp {
+  border: none;
+}
+/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1928,6 +1831,10 @@ strong {
    Widget Convolutes
    style declarations for widget_convolutes.xhtml
    ==============================================================*/
+#widgetConvolutes {
+  display: none;
+  visibility: hidden;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -2044,9 +1951,6 @@ strong {
   border-radius: 0;
   border-color: #507ebf;
   background-color: #507ebf;
-}
-#sidebar #widgetSearchField {
-  margin-bottom: 1.3125rem;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2261,6 +2165,20 @@ strong {
    CMS Select Template
    style declarations for adminCmsSelectTemplate.xhtml
    ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Static Pages
+   style declarations for adminCmsStaticPages.xhtml
+   ==============================================================*/
+/* STATIC PAGES */
+/* BLOCK */
+.cms-static-pages {
+  /* ELEMENT */
+}
+/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -2556,8 +2474,8 @@ strong {
 }
 .tpl-masonry .grid-sizer,
 .tpl-masonry .grid-item {
-  width: 31.33333333%;
-  margin-bottom: 1%;
+  width: calc(31.33333333% + 12px);
+  margin-bottom: 6px;
   overflow: hidden;
 }
 .tpl-masonry .grid-sizer img,
@@ -2600,16 +2518,39 @@ strong {
   text-align: right;
   color: #fff;
 }
+.tpl-masonry .grid-item-caption .fa {
+  margin-left: 10px;
+}
 .tpl-masonry .gutter-sizer {
-  width: 1%;
+  width: 6px;
 }
 /* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: 1200px) {
+  .tpl-masonry .grid-sizer,
+  .tpl-masonry .grid-item {
+    width: calc(31.33333333% + 9px);
+  }
+}
 /* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: 992px) {
+  .tpl-masonry .grid-sizer,
+  .tpl-masonry .grid-item {
+    width: calc(31.33333333% + 5px);
+  }
+}
 /* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: 768px) {
+  .tpl-masonry .grid-sizer,
+  .tpl-masonry .grid-item {
+    width: calc(31.33333333% + 9px);
+  }
+}
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
+  .tpl-masonry .grid-sizer,
   .tpl-masonry .grid-item {
-    width: 98%;
+    width: 100%;
   }
 }
 /* ==============================================================
@@ -2643,6 +2584,168 @@ strong {
   padding: 15px;
   color: #fff;
   background-color: #abbac3;
+}
+/* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template Static Grid
+   style declarations for cms_template_14_staticGrid.xhtml
+   ==============================================================*/
+/* TPL STATIC GRID */
+/* BLOCK */
+.tpl-static-grid {
+  /* ELEMENT */
+}
+.tpl-static-grid__text {
+  margin-bottom: 30px;
+}
+.grid-tile {
+  margin-bottom: 30px;
+  padding: 3px;
+  padding-top: 0;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
+.grid-tile__title {
+  height: 50px;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.grid-tile__title h4 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 21px;
+}
+.grid-tile__image {
+  height: 150px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.grid-tile__image a {
+  display: block;
+  height: 150px;
+}
+/* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template RSS Feed
+   style declarations for cms_template_15_RSSFeed.xhtml
+   ==============================================================*/
+/* TPL RSS FEED */
+/* BLOCK */
+.tpl-rss {
+  /* ELEMENT */
+}
+.tpl-rss__text {
+  margin-bottom: 15px;
+}
+.tpl-rss__item {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  margin-bottom: 15px;
+}
+.tpl-rss__item-title {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d5d5d5;
+}
+.tpl-rss__item-title h3 {
+  margin: 0;
+}
+.tpl-rss__item-date {
+  margin-bottom: 10px;
+}
+.tpl-rss__item-metadata dt {
+  text-align: left;
+}
+/* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template Stacked Collection
+   style declarations for cms_template_16_stackedCollection.xhtml
+   ==============================================================*/
+/* TPL STACKED COLLECTION */
+/* BLOCK */
+.tpl-stacked-collection {
+  /* ELEMENT */
+}
+.tpl-stacked-collection__text {
+  margin-bottom: 15px;
+}
+.tpl-stacked-collection__collections {
+  width: 80%;
+  margin: 0 auto;
+}
+.tpl-stacked-collection .panel {
+  border: 1px solid #d5d5d5;
+  border-radius: 0;
+  background-color: #eee;
+  box-shadow: none;
+}
+.tpl-stacked-collection .panel-heading {
+  padding: 0;
+}
+.tpl-stacked-collection .panel-heading:before,
+.tpl-stacked-collection .panel-heading:after {
+  content: " ";
+  display: table;
+}
+.tpl-stacked-collection .panel-heading:after {
+  clear: both;
+}
+.tpl-stacked-collection .panel-thumbnail,
+.tpl-stacked-collection .panel-title,
+.tpl-stacked-collection .panel-rss {
+  float: left;
+  height: 64px;
+  line-height: 64px;
+  overflow: hidden;
+}
+.tpl-stacked-collection .panel-thumbnail {
+  width: 64px;
+}
+.tpl-stacked-collection .panel-title {
+  width: calc(90% - 64px);
+  padding: 0 15px;
+}
+.tpl-stacked-collection .panel-title a {
+  display: block;
+}
+.tpl-stacked-collection .panel-title a:hover,
+.tpl-stacked-collection .panel-title a:active,
+.tpl-stacked-collection .panel-title a:focus {
+  color: #000;
+  text-decoration: none;
+}
+.tpl-stacked-collection .panel-rss {
+  width: 10%;
+  text-align: center;
+}
+.tpl-stacked-collection .panel-rss .fa {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background-color: #f08421;
+}
+.tpl-stacked-collection .panel-body {
+  padding-left: 79px;
+  border-top-color: #d5d5d5 !important;
+  background-color: #fff;
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -19,9 +19,9 @@
         }
     }
     .grid-sizer,
-    .grid-item { 
-        width: 31.33333333%;
-        margin-bottom: 1%;
+    .grid-item {
+        width: calc(~"31.33333333% + 12px");
+        margin-bottom: 6px;
         overflow: hidden;
         img {
             min-width: 100%;
@@ -62,24 +62,45 @@
             text-align: right;
             color: @white;
         }
+        .fa {
+        	margin-left: 10px;
+        }
     }
     .gutter-sizer {
-        width: 1%;
+        width: 6px;
     }
 }
 
 /* MODIFICATION */
 
-//breakpoint for large desktops
-@media screen and (max-width: @largeBreakpoint) {}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+	.tpl-masonry .grid-sizer, 
+	.tpl-masonry .grid-item {
+		width: calc(~"31.33333333% + 9px");
+	}
+}
 
 /* BREAKPOINT FOR DESKTOP */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+	.tpl-masonry .grid-sizer, 
+	.tpl-masonry .grid-item {
+		width: calc(~"31.33333333% + 5px");
+	}
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+	.tpl-masonry .grid-sizer, 
+	.tpl-masonry .grid-item {
+		width: calc(~"31.33333333% + 9px");
+	}
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-    .tpl-masonry .grid-item { width: 98%; }
+    .tpl-masonry .grid-sizer, 
+	.tpl-masonry .grid-item {
+		width: 100%;
+	}
 }

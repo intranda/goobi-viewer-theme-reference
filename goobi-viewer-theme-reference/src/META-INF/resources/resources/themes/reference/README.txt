@@ -3,7 +3,7 @@
 # README
 # Kunde: intranda GmbH
 # viewer Version: 3.1
-# TBP-Version: 3.0.3
+# reference-Version: 3.0.3
 # viewer Theme: reference
 #
 ###############################################################################

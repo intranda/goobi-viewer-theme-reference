@@ -63,27 +63,6 @@ strong {
 table,
 .table {}
 
-/* CROWDSOURCING */
-/* image map */
-#map {    
-    .ugcBox.highlight {}
-    .ugcBox.focus {}
-    .ugcBox.drawing {}
-    .ugcBox.transforming {}    
-    .wordBox {}
-    .wordBox.drawing {}
-    .wordBox.transforming {}   
-}
-
-.cs-widget-box {
-    h3 {}
-}
-
-/* template.html */
-.content-left {}
-
-.content-right {}
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
 
@@ -91,7 +70,11 @@ table,
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+	body {
+		padding-top: 52px;
+	}
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {}

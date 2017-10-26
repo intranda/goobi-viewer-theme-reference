@@ -28,6 +28,7 @@ module.exports = function(grunt) {
                 options: {
                     paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>'  ],
                     compress: true,
+                    sourceMap: true,
                     banner: '/*!\n ============================================================\n <%= pkg.name %> \n\n Version: <%= pkg.version %> \n License: <%= pkg.license %> \n Author: <%= pkg.author %> \n Description: <%= pkg.description %> \n ============================================================ \n*/',
                 },
                 files: {

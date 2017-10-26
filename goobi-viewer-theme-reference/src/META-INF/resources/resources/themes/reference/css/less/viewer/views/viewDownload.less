@@ -2,10 +2,24 @@
    View Download
    style declarations for viewDownload.xhtml
    ==============================================================*/
-#viewDownload {
-    h2 {}
-    .download-license-text {}
+/* DOWNLOAD */
+/* BLOCK */
+.download {
+	/* ELEMENT */
+	&__status {
+		h2 {}
+		.panel {}
+		.panel-heading {}
+		.panel-title {}
+		.panel-body {}
+	}
+	&__status-loader {
+		img {}
+	}
+	&__status-license-text {}
 }
+
+#downloadBtn {}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

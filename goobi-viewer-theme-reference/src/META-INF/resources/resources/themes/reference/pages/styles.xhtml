@@ -1,11 +1,12 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
                 xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
                 xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-                xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/zlb2/components"
+                xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components"
                 template="/resources/themes/#{navigationHelper.theme}/template.html">
 
     <ui:define name="metadata">
@@ -24,7 +25,7 @@
     <ui:define name="content">
         <f:view contentType="text/html" encoding="utf-8">
             <div id="styles" class="page-wrapp">
-                <h2>Theme Style Sheet</h2>
+                <h2>#{msg.styles}</h2>
                 
                 <div class="styles">
                     <!-- LOGOs -->
@@ -304,7 +305,7 @@
                     
                     <div class="styles__helper">
                     	<div class="styles__helper-item">
-	                    	<h4>List reset (ul/ol)</h4>
+	                    	<h4>List reset (ul/ol) <br /><small>Setzt alle Basisformatierungen von Listen zurück.</small></h4>
 							<pre>class="list"</pre>
 							<p>
 								<strong>Emmet: </strong><code>ul.list>li*4>a[href="#"]{Ein Link}</code>
@@ -321,7 +322,7 @@
                     	</div>
                     
                     	<div class="styles__helper-item">
-	                    	<h4>Horizontale Liste (ul/ol)</h4>
+	                    	<h4>Horizontale Liste (ul/ol) <br /><small>Richtet die Liste horizontal aus.</small></h4>
 	                    	<pre>class="list list--horizontal"</pre>
 	                    	<p>
 								<strong>Emmet: </strong><code>ul.list.list--horizontal>li*4>a[href="#"]{Ein Link}</code>
@@ -338,7 +339,7 @@
                     	</div>
                     	
                     	<div class="styles__helper-item">
-	                    	<h4>Horizontale Liste, zentriert (ul/ol) <small>Muss in einem Block-Element mit "clearfix" sein!</small></h4>
+	                    	<h4>Horizontale Liste, zentriert (ul/ol) <br /><small>Muss in einem Block-Element mit "clearfix" sein!</small></h4>
 	                    	<pre>class="list list--horizontal list--center"</pre>
 	                    	<p>
 								<strong>Emmet: </strong><code>nav.clearfix>ul.list.list--horizontal.list--center>li*4>a[href="#"]{Ein Link}</code>
@@ -357,7 +358,7 @@
                     	</div>
                     	
                     	<div class="styles__helper-item">
-	                    	<h4>Horizontale Liste mit Trenner (ul/ol)</h4>
+	                    	<h4>Horizontale Liste mit Trenner (ul/ol) <br /><small>Der Trenner kann über die "content: ...;" geändert werden.</small></h4>
 	                    	<pre>class="list list--horizontal list--divider"</pre>
 	                    	<p>
 								<strong>Emmet: </strong><code>ul.list.list--horizontal.list--divider>li*4>a[href="#"]{Ein Link}</code>
@@ -372,25 +373,152 @@
 								<li><a href="#">Ein Link</a></li>
 							</ul>
 						</div>
+						
+						<div class="styles__helper-item">
+	                    	<h4>Faded Image <br /><small>Dunkelt ein Bild ab, damit Text darauf besser lesbar ist. Die Klasse kann nicht auf img-Tags angewendet werden.</small></h4>
+	                    	<pre>class="faded"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>.faded</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong> 
+		                    	<button type="button" class="btn-clean" data-toggle="faded">
+		                    		<i class="fa fa-toggle-on" aria-hidden="true"> ON</i>
+		                    		<i class="fa fa-toggle-off hidden" aria-hidden="true"> OFF</i>
+		                    	</button>
+							</p>
+							<div class="faded">
+								<img src="http://lorempizza.com/1024/768" class="img-responsive" alt="Faded Image Test" />
+							</div>
+							
+							<script>
+								$( '[data-toggle="faded"]' ).on( 'click', function() {
+								    $( this ).parent().next().toggleClass( 'faded' );
+								    $( this ).find( '.fa' ).toggleClass( 'hidden' );
+								});
+							</script>
+						</div>
+						
+						<div class="styles__helper-item">
+	                    	<h4>Broken Image <br /><small>Diese Klasse hübscht kaputte Bilder auf. Funktioniert nur in Chrome, in anderen Browsern werden kaputte Bilder ausgeblendet.</small></h4>
+	                    	<pre>class="broken"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>img.broken</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							<div>
+								<img src="http://example.com" class="img-responsive broken" alt="Broken Image Test" />
+							</div>
+						</div>
+						
+						<div class="styles__helper-item">
+	                    	<h4>Clean Button <br /><small>Setzt alle Formatierungen eines Buttons zurück, um diesen z.B. wie einen Link aussehen zu lassen.</small></h4>
+	                    	<pre>class="btn-clean"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>button.btn-clean</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							<button type="button" class="btn-clean">Button ohne Formatierung</button>
+						</div>
+						
+						<div class="styles__helper-item">
+	                    	<h4>Custom Checkbox/Radiobutton <br /><small>Ermöglicht den Austausch des Standard-Icons von Checkboxen/Radiobuttons.</small></h4>
+	                    	<pre>class="custom-control custom-control--radio"</pre>
+	                    	<pre>class="custom-control custom-control--checkbox"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>tl;dr</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							
+							<h5>Radiobuttons</h5>
+							
+							<label for="radioTest1" class="custom-control custom-control--radio">
+								<input type="radio" name="radioTest" id="radioTest1" />
+								<span class="custom-control__icon">
+									<i aria-hidden="true" class="fa fa-circle-o"></i>
+									<i aria-hidden="true" class="fa fa-check-circle-o"></i>
+								</span>
+								Radio Test 1
+							</label>
+							<label for="radioTest2" class="custom-control custom-control--radio">
+								<input type="radio" name="radioTest" id="radioTest2" />
+								<span class="custom-control__icon">
+									<i aria-hidden="true" class="fa fa-circle-o"></i>
+									<i aria-hidden="true" class="fa fa-check-circle-o"></i>
+								</span>
+								Radio Test 2
+							</label>
+							
+							<hr />
+							
+							<h5>Checkboxen</h5>
+							
+							<label for="checkTest1" class="custom-control custom-control--checkbox">
+								<input type="checkbox" name="checkTest1" id="checkTest1" />
+								<span class="custom-control__icon">
+									<i class="fa fa-square-o" aria-hidden="true"></i>
+									<i class="fa fa-check-square-o" aria-hidden="true"></i>
+								</span>
+								Checkbox Test 1
+							</label>
+							<label for="checkTest2" class="custom-control custom-control--checkbox">
+								<input type="checkbox" name="checkTest2" id="checkTest2" />
+								<span class="custom-control__icon">
+									<i class="fa fa-square-o" aria-hidden="true"></i>
+									<i class="fa fa-check-square-o" aria-hidden="true"></i>
+								</span>
+								Checkbox Test 2
+							</label>
+						</div>
+						
+						<div class="styles__helper-item">
+	                    	<h4>Custon Select Menu <br /><small>Vereinheitlicht die Formatierung von Select Menüs.</small></h4>
+	                    	<pre>class="custom-control custom-control--select"</pre>
+	                    	<p>
+								<strong>Emmet: </strong><code>.custom-control.custom-control--select>select>option{Eine Auswahloption}*5</code>
+							</p>
+							<p>
+		                    	<strong>Ergebnis:</strong>
+							</p>
+							
+							<div class="custom-control custom-control--select">
+								<select name="selectTest" id="selectTest">
+									<option value="">Eine Auswahloption</option>
+									<option value="">Eine Auswahloption</option>
+									<option value="">Eine Auswahloption</option>
+									<option value="">Eine Auswahloption</option>
+									<option value="">Eine Auswahloption</option>
+								</select>
+							</div>
+						</div>
                     </div>
-                    
-                    <!-- MIXIN TEST -->
-                    <h3 class="styles__heading">LESS Mixin Tests</h3>
-                    
-                    <div class="styles__mixins"></div>
                 </div>                
             </div>
         </f:view>
     </ui:define>
     
     <ui:define name="sidebar">
-        <widgetComponent:widget_browsing />
+        <h:panelGroup rendered="#{browseBean.browsingMenuEnabled}">
+            <widgetComponent:widget_browsing />
+        </h:panelGroup>
         
         <widgetComponent:widget_bookshelves addToBookshelfDisplay="false" />
         
-        <widgetComponent:widget_mySearches />
+        <h:panelGroup rendered="#{userBean.loggedIn}">
+        	<widgetComponent:widget_mySearches />
+        </h:panelGroup>
         
-        <widgetComponent:widget_crowdsourcing />
+        <c:forEach var="module" items="#{configurationBean.modules}">
+            <c:forEach var="contribution" items="#{module.sidebarContributions}">
+                <ui:include src="/#{contribution}" />
+            </c:forEach>
+        </c:forEach>
         
         <widgetComponent:widget_user />        
     </ui:define>

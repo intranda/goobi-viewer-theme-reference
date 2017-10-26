@@ -11,18 +11,19 @@
 @import "../mixins.less";
 @import "../general.less";
 @import "../fonts.less";
+@import "../resets.less";
 @import "../layout.less";
 @import "../print.less";
 
 /* BASIC COMPONENTS */
 @import "components/icons.less";
-@import "components/inputs.less";
 @import "components/forms.less";
 @import "components/buttons.less";
 @import "components/modals.less";
 
 /* VIEWER COMPONENTS */
 @import "components/navigation.less";
+@import "components/mobileToggleWrapper.less";
 @import "components/mobileNavigation.less";
 @import "components/changeLocal.less";
 @import "components/breadcrumbs.less";
@@ -30,6 +31,7 @@
 @import "components/simplePaginator.less";
 @import "components/title.less";
 @import "components/viewerControls.less";
+@import "components/imageControls.less";
 @import "components/userGeneratedContent.less";
 @import "components/userComments.less";
 @import "components/ePub.less";
@@ -37,7 +39,7 @@
 @import "components/dataTablePaginator.less";
 @import "components/searchSortingDropdown.less";
 @import "components/normdata.less";
-@import "components/imageControls.less";
+@import "components/searchHelpText.less";
 
 /* ADMIN VIEWS */
 @import "views/admin/admin.less";
@@ -57,15 +59,12 @@
 @import "views/common/privacy.less";
 
 /* SEARCH VIEWS */
-@import "views/search/search.less";
-@import "views/search/searchExplanationText.less";
-@import "views/search/searchAdvanced.less";
-@import "views/search/searchCalendar.less";
-@import "views/search/searchControls.less";
-@import "views/search/searchList.less";
 @import "views/search/searchStandard.less";
-@import "views/search/searchTermList.less";
+@import "views/search/searchAdvanced.less";
+@import "views/search/searchList.less";
+@import "views/search/searchCalendar.less";
 @import "views/search/searchTimeline.less";
+@import "views/search/searchTermList.less";
 
 /* USER VIEWS */
 @import "views/user/userBackendTable.less";
@@ -86,11 +85,11 @@
 @import "views/viewNerFacetting.less";
 @import "views/viewOverview.less";
 @import "views/viewPreview.less";
-@import "views/viewReadingMode.less";
 @import "views/viewThumbs.less";
 @import "views/viewTimematrix.less";
 @import "views/viewToc.less";
 @import "views/viewDownload.less";
+@import "views/viewReadingMode.less";
 
 /* WIDGETS */
 @import "widgets/widgets.less";
@@ -122,6 +121,7 @@
 @import "cms/views/cmsMenuItems.less";
 @import "cms/views/cmsOverview.less";
 @import "cms/views/cmsSelectTemplate.less";
+@import "cms/views/cmsStaticPages.less";
 
 /* CMS TEMPLATES */
 @import "cms/templates/01_templateGeneric.less";
@@ -136,6 +136,9 @@
 @import "cms/templates/10_templateSearchList.less";
 @import "cms/templates/12_templateMasonry.less";
 @import "cms/templates/13_templateSingleCollection.less";
+@import "cms/templates/14_templateStaticGrid.less";
+@import "cms/templates/15_templateRSSFeed.less";
+@import "cms/templates/16_templateStackedCollection.less";
 
 /* CMS COMPONENTS */
 @import "cms/components/collectionTiled.less";

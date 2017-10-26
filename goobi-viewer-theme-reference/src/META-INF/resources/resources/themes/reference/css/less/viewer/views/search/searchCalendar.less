@@ -15,15 +15,16 @@
         &:focus {}
     }
     &__input {
-        input {
-            box-shadow: none;
-        }
+        input {}
         .form-horizontal {}
         .form-group {}
         .col-sm-4 {}
         .col-sm-8 {}
         .control-label {}
         .form-control {}
+    }
+    &__select-wrapper {
+        select {}
     }
     &__reset {
         .btn {}
@@ -42,18 +43,7 @@
     &__month-week {}
     &__month-day {
         a, 
-        span,
-        button {}
-        a,
-        button {
-        	&:hover,
-        	&:focus,
-        	&:active {}
-        }
-        .popover-title {
-        	color: @black;
-        	line-height: normal;
-        }
+        span {}
     }
     &__month-day-empty {}
     &__action {}

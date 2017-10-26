@@ -81,12 +81,14 @@ button:active {
 strong {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* CROWDSOURCING */
-/* image map */
-/* template.html */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 52px;
+  }
+}
 /* BREAKPOINT FOR SMARTPHONES */
 /*!
  * IE10 viewport hack for Surface/desktop Windows 8 bug
@@ -112,36 +114,16 @@ strong {
 @viewport {
   width: device-width;
 }
-.container-fluid {
-  padding: 0;
-}
-.no-padding {
-  padding: 0;
-}
-#mobileToggleWrapper {
-  background-color: #fff;
-}
-#mobileToggleWrapper .customer-header-logo a {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo a:hover,
-#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo img {
-  max-height: 32px;
-}
-#mobileToggleWrapper .btn-toggle {
-  color: #444;
-  border-color: #444;
-}
-#mobileToggleWrapper .btn-toggle:active,
-#mobileToggleWrapper .btn-toggle:focus {
-  outline: none !important;
-}
-#mobileToggleWrapper .language.in:before,
-#mobileToggleWrapper .search.in:before {
-  border-color: transparent transparent #444 transparent;
+/* AJAX LOADER */
+/* OFFCANVAS FADE */
+.offcanvas-fade.in {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 /* TOP HEADER */
 /* BLOCK */
@@ -221,6 +203,20 @@ strong {
   background-color: #507ebf;
   /* ELEMENT */
 }
+/* CONTENT */
+/* BLOCK */
+.page-content {
+  /* ELEMENT */
+}
+.page-content__close-sidebar {
+  display: none;
+  margin-bottom: 1.3125rem;
+}
+.page-content__close-sidebar button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
 /* SIDEBAR */
 #sidebar {
   padding-top: 15px;
@@ -261,119 +257,80 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
-  /* OFF CANVAS */
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
-  .row-offcanvas-right {
-    right: 0;
-  }
-  .row-offcanvas-left {
-    left: 0;
-  }
-  .row-offcanvas-right .sidebar-offcanvas {
-    right: -50%;
-    padding-right: 30px;
-  }
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -50%;
-    padding-left: 30px;
-  }
-  .row-offcanvas-right.active {
-    right: 50%;
-  }
-  .row-offcanvas-left.active {
-    left: 50%;
-  }
-  #main {
-    width: 100%;
-  }
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 50%;
-  }
   /* HEADER */
-  #pageHeader {
-    margin-bottom: 15px;
-  }
-  .top-header__logo,
-  .top-header__nav-links,
-  .header-actions__logo {
-    display: none;
-  }
   .header-actions {
     min-height: inherit;
   }
-  .header-actions__search {
-    float: none;
+  .header-actions__logo {
     display: none;
-    position: fixed;
-    top: 53px;
-    right: 10px;
-    left: 50%;
-    padding: 10px;
-    border: 1px solid #444;
-    background-color: #fff;
-    z-index: 999;
   }
-  .header-actions__search .col-xs-6 {
+  .header-actions__search {
+    padding: 0;
+  }
+  .header-actions__search-advanced {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  /* CONTENT */
+  #main {
     width: 100%;
   }
-  .header-actions__search .col-xs-offset-6 {
-    margin-left: 0;
+  /* SIDEBAR */
+  .page-content #sidebar {
+    position: fixed;
+    float: none;
+    top: 0;
+    right: -50%;
+    bottom: 0;
+    width: 50%;
+    padding: 15px;
+    border-left: 1px solid #d5d5d5;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: all .3s linear;
+    z-index: 1000;
   }
+  .page-content #sidebar.in {
+    right: 0;
+  }
+  .page-content__close-sidebar {
+    display: block;
+  }
+  /* FOOTER */
 }
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
-  .row-offcanvas-right .sidebar-offcanvas {
-    right: -75%;
-    /* 9 columns */
-  }
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -75%;
-    /* 9 columns */
-  }
-  .row-offcanvas-right.active {
-    right: 75%;
-    /* 9 columns */
-  }
-  .row-offcanvas-left.active {
-    left: 75%;
-    /* 9 columns */
-  }
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 75%;
-    /* 9 columns */
-    padding-left: 37px;
-  }
   /* HEADER */
-  .header-actions__search {
-    left: 10px;
+  .top-header {
+    margin-bottom: 15px;
   }
+  /* CONTENT */
   /* SIDEBAR */
-  #sidebar {
-    padding-top: 0;
+  .page-content #sidebar {
+    right: -90%;
+    width: 90%;
   }
   /* FOOTER */
-  #footerNavigation li {
-    display: block;
-    margin: 0;
-    padding: 5px;
-    text-align: center;
-  }
-  #footerNavigation li + li:before {
-    display: none;
-  }
 }
 /* ==============================================================
-   Mixins
+   LESS Mixins
    ==============================================================*/
+/* CLEARFLOATS */
+.mx-clearfloats:before,
+.mx-clearfloats:after {
+  content: " ";
+  display: table;
+}
+.mx-clearfloats:after {
+  clear: both;
+}
+/* BACKGROUND IMAGE */
+/* CSS TRIANGLE */
+/* HIDDEN */
+.mx-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
 /* ==============================================================
    Print CSS
    style declarations for print views
@@ -454,33 +411,6 @@ strong {
 .btn.ui-button:active {
   color: #fff;
   background-color: #69a7ef;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Inputs
-   style declarations for input elements
-   ==============================================================*/
-/* INPUT PLACEHOLDER */
-/* WebKit, Blink, Edge */
-::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-}
-/* Mozilla Firefox 4 to 18 */
-:-moz-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-/* Mozilla Firefox 19+ */
-::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-/* Internet Explorer 10-11 */
-:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.25);
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

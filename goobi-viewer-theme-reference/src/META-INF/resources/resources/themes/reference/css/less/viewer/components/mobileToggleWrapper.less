@@ -1,0 +1,61 @@
+/* ==============================================================
+   Mobile Toggle Wrapper
+   style declarations for mobileToggles.xhtml
+   ==============================================================*/
+/* MOBILE TOGGLE WRAPPER */
+/* BLOCK */
+#mobileToggleWrapper {
+    border-bottom: 1px solid @darkgray;
+    background-color: @white;
+    /* ELEMENT */
+    .customer-header-logo {
+    	a {
+    		color: @darkgray;
+    		&:hover,
+    		&:focus
+    		&:active {
+	            color: @darkgray;
+	        }
+    	}
+        img {
+        	max-height: 32px;
+        }
+    }
+    .btn-toggle {
+        color: @darkgray;
+        border-color: @darkgray;
+        &:active,
+        &:focus {
+            outline: none !important;
+        }
+    }
+    .sidebar {
+        &.pull-left {}
+        &.pull-right {}
+    }     
+    .mobilenav {}
+    .language,
+    .search {
+        &.in {
+            &:before {
+                border-color: transparent transparent @darkgray transparent;
+            }
+        }        
+    }
+    .language {}
+    .search {
+    	display: none;
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

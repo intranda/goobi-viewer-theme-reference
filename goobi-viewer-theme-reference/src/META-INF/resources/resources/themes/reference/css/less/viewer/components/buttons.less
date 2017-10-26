@@ -3,6 +3,18 @@
    style declarations for buttons
    ==============================================================*/
 .btn,
+.btn.ui-button,
+a.btn,
+input.btn,
+.btn.ui-button,
+.btn-search,
+.btn-clean,
+.btn-inactive {
+	&:focus,
+    &:active {}
+}
+
+.btn,
 .btn.ui-button {
     font-size: 14px;
     color: @white;
@@ -27,6 +39,10 @@ input.btn,
 }
 
 .btn-search {}
+
+.btn-clean {}
+
+.btn-inactive {}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 

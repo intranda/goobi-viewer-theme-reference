@@ -9,7 +9,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
       xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/boilerplate/components">
 
 <h:head profile="http://dublincore.org/documents/dcq-html/">
 
@@ -72,9 +72,12 @@
 
         <!-- MOBILE NAVIGATION -->
         <viewerComponent:mobileNavigation displayDropdown="false" />
+        
+        <!-- OFFCANVAS FADE -->
+        <div class="offcanvas-fade"></div>
 
         <!-- HEADER -->
-        <header id="pageHeader">
+        <header id="pageHeader" class="page-header">
             <div class="top-header">
                 <div class="container">
                     <div class="row">
@@ -148,7 +151,7 @@
         <div id="pageContent" class="page-content">
             <div class="container">
                 <div class="row row-offcanvas row-offcanvas-right">
-                    <main id="main" class="col-xs-12 col-sm-9"> 
+                    <main id="main" class="col-xs-12 col-sm-9 page-content__main">
                         <!-- BREADCRUMBS -->
                         <ui:insert name="breadcrumbs" />
                         
@@ -156,7 +159,14 @@
                         <ui:insert name="content" />
                     </main>
 
-                    <aside id="sidebar" class="col-xs-9 col-sm-3 sidebar-offcanvas">
+                    <aside id="sidebar" class="col-xs-9 col-sm-3 page-content__sidebar">
+                    	<!-- CLOSE SIDEBAR ON MOBILE -->
+						<div class="page-content__close-sidebar">
+							<button type="button" class="btn-clean" data-toggle="close-sidebar">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</button>
+						</div>
+                    
                         <!-- SIDEBAR WIDGETS -->
                         <ui:insert name="sidebar" />
 
