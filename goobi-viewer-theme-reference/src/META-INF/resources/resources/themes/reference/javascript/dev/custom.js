@@ -20,7 +20,8 @@ function resetDom() {
     var searchField = $( '#widgetSearchField' ).detach();
     var advSearch = $( '.header-actions__search-advanced' ).detach();
     
-    $( '.header-actions__search .col-xs-6.col-xs-offset-6' ).append( searchField ).append( advSearch );
+    $( '.header-actions__search-input' ).append( searchField );
+    $( '.header-actions__search-link' ).append( advSearch );
 }
 
 $( document ).ready( function() {
