@@ -1922,6 +1922,9 @@ strong {
   /* ELEMENT */
   /* COLLAPSE DRILLDOWN */
 }
+.widget-search-drilldown .widget ul {
+  border-bottom: none;
+}
 .widget-search-drilldown .widget li.active a {
   font-family: 'OpenSansRegular';
   color: #444;
@@ -1930,6 +1933,9 @@ strong {
 .widget-search-drilldown__collapse {
   border: 1px solid #d5d5d5;
   border-top: none;
+}
+.widget-search-drilldown__collapse a {
+  padding: 0 !important;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

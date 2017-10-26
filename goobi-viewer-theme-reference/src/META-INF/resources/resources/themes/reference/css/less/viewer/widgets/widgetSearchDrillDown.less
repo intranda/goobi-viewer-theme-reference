@@ -6,7 +6,9 @@
 .widget-search-drilldown {
 	/* ELEMENT */
 	.widget {
-		ul {}
+		ul {
+			border-bottom: none;
+		}
 		li {
 			&.active {
 				a {
@@ -27,7 +29,9 @@
     &__collapse {
     	border: 1px solid @middlegray;
     	border-top: none;
-        a {}
+        a {
+        	padding: 0 !important;
+        }
     }
 }
 
