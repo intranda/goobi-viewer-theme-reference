@@ -2,9 +2,9 @@
 #
 # README
 # Kunde: intranda GmbH
-# viewer Version: 3.1
-# reference-Version: 3.0.3
-# viewer Theme: reference
+# Goobi viewer Version: 3.2
+# reference-Version: 3.0.6
+# Goobi viewer Theme: reference
 #
 ###############################################################################
 
