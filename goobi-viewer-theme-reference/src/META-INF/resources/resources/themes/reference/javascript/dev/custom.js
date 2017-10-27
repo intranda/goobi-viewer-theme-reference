@@ -24,6 +24,23 @@ function resetDom() {
     $( '.header-actions__search-link' ).append( advSearch );
 }
 
+/**
+ * Method to set the content height to a min-height, equal to the viewport height.
+ */
+function setContentHeight() {
+    var pageWrapper = $( '#pageContent' );
+    var pageWrapperHeight = $( '#pageContent' ).outerHeight();
+    var pageHeaderHeight = $( '#pageHeader' ).outerHeight();
+    var pageNavigationHeight = $( '.main-navigation' ).outerHeight();
+    var pageFooterHeight = $( '#pageFooter' ).outerHeight();
+    var additionalHeight = pageHeaderHeight + pageNavigationHeight + pageFooterHeight + 15;
+    var windowHeight = $( window ).outerHeight();
+    
+    if ( pageWrapperHeight < windowHeight ) {
+        pageWrapper.css( 'min-height', ( windowHeight - additionalHeight ) + 'px' );
+    }
+}
+
 $( document ).ready( function() {
     var viewerConfig = {
         currentPage: currentPage,
@@ -32,6 +49,9 @@ $( document ).ready( function() {
     };
     
     viewerJS.init( viewerConfig );
+    
+    // set content height to window height
+    setContentHeight();
     
     // off canvas
     $( '[data-toggle="offcanvas"]' ).off().click( function() {
@@ -50,10 +70,14 @@ $( document ).ready( function() {
         manipulateDom();
     }
     $( window ).on( 'resize orientationchange', function() {
+        setContentHeight();
+        
         if ( window.matchMedia( '(max-width: 768px)' ).matches ) {
+            setContentHeight();
             manipulateDom();
         }
         else {
+            setContentHeight();
             resetDom();
         }
     } );
