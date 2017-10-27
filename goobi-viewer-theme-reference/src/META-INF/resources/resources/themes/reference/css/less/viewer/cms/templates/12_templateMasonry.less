@@ -24,7 +24,10 @@
         margin-bottom: 6px;
         overflow: hidden;
         img {
+            position: relative;
             min-width: 100%;
+            transition: all 0.3s ease-in;
+            z-index: 9;
         }
         &:hover {
             .grid-item-title {
@@ -32,6 +35,9 @@
             }
             .grid-item-caption {
                 opacity: 1;
+            }
+            img {
+            	transform: scale(1.2);
             }
         }
     }
@@ -42,8 +48,9 @@
         width: 100%;
         padding: 5px;
         color: @white;
-        background-color: rgba(154, 154, 154, 0.9);
-        transition: all 0.3s linear;
+        background-color: rgba(0, 0, 0, 0.65);
+        transition: all 0.3s ease-in;
+        z-index: 10;
     }
     .grid-item-title {
         bottom: 0;

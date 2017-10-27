@@ -2119,6 +2119,21 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Widget Work Count
+   style declarations for widget_workCount.xhtml
+   ==============================================================*/
+/* WIDGET WORKCOUNT */
+/* BLOCK */
+#widgetWorkCount p {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-top: none;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* CMS VIEWS */
 /* ==============================================================
    CMS Create Page
@@ -2486,7 +2501,10 @@ strong {
 }
 .tpl-masonry .grid-sizer img,
 .tpl-masonry .grid-item img {
+  position: relative;
   min-width: 100%;
+  transition: all 0.3s ease-in;
+  z-index: 9;
 }
 .tpl-masonry .grid-sizer:hover .grid-item-title,
 .tpl-masonry .grid-item:hover .grid-item-title {
@@ -2496,6 +2514,10 @@ strong {
 .tpl-masonry .grid-item:hover .grid-item-caption {
   opacity: 1;
 }
+.tpl-masonry .grid-sizer:hover img,
+.tpl-masonry .grid-item:hover img {
+  transform: scale(1.2);
+}
 .tpl-masonry .grid-item-title,
 .tpl-masonry .grid-item-caption {
   position: absolute;
@@ -2503,8 +2525,9 @@ strong {
   width: 100%;
   padding: 5px;
   color: #fff;
-  background-color: rgba(154, 154, 154, 0.9);
-  transition: all 0.3s linear;
+  background-color: rgba(0, 0, 0, 0.65);
+  transition: all 0.3s ease-in;
+  z-index: 10;
 }
 .tpl-masonry .grid-item-title {
   bottom: 0;
