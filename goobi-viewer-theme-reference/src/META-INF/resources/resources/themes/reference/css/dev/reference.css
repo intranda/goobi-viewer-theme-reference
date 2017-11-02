@@ -445,6 +445,10 @@ strong {
    Modals
    style declarations for Bootstrap Modals
    ==============================================================*/
+.modal .modal-dialog .modal-content .modal-footer .btn {
+  font-size: 14px;
+  color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
