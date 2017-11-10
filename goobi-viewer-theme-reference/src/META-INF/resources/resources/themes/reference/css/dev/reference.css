@@ -2798,13 +2798,11 @@ strong {
   height: 250px;
   margin-bottom: 15px;
   border: 1px solid #eee;
-}
-.collection-tiled__header,
-.collection-tiled__body {
-  padding: 15px;
+  overflow: hidden;
 }
 .collection-tiled__header {
   height: 57px;
+  padding: 15px;
   border-bottom: 1px solid #eee;
   overflow: hidden;
 }
