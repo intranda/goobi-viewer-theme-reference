@@ -1,0 +1,43 @@
+/* ==============================================================
+   Widget Geo Locations
+   style declarations for widget_geoLocations.xhtml
+   ==============================================================*/
+.widget-geo-locations {
+	h3 {}
+	&__map {
+		.mapboxgl-popup-content {}
+	}
+    /* CMS BACKEND WIDGET */
+	h5 {}
+    &__input {
+    	.row {}
+    	.col-xs-5,
+    	.col-xs-6,
+    	.col-xs-10 {}
+    	textarea {}
+    }
+    &__input-spacer {}
+    &__action {
+    	.col-xs-2 {}
+    	a {
+    		&:hover,
+    		&:focus,
+    		&:active {}
+    	}
+    }
+    &__overlay-check {
+    	.checkbox {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
