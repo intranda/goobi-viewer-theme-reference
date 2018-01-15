@@ -1838,23 +1838,12 @@ strong {
 /* CMS PAGE LINKS */
 /* BLOCK */
 [id*="widgetCmsPageLinks"] {
-  position: relative;
   /* ELEMENT */
 }
 [id*="widgetCmsPageLinks"]:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 10px;
-  bottom: 0;
   border: 1px solid #d5d5d5;
   border-top: none;
   background-color: #fff;
-  z-index: 100;
-}
-[id*="widgetCmsPageLinks"] ul {
-  max-height: 250px;
-  overflow-y: auto;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
