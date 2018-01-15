@@ -71,6 +71,26 @@
     	ul {}
     	li {}
     	a {}
+    	&__collection,
+    	&__rss {
+    		display: inline-block;
+    		float: left;
+    	}
+    	&__collection {
+    		width: 90%;
+    	}
+    	&__rss {
+    		width: 10%;
+    		.fa {
+	    		width: 16px;
+	    		height: 16px;
+	    		line-height: 16px;
+	    		font-size: 14px;
+	    		text-align: center;
+	    		color: @white;
+	    		background-color: @orange;
+	    	}
+    	}
     }
 }
 

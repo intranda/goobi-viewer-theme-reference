@@ -2228,21 +2228,26 @@ strong {
 /* BLOCK */
 .tpl-generic {
   /* ELEMENT */
+  /* SOLR-QUERY */
 }
 .tpl-generic__content {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .tpl-generic__image {
   float: left;
   width: 25%;
-  margin: 0 10px 10px 0;
-  margin-bottom: 15px;
+  margin-right: 15px;
 }
 .tpl-generic__image figcaption {
   padding: 5px 0;
   font-style: italic;
   font-size: 0.9rem;
   color: #d5d5d5;
+}
+.tpl-generic .solr-query-collection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2309,22 +2314,22 @@ strong {
 /* BLOCK */
 .tpl-news-detail {
   /* ELEMENT */
+  /* SOLR-QUERY */
 }
 .tpl-news-detail__date,
 .tpl-news-detail__content {
-  margin-bottom: 15px;
-}
-.tpl-news-detail__date {
-  padding: 10px 0;
-}
-.tpl-news-detail__image {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .tpl-news-detail__image figcaption {
   padding: 5px 0;
   font-style: italic;
   font-size: 0.9rem;
   color: #d5d5d5;
+}
+.tpl-news-detail .solr-query-collection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2791,7 +2796,63 @@ strong {
   border-top-color: #d5d5d5 !important;
   background-color: #fff;
 }
+.tpl-stacked-collection .panel-body__collection,
+.tpl-stacked-collection .panel-body__rss {
+  display: inline-block;
+  float: left;
+}
+.tpl-stacked-collection .panel-body__collection {
+  width: 90%;
+}
+.tpl-stacked-collection .panel-body__rss {
+  width: 10%;
+}
+.tpl-stacked-collection .panel-body__rss .fa {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background-color: #f08421;
+}
 /* MODIFICATION */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Searchlist"
+   style declarations for cms_template_17_searchList.xhtml
+   ==============================================================*/
+/* SEARCHLIST */
+/* BLOCK */
+.tpl-search-list {
+  /* ELEMENT */
+}
+.tpl-search-list__intro {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Searchlist Advanced"
+   style declarations for cms_template_18_searchListAdvanced.xhtml
+   ==============================================================*/
+/* SEARCHLIST ADVANCED */
+/* BLOCK */
+.tpl-search-list-advanced {
+  /* ELEMENT */
+}
+.tpl-search-list-advanced__intro {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
