@@ -1,19 +1,31 @@
 /* ==============================================================
-   CMS Component "SOLR Query Collection"
+   CMS Template "News Detail"
+   style declarations for cms_template_03_newsdetail.xhtml
    ==============================================================*/
-/* SOLR QUERY COLLECTION */
+/* NEWS DETAIL */
 /* BLOCK */
-.solr-query-collection {
+.tpl-news-detail {
     /* ELEMENT */
-    &__thumbs {}
-    &__thumb {}
-    &__image,
-    &__title {}
-    &__image {
-        img {}
+    &__date,
+    &__content {
+        margin-bottom: 20px;
     }
-    &__title {
-        a {}        
+    &__date {}
+    &__content {}
+    &__image {
+        figcaption {
+            padding: 5px 0;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: @middlegray;
+        }
+    }
+    &__text {}
+    /* SOLR-QUERY */
+    .solr-query-collection {
+    	margin-top: 20px;
+    	padding-top: 20px;
+    	border-top: 1px solid @middlegray;
     }
 }
 

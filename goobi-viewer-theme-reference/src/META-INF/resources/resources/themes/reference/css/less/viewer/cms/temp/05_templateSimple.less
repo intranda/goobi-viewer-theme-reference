@@ -1,24 +1,28 @@
 /* ==============================================================
-   CMS Component "SOLR Query Collection"
+   CMS Template "Simple"
+   style declarations for cms_template_05_simple.xhtml
    ==============================================================*/
-/* SOLR QUERY COLLECTION */
+/* SIMPLE */
 /* BLOCK */
-.solr-query-collection {
+.tpl-simple {
     /* ELEMENT */
-    &__thumbs {}
-    &__thumb {}
-    &__image,
-    &__title {}
+    &__text,
     &__image {
-        img {}
+        margin-bottom: 15px;
     }
-    &__title {
-        a {}        
+    &__text {}
+    &__image {
+        figcaption {
+            padding: 5px 0;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: @middlegray;
+        }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

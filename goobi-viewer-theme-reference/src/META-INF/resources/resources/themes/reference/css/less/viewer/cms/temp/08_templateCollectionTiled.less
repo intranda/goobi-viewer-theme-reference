@@ -1,24 +1,21 @@
 /* ==============================================================
-   CMS Component "SOLR Query Collection"
+   CMS Template "Collection Tiled"
+   style declarations for cms_template_09_collectionTiled.xhtml
    ==============================================================*/
-/* SOLR QUERY COLLECTION */
+/* COLLECTION TILED */
 /* BLOCK */
-.solr-query-collection {
+.tpl-collection-tiled {
     /* ELEMENT */
-    &__thumbs {}
-    &__thumb {}
-    &__image,
-    &__title {}
-    &__image {
-        img {}
+    &__text,
+    &__wrapper {
+        margin-bottom: 15px;
     }
-    &__title {
-        a {}        
-    }
+    &__text {}
+    &__wrapper {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

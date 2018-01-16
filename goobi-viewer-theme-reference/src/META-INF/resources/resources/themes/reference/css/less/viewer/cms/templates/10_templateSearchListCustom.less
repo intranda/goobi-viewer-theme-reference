@@ -1,24 +1,28 @@
 /* ==============================================================
-   CMS Component "SOLR Query Collection"
+   CMS Template "Search List Custom"
+   style declarations for cms_template_10_searchListCustom.xhtml
    ==============================================================*/
-/* SOLR QUERY COLLECTION */
+/* TPL SEARCH LIST CUSTOM */
 /* BLOCK */
-.solr-query-collection {
+.tpl-search-list-custom {
     /* ELEMENT */
-    &__thumbs {}
-    &__thumb {}
-    &__image,
-    &__title {}
-    &__image {
-        img {}
+    &__list-element {}
+    &__list-image {}
+    &__list-text {
+        .dl-horizontal {
+            dt, dd {}
+            dt {}
+            dd {}
+        }
     }
-    &__title {
-        a {}        
+    &__list-text-person {
+        &:after {}
+        &:last-child:after {}
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

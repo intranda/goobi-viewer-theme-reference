@@ -1,16 +1,37 @@
 /* ==============================================================
-   CMS Template "Collection Tiled"
-   style declarations for cms_template_09_collectionTiled.xhtml
+   CMS Template "Masonry"
+   style declarations for cms_template_12_masonry.xhtml
    ==============================================================*/
-/* COLLECTION TILED */
+/* TPL MASONRY */
 /* BLOCK */
-.tpl-collection-tiled {
+.tpl-masonry {
+    h1 {}
     /* ELEMENT */
-    &__text,
-    &__wrapper {}
     &__text {}
-    &__wrapper {}
+    .grid {
+        &.ready {}
+    }
+    .grid-sizer,
+    .grid-item {
+        img {}
+        &:hover {
+            .grid-item-title {}
+            .grid-item-caption {}
+            img {}
+        }
+    }
+    .grid-item-title,
+    .grid-item-caption {}
+    .grid-item-title {}
+    .grid-item-caption {
+        h4 {}
+        a {}
+        .fa {}
+    }
+    .gutter-sizer {}
 }
+
+/* MODIFICATION */
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

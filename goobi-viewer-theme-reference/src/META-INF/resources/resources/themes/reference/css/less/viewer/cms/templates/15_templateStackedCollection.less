@@ -1,0 +1,57 @@
+/* ==============================================================
+   CMS Template Stacked Collection
+   style declarations for cms_template_16_stackedCollection.xhtml
+   ==============================================================*/
+/* TPL STACKED COLLECTION */
+/* BLOCK */
+.tpl-stacked-collection {
+    h1 {}
+    /* ELEMENT */
+    &__text {}
+    &__collections {}
+    .panel-group {}
+    .panel {}
+    .panel-heading {}
+    .panel-thumbnail,
+    .panel-title,
+    .panel-rss {}
+    .panel-thumbnail {
+    	img {}
+    }
+    .panel-title {
+    	a {
+    		&:hover,
+    		&:active,
+    		&:focus {}
+    	}
+    }
+    .panel-rss {
+    	.fa {}
+    }
+    .panel-collapse {}
+    .panel-body {
+    	ul {}
+    	li {}
+    	a {}
+    	&__collection,
+    	&__rss {}
+    	&__collection {}
+    	&__rss {
+    		.fa {}
+    	}
+    }
+}
+
+/* MODIFICATION */
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

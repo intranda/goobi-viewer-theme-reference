@@ -1,24 +1,33 @@
 /* ==============================================================
-   CMS Component "SOLR Query Collection"
+   CMS Template RSS Feed
+   style declarations for cms_template_15_RSSFeed.xhtml
    ==============================================================*/
-/* SOLR QUERY COLLECTION */
+/* TPL RSS FEED */
 /* BLOCK */
-.solr-query-collection {
+.tpl-rss {
+    h1 {}
     /* ELEMENT */
-    &__thumbs {}
-    &__thumb {}
-    &__image,
-    &__title {}
-    &__image {
-        img {}
+    &__text {}
+    &__feed {}
+    &__item {}
+    &__item-title {
+    	h3 {}
+    	a {}
     }
-    &__title {
-        a {}        
+    &__item-image {
+    	img {}
+    }
+    &__item-date {}
+    &__item-metadata {
+    	dt {}
+    	dd {}
     }
 }
 
+/* MODIFICATION */
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}
