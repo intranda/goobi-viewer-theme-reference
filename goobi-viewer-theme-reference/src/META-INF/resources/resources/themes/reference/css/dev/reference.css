@@ -240,6 +240,9 @@ strong {
   background-color: #507ebf;
   /* ELEMENT */
 }
+.main-navigation .container {
+  padding: 0 3px;
+}
 /* CONTENT */
 /* BLOCK */
 .page-content {
@@ -1262,7 +1265,7 @@ strong {
 }
 .user__local,
 .user__openid {
-  min-height: 310px;
+  min-height: 320px;
   border: 1px solid #507ebf;
 }
 .user__local h3,
@@ -1922,9 +1925,6 @@ strong {
    Widget RSS
    style declarations for rssFeed.xhtml
    ==============================================================*/
-.rss_elem_wrapp h3 a {
-  margin-top: 5px;
-}
 .rss_elem_wrapp .rss-wrapp {
   padding: 10px;
   border: 1px solid #d5d5d5;

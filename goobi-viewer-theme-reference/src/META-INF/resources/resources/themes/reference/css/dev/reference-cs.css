@@ -203,6 +203,9 @@ strong {
   background-color: #507ebf;
   /* ELEMENT */
 }
+.main-navigation .container {
+  padding: 0 3px;
+}
 /* CONTENT */
 /* BLOCK */
 .page-content {
