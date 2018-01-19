@@ -64,7 +64,7 @@
             <div class="reading-mode__navigation">
                 <div class="row">
                     <!-- LOGO -->
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 col-md-2">
                         <div class="reading-mode__navigation-logo">
                             <a href="#{request.contextPath}/">
 								<img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="intranda GmbH Logo" />
@@ -73,13 +73,13 @@
                         </div>
                     </div>
                     <!-- CONTROLS -->
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 col-md-8">
                         <div class="reading-mode__navigation-controls">
                             <viewerComponent:imageControls />
                         </div>
                     </div>
                     <!-- GO BACK -->
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 col-md-2">
                         <div class="reading-mode__navigation-goback">
                             <h:outputLink value="#{activeDocumentBean.imageUrl}" title="#{msg.readingMode_leave}">
                                 <i class="fa fa-sign-out" aria-hidden="true"></i>
