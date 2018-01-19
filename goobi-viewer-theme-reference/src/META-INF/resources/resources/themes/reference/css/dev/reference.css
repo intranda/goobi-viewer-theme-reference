@@ -731,17 +731,16 @@ strong {
    ==============================================================*/
 /* CONTROLS */
 /* BLOCK */
-.image-control {
+.image-controls {
   /* ELEMENT */
 }
-.image-control a:hover,
-.image-control span:hover,
-.image-control a:focus,
-.image-control span:focus,
-.image-control a:active,
-.image-control span:active {
-  text-decoration: none;
-  color: #6f6f6f;
+.image-controls [data-toggle="mobile-image-controls"] {
+  padding: 19px 0;
+}
+/* BLOCK */
+.image-control {
+  /* ELEMENT */
+  /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

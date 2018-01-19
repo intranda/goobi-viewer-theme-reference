@@ -4,29 +4,42 @@
 /* CONTROLS */
 /* BLOCK */
 .image-controls {
-    ul {}
+    /* ELEMENT */
+    [data-toggle="mobile-image-controls"] {
+    	padding: 19px 0;
+    }
+    &__actions {
+	    ul {}
+	    li {}
+	    a {}
+	    span {}
+    }
 }
-
+/* BLOCK */
 .image-control {
+    /* ELEMENT */
     &.inactive {
         a, span {}
         [class^="control-icon-"], 
         [class*=" control-icon-"] {}
     }
     a, span {
-        &:hover,
-        &:focus,
-        &:active {
-        	text-decoration: none;
-        	color: @gray2;
-        }
+        &:hover {}
     }
     [class^="control-icon-"], 
     [class*=" control-icon-"] {}
+    .labeltext {}
     /* ELEMENT */
     &__start {}
-    &__page-browse {}
+    &__page-browse,
+    &__select {}
+    &__page-browse {
+        a, span {}
+    }
     &__back {}
+    &__select-text {
+    	span {}
+    }
     &__select {
         .form-control__select {
             select {}
@@ -34,6 +47,9 @@
     }
     &__forward {}
     &__end {}
+    &__double-page-view {}
+    &__single-page-view {}
+    &__switch-pages {}
     &__rotate-left {}
     &__rotate-right {}
     &__reset {}
@@ -41,8 +57,12 @@
     &__zoom-slider {
         .zoom-slider {}
         .zoom-slider-handle {}
+        
     }
-    &__pdf {}
+    &__pdf,
+    &__fulltext {
+    	a {}
+    }
     &__fulltext {}
 }
 
