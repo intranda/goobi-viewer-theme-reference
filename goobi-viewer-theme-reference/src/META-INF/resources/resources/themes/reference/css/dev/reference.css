@@ -1668,6 +1668,9 @@ strong {
 .reading-mode__navigation-logo img {
   max-height: 36px;
 }
+.reading-mode__navigation-controls .image-controls {
+  padding: 18px 0;
+}
 .reading-mode__navigation-goback {
   padding-top: 13px;
 }
