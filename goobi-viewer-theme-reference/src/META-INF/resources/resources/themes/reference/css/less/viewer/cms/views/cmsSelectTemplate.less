@@ -2,21 +2,29 @@
    CMS Select Template
    style declarations for adminCmsSelectTemplate.xhtml
    ==============================================================*/
-#cmsSelectTemplate {
+/* CMS SELECT TEMPLATE */
+/* BLOCK */
+.cms-select-template {
+	/* ELEMENT */
 	h2 {}
-	#cmsSelectTemplateWrapper {
-		.row {}
-		.select-template-image {
-			img {}
+	&__wrapper {}
+	&__template {}
+	&__image {
+		img {}
+	}
+	&__description {
+		h3 {}
+	}
+	&__theme-template-marker,
+	&__action {}
+	&__theme-template-marker {}
+	&__action {
+		.btn {}
+		.btn-theme-template {
+			&:hover,
+			&:active,
+			&:focus {}
 		}
-		.select-template-description {
-			h4 {}
-			.dl-horizontal {
-				dt {}
-				dd {}
-			}
-		}
-		.select-template-action {}
 	}
 }
 

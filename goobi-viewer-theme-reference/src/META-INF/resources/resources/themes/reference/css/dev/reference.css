@@ -2475,6 +2475,11 @@ strong {
    CMS Select Template
    style declarations for adminCmsSelectTemplate.xhtml
    ==============================================================*/
+/* CMS SELECT TEMPLATE */
+/* BLOCK */
+.cms-select-template {
+  /* ELEMENT */
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
