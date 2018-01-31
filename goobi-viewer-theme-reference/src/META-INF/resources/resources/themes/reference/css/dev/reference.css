@@ -1,10 +1,10 @@
 /***************************************************************
- * viewer custom Stylesheet v3.1.0
+ * viewer custom Stylesheet v3.4.0
  * 
  * Write {LESS}, do more!
  *
  * This file overwrites the basic style declarations for the
- * intranda viewer (<themeName>.css)
+ * Goobi viewer
  **************************************************************/
 /* CORE VARIABLES AND MIXINS */
 /* ==============================================================
@@ -371,6 +371,30 @@ strong {
 }
 /* BASIC COMPONENTS */
 /* ==============================================================
+   Buttons
+   style declarations for buttons
+   ==============================================================*/
+.btn,
+.btn.ui-button {
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #d5d5d5;
+  background-color: #507ebf;
+}
+.btn:hover,
+.btn.ui-button:hover,
+.btn:focus,
+.btn.ui-button:focus,
+.btn:active,
+.btn.ui-button:active {
+  color: #fff;
+  background-color: #69a7ef;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Icons
    style declarations for icons used in viewer
    ==============================================================*/
@@ -421,30 +445,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Buttons
-   style declarations for buttons
-   ==============================================================*/
-.btn,
-.btn.ui-button {
-  font-size: 14px;
-  color: #fff;
-  border: 1px solid #d5d5d5;
-  background-color: #507ebf;
-}
-.btn:hover,
-.btn.ui-button:hover,
-.btn:focus,
-.btn.ui-button:focus,
-.btn:active,
-.btn.ui-button:active {
-  color: #fff;
-  background-color: #69a7ef;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    Modals
    style declarations for Bootstrap Modals
    ==============================================================*/
@@ -457,6 +457,248 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWER COMPONENTS */
+/* ==============================================================
+   Alphabetic Paginator
+   style declarations for alphabeticPaginator.xhtml
+   ==============================================================*/
+#alphabeticPaginator ul li.active a {
+  line-height: 32px;
+  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background-color: #507ebf;
+}
+#alphabeticPaginator ul li a {
+  line-height: 30px;
+  border-color: #d5d5d5;
+}
+#alphabeticPaginator ul li a:hover {
+  background-color: #eee;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Breadcrumbs
+   style declarations for breadcrumbs.xhtml
+   ==============================================================*/
+/* BREADCRUMBS */
+/* BLOCK */
+.breadcrumbs-wrapper {
+  padding: 10px 0;
+}
+.breadcrumbs {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: 480px) {
+  .breadcrumbs-wrapper {
+    display: none;
+  }
+}
+/* ==============================================================
+   Change Local
+   style declarations for changeLocal.xhtml
+   ==============================================================*/
+/* BLOCK */
+.change-local {
+  float: right;
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: 768px) {
+  .change-local {
+    float: none;
+    display: none;
+    position: fixed;
+    top: 53px;
+    right: 10px;
+    left: 50%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #fff;
+    z-index: 999;
+  }
+  .change-local li {
+    display: block;
+    float: none;
+    margin: 0 0 3px 0;
+  }
+  .change-local a {
+    text-align: center;
+    color: #444;
+  }
+}
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Datatable Paginator
+   style declarations for dataTablePaginator.xhtml
+   ==============================================================*/
+/* DATATABLE PAGINATOR */
+/* BLOCK */
+.data-table-paginator {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Download Modal
+   style declarations for external PDF, ePub and Toc download 
+   ==============================================================*/
+/* DOWNLOAD MODAL */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   ePubs
+   style declarations for ePub.xhtml
+   ==============================================================*/
+#ePubWrapper {
+  padding: 10px;
+  border: 1px solid #507ebf;
+}
+#ePubWrapper ul {
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+#ePubWrapper ul li {
+  min-height: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+#ePubWrapper ul li:last-child {
+  border-bottom: none;
+}
+#ePubWrapper ul li .dl-horizontal {
+  min-height: 0;
+  margin: 0;
+}
+#ePubWrapper ul li .dl-horizontal dt a img {
+  height: 16px;
+  margin-top: -2px;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Image Controls
+   ==============================================================*/
+/* CONTROLS */
+/* BLOCK */
+.image-controls {
+  /* ELEMENT */
+}
+.image-controls [data-toggle="mobile-image-controls"] {
+  padding: 19px 0;
+}
+/* BLOCK */
+.image-control {
+  /* ELEMENT */
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Login Navigation
+   style declarations for loginNavigation.xhtml
+   ==============================================================*/
+/* LOGIN NAVIGATION */
+/* BLOCK */
+.login-navigation {
+  /* ELEMENT */
+  /* LOGIN DROPDOWN */
+  /* USER DROPDOWN */
+}
+.login-navigation__user-icon {
+  /* MODIFICATION */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Template Navigation
+   style declarations for templateNavigation.xhtml
+   ==============================================================*/
+#mobileNav {
+  padding: 0;
+  border-top-color: #444;
+  border-bottom-color: #444;
+  background-color: #444;
+}
+#mobileNav ul {
+  background-color: #fff;
+  background-image: url("../../images/template/mobilenav-bg.png");
+}
+#mobileNav ul li a {
+  color: #444;
+  border-bottom: 1px solid #d5d5d5;
+}
+#mobileNav ul li a:hover,
+#mobileNav ul li a:focus,
+#mobileNav ul li a:active {
+  text-decoration: none;
+  color: #444;
+  background-color: #eee;
+}
+#mobileNav ul li a.mainnav-active {
+  background-color: #eee;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Mobile Toggle Wrapper
+   style declarations for mobileToggles.xhtml
+   ==============================================================*/
+/* MOBILE TOGGLE WRAPPER */
+/* BLOCK */
+#mobileToggleWrapper {
+  border-bottom: 1px solid #444;
+  background-color: #fff;
+  /* ELEMENT */
+}
+#mobileToggleWrapper .customer-header-logo a {
+  color: #444;
+}
+#mobileToggleWrapper .customer-header-logo a:hover,
+#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
+  color: #444;
+}
+#mobileToggleWrapper .customer-header-logo img {
+  max-height: 32px;
+}
+#mobileToggleWrapper .btn-toggle {
+  color: #444;
+  border-color: #444;
+}
+#mobileToggleWrapper .btn-toggle:active,
+#mobileToggleWrapper .btn-toggle:focus {
+  outline: none !important;
+}
+#mobileToggleWrapper .language.in:before,
+#mobileToggleWrapper .search.in:before {
+  border-color: transparent transparent #444 transparent;
+}
+#mobileToggleWrapper .search {
+  display: none;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Navigation
    style declarations for navigation.xhtml
@@ -526,150 +768,56 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Mobile Toggle Wrapper
-   style declarations for mobileToggles.xhtml
+   Normdata
+   style declarations for normdata.xhtml 
    ==============================================================*/
-/* MOBILE TOGGLE WRAPPER */
-/* BLOCK */
-#mobileToggleWrapper {
-  border-bottom: 1px solid #444;
-  background-color: #fff;
-  /* ELEMENT */
+.normdataLink,
+.normdataDetailLink {
+  color: #69a7ef;
 }
-#mobileToggleWrapper .customer-header-logo a {
-  color: #444;
+.normdata-popover {
+  font-size: 13px;
+  border: 1px solid #507ebf;
 }
-#mobileToggleWrapper .customer-header-logo a:hover,
-#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo img {
-  max-height: 32px;
-}
-#mobileToggleWrapper .btn-toggle {
-  color: #444;
-  border-color: #444;
-}
-#mobileToggleWrapper .btn-toggle:active,
-#mobileToggleWrapper .btn-toggle:focus {
-  outline: none !important;
-}
-#mobileToggleWrapper .language.in:before,
-#mobileToggleWrapper .search.in:before {
-  border-color: transparent transparent #444 transparent;
-}
-#mobileToggleWrapper .search {
-  display: none;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Template Navigation
-   style declarations for templateNavigation.xhtml
-   ==============================================================*/
-#mobileNav {
-  padding: 0;
-  border-top-color: #444;
-  border-bottom-color: #444;
-  background-color: #444;
-}
-#mobileNav ul {
-  background-color: #fff;
-  background-image: url("../../images/template/mobilenav-bg.png");
-}
-#mobileNav ul li a {
-  color: #444;
-  border-bottom: 1px solid #d5d5d5;
-}
-#mobileNav ul li a:hover,
-#mobileNav ul li a:focus,
-#mobileNav ul li a:active {
-  text-decoration: none;
-  color: #444;
-  background-color: #eee;
-}
-#mobileNav ul li a.mainnav-active {
-  background-color: #eee;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Change Local
-   style declarations for changeLocal.xhtml
-   ==============================================================*/
-/* BLOCK */
-.change-local {
-  float: right;
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: 768px) {
-  .change-local {
-    float: none;
-    display: none;
-    position: fixed;
-    top: 53px;
-    right: 10px;
-    left: 50%;
-    padding: 10px;
-    border: 1px solid #444;
-    background-color: #fff;
-    z-index: 999;
-  }
-  .change-local li {
-    display: block;
-    float: none;
-    margin: 0 0 3px 0;
-  }
-  .change-local a {
-    text-align: center;
-    color: #444;
-  }
-}
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Breadcrumbs
-   style declarations for breadcrumbs.xhtml
-   ==============================================================*/
-/* BREADCRUMBS */
-/* BLOCK */
-.breadcrumbs-wrapper {
-  padding: 10px 0;
-}
-.breadcrumbs {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: 480px) {
-  .breadcrumbs-wrapper {
-    display: none;
-  }
-}
-/* ==============================================================
-   Alphabetic Paginator
-   style declarations for alphabeticPaginator.xhtml
-   ==============================================================*/
-#alphabeticPaginator ul li.active a {
-  line-height: 32px;
-  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.normdata-popover .normdata-popover-title {
   color: #fff;
   background-color: #507ebf;
+  border-bottom: 1px solid #d5d5d5;
 }
-#alphabeticPaginator ul li a {
-  line-height: 30px;
+.normdata-popover .normdata-popover-title .normdata-popover-close {
+  color: #fff;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Responsive Column Gallery
+   style declarations for responsiveColumnGallery.xhtml
+   ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Search Help text
+   style declarations for searchHelpText.xhtml
+   ==============================================================*/
+/* SEARCH HELP TEXT */
+/* BLOCK */
+#searchHelpAccordion {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Search Sorting Dropdown
+   style declarations for searchSortingDropdown.xhtml
+   ==============================================================*/
+#searchSortingDropdown {
   border-color: #d5d5d5;
-}
-#alphabeticPaginator ul li a:hover {
-  background-color: #eee;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -719,31 +867,25 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   viewer Controls
-   style declarations for viewImageControls.xhtml
+   User Comments
+   style declarations for viewImageComments.xhtml
    ==============================================================*/
-.viewer-control.page-browse {
-  line-height: 30px;
+#viewImageComments {
+  /* ADD COMMENT */
+  /* EXSITING COMMENTS */
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Image Controls
-   ==============================================================*/
-/* CONTROLS */
-/* BLOCK */
-.image-controls {
-  /* ELEMENT */
+#viewImageComments .comments-elem {
+  border: 1px solid #507ebf;
 }
-.image-controls [data-toggle="mobile-image-controls"] {
-  padding: 19px 0;
+#viewImageComments .comments-elem .comments-gravatar {
+  background-color: #507ebf;
 }
-/* BLOCK */
-.image-control {
-  /* ELEMENT */
-  /* ELEMENT */
+#viewImageComments .comments-elem .comments-content .comments-header {
+  color: #fff;
+  background-color: #507ebf;
+}
+#viewImageComments .comments-elem .comments-content .comments-header .comments-delete-btn {
+  color: #507ebf;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -781,126 +923,11 @@ strong {
   }
 }
 /* ==============================================================
-   User Comments
-   style declarations for viewImageComments.xhtml
+   viewer Controls
+   style declarations for viewImageControls.xhtml
    ==============================================================*/
-#viewImageComments {
-  /* ADD COMMENT */
-  /* EXSITING COMMENTS */
-}
-#viewImageComments .comments-elem {
-  border: 1px solid #507ebf;
-}
-#viewImageComments .comments-elem .comments-gravatar {
-  background-color: #507ebf;
-}
-#viewImageComments .comments-elem .comments-content .comments-header {
-  color: #fff;
-  background-color: #507ebf;
-}
-#viewImageComments .comments-elem .comments-content .comments-header .comments-delete-btn {
-  color: #507ebf;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   ePubs
-   style declarations for ePub.xhtml
-   ==============================================================*/
-#ePubWrapper {
-  padding: 10px;
-  border: 1px solid #507ebf;
-}
-#ePubWrapper ul {
-  border-top: 1px solid #d5d5d5;
-  border-bottom: 1px solid #d5d5d5;
-}
-#ePubWrapper ul li {
-  min-height: 0;
-  padding: 5px 0;
-  border-bottom: 1px solid #d5d5d5;
-}
-#ePubWrapper ul li:last-child {
-  border-bottom: none;
-}
-#ePubWrapper ul li .dl-horizontal {
-  min-height: 0;
-  margin: 0;
-}
-#ePubWrapper ul li .dl-horizontal dt a img {
-  height: 16px;
-  margin-top: -2px;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Responsive Column Gallery
-   style declarations for responsiveColumnGallery.xhtml
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Datatable Paginator
-   style declarations for dataTablePaginator.xhtml
-   ==============================================================*/
-/* DATATABLE PAGINATOR */
-/* BLOCK */
-.data-table-paginator {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Sorting Dropdown
-   style declarations for searchSortingDropdown.xhtml
-   ==============================================================*/
-#searchSortingDropdown {
-  border-color: #d5d5d5;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Normdata
-   style declarations for normdata.xhtml 
-   ==============================================================*/
-.normdataLink,
-.normdataDetailLink {
-  color: #69a7ef;
-}
-.normdata-popover {
-  font-size: 13px;
-  border: 1px solid #507ebf;
-}
-.normdata-popover .normdata-popover-title {
-  color: #fff;
-  background-color: #507ebf;
-  border-bottom: 1px solid #d5d5d5;
-}
-.normdata-popover .normdata-popover-title .normdata-popover-close {
-  color: #fff;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Help text
-   style declarations for searchHelpText.xhtml
-   ==============================================================*/
-/* SEARCH HELP TEXT */
-/* BLOCK */
-#searchHelpAccordion {
-  /* ELEMENT */
+.viewer-control.page-browse {
+  line-height: 30px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1100,6 +1127,14 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Privacy
+   style declarations for privacy.xhtml
+   ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Statistics
    style declarations for statistics.xhtml
    ==============================================================*/
@@ -1121,15 +1156,54 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+/* SEARCH VIEWS */
 /* ==============================================================
-   Privacy
-   style declarations for privacy.xhtml
+   Search Advanced
+   style declarations for searchAdvanced.xhtml 
    ==============================================================*/
+/* SAERCH ADVANCED */
+/* BLOCK */
+.search-advanced {
+  /* ELEMENT */
+}
+/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
-/* SEARCH VIEWS */
+/* ==============================================================
+   Search Calendar
+   style declarations for searchCalendar.xhtml 
+   ==============================================================*/
+/* BLOCK */
+.search-calendar {
+  /* ELEMENT */
+  /* MODIFICATION */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   SearchList
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST */
+/* VARIABLES */
+/* BLOCK */
+.search-list {
+  /* ELEMENT */
+  /* LINKS */
+  /* SORTING */
+  /* ADVANCED SEARCH INFO */
+  /* HITS */
+}
+/* MODIFICATION */
+/* STACKED MV THUMBNAIL */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Search Standard
    style declarations for searchOptions.xhtml 
@@ -1158,47 +1232,12 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Search Advanced
-   style declarations for searchAdvanced.xhtml 
-   ==============================================================*/
-/* SAERCH ADVANCED */
-/* BLOCK */
-.search-advanced {
-  /* ELEMENT */
-}
-/* MODIFICATION */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   SearchList
-   style declarations for searchList.xhtml
-   ==============================================================*/
-/* SEARCH LIST */
-/* VARIABLES */
-/* BLOCK */
-.search-list {
-  /* ELEMENT */
-  /* LINKS */
-  /* SORTING */
-  /* ADVANCED SEARCH INFO */
-  /* HITS */
-}
-/* MODIFICATION */
-/* STACKED MV THUMBNAIL */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Search Calendar
-   style declarations for searchCalendar.xhtml 
+   SearchTermList
+   style declarations for searchTermList.xhtml
    ==============================================================*/
 /* BLOCK */
-.search-calendar {
+.search-termlist {
   /* ELEMENT */
-  /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1217,43 +1256,7 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   SearchTermList
-   style declarations for searchTermList.xhtml
-   ==============================================================*/
-/* BLOCK */
-.search-termlist {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
 /* USER VIEWS */
-/* ==============================================================
-   User Backend Tables
-   style declarations for user backend tables
-   ==============================================================*/
-.user-backend-table {
-  border-top: 1px solid #d5d5d5;
-  border-bottom: 1px solid #d5d5d5;
-}
-.user-backend-table thead tr th {
-  border-right: 1px solid #d5d5d5;
-  border-left: 1px solid #d5d5d5;
-}
-.user-backend-table tbody tr td {
-  border-right: 1px solid #d5d5d5;
-  border-left: 1px solid #d5d5d5;
-}
-.user-backend-table tbody tr td .btn {
-  margin-bottom: 0;
-}
-/* data table styles */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    User
    style declarations for user.xhtml
@@ -1296,6 +1299,32 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   User Account Create
+   style declarations for userAccountCreate.xhtml
+   ==============================================================*/
+/* USER ACCOUNT CREATE */
+/* BLOCK */
+.user-account-create {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   User Account Retrieve
+   style declarations for userAccountRetrieve.xhtml
+   ==============================================================*/
+/* USER ACCOUNT RETRIEVE */
+/* BLOCK */
+.user-account-retrieve {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    User Activity
    style declarations for userBackendActivity.xhtml
    ==============================================================*/
@@ -1309,6 +1338,30 @@ strong {
 .user-activity {
   /* ELEMENT */
 }
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   User Backend Tables
+   style declarations for user backend tables
+   ==============================================================*/
+.user-backend-table {
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+.user-backend-table thead tr th {
+  border-right: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
+}
+.user-backend-table tbody tr td {
+  border-right: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
+}
+.user-backend-table tbody tr td .btn {
+  margin-bottom: 0;
+}
+/* data table styles */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1348,6 +1401,19 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   User Bookshelf Send List
+   style declarations for userBookshelfSendList.xhtml
+   ==============================================================*/
+/* USER BOOKSHELF SEND LIST */
+/* BLOCK */
+.user-bookshelf-send-list {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    User view Bookshelf
    style declarations for userBackendViewBookshelf.xhtml
    ==============================================================*/
@@ -1377,6 +1443,19 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWS */
+/* ==============================================================
+   View Download
+   style declarations for viewDownload.xhtml
+   ==============================================================*/
+/* DOWNLOAD */
+/* BLOCK */
+.download {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    View Image Fullscreen
    style declarations for viewImageFullscreen.xhtml 
@@ -1524,124 +1603,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   View Preview
-   style declarations for viewPreview.xhtml 
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Thumbs
-   style declarations for viewThumbs.xhtml 
-   ==============================================================*/
-#viewThumbsWrapper .thumb-element {
-  border: 1px solid #d5d5d5;
-}
-#viewThumbsWrapper .thumb-element:hover {
-  background-color: #eee;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Timematrix
-   style declarations for viewTimematrix.xhtml
-   ==============================================================*/
-#timeMatrix .timematrix-selection {
-  padding: 52px 50px 10px 39px;
-  border: 1px solid #507ebf;
-}
-#timeMatrix .timematrix-selection #slider-range .ui-slider-handle {
-  background-color: #507ebf;
-}
-#timeMatrix .btn {
-  margin-right: -40px;
-}
-#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb {
-  border-color: #d5d5d5;
-}
-#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb:hover {
-  border-color: #507ebf;
-}
-#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb.marker:before {
-  border-color: transparent transparent #507ebf transparent;
-}
-.timematrix-popover {
-  border-color: #507ebf;
-  background-color: #507ebf;
-}
-.timematrix-popover .timematrix-popover-header {
-  padding: 5px 10px;
-  color: #fff;
-  border-bottom-color: #507ebf;
-}
-.timematrix-popover .timematrix-popover-header h4 {
-  line-height: 1.7;
-}
-.timematrix-popover .timematrix-popover-footer {
-  font-size: 13px;
-  border-top-color: #d5d5d5;
-}
-.timematrix-popover .timematrix-popover-footer a {
-  color: #fff;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Toc
-   style declarations for viewToc.xhtml
-   ==============================================================*/
-/* VIEW TOC */
-/* BLOCK */
-.toc {
-  /* MULTI VOLUME TOC */
-  /* ELEMENT */
-  /* TOC TREEVIEW */
-  /* ELEMENT */
-  /* EXPAND ALL */
-  /* TOC EXPANDABLE */
-  /* TOC FULL */
-}
-.toc__mv-element {
-  padding: 10px 0;
-  border-bottom: 1px solid #d5d5d5;
-  transition: all 0s linear;
-}
-.toc__mv-element:hover {
-  background-color: #eee;
-}
-.toc__mv-element.level-0 h4 {
-  display: none;
-}
-.toc__mv-element-img {
-  text-align: right;
-}
-.toc__mv-element-img img {
-  display: inline-block;
-}
-/* DOWNLOAD MODAL */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Download
-   style declarations for viewDownload.xhtml
-   ==============================================================*/
-/* DOWNLOAD */
-/* BLOCK */
-.download {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    View Reading Mode
    style declarations for viewReadingMode.xhtml 
    ==============================================================*/
@@ -1777,6 +1738,103 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Thumbs
+   style declarations for viewThumbs.xhtml 
+   ==============================================================*/
+#viewThumbsWrapper .thumb-element {
+  border: 1px solid #d5d5d5;
+}
+#viewThumbsWrapper .thumb-element:hover {
+  background-color: #eee;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Timematrix
+   style declarations for viewTimematrix.xhtml
+   ==============================================================*/
+#timeMatrix .timematrix-selection {
+  padding: 52px 50px 10px 39px;
+  border: 1px solid #507ebf;
+}
+#timeMatrix .timematrix-selection #slider-range .ui-slider-handle {
+  background-color: #507ebf;
+}
+#timeMatrix .btn {
+  margin-right: -40px;
+}
+#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb {
+  border-color: #d5d5d5;
+}
+#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb:hover {
+  border-color: #507ebf;
+}
+#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb.marker:before {
+  border-color: transparent transparent #507ebf transparent;
+}
+.timematrix-popover {
+  border-color: #507ebf;
+  background-color: #507ebf;
+}
+.timematrix-popover .timematrix-popover-header {
+  padding: 5px 10px;
+  color: #fff;
+  border-bottom-color: #507ebf;
+}
+.timematrix-popover .timematrix-popover-header h4 {
+  line-height: 1.7;
+}
+.timematrix-popover .timematrix-popover-footer {
+  font-size: 13px;
+  border-top-color: #d5d5d5;
+}
+.timematrix-popover .timematrix-popover-footer a {
+  color: #fff;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Toc
+   style declarations for viewToc.xhtml
+   ==============================================================*/
+/* VIEW TOC */
+/* BLOCK */
+.toc {
+  /* MULTI VOLUME TOC */
+  /* ELEMENT */
+  /* TOC TREEVIEW */
+  /* ELEMENT */
+  /* EXPAND ALL */
+  /* TOC EXPANDABLE */
+  /* TOC FULL */
+}
+.toc__mv-element {
+  padding: 10px 0;
+  border-bottom: 1px solid #d5d5d5;
+  transition: all 0s linear;
+}
+.toc__mv-element:hover {
+  background-color: #eee;
+}
+.toc__mv-element.level-0 h4 {
+  display: none;
+}
+.toc__mv-element-img {
+  text-align: right;
+}
+.toc__mv-element-img img {
+  display: inline-block;
+}
+/* DOWNLOAD MODAL */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* WIDGETS */
 /* ==============================================================
    Widgets
@@ -1808,6 +1866,26 @@ strong {
    Widget Admin
    style declarations for widget_admin.xhtml
    ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Widget Bookshelf List
+   style declarations for widget_bookshelfList.xhtml
+   ==============================================================*/
+/* WIDGET BOOKSHELF LIST */
+/* BLOCK */
+.widget-bookshelf-list {
+  /* BACK */
+}
+.widget-bookshelf-list ul {
+  margin-bottom: 15px;
+}
+.widget-bookshelf-list__back {
+  padding-top: 10px;
+  border-top: 1px solid #d5d5d5;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1883,9 +1961,28 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Widget Custom Drilldown
+   style declarations for widget_customDrillDown.xhtml
+   ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Widget Downloads
    style declarations for widget_downloads.xhtml
    ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Widget Geo Locations
+   style declarations for widget_geoLocations.xhtml
+   ==============================================================*/
+.widget-geo-locations {
+  /* CMS BACKEND WIDGET */
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1920,6 +2017,47 @@ strong {
    Widget my Searches
    style declarations for widget_mySearches.xhtml
    ==============================================================*/
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Widget NER Facetting
+   style declarations for widget_nerFacetting.xhtml
+   ==============================================================*/
+#widgetNerFacetting {
+  border: 1px solid #d5d5d5;
+}
+#widgetNerFacetting h3 {
+  margin: 0;
+  padding: 5px 10px;
+  font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
+  font-size: 14px;
+  color: #fff;
+  border-bottom: 1px solid #507ebf;
+  background-color: #507ebf;
+}
+#widgetNerFacetting .facetting-content .nav-tabs li a {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+/* OVERVIEW & SECTION */
+#overview,
+#section {
+  border: none;
+}
+/* OVERVIEW */
+#overview .current-tags .page-tag.person {
+  color: #0174DF;
+}
+#overview .current-tags .page-tag.location {
+  color: #FF8000;
+}
+#overview .current-tags .page-tag.corporation {
+  color: #298A08;
+}
+/* SECTION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -2106,47 +2244,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Widget NER Facetting
-   style declarations for widget_nerFacetting.xhtml
-   ==============================================================*/
-#widgetNerFacetting {
-  border: 1px solid #d5d5d5;
-}
-#widgetNerFacetting h3 {
-  margin: 0;
-  padding: 5px 10px;
-  font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
-  font-size: 14px;
-  color: #fff;
-  border-bottom: 1px solid #507ebf;
-  background-color: #507ebf;
-}
-#widgetNerFacetting .facetting-content .nav-tabs li a {
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #d5d5d5;
-}
-/* OVERVIEW & SECTION */
-#overview,
-#section {
-  border: none;
-}
-/* OVERVIEW */
-#overview .current-tags .page-tag.person {
-  color: #0174DF;
-}
-#overview .current-tags .page-tag.location {
-  color: #FF8000;
-}
-#overview .current-tags .page-tag.corporation {
-  color: #298A08;
-}
-/* SECTION */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    Widget Work Count
    style declarations for widget_workCount.xhtml
    ==============================================================*/
@@ -2156,17 +2253,6 @@ strong {
   padding: 10px;
   border: 1px solid #d5d5d5;
   border-top: none;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Widget Geo Locations
-   style declarations for widget_geoLocations.xhtml
-   ==============================================================*/
-.widget-geo-locations {
-  /* CMS BACKEND WIDGET */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

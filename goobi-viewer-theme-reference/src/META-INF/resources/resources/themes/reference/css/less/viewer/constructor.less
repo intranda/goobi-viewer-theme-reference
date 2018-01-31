@@ -1,10 +1,10 @@
 /***************************************************************
- * viewer custom Stylesheet v3.1.0
+ * viewer custom Stylesheet v3.4.0
  * 
  * Write {LESS}, do more!
  *
  * This file overwrites the basic style declarations for the
- * intranda viewer (<themeName>.css)
+ * Goobi viewer
  **************************************************************/
 /* CORE VARIABLES AND MIXINS */
 @import "../variables.less";
@@ -16,30 +16,32 @@
 @import "../print.less";
 
 /* BASIC COMPONENTS */
+@import "components/buttons.less";
 @import "components/icons.less";
 @import "components/forms.less";
-@import "components/buttons.less";
 @import "components/modals.less";
 
 /* VIEWER COMPONENTS */
-@import "components/navigation.less";
-@import "components/mobileToggleWrapper.less";
-@import "components/mobileNavigation.less";
-@import "components/changeLocal.less";
-@import "components/breadcrumbs.less";
 @import "components/alphabeticPaginator.less";
+@import "components/breadcrumbs.less";
+@import "components/changeLocal.less";
+@import "components/dataTablePaginator.less";
+@import "components/downloadModal.less";
+@import "components/ePub.less";
+@import "components/imageControls.less";
+@import "components/loginNavigation.less";
+@import "components/mobileNavigation.less";
+@import "components/mobileToggleWrapper.less";
+@import "components/navigation.less";
+@import "components/normdata.less";
+@import "components/responsiveColumnGallery.less";
+@import "components/searchHelpText.less";
+@import "components/searchSortingDropdown.less";
 @import "components/simplePaginator.less";
 @import "components/title.less";
-@import "components/viewerControls.less";
-@import "components/imageControls.less";
-@import "components/userGeneratedContent.less";
 @import "components/userComments.less";
-@import "components/ePub.less";
-@import "components/responsiveColumnGallery.less";
-@import "components/dataTablePaginator.less";
-@import "components/searchSortingDropdown.less";
-@import "components/normdata.less";
-@import "components/searchHelpText.less";
+@import "components/userGeneratedContent.less";
+@import "components/viewerControls.less";
 
 /* ADMIN VIEWS */
 @import "views/admin/admin.less";
@@ -54,46 +56,50 @@
 @import "views/common/browse.less";
 @import "views/common/error.less";
 @import "views/common/feedback.less";
+@import "views/common/privacy.less";
 @import "views/common/statistics.less";
 @import "views/common/styles.less";
-@import "views/common/privacy.less";
 
 /* SEARCH VIEWS */
-@import "views/search/searchStandard.less";
 @import "views/search/searchAdvanced.less";
-@import "views/search/searchList.less";
 @import "views/search/searchCalendar.less";
-@import "views/search/searchTimeline.less";
+@import "views/search/searchList.less";
+@import "views/search/searchStandard.less";
 @import "views/search/searchTermList.less";
+@import "views/search/searchTimeline.less";
 
 /* USER VIEWS */
-@import "views/user/userBackendTable.less";
 @import "views/user/user.less";
+@import "views/user/userAccountCreate.less";
+@import "views/user/userAccountRetrieve.less";
 @import "views/user/userActivity.less";
+@import "views/user/userBackendTable.less";
 @import "views/user/userBookshelf.less";
 @import "views/user/userBookshelfEdit.less";
 @import "views/user/userBookshelfOther.less";
+@import "views/user/userBookshelfSendList.less";
 @import "views/user/userBookshelfSingle.less";
 @import "views/user/userData.less";
 @import "views/user/userSavedSearches.less";
 
 /* VIEWS */
+@import "views/viewDownload.less";
 @import "views/viewFullscreen.less";
 @import "views/viewFulltext.less";
 @import "views/viewImage.less";
 @import "views/viewMetadata.less";
 @import "views/viewNerFacetting.less";
 @import "views/viewOverview.less";
-@import "views/viewPreview.less";
+@import "views/viewReadingMode.less";
 @import "views/viewThumbs.less";
 @import "views/viewTimematrix.less";
 @import "views/viewToc.less";
-@import "views/viewDownload.less";
-@import "views/viewReadingMode.less";
 
 /* WIDGETS */
 @import "widgets/widgets.less";
+
 @import "widgets/widgetAdmin.less";
+@import "widgets/widgetBookshelfList.less";
 @import "widgets/widgetBookshelves.less";
 @import "widgets/widgetBrowsing.less";
 @import "widgets/widgetCms.less";
@@ -101,9 +107,12 @@
 @import "widgets/widgetConvolutes.less";
 @import "widgets/widgetCrowdsourcing.less";
 @import "widgets/widgetCustom.less";
+@import "widgets/widgetCustomDrillDown.less";
 @import "widgets/widgetDownloads.less";
+@import "widgets/widgetGeoLocations.less";
 @import "widgets/widgetMetadata.less";
 @import "widgets/widgetMySearches.less";
+@import "widgets/widgetNerFacetting.less";
 @import "widgets/widgetRSS.less";
 @import "widgets/widgetSearchDrillDown.less";
 @import "widgets/widgetSearchField.less";
@@ -114,9 +123,7 @@
 @import "widgets/widgetUser.less";
 @import "widgets/widgetVersionHistory.less";
 @import "widgets/widgetViews.less";
-@import "widgets/widgetNerFacetting.less";
 @import "widgets/widgetWorkCount.less";
-@import "widgets/widgetGeoLocations.less";
 
 /* CMS COMPONENTS */
 @import "cms/components/collectionTiled.less";

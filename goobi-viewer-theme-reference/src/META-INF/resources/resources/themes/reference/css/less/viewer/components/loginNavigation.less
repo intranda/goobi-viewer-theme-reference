@@ -1,0 +1,69 @@
+/* ==============================================================
+   Login Navigation
+   style declarations for loginNavigation.xhtml
+   ==============================================================*/
+/* LOGIN NAVIGATION */
+/* BLOCK */
+.login-navigation {
+	/* ELEMENT */
+	/* LOGIN DROPDOWN */
+	&__login-dropdown {
+		li {
+			&:hover {}
+		}
+		a, button {}
+		.control-label {}
+		.form-control {}
+	}
+	&__user-icon {
+		/* MODIFICATION */
+		&--loggedout {
+			.fa {}
+		}
+		&--loggedin {
+			.fa {}
+		}
+	}
+	&__login-dropdown-action {
+		.btn {}
+	}
+	&__login-dropdown-options {
+		li {
+			&:hover {}
+		}
+		a, button {}
+		a {}
+	}
+	&__open-id {
+		h3 {}
+		li {
+			a {}
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+	}
+	/* USER DROPDOWN */
+	&__user-dropdown {
+		ul {}
+		li {
+			&:last-child {}
+			.fa {}
+			.col-xs-2 {}
+		}
+		a {}
+		.btn {}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {} 
