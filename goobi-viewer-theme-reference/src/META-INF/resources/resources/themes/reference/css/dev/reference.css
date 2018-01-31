@@ -479,6 +479,79 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Bookshelves
+   style declarations for all bookshelf actions,
+   ==============================================================*/
+/* BOOKSHELF NAVIGATION */
+/* BLOCK */
+.bookshelf-navigation {
+  float: right;
+  width: 100px;
+  max-height: 28px;
+  margin-left: .4375rem;
+  /* ELEMENT */
+}
+.bookshelf-navigation__dropdown-wrapper button {
+  width: 100%;
+}
+.bookshelf-navigation__dropdown {
+  font-size: 14px;
+  text-align: left;
+  color: #000;
+}
+.bookshelf-navigation__dropdown a,
+.bookshelf-navigation__dropdown button {
+  color: #000;
+}
+.bookshelf-navigation__dropdown a:hover,
+.bookshelf-navigation__dropdown button:hover,
+.bookshelf-navigation__dropdown a:active,
+.bookshelf-navigation__dropdown button:active,
+.bookshelf-navigation__dropdown a:focus,
+.bookshelf-navigation__dropdown button:focus {
+  color: #507ebf;
+}
+.bookshelf-navigation__dropdown-list li {
+  display: block;
+  height: auto;
+  line-height: normal;
+}
+.bookshelf-navigation__dropdown-list h4 {
+  margin: 0;
+  line-height: normal;
+  font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.bookshelf-navigation__dropdown-list-reset [data-bookshelf-type="reset"],
+.bookshelf-navigation__dropdown-list-send [data-bookshelf-type="reset"],
+.bookshelf-navigation__dropdown-list-reset a,
+.bookshelf-navigation__dropdown-list-send a {
+  color: #000;
+}
+.bookshelf-navigation__dropdown-list-reset [data-bookshelf-type="reset"]:hover,
+.bookshelf-navigation__dropdown-list-send [data-bookshelf-type="reset"]:hover,
+.bookshelf-navigation__dropdown-list-reset a:hover,
+.bookshelf-navigation__dropdown-list-send a:hover,
+.bookshelf-navigation__dropdown-list-reset [data-bookshelf-type="reset"]:active,
+.bookshelf-navigation__dropdown-list-send [data-bookshelf-type="reset"]:active,
+.bookshelf-navigation__dropdown-list-reset a:active,
+.bookshelf-navigation__dropdown-list-send a:active,
+.bookshelf-navigation__dropdown-list-reset [data-bookshelf-type="reset"]:focus,
+.bookshelf-navigation__dropdown-list-send [data-bookshelf-type="reset"]:focus,
+.bookshelf-navigation__dropdown-list-reset a:focus,
+.bookshelf-navigation__dropdown-list-send a:focus {
+  color: #507ebf;
+}
+/* POPUPS */
+/* BLOCK */
+.bookshelf-popup {
+  /* ELEMENT */
+}
+/* ACTION BUTTONS */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Breadcrumbs
    style declarations for breadcrumbs.xhtml
    ==============================================================*/
@@ -617,8 +690,8 @@ strong {
 /* BLOCK */
 .login-navigation {
   float: right;
-  margin-left: .4375rem;
   max-height: 28px;
+  margin-left: .4375rem;
   /* ELEMENT */
   /* LOGIN DROPDOWN */
   /* USER DROPDOWN */
@@ -1981,11 +2054,13 @@ strong {
   /* BACK */
 }
 .widget-bookshelf-list ul {
-  margin-bottom: 15px;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: none;
 }
 .widget-bookshelf-list__back {
-  padding-top: 10px;
-  border-top: 1px solid #d5d5d5;
+  padding: 10px;
+  border: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

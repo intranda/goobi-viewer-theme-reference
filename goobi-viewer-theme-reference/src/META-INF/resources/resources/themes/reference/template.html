@@ -96,6 +96,9 @@
                                 <ui:fragment rendered="#{navigationHelper.currentPage != 'user'}">
                                     <viewerComponent:loginNavigation />
                                 </ui:fragment>
+                                
+                                <!-- BOOKSHELF NAVIGATION -->
+                                <viewerComponent:bookshelfNavigation />
 
                                 <!-- CHANGE LOCAL -->
                                 <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" showPortuguese="false" showRussian="false" showSpanish="false" />
@@ -201,6 +204,20 @@
         <script type="text/javascript">
             var currentPage = '#{navigationHelper.currentPage}';
             var currentLang = '#{navigationHelper.localeString}';
+            var currentPath = "#{request.contextPath}";
+            var userLoggedIn = #{userBean.loggedIn};
+            var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
+            var watchlistConfig = {
+                root: '#{request.contextPath}',
+    		    msg: {
+    		        resetBookshelves: '#{msg.bookshelf_reset}',
+    		        resetBookshelvesConfirm: '#{msg.bookshelf_resetConfirm}',
+    		        saveItemToSession: '#{msg.bookshelf_saveItemToSession}',
+    		        noItemsAvailable: '#{msg.bookshelf_noItemsAvailable}',
+    		        selectBookshelf: '#{msg.bookshelf_selectBookShelf}',
+    		        addNewBookshelf: '#{msg.bookshelf_addNewBookShelf}'
+    		    }
+            };
         </script>
         <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>        
     </f:view>

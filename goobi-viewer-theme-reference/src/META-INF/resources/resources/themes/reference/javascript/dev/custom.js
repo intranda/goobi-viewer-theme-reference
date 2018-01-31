@@ -50,6 +50,16 @@ $( document ).ready( function() {
     
     viewerJS.init( viewerConfig );
     
+    // init bookshelves if enabled
+    if ( bookshelvesEnabled ) {
+        if ( userLoggedIn ) {
+            viewerJS.bookshelvesUser.init( watchlistConfig );
+        }
+        else {
+            viewerJS.bookshelvesSession.init( watchlistConfig );
+        }
+    }
+    
     // set content height to window height
     setContentHeight();
     
