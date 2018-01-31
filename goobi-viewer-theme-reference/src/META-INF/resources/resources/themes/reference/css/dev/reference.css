@@ -616,17 +616,114 @@ strong {
 /* LOGIN NAVIGATION */
 /* BLOCK */
 .login-navigation {
+  float: right;
+  margin-left: .4375rem;
+  max-height: 28px;
   /* ELEMENT */
   /* LOGIN DROPDOWN */
   /* USER DROPDOWN */
 }
+.login-navigation__login-dropdown {
+  font-size: 14px;
+  text-align: left;
+  color: #000;
+}
+.login-navigation__login-dropdown .form-group {
+  margin-bottom: 10px;
+}
+.login-navigation__login-dropdown .control-label {
+  margin: 0;
+}
 .login-navigation__user-icon {
   /* MODIFICATION */
+}
+.login-navigation__user-icon--loggedin {
+  width: 28px;
+}
+.login-navigation__user-icon--loggedin img {
+  width: 18px;
+  margin-top: 5px;
+}
+.login-navigation__login-dropdown-action {
+  margin-top: 20px;
+}
+.login-navigation__login-dropdown-options li {
+  display: block;
+  height: auto;
+  line-height: normal;
+}
+.login-navigation__login-dropdown-options a,
+.login-navigation__login-dropdown-options button {
+  color: #000;
+}
+.login-navigation__login-dropdown-options a:hover,
+.login-navigation__login-dropdown-options a:active,
+.login-navigation__login-dropdown-options a:focus {
+  color: #507ebf;
+}
+.login-navigation__open-id h3 {
+  margin: 0;
+  padding: 5px 0 0 0;
+  font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.login-navigation__open-id li a {
+  color: #000;
+}
+.login-navigation__open-id li a:hover,
+.login-navigation__open-id li a:active,
+.login-navigation__open-id li a:focus {
+  color: #507ebf;
+}
+.login-navigation [data-toggle="user-dropdown"] span[class*="col-xs"] {
+  padding: 0;
+}
+.login-navigation [data-toggle="user-dropdown"] span[class*="col-xs"]:first-child {
+  min-width: 85px;
+  max-width: 125px;
+  padding-right: 5px;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.login-navigation__user-dropdown {
+  font-size: 14px;
+  text-align: left;
+  color: #000;
+}
+.login-navigation__user-dropdown li {
+  display: block;
+  height: auto;
+  line-height: normal;
+}
+.login-navigation__user-dropdown li .fa {
+  color: #000;
+}
+.login-navigation__user-dropdown a {
+  color: #000;
+}
+.login-navigation__user-dropdown a:hover,
+.login-navigation__user-dropdown a:active,
+.login-navigation__user-dropdown a:focus {
+  color: #507ebf;
+}
+.login-navigation__user-dropdown .btn {
+  color: #fff;
+}
+.login-navigation__user-dropdown .btn:hover,
+.login-navigation__user-dropdown .btn:active,
+.login-navigation__user-dropdown .btn:focus {
+  color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: 480px) {
+  span.login-navigation__user-icon--loggedin {
+    display: none;
+  }
+}
 /* ==============================================================
    Template Navigation
    style declarations for templateNavigation.xhtml
@@ -748,6 +845,10 @@ strong {
 }
 .navigation .caret {
   color: #fff;
+}
+.navigation__user-login {
+  display: none !important;
+  visibility: hidden !important;
 }
 .navigation__submenu {
   padding: 5px 0;

@@ -93,14 +93,19 @@
                         <div class="col-xs-6 col-sm-7">
                             <!-- TOP NAV -->
                             <nav class="top-header__nav">
+                                <!-- LOGIN NAVIGATION -->
+                                <ui:fragment rendered="#{navigationHelper.currentPage != 'user'}">
+                                    <viewerComponent:loginNavigation />
+                                </ui:fragment>
+
                                 <!-- CHANGE LOCAL -->
                                 <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" showPortuguese="false" showRussian="false" showSpanish="false" />
 
                                 <!-- LINKS -->
-                                <templateComponent:topNav />
-                                
+                                <templateComponent:topNav />                                
+
                                 <div class="clearfix"></div>
-                            </nav>                        
+                            </nav>                            
                         </div>
                     </div>
                     

@@ -5,14 +5,25 @@
 /* LOGIN NAVIGATION */
 /* BLOCK */
 .login-navigation {
+	float: right;
+	margin-left: .4375rem;
+	max-height: 28px;;
 	/* ELEMENT */
 	/* LOGIN DROPDOWN */
 	&__login-dropdown {
+		font-size: 14px;
+		text-align: left;
+		color: @black;
 		li {
 			&:hover {}
 		}
 		a, button {}
-		.control-label {}
+		.form-group {
+			margin-bottom: 10px;
+		}
+		.control-label {
+			margin: 0;
+		}
 		.form-control {}
 	}
 	&__user-icon {
@@ -21,38 +32,98 @@
 			.fa {}
 		}
 		&--loggedin {
-			.fa {}
+			width: 28px;
+			img {
+				width: 18px;
+    			margin-top: 5px;
+			}
 		}
 	}
 	&__login-dropdown-action {
+		margin-top: 20px;
 		.btn {}
 	}
 	&__login-dropdown-options {
 		li {
+			display: block;
+			height: auto;
+			line-height: normal;
 			&:hover {}
 		}
-		a, button {}
-		a {}
-	}
-	&__open-id {
-		h3 {}
-		li {
-			a {}
+		a, button {
+			color: @black;
+		}
+		a {
 			&:hover,
 			&:active,
-			&:focus {}
+			&:focus {
+				color: @blue;
+			}
+		}
+	}
+	&__open-id {
+		h3 {
+			margin: 0;
+			padding: 5px 0 0 0;
+			font-family: @fontSansSerif;
+			font-size: 14px;
+		}
+		li {
+			a {
+				color: @black;
+				&:hover,
+				&:active,
+				&:focus {
+					color: @blue;
+				}
+			}
 		}
 	}
 	/* USER DROPDOWN */
+	[data-toggle="user-dropdown"] {
+		span[class*="col-xs"] {
+			padding: 0;
+			&:first-child {
+				min-width: 85px;
+    			max-width: 125px;
+				padding-right: 5px;
+    			text-align: right;
+			    text-overflow: ellipsis;
+			    overflow: hidden;
+			}
+		}
+	}
 	&__user-dropdown {
+		font-size: 14px;
+		text-align: left;
+		color: @black;
 		ul {}
 		li {
+			display: block;
+			height: auto;
+			line-height: normal;
 			&:last-child {}
-			.fa {}
+			.fa {
+				color: @black;
+			}
 			.col-xs-2 {}
 		}
-		a {}
-		.btn {}
+		a {
+			color: @black;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @blue;
+			}
+		}
+		.btn {
+			color: @white;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @white;
+			}
+		}
 	}
 }
 
@@ -66,4 +137,8 @@
 @media screen and (max-width: @smallBreakpoint) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {} 
+@media screen and (max-width: @xSmallBreakpoint) {
+	span.login-navigation__user-icon--loggedin {
+		display: none;
+	}
+} 
