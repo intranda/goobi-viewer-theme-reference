@@ -8,9 +8,9 @@
 
 		<locale-config>
 			<default-locale>de</default-locale>
-			<supported-locale>en</supported-locale>			
-			<supported-locale>de</supported-locale>			
-			<supported-locale>es</supported-locale>			
+			<supported-locale>en</supported-locale>
+			<supported-locale>de</supported-locale>
+			<supported-locale>es</supported-locale>
 		</locale-config>
 
 	</application>
