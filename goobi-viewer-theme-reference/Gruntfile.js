@@ -16,6 +16,9 @@ module.exports = function(grunt) {
             development: {
                 options: {
                     paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>' ],
+                    plugins: [
+                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"] } )
+                    ],
                     compress: false,
                     optimization: 9
                 },
@@ -27,6 +30,9 @@ module.exports = function(grunt) {
             production: {
                 options: {
                     paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>'  ],
+                    plugins: [
+                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"] } )
+                    ],
                     compress: true,
                     sourceMap: true,
                     banner: '/*!\n ============================================================\n <%= pkg.name %> \n\n Version: <%= pkg.version %> \n License: <%= pkg.license %> \n Author: <%= pkg.author %> \n Description: <%= pkg.description %> \n ============================================================ \n*/',
