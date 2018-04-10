@@ -458,18 +458,10 @@ strong {
    Alphabetic Paginator
    style declarations for alphabeticPaginator.xhtml
    ==============================================================*/
-#alphabeticPaginator ul li.active a {
-  line-height: 32px;
-  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #fff;
-  background-color: #507ebf;
-}
-#alphabeticPaginator ul li a {
-  line-height: 30px;
-  border-color: #d5d5d5;
-}
-#alphabeticPaginator ul li a:hover {
-  background-color: #eee;
+/* ALPHABETIC PAGINATOR */
+/* BLOCK */
+.alphabetic-paginator {
+  /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
