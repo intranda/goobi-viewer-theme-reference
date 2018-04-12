@@ -621,32 +621,13 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   ePubs
+   ePub
    style declarations for ePub.xhtml
    ==============================================================*/
-#ePubWrapper {
-  padding: 10px;
-  border: 1px solid #507ebf;
-}
-#ePubWrapper ul {
-  border-top: 1px solid #d5d5d5;
-  border-bottom: 1px solid #d5d5d5;
-}
-#ePubWrapper ul li {
-  min-height: 0;
-  padding: 5px 0;
-  border-bottom: 1px solid #d5d5d5;
-}
-#ePubWrapper ul li:last-child {
-  border-bottom: none;
-}
-#ePubWrapper ul li .dl-horizontal {
-  min-height: 0;
-  margin: 0;
-}
-#ePubWrapper ul li .dl-horizontal dt a img {
-  height: 16px;
-  margin-top: -2px;
+/* EPUB */
+/* BLOCK */
+.e-pub {
+  /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
