@@ -378,19 +378,11 @@ strong {
    Simple (Numeric) Paginator
    style declarations for simplePaginator.xhtml
    ==============================================================*/
-#numeric_paginator_nav ul li a,
-#numeric_paginator_nav ul li span {
-  line-height: 30px;
-  border-color: #d5d5d5;
-}
-#numeric_paginator_nav ul li a:hover {
-  background-color: #eee;
-}
-#numeric_paginator_nav ul li.paginator-active span {
-  line-height: 32px;
-  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #fff;
-  background-color: #507ebf;
+/* NUMERIC PAGINATOR */
+/* BLOCK */
+.numeric-paginator {
+  /* ELEMENT */
+  /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
