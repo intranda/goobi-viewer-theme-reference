@@ -341,6 +341,10 @@ strong {
   .top-header {
     margin-bottom: 15px;
   }
+  .top-header__logo {
+    display: none !important;
+    visibility: hidden !important;
+  }
   /* CONTENT */
   /* SIDEBAR */
   .page-content #sidebar {
