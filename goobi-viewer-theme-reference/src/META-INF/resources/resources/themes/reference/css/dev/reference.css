@@ -1694,6 +1694,25 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   View Object
+   style declarations for viewObject.xhtml 
+   ==============================================================*/
+/* VIEW OBJECT */
+/* BLOCK */
+.view-object {
+  /* ELEMENT */
+  /* IMAGE */
+  /* IMAGE MOBILE */
+  /* VIDEO, AUDIO, TEXT */
+  /* VIDEO */
+  /* AUDIO */
+  /* TEXT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    View Overview
    style declarations for viewOverview.xhtml 
    ==============================================================*/

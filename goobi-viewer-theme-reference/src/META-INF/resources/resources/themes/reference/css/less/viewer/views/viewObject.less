@@ -1,0 +1,44 @@
+/* ==============================================================
+   View Object
+   style declarations for viewObject.xhtml 
+   ==============================================================*/
+/* VIEW OBJECT */
+/* BLOCK */
+.view-object {
+	/* ELEMENT */
+	/* IMAGE */
+	&__image {}
+	&__image-loader {}
+	&__image-map {
+	    span {}
+	    img {}
+	    .ugcBox {
+	        &.focus {}
+	        &.drawing {}
+	    }
+	}
+	/* IMAGE MOBILE */
+	&__image-mobile {}
+	/* VIDEO, AUDIO, TEXT */
+	&__video,
+	&__audio,
+	&__text {}
+	/* VIDEO */
+	&__video {}
+	/* AUDIO */
+	&__audio {}
+	/* TEXT */
+	&__text {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
