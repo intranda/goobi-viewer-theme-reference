@@ -61,34 +61,8 @@
         
         <!-- VIEW -->
         <div class="reading-mode">
-            <!-- NAVIGATION -->
-            <div class="reading-mode__navigation">
-                <div class="row">
-                    <!-- LOGO -->
-                    <div class="col-xs-3 col-md-2">
-                        <div class="reading-mode__navigation-logo">
-                            <a href="#{request.contextPath}/">
-								<img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="intranda GmbH Logo" />
-	                            <span>Goobi Viewer</span>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- CONTROLS -->
-                    <div class="col-xs-6 col-md-8">
-                        <div class="reading-mode__navigation-controls">
-                            <viewerComponent:imageControls />
-                        </div>
-                    </div>
-                    <!-- GO BACK -->
-                    <div class="col-xs-3 col-md-2">
-                        <div class="reading-mode__navigation-goback">
-                            <h:outputLink value="#{activeDocumentBean.imageUrl}" title="#{msg.readingMode_leave}">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            </h:outputLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- HEADER -->
+            <ui:include src="/resources/includes/readingmode/header.xhtml" />
             
             <!-- CONTENT -->
             <div class="reading-mode__content">
@@ -135,8 +109,22 @@
         
         <!-- CUSTOM JAVASCRIPT -->
         <script type="text/javascript">
-            var currentPage = "#{navigationHelper.currentPage}";
-            var contextPath = "#{request.contextPath}";
+            var currentPage = '#{navigationHelper.currentPage}';
+            var currentLang = '#{navigationHelper.localeString}';
+            var currentPath = "#{request.contextPath}";
+            var userLoggedIn = #{userBean.loggedIn};
+            var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
+            var watchlistConfig = {
+                root: '#{request.contextPath}',
+    		    msg: {
+    		        resetBookshelves: '#{msg.bookshelf_reset}',
+    		        resetBookshelvesConfirm: '#{msg.bookshelf_resetConfirm}',
+    		        saveItemToSession: '#{msg.bookshelf_saveItemToSession}',
+    		        noItemsAvailable: '#{msg.bookshelf_noItemsAvailable}',
+    		        selectBookshelf: '#{msg.bookshelf_selectBookShelf}',
+    		        addNewBookshelf: '#{msg.bookshelf_addNewBookShelf}'
+    		    }
+            };
             
             $( document ).ready( function() {
                 var readingModeConfig = {

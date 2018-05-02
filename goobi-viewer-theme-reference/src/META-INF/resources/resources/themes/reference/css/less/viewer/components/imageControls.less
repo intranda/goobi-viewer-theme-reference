@@ -1,13 +1,11 @@
 /* ==============================================================
    Image Controls
-   Style decalrations for imageControls.xhtml
+   Style declarations for imageControls.xhtml
    ==============================================================*/
 /* CONTROLS */
 /* BLOCK */
-.image-controls,
-.controls {
+.image-controls {
     /* ELEMENT */
-    [data-toggle="mobile-image-controls"] {}
 	/* DOCUMENT OPTIONS */
 	&__options {
 		ul {}
@@ -34,7 +32,7 @@
 			    &:hover {
 			    	span {
 				        .fa-bookmark-o {}
-				        .fa-bookmark {}		    		
+				        .fa-bookmark {}
 			    	}
 			    }
 			}
@@ -44,58 +42,72 @@
 		}
 	}
     /* ACTIONS */
-    &__actions {}
+    &__actions {
+    	ul {}
+	    li {}
+    }
+    &__action {
+	    /* ELEMENT */
+	    a, 
+		span, 
+		button {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		[class*="image-"] {}
+		&.inactive {
+	    	a,
+	    	span,
+	    	button {}
+		}    
+	    /* ELEMENT */
+	    &.start {}
+	    &.page-browse,
+	    &.select {}
+	    &.page-browse {
+	        a, span {}
+	    }
+	    &.back {}
+	    &.select-text {
+	    	span {}
+	    }
+	    &.select {
+	        .form-control__select {
+	            select {}
+	        }
+	    }
+	    &.forward {}
+	    &.end {}
+	    &.double-page-view,
+	    &.single-page-view,
+	    &.switch-pages {
+		    [class*="image-"] {}
+	    }
+	    &.double-page-view {}
+	    &.single-page-view {}
+	    &.switch-pages {
+			[class*="image-"] {}
+	    }
+	    &.rotate-left,
+	    &.rotate-right {
+	    	[class*="image-"] {}
+	    }
+	    &.rotate-left {}
+	    &.rotate-right {}
+	    &.reset {}
+	    &.fullscreen {}
+	    &.zoom-slider {
+	        .zoom-slider {}
+	        .zoom-slider-handle {}
+	    }
+	}
     /* MODIFICATION */
 	.labeltext {}
 }
 
-/* BLOCK */
-.image-control {
-    /* ELEMENT */
-    &.inactive {
-        a, span {}
-        [class^="control-icon-"], 
-        [class*=" control-icon-"] {}
-    }
-    a, span {
-        &:hover {}
-    }
-    [class^="control-icon-"], 
-    [class*=" control-icon-"] {}    
-    /* ELEMENT */
-    &__start {}
-    &__page-browse,
-    &__select {}
-    &__page-browse {
-        a, span {}
-    }
-    &__back {}
-    &__select-text {
-    	span {}
-    }
-    &__select {
-        .form-control__select {
-            select {}
-        }
-    }
-    &__forward {}
-    &__end {}
-    &__double-page-view {}
-    &__single-page-view {}
-    &__switch-pages {}
-    &__rotate-left {}
-    &__rotate-right {}
-    &__reset {}
-    &__fullscreen {}
-    &__zoom-slider {
-        .zoom-slider {}
-        .zoom-slider-handle {}
-    }
-    &__iiif {}
-}
-
 /* BREAKPOINT FOR LARGE DESKTOP */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

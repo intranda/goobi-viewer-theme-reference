@@ -639,19 +639,17 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Image Controls
-   Style decalrations for imageControls.xhtml
+   Style declarations for imageControls.xhtml
    ==============================================================*/
 /* CONTROLS */
 /* BLOCK */
-.image-controls,
-.controls {
+.image-controls {
   /* ELEMENT */
   /* DOCUMENT OPTIONS */
   /* ACTIONS */
   /* MODIFICATION */
 }
-/* BLOCK */
-.image-control {
+.image-controls__action {
   /* ELEMENT */
   /* ELEMENT */
 }
@@ -1776,126 +1774,18 @@ strong {
   /* ELEMENT */
   /* NAVIGATION */
   /* CONTENT */
-  /* TABS */
 }
 .reading-mode__navigation {
-  border-bottom: 2px solid #507ebf;
   background-color: #fff;
-}
-.reading-mode__navigation-logo a {
-  color: #444;
-}
-.reading-mode__navigation-logo a:hover,
-.reading-mode__navigation-logo a:focus,
-.reading-mode__navigation-logo a:active {
-  text-decoration: none;
-}
-.reading-mode__navigation-logo img {
-  max-height: 36px;
-}
-.reading-mode__navigation-controls .image-controls {
-  padding: 18px 0;
-}
-.reading-mode__navigation-goback {
-  padding-top: 13px;
-}
-.reading-mode__navigation-goback a {
-  display: block;
-}
-.reading-mode__navigation-goback .fa {
-  padding: 5px;
+  border-bottom: 2px solid #507ebf;
 }
 .reading-mode__content-sidebar {
   background-color: #fff;
 }
-.reading-mode__content-sidebar-toggle {
-  border: 1px solid #fff;
-  border-right: none;
-  background-color: #507ebf;
-}
 .reading-mode__content-sidebar-toggle button {
   color: #fff;
-}
-.reading-mode__content-sidebar-tabs {
-  border-bottom: 1px solid #d5d5d5;
-  overflow: hidden;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs {
-  position: relative;
-  border-bottom-color: #d5d5d5;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs:before {
-  position: absolute;
-  display: block;
-  bottom: -2px;
-  left: 0;
-  width: 1px;
-  height: 2px;
-  background-color: #d5d5d5;
-  z-index: 2;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs li.active a {
-  border: 1px solid #d5d5d5;
-  border-bottom-color: #fff;
-  border-radius: 0;
-  background-color: #fff;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs li a:hover {
-  border: 1px solid #d5d5d5;
-  border-bottom-color: #fff;
-  border-radius: 0;
-  background-color: #fff;
-}
-.reading-mode__content-sidebar-tabs .nav-tabs li a:focus,
-.reading-mode__content-sidebar-tabs .nav-tabs li a:active {
-  outline: none !important;
-}
-.reading-mode__content-sidebar-tabs .tab-content {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  border-top-color: transparent;
-  background-color: #fff;
-  /* WIDGET TOC */
-}
-.reading-mode__content-sidebar-tabs .tab-content .tab-pane {
-  border: none;
-}
-.reading-mode__content-sidebar-tabs .tab-content .widget {
-  margin: 0;
-  padding: 0;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc {
-  border: none;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title {
-  padding: 5px 0;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:before,
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:after {
-  display: table;
-  content: " ";
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title:after {
-  clear: both;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title h3 {
-  display: none;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title-expand {
-  position: relative;
-  float: right;
-  top: 0;
-  right: 0;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title .widget-toc-title-expand li a {
-  color: #507ebf;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-title-expand a {
-  display: block;
-  padding-left: 5px;
-}
-.reading-mode__content-sidebar-tabs .tab-content #widgetToc .widget-toc-elem-wrapp {
-  border: none;
+  border: 1px solid #fff;
+  background-color: #507ebf;
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */

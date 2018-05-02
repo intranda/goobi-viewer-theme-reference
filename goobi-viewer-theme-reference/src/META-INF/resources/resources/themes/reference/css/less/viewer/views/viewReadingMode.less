@@ -14,37 +14,42 @@
     /* ELEMENT */
     /* NAVIGATION */
     &__navigation {
-        border-bottom: 2px solid @blue;
-        background-color: @white;
+    	background-color: @white;
+    	border-bottom: 2px solid @blue;
     }
-    &__navigation-logo {
-    	a {
-    		color: @darkgray;
-        	&:hover,
-        	&:focus,
-        	&:active {
-        		text-decoration: none;
+    &__nav {
+        &.logo {
+        	a {
+        		&:hover,
+        		&:active,
+        		&:focus {}
         	}
+        	img {}
         }
-    	img {
-    		max-height: 36px;
-    	}
-    }
-    &__navigation-controls {
-    	.image-controls {
-    		padding: 18px 0;
-    	}
-    }
-    &__navigation-goback {
-        padding-top: 13px;
-        a {
-            display: block;
-            &:hover {}
+        &.controls {
+        	[data-toggle="mobile-image-controls"] {}
+	    	.image-controls {
+		    	&__options {}
+		    	&__option {
+		    		a,
+		    		button {
+						&:hover,
+						&:active,
+						&:focus {}
+		    		}
+		    		&.add-to-bookshelf {}
+		    	}
+		    	&__actions {}
+		    	&__action {}
+	    	}        	
         }
-        .fa {
-            padding: 5px;
-            &:hover {}
-        }
+        &.back {
+        	a {
+        		&:hover,
+        		&:active,
+        		&:focus {}
+        	}
+        }    	
     }
     /* CONTENT */
     &__content {}
@@ -55,15 +60,16 @@
     }
     &__content-view-image {}
     &__content-sidebar {
-        background-color: @white;
-        &.in {}
+    	background-color: @white;
+        &.in {
+            .reading-mode__content-sidebar-inner {}
+        }
     }
     &__content-sidebar-toggle {
-        border: 1px solid @white;
-        border-right: none;
-        background-color: @blue;
         button {
-            color: @white;
+        	color: @white;
+        	border: 1px solid @white;
+        	background-color: @blue;
             .fa {}
             .fa-chevron-right {}
             .fa-chevron-left {}
@@ -74,94 +80,6 @@
         }
     }
     &__content-sidebar-inner {}
-    /* TABS */
-    &__content-sidebar-tabs {
-        border-bottom: 1px solid @middlegray;
-        overflow: hidden;
-        .nav-tabs {
-            position: relative;
-            border-bottom-color: @middlegray;
-            &:before {
-                position: absolute;
-                display: block;
-                bottom: -2px;
-                left: 0;
-                width: 1px;
-                height: 2px;
-                background-color: @middlegray;
-                z-index: 2;
-            }
-            li {
-                &.active {
-                    a {
-                        border: 1px solid @middlegray;
-                        border-bottom-color: @white;
-                        border-radius: 0;
-                        background-color: @white;
-                    }
-                }
-                a {
-                    &:hover {
-                        border: 1px solid @middlegray;
-                        border-bottom-color: @white;
-                        border-radius: 0;
-                        background-color: @white;
-                    }
-                    &:focus,
-                    &:active {
-                        outline: none !important;
-                    }
-                }
-            }
-        }
-        .tab-content {
-            padding: 10px;
-            border: 1px solid @middlegray;
-            border-top-color: transparent;
-            background-color: @white;
-            .tab-pane {
-            	border: none;
-            }
-            .widget {
-                margin: 0;
-                padding: 0;
-            }
-            /* WIDGET TOC */
-            #widgetToc {
-                border: none;
-            }
-            #widgetToc .widget-toc-title {
-                padding: 5px 0;
-                &:before,
-                &:after {
-                    display: table;
-                    content: " ";
-                }
-                &:after {
-                    clear: both;
-                }
-            }
-            #widgetToc .widget-toc-title h3 {
-                display: none;
-            }
-            #widgetToc .widget-toc-title-expand {
-                position: relative;
-                float: right;
-                top: 0;
-                right: 0;
-            }
-            #widgetToc .widget-toc-title .widget-toc-title-expand li a {
-                color: @blue;
-            }
-            #widgetToc .widget-toc-title-expand a {
-                display: block;
-                padding-left: 5px;
-            }
-            #widgetToc .widget-toc-elem-wrapp {
-            	border: none;
-            }
-        }
-    }
 }
 
 /* MODIFICATION */
