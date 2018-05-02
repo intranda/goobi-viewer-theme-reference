@@ -3,18 +3,53 @@
    ==============================================================*/
 /* CONTROLS */
 /* BLOCK */
-.image-controls {
+.image-controls,
+.controls {
     /* ELEMENT */
     [data-toggle="mobile-image-controls"] {
     	padding: 19px 0;
     }
-    &__actions {
-	    ul {}
+	/* DOCUMENT OPTIONS */
+	&__options {
+		ul {}
 	    li {}
-	    a {}
-	    span {}
-    }
+	}
+	&__option {
+		a, 
+		span, 
+		button {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		a, button {}
+		&.pdf {}
+		&.fulltext {}
+		&.add-to-bookshelf {
+			[data-bookshelf-type="add"] {
+			    span {
+				    .fa-bookmark-o {}
+				    .fa-bookmark {}
+			    }
+			    &.added, 
+			    &:hover {
+			    	span {
+				        .fa-bookmark-o {}
+				        .fa-bookmark {}		    		
+			    	}
+			    }
+			}
+		}
+		&.iiif {
+			a {}
+		}
+	}
+    /* ACTIONS */
+    &__actions {}
+    /* MODIFICATION */
+	.labeltext {}
 }
+
 /* BLOCK */
 .image-control {
     /* ELEMENT */
@@ -27,8 +62,7 @@
         &:hover {}
     }
     [class^="control-icon-"], 
-    [class*=" control-icon-"] {}
-    .labeltext {}
+    [class*=" control-icon-"] {}    
     /* ELEMENT */
     &__start {}
     &__page-browse,
@@ -57,13 +91,8 @@
     &__zoom-slider {
         .zoom-slider {}
         .zoom-slider-handle {}
-        
     }
-    &__pdf,
-    &__fulltext {
-    	a {}
-    }
-    &__fulltext {}
+    &__iiif {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

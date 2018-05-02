@@ -642,10 +642,15 @@ strong {
    ==============================================================*/
 /* CONTROLS */
 /* BLOCK */
-.image-controls {
+.image-controls,
+.controls {
   /* ELEMENT */
+  /* DOCUMENT OPTIONS */
+  /* ACTIONS */
+  /* MODIFICATION */
 }
-.image-controls [data-toggle="mobile-image-controls"] {
+.image-controls [data-toggle="mobile-image-controls"],
+.controls [data-toggle="mobile-image-controls"] {
   padding: 19px 0;
 }
 /* BLOCK */
