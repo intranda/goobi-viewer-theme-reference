@@ -639,6 +639,7 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Image Controls
+   Style decalrations for imageControls.xhtml
    ==============================================================*/
 /* CONTROLS */
 /* BLOCK */
@@ -649,16 +650,12 @@ strong {
   /* ACTIONS */
   /* MODIFICATION */
 }
-.image-controls [data-toggle="mobile-image-controls"],
-.controls [data-toggle="mobile-image-controls"] {
-  padding: 19px 0;
-}
 /* BLOCK */
 .image-control {
   /* ELEMENT */
   /* ELEMENT */
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR LARGE DESKTOP */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
