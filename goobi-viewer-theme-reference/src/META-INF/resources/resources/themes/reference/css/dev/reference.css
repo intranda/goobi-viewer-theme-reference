@@ -1785,6 +1785,7 @@ strong {
 .reading-mode__content-sidebar-toggle button {
   color: #fff;
   border: 1px solid #fff;
+  border-right: none;
   background-color: #507ebf;
 }
 /* MODIFICATION */
