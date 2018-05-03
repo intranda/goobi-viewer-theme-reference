@@ -1277,6 +1277,18 @@ strong {
    Feedback
    style declarations for feedback.xhtml
    ==============================================================*/
+/* FEEDBACK */
+/* BLOCK */
+.view-feedback {
+  /* ELEMENT */
+}
+.view-feedback .form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.view-feedback .form-group .btn {
+  margin: 0;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
