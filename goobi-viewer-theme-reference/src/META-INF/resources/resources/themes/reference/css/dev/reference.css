@@ -2202,15 +2202,15 @@ strong {
    Widget SearchInCurrentItem
    style declarations for widget_searchInCurrentItem.xhtml
    ==============================================================*/
-#widgetSearchInCurrentItem {
-  border: 1px solid #d5d5d5;
+/* WIDGET SEARCH IN CURRENT ITEM */
+/* BLOCK */
+.widget-search-in-current-item {
+  /* ELEMENT */
 }
-#widgetSearchInCurrentItem .form-group .input-group input {
-  padding: 6px;
-  border: none;
+.widget-search-in-current-item .input-group input {
+  border-right: 0;
 }
-#widgetSearchInCurrentItem .form-group .input-group .input-group-addon {
-  border-radius: 0;
+.widget-search-in-current-item .input-group-addon {
   border-color: #507ebf;
   background-color: #507ebf;
 }
