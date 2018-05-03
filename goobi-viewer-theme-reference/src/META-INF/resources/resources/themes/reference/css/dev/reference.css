@@ -1262,8 +1262,13 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Error
-   style declarations for errorGeneral.xhtml
+   style declarations for error.xhtml
    ==============================================================*/
+/* ERROR */
+/* BLOCK */
+.view-error {
+  /* ELEMENT */
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
