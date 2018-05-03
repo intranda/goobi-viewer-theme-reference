@@ -919,6 +919,24 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   NER Popovers
+   style declarations for NER Popovers in viewFulltext.xhtml 
+   ==============================================================*/
+/* NER POPOVERS */
+.ner-person {
+  color: #0174DF;
+}
+.ner-location {
+  color: #FF8000;
+}
+.ner-institution {
+  color: #298A08;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Normdata
    style declarations for normdata.xhtml 
    ==============================================================*/
@@ -1614,14 +1632,10 @@ strong {
    View Fulltext
    style declarations for viewFulltext.xhtml 
    ==============================================================*/
-.ner-person {
-  color: #0174DF;
-}
-.ner-location {
-  color: #FF8000;
-}
-.ner-institution {
-  color: #298A08;
+/* VIEW FULLTEXT */
+/* BLOCK */
+.view-fulltext {
+  /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
