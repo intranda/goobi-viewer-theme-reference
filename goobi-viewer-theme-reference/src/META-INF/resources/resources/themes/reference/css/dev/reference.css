@@ -2181,21 +2181,18 @@ strong {
    Widget Searchfield
    style declarations for widget_searchField.xhtml
    ==============================================================*/
-#widgetSearchField {
+/* WIDGET SEARCHFIELD */
+/* BLOCK */
+.widget-searchfield {
   margin: 0;
-  border: 1px solid #d5d5d5;
+  /* ELEMENT */
 }
-#widgetSearchField .form-group .input-group input {
-  padding: 6px;
-  border: none;
+.widget-searchfield .input-group input {
+  border-right: 0;
 }
-#widgetSearchField .form-group .input-group .input-group-addon {
-  border-radius: 0;
+.widget-searchfield .input-group-addon {
   border-color: #507ebf;
   background-color: #507ebf;
-}
-#widgetSearchField.widget-searchfield {
-  margin-bottom: 1.3125rem;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

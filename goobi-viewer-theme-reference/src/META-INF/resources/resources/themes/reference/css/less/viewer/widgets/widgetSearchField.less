@@ -2,25 +2,21 @@
    Widget Searchfield
    style declarations for widget_searchField.xhtml
    ==============================================================*/
-#widgetSearchField {
-    margin: 0;
-    border: 1px solid @middlegray;
-    .form-group {
-        .input-group {
-            input {
-                padding: 6px;
-                border: none;            
-            }
-            .input-group-addon {
-                border-radius: 0;
-                border-color: @blue;
-                background-color: @blue;            
-                input {}
-            }
-        }
+/* WIDGET SEARCHFIELD */
+/* BLOCK */
+.widget-searchfield {
+	margin: 0;
+	/* ELEMENT */
+    .form-group {}
+    .input-group {
+    	input {
+    		border-right: 0;
+    	}
     }
-    &.widget-searchfield {
-    	margin-bottom: 1.3125rem;
+    .input-group-addon {
+    	border-color: @blue;
+    	background-color: @blue;
+    	input {}
     }
 }
 
