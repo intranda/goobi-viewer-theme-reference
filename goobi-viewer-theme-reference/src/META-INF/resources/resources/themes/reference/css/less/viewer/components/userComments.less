@@ -1,48 +1,73 @@
 /* ==============================================================
    User Comments
-   style declarations for viewImageComments.xhtml
+   style declarations for userComments.xhtml
    ==============================================================*/
-#viewImageComments {
-    h3 {}
-    a {}    
-    /* ADD COMMENT */
-    .btn.comment-submit {}    
-    /* EXSITING COMMENTS */
-    .comments-elem {
-        border: 1px solid @blue;
-        .comments-gravatar {
-            background-color: @blue;
-            img {}
-        }
-        .comments-content {
-            .comments-header {
-                color: @white;
-                background-color: @blue;
-                .comments-creator {}
-                .comments-date {}
-                .comments-last-change {}
-                .comments-delete-btn {
-                    color: @blue; 
-                    .glyphicon {}
-                }
-            }
-            .comments-comment {
-                .comments-comment-text {}
-                .comments-comment-edit {
-                    .form-group {}
-                    input {}
-                    .btn {}
-                }
-                .comments-edit-comment-btn {
-                    .btn {}
-                }
-            }
-        }
-    }
+/* USER COMMENTS */
+/* BLOCK */
+.user-comments {
+	/* ELEMENT */
+	&__message-login {
+		h3 {}
+		.btn {}
+	}
+	&__comment {}
+	&__comment-image {
+		img {}
+	}
+	&__comment-metadata {
+		span {}
+		&-creator {}
+		&-date {}
+	}
+	&__comment-content {
+		&-options {
+			span {}
+			a, button {
+				&:hover,
+				&:active,
+				&:focus {}
+			}
+			&-last-change {}
+			&-cancel,
+			&-edit,
+			&-save {
+				&.in {}
+			}
+			&-cancel {}
+			&-edit {}
+			&-save {}
+			&-delete {}
+			&-text,
+			&-text-edit {}
+			&-text {
+				&.in {}
+			}
+			&-text-edit {
+				&.in {}
+				textarea {
+					&:focus {}
+				}
+			}
+		}
+	}
+	&__comment-content-loader {}
+	&__add-comment {
+		label {
+			span {}
+		}
+		&-add {
+			textarea {
+				&:focus {}
+			}
+		}
+		&-submit {
+			.btn {}
+		}
+	}	
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

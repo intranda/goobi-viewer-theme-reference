@@ -1018,24 +1018,12 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    User Comments
-   style declarations for viewImageComments.xhtml
+   style declarations for userComments.xhtml
    ==============================================================*/
-#viewImageComments {
-  /* ADD COMMENT */
-  /* EXSITING COMMENTS */
-}
-#viewImageComments .comments-elem {
-  border: 1px solid #507ebf;
-}
-#viewImageComments .comments-elem .comments-gravatar {
-  background-color: #507ebf;
-}
-#viewImageComments .comments-elem .comments-content .comments-header {
-  color: #fff;
-  background-color: #507ebf;
-}
-#viewImageComments .comments-elem .comments-content .comments-header .comments-delete-btn {
-  color: #507ebf;
+/* USER COMMENTS */
+/* BLOCK */
+.user-comments {
+  /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
