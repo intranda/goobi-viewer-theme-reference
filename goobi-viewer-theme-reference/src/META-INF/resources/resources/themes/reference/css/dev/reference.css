@@ -226,6 +226,7 @@ strong {
 }
 .header-actions__search {
   padding: 28px 0 27px 0;
+  padding-left: calc(50% + 15px);
 }
 .header-actions__search-advanced {
   padding-left: 6px;
@@ -302,11 +303,16 @@ strong {
     display: none;
   }
   .header-actions__search {
-    padding: 0;
-  }
-  .header-actions__search-advanced {
-    display: inline-block;
-    margin-bottom: 15px;
+    display: none;
+    position: fixed;
+    top: 52px;
+    right: 0;
+    left: 50%;
+    padding: 15px;
+    border: 1px solid #444;
+    border-top: none;
+    background-color: #fff;
+    z-index: 998;
   }
   /* CONTENT */
   #main {
@@ -344,6 +350,9 @@ strong {
   .top-header__logo {
     display: none !important;
     visibility: hidden !important;
+  }
+  .header-actions__search {
+    left: 0;
   }
   /* CONTENT */
   /* SIDEBAR */
@@ -583,13 +592,13 @@ strong {
     float: none;
     display: none;
     position: fixed;
-    top: 53px;
+    top: 52px;
     right: 10px;
     left: 50%;
     padding: 10px;
     border: 1px solid #444;
     background-color: #fff;
-    z-index: 999;
+    z-index: 998;
   }
   .change-local li {
     display: block;
@@ -838,9 +847,6 @@ strong {
 #mobileToggleWrapper .language.in:before,
 #mobileToggleWrapper .search.in:before {
   border-color: transparent transparent #444 transparent;
-}
-#mobileToggleWrapper .search {
-  display: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
