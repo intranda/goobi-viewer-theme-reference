@@ -129,16 +129,15 @@
                         <div class="col-xs-12 col-sm-6">
                             <div class="header-actions__search">
                                 <!-- SEARCH FIELD -->
-                                <h:panelGroup rendered="#{navigationHelper.currentPage != 'search'}">
-                                    <div class="row">
-                                        <div class="col-xs-6 col-xs-offset-6 header-actions__search-input">
-                                            <widgetComponent:widget_searchField />
-                                        </div>
-                                    </div>                                    
-                                    <div class="row">
-                                        <div class="col-xs-6 col-xs-offset-6 header-actions__search-link">
-                                            <a href="#{navigationHelper.applicationUrl}searchadvanced/" class="header-actions__search-advanced">#{msg.searchAdvanced}</a>
-                                        </div>
+                                <h:panelGroup   
+                                    rendered="#{navigationHelper.currentPage != 'search' and
+                                                navigationHelper.currentPage != 'searchadvanced' and
+                                                navigationHelper.currentPage != 'searchlist'}">
+                                    <div class="header-actions__search-input">
+                                        <widgetComponent:widget_searchField />
+                                    </div>
+                                    <div class="header-actions__search-link">
+                                        <a href="#{navigationHelper.applicationUrl}searchadvanced/" class="header-actions__search-advanced">#{msg.searchAdvanced}</a>
                                     </div>
                                 </h:panelGroup>
                             </div>

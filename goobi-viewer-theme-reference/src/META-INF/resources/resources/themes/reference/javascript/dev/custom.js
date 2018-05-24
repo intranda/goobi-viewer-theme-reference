@@ -7,7 +7,6 @@
  * @method manipulateDom
  */
 function manipulateDom() {
-    $( '#widgetSearchField' ).detach().insertAfter( '.page-content__close-sidebar' );
     $( '.header-actions__search-advanced' ).detach().insertAfter( '#widgetSearchField' );
 }
 
@@ -17,10 +16,8 @@ function manipulateDom() {
  * @method resetDom
  */
 function resetDom() {
-    var searchField = $( '#widgetSearchField' ).detach();
     var advSearch = $( '.header-actions__search-advanced' ).detach();
     
-    $( '.header-actions__search-input' ).append( searchField );
     $( '.header-actions__search-link' ).append( advSearch );
 }
 
@@ -73,6 +70,14 @@ $( document ).ready( function() {
         $( '#sidebar' ).removeClass( 'in' );
         $( '[data-toggle="offcanvas"]' ).removeClass( 'in' );
         $( '.offcanvas-fade' ).removeClass( 'in' );
+    } );
+    
+    // toggle search
+    $( '[data-toggle="search"]' ).off().on( 'click', function() {
+        $( '.btn-toggle.language' ).removeClass( 'in' );
+        $( '#changeLocal' ).hide();
+        $( this ).toggleClass( 'in' );
+        $( '.header-actions__search' ).fadeToggle( 'fast' );
     } );
     
     // change position of search and language
