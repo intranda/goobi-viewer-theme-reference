@@ -1301,6 +1301,19 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Sitelinks
+   style declarations for sitelinks.xhtml
+   ==============================================================*/
+/* SITELINKS */
+/* BLOCK */
+.sitelinks {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Statistics
    style declarations for statistics.xhtml
    ==============================================================*/
