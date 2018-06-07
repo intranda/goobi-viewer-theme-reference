@@ -6,9 +6,7 @@
 .widget-search-drilldown {
 	/* ELEMENT */
 	.widget {
-		ul {
-			border-bottom: none;
-		}
+		ul {}
 		li {
 			&.active {
 				a {
@@ -27,6 +25,8 @@
 	&__groups {}
 	/* COLLAPSE DRILLDOWN */
     &__collapse {
+    	position: relative;
+    	margin-top: -1px;
     	border: 1px solid @middlegray;
     	border-top: none;
         a {

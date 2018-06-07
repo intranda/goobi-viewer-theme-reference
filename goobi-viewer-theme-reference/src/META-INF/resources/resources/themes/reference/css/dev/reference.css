@@ -2165,15 +2165,14 @@ strong {
   /* ELEMENT */
   /* COLLAPSE DRILLDOWN */
 }
-.widget-search-drilldown .widget ul {
-  border-bottom: none;
-}
 .widget-search-drilldown .widget li.active a {
   font-family: 'OpenSansRegular';
   color: #444;
   background-color: #eee;
 }
 .widget-search-drilldown__collapse {
+  position: relative;
+  margin-top: -1px;
   border: 1px solid #d5d5d5;
   border-top: none;
 }
