@@ -1988,6 +1988,19 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Widget Chronology
+   style declarations for widget_chronology.xhtml
+   ==============================================================*/
+/* WIDGET CHRONOLOGY */
+/* BLOCK */
+.widget-chronology-slider {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Widget CMS
    style declarations for widget_cms.xhtml
    ==============================================================*/

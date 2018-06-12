@@ -1,0 +1,51 @@
+/* ==============================================================
+   Widget Chronology
+   style declarations for widget_chronology.xhtml
+   ==============================================================*/
+/* WIDGET CHRONOLOGY */
+/* BLOCK */
+.widget-chronology-slider {
+	/* ELEMENT */
+	&__item {
+		&.chronology-slider-label,
+		&.chronology-slider-actions {}
+		&.chronology-slider-actions {
+			ul {}
+			li {}
+			img {}
+			[data-reset="chrono-slider"] {}
+		}
+		&.chronology-slider-action-loader,
+		&.chronology-slider-action-reset {
+			&.active {}
+		}
+		&.chronology-slider-action-loader {}
+		&.chronology-slider-action-reset {}
+		&.chronology-slider-start,
+		&.chronology-slider-end {}
+		&.chronology-slider-start {}
+		&.chronology-slider-end {}
+		&.chronology-slider {}
+	}
+}
+
+#chronoSlider {
+	.ui-slider-range,
+	.ui-slider-handle {
+        &:focus {}
+	}
+	.ui-slider-range {}
+	.ui-slider-handle {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
