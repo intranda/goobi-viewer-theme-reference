@@ -1,0 +1,39 @@
+/* ==============================================================
+   CMS Template "Glossary"
+   style declarations for cms_template_20_glossary.xhtml
+   ==============================================================*/
+/* TPL GLOSSARY */
+/* BLOCK */
+.tpl-glossary {
+    h1 {}
+    /* ELEMENT */
+    &__text {}
+    &__glossary {
+    	hr {}
+    }
+    &__glossary-title {}
+    &__glossary-description {
+    	p {
+    		&:last-child {}
+    	}
+    }
+    &__glossary-keywords,
+    &__glossary-source {
+    	.fa, strong {}
+    }
+    &__glossary-keywords {}
+    &__glossary-source {}
+	/* MODIFICATION */
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

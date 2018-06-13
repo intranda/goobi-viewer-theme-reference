@@ -1,0 +1,44 @@
+/* ==============================================================
+   CMS Template "FAQ"
+   style declarations for cms_template_21_faq.xhtml
+   ==============================================================*/
+/* FAQ */
+/* BLOCK */
+.tpl-faq {
+	/* ELEMENT */
+	h1 {}
+	&__description {}
+	&__list {
+		.panel {}
+		.panel-heading {
+			&:hover {}
+		}
+		.panel-title {
+			a {
+				&:hover,
+				&:active,
+				&:focus {}
+				.fa {}
+				.fa-chevron-down {}
+				.fa-chevron-up {}
+				&.collapsed {
+					.fa-chevron-down {}
+					.fa-chevron-up {}
+				}
+			}
+		}
+	}
+}
+
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
