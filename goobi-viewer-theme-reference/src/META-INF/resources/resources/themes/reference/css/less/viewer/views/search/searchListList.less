@@ -1,0 +1,38 @@
+/* ==============================================================
+   Searchlist List View
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST LIST */
+/* BLOCK */
+.search-list {
+    /* ELEMENT */
+    /* HITS */
+	&__hits {
+		&.list {
+			.search-list__hit {}
+			.search-list__hit-header {
+				.col-xs-12.col-sm-10 {}
+				.col-xs-12.col-sm-2 {}
+			}
+			.search-list__hit-thumbnail,
+			.search-list__hit-type,
+			.search-list__hit-info,
+			.search-list__hit-content {}
+			.search-list--highlight {}
+		}
+	}
+	a[data-toggle="hit-content"],
+	button[data-toggle="hit-content"] {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

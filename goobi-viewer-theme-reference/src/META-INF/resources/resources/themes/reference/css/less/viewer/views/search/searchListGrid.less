@@ -1,0 +1,48 @@
+/* ==============================================================
+   Searchlist Grid View
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST GRID */
+/* BLOCK */
+.search-list {
+    /* ELEMENT */
+    /* HITS */
+    &__hits {
+		&.grid {
+			form {}
+			.search-list__hit {
+				.row,
+				[class*="col-"] {}
+			}
+			.search-list__hit-header {
+				.row {}
+				.col-xs-12.col-sm-10 {}
+				.col-xs-12.col-sm-2 {}
+			}
+			.search-list__hit-thumbnail {
+				a {}
+				[data-link="related-page"] {}
+				[data-bookshelf-type="add"] {}
+			}
+			.search-list__hit-title h4 {}
+			.search-list__hit-thumbnail img,
+			.search-list__hit-type,
+			.search-list__hit-info,
+			.search-list__hit-content {}
+		}
+	}
+	a[data-toggle="hit-content"],
+	button[data-toggle="hit-content"] {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

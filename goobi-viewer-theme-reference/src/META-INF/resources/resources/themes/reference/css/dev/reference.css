@@ -1384,6 +1384,34 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Searchlist Grid View
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST GRID */
+/* BLOCK */
+.search-list {
+  /* ELEMENT */
+  /* HITS */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Searchlist List View
+   style declarations for searchList.xhtml
+   ==============================================================*/
+/* SEARCH LIST LIST */
+/* BLOCK */
+.search-list {
+  /* ELEMENT */
+  /* HITS */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Search Standard
    style declarations for searchOptions.xhtml 
    ==============================================================*/
