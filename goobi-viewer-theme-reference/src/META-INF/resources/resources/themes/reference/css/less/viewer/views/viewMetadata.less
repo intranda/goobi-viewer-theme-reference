@@ -3,43 +3,69 @@
    style declarations for viewMetadata.xhtml 
    ==============================================================*/
 /* METADATA */
-#metadataElementWrapper {
-    .metadata-element-box {
-        margin-bottom: 15px;
+/* BLOCK */
+.metadata {
+    .fa {}
+	/* ELEMENTS / EVENTS */
+	&__elements,
+	&__events {
+		margin-bottom: 15px;
         padding: 10px;
         font-size: 13px;
         border: 1px solid @blue;
-        .metadata-element {
-            margin-bottom: 5px;
-            padding: 0 0 5px 0;
-            border-bottom: 1px solid @middlegray;
-            &:last-child {
-                margin: 0;
-                padding: 0;
-                border: none;
-            }
-            .dl-horizontal {
-                margin: 0;
-                dt {
-                    font-family: @fontSansSerifBold;
-                }
-                dd {
-                    .metadata-value {}
-                }
-            }
-        }
-    }
-    .metadata-event-box {
-        .metadata-event {
-            .dl-horizontal {
-                dt {}
-                dd {
-                    .metadata-value {}
-                }
-            }
-        }
-    }
-    .glyphicon {}
+	}
+	&__element,
+	&__event {
+		margin-bottom: 5px;
+		padding: 0 0 5px 0;
+		border-bottom: 1px solid @middlegray;
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+	&__element-dl,
+	&__event-dl {
+		dt {
+			font-family: @fontSansSerifBold;
+		}
+		dd {}
+	}
+	&__element-value,
+	&__event-value {
+		&:last-child {}
+	}
+	/* ELEMENT */
+	&__elements {
+		&.level-0 {}
+        &.level-1 {}
+        &.level-2 {}
+        &.level-3 {}
+        &.level-4 {}
+        &.level-5 {}
+        &.level-6 {}
+        &.level-7 {}
+        &.level-8 {}
+        &.level-9 {}
+	}
+	&__elements-h3 {
+		display: none;
+	}
+	&__element {}
+	&__element-dl {
+		dt {}
+		dd {}
+	}
+	&__element-value {}
+	/* EVENT */
+	&__events {}
+	&__event {}
+	&__event-dl {
+		dt {}
+		dd {}
+	}
+	&__event-value {}
 }
 
 /* DOWNLOADS */

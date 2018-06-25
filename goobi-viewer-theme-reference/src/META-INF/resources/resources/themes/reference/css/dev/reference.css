@@ -1692,27 +1692,37 @@ strong {
    style declarations for viewMetadata.xhtml 
    ==============================================================*/
 /* METADATA */
-#metadataElementWrapper .metadata-element-box {
+/* BLOCK */
+.metadata {
+  /* ELEMENTS / EVENTS */
+  /* ELEMENT */
+  /* EVENT */
+}
+.metadata__elements,
+.metadata__events {
   margin-bottom: 15px;
   padding: 10px;
   font-size: 13px;
   border: 1px solid #507ebf;
 }
-#metadataElementWrapper .metadata-element-box .metadata-element {
+.metadata__element,
+.metadata__event {
   margin-bottom: 5px;
   padding: 0 0 5px 0;
   border-bottom: 1px solid #d5d5d5;
 }
-#metadataElementWrapper .metadata-element-box .metadata-element:last-child {
-  margin: 0;
-  padding: 0;
-  border: none;
+.metadata__element:last-child,
+.metadata__event:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
-#metadataElementWrapper .metadata-element-box .metadata-element .dl-horizontal {
-  margin: 0;
-}
-#metadataElementWrapper .metadata-element-box .metadata-element .dl-horizontal dt {
+.metadata__element-dl dt,
+.metadata__event-dl dt {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.metadata__elements-h3 {
+  display: none;
 }
 /* DOWNLOADS */
 #viewMetadataDownloads ul li {
