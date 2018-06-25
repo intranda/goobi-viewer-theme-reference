@@ -1,17 +1,27 @@
 module.exports = function(grunt) {
+	// ---------- LOAD TASKS ----------
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    
+	// ---------- VARIABLES ----------
+	var packageJson = grunt.file.readJSON('package.json');
+	var sources = {
+        jsDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dev/',
+        jsDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dist/',
+        lessDevCsFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/cs/',
+        lessDevViewerFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/viewer/',
+        cssDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dev/',
+        cssDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dist/'
+    };
+	
+	// ---------- PROJECT CONFIG ----------
     grunt.initConfig({
         theme: {
             name: 'reference'
         },
-        pkg: grunt.file.readJSON('package.json'),
-        src: {
-            jsDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dev/',
-            jsDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dist/',
-            lessDevCsFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/cs/',
-            lessDevViewerFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/viewer/',
-            cssDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dev/',
-            cssDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dist/'
-        },
+        pkg: packageJson,
+        src: sources,
         less: {
             development: {
                 options: {
@@ -51,28 +61,29 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            styles: {
+        	configFiles : {
+				files : [ 'Gruntfile.js' ],
+				options : {
+					reload : true
+				}
+			},
+            css: {
                 files: [ 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/**/*.less' ],
                 tasks: [ 'less' ],
                 options: {
-                    nospawn: true
+                    spawn: false,
                 }
             },
-            js: {
+            scripts: {
                 files: [ '<%=src.jsDevFolder %>*.js' ],
                 tasks: [ 'uglify' ],
                 options: {
-                    nospawn: true
+                	spawn: false,
                 }
             }
         }
     });
     
-    // load tasks
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    
-    // register tasks
+	// ---------- REGISTER DEVELOPMENT TASKS ----------
     grunt.registerTask( 'default', [ 'watch' ] );
 };
