@@ -1,27 +1,18 @@
 module.exports = function(grunt) {
-	// ---------- LOAD TASKS ----------
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    
-	// ---------- VARIABLES ----------
-	var packageJson = grunt.file.readJSON('package.json');
-	var sources = {
-        jsDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dev/',
-        jsDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dist/',
-        lessDevCsFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/cs/',
-        lessDevViewerFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/viewer/',
-        cssDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dev/',
-        cssDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dist/'
-    };
-	
 	// ---------- PROJECT CONFIG ----------
     grunt.initConfig({
         theme: {
             name: 'reference'
         },
-        pkg: packageJson,
-        src: sources,
+        pkg: grunt.file.readJSON('package.json'),
+        src: {
+        	jsDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dev/',
+            jsDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dist/',
+            lessDevCsFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/cs/',
+            lessDevViewerFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/viewer/',
+            cssDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dev/',
+            cssDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dist/'
+        },
         less: {
             development: {
                 options: {
@@ -83,6 +74,11 @@ module.exports = function(grunt) {
             }
         }
     });
+    
+	// ---------- LOAD TASKS ----------
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
     grunt.registerTask( 'default', [ 'watch' ] );
