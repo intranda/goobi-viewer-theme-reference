@@ -1859,10 +1859,15 @@ strong {
    View Thumbs
    style declarations for viewThumbs.xhtml 
    ==============================================================*/
-#viewThumbsWrapper .thumb-element {
-  border: 1px solid #d5d5d5;
+/* VIEW THUMBS */
+/* BLOCK */
+.view-thumbs {
+  /* ELEMENT */
 }
-#viewThumbsWrapper .thumb-element:hover {
+.view-thumbs__thumbnail {
+  border-color: #d5d5d5;
+}
+.view-thumbs__thumbnail:hover {
   background-color: #eee;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
