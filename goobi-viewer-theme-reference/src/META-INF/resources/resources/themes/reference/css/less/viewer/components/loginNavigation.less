@@ -5,125 +5,94 @@
 /* LOGIN NAVIGATION */
 /* BLOCK */
 .login-navigation {
-	float: right;
-	max-height: 28px;
-	margin-left: .4375rem;
+	margin-left: 15px;
 	/* ELEMENT */
-	/* LOGIN DROPDOWN */
-	&__login-dropdown {
-		font-size: 14px;
-		text-align: left;
-		color: @black;
-		box-shadow: 0px 1px 5px rgba(0,0,0,0.25);
-		li {
-			&:hover {}
-		}
-		a, button {}
-		.form-group {
-			margin-bottom: 10px;
-		}
-		.control-label {
-			margin: 0;
-		}
-		.form-control {}
-	}
-	&__user-icon {
-		/* MODIFICATION */
-		&--loggedout {
+	/* NOT LOGGED IN */
+	[data-login="false"] {
+		button[data-toggle="login-dropdown"] {
+			span {}
 			.fa {}
 		}
-		&--loggedin {
-			width: 28px;
-			img {
-				width: 18px;
-    			margin-top: 5px;
+		.login-navigation {
+			/* LOGIN DROPDOWN */
+			&__login-dropdown {
+				top: 22px;
+				font-size: 0.9rem;
+				li {}
+				a, button {
+					color: @black;
+					&:hover,
+					&:active,
+					&:focus {
+						color: @blue;
+						text-decoration: none;
+					}
+				}
+				.form-group {
+					margin-bottom: 5px;
+				}
+				.control-label {
+					color: @black;
+				}
+				.form-control {}
 			}
-		}
-	}
-	&__login-dropdown-action {
-		margin-top: 20px;
-		.btn {}
-	}
-	&__login-dropdown-options {
-		li {
-			display: block;
-			height: auto;
-			line-height: normal;
-			&:hover {}
-		}
-		a, button {
-			color: @black;
-		}
-		a {
-			&:hover,
-			&:active,
-			&:focus {
-				color: @blue;
+			/* DROPDOWN ACTIONS */
+			&__login-dropdown-action {
+				margin-top: 10px;
+				.btn {}
 			}
-		}
-	}
-	&__open-id {
-		h3 {
-			margin: 0;
-			padding: 5px 0 0 0;
-			font-family: @fontSansSerif;
-			font-size: 14px;
-		}
-		li {
-			a {
-				color: @black;
-				&:hover,
-				&:active,
-				&:focus {
-					color: @blue;
+			/* DROPDOWN OPTIONS */
+			&__login-dropdown-options {
+				ul {}
+				li {}
+				a, button {}
+				a {}
+			}
+			/* OPEN ID */
+			&__open-id {
+				h3 {
+					margin: 0;
+					font-family: @fontSansSerif;
+					color: @black;
+				}
+				li {
+					a {}
+					&:hover,
+					&:active,
+					&:focus {}
 				}
 			}
-		}
+		}		
 	}
-	/* USER DROPDOWN */
-	[data-toggle="user-dropdown"] {
-		span[class*="col-xs"] {
-			padding: 0;
-			&:first-child {
-				min-width: 85px;
-    			max-width: 125px;
-				padding-right: 5px;
-    			text-align: right;
-			    text-overflow: ellipsis;
-			    overflow: hidden;
+	/* LOGGED IN */
+	[data-login="true"] {
+		button[data-toggle="user-dropdown"] {}
+		.login-navigation {
+			/* TOGGLE USER DROPDOWN */
+			&__user-name {}			
+			&__user-icon {
+				img {}
 			}
-		}
-	}
-	&__user-dropdown {
-		font-size: 14px;
-		text-align: left;
-		color: @black;
-		box-shadow: 0px 1px 5px rgba(0,0,0,0.25);
-		ul {}
-		li {
-			display: block;
-			height: auto;
-			line-height: normal;
-			&:last-child {}
-			.fa {
-				color: @black;
+			/* USER DROPDOWN */
+			&__user-dropdown {
+				top: 22px;
+				ul {}
+				li {}
 			}
-			.col-xs-2 {}
-		}
-		a {
-			color: @black;
-			&:hover,
-			&:active,
-			&:focus {
-				color: @blue;
+			&__user-dropdown-item {}
+			&__user-dropdown-item-icon {
+				.fa {}
 			}
-		}
-		.btn {
-			color: @white;
-			&:hover,
-			&:active,
-			&:focus {
-				color: @white;
+			&__user-dropdown-item-string {
+				a {
+					&:hover,
+					&:active,
+					&:focus {}
+				}
+			}
+			/* USER DROPDOWN ACTION */
+			&__user-dropdown-action {
+				.btn {}
 			}
 		}
 	}

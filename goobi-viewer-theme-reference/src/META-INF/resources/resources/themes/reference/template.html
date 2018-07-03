@@ -93,21 +93,19 @@
                         <div class="col-xs-12 col-sm-7">
                             <!-- TOP NAV -->
                             <nav class="top-header__nav">
-                                <!-- LOGIN NAVIGATION -->
-                                <ui:fragment rendered="#{navigationHelper.currentPage != 'user'}">
-                                    <viewerComponent:loginNavigation />
-                                </ui:fragment>
-                                
-                                <!-- BOOKSHELF NAVIGATION -->
-                                <viewerComponent:bookshelfNavigation />
+                                <!-- LINKS -->
+                                <templateComponent:topNav />
 
                                 <!-- CHANGE LOCAL -->
                                 <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
 
-                                <!-- LINKS -->
-                                <templateComponent:topNav />                                
+                                <!-- BOOKSHELF NAVIGATION -->
+                                <viewerComponent:bookshelfNavigation />
 
-                                <div class="clearfix"></div>
+                                <!-- LOGIN NAVIGATION -->
+                                <ui:fragment rendered="#{navigationHelper.currentPage != 'user'}">
+                                    <viewerComponent:loginNavigation />
+                                </ui:fragment>
                             </nav>                            
                         </div>
                     </div>
