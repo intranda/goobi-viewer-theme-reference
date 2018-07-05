@@ -1,0 +1,44 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html" 
+    xmlns:f="http://xmlns.jcp.org/jsf/core" 
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" 
+    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
+    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/boilerplate/components">
+
+    <script type="text/javascript">
+    	var currentPage = "#{navigationHelper.currentPage}";
+    	var currentLang = "#{navigationHelper.localeString}";
+    	var currentPath = "#{request.contextPath}";
+    	var userLoggedIn = #{userBean.loggedIn};
+    	var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
+    	var watchlistConfig = {
+    		root: "#{request.contextPath}",
+    		msg: {
+    			resetBookshelves: "#{msg.bookshelf_reset}",
+    			resetBookshelvesConfirm: "#{msg.bookshelf_resetConfirm}",
+    			saveItemToSession: "#{msg.bookshelf_saveItemToSession}",
+    			noItemsAvailable: "#{msg.bookshelf_noItemsAvailable}",
+    			selectBookshelf: "#{msg.bookshelf_selectBookShelf}",
+    			addNewBookshelf: "#{msg.bookshelf_addNewBookShelf}"
+    		}
+    	};
+    	
+    	// set readingmode config
+    	if ( currentPage === "readingmode" ) {
+    		var readingModeConfig = {
+    			msg: {
+            		fileNotFound: "#{msg.noImage_fileNotFound}"
+            	}
+            };
+                
+            viewImage.readingMode.init( readingModeConfig );
+    	}
+    </script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
+</ui:composition>

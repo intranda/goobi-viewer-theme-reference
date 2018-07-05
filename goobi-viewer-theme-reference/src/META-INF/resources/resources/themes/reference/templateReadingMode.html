@@ -103,40 +103,9 @@
                 </aside>
             </div>
         </div>
-
-        <!-- VERSION -->
-        <h:outputText id="version_number" value="version: #{navigationHelper.version}" style="display: none;" />
         
         <!-- CUSTOM JAVASCRIPT -->
-        <script type="text/javascript">
-            var currentPage = "#{navigationHelper.currentPage}";
-            var currentLang = "#{navigationHelper.localeString}";
-            var currentPath = "#{request.contextPath}";
-            var userLoggedIn = #{userBean.loggedIn};
-            var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
-            var watchlistConfig = {
-                root: "#{request.contextPath}",
-    		    msg: {
-    		        resetBookshelves: "#{msg.bookshelf_reset}",
-    		        resetBookshelvesConfirm: "#{msg.bookshelf_resetConfirm}",
-    		        saveItemToSession: "#{msg.bookshelf_saveItemToSession}",
-    		        noItemsAvailable: "#{msg.bookshelf_noItemsAvailable}",
-    		        selectBookshelf: "#{msg.bookshelf_selectBookShelf}",
-    		        addNewBookshelf: "#{msg.bookshelf_addNewBookShelf}"
-    		    }
-            };
-            
-            $( document ).ready( function() {
-                var readingModeConfig = {
-                    msg: {
-                        fileNotFound: "#{msg.noImage_fileNotFound}"
-                    }
-                };
-                
-                viewImage.readingMode.init( readingModeConfig );
-            } );
-        </script>
-        <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
+        <ui:include src="includes/customJS.xhtml" />
     </f:view>
     
     <!-- PIWIK -->

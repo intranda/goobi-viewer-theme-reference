@@ -1,0 +1,137 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html" 
+    xmlns:f="http://xmlns.jcp.org/jsf/core" 
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" 
+    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
+    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/boilerplate/components">
+
+    <!-- MOBILE TOGGLES -->
+    <viewerComponent:mobileToggles sidebarPosition="right" />
+
+    <!-- MOBILE NAVIGATION -->
+    <viewerComponent:mobileNavigation displayDropdown="false" />
+
+    <!-- OFFCANVAS FADE -->
+    <div class="offcanvas-fade"></div>
+
+    <!-- HEADER -->
+    <header id="pageHeader" class="page-header">
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-5">
+                        <!-- LOGO -->
+                        <div class="top-header__logo">
+                            <a href="#{msg.intrandaViewerHome}" target="_blank"> intranda GmbH </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-7">
+                        <!-- TOP NAV -->
+                        <nav class="top-header__nav">
+                            <!-- LINKS -->
+                            <templateComponent:topNav />
+
+                            <!-- CHANGE LOCAL -->
+                            <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
+
+                            <!-- BOOKSHELF NAVIGATION -->
+                            <viewerComponent:bookshelfNavigation />
+
+                            <!-- LOGIN NAVIGATION -->
+                            <ui:fragment rendered="#{navigationHelper.currentPage != 'user'}">
+                                <viewerComponent:loginNavigation />
+                            </ui:fragment>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="header-actions__logo">
+                            <a href="#{request.contextPath}/">
+                                <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="intranda GmbH Logo" />
+                                <span>Goobi viewer</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="header-actions__search">
+                            <!-- SEARCH FIELD -->
+                            <h:panelGroup rendered="#{navigationHelper.currentPage != 'search' and
+                                                      navigationHelper.currentPage != 'searchadvanced' and
+                                                      navigationHelper.currentPage != 'searchlist'}">
+                                <div class="header-actions__search-input">
+                                    <widgetComponent:widget_searchField />
+                                </div>
+                                <div class="header-actions__search-link">
+                                    <a href="#{navigationHelper.applicationUrl}searchadvanced/" class="header-actions__search-advanced">#{msg.searchAdvanced}</a>
+                                </div>
+                            </h:panelGroup>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN NAVIGATION -->
+    <div class="main-navigation">
+        <div class="container">
+            <!-- DESKTOP NAVIGATION -->
+            <viewerComponent:navigation megaMenu="false" />
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div id="pageContent" class="page-content">
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <main id="main" class="col-xs-12 col-sm-9 page-content__main"> 
+                    <!-- BREADCRUMBS --> 
+                    <ui:insert name="breadcrumbs" /> 
+                    
+                    <!-- CONTENT --> 
+                    <ui:insert name="content" />
+                </main>
+
+                <aside id="sidebar" class="col-xs-9 col-sm-3 page-content__sidebar">
+                    <!-- CLOSE SIDEBAR ON MOBILE -->
+                    <div class="page-content__close-sidebar">
+                        <button type="button" class="btn-clean" data-toggle="close-sidebar">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <!-- SIDEBAR WIDGETS -->
+                    <ui:insert name="sidebar" />
+
+                    <!-- RSS FEED -->
+                    <ui:insert name="rssFeed" />
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="pageFooter">
+        <div class="container">
+            <templateComponent:footerNavigation />
+        </div>
+    </div>
+
+    <!-- LINK FOR SCROLLING TO TOP -->
+    <span class="icon-totop" title="#{msg.topOfPage}">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </span>
+</ui:composition>
