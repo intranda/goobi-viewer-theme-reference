@@ -1,0 +1,56 @@
+/* ==============================================================
+   CMS Collections
+   style declarations for adminCmsCollections.xhtml
+   ==============================================================*/
+/* CMS COLLECTIONS */
+/* BLOCK */
+.cms-collections {
+	/* ELEMENT */
+	&__selection {}
+	&__selection-label {
+		label {}
+	}
+	&__selection-control {
+		.custom-control--select {
+			select {}
+		}
+		.ui-widget {}
+		.ui-state-focus {}
+		input {}
+		a {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+	}
+	&__table {
+		table {}
+		thead {}
+		tbody {}
+		tr {}
+		th {}
+		td {
+			img {}
+			a {
+				&:hover,
+				&:active,
+				&:focus {}
+			}
+			&.actions {
+				a {}
+			}
+		}
+	}
+}
+
+// BREAKPOINT FOR LARGE DESKTOPS
+@media screen and (max-width: @largeBreakpoint) {}
+
+// BREAKPOINT FOR DESKTOP
+@media screen and (max-width: @mediumBreakpoint) {}
+
+// BREAKPOINT FOR TABLETS
+@media screen and (max-width: @smallBreakpoint) {}
+
+// BREAKPOINT FOR SMARTPHONES
+@media screen and (max-width: @xSmallBreakpoint) {}

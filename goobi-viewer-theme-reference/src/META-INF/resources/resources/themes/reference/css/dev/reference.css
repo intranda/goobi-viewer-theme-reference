@@ -2619,6 +2619,15 @@ strong {
 /* BREAKPOINT FOR SMARTPHONES */
 /* CMS VIEWS */
 /* ==============================================================
+   CMS Collections
+   style declarations for adminCmsCollections.xhtml
+   ==============================================================*/
+/* CMS COLLECTIONS */
+/* BLOCK */
+.cms-collections {
+  /* ELEMENT */
+}
+/* ==============================================================
    CMS Create Page
    style declarations for adminCmsCreatePage.xhtml
    ==============================================================*/
