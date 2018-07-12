@@ -479,26 +479,41 @@ strong {
   color: #507ebf;
   text-decoration: none;
 }
+.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
+  color: #000;
+}
+.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
+.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
+.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
+  color: #507ebf;
+}
 .bookshelf-navigation__dropdown-list-reset a,
 .bookshelf-navigation__dropdown-list-send a,
+.bookshelf-navigation__dropdown-list-mirador a,
 .bookshelf-navigation__dropdown-list-reset button,
-.bookshelf-navigation__dropdown-list-send button {
+.bookshelf-navigation__dropdown-list-send button,
+.bookshelf-navigation__dropdown-list-mirador button {
   color: #000;
 }
 .bookshelf-navigation__dropdown-list-reset a:hover,
 .bookshelf-navigation__dropdown-list-send a:hover,
+.bookshelf-navigation__dropdown-list-mirador a:hover,
 .bookshelf-navigation__dropdown-list-reset button:hover,
 .bookshelf-navigation__dropdown-list-send button:hover,
+.bookshelf-navigation__dropdown-list-mirador button:hover,
 .bookshelf-navigation__dropdown-list-reset a:active,
 .bookshelf-navigation__dropdown-list-send a:active,
+.bookshelf-navigation__dropdown-list-mirador a:active,
 .bookshelf-navigation__dropdown-list-reset button:active,
 .bookshelf-navigation__dropdown-list-send button:active,
+.bookshelf-navigation__dropdown-list-mirador button:active,
 .bookshelf-navigation__dropdown-list-reset a:focus,
 .bookshelf-navigation__dropdown-list-send a:focus,
+.bookshelf-navigation__dropdown-list-mirador a:focus,
 .bookshelf-navigation__dropdown-list-reset button:focus,
-.bookshelf-navigation__dropdown-list-send button:focus {
+.bookshelf-navigation__dropdown-list-send button:focus,
+.bookshelf-navigation__dropdown-list-mirador button:focus {
   color: #507ebf;
-  text-decoration: none;
 }
 /* POPUPS */
 /* BLOCK */
@@ -1634,6 +1649,19 @@ strong {
   /* BLOCK */
 }
 #viewMetadataDownloads ul li.dl-links {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Mirador
+   style declarations for viewMirador.xhtml 
+   ==============================================================*/
+/* VIEW MIRADOR */
+/* BLOCK */
+.view-mirador {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */

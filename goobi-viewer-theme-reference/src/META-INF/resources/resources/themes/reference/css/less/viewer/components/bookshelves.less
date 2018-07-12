@@ -34,28 +34,44 @@
 	&__dropdown-list-counter {}
 	&__dropdown-list-image {}
 	&__dropdown-list-remove {
-		[data-bookshelf-type="delete"] {}
+		[data-bookshelf-type="delete"] {
+			color: @black;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @blue;
+			}
+		}
 	}
 	/* DROPDOWN ACTIONS */
 	&__dropdown-list-actions {}
 	&__dropdown-list-reset,
-	&__dropdown-list-send {
+	&__dropdown-list-send,
+	&__dropdown-list-mirador {
 		a, button {
 			color: @black;
 			&:hover,
 			&:active,
 			&:focus {
 				color: @blue;
-				text-decoration: none;
 			}
 		}
 	}
 	&__dropdown-list-reset {
-		button {}
+		button {
+			span {}
+			.fa {}
+		}
 	}
-	&__dropdown-list-send {
-		a {}
+	&__dropdown-list-send,
+	&__dropdown-list-mirador {
+		a {
+			span {}
+			.fa {}
+		}
 	}
+	&__dropdown-list-send {}
+	&__dropdown-list-mirador {}
 }
 
 /* POPUPS */
