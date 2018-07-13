@@ -5,26 +5,49 @@
 /* BOOKSHELF NAVIGATION */
 /* BLOCK */
 .bookshelf-navigation {
-	float: right;
-	width: 100px;
-	max-height: 28px;
-	margin-left: .4375rem;
+	margin-left: 15px;
 	/* ELEMENT */
-	&__icons {
-		&.no-padding {}
-		span {}
-	}
+	&__dropdown-wrapper {}
+	/* TOOGLE DROPDOWN */
 	&__counter {}
-	&__dropdown-wrapper {
-		button {
-			width: 100%;
+	&__string {}
+	&__icon {}
+	/* DROPDOWN */
+	&__dropdown {}
+	/* DROPDOWN LIST */
+	&__dropdown-list {
+		li {
+			&:last-child {}
+			.empty {}
+		}
+		h4 {}
+		a {
+			color: @black;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @blue;
+				text-decoration: none;
+			}
 		}
 	}
-	&__dropdown {
-		font-size: 14px;
-		text-align: left;
-		color: @black;
-		box-shadow: 0px 1px 5px rgba(0,0,0,0.25);
+	&__dropdown-list-counter {}
+	&__dropdown-list-image {}
+	&__dropdown-list-remove {
+		[data-bookshelf-type="delete"] {
+			color: @black;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @blue;
+			}
+		}
+	}
+	/* DROPDOWN ACTIONS */
+	&__dropdown-list-actions {}
+	&__dropdown-list-reset,
+	&__dropdown-list-send,
+	&__dropdown-list-mirador {
 		a, button {
 			color: @black;
 			&:hover,
@@ -34,45 +57,21 @@
 			}
 		}
 	}
-	&__dropdown-list {
-		li {
-			display: block;
-			height: auto;
-			line-height: normal;
-			&:last-child {}
-			.empty {}
-		}
-		h4 {
-			margin: 0;
-			line-height: normal;
-			font-family: @fontSansSerif;
-		}
-	}
-	&__dropdown-list-counter {}
-	&__dropdown-list-reset,
-	&__dropdown-list-send {
-		[data-bookshelf-type="reset"],
-		a {
-			color: @black;
-			&:hover,
-			&:active,
-			&:focus {
-				color: @blue;
-			}
-		}
-	}
 	&__dropdown-list-reset {
-		[data-bookshelf-type="reset"] {}
+		button {
+			span {}
+			.fa {}
+		}
 	}
-	&__dropdown-list-send {
-		a {}
+	&__dropdown-list-send,
+	&__dropdown-list-mirador {
+		a {
+			span {}
+			.fa {}
+		}
 	}
-	&__dropdown-list-image {}
-	&__dropdown-list-remove {
-		&.no-padding {}
-		[data-bookshelf-type="delete"] {}
-	}
-	&__dropdown-action {}
+	&__dropdown-list-send {}
+	&__dropdown-list-mirador {}
 }
 
 /* POPUPS */
@@ -117,22 +116,16 @@
 [data-bookshelf-type="delete"],
 [data-bookshelf-type="link"],
 [data-bookshelf-type="reset"] {}
-
 [data-bookshelf-type="dropdown"] {}
-
 [data-bookshelf-type="get"] {}
-
 [data-bookshelf-type="add"] {
 	&.white {}
 	&.added {
 		&.white {}	
 	}
 }
-
 [data-bookshelf-type="delete"] {}
-
 [data-bookshelf-type="link"] {}
-
 [data-bookshelf-type="reset"] {}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

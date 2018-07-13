@@ -12,22 +12,19 @@
    ==============================================================*/
 @font-face {
   font-family: 'OpenSansRegular';
-  src: url('../../fonts/OpenSans-Regular-webfont.eot');
-  src: url('../../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Regular-webfont.woff') format('woff'), url('../../fonts/OpenSans-Regular-webfont.ttf') format('truetype'), url('../../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+  src: url('../../fonts/OpenSans-Regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansSemibold';
-  src: url('../../fonts/OpenSans-Semibold-webfont.eot');
-  src: url('../../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Semibold-webfont.woff') format('woff'), url('../../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'), url('../../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+  src: url('../../fonts/OpenSans-Semibold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'RobotoSlabRegular';
-  src: url('../../fonts/RobotoSlab-Regular-webfont.eot');
-  src: url('../../fonts/RobotoSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/RobotoSlab-Regular-webfont.woff') format('woff'), url('../../fonts/RobotoSlab-Regular-webfont.ttf') format('truetype'), url('../../fonts/RobotoSlab-Regular-webfont.svg#roboto_slabregular') format('svg');
+  src: url('../../fonts/RobotoSlab-Regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +45,9 @@ body {
 body {
   font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
+  font-feature-settings: "kern" 1;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
   line-height: 1.4;
   color: #222;
 }
@@ -90,28 +90,9 @@ strong {
   }
 }
 /* BREAKPOINT FOR SMARTPHONES */
-/*!
- * IE10 viewport hack for Surface/desktop Windows 8 bug
- * Copyright 2014-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*
- * See the Getting Started docs for more information:
- * http://getbootstrap.com/getting-started/#support-ie10-width
- */
-@-webkit-viewport {
-  width: device-width;
-}
-@-moz-viewport {
-  width: device-width;
-}
-@-ms-viewport {
-  width: device-width;
-}
-@viewport {
-  width: device-width;
-}
-/* AJAX LOADER */
+/* ==============================================================
+   Layout
+   ==============================================================*/
 /* OFFCANVAS FADE */
 .offcanvas-fade.in {
   position: fixed;
@@ -148,18 +129,13 @@ strong {
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
 }
 .top-header__nav {
-  text-align: right;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   font-size: 12px;
-}
-.top-header__nav li {
-  display: inline-block;
-  height: 1.75rem;
-  line-height: 1.75rem;
-  margin: 0 0.4375rem 0 0;
-}
-.top-header__nav-links {
-  float: right;
-  margin-right: 0.4375rem;
 }
 /* HEADER ACTIONS */
 /* BLOCK */

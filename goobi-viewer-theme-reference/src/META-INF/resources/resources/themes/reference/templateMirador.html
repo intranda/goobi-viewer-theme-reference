@@ -1,0 +1,67 @@
+<!DOCTYPE html [
+	<!ENTITY copy "&#169;">
+	<!ENTITY times "&#215;">
+	<!ENTITY nbsp "&#160;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
+      xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+
+<h:head profile="http://dublincore.org/documents/dcq-html/">
+
+	<ui:insert name="head" />
+
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<meta name="generator" content="intranda viewer" />
+	<meta name="version" content="#{navigationHelper.version}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>#{msg.viewMirador} - intranda GmbH</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/javascript/libs/mirador/css/mirador-combined.min.css" />
+
+    <!-- JS -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rx.lite.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/mirador/mirador.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js"></script>
+</h:head>
+
+<ui:insert name="metadata" />
+
+<h:body id="viewer">
+    <f:view locale="#{navigationHelper.locale}">
+        <!-- MIRADOR WRAPPER -->
+        <div id="viewMirador" class="view-mirador">
+            <!-- MIRADOR CONTAINER -->
+            <div id="miradorViewer" class="view-mirador__viewer"></div>
+        </div>
+
+        <!-- TODO: REST-Aufrufe entwickeln, die die notwendigen Parameter an Mirador übergeben. -->
+
+        <script type="text/javascript">
+            var miradorConfig = {
+            	root: "#{request.contextPath}",
+            	userLoggedIn: #{userBean.loggedIn},
+            };
+            
+            viewerJS.mirador.init( miradorConfig );
+        </script>
+    </f:view>
+
+    <!-- PIWIK -->
+    <h:panelGroup rendered="#{configurationBean.piwikTracking}">
+        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
+    </h:panelGroup>
+</h:body>
+</html>

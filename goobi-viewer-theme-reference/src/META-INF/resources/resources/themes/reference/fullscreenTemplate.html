@@ -51,24 +51,8 @@
         <div id="intrandaLogo"></div>
         <div id="corporateLogo"></div>
         
-        <script type="text/javascript">
-            var currentPage = '#{navigationHelper.currentPage}';
-            var currentLang = '#{navigationHelper.localeString}';
-            var currentPath = "#{request.contextPath}";
-            var userLoggedIn = #{userBean.loggedIn};
-            var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
-            var watchlistConfig = {
-                root: '#{request.contextPath}',
-    		    msg: {
-    		        resetBookshelves: '#{msg.bookshelf_reset}',
-    		        resetBookshelvesConfirm: '#{msg.bookshelf_resetConfirm}',
-    		        saveItemToSession: '#{msg.bookshelf_saveItemToSession}',
-    		        noItemsAvailable: '#{msg.bookshelf_noItemsAvailable}',
-    		        selectBookshelf: '#{msg.bookshelf_selectBookShelf}',
-    		        addNewBookshelf: '#{msg.bookshelf_addNewBookShelf}'
-    		    }
-            };
-        </script>
+        <!-- CUSTOM JAVASCRIPT -->
+        <ui:include src="includes/customJS.xhtml" />
     </f:view>
     
     <!-- PIWIK -->

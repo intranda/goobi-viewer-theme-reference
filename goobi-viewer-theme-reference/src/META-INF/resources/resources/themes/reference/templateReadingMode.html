@@ -103,11 +103,9 @@
                 </aside>
             </div>
         </div>
-
-        <!-- VERSION -->
-        <h:outputText id="version_number" value="version: #{navigationHelper.version}" style="display: none;" />
         
         <!-- CUSTOM JAVASCRIPT -->
+<<<<<<< HEAD
         <script type="text/javascript">
             var currentPage = '#{navigationHelper.currentPage}';
             var currentLang = '#{navigationHelper.localeString}';
@@ -137,6 +135,7 @@
             } );
         </script>
         <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
+        <ui:include src="includes/customJS.xhtml" />
     </f:view>
     
     <!-- PIWIK -->

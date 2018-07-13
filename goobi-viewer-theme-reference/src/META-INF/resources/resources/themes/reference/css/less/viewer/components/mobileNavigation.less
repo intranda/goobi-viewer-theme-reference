@@ -2,42 +2,40 @@
    Template Navigation
    style declarations for templateNavigation.xhtml
    ==============================================================*/
-#toggleMobileNav {
-    .icon-bar {}
-}
-
-#mobileNav {
+/* MOBILE NAVIGATION */
+/* BLOCK */
+.mobile-navigation {
     padding: 0;
     border-top-color: @darkgray;
     border-bottom-color: @darkgray;
-    background-color: @darkgray;
+    background-color: @darkgray;    
+    /* ELEMENT */
     ul {
         background-color: @white;
-        background-image: url("@{images}/template/mobilenav-bg.png");
-        li {
-            a {
-                color: @darkgray;
-                border-bottom: 1px solid @middlegray;
-                &:hover,
-                &:focus,
-                &:active {
-                    text-decoration: none;
-                    color: @darkgray;
-                    background-color: @lightgray;
-                }
-                &.mainnav-active {
-                    background-color: @lightgray;
-                }
-            }
-            &:hover > ul {}
-            &:last-child {}
-        }
+        background-image: url("@{images}/template/mobilenav-bg.png");    	
     }
+    li {}
+	a {
+		color: @darkgray;
+		border-bottom: 1px solid @middlegray;
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: @darkgray;
+			background-color: @lightgray;
+		}
+		&.mainnav-active {
+			background-color: @lightgray;
+		}
+	}
+	/* USER LOGIN */
+	&__user-login {}
+	/* SUBNAV */
     .mainsubnav {
         h3 {}
-        li {
-            a {}
-        }
+        li {}
+        a {}
     }
 }
 
