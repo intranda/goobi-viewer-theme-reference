@@ -31,6 +31,8 @@
     <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/javascript/libs/mirador/css/mirador-combined.min.css" />
 
     <!-- JS -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rx.lite.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/mirador/mirador.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js"></script>
 </h:head>
@@ -48,37 +50,12 @@
         <!-- TODO: REST-Aufrufe entwickeln, die die notwendigen Parameter an Mirador übergeben. -->
 
         <script type="text/javascript">
-            $(function() {
-                Mirador({
-                    id : "miradorViewer",
-                    layout : "1x2",
-                    data : [
-                        {
-                            /* monograph, annotation on page 78 */
-                            manifestUri : "https://viewer-demo01.intranda.com/viewer/rest/iiif/manifests/PPN615391702/manifest",
-                            location : "Goobi viewer"
-                        },
-                        {
-                            /* woman */
-                            manifestUri : "https://viewer-demo01.intranda.com/viewer/rest/iiif/manifests/02008012412076/manifest",
-                            location : "Goobi viewer"
-                        }
-                    ],
-                    windowObjects : [
-                        {
-                            loadedManifest : "https://viewer-demo01.intranda.com/viewer/rest/iiif/manifests/02008012412076/manifest",
-                            slotAddress : "row1.column1",
-                            sidePanel : false,
-                            viewType : "ImageView"
-                        },
-                        {
-                            loadedManifest : "https://viewer-demo01.intranda.com/viewer/rest/iiif/manifests/PPN615391702/manifest",
-                            slotAddress : "row1.column2",
-                            viewType : "BookView"
-                        }
-                    ]
-                });
-            });
+            var miradorConfig = {
+            	root: "#{request.contextPath}",
+            	userLoggedIn: #{userBean.loggedIn},
+            };
+            
+            viewerJS.mirador.init( miradorConfig );
         </script>
     </f:view>
 
