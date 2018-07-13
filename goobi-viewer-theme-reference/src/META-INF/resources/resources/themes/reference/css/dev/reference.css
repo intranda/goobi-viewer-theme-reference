@@ -707,28 +707,33 @@ strong {
    Template Navigation
    style declarations for templateNavigation.xhtml
    ==============================================================*/
-#mobileNav {
+/* MOBILE NAVIGATION */
+/* BLOCK */
+.mobile-navigation {
   padding: 0;
   border-top-color: #444;
   border-bottom-color: #444;
   background-color: #444;
+  /* ELEMENT */
+  /* USER LOGIN */
+  /* SUBNAV */
 }
-#mobileNav ul {
+.mobile-navigation ul {
   background-color: #fff;
   background-image: url("../../images/template/mobilenav-bg.png");
 }
-#mobileNav ul li a {
+.mobile-navigation a {
   color: #444;
   border-bottom: 1px solid #d5d5d5;
 }
-#mobileNav ul li a:hover,
-#mobileNav ul li a:focus,
-#mobileNav ul li a:active {
+.mobile-navigation a:hover,
+.mobile-navigation a:focus,
+.mobile-navigation a:active {
   text-decoration: none;
   color: #444;
   background-color: #eee;
 }
-#mobileNav ul li a.mainnav-active {
+.mobile-navigation a.mainnav-active {
   background-color: #eee;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
