@@ -131,4 +131,19 @@
     <span class="icon-totop" title="#{msg.topOfPage}">
         <i class="fa fa-chevron-up" aria-hidden="true"></i>
     </span>
+    
+    <!-- IE 11 NOT SUPPORTED -->
+    <div class="support-overlay">
+        <div class="support-overlay__box">
+            <header class="support-overlay__box-header">
+                <h3>#{msg.ie11_heading}</h3>
+            </header>
+            <section class="support-overlay__box-body">
+                <h:outputText value="#{msg.ie11_text}" escape="false" />
+            </section>
+            <footer class="support-overlay__box-footer">
+                powered by <a href="http://www.intranda.com/digiverso/goobi-viewer/goobi-viewer-overview/" target="_blank">Goobi viewer</a>
+            </footer>
+        </div>
+    </div>
 </ui:composition>
