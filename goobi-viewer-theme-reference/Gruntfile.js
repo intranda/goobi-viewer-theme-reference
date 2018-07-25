@@ -36,6 +36,7 @@ module.exports = function(grunt) {
                     ],
                     compress: true,
                     sourceMap: true,
+                    outputSourceFiles: true,
                     banner: '/*!\n ============================================================\n <%= pkg.name %> \n\n Version: <%= pkg.version %> \n License: <%= pkg.license %> \n Author: <%= pkg.author %> \n Description: <%= pkg.description %> \n ============================================================ \n*/',
                 },
                 files: {
