@@ -38,6 +38,9 @@
 	<!-- custom CSS -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css" />
     
+
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
+    
     <!-- Forces PrimeFaces to Include jquery & jquery-ui -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
     <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
