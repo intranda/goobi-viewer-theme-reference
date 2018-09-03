@@ -27,6 +27,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
     
+    <!-- RELATIVE URL TAGS -->
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
+    
     <!-- basic CSS -->
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.min.css" />
@@ -37,9 +40,6 @@
 
 	<!-- custom CSS -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css" />
-    
-
-<!--     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" /> -->
     
     <!-- Forces PrimeFaces to Include jquery & jquery-ui -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />

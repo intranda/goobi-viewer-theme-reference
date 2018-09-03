@@ -26,6 +26,9 @@
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
+    
+    <!-- RELATIVE URL TAGS -->
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/javascript/libs/mirador/css/mirador-combined.min.css" />

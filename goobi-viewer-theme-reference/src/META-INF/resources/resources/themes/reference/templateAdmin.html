@@ -26,6 +26,9 @@
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
+    
+    <!-- RELATIVE URL TAGS -->
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
 
     <!-- basic CSS -->
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.min.css" />
