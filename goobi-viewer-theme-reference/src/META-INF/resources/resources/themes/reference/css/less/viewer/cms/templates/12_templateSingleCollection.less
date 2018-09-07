@@ -12,6 +12,38 @@
     	h2 {}
     }
     &__description {}
+    .search-list {
+    	/* OPTIONS */
+	    &__options {
+	        a, button {
+	            &:hover,
+	            &:focus,
+	            &:active,
+	            &.active {}
+	        }
+	        form {}
+	    }
+	    &__hitcount,
+	    &__rss,
+	    &__save-search,
+	    &__excel-export,
+	    &__views {}
+	    &__hitcount {}
+	    &__rss {}
+	    &__save-search {}
+	    &__excel-export {
+	        a {}
+	        .excel-export-loader {
+	            img {}
+	        }
+	    }
+	    &__views {
+	    	button {}
+	    	[data-view="search-list-default"] {}
+	    	[data-view="search-list-grid"] {}
+	    	[data-view="search-list-list"] {}
+	    }
+    }
 }
 
 /* MODIFICATION */

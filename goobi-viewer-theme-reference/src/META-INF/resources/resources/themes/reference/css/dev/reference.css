@@ -2510,6 +2510,9 @@ strong {
 .tpl-single-collection {
   /* ELEMENT */
 }
+.tpl-single-collection .search-list {
+  /* OPTIONS */
+}
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
