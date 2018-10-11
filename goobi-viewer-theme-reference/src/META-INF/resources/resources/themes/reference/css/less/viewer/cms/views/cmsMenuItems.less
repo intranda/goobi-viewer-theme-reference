@@ -2,85 +2,83 @@
    CMS Menu Items
    style declarations for adminCmsMenuItems.xhtml
    ==============================================================*/
-#cmsMenuItems {
-    h2 {}
-    #addMenuItemWrapper {
-        .btn {}
-    }
-    #menuEditor {
-        h3 {}
-        .menu-editor-left {
-            h4 {}
-            .ui-sortable {
-                li {
-                    a {
-                        span {
-                            &.glyphicon {}
-                        }
-                        &.btn {
-                            .glyphicon {}
-                        }
-                    }
-                    span {
-                        &.glyphicon {}
-                        &.glyphicon-circle-arrow-left {}
-                        &.glyphicon-circle-arrow-right {}
-                    }
-                    &.unpublished {
-                        span {
-                            &.glyphicon-circle-arrow-left {}
-                            &.glyphicon-circle-arrow-right {}
-                        }
-                    }
-                    &.deleted {
-                        span {
-                            &.glyphicon-circle-arrow-left {}
-                            &.glyphicon-circle-arrow-right {}
-                        }
-                    }
-                }
-            }
-        }
-        .menu-editor-right {
-            h4 {}
-            ul {
-                li {
-                    a {
-                        span {
-                            &.glyphicon {}
-                        }
-                    }
-                    span {
-                        &.glyphicon {}
-                        &.glyphicon-circle-arrow-left {}
-                        &.glyphicon-circle-arrow-right {}
-                    }
-                    &.unpublished {
-                        span {}
-                    }
-                    &.deleted {
-                        span {}
-                    }
-                }
-            }
-        }
-    }
-    #saveMenuItemsWrapper {
-        .btn {}
-    }
-    #addMenuItemModal {
-        .modal-header {}
-        .tooltip {
-            .tooltip-inner {}
-        }
-    }
-}
-
-#edit_navigationitem_wrapper {
-    dl {
-        dt {}
-        dd {}
-    }
+/* CMS MENU */
+.cms-menu {
+	h2 {}
+	/* HEADER */
+	&__header {}
+	/* SAVE */
+	&__save {
+		&.fixed {}
+	}
+	/* SELECT THEME */
+	&__select-theme {}
+	/* MENU EDITOR */
+	&__editor {}
+	/* VISIBLE/AVAILABLE ITEMS */
+	&__visible-items,
+	&__available-items {
+		h4 {}
+		.cms-menu__available-item-level {}
+	}
+	&__visible-items-list {}
+	&__visible-item {
+	    &.unpublished {}
+	    &.deleted {}
+	}
+	&__visible-item-level {}
+	&__visible-item-label {
+		small {}
+	}
+	&__visible-item-edit {
+		button {
+		    .fa {}
+			&.in {
+				.fa {}
+			}
+		}
+	}
+	&__visible-item-edit-wrapper {
+		.cms-module__option-label {}
+		.cms-module__option-control {}
+		.cms-module__option-action {
+			.btn--link {}
+		}
+	}
+	/* AVAILABLE ITEMS */
+	&__available-items {
+		h4 {}
+	}
+	&__available-items-list {
+		ul {}
+		li {}
+		h5 {
+			.fa {}
+			&.in {
+				.fa {}	
+			}
+		}
+	}
+	&__available-items-toggle {}
+	/* PAGES */
+	&__available-items-list-pages {}
+	&__available-item-page {}
+	&__available-item-page-checkbox {
+		input[type="checkbox"] {}
+	}
+	&__available-item-page-label {}
+	&__available-item-page-add {}
+	/* ITEMS */
+	&__available-items-list-add-item {		
+		.cms-module {
+			&__option {
+			}
+			&__option-group {
+				&:last-child {}
+			}
+			&__option-action {}
+		}
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

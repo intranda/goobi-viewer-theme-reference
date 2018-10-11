@@ -1,0 +1,55 @@
+/* ==============================================================
+   CMS Module Options
+   ==============================================================*/
+/* OPTIONS */
+.cms-module {
+	&__option {
+	    h4 {}
+	}	
+	/* OPTION GROUP */
+	&__option-group {
+	    &:last-child {}
+	}	
+	&__option-label {
+	    &--fullwidth {
+	    	& + .cms-module__option-control {}
+	    }
+	}	
+	&__option-control {
+	    &.in {
+	    	input,
+	    	.custom-control--select,
+	    	.cms-module__option-control-checkbox {}
+	    	.cms-module__option-control-checkbox {}
+	    }
+	}
+	&__option-control-checkbox {}
+	&__option-control-helptext {
+	    &.in {}
+	}
+	&__option-help {
+		button {
+		    &.in {}
+		}
+	}
+	&__option-action {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+	.cms-module {
+		&__option-label {}
+		&__option-control {}
+		&__option-help {}
+		&__option-action {}
+	}
+}

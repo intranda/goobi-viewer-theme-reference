@@ -13,6 +13,7 @@
 /* FONTS */
 /* BASIC */
 /* CI-COLORS */
+/* MESSAGE COLORS */
 /* STATISTICS */
 /* NER */
 /* CROWDSOURCING */
@@ -2329,6 +2330,18 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+/* CMS MODULES */
+/* ==============================================================
+   CMS Module Options
+   ==============================================================*/
+/* OPTIONS */
+.cms-module {
+  /* OPTION GROUP */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* CMS COMPONENTS */
 /* ==============================================================
    CMS Component "Collection Tiled"
@@ -2695,6 +2708,17 @@ strong {
    CMS Menu Items
    style declarations for adminCmsMenuItems.xhtml
    ==============================================================*/
+/* CMS MENU */
+.cms-menu {
+  /* HEADER */
+  /* SAVE */
+  /* SELECT THEME */
+  /* MENU EDITOR */
+  /* VISIBLE/AVAILABLE ITEMS */
+  /* AVAILABLE ITEMS */
+  /* PAGES */
+  /* ITEMS */
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */

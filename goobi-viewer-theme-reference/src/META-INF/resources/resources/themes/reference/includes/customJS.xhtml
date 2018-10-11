@@ -39,6 +39,9 @@
                 
             ImageView.readingMode.init( readingModeConfig );
     	}
+    	
+    	// init cms module functions
+    	cmsJS.modules.init();
     </script>
     <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
 </ui:composition>
