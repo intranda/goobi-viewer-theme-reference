@@ -1394,38 +1394,22 @@ strong {
    User
    style declarations for user.xhtml
    ==============================================================*/
-/* USER */
+/* USER LOGIN */
 /* BLOCK */
-.user {
-  /* ELEMENT */
+.user-login {
+  /* LOCAL */
+  /* EXTERNAL */
+  /* OPEN ID */
+  /* ELMENTS */
 }
-.user__local,
-.user__openid {
-  min-height: 320px;
+/* USER LOGIN CARD */
+.user-login__card {
   border: 1px solid #507ebf;
 }
-.user__local h3,
-.user__openid h3 {
-  padding: 10px;
+.user-login__card h3 {
   color: #fff;
-  border-bottom: 1px solid #507ebf;
+  border-color: #507ebf;
   background-color: #507ebf;
-}
-.user__local p,
-.user__openid p {
-  padding: 0 10px;
-}
-.user__local {
-  margin-bottom: 15px;
-}
-.user__local form {
-  padding: 0 10px;
-}
-.user__options {
-  padding: 0 10px;
-}
-.user__openid nav {
-  padding: 0 10px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
