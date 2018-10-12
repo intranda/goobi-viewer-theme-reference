@@ -116,7 +116,13 @@
 [data-bookshelf-type="delete"],
 [data-bookshelf-type="link"],
 [data-bookshelf-type="reset"] {}
-[data-bookshelf-type="dropdown"] {}
+[data-bookshelf-type="dropdown"] {
+	&:hover,
+	&:active,
+	&:focus {
+		color: @white;
+	}
+}
 [data-bookshelf-type="get"] {}
 [data-bookshelf-type="add"] {
 	&.white {}

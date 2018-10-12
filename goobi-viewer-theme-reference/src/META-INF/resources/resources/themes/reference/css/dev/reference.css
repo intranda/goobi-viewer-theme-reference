@@ -361,21 +361,9 @@ strong {
    Buttons
    style declarations for buttons
    ==============================================================*/
-.btn,
-.btn.ui-button {
-  font-size: 14px;
-  color: #fff;
-  border: 1px solid #d5d5d5;
-  background-color: #507ebf;
-}
-.btn:hover,
-.btn.ui-button:hover,
-.btn:focus,
-.btn.ui-button:focus,
-.btn:active,
-.btn.ui-button:active {
-  color: #fff;
-  background-color: #69a7ef;
+/* BUTTONS */
+.btn {
+  /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -435,10 +423,6 @@ strong {
    Modals
    style declarations for Bootstrap Modals
    ==============================================================*/
-.modal .modal-dialog .modal-content .modal-footer .btn {
-  font-size: 14px;
-  color: #fff;
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -522,6 +506,11 @@ strong {
   /* ELEMENT */
 }
 /* ACTION BUTTONS */
+[data-bookshelf-type="dropdown"]:hover,
+[data-bookshelf-type="dropdown"]:active,
+[data-bookshelf-type="dropdown"]:focus {
+  color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -650,6 +639,11 @@ strong {
   /* NOT LOGGED IN */
   /* LOGGED IN */
 }
+.login-navigation [data-login="false"] button[data-toggle="login-dropdown"]:hover,
+.login-navigation [data-login="false"] button[data-toggle="login-dropdown"]:active,
+.login-navigation [data-login="false"] button[data-toggle="login-dropdown"]:focus {
+  color: #fff;
+}
 .login-navigation [data-login="false"] .login-navigation {
   /* LOGIN DROPDOWN */
   /* DROPDOWN ACTIONS */
@@ -657,7 +651,6 @@ strong {
   /* OPEN ID */
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown {
-  top: 22px;
   font-size: 0.9rem;
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown a,
@@ -687,13 +680,15 @@ strong {
   font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000;
 }
+.login-navigation [data-login="true"] button[data-toggle="user-dropdown"]:hover,
+.login-navigation [data-login="true"] button[data-toggle="user-dropdown"]:active,
+.login-navigation [data-login="true"] button[data-toggle="user-dropdown"]:focus {
+  color: #fff;
+}
 .login-navigation [data-login="true"] .login-navigation {
   /* TOGGLE USER DROPDOWN */
   /* USER DROPDOWN */
   /* USER DROPDOWN ACTION */
-}
-.login-navigation [data-login="true"] .login-navigation__user-dropdown {
-  top: 22px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -785,7 +780,6 @@ strong {
 /* NAVIGATION */
 /* BLOCK */
 .navigation {
-  max-height: 41px;
   /* ELEMENT */
   /* STANDARD MENU */
   /* MEGA MENU */
@@ -833,12 +827,14 @@ strong {
   visibility: hidden !important;
 }
 .navigation__submenu {
-  padding: 5px 0;
-  border-color: #69a7ef;
+  border: none;
   background-color: #507ebf;
 }
 .navigation__submenu ul {
   max-height: inherit;
+}
+.navigation__submenu li.divider {
+  display: none;
 }
 .navigation__submenu a:focus,
 .navigation__submenu button:focus,
@@ -1298,10 +1294,12 @@ strong {
 /* BLOCK */
 .search-list {
   /* ELEMENT */
+  /* CURRENT SEARCH */
   /* LINKS */
   /* SORTING */
   /* ADVANCED SEARCH INFO */
   /* HITS */
+  /* DRILLDOWN HEADING */
 }
 /* MODIFICATION */
 /* STACKED MV THUMBNAIL */

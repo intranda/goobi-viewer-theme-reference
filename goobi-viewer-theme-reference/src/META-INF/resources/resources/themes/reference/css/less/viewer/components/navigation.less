@@ -5,7 +5,6 @@
 /* NAVIGATION */
 /* BLOCK */
 .navigation {
-    max-height: 41px;
 	/* ELEMENT */
 	ul {
 	   max-height: 41px;
@@ -47,14 +46,15 @@
 	/* STANDARD MENU */
 	&__submenu-trigger {}
 	&__submenu {
-	   padding: 5px 0;
-	   border-color: @hoverblue;
+	   border: none;
 	   background-color: @blue;
 	   ul {
 	       max-height: inherit;
 	   }
 	   li {
-	       &.divider {}
+	       &.divider {
+	           display: none;
+	       }
         }
 	   a, button {
 	       &:focus,

@@ -12,11 +12,15 @@
 		button[data-toggle="login-dropdown"] {
 			span {}
 			.fa {}
+			&:hover,
+			&:active,
+			&:focus {
+				color: @white;
+			}
 		}
 		.login-navigation {
 			/* LOGIN DROPDOWN */
 			&__login-dropdown {
-				top: 22px;
 				font-size: 0.9rem;
 				li {}
 				a, button {
@@ -66,7 +70,13 @@
 	}
 	/* LOGGED IN */
 	[data-login="true"] {
-		button[data-toggle="user-dropdown"] {}
+		button[data-toggle="user-dropdown"] {
+			&:hover,
+			&:active,
+			&:focus {
+				color: @white;
+			}
+		}
 		.login-navigation {
 			/* TOGGLE USER DROPDOWN */
 			&__user-name {}			
@@ -75,7 +85,6 @@
 			}
 			/* USER DROPDOWN */
 			&__user-dropdown {
-				top: 22px;
 				ul {}
 				li {}
 			}

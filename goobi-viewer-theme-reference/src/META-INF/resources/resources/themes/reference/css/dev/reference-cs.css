@@ -378,21 +378,9 @@ strong {
    Buttons
    style declarations for buttons
    ==============================================================*/
-.btn,
-.btn.ui-button {
-  font-size: 14px;
-  color: #fff;
-  border: 1px solid #d5d5d5;
-  background-color: #507ebf;
-}
-.btn:hover,
-.btn.ui-button:hover,
-.btn:focus,
-.btn.ui-button:focus,
-.btn:active,
-.btn.ui-button:active {
-  color: #fff;
-  background-color: #69a7ef;
+/* BUTTONS */
+.btn {
+  /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

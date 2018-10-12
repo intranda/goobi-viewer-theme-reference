@@ -16,7 +16,8 @@
         a, button {
             &:hover,
             &:focus,
-            &:active {}
+            &:active,
+            &.active {}
         }
         form {}
     }
@@ -33,6 +34,13 @@
             img {}
         }
     }
+    &__views {
+    	button {}
+    	[data-view="search-list-default"] {}
+    	[data-view="search-list-grid"] {}
+    	[data-view="search-list-list"] {}
+    }
+    /* CURRENT SEARCH */
     &__label {}
     &__current-search {
         .form-group {}
@@ -42,12 +50,16 @@
                 &:focus,
                 &:active {}
             }
-            &.reset {}
+            &.reset {
+            	&.focus {}
+            }
             &.search {
                 a {}
             }
         }
-        .form-control {}
+        .form-control {
+        	&:focus {}
+        }
     }
     /* LINKS */
     &__links {
@@ -79,6 +91,15 @@
     }
     &__hit-thumbnail {
         img {}
+        [data-bookshelf-type="add"] {
+		    .fa-bookmark-o,
+		    .fa-bookmark {}
+		    &.added,
+		    &:hover {
+		    	.fa-bookmark-o,
+			    .fa-bookmark {}
+		    }
+        }
     }
     &__hit-type {}
     &__hit-docstruct {
@@ -127,11 +148,19 @@
     &__struct-title {
         h5 {}
     }
+    &__metadata-info {
+    	td {
+    		&:first-child {}
+    	}
+    	.fa {}
+    }
     &__struct-child-hits {
         a {}
     }
     &__struct-chapter {}
     &__struct-chapter + .search-list__struct-title  {}
+    /* DRILLDOWN HEADING */
+    &__drilldown-heading {}
 }
 /* MODIFICATION */
 .search-list--highlight {}
