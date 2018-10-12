@@ -72,14 +72,34 @@ module.exports = function(grunt) {
                 options: {
                 	spawn: false,
                 }
+            },
+            riot: {
+				files : [
+					'<%=src.jsDevFolder %>tags/**/*.tag'
+				],
+				tasks : [ 'riot' ],
+				options : {
+					spawn : false,
+				}
+			}
+		},
+		riot: {
+            options:{
+                concat: true
+            },
+            dist: {
+                expand: false,
+                src: '<%=src.jsDevFolder %>tags/**/*.tag',
+                dest: '<%=src.jsDistFolder%><%=theme.name%>-tags.js'
             }
-        }
+        },
     });
     
 	// ---------- LOAD TASKS ----------
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-riot');
     
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
     grunt.registerTask( 'default', [ 'watch' ] );

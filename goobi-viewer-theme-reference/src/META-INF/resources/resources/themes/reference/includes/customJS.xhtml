@@ -41,7 +41,12 @@
     	}
     	
     	// init cms module functions
-    	cmsJS.modules.init();
+    	cmsJS.modules.init();    	
     </script>
     <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/reference-tags.js"></script>
+    <script>
+    	// mount riot tags
+    	// riot.mount( '' );
+    </script>
 </ui:composition>
