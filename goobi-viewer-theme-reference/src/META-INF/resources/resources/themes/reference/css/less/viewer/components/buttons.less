@@ -6,7 +6,8 @@
 .btn {
 	&:hover,
 	&:active,
-	&:focus {}
+	&:focus,
+	&.active {}
 	/* MODIFICATION */
 	&--default {
 		&:hover,
@@ -36,9 +37,16 @@
 	}
 	&--hidden {}
 	&--inactive {}
+	&--icon {
+		&:hover,
+		&:focus,
+		&:active {}
+	}
 }
 
-/* BREAKPOINT FOR LARGE DESKTOPS */
+/* MODIFICATIONS */
+a.btn--icon {}
+
 @media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
