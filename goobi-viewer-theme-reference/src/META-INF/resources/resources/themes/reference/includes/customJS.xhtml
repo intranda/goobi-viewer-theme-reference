@@ -15,8 +15,10 @@
     	var currentPage = "#{navigationHelper.currentPage}";
     	var currentLang = "#{navigationHelper.localeString}";
     	var currentPath = "#{request.contextPath}";
+    	var currentTheme = "#{navigationHelper.theme}";
     	var userLoggedIn = #{userBean.loggedIn};
     	var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
+    	var subTheme = "#{navigationHelper.subThemeDiscriminatorValue}";
     	var watchlistConfig = {
     		root: "#{request.contextPath}",
     		msg: {
