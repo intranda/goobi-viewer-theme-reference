@@ -2275,6 +2275,36 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   Widget Usage
+   style declarations for widget_usage.xhtml
+   ==============================================================*/
+/* WIDGET USAGE */
+.widget-usage {
+  border-bottom: 1px solid #d5d5d5;
+  /* LICENSE TEXT */
+  /* WORK DOWNLOADS */
+  /* PAGE DOWNLOADS */
+}
+.widget-usage__subtitle,
+.widget-usage__license-text,
+.widget-usage__work-downloads,
+.widget-usage__page-downloads {
+  margin: 0;
+  padding: 10px;
+  border-right: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
+}
+.widget-usage__subtitle {
+  padding-bottom: 0;
+}
+.widget-usage__page-downloads {
+  padding-bottom: 20px;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Widget User
    style declarations for widget_user.xhtml
    ==============================================================*/

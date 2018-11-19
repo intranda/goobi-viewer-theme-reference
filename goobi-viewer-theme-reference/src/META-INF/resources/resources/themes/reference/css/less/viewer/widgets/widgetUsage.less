@@ -1,0 +1,57 @@
+/* ==============================================================
+   Widget Usage
+   style declarations for widget_usage.xhtml
+   ==============================================================*/
+/* WIDGET USAGE */
+.widget-usage {
+	border-bottom: 1px solid @middlegray;
+	h3 {}
+	h4 {}
+	&__subtitle,
+	&__license-text,
+	&__work-downloads,
+	&__page-downloads {
+		margin: 0;
+		padding: 10px;
+		border-right: 1px solid @middlegray;
+		border-left: 1px solid @middlegray;		
+	}
+	&__subtitle {
+		padding-bottom: 0;
+	}
+	/* LICENSE TEXT */
+	&__license-text {}
+	/* WORK DOWNLOADS */
+	&__work-downloads {
+		a {}
+		.label-default {}
+	}
+	&__work-download-lido-mets {}
+	&__work-download-alto {}
+	&__work-download-fulltext {}
+	&__work-download-pdf {}
+	&__work-download-epub {}
+	&__work-download-iiif {}
+	/* PAGE DOWNLOADS */
+	&__page-downloads {
+		padding-bottom: 20px;
+		a {}
+		.label-default {}
+	}
+	&__page-download-alto {}
+	&__page-download-fulltext {}
+	&__page-download-pdf {}
+	&__page-download-jpeg {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
