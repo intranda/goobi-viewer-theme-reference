@@ -794,7 +794,8 @@ strong {
 }
 .navigation a,
 .navigation button {
-  padding: 10px 12px;
+  height: 40px;
+  padding: 0 12px;
   color: #fff;
   background-color: #507ebf;
 }
@@ -821,6 +822,7 @@ strong {
   color: #fff;
 }
 .navigation .caret {
+  margin-top: 3px;
   color: #fff;
 }
 .navigation__user-login {
@@ -828,6 +830,7 @@ strong {
   visibility: hidden !important;
 }
 .navigation__submenu {
+  top: 100%;
   border: none;
   background-color: #507ebf;
 }
