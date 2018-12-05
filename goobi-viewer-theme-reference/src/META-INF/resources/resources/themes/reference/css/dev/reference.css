@@ -1874,6 +1874,9 @@ strong {
    Widgets
    style declarations for sidebar widgets
    ==============================================================*/
+.widget {
+  /* collapse */
+}
 .widget h3 {
   margin: 0;
   padding: 5px 10px;
@@ -1891,6 +1894,14 @@ strong {
 .widget ul li.active a {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
+}
+.widget .widget-title .widget-collapse {
+  font-size: 20px;
+  color: white;
+  right: 10px;
+}
+.widget .widget-title .widget-collapse.collapse {
+  display: inline;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
