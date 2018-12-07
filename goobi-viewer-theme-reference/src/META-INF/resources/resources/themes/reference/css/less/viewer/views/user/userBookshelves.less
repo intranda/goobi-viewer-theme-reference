@@ -1,38 +1,36 @@
 /* ==============================================================
-   Simple (Numeric) Paginator
-   style declarations for simplePaginator.xhtml
+   User Bookshelves
+   style declarations for userBackendBookshelves.xhtml
    ==============================================================*/
-/* NUMERIC PAGINATOR */
+/* USER BOOKSHELVES */
 /* BLOCK */
-.numeric-paginator {
+.user-bookshelves {
 	/* ELEMENT */
-	ul {}
-	li {}
-	a, span {
+	h2 {}
+	/* ADD */
+	&__add-bookshelf {
+		input {}
+		button {}
+	}
+	/* PANEL */
+	&__panel {
 		background-color: @white;
 	}
-	a {
-		&:hover,
-		&:active,
-		&:focus {}
+	&__panel-header {
+		h4 {}
+		a {}
+		small {}
 	}
-	span {}
-	&__active {
-		a, span {
-		}
+	&__panel-body {
+		p {}
 	}
-	&__dots {
-		a, span {
-			background-color: transparent;
-		}
+	&__panel-action {
+		a {}
 	}
-	&__navigate {}
-	/* MODIFICATION */
-	li.numeric-paginator__dots {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOP */
 @media screen and (max-width: @mediumBreakpoint) {}

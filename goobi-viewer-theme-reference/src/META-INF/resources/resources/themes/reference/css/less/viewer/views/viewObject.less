@@ -7,7 +7,12 @@
 .view-object {
 	/* ELEMENT */
 	/* IMAGE */
-	&__image {}
+	&__image {
+		padding: 10px;
+		border: 1px solid @middlegray;
+		border-top: 0;
+		background-color: @white;
+	}
 	&__image-loader {}
 	&__image-map {
 	    span {}
@@ -18,7 +23,9 @@
 	    }
 	}
 	/* IMAGE MOBILE */
-	&__image-mobile {}
+	&__image-mobile {
+		background-color: @white;
+	}
 	/* VIDEO, AUDIO, TEXT */
 	&__video,
 	&__audio,

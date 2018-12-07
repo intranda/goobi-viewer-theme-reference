@@ -18,13 +18,10 @@
 	   }
 	}
 	&__metadata {
+		margin-bottom: 15px;
         font-size: 13px;
         .dl-horizontal {
             margin: 0;
-            border-bottom: 1px solid @middlegray;
-            &:first-child {
-                border-top: 1px solid @middlegray;
-            }
             &.edit-metadata:hover {}
         }
         dt {
@@ -53,7 +50,8 @@
 	/* DESCRIPTION */
 	&__description {
 	   padding: 10px;
-	   border: 1px solid @blue;
+	   border: 1px solid @middlegray;
+	   background-color: @white;
 	}
 	&__description-title,
 	&__description-action {}
@@ -68,7 +66,8 @@
 	/* PUBLICATION */
 	&__publication {
 	   padding: 10px;
-       border: 1px solid @blue;
+       border: 1px solid @middlegray;
+       background-color: @white;
 	}
 	&__publication-title,
 	&__publication-action {}

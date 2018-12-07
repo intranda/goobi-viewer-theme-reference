@@ -43,6 +43,7 @@
     /* CURRENT SEARCH */
     &__label {}
     &__current-search {
+    	margin-bottom: 15px;
         .form-group {}
         .input-group-addon {
             a {
@@ -59,6 +60,9 @@
         }
         .form-control {
         	&:focus {}
+        }
+        & + hr {
+        	display: none;
         }
     }
     /* LINKS */
@@ -81,7 +85,9 @@
     &__adv-search-info-back {}
     /* HITS */
     &__hits {}
-    &__hit {}
+    &__hit {
+    	background-color: @white;
+    }
     &__hit-header {}
     &__hit-title,
     &__hit-type,

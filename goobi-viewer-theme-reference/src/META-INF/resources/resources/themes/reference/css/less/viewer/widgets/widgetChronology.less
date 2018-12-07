@@ -5,15 +5,36 @@
 /* WIDGET CHRONOLOGY */
 /* BLOCK */
 .widget-chronology-slider {
+	padding: 0;
+	background-color: @white;
 	/* ELEMENT */
 	&__item {
 		&.chronology-slider-label,
-		&.chronology-slider-actions {}
 		&.chronology-slider-actions {
+			min-height: 39px;
+			padding-right: 10px;
+			padding-bottom: 5px;
+			padding-left: 10px;
+			font-family: @fontSerif;
+	        font-size: 14px;
+	        color: @white;
+	        background-color: @blue;			
+		}
+		&.chronology-slider-label {
+			padding-top: 9px;
+			padding-right: 0;
+		}
+		&.chronology-slider-actions {
+			padding-top: 6px;
+			padding-left: 0;
 			ul {}
 			li {}
-			img {}
-			[data-reset="chrono-slider"] {}
+			img {
+				margin: 0;
+			}
+			[data-reset="chrono-slider"] {
+				color: @white;
+			}
 		}
 		&.chronology-slider-action-loader,
 		&.chronology-slider-action-reset {
@@ -22,10 +43,22 @@
 		&.chronology-slider-action-loader {}
 		&.chronology-slider-action-reset {}
 		&.chronology-slider-start,
-		&.chronology-slider-end {}
-		&.chronology-slider-start {}
-		&.chronology-slider-end {}
-		&.chronology-slider {}
+		&.chronology-slider-end {
+			padding: 10px;
+		}
+		&.chronology-slider-start {
+			padding-right: 0;
+			border-left: 1px solid @middlegray;
+		}
+		&.chronology-slider-end {
+			padding-left: 0;
+			border-right: 1px solid @middlegray;
+		}
+		&.chronology-slider {
+			padding: 10px;
+			border: 1px solid @middlegray;
+			border-top: 0;
+		}
 	}
 }
 

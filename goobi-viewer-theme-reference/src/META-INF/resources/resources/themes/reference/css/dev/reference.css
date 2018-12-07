@@ -54,6 +54,7 @@ body {
           font-kerning: normal;
   line-height: 1.4;
   color: #222;
+  background-color: #f2f3f4;
 }
 h1,
 h2,
@@ -70,7 +71,7 @@ h6,
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
 }
 a {
-  color: #507ebf;
+  color: #3365a9;
 }
 a:hover,
 a:focus,
@@ -213,7 +214,7 @@ strong {
 /* MAIN NAVIGATION */
 /* BLOCK */
 .main-navigation {
-  background-color: #507ebf;
+  background-color: #3365a9;
   /* ELEMENT */
 }
 .main-navigation .container {
@@ -379,8 +380,8 @@ strong {
   font-size: 1.5rem;
   text-align: center;
   color: #fff;
-  border: 1px solid #507ebf;
-  background-color: #507ebf;
+  border: 1px solid #3365a9;
+  background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -420,14 +421,6 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Modals
-   style declarations for Bootstrap Modals
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
 /* VIEWER COMPONENTS */
 /* ==============================================================
    Alphabetic Paginator
@@ -462,7 +455,7 @@ strong {
 .bookshelf-navigation__dropdown-list a:hover,
 .bookshelf-navigation__dropdown-list a:active,
 .bookshelf-navigation__dropdown-list a:focus {
-  color: #507ebf;
+  color: #3365a9;
   text-decoration: none;
 }
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
@@ -471,7 +464,7 @@ strong {
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
-  color: #507ebf;
+  color: #3365a9;
 }
 .bookshelf-navigation__dropdown-list-reset a,
 .bookshelf-navigation__dropdown-list-send a,
@@ -499,7 +492,7 @@ strong {
 .bookshelf-navigation__dropdown-list-reset button:focus,
 .bookshelf-navigation__dropdown-list-send button:focus,
 .bookshelf-navigation__dropdown-list-mirador button:focus {
-  color: #507ebf;
+  color: #3365a9;
 }
 /* POPUPS */
 /* BLOCK */
@@ -615,6 +608,9 @@ strong {
 /* CONTROLS */
 /* BLOCK */
 .image-controls {
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+  border-bottom: 0;
   /* ELEMENT */
   /* DOCUMENT OPTIONS */
   /* ACTIONS */
@@ -664,7 +660,7 @@ strong {
 .login-navigation [data-login="false"] .login-navigation__login-dropdown button:active,
 .login-navigation [data-login="false"] .login-navigation__login-dropdown a:focus,
 .login-navigation [data-login="false"] .login-navigation__login-dropdown button:focus {
-  color: #507ebf;
+  color: #3365a9;
   text-decoration: none;
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown .form-group {
@@ -790,14 +786,14 @@ strong {
 }
 .navigation li.active > a,
 .navigation li.active > button {
-  background-color: #69a7ef;
+  background-color: #507ebf;
 }
 .navigation a,
 .navigation button {
   height: 40px;
   padding: 0 12px;
   color: #fff;
-  background-color: #507ebf;
+  background-color: #3365a9;
 }
 .navigation a:hover,
 .navigation button:hover,
@@ -810,12 +806,12 @@ strong {
 .navigation a:hover,
 .navigation button:hover {
   color: #fff;
-  background-color: #69a7ef;
+  background-color: #507ebf;
 }
 .navigation a:focus,
 .navigation button:focus {
   color: #fff;
-  background-color: #69a7ef;
+  background-color: #507ebf;
 }
 .navigation a:active,
 .navigation button:active {
@@ -832,7 +828,7 @@ strong {
 .navigation__submenu {
   top: 100%;
   border: none;
-  background-color: #507ebf;
+  background-color: #3365a9;
 }
 .navigation__submenu ul {
   max-height: inherit;
@@ -874,15 +870,15 @@ strong {
    ==============================================================*/
 .normdataLink,
 .normdataDetailLink {
-  color: #69a7ef;
+  color: #507ebf;
 }
 .normdata-popover {
   font-size: 13px;
-  border: 1px solid #507ebf;
+  border: 1px solid #3365a9;
 }
 .normdata-popover .normdata-popover-title {
   color: #fff;
-  background-color: #507ebf;
+  background-color: #3365a9;
   border-bottom: 1px solid #d5d5d5;
 }
 .normdata-popover .normdata-popover-title .normdata-popover-close {
@@ -923,6 +919,14 @@ strong {
   /* ELEMENT */
   /* MODIFICATION */
 }
+.numeric-paginator a,
+.numeric-paginator span {
+  background-color: #fff;
+}
+.numeric-paginator__dots a,
+.numeric-paginator__dots span {
+  background-color: transparent;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -932,17 +936,13 @@ strong {
    style declarations for title.xhtml
    ==============================================================*/
 #titleWrapper {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
+  padding: 10px 0 20px 0;
 }
 #titleWrapper .title-header h3 {
   margin: 0;
 }
 #titleWrapper .title-header h3 a {
   color: #444;
-}
-#titleWrapper .title-body form {
-  margin-top: 10px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -957,6 +957,12 @@ strong {
 .user-comments {
   /* ELEMENT */
 }
+.user-comments__message-login {
+  background-color: #fff;
+}
+.user-comments__comment-content {
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -967,15 +973,15 @@ strong {
    ==============================================================*/
 #view_image_user_generated_content nav {
   padding: 10px;
-  border: 1px solid #507ebf;
+  border: 1px solid #3365a9;
 }
 #view_image_user_generated_content ul li {
   padding: 3px 5px;
 }
 #view_image_user_generated_content #user_generated_content_nav .ugc-highlight {
   border: 1px solid #d5d5d5;
-  border-bottom-color: #507ebf;
-  background-color: #507ebf;
+  border-bottom-color: #3365a9;
+  background-color: #3365a9;
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1271,6 +1277,9 @@ strong {
 .search-advanced {
   /* ELEMENT */
 }
+.search-advanced__group {
+  background-color: #fff;
+}
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1304,6 +1313,15 @@ strong {
   /* ADVANCED SEARCH INFO */
   /* HITS */
   /* DRILLDOWN HEADING */
+}
+.search-list__current-search {
+  margin-bottom: 15px;
+}
+.search-list__current-search + hr {
+  display: none;
+}
+.search-list__hit {
+  background-color: #fff;
 }
 /* MODIFICATION */
 /* STACKED MV THUMBNAIL */
@@ -1346,6 +1364,7 @@ strong {
 /* SEARCH STANDARD */
 /* BLOCK */
 .search-standard {
+  background-color: #fff;
   /* ELEMENT */
   /* MODIFICATION */
 }
@@ -1393,12 +1412,12 @@ strong {
 }
 /* USER LOGIN CARD */
 .user-login__card {
-  border: 1px solid #507ebf;
+  border: 1px solid #3365a9;
 }
 .user-login__card h3 {
   color: #fff;
-  border-color: #507ebf;
-  background-color: #507ebf;
+  border-color: #3365a9;
+  background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1473,26 +1492,16 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Bookshelves
-   style declarations for userBackendBookshelves.xhtml
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   User edit Bookshelf
+   User Bookshelf Edit
    style declarations for userBackendEditBookshelf.xhtml
    ==============================================================*/
-#editBookshelf #userEditBookshelfForm .btn {
-  float: right;
-  margin: 0;
+/* USER BOOKSHELF EDIT */
+/* BLOCK */
+.user-bookshelf-edit {
+  /* ELEMENT */
 }
-#editBookshelf #deleteBookshelfWrapp {
-  text-align: right;
-}
-#editBookshelf #editBookshelfItemControlsForm {
-  text-align: right;
+.user-bookshelf-edit__form {
+  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1523,6 +1532,32 @@ strong {
    User view Bookshelf
    style declarations for userBackendViewBookshelf.xhtml
    ==============================================================*/
+/* USER VIEW BOOKSHELF */
+/* BLOCK */
+.view-bookshelf {
+  /* ELEMENT */
+}
+.view-bookshelf__item {
+  background-color: #fff;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   User Bookshelves
+   style declarations for userBackendBookshelves.xhtml
+   ==============================================================*/
+/* USER BOOKSHELVES */
+/* BLOCK */
+.user-bookshelves {
+  /* ELEMENT */
+  /* ADD */
+  /* PANEL */
+}
+.user-bookshelves__panel {
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1582,6 +1617,12 @@ strong {
 .view-fulltext {
   /* ELEMENT */
 }
+.view-fulltext__wrapper {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1602,7 +1643,8 @@ strong {
   margin-bottom: 15px;
   padding: 10px;
   font-size: 13px;
-  border: 1px solid #507ebf;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
 }
 .metadata__element,
 .metadata__event {
@@ -1682,6 +1724,15 @@ strong {
   /* AUDIO */
   /* TEXT */
 }
+.view-object__image {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+  background-color: #fff;
+}
+.view-object__image-mobile {
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1704,14 +1755,11 @@ strong {
   min-width: 100%;
 }
 .overview__metadata {
+  margin-bottom: 15px;
   font-size: 13px;
 }
 .overview__metadata .dl-horizontal {
   margin: 0;
-  border-bottom: 1px solid #d5d5d5;
-}
-.overview__metadata .dl-horizontal:first-child {
-  border-top: 1px solid #d5d5d5;
 }
 .overview__metadata dt {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1724,11 +1772,13 @@ strong {
 }
 .overview__description {
   padding: 10px;
-  border: 1px solid #507ebf;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
 }
 .overview__publication {
   padding: 10px;
-  border: 1px solid #507ebf;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
 }
 .overview__publication-navigate a,
 .overview__publication-navigate span {
@@ -1751,7 +1801,7 @@ strong {
 }
 .reading-mode__navigation {
   background-color: #fff;
-  border-bottom: 2px solid #507ebf;
+  border-bottom: 2px solid #3365a9;
 }
 .reading-mode__content-sidebar {
   background-color: #fff;
@@ -1760,7 +1810,7 @@ strong {
   color: #fff;
   border: 1px solid #fff;
   border-right: none;
-  background-color: #507ebf;
+  background-color: #3365a9;
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1776,11 +1826,12 @@ strong {
 .view-thumbs {
   /* ELEMENT */
 }
+.view-thumbs__thumbnails {
+  margin: 0;
+}
 .view-thumbs__thumbnail {
   border-color: #d5d5d5;
-}
-.view-thumbs__thumbnail:hover {
-  background-color: #eee;
+  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1792,10 +1843,10 @@ strong {
    ==============================================================*/
 #timeMatrix .timematrix-selection {
   padding: 52px 50px 10px 39px;
-  border: 1px solid #507ebf;
+  border: 1px solid #3365a9;
 }
 #timeMatrix .timematrix-selection #slider-range .ui-slider-handle {
-  background-color: #507ebf;
+  background-color: #3365a9;
 }
 #timeMatrix .btn {
   margin-right: -40px;
@@ -1804,19 +1855,19 @@ strong {
   border-color: #d5d5d5;
 }
 #timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb:hover {
-  border-color: #507ebf;
+  border-color: #3365a9;
 }
 #timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb.marker:before {
-  border-color: transparent transparent #507ebf transparent;
+  border-color: transparent transparent #3365a9 transparent;
 }
 .timematrix-popover {
-  border-color: #507ebf;
-  background-color: #507ebf;
+  border-color: #3365a9;
+  background-color: #3365a9;
 }
 .timematrix-popover .timematrix-popover-header {
   padding: 5px 10px;
   color: #fff;
-  border-bottom-color: #507ebf;
+  border-bottom-color: #3365a9;
 }
 .timematrix-popover .timematrix-popover-header h4 {
   line-height: 1.7;
@@ -1864,6 +1915,13 @@ strong {
 .toc__mv-element-img img {
   display: inline-block;
 }
+.toc__list-expandable,
+.toc__list-full {
+  margin: 0;
+  border-right: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
+  background-color: #fff;
+}
 /* DOWNLOAD MODAL */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1875,7 +1933,7 @@ strong {
    style declarations for sidebar widgets
    ==============================================================*/
 .widget {
-  /* collapse */
+  background-color: #fff;
 }
 .widget h3 {
   margin: 0;
@@ -1883,8 +1941,8 @@ strong {
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
   font-size: 14px;
   color: #fff;
-  border-bottom: 1px solid #507ebf;
-  background-color: #507ebf;
+  border-bottom: 1px solid #3365a9;
+  background-color: #3365a9;
 }
 .widget ul {
   padding: 10px;
@@ -1895,13 +1953,9 @@ strong {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
 }
-.widget .widget-title .widget-collapse {
-  font-size: 20px;
-  color: white;
-  right: 10px;
-}
-.widget .widget-title .widget-collapse.collapse {
-  display: inline;
+.widget__body {
+  border: 1px solid #d5d5d5;
+  border-top: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -1960,7 +2014,51 @@ strong {
 /* WIDGET CHRONOLOGY */
 /* BLOCK */
 .widget-chronology-slider {
+  padding: 0;
+  background-color: #fff;
   /* ELEMENT */
+}
+.widget-chronology-slider__item.chronology-slider-label,
+.widget-chronology-slider__item.chronology-slider-actions {
+  min-height: 39px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
+  font-size: 14px;
+  color: #fff;
+  background-color: #3365a9;
+}
+.widget-chronology-slider__item.chronology-slider-label {
+  padding-top: 9px;
+  padding-right: 0;
+}
+.widget-chronology-slider__item.chronology-slider-actions {
+  padding-top: 6px;
+  padding-left: 0;
+}
+.widget-chronology-slider__item.chronology-slider-actions img {
+  margin: 0;
+}
+.widget-chronology-slider__item.chronology-slider-actions [data-reset="chrono-slider"] {
+  color: #fff;
+}
+.widget-chronology-slider__item.chronology-slider-start,
+.widget-chronology-slider__item.chronology-slider-end {
+  padding: 10px;
+}
+.widget-chronology-slider__item.chronology-slider-start {
+  padding-right: 0;
+  border-left: 1px solid #d5d5d5;
+}
+.widget-chronology-slider__item.chronology-slider-end {
+  padding-left: 0;
+  border-right: 1px solid #d5d5d5;
+}
+.widget-chronology-slider__item.chronology-slider {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-top: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2094,8 +2192,8 @@ strong {
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
   font-size: 14px;
   color: #fff;
-  border-bottom: 1px solid #507ebf;
-  background-color: #507ebf;
+  border-bottom: 1px solid #3365a9;
+  background-color: #3365a9;
 }
 #widgetNerFacetting .facetting-content .nav-tabs li a {
   border: none;
@@ -2176,8 +2274,8 @@ strong {
   border-right: 0;
 }
 .widget-searchfield .input-group-addon {
-  border-color: #507ebf;
-  background-color: #507ebf;
+  border-color: #3365a9;
+  background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2196,8 +2294,8 @@ strong {
   border-right: 0;
 }
 .widget-search-in-current-item .input-group-addon {
-  border-color: #507ebf;
-  background-color: #507ebf;
+  border-color: #3365a9;
+  background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2281,25 +2379,11 @@ strong {
    ==============================================================*/
 /* WIDGET USAGE */
 .widget-usage {
-  border-bottom: 1px solid #d5d5d5;
   /* LICENSE TEXT */
+  /* DOWNLOADS */
   /* WORK DOWNLOADS */
   /* PAGE DOWNLOADS */
-}
-.widget-usage__subtitle,
-.widget-usage__license-text,
-.widget-usage__work-downloads,
-.widget-usage__page-downloads {
-  margin: 0;
-  padding: 10px;
-  border-right: 1px solid #d5d5d5;
-  border-left: 1px solid #d5d5d5;
-}
-.widget-usage__subtitle {
-  padding-bottom: 0;
-}
-.widget-usage__page-downloads {
-  padding-bottom: 20px;
+  /* CITE LINKS */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -2680,6 +2764,48 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Search Standard"
+   style declarations for cms_template_23_searchStandard.xhtml
+   ==============================================================*/
+/* SEARCH STANDARD */
+/* BLOCK */
+.tpl-search-standard {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Search Advanced"
+   style declarations for cms_template_24_searchAdvanced.xhtml
+   ==============================================================*/
+/* SEARCH ADVANCED */
+/* BLOCK */
+.tpl-search-advanced {
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Tags"
+   style declarations for cms_template_25_tags.xhtml
+   ==============================================================*/
+/* TAGS */
+/* BLOCK */
+.tpl-tags {
+  /* ELEMENT */
+}
+.tpl-tags__text {
+  margin-bottom: 15px;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* CMS VIEWS */
 /* ==============================================================
    CMS Collections
@@ -2689,6 +2815,11 @@ strong {
 /* BLOCK */
 .cms-collections {
   /* ELEMENT */
+}
+.cms-collections form {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
 }
 /* ==============================================================
    CMS Create Page
@@ -2733,6 +2864,16 @@ strong {
   /* PAGES */
   /* ITEMS */
 }
+.cms-menu__select-theme {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
+.cms-menu__visible-items-list {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -2753,6 +2894,11 @@ strong {
 /* BLOCK */
 .cms-select-template {
   /* ELEMENT */
+}
+.cms-select-template__wrapper {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */

@@ -50,6 +50,7 @@ body {
           font-kerning: normal;
   line-height: 1.4;
   color: #222;
+  background-color: #f2f3f4;
 }
 h1,
 h2,
@@ -66,7 +67,7 @@ h6,
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
 }
 a {
-  color: #507ebf;
+  color: #3365a9;
 }
 a:hover,
 a:focus,
@@ -174,7 +175,7 @@ strong {
 /* MAIN NAVIGATION */
 /* BLOCK */
 .main-navigation {
-  background-color: #507ebf;
+  background-color: #3365a9;
   /* ELEMENT */
 }
 .main-navigation .container {
@@ -371,6 +372,14 @@ strong {
   /* ELEMENT */
   /* MODIFICATION */
 }
+.numeric-paginator a,
+.numeric-paginator span {
+  background-color: #fff;
+}
+.numeric-paginator__dots a,
+.numeric-paginator__dots span {
+  background-color: transparent;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -429,8 +438,8 @@ body {
    style declarations for crowdsourcingNavigation.xhtml
    ==============================================================*/
 #mainnav {
-  background-color: #507ebf;
-  border-color: #507ebf;
+  background-color: #3365a9;
+  border-color: #3365a9;
 }
 #mainnav ul li a {
   color: #fff;

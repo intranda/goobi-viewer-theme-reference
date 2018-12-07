@@ -3,6 +3,7 @@
    style declarations for sidebar widgets
    ==============================================================*/
 .widget {
+	background-color: @white;
     h3 {
         margin: 0;
         padding: 5px 10px;
@@ -32,21 +33,20 @@
         dt {}
         dd {}
     }
-    /* collapse */
-    .widget-title {
-    	.widget-collapse {
-    		font-size: 20px;
-    		color: white;
-    		right: 10px;
-    		&.collapse {
-    			display: inline;
-    		}
-    		&.expand {
-    		}
+    &__title {
+    	.fa {}
+    	&.collapseable {
+    		.fa {}
+	    	&.in {
+	    		.fa-chevron-down {}
+	    	}    		
     	}
-   	}
-   	.widget-body {
-   	}
+    }
+    &__body {
+    	border: 1px solid @middlegray;
+    	border-top: 0;
+    	&.collapseable {}
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
