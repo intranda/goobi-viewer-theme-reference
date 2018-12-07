@@ -1650,7 +1650,7 @@ strong {
 .metadata__event {
   margin-bottom: 5px;
   padding: 0 0 5px 0;
-  border-bottom: 1px solid #d5d5d5;
+  border-bottom: 1px solid #f2f3f4;
 }
 .metadata__element:last-child,
 .metadata__event:last-child {
@@ -1918,9 +1918,17 @@ strong {
 .toc__list-expandable,
 .toc__list-full {
   margin: 0;
-  border-right: 1px solid #d5d5d5;
-  border-left: 1px solid #d5d5d5;
+  padding: 0 10px;
+  border: 1px solid #d5d5d5;
   background-color: #fff;
+}
+.toc__list-expandable li,
+.toc__list-full li {
+  border-color: #f2f3f4;
+}
+.toc__list-expandable li:last-child,
+.toc__list-full li:last-child {
+  border: 0;
 }
 /* DOWNLOAD MODAL */
 /* BREAKPOINT FOR LARGE DESKTOPS */

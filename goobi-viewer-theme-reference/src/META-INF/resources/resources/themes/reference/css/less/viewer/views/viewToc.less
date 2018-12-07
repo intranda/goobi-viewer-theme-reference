@@ -38,11 +38,15 @@
 	&__list-expandable,
 	&__list-full {
 		margin: 0;
-		border-right: 1px solid @middlegray;
-		border-left: 1px solid @middlegray;
+		padding: 0 10px;
+		border: 1px solid @middlegray;
 		background-color: @white;
 		li {
+			border-color: @neutralgray;
 			&:first-child {}
+			&:last-child {
+				border: 0;
+			}
 			&:hover {
 				a {}
 			}
