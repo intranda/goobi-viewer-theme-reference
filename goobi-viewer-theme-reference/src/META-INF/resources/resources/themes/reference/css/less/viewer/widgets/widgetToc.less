@@ -21,7 +21,13 @@
 		}
 	}
 	/* ELEMENTS */
-	&__elements {}
+	&__elements {
+		border: 1px solid @middlegray;
+		border-top: 0;
+		ul {
+			border: 0;
+		}
+	}
 	&__element {
 		&:hover {}
 		&.parent {}
@@ -38,6 +44,7 @@
 			&:active,
 			&:focus {
 				color: @black;
+				text-decoration: none;
 			}
 		}
 		&.has-pagenumber {}
@@ -54,7 +61,9 @@
 	/* LOADING */
 	&__loader,
 	&__overlay {}
-	&__loader {}
+	&__loader {
+		background-color: @white;
+	}
 	&__overlay {}
 }
 

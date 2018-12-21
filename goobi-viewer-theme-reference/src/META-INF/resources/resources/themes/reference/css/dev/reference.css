@@ -2377,6 +2377,13 @@ strong {
 .widget-toc__title-expand a:focus {
   color: #fff;
 }
+.widget-toc__elements {
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+}
+.widget-toc__elements ul {
+  border: 0;
+}
 .widget-toc__element.active {
   background-color: #eee;
 }
@@ -2387,9 +2394,13 @@ strong {
 .widget-toc__element-link a:active,
 .widget-toc__element-link a:focus {
   color: #000;
+  text-decoration: none;
 }
 .widget-toc__element-link.active a {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.widget-toc__loader {
+  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
