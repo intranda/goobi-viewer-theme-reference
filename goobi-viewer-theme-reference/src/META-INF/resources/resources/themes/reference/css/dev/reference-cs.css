@@ -45,7 +45,8 @@ body {
 body {
   font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
-  font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
   -webkit-font-kerning: normal;
           font-kerning: normal;
   line-height: 1.4;
@@ -130,12 +131,15 @@ strong {
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
 }
 .top-header__nav {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   font-size: 12px;
 }
 /* HEADER ACTIONS */
@@ -224,12 +228,13 @@ strong {
 #footerNavigation a {
   display: inline-block;
   padding: 5px 5px 5px 0;
-  color: #999;
+  color: #fff;
 }
 #footerNavigation a:hover,
 #footerNavigation a:focus,
 #footerNavigation a:active {
-  color: #999;
+  color: #fff;
+  text-decoration: underline;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
@@ -268,9 +273,10 @@ strong {
     width: 50%;
     padding: 15px;
     border-left: 1px solid #d5d5d5;
-    background-color: #fff;
+    background-color: #f2f3f4;
     overflow-y: auto;
-    transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     z-index: 1000;
   }
   .page-content #sidebar.in {
