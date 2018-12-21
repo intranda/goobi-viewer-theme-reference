@@ -2,60 +2,60 @@
    Widget Toc
    style declarations for widget_toc.xhtml
    ==============================================================*/
-#widgetToc {
-    #AJAXLoaderSidebarToc {}
-    .widget-toc-title {
-        h3 {
-        }
-        .widget-toc-title-expand {
-            top: 9px;
-            right: 10px;
-            padding: 0;
-            border: none;
-            li {
-                a {
-                    color: @white;
-                }
-            }
-        }
-    }
-    .widget-toc-elem-wrapp {
-    	border: 1px solid @middlegray;
-	    border-top: none;
-        ul {
-        	border: none;
-            li {
-                &.parent {
-                    .widget-toc-elem-link {}
-                }
-                &.last-child {
-                    .widget-toc-elem-link {}
-                }
-                .widget-toc-elem-expand {
-                    a {}
-                }
-                .widget-toc-elem-link {
-                    color: @lowerblack;
-                    a {
-                        color: @black;
-                        font-size: 13px;
-	                    &:hover,
-	                    &:focus,
-	                    &:active {
-	                        text-decoration: none;
-	                    }
-	                    &:hover {
-	                        background-color: @lightgray;
-	                    }
-                        &.active {
-                            font-family: @fontSansSerifBold;
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
-        }
-    }
+/* WIDGET TOC */
+.widget-toc {
+	/* TITLE */
+	&__title {
+		background-color: @blue;
+		h3 {}
+	}
+	&__title-expand {
+		a {
+			color: @white;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @white;
+			}
+			&:first-child {}
+		}
+	}
+	/* ELEMENTS */
+	&__elements {}
+	&__element {
+		&:hover {}
+		&.parent {}
+		&.child {}
+		&.active {
+			background-color: @lightgray;
+		}
+	}
+	&__element-expand {}
+	&__element-link {
+		a {
+			color: @black;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @black;
+			}
+		}
+		&.has-pagenumber {}
+		&.non-tree-view {
+			&.has-pagenumber {}			
+		}
+		&.active {
+			a {
+				font-family: @fontSansSerifBold;
+			}
+		}
+	}
+	&__element-pagenumber {}
+	/* LOADING */
+	&__loader,
+	&__overlay {}
+	&__loader {}
+	&__overlay {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

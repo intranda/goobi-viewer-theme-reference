@@ -2360,40 +2360,36 @@ strong {
    Widget Toc
    style declarations for widget_toc.xhtml
    ==============================================================*/
-#widgetToc .widget-toc-title .widget-toc-title-expand {
-  top: 9px;
-  right: 10px;
-  padding: 0;
-  border: none;
+/* WIDGET TOC */
+.widget-toc {
+  /* TITLE */
+  /* ELEMENTS */
+  /* LOADING */
 }
-#widgetToc .widget-toc-title .widget-toc-title-expand li a {
+.widget-toc__title {
+  background-color: #3365a9;
+}
+.widget-toc__title-expand a {
   color: #fff;
 }
-#widgetToc .widget-toc-elem-wrapp {
-  border: 1px solid #d5d5d5;
-  border-top: none;
+.widget-toc__title-expand a:hover,
+.widget-toc__title-expand a:active,
+.widget-toc__title-expand a:focus {
+  color: #fff;
 }
-#widgetToc .widget-toc-elem-wrapp ul {
-  border: none;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link {
-  color: #222;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a {
-  color: #000;
-  font-size: 13px;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:hover,
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:focus,
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:active {
-  text-decoration: none;
-}
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a:hover {
+.widget-toc__element.active {
   background-color: #eee;
 }
-#widgetToc .widget-toc-elem-wrapp ul li .widget-toc-elem-link a.active {
+.widget-toc__element-link a {
+  color: #000;
+}
+.widget-toc__element-link a:hover,
+.widget-toc__element-link a:active,
+.widget-toc__element-link a:focus {
+  color: #000;
+}
+.widget-toc__element-link.active a {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: underline;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
