@@ -32,6 +32,9 @@
     
     <!-- basic CSS -->
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.structure.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.theme.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css" />
 
@@ -39,15 +42,22 @@
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css" />
     
     <!-- SUBTHEME CSS -->
-    <h:panelGroup rendered="#{navigationHelper.subThemeDiscriminatorValue != null and navigationHelper.subThemeDiscriminatorValue != '-'}">
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css" />
-    </h:panelGroup>
+<!--     <h:panelGroup rendered="#{navigationHelper.subThemeDiscriminatorValue != null and navigationHelper.subThemeDiscriminatorValue != '-'}"> -->
+<!--         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css" /> -->
+<!--     </h:panelGroup> -->
     
     <!-- Forces PrimeFaces to Include jquery & jquery-ui -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
     <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
     
     <!-- JavaScript -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.11.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.11.0/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript">
+        /* Handle jQuery plugin naming conflict between jQuery UI and Bootstrap */
+        $.widget.bridge('uibutton', $.ui.button);
+        $.widget.bridge('uitooltip', $.ui.tooltip);
+    </script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rx.lite.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js"></script>
@@ -60,59 +70,11 @@
 <ui:insert name="metadata" />
 
 <h:body id="readingMode">
-    <f:view locale="#{navigationHelper.locale}">        
-        <!-- COinS -->
-        <span class="Z3988" title="#{activeDocumentBean.viewManager.contextObject}"></span>
+    <f:view locale="#{navigationHelper.locale}">    
+        <!-- CONTENT READINGMODE -->
+        <ui:insert name="content-readingmode" />
         
-        <!-- MESSAGES -->
-		<div class="messages">
-			<h:messages infoClass="alert alert-success" errorClass="alert alert-danger" />
-		</div>
-        
-        <!-- VIEW -->
-        <div class="reading-mode">
-            <!-- HEADER -->
-            <ui:include src="/resources/includes/readingmode/header.xhtml" />
-            
-            <!-- CONTENT -->
-            <div class="reading-mode__content">
-                <!-- CONTENT VIEW -->
-                <main id="contentView" class="reading-mode__content-view invisible in">
-                    <!-- IMAGE -->
-                    <div class="reading-mode__content-view-image">
-                        <viewerComponent:viewReadingModeImage />
-                    </div>
-                </main>
-                
-                <!-- CONTENT SIDEBAR -->
-                <aside id="contentSidebar" class="reading-mode__content-sidebar invisible in">
-                    <!-- TOGGLE SIDEBAR -->
-                    <div class="reading-mode__content-sidebar-toggle">
-                        <button type="button" class="btn-clean in" data-toggle="sidebar">
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="reading-mode__content-sidebar-inner">    
-                        <!-- TABS -->
-                        <div class="reading-mode__content-sidebar-tabs">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active">
-                                    <a href="#toc" aria-controls="home" role="tab" data-toggle="tab">#{msg.sidebarTocAnchor}</a>
-                                </li>
-                            </ul>
-    
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="toc">
-                                    <widgetComponent:widget_toc />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </div>
+        <!-- CUSTOM JS -->
         <ui:include src="includes/customJS.xhtml" />
     </f:view>
     
