@@ -1,0 +1,135 @@
+/* ==============================================================
+   View Reading Mode
+   style declarations for viewReadingMode.xhtml 
+   ==============================================================*/
+/* READING MODE */
+#readingMode {}
+.reading-mode {
+    /* HEADER */
+    &__header {
+    	&.fullscreen {}
+    }
+    &__header-brand,
+    &__header-controls,
+    &__header-exit {
+    	a, button {
+    		&:hover,
+    		&:active,
+    		&:focus {}
+    	}
+    }
+    &__header-brand {
+    	img {}
+    	span {}
+    }
+    &__header-controls {
+    	[data-show="thumbs"] {
+    		&.in {}
+    	}
+    }
+    &__header-exit {
+    	a {}
+    }
+    /* VIEW */
+	&__view {}
+	/* PANEL CONTROLS */
+	&__view-sidebar-panel-controls {
+		[data-close="all-tabs"],
+		[data-open="all-tabs"] {}
+		[data-close="all-tabs"] {}
+		[data-open="all-tabs"] {}
+	}
+	/* IMAGE */
+    &__view-image,
+	&__view-image-inner,
+	.view-object__image-map,
+	.view-object__image-mobile {
+		img {}
+	}
+	&__view-image {}
+	&__view-image-inner {
+		.view-object__image {}
+	}
+	/* THUMBS */
+	&__view-image-thumbs-wrapper {}
+	&__view-image-thumbs {}
+	&__view-image-thumb {}
+	&__view-image-thumb-preloader {}
+	&__view-image-thumb-image {
+		img {
+			&.in {}			
+		}
+		figcaption {}
+	}
+	&__view-image-thumb-image-order {
+		&.in {}		
+	}
+	/* SIDEBAR */
+	&__view-sidebar-open {
+		.btn {
+			&:hover,
+			&:active,
+			&:focus,
+			&:active:focus,
+			&.active,
+			&.active.focus, 
+			&.active:focus, 
+			&.focus, 
+			&:active.focus {}
+		}
+	}
+	&__view-sidebar {
+		.ui-resizable-handle {
+			&:before,
+			&:after {}
+			&:before {}
+			&:after {}
+		}
+		.ui-resizable-w {}
+	}
+	&__view-sidebar-inner {}
+	&__view-sidebar-controls {
+		.btn {}
+		[data-close="rm-sidebar"] {}
+	}
+	/* SIDEBAR WORK TITLE */
+	&__view-sidebar-work-title {
+		h2 {}
+	}
+	/* SIDEBAR ACCORDEON */
+	&__view-sidebar-accordeon {}
+	&__view-sidebar-accordeon-panel {
+		&.rm-metadata {}
+		&.rm-toc {
+			.reading-mode__view-sidebar-accordeon-panel-body {}
+		}
+		&.rm-downloads {}
+		&.rm-fulltext {}
+		&.rm-search-hit-navigation {}
+		&:first-child {
+			h3 {}
+		}
+	}
+	&__view-sidebar-accordeon-panel-title {
+		&:hover {}
+		span {}
+		&.in {}
+	}
+	&__view-sidebar-accordeon-panel-body {
+		& > h2 {}
+	}
+	/* MODIFICATION */
+	.widget {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+ 
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

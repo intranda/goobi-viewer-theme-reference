@@ -1,0 +1,128 @@
+/* ==============================================================
+   View Reading Mode Image Controls 
+   ==============================================================*/
+/* READING MODE IMAGE CONTROLS */
+.reading-mode {
+	.image-controls {
+		&.faded {}
+		/* DOCUMENT OPTIONS */
+		&__options {}
+	    /* ACTIONS */
+	    &__actions {
+	    	ul {}
+		    li {}
+	    }
+	    &__action {
+		    /* ELEMENT */
+		    a, 
+			span, 
+			button {
+				&:hover,
+				&:active,
+				&:focus {}
+			}
+			span {}
+			[class*="image-"] {}
+			&.inactive {
+		    	a,
+		    	span,
+		    	button {}
+			}    
+		    /* ELEMENT */
+		    &.start {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.page-browse,
+		    &.select {}
+		    &.page-browse {
+		        a, span {}
+		    }
+		    &.back {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.select-text {
+		    	span {}
+		    }
+		    &.select {
+		        .form-control__select {
+		            select {}
+		        }
+		        .custom-control--select {
+		        	select {}
+		        	&:after {}
+		        }
+		    }
+		    &.forward {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.end {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.double-page-view,
+		    &.single-page-view,
+		    &.switch-pages {
+			    [class*="image-"] {}	    	
+		    }
+		    &.double-page-view {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.single-page-view {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.switch-pages {
+		    	a, 
+				span, 
+				button {}
+		    	svg {}
+		    }
+		    &.rotate-left,
+		    &.rotate-right {
+		    	[class*="image-"] {}
+		    }
+		    &.rotate-left {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.rotate-right {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.reset {
+		    	a, 
+				span, 
+				button {}
+		    }
+		    &.fullscreen {}
+		    &.zoom-slider-wrapper {
+		        .zoom-slider {}
+		        .zoom-slider-handle {}
+		    }
+		}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+ 
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

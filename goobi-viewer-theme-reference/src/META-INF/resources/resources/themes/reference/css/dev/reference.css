@@ -1284,6 +1284,85 @@ strong {
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+/* READINGMODE VIEWS / COMPONENTS */
+/* ==============================================================
+   View Reading Mode
+   style declarations for viewReadingMode.xhtml 
+   ==============================================================*/
+/* READING MODE */
+.reading-mode {
+  /* HEADER */
+  /* VIEW */
+  /* PANEL CONTROLS */
+  /* IMAGE */
+  /* THUMBS */
+  /* SIDEBAR */
+  /* SIDEBAR WORK TITLE */
+  /* SIDEBAR ACCORDEON */
+  /* MODIFICATION */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Reading Mode Image Controls 
+   ==============================================================*/
+/* READING MODE IMAGE CONTROLS */
+.reading-mode .image-controls {
+  /* DOCUMENT OPTIONS */
+  /* ACTIONS */
+}
+.reading-mode .image-controls__action {
+  /* ELEMENT */
+  /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Reading Mode Metadata 
+   ==============================================================*/
+/* READING MODE METADATA */
+.reading-mode .metadata {
+  /* ELEMENTS / EVENTS */
+  /* ELEMENT */
+  /* EVENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Reading Mode Toc 
+   ==============================================================*/
+/* READING MODE TOC */
+.reading-mode .widget-toc {
+  /* TITLE */
+  /* ELEMENTS */
+  /* LOADING */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   View Reading Mode Usage 
+   ==============================================================*/
+/* READING MODE USAGE */
+.reading-mode .widget-usage {
+  /* LICENSE TEXT */
+  /* DOWNLOADS */
+  /* WORK DOWNLOADS */
+  /* PAGE DOWNLOADS */
+  /* CITE LINKS */
+  /* MODIFICATION */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
 /* SEARCH VIEWS */
 /* ==============================================================
    Search Advanced

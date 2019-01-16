@@ -1,0 +1,58 @@
+/* ==============================================================
+   View Reading Mode Toc 
+   ==============================================================*/
+/* READING MODE TOC */
+.reading-mode {
+	.widget-toc {
+		/* TITLE */
+		&__title {
+			h3 {}
+		}
+		&__title-expand {
+			a {
+				&:hover,
+				&:active,
+				&:focus {}
+				&:first-child {}
+			}
+		}
+		/* ELEMENTS */
+		&__elements {
+			ul {}
+		}
+		&__element {
+			&:hover {}
+			&.parent {}
+			&.child {}
+			&.active {}
+		}
+		&__element-expand {}
+		&__element-link {
+			&.has-pagenumber {}
+			&.non-tree-view {
+				&.has-pagenumber {}			
+			}
+			&.active {
+				a {}
+			}
+		}
+		&__element-pagenumber {}
+		/* LOADING */
+		&__loader,
+		&__overlay {}
+		&__loader {}
+		&__overlay {}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+ 
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
