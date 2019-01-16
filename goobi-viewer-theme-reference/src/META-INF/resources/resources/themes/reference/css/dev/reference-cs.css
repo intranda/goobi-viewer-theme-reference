@@ -84,7 +84,7 @@ strong {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
   body {
@@ -237,7 +237,7 @@ strong {
   text-decoration: underline;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
   /* HEADER */
@@ -365,7 +365,7 @@ strong {
   line-height: 30px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -387,7 +387,7 @@ strong {
   background-color: transparent;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -399,7 +399,7 @@ strong {
   /* MODIFICATION */
 }
 /* MODIFICATIONS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* CROWDSOURCING LAYOUT */
@@ -418,7 +418,7 @@ body {
   border: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* CROWDSOURCING COMPONENTS */
@@ -427,7 +427,7 @@ body {
    style declarations for crowdsourcingChangeLocal.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -436,7 +436,7 @@ body {
    ==============================================================*/
 /* image controls */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -471,7 +471,7 @@ body {
   background-color: #eee;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -479,7 +479,7 @@ body {
    style declarations for progress bars
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWS */
@@ -490,7 +490,7 @@ body {
 /* content left */
 /* content right */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -498,7 +498,7 @@ body {
    style declarations for editviewHistory.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -514,7 +514,7 @@ body {
   border: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -527,7 +527,7 @@ body {
   text-align: center;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -535,6 +535,6 @@ body {
    style declarations for crowdOverview.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */

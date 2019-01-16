@@ -88,7 +88,7 @@ strong {
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
   body {
@@ -128,7 +128,7 @@ strong {
    ==============================================================*/
 /* BOOTSTRAP */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -276,7 +276,7 @@ strong {
   text-decoration: underline;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
   /* HEADER */
@@ -374,7 +374,7 @@ strong {
   /* MODIFICATION */
 }
 /* MODIFICATIONS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -390,7 +390,7 @@ strong {
   background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -424,7 +424,7 @@ strong {
   color: rgba(0, 0, 0, 0.25);
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWER COMPONENTS */
@@ -438,7 +438,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -512,7 +512,7 @@ strong {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -528,7 +528,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
@@ -546,7 +546,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: 768px) {
   .change-local {
@@ -582,7 +582,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -591,7 +591,7 @@ strong {
    ==============================================================*/
 /* DOWNLOAD MODAL */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -604,7 +604,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -627,7 +627,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOP */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -694,7 +694,7 @@ strong {
   /* USER DROPDOWN ACTION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
@@ -736,7 +736,7 @@ strong {
   background-color: #eee;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -773,7 +773,7 @@ strong {
   border-color: transparent transparent #444 transparent;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -849,7 +849,7 @@ strong {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -867,7 +867,7 @@ strong {
   color: #298A08;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -891,7 +891,7 @@ strong {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -899,7 +899,7 @@ strong {
    style declarations for responsiveColumnGallery.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -912,7 +912,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -934,7 +934,7 @@ strong {
   background-color: transparent;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -951,7 +951,7 @@ strong {
   color: #444;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -981,7 +981,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1002,7 +1002,7 @@ strong {
   color: #000;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
@@ -1023,7 +1023,7 @@ strong {
   line-height: 30px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ADMIN VIEWS */
@@ -1032,7 +1032,7 @@ strong {
    global style declarations for admin backend
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1060,7 +1060,7 @@ strong {
 /* DATATABLES SORTING */
 /* DATATABLES FILTER */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1076,7 +1076,7 @@ strong {
   padding: 15px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1094,7 +1094,7 @@ strong {
   margin: 0 0 0 5px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1113,7 +1113,7 @@ strong {
   text-align: right;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1132,7 +1132,7 @@ strong {
   resize: vertical;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1173,7 +1173,7 @@ strong {
   text-align: right;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* COMMON VIEWS */
@@ -1203,7 +1203,7 @@ strong {
   background-color: #f08421;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1216,7 +1216,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1236,7 +1236,7 @@ strong {
   margin: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1249,7 +1249,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1262,7 +1262,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1270,7 +1270,7 @@ strong {
    style declarations for statistics.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1284,7 +1284,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* READINGMODE VIEWS / COMPONENTS */
@@ -1381,7 +1381,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1406,7 +1406,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1437,7 +1437,7 @@ strong {
 /* MODIFICATION */
 /* STACKED MV THUMBNAIL */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1451,7 +1451,7 @@ strong {
   /* HITS */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1465,7 +1465,7 @@ strong {
   /* HITS */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1493,7 +1493,7 @@ strong {
   /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1505,7 +1505,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* USER VIEWS */
@@ -1531,7 +1531,7 @@ strong {
   background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1544,7 +1544,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1557,7 +1557,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1581,7 +1581,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1605,7 +1605,7 @@ strong {
 }
 /* data table styles */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1621,7 +1621,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1629,7 +1629,7 @@ strong {
    style declarations for userBackendOtherBookshelves.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1642,7 +1642,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1658,7 +1658,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1676,7 +1676,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1692,7 +1692,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1700,7 +1700,7 @@ strong {
    style declarations for userBackendSearches.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWS */
@@ -1714,7 +1714,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1725,7 +1725,7 @@ strong {
   font-size: 42px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1744,7 +1744,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1793,7 +1793,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1806,7 +1806,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1826,7 +1826,7 @@ strong {
 }
 /* SECTION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1854,7 +1854,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1905,7 +1905,7 @@ strong {
   border-color: #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1934,7 +1934,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -1954,7 +1954,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2001,7 +2001,7 @@ strong {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2054,7 +2054,7 @@ strong {
 }
 /* DOWNLOAD MODAL */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* WIDGETS */
@@ -2088,7 +2088,7 @@ strong {
   border-top: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2096,7 +2096,7 @@ strong {
    style declarations for widget_admin.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2118,7 +2118,7 @@ strong {
   border: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2126,7 +2126,7 @@ strong {
    style declarations for widget_bookshelves.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2134,7 +2134,7 @@ strong {
    style declarations for widget_browsing.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2191,7 +2191,7 @@ strong {
   border-top: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2199,7 +2199,7 @@ strong {
    style declarations for widget_cms.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2217,7 +2217,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2229,7 +2229,7 @@ strong {
   visibility: hidden;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2237,7 +2237,7 @@ strong {
    style declarations for widget_crowdsourcing.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2245,7 +2245,7 @@ strong {
    style declarations for widget_custom.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2253,7 +2253,7 @@ strong {
    style declarations for widget_customDrillDown.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2261,7 +2261,7 @@ strong {
    style declarations for widget_downloads.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2272,7 +2272,7 @@ strong {
   /* CMS BACKEND WIDGET */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2298,7 +2298,7 @@ strong {
   border: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2306,7 +2306,7 @@ strong {
    style declarations for widget_mySearches.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2347,7 +2347,7 @@ strong {
 }
 /* SECTION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2360,7 +2360,7 @@ strong {
   border-top: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2387,7 +2387,7 @@ strong {
   padding: 0 !important;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2408,7 +2408,7 @@ strong {
   background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2428,7 +2428,7 @@ strong {
   background-color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2449,7 +2449,7 @@ strong {
   border-bottom: 1px solid #d5d5d5;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2457,7 +2457,7 @@ strong {
    style declarations for widget_searchSorting.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2507,7 +2507,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2523,7 +2523,7 @@ strong {
   /* CITE LINKS */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2531,7 +2531,7 @@ strong {
    style declarations for widget_user.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2539,7 +2539,7 @@ strong {
    style declarations for widget_versionHistory.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2547,7 +2547,7 @@ strong {
    style declarations for widget_views.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2562,7 +2562,7 @@ strong {
   border-top: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* CMS MODULES */
@@ -2574,7 +2574,7 @@ strong {
   /* OPTION GROUP */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* CMS COMPONENTS */
@@ -2587,7 +2587,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2599,7 +2599,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* CMS TEMPLATES */
@@ -2614,7 +2614,7 @@ strong {
   /* SOLR-QUERY */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2627,7 +2627,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2641,7 +2641,7 @@ strong {
   /* SOLR-QUERY */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2654,7 +2654,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2667,7 +2667,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2680,7 +2680,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2693,7 +2693,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2706,7 +2706,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2719,7 +2719,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2732,7 +2732,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2746,7 +2746,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2763,7 +2763,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2777,7 +2777,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2794,7 +2794,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2808,7 +2808,7 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2821,7 +2821,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2834,7 +2834,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2847,7 +2847,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2861,7 +2861,7 @@ strong {
   /* MODIFICATION */
 }
 /* BREAKPOINT FOR LATGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2875,7 +2875,7 @@ strong {
   /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2888,7 +2888,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2901,7 +2901,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2914,7 +2914,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2927,7 +2927,7 @@ strong {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2943,7 +2943,7 @@ strong {
   margin-bottom: 15px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* CMS VIEWS */
@@ -2966,7 +2966,7 @@ strong {
    style declarations for adminCmsCreatePage.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -2987,7 +2987,7 @@ strong {
 }
 /* BREAKPOINT FOR SMARTPHONES */
 /* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* ==============================================================
    CMS Menu Items
@@ -3015,7 +3015,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -3023,7 +3023,7 @@ strong {
    style declarations for adminCmsOverview.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -3041,7 +3041,7 @@ strong {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
@@ -3055,6 +3055,6 @@ strong {
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
