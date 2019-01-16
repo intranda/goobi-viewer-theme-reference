@@ -1186,6 +1186,9 @@ strong {
 .collections {
   /* ELEMENT */
 }
+.collections__wrapper {
+  background-color: #fff;
+}
 .collection {
   /* ELEMENT */
   /* MODIFICATION */
@@ -1390,6 +1393,18 @@ strong {
   /* ELEMENT */
   /* MODIFICATION */
 }
+.search-calendar__month-title {
+  padding: 5px 10px;
+  border: 1px solid #d5d5d5;
+  border-bottom: 0;
+  background-color: #fff;
+}
+.search-calendar__month-days,
+.search-calendar__month-week {
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOP */
 /* BREAKPOINT FOR TABLETS */
@@ -1552,11 +1567,17 @@ strong {
 /* USER SCORE */
 /* BLOCK */
 .user-score {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
   /* ELEMENT */
 }
 /* USER ACTIVITY */
 /* BLOCK */
 .user-activity {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1665,6 +1686,9 @@ strong {
 /* USERDATA */
 /* BLOCK */
 .userdata {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1940,6 +1964,7 @@ strong {
 #timeMatrix .timematrix-selection {
   padding: 52px 50px 10px 39px;
   border: 1px solid #3365a9;
+  background-color: #fff;
 }
 #timeMatrix .timematrix-selection #slider-range .ui-slider-handle {
   background-color: #3365a9;
@@ -2763,6 +2788,9 @@ strong {
 /* BLOCK */
 .tpl-rss {
   /* ELEMENT */
+}
+.tpl-rss__item {
+  background-color: #fff;
 }
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -31,9 +31,18 @@
     }
     &__months {}
     &__month {}
-    &__month-title {}
+    &__month-title {
+    	padding: 5px 10px;
+		border: 1px solid @middlegray;
+		border-bottom: 0;
+		background-color: @white;    	
+    }
     &__month-days,
-    &__month-week {}
+    &__month-week {
+		border: 1px solid @middlegray;
+		border-top: 0;
+    	background-color: @white;
+    }
     &__month-days span,
     &__month-day,
     &__month-day-empty {}
