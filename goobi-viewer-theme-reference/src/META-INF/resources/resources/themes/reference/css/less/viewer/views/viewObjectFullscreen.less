@@ -1,10 +1,10 @@
 /* ==============================================================
-   View Reading Mode
-   style declarations for viewReadingMode.xhtml 
+   Fullscreen
+   style declarations for viewObjectFullscreen.xhtml 
    ==============================================================*/
-/* READING MODE */
-#readingMode {}
-.reading-mode {
+/* FULLSCREEN */
+#fullscreen {}
+.fullscreen {
     /* HEADER */
     &__header {
     	&.fullscreen {}
@@ -42,8 +42,7 @@
 	/* IMAGE */
     &__view-image,
 	&__view-image-inner,
-	.view-object__image-map,
-	.view-object__image-mobile {
+	.view-object__image-map {
 		img {}
 	}
 	&__view-image {}
@@ -62,7 +61,7 @@
 		figcaption {}
 	}
 	&__view-image-thumb-image-order {
-		&.in {}		
+		&.in {}
 	}
 	/* SIDEBAR */
 	&__view-sidebar-open {
@@ -90,7 +89,7 @@
 	&__view-sidebar-inner {}
 	&__view-sidebar-controls {
 		.btn {}
-		[data-close="rm-sidebar"] {}
+		[data-close="fs-sidebar"] {}
 	}
 	/* SIDEBAR WORK TITLE */
 	&__view-sidebar-work-title {
@@ -99,13 +98,13 @@
 	/* SIDEBAR ACCORDEON */
 	&__view-sidebar-accordeon {}
 	&__view-sidebar-accordeon-panel {
-		&.rm-metadata {}
-		&.rm-toc {
-			.reading-mode__view-sidebar-accordeon-panel-body {}
+		&.fs-metadata {}
+		&.fs-toc {
+			.fullscreen__view-sidebar-accordeon-panel-body {}
 		}
-		&.rm-downloads {}
-		&.rm-fulltext {}
-		&.rm-search-hit-navigation {}
+		&.fs-downloads {}
+		&.fs-fulltext {}
+		&.fs-search-hit-navigation {}
 		&:first-child {
 			h3 {}
 		}

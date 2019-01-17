@@ -31,14 +31,14 @@
     		}
     	};
     	
-    	// set readingmode config
-    	if ( currentPage === "readingmode" ) {
-    		var readingModeConfig = {
+    	// set fullscreen config
+    	if ( currentPage === "fullscreen" ) {
+    		var fullscreenConfig = {
     			msg: {
             		fileNotFound: "#{msg.noImage_fileNotFound}"
             	}
             };
-            viewerJS.readingMode.init( readingModeConfig );
+            viewerJS.fullscreen.init( fullscreenConfig );
     	}
     	
     	// init cms module functions

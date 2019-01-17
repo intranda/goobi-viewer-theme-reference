@@ -20,24 +20,11 @@
         <action onPostback="false">#{searchBean.setActiveSearchType(0)}</action>
     </url-mapping>
     
-    <!-- fullscreen -->
-	<url-mapping id="fullscreen4">
-		<pattern
-			value="/fullscreen/#{action:activeDocumentBean.action}/#{pi:activeDocumentBean.persistentIdentifier}/#{imageToShow:activeDocumentBean.imageToShow}/#{logId:activeDocumentBean.logid}/" />
-		<view-id value="/viewReadingMode.xhtml" />
+    <!-- WORK MAPPING -->
+    <url-mapping>
+		<pattern value="/id/#{pi:activeDocumentBean.persistentIdentifier}/" />
+		<view-id value="/viewObject.xhtml" />
 		<action onPostback="false">#{activeDocumentBean.open}</action>
+		<action phaseId="RENDER_RESPONSE">#{navigationHelper.changeTheme}</action>
 	</url-mapping>
-	<url-mapping id="fullscreen3">
-		<pattern
-			value="/fullscreen/#{pi:activeDocumentBean.persistentIdentifier}/#{imageToShow:activeDocumentBean.imageToShow}/#{logId:activeDocumentBean.logid}/" />
-		<view-id value="/viewReadingMode.xhtml" />
-		<action onPostback="false">#{activeDocumentBean.open}</action>
-	</url-mapping>
-	<url-mapping id="fullscreen2">
-		<pattern
-			value="/fullscreen/#{pi:activeDocumentBean.persistentIdentifier}/#{imageToShow:activeDocumentBean.imageToShow}/" />
-		<view-id value="/viewReadingMode.xhtml" />
-		<action onPostback="false">#{activeDocumentBean.open}</action>
-	</url-mapping>
-
 </pretty-config>

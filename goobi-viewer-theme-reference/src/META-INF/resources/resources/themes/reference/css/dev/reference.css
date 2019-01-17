@@ -1302,36 +1302,16 @@ strong {
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
-/* READINGMODE VIEWS / COMPONENTS */
+/* FULLSCREEN VIEWS / COMPONENTS */
 /* ==============================================================
-   View Reading Mode
-   style declarations for viewReadingMode.xhtml 
+   View Fullscreen Image Controls 
    ==============================================================*/
-/* READING MODE */
-.reading-mode {
-  /* HEADER */
-  /* VIEW */
-  /* PANEL CONTROLS */
-  /* IMAGE */
-  /* THUMBS */
-  /* SIDEBAR */
-  /* SIDEBAR WORK TITLE */
-  /* SIDEBAR ACCORDEON */
-  /* MODIFICATION */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Reading Mode Image Controls 
-   ==============================================================*/
-/* READING MODE IMAGE CONTROLS */
-.reading-mode .image-controls {
+/* FULLSCREEN IMAGE CONTROLS */
+.fullscreen .image-controls {
   /* DOCUMENT OPTIONS */
   /* ACTIONS */
 }
-.reading-mode .image-controls__action {
+.fullscreen .image-controls__action {
   /* ELEMENT */
   /* ELEMENT */
 }
@@ -1340,10 +1320,10 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   View Reading Mode Metadata 
+   View Fullscreen Metadata 
    ==============================================================*/
-/* READING MODE METADATA */
-.reading-mode .metadata {
+/* FULLSCREEN METADATA */
+.fullscreen .metadata {
   /* ELEMENTS / EVENTS */
   /* ELEMENT */
   /* EVENT */
@@ -1353,10 +1333,10 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   View Reading Mode Toc 
+   View Fullscreen Toc 
    ==============================================================*/
-/* READING MODE TOC */
-.reading-mode .widget-toc {
+/* FULLSCREEN TOC */
+.fullscreen .widget-toc {
   /* TITLE */
   /* ELEMENTS */
   /* LOADING */
@@ -1366,10 +1346,10 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   View Reading Mode Usage 
+   View Fullscreen Usage 
    ==============================================================*/
-/* READING MODE USAGE */
-.reading-mode .widget-usage {
+/* FULLSCREEN USAGE */
+.fullscreen .widget-usage {
   /* LICENSE TEXT */
   /* DOWNLOADS */
   /* WORK DOWNLOADS */
@@ -1733,17 +1713,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   View Image Fullscreen
-   style declarations for viewImageFullscreen.xhtml 
-   ==============================================================*/
-#fullscreenTemplate .fs-control {
-  font-size: 42px;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    View Fulltext
    style declarations for viewFulltext.xhtml 
    ==============================================================*/
@@ -1867,6 +1836,26 @@ strong {
 }
 .view-object__image-mobile {
   background-color: #fff;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Fullscreen
+   style declarations for viewObjectFullscreen.xhtml 
+   ==============================================================*/
+/* FULLSCREEN */
+.fullscreen {
+  /* HEADER */
+  /* VIEW */
+  /* PANEL CONTROLS */
+  /* IMAGE */
+  /* THUMBS */
+  /* SIDEBAR */
+  /* SIDEBAR WORK TITLE */
+  /* SIDEBAR ACCORDEON */
+  /* MODIFICATION */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
