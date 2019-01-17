@@ -2601,6 +2601,11 @@ strong {
 .tpl-news-overview {
   /* ELEMENT */
 }
+.tpl-news-overview__list-item {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
