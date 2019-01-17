@@ -437,6 +437,21 @@ strong {
 .alphabetic-paginator {
   /* ELEMENT */
 }
+.alphabetic-paginator li {
+  border-color: #d5d5d5;
+}
+.alphabetic-paginator li.active a {
+  color: #000;
+  background-color: #eee;
+}
+.alphabetic-paginator a {
+  background-color: #fff;
+}
+.alphabetic-paginator a:hover,
+.alphabetic-paginator a:active,
+.alphabetic-paginator a:focus {
+  background-color: #eee;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -1904,35 +1919,6 @@ strong {
 .overview__publication-navigate span {
   border-color: #d5d5d5;
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   View Reading Mode
-   style declarations for viewReadingMode.xhtml 
-   ==============================================================*/
-/* READING MODE */
-/* BLOCK */
-.reading-mode {
-  /* ELEMENT */
-  /* NAVIGATION */
-  /* CONTENT */
-}
-.reading-mode__navigation {
-  background-color: #fff;
-  border-bottom: 2px solid #3365a9;
-}
-.reading-mode__content-sidebar {
-  background-color: #fff;
-}
-.reading-mode__content-sidebar-toggle button {
-  color: #fff;
-  border: 1px solid #fff;
-  border-right: none;
-  background-color: #3365a9;
-}
-/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */

@@ -8,14 +8,21 @@
 	/* ELEMENT */
 	ul {}
 	li {
+		border-color: @middlegray;
 		&.active {
-			a {}
+			a {
+				color: @black;
+				background-color: @lightgray;
+			}
 		}
 	}
 	a {
+		background-color: @white;
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus {
+			background-color: @lightgray;
+		}
 	}
 }
 
