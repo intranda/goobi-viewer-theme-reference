@@ -441,7 +441,7 @@ strong {
   border-color: #d5d5d5;
 }
 .alphabetic-paginator li.active a {
-  color: #000;
+  color: #222;
   background-color: #eee;
 }
 .alphabetic-paginator a {
@@ -471,7 +471,7 @@ strong {
   /* DROPDOWN ACTIONS */
 }
 .bookshelf-navigation__dropdown-list a {
-  color: #000;
+  color: #222;
 }
 .bookshelf-navigation__dropdown-list a:hover,
 .bookshelf-navigation__dropdown-list a:active,
@@ -480,7 +480,7 @@ strong {
   text-decoration: none;
 }
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
-  color: #000;
+  color: #222;
 }
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
 .bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
@@ -493,7 +493,7 @@ strong {
 .bookshelf-navigation__dropdown-list-reset button,
 .bookshelf-navigation__dropdown-list-send button,
 .bookshelf-navigation__dropdown-list-mirador button {
-  color: #000;
+  color: #222;
 }
 .bookshelf-navigation__dropdown-list-reset a:hover,
 .bookshelf-navigation__dropdown-list-send a:hover,
@@ -673,7 +673,7 @@ strong {
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown a,
 .login-navigation [data-login="false"] .login-navigation__login-dropdown button {
-  color: #000;
+  color: #222;
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown a:hover,
 .login-navigation [data-login="false"] .login-navigation__login-dropdown button:hover,
@@ -688,7 +688,7 @@ strong {
   margin-bottom: 5px;
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown .control-label {
-  color: #000;
+  color: #222;
 }
 .login-navigation [data-login="false"] .login-navigation__login-dropdown-action {
   margin-top: 10px;
@@ -696,7 +696,7 @@ strong {
 .login-navigation [data-login="false"] .login-navigation__open-id h3 {
   margin: 0;
   font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #000;
+  color: #222;
 }
 .login-navigation [data-login="true"] button[data-toggle="user-dropdown"]:hover,
 .login-navigation [data-login="true"] button[data-toggle="user-dropdown"]:active,
@@ -1023,7 +1023,7 @@ strong {
 #view_image_user_generated_content #user_generated_content_nav .ugc-highlight {
   border-bottom-color: #f2f3f4;
   background-color: #f2f3f4;
-  color: #000;
+  color: #222;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -2475,12 +2475,12 @@ strong {
   background-color: #eee;
 }
 .widget-toc__element-link a {
-  color: #000;
+  color: #222;
 }
 .widget-toc__element-link a:hover,
 .widget-toc__element-link a:active,
 .widget-toc__element-link a:focus {
-  color: #000;
+  color: #222;
   text-decoration: none;
 }
 .widget-toc__element-link.active a {
