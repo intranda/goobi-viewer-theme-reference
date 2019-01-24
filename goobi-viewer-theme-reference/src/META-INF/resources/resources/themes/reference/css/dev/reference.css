@@ -2024,7 +2024,7 @@ strong {
 .toc__list-expandable,
 .toc__list-full {
   margin: 0;
-  padding: 0 10px;
+  padding: 5px 10px;
   border: 1px solid #d5d5d5;
   background-color: #fff;
 }
