@@ -41,11 +41,6 @@
 /*
  * general styling
  */
-html,
-body {
-  overflow-x: hidden;
-  /* Prevent scroll on narrow devices */
-}
 body {
   font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
