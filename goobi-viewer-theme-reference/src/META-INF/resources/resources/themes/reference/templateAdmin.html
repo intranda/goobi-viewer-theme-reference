@@ -9,7 +9,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
       xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/boilerplate/components">
 
 <h:head profile="http://dublincore.org/documents/dcq-html/">
 
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />intranda GmbH</title>
+    <title>Goobi viewer - Backend</title>
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
@@ -37,14 +37,6 @@
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.theme.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css" />
-	
-    <!-- custom CSS -->
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css" />
-    
-    <!-- SUBTHEME CSS -->
-    <h:panelGroup rendered="#{navigationHelper.subThemeDiscriminatorValue != null and navigationHelper.subThemeDiscriminatorValue != '-'}">
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css" />
-    </h:panelGroup>
 
     <!-- Forces PrimeFaces to Include jquery & jquery-ui -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
@@ -60,7 +52,6 @@
     </script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/datatables.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rx.lite.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js"></script>
@@ -71,29 +62,10 @@
 
 <ui:insert name="metadata" />
 
-<h:body id="viewerAdmin">
-    <f:view locale="#{navigationHelper.locale}">        
-        <!-- top anchor for scrolling to top -->
-        <span id="top"></span>
-        
-        <!-- COinS -->
-        <span class="Z3988" title="#{activeDocumentBean.viewManager.contextObject}"></span>
-        
-        <!-- MESSAGES -->
-		<div class="messages">
-			<h:messages infoClass="alert alert-success" errorClass="alert alert-danger" />
-		</div>
-
+<h:body id="admin">
+    <f:view locale="#{navigationHelper.locale}">
         <!-- LAYOUT -->
-        <ui:include src="includes/layout.xhtml" />
-
-        <!-- CUSTOM JAVASCRIPT -->
-        <ui:include src="includes/customJS.xhtml" />
+        <ui:include src="/resources/admin/includes/layout/admin_layout.xhtml" />
     </f:view>
-    
-    <!-- PIWIK -->
-    <h:panelGroup rendered="#{configurationBean.piwikTracking}">
-        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-    </h:panelGroup>
 </h:body>
 </html>
