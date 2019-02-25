@@ -1045,156 +1045,6 @@ strong {
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
-/* ADMIN VIEWS */
-/* ==============================================================
-   Admin 
-   global style declarations for admin backend
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Admin Backend Tables
-   style declarations for admin backend tables
-   ==============================================================*/
-/* BLOCK */
-.admin-table {
-  /* ELEMENT */
-}
-.admin-table .fa-ban {
-  color: red;
-}
-.admin-table .fa-check-circle-o {
-  color: green;
-}
-/* BOOTSTRAP OVERWRITE */
-/* ADMIN TABLE IDS */
-/* ALL USER */
-/* ALL USER GROUPS */
-/* IP RANGES */
-/* LICENSE TYPES */
-/* USER COMMENTS */
-/* USER ACTIVITY */
-/* DATATABLES SORTING */
-/* DATATABLES FILTER */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Admin IP-Range
-   style declarations for adminIpRange.xhtml
-   ==============================================================*/
-#adminIpRange .tab-content {
-  border: 1px solid #ddd;
-  border-top: none;
-  background-color: #fff;
-}
-#adminIpRange .tab-content .tab-pane {
-  padding: 15px;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Admin Licence Type
-   style declarations for adminLicenseType.xhtml
-   ==============================================================*/
-#adminlicenseTypeWrapper {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-}
-#adminlicenseTypeWrapper fieldset textarea {
-  resize: vertical;
-}
-#adminlicenseTypeWrapper .btn {
-  margin: 0 0 0 5px;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Admin Add User
-   style declarations for adminUser.xhtml
-   ==============================================================*/
-#adminUser .tab-content {
-  border: 1px solid #ddd;
-  border-top: none;
-  background-color: #fff;
-}
-#adminUser .tab-content .tab-pane {
-  padding: 15px;
-}
-#licenses p {
-  text-align: right;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Admin User Group
-   style declarations for adminUserGroup.xhtml
-   ==============================================================*/
-#adminUserGroup .tab-content {
-  border: 1px solid #ddd;
-  border-top: none;
-  background-color: #fff;
-}
-#adminUserGroup .tab-content .tab-pane {
-  padding: 15px;
-}
-#adminUserGroup .tab-content .tab-pane textarea {
-  resize: vertical;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Admin Tab User Licenses
-   style declarations for tabUserLicenses.xhtml
-   ==============================================================*/
-#editLicenseWrapper {
-  /* privileges */
-  /* action */
-}
-#editLicenseWrapper .form-horizontal .form-group .col-sm-8 {
-  /* datepicker */
-}
-#editLicenseWrapper .form-horizontal .form-group .col-sm-8 select {
-  height: 34px;
-  padding: 6px 12px;
-}
-#editLicenseWrapper .form-horizontal .form-group .col-sm-8 textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-#editLicenseWrapper .form-horizontal .form-group .col-sm-8 span input,
-#editLicenseWrapper .form-horizontal .form-group .col-sm-8 span button {
-  height: 34px;
-  padding: 6px 12px;
-  border: 1px solid #d5d5d5;
-  background: none;
-}
-#editLicenseWrapper .form-horizontal .form-group .col-sm-8 span button {
-  margin-top: -4px;
-  border-left: none;
-  background-color: #eee;
-}
-#editLicenseWrapper .select-privileges label input[type="checkbox"] {
-  margin-right: 5px;
-}
-#editLicenseWrapper .edit-license-action {
-  text-align: right;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
 /* COMMON VIEWS */
 /* ==============================================================
    Browse
@@ -2070,14 +1920,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Widget Admin
-   style declarations for widget_admin.xhtml
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    Widget Bookshelf List
    style declarations for widget_bookshelfList.xhtml
    ==============================================================*/
@@ -2168,14 +2010,6 @@ strong {
   border: 1px solid #d5d5d5;
   border-top: 0;
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Widget CMS
-   style declarations for widget_cms.xhtml
-   ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
