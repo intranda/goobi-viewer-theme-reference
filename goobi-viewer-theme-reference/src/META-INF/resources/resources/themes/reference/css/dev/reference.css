@@ -1545,9 +1545,14 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Searches
+   My Searches
    style declarations for userBackendSearches.xhtml
    ==============================================================*/
+/* MY SEARCHES */
+/* BLOCK */
+.my-searches {
+  /* ELEMENT */
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */

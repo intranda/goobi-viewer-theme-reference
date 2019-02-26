@@ -1,11 +1,14 @@
 /* ==============================================================
-   User Searches
+   My Searches
    style declarations for userBackendSearches.xhtml
    ==============================================================*/
-#mySearches {
-    h2 {}
-    #my_saved_searches_data_table {
-        thead {
+/* MY SEARCHES */
+/* BLOCK */
+.my-searches {
+	/* ELEMENT */
+	h2 {}
+	&__table {
+		thead {
             tr {
                 th {
                     &:nth-child(1) {}
@@ -16,10 +19,23 @@
         }
         tbody {
             tr {
-                td {}
+                td {
+                	&:nth-child(1) {}
+                    &:nth-child(2) {}
+                    &:nth-child(3) {}
+                }
             }
         }
-    }
+	}
+	&__action,
+	&__delete-button {
+		&:hover,
+		&:active,
+		&:focus {}
+	}
+	&__action {}
+	&__delete-button {}
+	&__delete-modal {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
