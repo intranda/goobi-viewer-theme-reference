@@ -2731,25 +2731,12 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   CMS Template "Search Standard"
-   style declarations for cms_template_23_searchStandard.xhtml
+   CMS Template "Search"
+   style declarations for cms_template_23_search.xhtml
    ==============================================================*/
-/* SEARCH STANDARD */
+/* SEARCH */
 /* BLOCK */
-.tpl-search-standard {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   CMS Template "Search Advanced"
-   style declarations for cms_template_24_searchAdvanced.xhtml
-   ==============================================================*/
-/* SEARCH ADVANCED */
-/* BLOCK */
-.tpl-search-advanced {
+.tpl-search {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -2767,6 +2754,37 @@ strong {
 }
 .tpl-tags__text {
   margin-bottom: 15px;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Overview Page"
+   style declarations for cms_template_25_overviewPage.xhtml
+   ==============================================================*/
+/* OVERVIEW PAGE */
+.tpl-overviewpage {
+  /* OVERVIEW */
+  /* LITERATURE / HISTORY */
+  /* LITERATURE */
+  /* HISTORY */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   CMS Template "Overview Page Legacy"
+   style declarations for cms_template_25_overviewPage.xhtml
+   ==============================================================*/
+/* OVERVIEW PAGE LEGACY */
+.tpl-overviewpage-legacy {
+  /* OVERVIEW */
+  /* DESCRIPTION / LITERATURE / HISTORY */
+  /* DESCRIPTION */
+  /* LITERATURE */
+  /* HISTORY */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */

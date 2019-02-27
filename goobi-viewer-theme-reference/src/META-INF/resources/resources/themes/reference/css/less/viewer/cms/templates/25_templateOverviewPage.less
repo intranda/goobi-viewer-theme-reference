@@ -1,0 +1,45 @@
+/* ==============================================================
+   CMS Template "Overview Page"
+   style declarations for cms_template_25_overviewPage.xhtml
+   ==============================================================*/
+/* OVERVIEW PAGE */
+.tpl-overviewpage {
+	h2 {}
+	&__subtitle {}
+	/* OVERVIEW */
+	&__overview {}
+	&__overview-thumbnail {
+		img {}
+	}
+	&__overview-metadata {
+		dl {}
+		dt {}
+		dd {}
+	}
+	&__overview-metadata-label {}
+	&__overview-metadata-value {}
+	/* LITERATURE / HISTORY */
+	&__literature,
+	&__history {}
+	/* LITERATURE */
+	&__literature {
+		& > img {}
+	}
+	/* HISTORY */
+	&__history {
+		h3 {}
+		table {}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
