@@ -9,7 +9,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
       xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/boilerplate/components">
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
 <h:head profile="http://dublincore.org/documents/dcq-html/">
 
@@ -24,32 +24,25 @@
 
     <title>Goobi viewer - Backend</title>
     
-    <!-- Favicon -->
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
     
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
 
-    <!-- basic CSS -->
+    <!-- BASIC CSS -->
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.min.css" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.structure.min.css" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.11.0/jquery-ui.theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css" />
 
-    <!-- Forces PrimeFaces to Include jquery & jquery-ui -->
+    <!-- FORCES PRIMEFACES TO INCLUDE JQUERY & JQUERY-UI -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
     <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
     
-    <!-- JavaScript -->   
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.11.0/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.11.0/jquery.ui.touch-punch.min.js"></script>
-    <script type="text/javascript">
-        /* Handle jQuery plugin naming conflict between jQuery UI and Bootstrap */
-    	$.widget.bridge('uibutton', $.ui.button);
-    	$.widget.bridge('uitooltip', $.ui.tooltip);
-    </script>
+    <!-- JAVASCRIPT -->   
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rx.lite.min.js"></script>
