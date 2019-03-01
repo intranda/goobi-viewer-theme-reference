@@ -34,9 +34,30 @@
 /* BACKGROUND IMAGE */
 /* CSS TRIANGLE */
 /* HIDDEN */
+.mx-visible {
+  display: block !important;
+  visibility: visible !important;
+}
+/* HIDDEN */
 .mx-hidden {
   display: none !important;
   visibility: hidden !important;
+}
+/* VISUALLY HIDDEN */
+.mx-v-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* GRID */
+/* LIST RESET */
+.mx-list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 /*
  * general styling
@@ -122,6 +143,9 @@ strong {
    Resets for CSS Libs
    ==============================================================*/
 /* BOOTSTRAP */
+/* TABS */
+/* FORMS */
+/* MODALS */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -1721,57 +1745,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   View Overview
-   style declarations for viewOverview.xhtml 
-   ==============================================================*/
-/* VIEW OVERVIEW */
-/* BLOCK */
-.overview {
-  /* ELEMENT */
-  /* DELETE */
-  /* METADATA */
-  /* DESCRIPTION */
-  /* PUBLICATION */
-  /* HISTORY */
-}
-.overview__image img {
-  min-width: 100%;
-}
-.overview__metadata {
-  margin-bottom: 15px;
-  font-size: 13px;
-}
-.overview__metadata .dl-horizontal {
-  margin: 0;
-}
-.overview__metadata dt {
-  font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.overview__metadata-select {
-  padding-top: 10px;
-}
-.overview__metadata-add {
-  padding-top: 12px;
-}
-.overview__description {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-}
-.overview__publication {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-}
-.overview__publication-navigate a,
-.overview__publication-navigate span {
-  border-color: #d5d5d5;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    View Thumbs
    style declarations for viewThumbs.xhtml 
    ==============================================================*/
@@ -1938,10 +1911,6 @@ strong {
   padding-bottom: 10px;
   border-bottom: none;
 }
-.widget-bookshelf-list__back {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -2068,14 +2037,6 @@ strong {
 /* ==============================================================
    Widget Custom Drilldown
    style declarations for widget_customDrillDown.xhtml
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Widget Downloads
-   style declarations for widget_downloads.xhtml
    ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
