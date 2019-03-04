@@ -10,6 +10,7 @@ module.exports = function(grunt) {
             jsDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dist/',
             lessDevCsFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/cs/',
             lessDevViewerFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/viewer/',
+            lessDevSubThemeOneFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
             cssDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dev/',
             cssDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dist/'
         },
@@ -18,7 +19,7 @@ module.exports = function(grunt) {
                 options: {
                     paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>' ],
                     plugins: [
-                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"] } )
+                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"], grid: true } )
                     ],
                     compress: false,
                     optimization: 9
@@ -32,7 +33,7 @@ module.exports = function(grunt) {
                 options: {
                     paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>'  ],
                     plugins: [
-                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"] } )
+                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"], grid: true } )
                     ],
                     compress: true,
                     sourceMap: true,
