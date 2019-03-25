@@ -1911,6 +1911,12 @@ strong {
   padding-bottom: 10px;
   border-bottom: none;
 }
+.widget-bookshelf-list__back {
+  padding: 10px;
+}
+.widget-bookshelf-list__back.has-items {
+  padding-top: 0;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -2308,6 +2314,16 @@ strong {
    Widget User
    style declarations for widget_user.xhtml
    ==============================================================*/
+/* WIDGET USER */
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Widget User Interactions
+   style declarations for widget_userInteractions.xhtml
+   ==============================================================*/
+/* WIDGET USER INTERACTIONS */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
