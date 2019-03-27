@@ -36,7 +36,7 @@
     <!-- OEMBED -->
     <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
     <link rel="alternate" type="application/json+oembed"
-        href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.currentUrl}&amp;format=json"
+        href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.encodedUrl}&amp;format=json"
         title="Goobi viewer oEmbed Profile" />
     </ui:fragment>
     
