@@ -33,6 +33,13 @@
     <!-- OPENSEARCH -->
     <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/rest/opensearch/getxml/" />
     
+    <!-- OEMBED -->
+    <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
+    <link rel="alternate" type="application/json+oembed"
+        href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.currentUrl}&amp;format=json"
+        title="Goobi viewer oEmbed Profile" />
+    </ui:fragment>
+    
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
     
