@@ -24,6 +24,9 @@
         <meta name="robots" content="noindex" />
     </ui:fragment>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+    <!-- TWITTER CARD / OPENGRAPH -->
+    <ui:include src="/resources/includes/embed/twittercard.xhtml" />
 
     <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />intranda GmbH</title>
     
@@ -34,11 +37,7 @@
     <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/rest/opensearch/getxml/" />
     
     <!-- OEMBED -->
-    <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
-    <link rel="alternate" type="application/json+oembed"
-        href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.encodedUrl}&amp;format=json"
-        title="Goobi viewer oEmbed Profile" />
-    </ui:fragment>
+    <ui:include src="/resources/includes/embed/oembed.xhtml" />
     
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
