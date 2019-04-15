@@ -40,6 +40,11 @@
             };
             viewerJS.fullscreen.init( fullscreenConfig );
     	}
+
+    	// init admin module
+    	if ( currentPage.indexOf( 'admin' ) > -1 ) {
+        	adminJS.init();    		
+    	}
     	
     	// init cms module functions
     	cmsJS.modules.init();    	
