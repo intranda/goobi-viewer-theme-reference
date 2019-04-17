@@ -2151,9 +2151,10 @@ strong {
    Widget Search Drill Down
    style declarations for widget_searchDrillDown.xhtml
    ==============================================================*/
-/* BLOCK */
+/* WIDGET SEARCH DRILLDOWN */
 .widget-search-drilldown {
-  /* ELEMENT */
+  /* FILTER */
+  /* COLLECTION/GROUPS */
   /* COLLAPSE DRILLDOWN */
 }
 .widget-search-drilldown .widget li.active a {

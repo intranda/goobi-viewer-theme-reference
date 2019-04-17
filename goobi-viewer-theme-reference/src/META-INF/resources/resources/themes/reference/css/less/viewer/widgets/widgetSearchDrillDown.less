@@ -2,9 +2,11 @@
    Widget Search Drill Down
    style declarations for widget_searchDrillDown.xhtml
    ==============================================================*/
-/* BLOCK */
+/* WIDGET SEARCH DRILLDOWN */
 .widget-search-drilldown {
-	/* ELEMENT */
+	h3 {
+		span {}
+	}
 	.widget {
 		ul {}
 		li {
@@ -20,6 +22,24 @@
 			}
 		}
 		a {}
+	}
+	/* FILTER */
+	&__filter {
+		input, button {}
+		input {
+			&::-webkit-input-placeholder {}
+			&:-moz-placeholder {}
+			&::-moz-placeholder {}
+			&:-ms-input-placeholder {}
+			&.in {}
+		}
+		[data-toggle="filter-input"] {}
+	}
+	&__filter-input {}
+	/* COLLECTION/GROUPS */
+	&__collection,
+	&__groups {
+		ul {}
 	}
 	&__collection {}
 	&__groups {}
