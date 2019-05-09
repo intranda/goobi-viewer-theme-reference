@@ -8,7 +8,7 @@
 	<name>goobi-viewer-theme-reference</name>
 
 	<properties>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 	</properties>
 
@@ -50,6 +50,9 @@
 					<wtpversion>2.0</wtpversion>
 					<wtpContextName>viewer</wtpContextName>
 					<packagingExcludes>**/rebel.xml</packagingExcludes>
+<!-- 					<archive> -->
+<!-- 						<addMavenDescriptor>false</addMavenDescriptor> -->
+<!-- 					</archive> -->
 				</configuration>
 			</plugin>
 		</plugins>
