@@ -2,8 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <display-name>viewer-theme-reference</display-name>
-    <name>viewer_theme_reference</name>
+    <display-name>Goobi viewer</display-name>
 <!--    <context-param> -->
 <!--        <param-name>javax.faces.CONFIG_FILES</param-name> -->
 <!--        <param-value>/resources/themes/reference/faces-config.xml, /WEB-INF/faces-standard-config.xml</param-value> -->
