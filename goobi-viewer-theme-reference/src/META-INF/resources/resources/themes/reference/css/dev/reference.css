@@ -1912,9 +1912,12 @@ strong {
   border-bottom: none;
 }
 .widget-bookshelf-list__back {
+  border: 1px solid #d5d5d5;
+  border-top: 0;
   padding: 10px;
 }
 .widget-bookshelf-list__back.has-items {
+  border-top: 0;
   padding-top: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
