@@ -1408,6 +1408,32 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   User Login
+   style declarations for userLogin.xhtml
+   ==============================================================*/
+/* USER LOGIN */
+.user-login {
+  /* WRAPPER */
+  /* HEADER / BODY */
+  /* HEADER */
+  /* BODY */
+  /* FOOTER */
+}
+.user-login h3,
+.user-login h4,
+.user-login h5 {
+  font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.user-login__body-login-open-id ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    User Account Create
    style declarations for userAccountCreate.xhtml
    ==============================================================*/
