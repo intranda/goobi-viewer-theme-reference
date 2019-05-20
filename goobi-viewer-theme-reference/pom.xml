@@ -33,14 +33,15 @@
 			</resource>
 		</resources>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
-<!-- 				<version>3.8.1</version> -->
-<!-- 				<configuration> -->
-<!-- 					<source>${jdk.version}</source> -->
-<!-- 					<target>${jdk.version}</target> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.2</version>

@@ -6,12 +6,6 @@
         <dependent-module archiveName="goobi-viewer-core-3.4.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="alto-1.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/AltoStructureModel/AltoStructureModel">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="normdataimporter-1.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/NormDataImporter/NormDataImporter">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="viewer"/>
         <property name="component.exclusion.patterns" value="**/rebel.xml"/>
     </wb-module>
