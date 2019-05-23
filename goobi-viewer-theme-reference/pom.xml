@@ -12,12 +12,21 @@
 		<jdk.version>1.8</jdk.version>
 	</properties>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>goobi-viewer-core</groupId>
 			<artifactId>goobi-viewer-core</artifactId>
 			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>goobi-viewer-core</groupId>
+			<artifactId>goobi-viewer-core-config</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>goobi-viewer-module</groupId>
+			<artifactId>goobi-viewer-module-crowdsourcing</artifactId>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
@@ -33,15 +42,39 @@
 			</resource>
 		</resources>
 		<plugins>
-            <!-- Maven Compiler Plugin -->
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                </configuration>
-            </plugin>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<!-- Maven Dependency Plugin (config files) -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<id>unpack-config</id>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
+							<excludeGroupIds>goobi-viewer-module</excludeGroupIds>
+							<excludeArtifactIds>goobi-viewer-core</excludeArtifactIds>
+							<includeArtifacIds>goobi-viewer-core-config</includeArtifacIds>
+							<excludes>MANIFEST.MF,**/pom.*</excludes>
+							<excludeTransitive>true</excludeTransitive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Maven WAR Plugin -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.2</version>
@@ -51,6 +84,11 @@
 					<wtpversion>2.0</wtpversion>
 					<wtpContextName>viewer</wtpContextName>
 					<packagingExcludes>**/rebel.xml</packagingExcludes>
+					<webResources>
+					   <webResource>
+					       <directory>${project.build.directory}/config</directory>
+					   </webResource>
+					</webResources>
 				</configuration>
 			</plugin>
 		</plugins>
