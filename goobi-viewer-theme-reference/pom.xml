@@ -51,12 +51,13 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-			<!-- Maven Dependency Plugin (config files) -->
+			<!-- Maven Dependency Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>3.1.1</version>
 				<executions>
+				    <!-- Config files -->
 					<execution>
 						<id>unpack-config</id>
 						<goals>
@@ -72,6 +73,22 @@
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
+					<!-- CMS core templates -->
+                    <execution>
+                        <id>unpack-cms-templates</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/templates</outputDirectory>
+                            <excludeGroupIds>goobi-viewer-module</excludeGroupIds>
+                            <excludeArtifactIds>goobi-viewer-core-config</excludeArtifactIds>
+                            <includeArtifacIds>goobi-viewer-core</includeArtifacIds>
+                            <includes>META-INF/resources/resources/cms/templates/*</includes>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
 				</executions>
 			</plugin>
 			<!-- Maven WAR Plugin -->
@@ -88,6 +105,9 @@
 					   <webResource>
 					       <directory>${project.build.directory}/config</directory>
 					   </webResource>
+                       <webResource>
+                           <directory>${project.build.directory}/templates/META-INF/resources</directory>
+                       </webResource>
 					</webResources>
 				</configuration>
 			</plugin>
