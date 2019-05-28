@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>goobi-viewer-theme</groupId>
-	<artifactId>goobi-viewer-theme-reference</artifactId>
+	<groupId>io.goobi.viewer.theme</groupId>
+	<artifactId>reference</artifactId>
 	<version>3.4</version>
 	<packaging>war</packaging>
 	<name>goobi-viewer-theme-reference</name>
@@ -14,18 +14,18 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>goobi-viewer-core</groupId>
-			<artifactId>goobi-viewer-core</artifactId>
+			<groupId>io.goobi.viewer</groupId>
+			<artifactId>viewer-core</artifactId>
 			<version>3.4</version>
 		</dependency>
 		<dependency>
-			<groupId>goobi-viewer-core</groupId>
-			<artifactId>goobi-viewer-core-config</artifactId>
+			<groupId>io.goobi.viewer</groupId>
+			<artifactId>viewer-core-config</artifactId>
 			<version>3.4</version>
 		</dependency>
 		<dependency>
-			<groupId>goobi-viewer-module</groupId>
-			<artifactId>goobi-viewer-module-crowdsourcing</artifactId>
+			<groupId>io.goobi.viewer.module</groupId>
+			<artifactId>crowdsourcing</artifactId>
 			<version>1.0</version>
 		</dependency>
 	</dependencies>
