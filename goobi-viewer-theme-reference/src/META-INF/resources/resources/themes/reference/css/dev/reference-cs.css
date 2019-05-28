@@ -117,8 +117,7 @@ strong {
   text-decoration: none;
 }
 .top-header__logo {
-  height: 1.75rem;
-  line-height: 1.75rem;
+  padding: 6px 0;
   font-size: 14px;
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
 }
