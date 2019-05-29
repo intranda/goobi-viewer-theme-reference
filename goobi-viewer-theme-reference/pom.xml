@@ -1,34 +1,51 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>goobi-viewer-theme</groupId>
-	<artifactId>goobi-viewer-theme-reference</artifactId>
+	<groupId>io.goobi.viewer.theme</groupId>
+	<artifactId>theme-reference</artifactId>
 	<version>3.4</version>
 	<packaging>war</packaging>
-	<name>goobi-viewer-theme-reference</name>
+
+
+	<name>Goobi viewer - Theme Reference</name>
+	<url>https://github.com/intranda/goobi-viewer-theme-reference</url>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 	</properties>
 
+
+	<repositories>
+		<repository>
+			<id>maven-intranda</id>
+			<url>https://nexus.intranda.com/repository/maven-intranda</url>
+		</repository>
+	</repositories>
+
+
 	<dependencies>
 		<dependency>
-			<groupId>goobi-viewer-core</groupId>
-			<artifactId>goobi-viewer-core</artifactId>
+			<groupId>io.goobi.viewer</groupId>
+			<artifactId>viewer-core</artifactId>
 			<version>3.4</version>
 		</dependency>
 		<dependency>
-			<groupId>goobi-viewer-core</groupId>
-			<artifactId>goobi-viewer-core-config</artifactId>
-			<version>3.4</version>
+			<groupId>io.goobi.viewer</groupId>
+			<artifactId>viewer-core-config</artifactId>
+			<version>3.4-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>goobi-viewer-module</groupId>
-			<artifactId>goobi-viewer-module-crowdsourcing</artifactId>
+			<groupId>io.goobi.viewer.module</groupId>
+			<artifactId>crowdsourcing</artifactId>
 			<version>1.0</version>
 		</dependency>
 	</dependencies>
+
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -57,7 +74,7 @@
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>3.1.1</version>
 				<executions>
-				    <!-- Config files -->
+					<!-- Config files -->
 					<execution>
 						<id>unpack-config</id>
 						<goals>
@@ -74,21 +91,21 @@
 						</configuration>
 					</execution>
 					<!-- CMS core templates -->
-                    <execution>
-                        <id>unpack-cms-templates</id>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <phase>prepare-package</phase>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/templates</outputDirectory>
-                            <excludeGroupIds>goobi-viewer-module</excludeGroupIds>
-                            <excludeArtifactIds>goobi-viewer-core-config</excludeArtifactIds>
-                            <includeArtifacIds>goobi-viewer-core</includeArtifacIds>
-                            <includes>META-INF/resources/resources/cms/templates/*</includes>
-                            <excludeTransitive>true</excludeTransitive>
-                        </configuration>
-                    </execution>
+					<execution>
+						<id>unpack-cms-templates</id>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<outputDirectory>${project.build.directory}/templates</outputDirectory>
+							<excludeGroupIds>goobi-viewer-module</excludeGroupIds>
+							<excludeArtifactIds>goobi-viewer-core-config</excludeArtifactIds>
+							<includeArtifacIds>goobi-viewer-core</includeArtifacIds>
+							<includes>META-INF/resources/resources/cms/templates/*</includes>
+							<excludeTransitive>true</excludeTransitive>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<!-- Maven WAR Plugin -->
@@ -102,12 +119,12 @@
 					<wtpContextName>viewer</wtpContextName>
 					<packagingExcludes>**/rebel.xml</packagingExcludes>
 					<webResources>
-					   <webResource>
-					       <directory>${project.build.directory}/config</directory>
-					   </webResource>
-                       <webResource>
-                           <directory>${project.build.directory}/templates/META-INF/resources</directory>
-                       </webResource>
+						<webResource>
+							<directory>${project.build.directory}/config</directory>
+						</webResource>
+						<webResource>
+							<directory>${project.build.directory}/templates/META-INF/resources</directory>
+						</webResource>
 					</webResources>
 				</configuration>
 			</plugin>
