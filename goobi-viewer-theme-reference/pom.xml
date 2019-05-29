@@ -42,6 +42,26 @@
 	</dependencies>
 
 
+	<profiles>
+		<profile>
+			<id>crowdsourcing</id>
+			<repositories>
+				<repository>
+					<id>maven-intranda-internal</id>
+					<url>https://nexus.intranda.com/repository/maven-intranda-internal</url>
+				</repository>
+			</repositories>
+			<dependencies>
+				<dependency>
+					<groupId>io.goobi.viewer.module</groupId>
+					<artifactId>module-crowdsourcing</artifactId>
+					<version>1.0-SNAPSHOT</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
