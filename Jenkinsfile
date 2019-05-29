@@ -25,9 +25,6 @@ pipeline {
     }
   }
   post {
-    always {
-      junit "**/target/surefire-reports/*.xml"
-    }
     success {
       archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
