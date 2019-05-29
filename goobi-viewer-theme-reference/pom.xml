@@ -20,6 +20,14 @@
 	</properties>
 
 
+	<repositories>
+		<repository>
+			<id>maven-intranda</id>
+			<url>https://nexus.intranda.com/repository/maven-intranda</url>
+		</repository>
+	</repositories>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
