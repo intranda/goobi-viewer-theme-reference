@@ -25,6 +25,10 @@
 			<id>maven-intranda</id>
 			<url>https://nexus.intranda.com/repository/maven-intranda</url>
 		</repository>
+		<repository>
+			<id>maven-intranda-internal</id>
+			<url>https://nexus.intranda.com/repository/maven-intranda-internal</url>
+		</repository>
 	</repositories>
 
 
@@ -40,6 +44,20 @@
 			<version>3.4-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+
+
+	<profiles>
+		<profile>
+			<id>crowdsourcing</id>
+			<dependencies>
+				<dependency>
+					<groupId>io.goobi.viewer.module</groupId>
+					<artifactId>module-crowdsourcing</artifactId>
+					<version>1.0-SNAPSHOT</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 
 
 	<build>
