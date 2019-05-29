@@ -32,17 +32,12 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>3.4</version>
+			<version>3.4-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
 			<version>3.4-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>io.goobi.viewer.module</groupId>
-			<artifactId>crowdsourcing</artifactId>
-			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
@@ -83,9 +78,9 @@
 						<phase>prepare-package</phase>
 						<configuration>
 							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
-							<excludeGroupIds>goobi-viewer-module</excludeGroupIds>
-							<excludeArtifactIds>goobi-viewer-core</excludeArtifactIds>
-							<includeArtifacIds>goobi-viewer-core-config</includeArtifacIds>
+							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
+							<excludeArtifactIds>viewer-core</excludeArtifactIds>
+							<includeArtifacIds>viewer-core-config</includeArtifacIds>
 							<excludes>MANIFEST.MF,**/pom.*</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
@@ -99,9 +94,9 @@
 						<phase>prepare-package</phase>
 						<configuration>
 							<outputDirectory>${project.build.directory}/templates</outputDirectory>
-							<excludeGroupIds>goobi-viewer-module</excludeGroupIds>
-							<excludeArtifactIds>goobi-viewer-core-config</excludeArtifactIds>
-							<includeArtifacIds>goobi-viewer-core</includeArtifacIds>
+							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
+							<excludeArtifactIds>viewer-core-config</excludeArtifactIds>
+							<includeArtifacIds>viewer-core</includeArtifacIds>
 							<includes>META-INF/resources/resources/cms/templates/*</includes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
