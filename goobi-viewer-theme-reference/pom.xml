@@ -5,7 +5,7 @@
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
-	<artifactId>reference</artifactId>
+	<artifactId>theme-reference</artifactId>
 	<version>3.4</version>
 	<packaging>war</packaging>
 
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>3.4</version>
+			<version>3.4-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer.module</groupId>
