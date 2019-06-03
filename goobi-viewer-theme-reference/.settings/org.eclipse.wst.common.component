@@ -6,6 +6,9 @@
         <dependent-module archiveName="viewer-core-3.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="viewer-core-config-3.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core-config/goobi-viewer-core-config">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="viewer"/>
         <property name="component.exclusion.patterns" value="**/rebel.xml"/>
     </wb-module>

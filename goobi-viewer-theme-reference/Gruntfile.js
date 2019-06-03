@@ -6,13 +6,13 @@ module.exports = function(grunt) {
         },
         pkg: grunt.file.readJSON('package.json'),
         src: {
-        	jsDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dev/',
-            jsDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/javascript/dist/',
-            lessDevCsFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/cs/',
-            lessDevViewerFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/viewer/',
-            lessDevSubThemeOneFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
-            cssDevFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dev/',
-            cssDistFolder: 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/dist/'
+        	jsDevFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dev/',
+            jsDistFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dist/',
+            lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/cs/',
+            lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/viewer/',
+            lessDevSubThemeOneFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
+            cssDevFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dev/',
+            cssDistFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dist/'
         },
         less: {
             development: {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
 				}
 			},
             css: {
-                files: [ 'src/META-INF/resources/resources/themes/<%=theme.name%>/css/**/*.less' ],
+                files: [ 'WebContent/resources/themes/<%=theme.name%>/css/**/*.less' ],
                 tasks: [ 'less' ],
                 options: {
                     spawn: false,
