@@ -23,7 +23,7 @@
 	<repositories>
 		<repository>
 			<id>intranda-public</id>
-			<url>https://nexus.intranda.com/repository/maven-releases</url>
+			<url>https://nexus.intranda.com/repository/maven-public</url>
 		</repository>
 	</repositories>
 
