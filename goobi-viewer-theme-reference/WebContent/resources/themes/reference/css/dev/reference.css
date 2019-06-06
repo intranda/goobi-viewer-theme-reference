@@ -20,44 +20,31 @@
 /* CROWDSOURCING */
 /* MEDIA QUERY BREAK POINTS */
 /* ==============================================================
-   LESS Mixins
+   Theme Fonts
    ==============================================================*/
-/* CLEARFLOATS */
-.mx-clearfloats:before,
-.mx-clearfloats:after {
-  content: " ";
-  display: table;
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url('../../fonts/OpenSans-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-.mx-clearfloats:after {
-  clear: both;
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url('../../fonts/OpenSans-Semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-/* BACKGROUND IMAGE */
-/* CSS TRIANGLE */
-/* HIDDEN */
-.mx-visible {
-  display: block !important;
-  visibility: visible !important;
+@font-face {
+  font-family: 'RobotoSlabRegular';
+  src: url('../../fonts/RobotoSlab-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-/* HIDDEN */
-.mx-hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-/* VISUALLY HIDDEN */
-.mx-v-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  overflow: hidden;
-}
-/* GRID */
-/* LIST RESET */
-.mx-list-reset {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+@font-face {
+  font-family: 'MerriweatherRegular';
+  src: url('../../fonts/merriweather-regular-webfont.woff2') format('woff2'), url('../../fonts/merriweather-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 /*
  * general styling
@@ -111,44 +98,6 @@ strong {
     padding-top: 52px;
   }
 }
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Theme Fonts
-   ==============================================================*/
-@font-face {
-  font-family: 'OpenSansRegular';
-  src: url('../../fonts/OpenSans-Regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'OpenSansSemibold';
-  src: url('../../fonts/OpenSans-Semibold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'RobotoSlabRegular';
-  src: url('../../fonts/RobotoSlab-Regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MerriweatherRegular';
-  src: url('../../fonts/merriweather-regular-webfont.woff2') format('woff2'), url('../../fonts/merriweather-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-/* ==============================================================
-   Resets for CSS Libs
-   ==============================================================*/
-/* BOOTSTRAP */
-/* TABS */
-/* FORMS */
-/* MODALS */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    Layout
@@ -366,6 +315,46 @@ strong {
   /* FOOTER */
 }
 /* ==============================================================
+   LESS Mixins
+   ==============================================================*/
+/* CLEARFLOATS */
+.mx-clearfloats:before,
+.mx-clearfloats:after {
+  content: " ";
+  display: table;
+}
+.mx-clearfloats:after {
+  clear: both;
+}
+/* BACKGROUND IMAGE */
+/* CSS TRIANGLE */
+/* HIDDEN */
+.mx-visible {
+  display: block !important;
+  visibility: visible !important;
+}
+/* HIDDEN */
+.mx-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* VISUALLY HIDDEN */
+.mx-v-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* GRID */
+/* LIST RESET */
+.mx-list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* ==============================================================
    Print CSS
    style declarations for print views
    ==============================================================*/
@@ -382,65 +371,13 @@ strong {
     content: "";
   }
 }
-/* BASIC COMPONENTS */
 /* ==============================================================
-   Buttons
-   style declarations for buttons
+   Resets for CSS Libs
    ==============================================================*/
-/* BUTTONS */
-.btn {
-  /* MODIFICATION */
-}
-/* MODIFICATIONS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Icons
-   style declarations for icons used in viewer
-   ==============================================================*/
-.icon-totop {
-  line-height: 26px;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #fff;
-  border: 1px solid #3365a9;
-  background-color: #3365a9;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Forms
-   style declarations for forms
-   ==============================================================*/
-/* INPUT MODIFICATIONS */
-/* CUSTOM CONTROL */
-/* BLOCK */
-.custom-control {
-  /* ELEMENT */
-  /* MODIFICATION */
-}
-/* INPUT PLACEHOLDER */
-/* WebKit, Blink, Edge */
-::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-}
-/* Mozilla Firefox 4 to 18 */
-:-moz-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-/* Mozilla Firefox 19+ */
-::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-/* Internet Explorer 10-11 */
-:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-}
+/* BOOTSTRAP */
+/* TABS */
+/* FORMS */
+/* MODALS */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -570,6 +507,18 @@ strong {
   }
 }
 /* ==============================================================
+   Buttons
+   style declarations for buttons
+   ==============================================================*/
+/* BUTTONS */
+.btn {
+  /* MODIFICATION */
+}
+/* MODIFICATIONS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Change Local
    style declarations for changeLocal.xhtml
    ==============================================================*/
@@ -635,6 +584,40 @@ strong {
 /* BLOCK */
 .e-pub {
   /* ELEMENT */
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Forms
+   style declarations for forms
+   ==============================================================*/
+/* INPUT MODIFICATIONS */
+/* CUSTOM CONTROL */
+/* BLOCK */
+.custom-control {
+  /* ELEMENT */
+  /* MODIFICATION */
+}
+/* INPUT PLACEHOLDER */
+/* WebKit, Blink, Edge */
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -740,80 +723,6 @@ strong {
    style declarations for metaMuseal.xhtml
    ==============================================================*/
 /* META MUSEAL */
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Template Navigation
-   style declarations for templateNavigation.xhtml
-   ==============================================================*/
-/* MOBILE NAVIGATION */
-/* BLOCK */
-.mobile-navigation {
-  padding: 0;
-  border-top-color: #444;
-  border-bottom-color: #444;
-  background-color: #444;
-  /* ELEMENT */
-  /* USER LOGIN */
-  /* SUBNAV */
-}
-.mobile-navigation ul {
-  background-color: #fff;
-  background-image: url("../../images/template/mobilenav-bg.png");
-}
-.mobile-navigation a {
-  color: #444;
-  border-bottom: 1px solid #d5d5d5;
-}
-.mobile-navigation a:hover,
-.mobile-navigation a:focus,
-.mobile-navigation a:active {
-  text-decoration: none;
-  color: #444;
-  background-color: #eee;
-}
-.mobile-navigation a.mainnav-active {
-  background-color: #eee;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Mobile Toggle Wrapper
-   style declarations for mobileToggles.xhtml
-   ==============================================================*/
-/* MOBILE TOGGLE WRAPPER */
-/* BLOCK */
-#mobileToggleWrapper {
-  border-bottom: 1px solid #444;
-  background-color: #f2f3f4;
-  /* ELEMENT */
-}
-#mobileToggleWrapper .customer-header-logo a {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo a:hover,
-#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
-  color: #444;
-}
-#mobileToggleWrapper .customer-header-logo img {
-  max-height: 32px;
-}
-#mobileToggleWrapper .btn-toggle {
-  color: #444;
-  border-color: #444;
-}
-#mobileToggleWrapper .btn-toggle:active,
-#mobileToggleWrapper .btn-toggle:focus {
-  outline: none !important;
-}
-#mobileToggleWrapper .language.in:before,
-#mobileToggleWrapper .search.in:before {
-  border-color: transparent transparent #444 transparent;
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -937,14 +846,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Responsive Column Gallery
-   style declarations for responsiveColumnGallery.xhtml
-   ==============================================================*/
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    Search Help text
    style declarations for searchHelpText.xhtml
    ==============================================================*/
@@ -1063,6 +964,80 @@ strong {
    ==============================================================*/
 .viewer-control.page-browse {
   line-height: 30px;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Template Navigation
+   style declarations for templateNavigation.xhtml
+   ==============================================================*/
+/* MOBILE NAVIGATION */
+/* BLOCK */
+.mobile-navigation {
+  padding: 0;
+  border-top-color: #444;
+  border-bottom-color: #444;
+  background-color: #444;
+  /* ELEMENT */
+  /* USER LOGIN */
+  /* SUBNAV */
+}
+.mobile-navigation ul {
+  background-color: #fff;
+  background-image: url("../../images/template/mobilenav-bg.png");
+}
+.mobile-navigation a {
+  color: #444;
+  border-bottom: 1px solid #d5d5d5;
+}
+.mobile-navigation a:hover,
+.mobile-navigation a:focus,
+.mobile-navigation a:active {
+  text-decoration: none;
+  color: #444;
+  background-color: #eee;
+}
+.mobile-navigation a.mainnav-active {
+  background-color: #eee;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
+   Mobile Toggle Wrapper
+   style declarations for mobileToggles.xhtml
+   ==============================================================*/
+/* MOBILE TOGGLE WRAPPER */
+/* BLOCK */
+#mobileToggleWrapper {
+  border-bottom: 1px solid #444;
+  background-color: #f2f3f4;
+  /* ELEMENT */
+}
+#mobileToggleWrapper .customer-header-logo a {
+  color: #444;
+}
+#mobileToggleWrapper .customer-header-logo a:hover,
+#mobileToggleWrapper .customer-header-logo a:focus #mobileToggleWrapper .customer-header-logo a:active {
+  color: #444;
+}
+#mobileToggleWrapper .customer-header-logo img {
+  max-height: 32px;
+}
+#mobileToggleWrapper .btn-toggle {
+  color: #444;
+  border-color: #444;
+}
+#mobileToggleWrapper .btn-toggle:active,
+#mobileToggleWrapper .btn-toggle:focus {
+  outline: none !important;
+}
+#mobileToggleWrapper .language.in:before,
+#mobileToggleWrapper .search.in:before {
+  border-color: transparent transparent #444 transparent;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -1407,58 +1382,6 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Login
-   style declarations for userLogin.xhtml
-   ==============================================================*/
-/* USER LOGIN */
-.user-login {
-  /* WRAPPER */
-  /* HEADER / BODY */
-  /* HEADER */
-  /* BODY */
-  /* FOOTER */
-}
-.user-login h3,
-.user-login h4,
-.user-login h5 {
-  font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.user-login__body-login-open-id ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   User Account Create
-   style declarations for userAccountCreate.xhtml
-   ==============================================================*/
-/* USER ACCOUNT CREATE */
-/* BLOCK */
-.user-account-create {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   User Account Retrieve
-   style declarations for userAccountRetrieve.xhtml
-   ==============================================================*/
-/* USER ACCOUNT RETRIEVE */
-/* BLOCK */
-.user-account-retrieve {
-  /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
    User Activity
    style declarations for userBackendActivity.xhtml
    ==============================================================*/
@@ -1578,17 +1501,23 @@ strong {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Data
-   style declarations for user.xhtml
+   User Login
+   style declarations for userLogin.xhtml
    ==============================================================*/
-/* USERDATA */
-/* BLOCK */
-.userdata {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-  /* ELEMENT */
+/* USER LOGIN */
+.user-login {
+  /* WRAPPER */
+  /* HEADER / BODY */
+  /* HEADER */
+  /* BODY */
+  /* FOOTER */
 }
+.user-login__body-login-open-id ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -2335,15 +2264,6 @@ strong {
   /* PAGE DOWNLOADS */
   /* CITE LINKS */
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Widget User
-   style declarations for widget_user.xhtml
-   ==============================================================*/
-/* WIDGET USER */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */

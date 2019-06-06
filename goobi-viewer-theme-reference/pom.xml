@@ -22,8 +22,8 @@
 
 	<repositories>
 		<repository>
-			<id>maven-intranda</id>
-			<url>https://nexus.intranda.com/repository/maven-intranda</url>
+			<id>intranda-public</id>
+			<url>https://nexus.intranda.com/repository/maven-public</url>
 		</repository>
 	</repositories>
 
@@ -47,8 +47,8 @@
 			<id>crowdsourcing</id>
 			<repositories>
 				<repository>
-					<id>maven-intranda-internal</id>
-					<url>https://nexus.intranda.com/repository/maven-intranda-internal</url>
+					<id>intranda-internal</id>
+					<url>https://nexus.intranda.com/repository/maven-internal</url>
 				</repository>
 			</repositories>
 			<dependencies>
