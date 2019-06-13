@@ -2,47 +2,30 @@
    Title
    style declarations for title.xhtml
    ==============================================================*/
-#titleWrapper {
-    padding: 10px 0 20px 0;
-    .title-header {
-        h3 {
-            margin: 0;
-            a {
-            	color: @darkgray;
-                &:hover {}
-                .fa {}
-            }
-        }
-    }
-    .title-body {
-        form {
-            .dl-horizontal {
-                dt {}
-                dd {
-                    .title-value {}
-                    nav {
-                        ul {
-                            li {
-                                a {}
-                                &.title-breadcrumb-spacer:before {}
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-#downloadWrapper {
-    nav {
-        ul {
-            li {
-                &.download-title {}
-                a {}
-            }
-        }
-    }
+/* TITLE */
+.title {
+	/* HEADER */
+	&__header {
+		h3 {}
+		.fa {
+			&.in {}
+		}
+	}
+	&__header-page-type {}
+	&__header-label {}
+	/* BODY */
+	&__body {}
+	&__body-download {}
+	&__body-metadata {
+		dl {
+			dt, dd {}
+			dt {}
+			dd {}
+		}
+	}
+	&__body-metadata-breadcrumbs {
+		a, i {}
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

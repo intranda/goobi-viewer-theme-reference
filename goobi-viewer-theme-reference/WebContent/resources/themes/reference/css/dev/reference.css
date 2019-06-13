@@ -897,14 +897,10 @@ strong {
    Title
    style declarations for title.xhtml
    ==============================================================*/
-#titleWrapper {
-  padding: 10px 0 20px 0;
-}
-#titleWrapper .title-header h3 {
-  margin: 0;
-}
-#titleWrapper .title-header h3 a {
-  color: #444;
+/* TITLE */
+.title {
+  /* HEADER */
+  /* BODY */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
