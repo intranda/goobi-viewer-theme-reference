@@ -2450,6 +2450,11 @@ strong {
 .tpl-single {
   /* ELEMENT */
 }
+.tpl-single__content {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
