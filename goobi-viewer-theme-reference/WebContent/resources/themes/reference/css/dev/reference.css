@@ -167,7 +167,7 @@ strong {
   position: relative;
   top: 7px;
   left: 5px;
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-family: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
 }
@@ -897,14 +897,10 @@ strong {
    Title
    style declarations for title.xhtml
    ==============================================================*/
-#titleWrapper {
-  padding: 10px 0 20px 0;
-}
-#titleWrapper .title-header h3 {
-  margin: 0;
-}
-#titleWrapper .title-header h3 a {
-  color: #444;
+/* TITLE */
+.title {
+  /* HEADER */
+  /* BODY */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -1850,7 +1846,7 @@ strong {
   margin: 0;
   padding: 5px 10px;
   font-family: "MerriweatherRegular", "Times New Roman", Times, serif;
-  font-size: 14px;
+  font-size: 18px;
   color: #fff;
   border-bottom: 1px solid #3365a9;
   background-color: #3365a9;
@@ -2449,6 +2445,11 @@ strong {
 /* BLOCK */
 .tpl-single {
   /* ELEMENT */
+}
+.tpl-single__content {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
