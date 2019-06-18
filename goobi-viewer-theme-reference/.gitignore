@@ -7,5 +7,5 @@
 /package-lock.json
 /target/
 /.metadata/
-/.settings/
+/.settings/org.eclipse.wst.commons.component
 /.project
