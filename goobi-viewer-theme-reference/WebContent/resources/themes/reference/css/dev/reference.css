@@ -123,7 +123,7 @@ table,
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 2000;
+  z-index: 2030;
 }
 /* HEADER */
 .page-header {
@@ -135,7 +135,7 @@ table,
   position: sticky;
   top: 0;
   background-color: #444;
-  z-index: 1090;
+  z-index: 2020;
 }
 .page-header__top {
   display: -webkit-box;
@@ -441,7 +441,7 @@ table,
   display: none;
   position: fixed;
   top: 3rem;
-  z-index: 2010;
+  z-index: 2030;
 }
 [data-close="menu"] span,
 [data-close="sidebar"] span {
@@ -487,7 +487,7 @@ table,
     position: -webkit-sticky;
     position: sticky;
     top: 30px;
-    z-index: 1080;
+    z-index: 2010;
   }
   .page-header__bottom {
     padding: 1rem 0;
@@ -534,7 +534,7 @@ table,
     -webkit-transition: right 0.2s linear;
     transition: right 0.2s linear;
     overflow-y: auto;
-    z-index: 2010;
+    z-index: 2030;
   }
   .page-content__sidebar.in {
     right: 0;
