@@ -2995,7 +2995,7 @@ button.btn:active:focus {
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
   .tpl-masonry .grid-item {
-    width: 100%;
+    width: calc(100% - 20px);
   }
 }
 /* ==============================================================
