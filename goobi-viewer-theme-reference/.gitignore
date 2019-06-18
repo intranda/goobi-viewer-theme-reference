@@ -6,3 +6,6 @@
 **/.DS_Store
 /package-lock.json
 /target/
+/.metadata/
+/.settings/
+/.project
