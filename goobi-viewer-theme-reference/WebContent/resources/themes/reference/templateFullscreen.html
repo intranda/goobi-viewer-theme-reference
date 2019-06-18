@@ -21,7 +21,7 @@
 	<meta name="version" content="#{navigationHelper.version}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	
+    
     <!-- TWITTER CARD / OPENGRAPH -->
     <ui:include src="/resources/includes/embed/twittercard.xhtml" />
     <ui:include src="/resources/includes/embed/opengraph.xhtml" />
@@ -31,14 +31,16 @@
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
     
+    <!-- RELATIVE URL TAGS -->
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
+    
     <!-- OPENSEARCH -->
     <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/rest/opensearch/getxml/" />
     
     <!-- OEMBED -->
-    <ui:include src="/resources/includes/embed/oembed.xhtml" />
-    
-    <!-- RELATIVE URL TAGS -->
-    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
+    <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
+        <link rel="alternate" type="application/json+oembed" href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.encodedUrl}&amp;format=json" title="Goobi viewer oEmbed Profile" />
+    </ui:fragment>
     
     <!-- BASIC CSS -->
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.min.css" />
@@ -83,8 +85,8 @@
     </f:view>
     
     <!-- PIWIK -->
-    <h:panelGroup rendered="#{configurationBean.piwikTracking}">
+    <ui:fragment rendered="#{configurationBean.piwikTracking}">
         <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-    </h:panelGroup>
+    </ui:fragment>
 </h:body>
 </html>

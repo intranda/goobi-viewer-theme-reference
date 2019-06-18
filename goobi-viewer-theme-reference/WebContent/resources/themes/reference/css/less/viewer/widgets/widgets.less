@@ -2,55 +2,74 @@
    Widgets
    style declarations for sidebar widgets
    ==============================================================*/
+/* WIDGETS */
 .widget {
-	background-color: @white;
     h3 {
-        margin: 0;
-        padding: 5px 10px;
-        font-family: @fontSerif;
-        font-size: 18px;
-        color: @white;
-        border-bottom: 1px solid @blue;
-        background-color: @blue;
+    	margin-top: 0;
+    	margin-bottom: 0;
+    	padding: .7rem 1.5rem;
+    	font-size: @fontNormal;
+    	font-weight: 400;
+    	color: @white;
+    	border: 1px solid @blue;
+    	border-bottom: 0;
+    	background-color: @blue;
     }
-    ul {
-        padding: 10px;
-	    border: 1px solid @middlegray;
-	    border-top: none;
-        li {
-            a {
-                &:hover {}
-            }
-            &.active {
-                a {
-                    font-family: @fontSansSerifBold;
-                    color: @darkgray;
-                }
-            }
-        }
+    ul {}
+    li {
+    	&.active {
+    		a {
+    			font-weight: 600;
+	    		color: @middleblack;    			
+    		}
+    	}
+    	&.unpublished {
+    		a {}
+    	}
     }
-    dl {
-        dt {}
-        dd {}
+    a {
+    	display: block;
+    	line-height: 1.2;
+    	padding: .5rem 0;
+    	&:hover,
+    	&:active,
+    	&:focus {
+    		color: @middleblack;
+    	}
     }
+    dl {}
+    dt,
+    dd {}
+    dt {}
+    dd {}
     &__title {
-    	.fa {}
+    	.fa {
+    		font-size: @fontMedium;
+    	}
     	&.collapseable {
     		.fa {}
 	    	&.in {
-	    		.fa-chevron-down {}
+	    		.fa-chevron-down {
+	    		}
 	    	}    		
     	}
     }
     &__body {
+    	&.collapseable {}
+    }
+    /* MODIFICATION */
+    ul,
+    dl,
+    &__body {
+    	padding: 1rem 1.5rem;
     	border: 1px solid @middlegray;
     	border-top: 0;
-    	&.collapseable {}
+    	background-color: @white;    	
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

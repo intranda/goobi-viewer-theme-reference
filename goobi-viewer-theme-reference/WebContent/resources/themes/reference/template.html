@@ -23,26 +23,28 @@
     <ui:fragment rendered="#{navigationHelper.displayNoIndexMetaTag}">
         <meta name="robots" content="noindex" />
     </ui:fragment>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
     <!-- TWITTER CARD / OPENGRAPH -->
     <ui:include src="/resources/includes/embed/twittercard.xhtml" />
     <ui:include src="/resources/includes/embed/opengraph.xhtml" />
 
-    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{configurationBean.name}</title>
+    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />intranda GmbH</title>
     
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
+    
+    <!-- RELATIVE URL TAGS -->
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
     
     <!-- OPENSEARCH -->
     <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/rest/opensearch/getxml/" />
     
     <!-- OEMBED -->
-    <ui:include src="/resources/includes/embed/oembed.xhtml" />
-    
-    <!-- RELATIVE URL TAGS -->
-    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
-    
+    <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
+        <link rel="alternate" type="application/json+oembed" href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.encodedUrl}&amp;format=json" title="Goobi viewer oEmbed Profile" />
+    </ui:fragment>
+
     <!-- BASIC CSS -->
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css" />
@@ -61,7 +63,6 @@
     <!-- FORCES PRIMEFACES TO INCLUDE JQUERY & JQUERY-UI -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
     <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
-     
     
     <!-- JAVASCRIPT -->
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.min.js"></script>
@@ -102,9 +103,9 @@
 	    </f:view>
 	    
 	    <!-- PIWIK -->
-	    <h:panelGroup rendered="#{configurationBean.piwikTracking}">
+	    <ui:fragment rendered="#{configurationBean.piwikTracking}">
 	        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-	    </h:panelGroup>
+	    </ui:fragment>
     </h:panelGroup>
 </h:body>
 </html>

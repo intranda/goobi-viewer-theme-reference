@@ -2,7 +2,8 @@ module.exports = function(grunt) {
 	// ---------- PROJECT CONFIG ----------
     grunt.initConfig({
         theme: {
-            name: 'reference'
+            name: 'reference',
+            subThemeOne: 'reference-subtheme'
         },
         pkg: grunt.file.readJSON('package.json'),
         src: {
@@ -27,6 +28,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%=src.cssDevFolder %><%=theme.name%>.css': '<%=src.lessDevViewerFolder%>constructor.less',
                     '<%=src.cssDevFolder %><%=theme.name%>-cs.css': '<%=src.lessDevCsFolder%>csConstructor.less',
+                    '<%=src.cssDevFolder %><%=theme.subThemeOne%>.css': '<%=src.lessDevSubThemeOneFolder%>subThemeConstructor.less',
                 }
             },
             production: {
@@ -43,6 +45,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%=src.cssDistFolder %><%=theme.name%>.min.css': '<%=src.lessDevViewerFolder%>constructor.less',
                     '<%=src.cssDistFolder %><%=theme.name%>-cs.min.css': '<%=src.lessDevCsFolder%>csConstructor.less',
+                    '<%=src.cssDistFolder %><%=theme.subThemeOne%>.min.css': '<%=src.lessDevSubThemeOneFolder%>subThemeConstructor.less',
                 }
             }
         },

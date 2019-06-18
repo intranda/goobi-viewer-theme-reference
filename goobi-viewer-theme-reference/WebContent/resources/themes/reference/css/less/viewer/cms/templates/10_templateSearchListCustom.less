@@ -6,6 +6,19 @@
 /* BLOCK */
 .tpl-search-list-custom {
     /* ELEMENT */
+    &__list {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    	.row {
+    		&:last-child {
+    			.tpl-search-list-custom__list-element {
+    				padding-bottom: 0;
+    				border-bottom: 0;
+    			}    			
+    		}
+    	}
+    }
     &__list-element {}
     &__list-image {}
     &__list-text {

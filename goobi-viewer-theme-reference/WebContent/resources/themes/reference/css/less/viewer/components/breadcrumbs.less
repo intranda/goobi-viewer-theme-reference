@@ -5,7 +5,8 @@
 /* BREADCRUMBS */
 /* BLOCK */
 .breadcrumbs-wrapper {
-    padding: 10px 0;
+	font-size: @fontSmall;
+	margin-bottom: 2rem;
 }
 .breadcrumbs {
     /* ELEMENT */
@@ -30,9 +31,11 @@
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+	.breadcrumbs-wrapper {
+		display: none;
+	}
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {
-    .breadcrumbs-wrapper { display: none; }
-}
+@media screen and (max-width: @xSmallBreakpoint) {} 

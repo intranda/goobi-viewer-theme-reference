@@ -4,36 +4,67 @@
    ==============================================================*/
 /* BUTTONS */
 .btn {
+	color: @middleblack;
+	font-size: @fontMedium;
 	&:hover,
 	&:active,
 	&:focus,
-	&.active {}
+	&:active:focus,
+	&.active,
+	&.active.focus, 
+	&.active:focus, 
+	&.focus, 
+	&:active.focus {
+		color: @white;
+	}
 	/* MODIFICATION */
 	&--default {
+		color: @btnDefault;
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus,
+		&:active:focus,
+		&.active,
+		&.active.focus, 
+		&.active:focus, 
+		&.focus, 
+		&:active.focus {
+			color: @black;
+		}
 	}
 	&--success {
+		color: @btnSuccess;
 		&:hover,
 		&:active,
 		&:focus {}
 	}
 	&--danger {
+		color: @btnDanger;
 		&:hover,
 		&:active,
 		&:focus {}
 	}
 	&--full {
+		color: @white;
+		background-color: @blue;
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus,
+		&.active:focus, 
+		&.focus, 
+		&:active.focus {
+			color: @white;
+			background-color: @hoverblue;
+		}
 	}
 	&--clean {}
 	&--link {
+		color: @blue;
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus {
+			color: @middleblack;
+		}
 	}
 	&--hidden {}
 	&--inactive {}
@@ -46,7 +77,15 @@
 
 /* MODIFICATIONS */
 a.btn--icon {}
+button.btn {
+	&:active, 
+	&:focus, 
+	&:active:focus {
+		color: @white;
+	}
+}
 
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */

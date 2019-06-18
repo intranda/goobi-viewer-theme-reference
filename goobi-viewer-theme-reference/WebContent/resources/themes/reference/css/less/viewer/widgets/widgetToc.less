@@ -7,7 +7,9 @@
 	/* TITLE */
 	&__title {
 		background-color: @blue;
-		h3 {}
+		h3 {
+			margin: 0;
+		}
 	}
 	&__title-expand {
 		a {
@@ -39,22 +41,16 @@
 	&__element-expand {}
 	&__element-link {
 		a {
-			color: @lowerblack;
 			&:hover,
 			&:active,
-			&:focus {
-				color: @lowerblack;
-				text-decoration: none;
-			}
+			&:focus {}
 		}
 		&.has-pagenumber {}
 		&.non-tree-view {
 			&.has-pagenumber {}			
 		}
 		&.active {
-			a {
-				font-family: @fontSansSerifBold;
-			}
+			a {}
 		}
 	}
 	&__element-pagenumber {}

@@ -11,13 +11,10 @@
 		ul {}
 		li {
 			&.active {
-				a {
-					font-family: 'OpenSansRegular';
-					color: @darkgray;
-					background-color: @lightgray;
-				}
+				a {}
 				.row {}
 				.col-xs-11,
+				.col-xs-1 {}
 				.col-xs-1 {}
 			}
 		}
@@ -25,6 +22,7 @@
 	}
 	/* FILTER */
 	&__filter {
+		top: 0;
 		input, button {}
 		input {
 			&::-webkit-input-placeholder {}
@@ -45,18 +43,13 @@
 	&__groups {}
 	/* COLLAPSE DRILLDOWN */
     &__collapse {
-    	position: relative;
-    	margin-top: -1px;
-    	border: 1px solid @middlegray;
-    	border-top: none;
-        a {
-        	padding: 0 !important;
-        }
+        a {}
     }
 }
 
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

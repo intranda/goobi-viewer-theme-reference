@@ -9,7 +9,11 @@
     &__group {
     	background-color: @white;
         span.remove {}
-        .remove {}
+        .remove {
+        	&:hover {
+        		color: @black;
+        	}
+        }
     }
     &__loader {}
     &__connector {}
@@ -17,7 +21,9 @@
         .form-control__select,
         input[type="text"] {}
         input[type="text"] {
-            &:focus {}
+            &:focus {
+            	& + .input-group-addon {}
+            }
         }
         .input-group-addon {
             a {

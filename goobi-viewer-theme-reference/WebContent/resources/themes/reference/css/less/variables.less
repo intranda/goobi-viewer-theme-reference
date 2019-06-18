@@ -2,22 +2,25 @@
    Variables
    ==============================================================*/
 /* FONTS */
-@fontSansSerif: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@fontSansSerifBold: "OpenSansSemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@fontSerif: "MerriweatherRegular", "Times New Roman", Times, serif;
-@fontSize: 0.875rem;
-@baseMargin: 0 0 1.3125rem 0;
+@fontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @images: "../../images";
+@fontSmall: 1.2rem;
+@fontMedium: 1.4rem;
+@fontNormal: 1.6rem;
+@fontLarge: 1.8rem;
+@fontXLarge: 2.1rem;
 
-/* BASIC */
-@lightgray: #eee;
-@orange: #f08421;
-
-/* CI-COLORS */
-@lowerblack: #222;
-@placeholder: rgba(0,0,0,0.25);
+/* BASIC COLORS */
 @white: #fff;
-@darkgray: #444;
+@black: #1a1a1a;
+@lightgray: #eee;
+@gray: #6f6f6f;
+@orange: #f08421;
+@placeholder: rgba(0,0,0,0.25);
+
+/* CI COLORS */
+@lowerblack: #222;
+@middleblack: #444;
 @middlegray: #d5d5d5;
 @neutralgray: #f2f3f4;
 @blue: #3365a9;
@@ -46,21 +49,24 @@
 @statBackgroundColor: #fffdf6;
 @statDarkgray: #999;
 
-/* NER */
+/* NER COLORS */
 @personColor: #0174DF;
 @locationColor: #FF8000;
 @corporationColor: #298A08;
 @tagHoverColor: #eee;
 @scaleHandleColor: #8A0808;
 
-/* CROWDSOURCING */
+/* READING MODE COLORS */
+@readingModeBg: #1a1a1a;
+
+/* CROWDSOURCING COLORS */
 @progressCompletion: #95C476;
 @darkBlue: rgb(53,111,162);
 @yellowTransparent: rgba(250, 250, 0, .3);
 @blueTransparent: rgba(66,139,202,.3);
 
 /* MEDIA QUERY BREAK POINTS */
-@largeBreakpoint: 1200px;
-@mediumBreakpoint: 992px;
-@smallBreakpoint: 768px;
 @xSmallBreakpoint: 480px;
+@smallBreakpoint: 768px;
+@mediumBreakpoint: 992px;
+@largeBreakpoint: 1200px;

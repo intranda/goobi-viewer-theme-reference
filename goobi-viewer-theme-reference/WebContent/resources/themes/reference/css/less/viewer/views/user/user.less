@@ -2,39 +2,19 @@
    User
    style declarations for user.xhtml
    ==============================================================*/
-/* USER LOGIN */
-/* BLOCK */
-.user-login {
-	/* LOCAL */
-	&__local {}
-	/* EXTERNAL */
-	&__external {
-		.user-login {
-			&__options {
-				li {}
-			}
-		}
+/* USERDATA */
+.userdata {
+	padding: 10px;
+	border: 1px solid @middlegray;
+	background-color: @white;
+	h3 {}
+	&__gravatar {
+		img {}
 	}
-	/* OPEN ID */
-	&__openid {}
-	/* ELMENTS */
+	&__data {}
 	&__action {
 		.btn {}
 	}
-	&__options {}
-}
-
-/* USER LOGIN CARD */
-.user-login {
-	&__card {
-		border: 1px solid @blue;
-		h3 {
-			color: @white;
-			border-color: @blue;
-			background-color: @blue;
-		}
-	}
-	&__card-body {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

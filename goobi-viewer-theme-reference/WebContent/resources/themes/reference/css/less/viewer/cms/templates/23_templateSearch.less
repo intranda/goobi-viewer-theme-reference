@@ -11,9 +11,23 @@
     	.search-list {
     		&__options {}
     	}
-    	.search-advanced {}
+    	.search-standard {}
+    	.search-advanced {
+    		padding: 10px;
+    		border: 1px solid @middlegray;
+    		border-top: 0;
+    		background-color: @white;
+    	}
     }
-    &__text {}
+    &__text {
+    	position: relative;
+    	top: 1px;
+    	margin-bottom: 0;
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	border-bottom: 0;
+    	background-color: @white;
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -27,9 +27,6 @@
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
     
-    <!-- OPENSEARCH -->
-    <link rel="search" type="application/opensearchdescription+xml" title="Goobi viewer" href="#{request.contextPath}/rest/opensearch/getxml/" />
-    
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
 
@@ -68,8 +65,8 @@
     </f:view>
 
     <!-- PIWIK -->
-    <h:panelGroup rendered="#{configurationBean.piwikTracking}">
+    <ui:fragment rendered="#{configurationBean.piwikTracking}">
         <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-    </h:panelGroup>
+    </ui:fragment>
 </h:body>
 </html>

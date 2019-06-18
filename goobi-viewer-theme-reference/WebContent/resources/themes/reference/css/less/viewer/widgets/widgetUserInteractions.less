@@ -3,12 +3,26 @@
    style declarations for widget_userInteractions.xhtml
    ==============================================================*/
 /* WIDGET USER INTERACTIONS */
-#widgetUserInteractions {}
-
+#widgetUserInteractions {
+	ul {}
+}
 .widget-user-interactions {
-	h4 {}
-	&__delete-record {}
-	&__delete-record-action {}
+	background-color: @white;
+	&__delete-record,
+	&__delete-record-message {
+		padding: 5px 15px 10px 15px;
+	}
+	&__delete-record-message {
+		span {}
+	}
+	&__delete-record-action {
+		&.has-no-urn {
+			.btn {}
+		}
+		&.has-urn {
+			.btn {}			
+		}
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

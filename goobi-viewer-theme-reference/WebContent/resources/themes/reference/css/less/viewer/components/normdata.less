@@ -3,30 +3,25 @@
    style declarations for normdata.xhtml 
    ==============================================================*/
 .normdataLink,
-.normdataDetailLink {
-    color: @hoverblue;
-}
+.normdataDetailLink {}
 
 .normdata-preloader {}
 
 .closeAllPopovers {}
 
 .normdata-popover {
-    font-size: 13px;
-    border: 1px solid @blue;
+	z-index: 1080;
     .normdata-popover-title {
-        color: @white;
-        background-color: @blue;
-        border-bottom: 1px solid @middlegray;
         h4 {}
-        .normdata-popover-close {
-            color: @white;
-        }
+        .normdata-popover-close {}
     }
     .normdata-popover-content {
         .dl-horizontal {
             dt {}
-            dd {}
+            dd {
+                .glyphicon,
+                .fa {}
+            }
         }
     }
 }

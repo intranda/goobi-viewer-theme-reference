@@ -14,7 +14,7 @@
     }
     &__options {
         a, button {
-        	font-size: 14px;
+        	font-size: @fontMedium;
             &:hover,
             &:focus,
             &:active,
@@ -44,13 +44,19 @@
     /* CURRENT SEARCH */
     &__label {}
     &__current-search {
-    	margin-bottom: 15px;
+    	margin-bottom: 1.5rem;
         .form-group {}
         .input-group-addon {
             a {
                 &:hover,
                 &:focus,
                 &:active {}
+            }
+            &.reset,
+            &.search {
+                a, button {
+                	line-height: unset;
+                }
             }
             &.reset {
             	&.focus {}
@@ -59,7 +65,6 @@
                 a {}
             }
             input[type="submit"] {
-            	height: 30px;
             	padding: 0 20px;
             }
         }
@@ -75,6 +80,7 @@
         button {}
         form {}
         a {
+        	font-size: @fontMedium;
             &:hover,
             &:focus,
             &:active {}
@@ -98,7 +104,9 @@
     &__hit-type,
     &__hit-info {}
     &__hit-title {
-        h4 {}
+        h4 {
+        	font-size: @fontNormal;
+        }
     }
     &__hit-thumbnail {
         img {}
@@ -114,12 +122,15 @@
     }
     &__hit-type {}
     &__hit-docstruct {
+    	font-size: @fontSmall;
         ul {}
         li {}
         li + li:before {}
         a {}
     }
-    &__hit-text {}
+    &__hit-text {
+    	font-size: @fontMedium;    	
+    }
     &__hit-text-label,
     &__hit-text-value {}
     &__hit-text-label {}
@@ -127,6 +138,7 @@
     &__hit-info {}
     a[data-toggle="hit-content"],
     button[data-toggle="hit-content"] {
+    	font-size: @fontMedium;
         &:hover,
         &:focus,
         &:active {}
@@ -140,16 +152,19 @@
         &.active {}
     }
     &__hit-content {
-        dl {}
+        dl {
+        	margin-bottom: 0;
+        	font-size: @fontMedium;
+        }
         dt {}
         dd {}
     }
-    &__hit-content-set {}
+    &__hit-content-set {
+    	padding-bottom: 1rem;
+    }
     &__hit-content-more {
-        a {
-            &:hover,
-            &:focus,
-            &:active {}
+        .btn {
+	    	font-size: @fontMedium;        	
         }
     }
     &__struct-title,
@@ -157,7 +172,10 @@
         .fa {}
     }
     &__struct-title {
-        h5 {}
+    	margin-bottom: .5rem;
+        h5 {
+        	line-height: 2.1rem;
+        }
     }
     &__metadata-info {
     	td {

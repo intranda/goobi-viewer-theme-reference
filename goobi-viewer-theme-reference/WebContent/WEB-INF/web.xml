@@ -3,11 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <display-name>Goobi viewer</display-name>
-<!--    <context-param> -->
-<!--        <param-name>javax.faces.CONFIG_FILES</param-name> -->
-<!--        <param-value>/resources/themes/reference/faces-config.xml, /WEB-INF/faces-standard-config.xml</param-value> -->
-<!--    </context-param> -->
-
+    
     <filter>
         <filter-name>UrlRedirectFilter</filter-name>
         <filter-class>io.goobi.viewer.filters.UrlRedirectFilter</filter-class>
@@ -17,5 +13,5 @@
         <url-pattern>*.xhtml</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
-
+    
 </web-app>

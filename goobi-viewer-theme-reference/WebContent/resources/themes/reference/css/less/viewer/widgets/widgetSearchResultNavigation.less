@@ -5,11 +5,12 @@
 #widgetSearchResultNavigation {
     h3 {}
     .search-result-navigation-wrapp {
-    	float: left;
-    	width: 100%;
-    	border-right: 1px solid @middlegray;
-    	border-left: 1px solid @middlegray;
+    	display: flex;
+    	align-items: center;
         padding: 10px;
+	    border-right: 1px solid @middlegray;
+    	border-left: 1px solid @middlegray;
+    	background-color: @white;
         .search-result-navigation-left,
         .search-result-navigation-center,
         .search-result-navigation-right {}
@@ -29,11 +30,15 @@
     }
     .search-result-navigation-back-to-collection {
         padding: 10px;
-        border-right: 1px solid @middlegray;
-    	border-left: 1px solid @middlegray;
-    	border-bottom: 1px solid @middlegray;
+        padding-top: 0;
+        font-size: @fontMedium;
+        border: 1px solid @middlegray;
+    	border-top: 0;
+    	background-color: @white;
         a {
-            img {}
+            img {
+            	margin: -.3rem 1rem 0 0;
+            }
         }
     }
 }

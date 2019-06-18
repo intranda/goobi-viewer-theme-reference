@@ -7,8 +7,16 @@
 .tpl-glossary {
     h1 {}
     /* ELEMENT */
-    &__text {}
+    &__text {
+    	margin-bottom: 0;
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	border-bottom: 0;
+    	background-color: @white;
+    }
     &__glossary {
+    	border-top: 0;
+    	background-color: @white;
     	hr {}
     }
     &__glossary-title {}

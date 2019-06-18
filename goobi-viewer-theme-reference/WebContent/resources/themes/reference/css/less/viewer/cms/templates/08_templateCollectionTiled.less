@@ -7,9 +7,19 @@
 .tpl-collection-tiled {
     /* ELEMENT */
     &__text,
-    &__wrapper {}
-    &__text {}
-    &__wrapper {}
+    &__wrapper {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    }
+    &__text {
+    	margin-bottom: 0;
+    	padding-bottom: 2rem;
+    	border-bottom: 0;
+    }
+    &__wrapper {
+    	border-top: 0;
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

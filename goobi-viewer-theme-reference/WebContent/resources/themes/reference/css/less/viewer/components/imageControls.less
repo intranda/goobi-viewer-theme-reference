@@ -2,13 +2,12 @@
    Image Controls
    Style declarations for imageControls.xhtml
    ==============================================================*/
-/* CONTROLS */
+/* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
 	background-color: @white;
 	border: 1px solid @middlegray;
 	border-bottom: 0;
-    /* ELEMENT */
 	/* DOCUMENT OPTIONS */
 	&__options {
 		ul {}
@@ -23,25 +22,17 @@
 			&:focus {}
 		}
 		a, button {}
-		&.pdf {}
 		&.fulltext {}
 		&.add-to-bookshelf {
 			[data-bookshelf-type="add"] {
-			    span {
-				    .fa-bookmark-o {}
-				    .fa-bookmark {}
-			    }
+				.fa-bookmark-o,
+				.fa-bookmark {}
 			    &.added, 
 			    &:hover {
-			    	span {
-				        .fa-bookmark-o {}
-				        .fa-bookmark {}
-			    	}
+			    	.fa-bookmark-o,
+			    	.fa-bookmark {}
 			    }
 			}
-		}
-		&.iiif {
-			a {}
 		}
 	}
     /* ACTIONS */
@@ -100,7 +91,7 @@
 	    &.rotate-right {}
 	    &.reset {}
 	    &.enter-fullscreen {}
-	    &.zoom-slider {
+	    &.zoom-slider-wrapper {
 	        .zoom-slider {}
 	        .zoom-slider-handle {}
 	    }

@@ -1,7 +1,7 @@
 {
-  "name": "viewer-theme-reference",
+  "name": "goobi-viewer-theme-reference",
   "version": "3.4.0",
-  "description": "This is a reference theme for the Goobi viewer.",
+  "description": "This is a theme template for the Goobi viewer.",
   "author": "intranda GmbH",
   "repository": {
     "type": "git",

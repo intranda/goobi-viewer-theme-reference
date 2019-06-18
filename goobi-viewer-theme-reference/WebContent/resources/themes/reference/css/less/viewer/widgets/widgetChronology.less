@@ -6,33 +6,30 @@
 /* BLOCK */
 .widget-chronology-slider {
 	padding: 0;
-	background-color: @white;
-	/* ELEMENT */
 	&__item {
 		&.chronology-slider-label,
 		&.chronology-slider-actions {
-			min-height: 39px;
-			padding-right: 10px;
-			padding-bottom: 5px;
-			padding-left: 10px;
-			font-family: @fontSerif;
-	        font-size: 14px;
-	        color: @white;
-	        background-color: @blue;			
+			padding-top: .7rem;
+			padding-bottom: .7rem;
+	    	color: @white;
+	    	border: 1px solid @blue;
+	    	border-bottom: 0;
+	    	background-color: @blue;
 		}
 		&.chronology-slider-label {
-			padding-top: 9px;
-			padding-right: 0;
+			padding-left: 1.5rem;
+			font-weight: 400;
+	    	font-size: @fontNormal;
 		}
 		&.chronology-slider-actions {
-			padding-top: 6px;
-			padding-left: 0;
+			height: 37px;
+			padding-top: .2rem;
+			padding-right: 1.5rem;
 			ul {}
 			li {}
-			img {
-				margin: 0;
-			}
+			img {}
 			[data-reset="chrono-slider"] {
+				margin-left: .5rem;
 				color: @white;
 			}
 		}
@@ -44,20 +41,25 @@
 		&.chronology-slider-action-reset {}
 		&.chronology-slider-start,
 		&.chronology-slider-end {
-			padding: 10px;
+			padding-top: 1rem;
+			font-size: @fontMedium;
+			background-color: @white;
 		}
 		&.chronology-slider-start {
-			padding-right: 0;
+			padding-left: 1.5rem;
 			border-left: 1px solid @middlegray;
 		}
 		&.chronology-slider-end {
-			padding-left: 0;
+			padding-right: 1.5rem;
 			border-right: 1px solid @middlegray;
 		}
 		&.chronology-slider {
-			padding: 10px;
+			padding-right: 1.5rem;
+			padding-bottom: 1.5rem;			
+			padding-left: 1.5rem;			
 			border: 1px solid @middlegray;
 			border-top: 0;
+			background-color: @white;
 		}
 	}
 }
@@ -68,7 +70,11 @@
         &:focus {}
 	}
 	.ui-slider-range {}
-	.ui-slider-handle {}
+	.ui-slider-handle {
+		width: 1rem;
+		height: 1rem;
+		border: 1px solid @middleblack;
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

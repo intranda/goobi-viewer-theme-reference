@@ -11,124 +11,186 @@
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
-    <!-- MOBILE TOGGLES -->
-    <viewerComponent:mobileToggles sidebarPosition="right" />
-
-    <!-- MOBILE NAVIGATION -->
-    <viewerComponent:mobileNavigation displayDropdown="false" />
-
-    <!-- OFFCANVAS FADE -->
-    <div class="offcanvas-fade"></div>
+	<!-- MOBILE OVERLAY -->
+	<div class="mobile-overlay"></div>
 
     <!-- HEADER -->
-    <header id="pageHeader" class="page-header">
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-5">
-                        <!-- LOGO -->
-                        <div class="top-header__logo">
-                            <a href="#{msg.intrandaViewerHome}" target="_blank"> intranda GmbH </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-7">
-                        <!-- TOP NAV -->
-                        <nav class="top-header__nav">
-                            <!-- CHANGE LOCAL -->
-                            <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
-
-                            <!-- BOOKSHELF NAVIGATION -->
-                            <viewerComponent:bookshelfNavigation />
-
-                            <!-- LOGIN NAVIGATION -->
-                            <viewerComponent:loginNavigation />
-                        </nav>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="header-actions">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="header-actions__logo">
-                            <a href="#{request.contextPath}/">
-                                <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="intranda GmbH Logo" />
-                                <span>Goobi viewer</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="header-actions__search">
-                            <!-- SEARCH FIELD -->
-                            <h:panelGroup rendered="#{navigationHelper.currentPage != 'search' and
-                                                      navigationHelper.currentPage != 'searchadvanced' and
-                                                      navigationHelper.currentPage != 'searchlist'}">
-                                <div class="header-actions__search-input">
-                                    <widgetComponent:widget_searchField />
-                                </div>
-                                <div class="header-actions__search-link">
-                                    <a href="#{navigationHelper.applicationUrl}searchadvanced/" class="header-actions__search-advanced">#{msg.searchAdvanced}</a>
-                                </div>
-                            </h:panelGroup>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- MAIN NAVIGATION -->
-    <div class="main-navigation">
+    <!-- PAGE HEADER TOP -->
+    <div id="pageHeaderTop" class="page-header__top-wrapper">
         <div class="container">
-            <!-- DESKTOP NAVIGATION -->
-            <viewerComponent:navigation megaMenu="false" />
+            <div class="page-header__top">
+	            <!-- OPEN MOBILE NAVIGATION -->
+            	<div class="page-header__top-mobile-nav">
+					<button type="button" class="btn btn--clean" data-open="menu" aria-label="#{msg.aria_label__open_navigation}">
+						<span></span>
+					</button>
+				</div>
+            
+                <!-- PAGE HEADER TOP BRAND -->            
+                <div class="page-header__top-brand">
+                    <a href="https://www.intranda.com/" target="_blank" rel="noopener">intranda GmbH</a>
+                </div>
+
+                <!-- PAGE HEADER TOP ACTIONS -->            
+                <div class="page-header__top-actions">
+                    <!-- CHANGE LOCAL -->
+                    <div id="changeLocalWrapper" class="page-header__top-actions-language">
+                    	<button type="button" class="btn btn--clean" data-toggle="local" aria-label="#{msg.aria_label__switch_language}">
+                    		#{navigationHelper.localeString}
+                    	</button>
+                        <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
+                    </div>
+                    <!-- WATCHLIST/BOOKSHELVES -->
+                    <div class="page-header__top-actions-watchlist">
+                        <viewerComponent:bookshelfNavigation />
+                    </div>
+                    <!-- LOGIN NAVIGATION -->
+                    <div class="page-header__top-actions-login">
+                        <viewerComponent:loginNavigation />
+                    </div>
+                </div>
+
+	            <!-- OPEN MOBILE NAVIGATION -->
+            	<div class="page-header__top-mobile-sidebar">
+					<button type="button" class="btn btn--clean" data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
+						<span></span>
+					</button>
+				</div>
+            </div>
         </div>
+    </div>
+
+    <!-- PAGE HEADER BOTTOM -->
+    <div id="pageHeaderBottom" class="page-header__bottom-wrapper">
+        <div class="container">
+            <div class="page-header__bottom">
+                <!-- PAGE HEADER BOTTOM LOGO -->
+                <div class="page-header__bottom-logo">
+                    <h1>
+                        <a href="#{request.contextPath}/">
+                            <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg" alt="Goobi Logo" />
+                            <span>Goobi viewer</span>
+                        </a>
+                    </h1>
+                </div>
+    
+                <!-- PAGE HEADER BOTTOM SEARCH -->
+                <div class="page-header__bottom-search">
+                    <!-- SEARCH FIELD -->
+                    <ui:fragment 
+                        rendered="#{navigationHelper.currentPage != 'search' and 
+                                    navigationHelper.currentPage != 'searchadvanced' and
+                                    navigationHelper.currentPage != 'searchlist'}">
+                        <widgetComponent:widget_searchField />
+
+		                <div class="page-header__bottom-search-link">
+		                	<a href="#{request.contextPath}/advancedsearch/">#{msg.searchAdvanced}</a>
+		                </div>
+                    </ui:fragment>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- NAVIGATION -->
+    <div id="pageNavigation" class="page-navigation">
+    	<div class="container">
+    		<div class="page-navigation__wrapper">
+	    		<viewerComponent:navigation megaMenu="false" />
+	    		
+	    		<!-- MOBILE NAVIGATION CLOSE -->
+				<button type="button" class="btn btn--clean" data-close="menu" aria-label="#{msg.aria_label__close_navigation}">
+					<span></span>
+				</button>
+    		</div>
+		</div>
     </div>
 
     <!-- MAIN -->
     <div id="pageContent" class="page-content">
         <div class="container">
-            <div class="row row-offcanvas row-offcanvas-right">
-                <main id="main" class="col-xs-12 col-sm-9 page-content__main"> 
-                    <!-- BREADCRUMBS --> 
-                    <ui:insert name="breadcrumbs" /> 
-                    
-                    <!-- CONTENT --> 
-                    <ui:insert name="content" />
-                </main>
-
-                <aside id="sidebar" class="col-xs-9 col-sm-3 page-content__sidebar">
-                    <!-- CLOSE SIDEBAR ON MOBILE -->
-                    <div class="page-content__close-sidebar">
-                        <button type="button" class="btn-clean" data-toggle="close-sidebar">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </button>
-                    </div>
-
-                    <!-- SIDEBAR WIDGETS -->
-                    <ui:insert name="sidebar" />
-
-                    <!-- RSS FEED -->
-                    <ui:insert name="rssFeed" />
-                </aside>
+            <div class="page-content__wrapper">
+	            <!-- CONTENT -->
+	            <main id="main" class="page-content__main">
+	            	<!-- BREADCRUMBS -->
+	            	<ui:insert name="breadcrumbs" />
+	            
+	                <ui:insert name="content" />
+	            </main>
+	            
+	            <!-- SIDEBAR -->
+	            <aside id="sidebar" class="page-content__sidebar">	            	
+	                <!-- SIDEBAR WIDGETS -->
+				    <ui:insert name="sidebar" />
+				
+				    <!-- RSS FEED -->
+				    <ui:insert name="rssFeed" />
+	            </aside>
+	            
+	            <!-- MOBILE SIDEBAR CLOSE -->
+				<button type="button" class="btn btn--clean" data-close="sidebar" aria-label="#{msg.aria_label__close_sidebar}">
+					<span></span>
+				</button>
             </div>
         </div>
     </div>
 
     <!-- FOOTER -->
-    <div id="pageFooter">
-        <div class="container">
-            <templateComponent:footerNavigation />
-        </div>
-    </div>
-
-    <!-- LINK FOR SCROLLING TO TOP -->
-    <span class="icon-totop" title="#{msg.topOfPage}">
-        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-    </span>
+	<div id="pageFooter" class="page-footer">
+		<div class="container">
+			<div class="page-footer__wrapper">
+				<!-- FOOTER LINKS -->
+				<div class="page-footer__links">
+					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| 
+					<a href="#{request.contextPath}/feedback/">#{msg.feedbackLeaveFeedback}</a>|
+					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>|
+					<span>powered by</span>
+					<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
+				</div>
+	
+				<!-- FOOTER SOCIAL MEDIA -->
+				<div class="page-footer__social">
+					<a 
+						href="https://github.com/intranda" 
+						title="#{msg.social__follow_on_github}" 
+						data-toggle="tooltip" 
+						target="_blank" rel="noopener" 
+						aria-label="#{msg.social__follow_on_github}">
+						<span class="sr-only">#{msg.social__follow_on_github}</span>
+						<i class="fa fa-github" aria-hidden="true"></i>
+					</a>					
+					<a 
+						href="https://twitter.com/intranda" 
+						title="#{msg.social__follow_on_twitter}"
+						data-toggle="tooltip" 
+						target="_blank" 
+						rel="noopener" 
+						aria-label="#{msg.social__follow_on_twitter}">
+						<span class="sr-only">#{msg.social__follow_on_twitter}</span>
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+					<a 
+						href="https://www.youtube.com/channel/UCbajMwS60cQcKh-kGFtb6Qg" 
+						title="#{msg.social__follow_on_youtube}" 
+						data-toggle="tooltip" 
+						target="_blank" rel="noopener" 
+						aria-label="#{msg.social__follow_on_youtube}">
+						<span class="sr-only">#{msg.social__follow_on_youtube}</span>
+						<i class="fa fa-youtube" aria-hidden="true"></i>
+					</a>					
+					<a 
+						href="https://www.slideshare.net/intranda/" 
+						title="#{msg.social__follow_on_slideshare}" 
+						data-toggle="tooltip" 
+						target="_blank" rel="noopener" 
+						aria-label="#{msg.social__follow_on_slideshare}">
+						<span class="sr-only">#{msg.social__follow_on_slideshare}</span>
+						<i class="fa fa-slideshare" aria-hidden="true"></i>
+					</a>					
+				</div>
+			</div>
+		</div>
+	</div>
     
     <!-- USER LOGIN -->
     <ui:include src="/resources/includes/user/userLogin.xhtml" />

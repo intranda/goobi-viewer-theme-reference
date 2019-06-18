@@ -1,14 +1,25 @@
 /* ==============================================================
    CMS Template Static Grid
-   style declarations for cms_template_14_staticGrid.xhtml
+   style declarations for cms_template_13_staticGrid.xhtml
    ==============================================================*/
 /* TPL STATIC GRID */
 /* BLOCK */
 .tpl-static-grid {
     h1 {}
     /* ELEMENT */
-    &__text {}
-    &__grid {}
+    &__text,
+    &__grid {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    }
+    &__text {
+    	margin-bottom: 0;
+    	border-bottom: 0;
+    }
+    &__grid {
+    	border-top: 0;
+    }
 }
 .grid-tile {
 	&__title {

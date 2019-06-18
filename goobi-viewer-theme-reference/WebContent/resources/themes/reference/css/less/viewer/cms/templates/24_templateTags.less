@@ -9,8 +9,31 @@
     &__content {
     	h2 {}
     }
+    &__text,
+    #tagcloudWrapper {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    	& + h3 {
+    		margin-bottom: 0;
+	    	padding: 10px;
+	    	border: 1px solid @middlegray;
+	    	border-top: 0;
+	    	border-bottom: 0;
+	    	background-color: @white;    		
+    	}    	
+    }
     &__text {
-    	margin-bottom: 15px;
+    	margin-bottom: 0;
+    	border-bottom: 0;
+    }
+    #tagcloudWrapper {
+    	margin: 0;
+    	border-top: 0; 
+    	border-bottom: 0;
+    	&:last-child {
+    		border-bottom: 1px solid @middlegray;
+    	}
     }
 }
 

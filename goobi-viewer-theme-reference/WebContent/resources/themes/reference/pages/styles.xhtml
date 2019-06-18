@@ -27,139 +27,150 @@
             <div id="styles" class="page-wrapp">
                 <h2>#{msg.styles}</h2>
                 
-                <div class="styles">                    
+                <div class="styles">
                     <!-- LOGOs -->
-                    <h3 class="styles__heading">Logos</h3>
+                    <h3 class="styles__spacerheading">Logos</h3>
                     
                     <div class="styles__logos">
                         <figure class="styles__logo">
-                            <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.png" alt="Customer Logo" />
+                            <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg" alt="Goobi Logo" />
                             <figcaption>Standard Logo</figcaption>
                         </figure>
                     </div>
                     
                     <!-- COLORS -->
-                    <h3 class="styles__heading">Colors</h3>
+                    <h3 class="styles__spacerheading">Colors</h3>
                     
                     <div class="row">
-                        <div class="styles__colors clearfix">                        
-                            <div class="col-xs-6 col-sm-3">
+                        <div class="styles__colors clearfix">
+                        	<div class="col-xs-6">
                                 <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: #fff;"></div>
+                                    <div class="styles__color-header" style="background-color: #1a1a1a;"></div>
                                     <div class="styles__color-body">
                                         <ul>
-                                            <li>HEX: #fff</li>
-                                            <li>VAR: @white</li>
+                                            <li>HEX: #1a1a1a</li>
+                                            <li>LESS: @black</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: #000;"></div>
-                                    <div class="styles__color-body">
-                                        <ul>
-                                            <li>HEX: #000</li>
-                                            <li>VAR: @black</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
+                            <div class="col-xs-6">
                                 <div class="styles__color">
                                     <div class="styles__color-header" style="background-color: #222;"></div>
                                     <div class="styles__color-body">
                                         <ul>
                                             <li>HEX: #222</li>
-                                            <li>VAR: @lowerblack</li>
+                                            <li>LESS: @lowerblack</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: rgba(0,0,0,.25);"></div>
-                                    <div class="styles__color-body">
-                                        <ul>
-                                            <li>RGBA: 0,0,0,0.25</li>
-                                            <li>VAR: @placeholder</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: #abbac3;"></div>
-                                    <div class="styles__color-body">
-                                        <ul>
-                                            <li>HEX: #abbac3</li>
-                                            <li>VAR: @gray</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: #6f6f6f;"></div>
-                                    <div class="styles__color-body">
-                                        <ul>
-                                            <li>HEX: #6f6f6f</li>
-                                            <li>VAR: @gray2</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
+                            <div class="col-xs-6">
                                 <div class="styles__color">
                                     <div class="styles__color-header" style="background-color: #444;"></div>
                                     <div class="styles__color-body">
                                         <ul>
                                             <li>HEX: #444</li>
-                                            <li>VAR: @darkgray</li>
+                                            <li>LESS: @middleblack</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
+                            <div class="col-xs-6">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #6f6f6f;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #6f6f6f</li>
+                                            <li>LESS: @gray</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
                                 <div class="styles__color">
                                     <div class="styles__color-header" style="background-color: #d5d5d5;"></div>
                                     <div class="styles__color-body">
                                         <ul>
                                             <li>HEX: #d5d5d5</li>
-                                            <li>VAR: @middlegray</li>
+                                            <li>LESS: @middlegray</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
+                            <div class="col-xs-6">
                                 <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: #999;"></div>
+                                    <div class="styles__color-header" style="background-color: #eee;"></div>
                                     <div class="styles__color-body">
                                         <ul>
-                                            <li>HEX: #999</li>
-                                            <li>VAR: @middlegray2</li>
+                                            <li>HEX: #eee</li>
+                                            <li>LESS: @lightgray</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>                        
+                            <div class="col-xs-6">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #f2f3f4;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #f2f3f4</li>
+                                            <li>LESS: @neutralgray</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
+                            <div class="col-xs-6">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #fff;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #fff</li>
+                                            <li>LESS: @white</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #3365a9;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #3365a9</li>
+                                            <li>LESS: @blue</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
                                 <div class="styles__color">
                                     <div class="styles__color-header" style="background-color: #507ebf;"></div>
                                     <div class="styles__color-body">
                                         <ul>
                                             <li>HEX: #507ebf</li>
-                                            <li>VAR: @blue</li>
+                                            <li>LESS: @hoverblue</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
+                            <div class="col-xs-6">
                                 <div class="styles__color">
-                                    <div class="styles__color-header" style="background-color: #69a7ef;"></div>
+                                    <div class="styles__color-header" style="background-color: #c7254e;"></div>
                                     <div class="styles__color-body">
                                         <ul>
-                                            <li>HEX: #69a7ef</li>
-                                            <li>VAR: @hoverblue</li>
+                                            <li>HEX: #c7254e</li>
+                                            <li>LESS: @red</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="styles__color">
+                                    <div class="styles__color-header" style="background-color: #468847;"></div>
+                                    <div class="styles__color-body">
+                                        <ul>
+                                            <li>HEX: #468847</li>
+                                            <li>LESS: @green</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -167,21 +178,8 @@
                         </div>
                     </div>
                     
-                    <!-- FONTS -->
-                    <h3 class="styles__heading">Fonts</h3>
-                    
-                    <div class="styles__fonts">
-                    	<p style="font-family: 'OpenSansRegular';">OpenSansRegular</p>
-                    	
-                    	<p style="font-family: 'OpenSansSemibold';">OpenSansSemibold</p>
-                    	
-                    	<p style="font-family: 'RobotoSlabRegular';">RobotoSlabRegular</p>
-                        
-                        <p style="font-family: 'MerriweatherRegular';">MerriweatherRegular</p>
-                    </div>
-                    
                     <!-- HEADINGS -->
-                    <h3 class="styles__heading">Headings</h3>
+                    <h3 class="styles__spacerheading">Headings</h3>
 
                     <div class="styles__headings">
                         <h1>Testüberschrift H1</h1>
@@ -193,10 +191,47 @@
                     </div>
 
                     <!-- TYPO -->
-                    <h3 class="styles__heading">Typo</h3>
+                    <h3 class="styles__spacerheading">Typo</h3>
                     
                     <div class="styles__typo">
-                        <h4 class="styles__spacerheading">Absätze</h4>
+                        <h5 class="styles__subheading">Schriftgrößen</h5>
+                        <table>
+                        	<thead>
+                        		<tr>
+                        			<th>LESS</th>
+                        			<th>Einheit</th>
+                        			<th>Schriftgröße</th>
+                        		</tr>
+                        	</thead>
+                        	<tbody>
+                        		<tr>
+                        			<td><strong>@small</strong></td>
+                        			<td>1.2rem</td>
+                        			<td>12px</td>
+                        		</tr>
+                        		<tr>
+                        			<td><strong>@medium</strong></td>
+                        			<td>1.4rem</td>
+                        			<td>14px</td>
+                        		</tr>
+                        		<tr>
+                        			<td><strong>@normal</strong></td>
+                        			<td>1.6rem</td>
+                        			<td>16px</td>
+                        		</tr>
+                        		<tr>
+                        			<td><strong>@large</strong></td>
+                        			<td>1.8rem</td>
+                        			<td>18px</td>
+                        		</tr>
+                        		<tr>
+                        			<td><strong>@xlarge</strong></td>
+                        			<td>2.1rem</td>
+                        			<td>21px</td>
+                        		</tr>
+                        	</tbody>
+                        </table>
+                        
                         <h5 class="styles__subheading">Linksbündig</h5>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
                             magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
@@ -229,7 +264,7 @@
                             accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
                             amet.</p>
 
-                        <h4 class="styles__spacerheading">Listen</h4>
+                        <h3 class="styles__spacerheading">Listen</h3>
                         <ul>
                             <li>Listenpunkt 1</li>
                             <li>Listenpunkt 2</li>
@@ -245,237 +280,28 @@
                             <li>Listenpunkt 5</li>
                         </ol>
                         
-                        <h4 class="styles__spacerheading">Links</h4>
-                        <p><a href="#">Ein Link</a></p>
+                        <h3 class="styles__spacerheading">Links</h3>
+                        <p><a href="#">Ein Link mit einem langen Text</a></p>
 
-                        <h4 class="styles__spacerheading">Formatierungen</h4>
+                        <h3 class="styles__spacerheading">Buttons</h3>
+                        <p>
+	                        <button type="button" class="btn">Button .btn</button>
+	                        <button type="button" class="btn btn--default">Button .btn.btn--default</button>
+	                        <button type="button" class="btn btn--success">Button .btn.btn--success</button>
+	                        <button type="button" class="btn btn--danger">Button .btn.btn--danger</button>
+	                        <button type="button" class="btn btn--full">Button .btn.btn--full</button>
+	                        <button type="button" class="btn btn--clean">Button .btn.btn--clean</button>
+	                        <button type="button" class="btn btn--link">Button .btn.btn--link</button>
+	                        <button type="button" class="btn btn--inactive">Button .btn.btn--inactive</button>
+	                        <button type="button" class="btn btn--icon">Button .btn.btn--icon</button>
+                        </p>
+
+                        <h3 class="styles__spacerheading">Formatierungen</h3>
                         <p><i>italic Text</i></p> 
                         <p><strong>bold/strong Text</strong></p>
                         <p><small>small text</small></p>
                         <p><code>code Text</code></p>
                         <p><pre>pre Text</pre></p>
-                    </div>
-                    
-                    <!-- BUTTONS -->
-                    <h3 class="styles__heading">Buttons</h3>
-                    
-                    <div class="styles__buttons">
-                        <h4>Buttons</h4>
-                        <button type="button" class="btn">button[type="button"]</button>
-                        <button type="submit" class="btn">button[type="submit"]</button>
-                        <input type="button" class="btn" value="input[type=button]" />
-                        <input type="submit" class="btn" value="input[type=submit]" />
-                        <input type="reset" class="btn" value="input[type=reset]" />
-                        <a href="#" class="btn" role="button">a[href="#"]</a>
-                        
-                        <h4>Button Types</h4>
-                        <button type="button" class="btn btn--clean">Clean Button</button>
-                        <button type="button" class="btn btn--link">Link Button</button>
-                        <button type="button" class="btn btn--default">Default Button</button>
-                        <button type="button" class="btn btn--default" disabled="disabled">Disabled Default Button</button>
-                        <button type="button" class="btn btn--default btn--inactive">Inactive Default Button</button>
-                        <button type="button" class="btn btn--success">Success Button</button>
-                        <button type="button" class="btn btn--danger">Danger Button</button>
-                        <button type="button" class="btn btn--full">Full Button</button>
-                    </div>
-                    
-                    <!-- CSS HELPER CLASSES  -->
-                    <h3 class="styles__heading">CSS Helper Classes</h3>
-                    
-                    <div class="styles__helper">
-                    	<div class="styles__helper-item">
-	                    	<h4>List reset (ul/ol) <br /><small>Setzt alle Basisformatierungen von Listen zurück.</small></h4>
-							<pre>class="list"</pre>
-							<p>
-								<strong>Emmet: </strong><code>ul.list>li*4>a[href="#"]{Ein Link}</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							<ul class="list">
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-							</ul>
-                    	</div>
-                    
-                    	<div class="styles__helper-item">
-	                    	<h4>Horizontale Liste (ul/ol) <br /><small>Richtet die Liste horizontal aus.</small></h4>
-	                    	<pre>class="list list--horizontal"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>ul.list.list--horizontal>li*4>a[href="#"]{Ein Link}</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							<ul class="list list--horizontal">
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-							</ul>
-                    	</div>
-                    	
-                    	<div class="styles__helper-item">
-	                    	<h4>Horizontale Liste, zentriert (ul/ol) <br /><small>Muss in einem Block-Element mit "clearfix" sein!</small></h4>
-	                    	<pre>class="list list--horizontal list--center"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>nav.clearfix>ul.list.list--horizontal.list--center>li*4>a[href="#"]{Ein Link}</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							<nav class="clearfix">
-								<ul class="list list--horizontal list--center">
-									<li><a href="#">Ein Link</a></li>
-									<li><a href="#">Ein Link</a></li>
-									<li><a href="#">Ein Link</a></li>
-									<li><a href="#">Ein Link</a></li>
-								</ul>
-							</nav>
-                    	</div>
-                    	
-                    	<div class="styles__helper-item">
-	                    	<h4>Horizontale Liste mit Trenner (ul/ol) <br /><small>Der Trenner kann über die "content: ...;" geändert werden.</small></h4>
-	                    	<pre>class="list list--horizontal list--divider"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>ul.list.list--horizontal.list--divider>li*4>a[href="#"]{Ein Link}</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							<ul class="list list--horizontal list--divider">
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-								<li><a href="#">Ein Link</a></li>
-							</ul>
-						</div>
-						
-						<div class="styles__helper-item">
-	                    	<h4>Faded Image <br /><small>Dunkelt ein Bild ab, damit Text darauf besser lesbar ist. Die Klasse kann nicht auf img-Tags angewendet werden.</small></h4>
-	                    	<pre>class="faded"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>.faded</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong> 
-		                    	<button type="button" class="btn-clean" data-toggle="faded">
-		                    		<i class="fa fa-toggle-on" aria-hidden="true"> ON</i>
-		                    		<i class="fa fa-toggle-off hidden" aria-hidden="true"> OFF</i>
-		                    	</button>
-							</p>
-							<div class="faded">
-								<img src="http://lorempizza.com/1024/768" class="img-responsive" alt="Faded Image Test" />
-							</div>
-							
-							<script>
-								$( '[data-toggle="faded"]' ).on( 'click', function() {
-								    $( this ).parent().next().toggleClass( 'faded' );
-								    $( this ).find( '.fa' ).toggleClass( 'hidden' );
-								});
-							</script>
-						</div>
-						
-						<div class="styles__helper-item">
-	                    	<h4>Broken Image <br /><small>Diese Klasse hübscht kaputte Bilder auf. Funktioniert nur in Chrome, in anderen Browsern werden kaputte Bilder ausgeblendet.</small></h4>
-	                    	<pre>class="broken"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>img.broken</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							<div>
-								<img src="http://example.com" class="img-responsive broken" alt="Broken Image Test" />
-							</div>
-						</div>
-						
-						<div class="styles__helper-item">
-	                    	<h4>Clean Button <br /><small>Setzt alle Formatierungen eines Buttons zurück, um diesen z.B. wie einen Link aussehen zu lassen.</small></h4>
-	                    	<pre>class="btn-clean"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>button.btn-clean</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							<button type="button" class="btn-clean">Button ohne Formatierung</button>
-						</div>
-						
-						<div class="styles__helper-item">
-	                    	<h4>Custom Checkbox/Radiobutton <br /><small>Ermöglicht den Austausch des Standard-Icons von Checkboxen/Radiobuttons.</small></h4>
-	                    	<pre>class="custom-control custom-control--radio"</pre>
-	                    	<pre>class="custom-control custom-control--checkbox"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>tl;dr</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							
-							<h5>Radiobuttons</h5>
-							
-							<label for="radioTest1" class="custom-control custom-control--radio">
-								<input type="radio" name="radioTest" id="radioTest1" />
-								<span class="custom-control__icon">
-									<i aria-hidden="true" class="fa fa-circle-o"></i>
-									<i aria-hidden="true" class="fa fa-check-circle-o"></i>
-								</span>
-								Radio Test 1
-							</label>
-							<label for="radioTest2" class="custom-control custom-control--radio">
-								<input type="radio" name="radioTest" id="radioTest2" />
-								<span class="custom-control__icon">
-									<i aria-hidden="true" class="fa fa-circle-o"></i>
-									<i aria-hidden="true" class="fa fa-check-circle-o"></i>
-								</span>
-								Radio Test 2
-							</label>
-							
-							<hr />
-							
-							<h5>Checkboxen</h5>
-							
-							<label for="checkTest1" class="custom-control custom-control--checkbox">
-								<input type="checkbox" name="checkTest1" id="checkTest1" />
-								<span class="custom-control__icon">
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								</span>
-								Checkbox Test 1
-							</label>
-							<label for="checkTest2" class="custom-control custom-control--checkbox">
-								<input type="checkbox" name="checkTest2" id="checkTest2" />
-								<span class="custom-control__icon">
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								</span>
-								Checkbox Test 2
-							</label>
-						</div>
-						
-						<div class="styles__helper-item">
-	                    	<h4>Custon Select Menu <br /><small>Vereinheitlicht die Formatierung von Select Menüs.</small></h4>
-	                    	<pre>class="custom-control custom-control--select"</pre>
-	                    	<p>
-								<strong>Emmet: </strong><code>.custom-control.custom-control--select>select>option{Eine Auswahloption}*5</code>
-							</p>
-							<p>
-		                    	<strong>Ergebnis:</strong>
-							</p>
-							
-							<div class="custom-control custom-control--select">
-								<select name="selectTest" id="selectTest">
-									<option value="">Eine Auswahloption</option>
-									<option value="">Eine Auswahloption</option>
-									<option value="">Eine Auswahloption</option>
-									<option value="">Eine Auswahloption</option>
-									<option value="">Eine Auswahloption</option>
-								</select>
-							</div>
-						</div>
                     </div>
                 </div>                
             </div>
@@ -497,7 +323,7 @@
             <c:forEach var="contribution" items="#{module.sidebarContributions}">
                 <ui:include src="/#{contribution}" />
             </c:forEach>
-        </c:forEach>
+        </c:forEach>        
     </ui:define>
 
     <ui:define name="rssFeed">

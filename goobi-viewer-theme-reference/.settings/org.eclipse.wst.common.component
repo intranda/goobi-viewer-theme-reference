@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="viewer">
+        <wb-resource deploy-path="/" source-path="/src" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
         <dependent-module archiveName="viewer-core-3.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="iiif-api-model-1.1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/iiif-api-model/iiif-api-model">
+        <dependent-module archiveName="viewer-core-config-3.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core-config/goobi-viewer-core-config">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="viewer"/>
         <property name="component.exclusion.patterns" value="**/rebel.xml"/>
     </wb-module>
-    <property name="context-root" value="viewer"/>
 </project-modules>

@@ -6,15 +6,31 @@
 /* BLOCK */
 .tpl-news-overview {
     /* ELEMENT */
-    &__content {}
+    &__content {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    }
     &__image {
         figcaption {}
     }
     &__text {}
-    &__list-item {
+    &__list {
     	padding: 10px;
     	border: 1px solid @middlegray;
     	background-color: @white;
+    	.row {
+    		margin: 0;
+    	}    	
+    }
+    &__list-item {
+    	padding-bottom: 1.5rem;
+    	border-bottom: 1px solid @middlegray;
+    	&:last-child {
+    		margin: 0;
+    		padding: 0;
+    		border-bottom: 0;
+    	}
     }
     &__list-image {}
     &__list-preview {}

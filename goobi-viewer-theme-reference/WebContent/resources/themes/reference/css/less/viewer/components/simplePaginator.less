@@ -9,6 +9,7 @@
 	ul {}
 	li {}
 	a, span {
+		font-size: @fontMedium;
 		background-color: @white;
 	}
 	a {
@@ -19,6 +20,8 @@
 	span {}
 	&__active {
 		a, span {
+			color: @white;
+			background-color: @blue;
 		}
 	}
 	&__dots {
@@ -29,6 +32,9 @@
 	&__navigate {}
 	/* MODIFICATION */
 	li.numeric-paginator__dots {}
+	li.numeric-paginator__active {
+		border-color: @blue;		
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

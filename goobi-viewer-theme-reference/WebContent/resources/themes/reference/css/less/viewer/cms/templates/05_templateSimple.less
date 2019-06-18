@@ -7,9 +7,21 @@
 .tpl-simple {
     /* ELEMENT */
     &__text,
-    &__image {}
-    &__text {}
     &__image {
+    	margin-bottom: 0;
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    }
+    &__text {
+    	border-bottom: 0;
+    	&:last-child {
+    		border-top: 0;
+    	}
+    }
+    &__image {
+    	border-top: 0;
+    	border-bottom: 0;
         figcaption {}
     }
 }

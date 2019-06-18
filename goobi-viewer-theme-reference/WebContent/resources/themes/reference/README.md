@@ -7,7 +7,7 @@
 
 ## Besonderheiten
 
-## Überschriebene Seiten und Komponenten
+## Ãœberschriebene Seiten und Komponenten
 
 Name | Grund
 ------------ | -------------

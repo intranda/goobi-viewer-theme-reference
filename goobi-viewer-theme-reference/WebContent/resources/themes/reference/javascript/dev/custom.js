@@ -2,39 +2,21 @@
  * Custom JavaScript for "reference"
  ****************************************************************************************/
 /**
- * Method to move DOM-Elements to another place.
- * 
- * @method manipulateDom
- */
-function manipulateDom() {
-    $( '.header-actions__search-advanced' ).detach().insertAfter( '#widgetSearchField' );
-}
-
-/**
- * Method to reset DOM-Elements.
- * 
- * @method resetDom
- */
-function resetDom() {
-    var advSearch = $( '.header-actions__search-advanced' ).detach();
-    
-    $( '.header-actions__search-link' ).append( advSearch );
-}
-
-/**
  * Method to set the content height to a min-height, equal to the viewport height.
  */
 function setContentHeight() {
-    var pageWrapper = $( '#pageContent' );
+    var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
+    var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
+    var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
     var pageWrapperHeight = $( '#pageContent' ).outerHeight();
-    var pageHeaderHeight = $( '#pageHeader' ).outerHeight();
-    var pageNavigationHeight = $( '.main-navigation' ).outerHeight();
     var pageFooterHeight = $( '#pageFooter' ).outerHeight();
-    var additionalHeight = pageHeaderHeight + pageNavigationHeight + pageFooterHeight + 15;
+    var pageWrapper = $( '#pageContent' );
+    var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
     var windowHeight = $( window ).outerHeight();
+    var diff = windowHeight - additionalHeight;
     
-    if ( pageWrapperHeight < windowHeight ) {
-        pageWrapper.css( 'min-height', ( windowHeight - additionalHeight ) + 'px' );
+    if ( additionalHeight < windowHeight ) {
+        pageWrapper.css( 'min-height', ( pageWrapperHeight + diff ) + 'px' );
     }
 }
 
@@ -58,43 +40,49 @@ $( document ).ready( function() {
         }
     }
     
+    // toggle change local
+    $( 'body' ).on( 'click', '[data-toggle="local"]', function() {
+    	$( '#changeLocal' ).fadeToggle( 200 );
+    } );
+    $( 'body' ).on( 'click', function( event ) {
+    	if ( event.target.id == 'changeLocalWrapper' || $( event.target ).closest( '#changeLocalWrapper' ).length ) {
+    		return;
+    	}
+    	else {
+    		$( '#changeLocal' ).hide();
+    	}
+    } );
+    
+    // toggle mobile menu
+    $( 'body' ).on( 'click', '[data-open="menu"]', function() {
+    	$( 'html' ).addClass( 'no-overflow' );
+    	$( '.mobile-overlay, [data-close="menu"]' ).fadeIn( 300 );
+    	$( '#navigation' ).addClass( 'in' );
+    } );
+    $( 'body' ).on( 'click', '[data-close="menu"]', function() {
+    	$( 'html' ).removeClass( 'no-overflow' );
+    	$( this ).hide();
+    	$( '.mobile-overlay' ).fadeOut( 300 );
+    	$( '#navigation' ).removeClass( 'in' );
+    } );
+
+    // toggle mobile sidebar
+    $( 'body' ).on( 'click', '[data-open="sidebar"]', function() {
+    	$( 'html' ).addClass( 'no-overflow' );
+    	$( '.mobile-overlay, [data-close="sidebar"]' ).fadeIn( 300 );
+    	$( '#sidebar' ).addClass( 'in' );
+    } );
+    $( 'body' ).on( 'click', '[data-close="sidebar"]', function() {
+    	$( 'html' ).removeClass( 'no-overflow' );
+    	$( this ).hide();
+    	$( '.mobile-overlay' ).fadeOut( 300 );
+    	$( '#sidebar' ).removeClass( 'in' );
+    } );
+    
     // set content height to window height
     setContentHeight();
     
-    // off canvas
-    $( '[data-toggle="offcanvas"]' ).off().click( function() {
-        $( this ).addClass( 'in' );
-        $( '#sidebar' ).addClass( 'in' );
-        $( '.offcanvas-fade' ).addClass( 'in' );
-    } );
-    $( '[data-toggle="close-sidebar"]' ).click( function() {
-        $( '#sidebar' ).removeClass( 'in' );
-        $( '[data-toggle="offcanvas"]' ).removeClass( 'in' );
-        $( '.offcanvas-fade' ).removeClass( 'in' );
-    } );
-    
-    // toggle search
-    $( '[data-toggle="search"]' ).off().on( 'click', function() {
-        $( '.btn-toggle.language' ).removeClass( 'in' );
-        $( '#changeLocal' ).hide();
-        $( this ).toggleClass( 'in' );
-        $( '.header-actions__search' ).fadeToggle( 'fast' );
-    } );
-    
-    // change position of search and language
-    if ( window.matchMedia( '(max-width: 768px)' ).matches ) {
-        manipulateDom();
-    }
-    $( window ).on( 'resize orientationchange', function() {
-        setContentHeight();
-        
-        if ( window.matchMedia( '(max-width: 768px)' ).matches ) {
-            setContentHeight();
-            manipulateDom();
-        }
-        else {
-            setContentHeight();
-            resetDom();
-        }
-    } );
+    // mobile view manipulations
+    if ( window.matchMedia( '(max-width: 768px)' ).matches ) {}
+    $( window ).on( 'resize orientationchange', function() {} );
 } );

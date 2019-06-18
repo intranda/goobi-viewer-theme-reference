@@ -8,7 +8,13 @@
     h1 {}
     a {}
     /* ELEMENT */
-    &__text {}
+    &__text {
+    	padding: 10px;
+    	margin-bottom: 0;
+    	border: 1px solid @middlegray;
+    	border-bottom: 0;
+    	background-color: @white;
+    }
     .form-group {
         label {}
         input {}
@@ -16,6 +22,14 @@
         textarea {}
     }
 	/* MODIFICATION */
+}
+
+#feedback {
+	padding: 10px;
+	padding-left: 20px;
+    border: 1px solid @middlegray;
+    border-top: 0;
+    background-color: @white;
 }
 
 /* BREAKPOINT FOR LATGE DESKTOPS */

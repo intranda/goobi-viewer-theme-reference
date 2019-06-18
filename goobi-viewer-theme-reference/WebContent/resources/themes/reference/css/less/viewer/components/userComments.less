@@ -33,6 +33,7 @@
 	&__comment-content {
 		background-color: @white;
 		&-options {
+			border-bottom: 0;
 			span {}
 			a, button {
 				&:hover,
@@ -65,7 +66,9 @@
 	&__comment-content-loader {}
 	&__add-comment {
 		label {
-			span {}
+			span {
+				background-color: @blue;
+			}
 		}
 		&-add {
 			textarea {
