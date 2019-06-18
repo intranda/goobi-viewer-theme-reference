@@ -3272,6 +3272,13 @@ button.btn:active:focus {
    style declarations for cms_template_25_tags.xhtml
    ==============================================================*/
 /* TAGS */
+#tags h2 + h3 {
+  margin-bottom: 0;
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-bottom: 0;
+  background-color: #fff;
+}
 #tagcloudWrapper {
   margin: 0;
   padding: 10px;
