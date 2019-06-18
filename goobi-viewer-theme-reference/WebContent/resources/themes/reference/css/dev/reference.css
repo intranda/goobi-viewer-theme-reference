@@ -507,6 +507,10 @@ table,
             flex: 0 0 40%;
     max-width: 40%;
   }
+  .page-navigation {
+    position: inherit;
+    top: inherit;
+  }
   .page-content__wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1021,6 +1025,11 @@ button.btn:active:focus {
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: 480px) {
+  [data-login="true"] .login-navigation__user-dropdown-item-icon {
+    display: none;
+  }
+}
 /* ==============================================================
    Meta Museal
    style declarations for metaMuseal.xhtml

@@ -494,6 +494,10 @@ table,
             flex: 0 0 40%;
     max-width: 40%;
   }
+  .page-navigation {
+    position: inherit;
+    top: inherit;
+  }
   .page-content__wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

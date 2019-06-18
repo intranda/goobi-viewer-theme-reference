@@ -59,4 +59,12 @@
 @media screen and (max-width: @smallBreakpoint) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {} 
+@media screen and (max-width: @xSmallBreakpoint) {
+	[data-login="true"] {
+		.login-navigation {
+			&__user-dropdown-item-icon {
+				display: none;
+			}
+		}
+	}
+} 
