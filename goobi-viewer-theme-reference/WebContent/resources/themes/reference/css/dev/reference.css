@@ -1110,7 +1110,7 @@ button.btn:active:focus {
     overflow-y: auto;
     -webkit-transition: left 0.3s linear;
     transition: left 0.3s linear;
-    z-index: 2010;
+    z-index: 2030;
   }
   .navigation.in {
     left: 0;
