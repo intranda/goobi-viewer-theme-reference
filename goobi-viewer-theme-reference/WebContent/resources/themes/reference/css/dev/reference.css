@@ -1193,7 +1193,7 @@ button.btn:active:focus {
    style declarations for normdata.xhtml 
    ==============================================================*/
 .normdata-popover {
-  z-index: 1080;
+  z-index: 2020;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
