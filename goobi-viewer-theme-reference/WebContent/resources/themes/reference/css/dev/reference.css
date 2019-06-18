@@ -1069,10 +1069,6 @@ button.btn:active:focus {
 .navigation .caret {
   color: #fff;
 }
-.navigation__user-login {
-  display: none !important;
-  visibility: hidden !important;
-}
 .navigation__submenu {
   top: calc(100% + 2px);
   border-color: #fff;
@@ -1087,6 +1083,10 @@ button.btn:active:focus {
 .navigation__submenu a,
 .navigation__submenu button {
   font-size: 1.4rem;
+}
+.navigation__submenu .caret {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 .navigation__submenu.level-2,
 .navigation__submenu.level-3,
@@ -1142,6 +1142,10 @@ button.btn:active:focus {
     padding-left: 2rem;
     border: 0;
     z-index: 1060;
+  }
+  .navigation__submenu .caret {
+    -webkit-transform: unset;
+            transform: unset;
   }
   .navigation__submenu.level-2,
   .navigation__submenu.level-3,

@@ -36,9 +36,6 @@
 	.caret {
 		color: @white;
 	}
-	&__user-login {
-		.mx-hidden;
-	}
 	/* STANDARD MENU */
 	&__submenu-trigger {}
 	&__submenu {
@@ -54,6 +51,9 @@
 		}
 		a, button {
 			font-size: @fontMedium;
+		}
+		.caret {
+			transform: rotate(-90deg);
 		}
 		&.in {}
 		&.level-2,
@@ -128,6 +128,9 @@
 		    padding-left: 2rem;
 		    border: 0;
 		    z-index: 1060;
+		    .caret {
+				transform: unset;
+			}
 		    &.level-2,
 			&.level-3,
 			&.level-4,
