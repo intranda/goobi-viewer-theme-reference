@@ -8,6 +8,6 @@
 /target/
 /.metadata/
 /.src/rebel.xml
-/.settings/org.eclipse.wst.commons.component
+/.settings/org.eclipse.wst.common.component
 /.classpath
 /.project
