@@ -1026,7 +1026,7 @@ button.btn:active:focus {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: 480px) {
-  [data-login="true"] .login-navigation__user-icon {
+  .login-navigation [data-login="true"] .login-navigation__user-icon {
     display: none;
   }
 }
