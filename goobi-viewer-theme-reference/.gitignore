@@ -7,5 +7,6 @@
 /package-lock.json
 /target/
 /.metadata/
+/.src/rebel.xml
 /.settings/org.eclipse.wst.commons.component
 /.project
