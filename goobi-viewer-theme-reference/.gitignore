@@ -9,4 +9,5 @@
 /.metadata/
 /.src/rebel.xml
 /.settings/org.eclipse.wst.commons.component
+/.classpath
 /.project
