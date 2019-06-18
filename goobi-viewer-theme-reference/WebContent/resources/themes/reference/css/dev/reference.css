@@ -3050,6 +3050,9 @@ button.btn:active:focus {
 .tpl-rss {
   /* ELEMENT */
 }
+.tpl-rss__item {
+  background-color: #fff;
+}
 /* MODIFICATION */
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
