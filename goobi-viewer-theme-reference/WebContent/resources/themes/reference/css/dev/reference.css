@@ -1088,11 +1088,13 @@ button.btn:active:focus {
 }
 .navigation__submenu {
   top: calc(100% + 2px);
-  border-color: #fff;
-  background-color: #3365a9;
+  border-color: transparent;
+  background-color: transparent;
 }
 .navigation__submenu li {
-  border-bottom: 1px solid #fff;
+  margin-bottom: 0.1rem;
+  border-bottom: 1px solid transparent;
+  background-color: #3365a9;
 }
 .navigation__submenu li:last-child {
   border-bottom: 0;
