@@ -190,7 +190,6 @@ table,
   position: relative;
 }
 .page-header__top-actions-language [data-toggle="local"] {
-  margin-top: -3px;
   font-size: 1.4rem;
   text-transform: uppercase;
 }
