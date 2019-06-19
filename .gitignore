@@ -1,2 +1,10 @@
-*~
+/bin/
+/build/
+/deploy/
+/node_modules/
 .DS_Store
+**/.DS_Store
+/package-lock.json
+/target/
+/.metadata/
+/.src/rebel.xml
