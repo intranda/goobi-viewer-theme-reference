@@ -643,6 +643,9 @@ table,
 /* TABS */
 /* FORMS */
 /* MODALS */
+.modal {
+  z-index: 9999;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
