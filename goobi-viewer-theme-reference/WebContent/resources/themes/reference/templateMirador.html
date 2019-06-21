@@ -57,6 +57,7 @@
         <script type="text/javascript">
             var miradorConfig = {
             	root: "#{request.contextPath}",
+            	restEndpoint : "#{configurationBean.restApiUrl}",
             	userLoggedIn: #{userBean.loggedIn},
             };
             
