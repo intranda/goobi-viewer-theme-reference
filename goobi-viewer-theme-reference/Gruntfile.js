@@ -12,26 +12,10 @@ module.exports = function(grunt) {
             lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/cs/',
             lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/viewer/',
             lessDevSubThemeOneFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
-            cssDevFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dev/',
             cssDistFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dist/'
         },
         less: {
-            development: {
-                options: {
-                    paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>' ],
-                    plugins: [
-                        new ( require( 'less-plugin-autoprefix' ) ) ( { browsers: ["last 2 versions"], grid: true } )
-                    ],
-                    compress: false,
-                    optimization: 9
-                },
-                files: {
-                    '<%=src.cssDevFolder %><%=theme.name%>.css': '<%=src.lessDevViewerFolder%>constructor.less',
-                    '<%=src.cssDevFolder %><%=theme.name%>-cs.css': '<%=src.lessDevCsFolder%>csConstructor.less',
-                    '<%=src.cssDevFolder %><%=theme.subThemeOne%>.css': '<%=src.lessDevSubThemeOneFolder%>subThemeConstructor.less',
-                }
-            },
-            production: {
+            dist: {
                 options: {
                     paths: [ '<%=src.lessDevViewerFolder%>', '<%=src.lessDevCsFolder%>'  ],
                     plugins: [
