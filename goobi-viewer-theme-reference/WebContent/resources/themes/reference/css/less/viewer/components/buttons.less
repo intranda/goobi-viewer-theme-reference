@@ -17,65 +17,73 @@
 	&:active.focus {
 		color: @white;
 	}
-	/* MODIFICATION */
-	&--default {
-		color: @btnDefault;
-		&:hover,
-		&:active,
-		&:focus,
-		&:active:focus,
-		&.active,
-		&.active.focus, 
-		&.active:focus, 
-		&.focus, 
-		&:active.focus {
-			color: @black;
-		}
-	}
-	&--success {
-		color: @btnSuccess;
-		&:hover,
-		&:active,
-		&:focus {}
-	}
-	&--danger {
-		color: @btnDanger;
-		&:hover,
-		&:active,
-		&:focus {}
-	}
-	&--full {
-		color: @white;
-		background-color: @blue;
-		&:hover,
-		&:active,
-		&:focus,
-		&.active:focus, 
-		&.focus, 
-		&:active.focus {
-			color: @white;
-			background-color: @hoverblue;
-		}
-	}
-	&--clean {}
-	&--link {
-		color: @blue;
-		&:hover,
-		&:active,
-		&:focus {
-			color: @middleblack;
-		}
-	}
-	&--hidden {}
-	&--inactive {}
-	&--icon {
-		&:hover,
-		&:focus,
-		&:active {}
-	}
 }
 
 /* MODIFICATIONS */
+.btn--default {
+	color: @btnDefault;
+	&:hover, 
+	&:active, 
+	&:focus, 
+	&:active:focus, 
+	&.active, 
+	&.active.focus, 
+	&.active:focus, 
+	&.focus, 
+	&:active.focus {
+		color: @black;
+	}
+}
+
+.btn--success {
+	color: @btnSuccess;
+	&:hover, 
+	&:active, 
+	&:focus {}
+}
+
+.btn--danger {
+	color: @btnDanger;
+	&:hover, 
+	&:active, 
+	&:focus {}
+}
+
+.btn--full {
+	color: @white;
+	background-color: @blue;
+	&:hover, 
+	&:active, 
+	&:focus, 
+	&.active:focus, 
+	&.focus, 
+	&:active.focus {
+		color: @white;
+		background-color: @hoverblue;
+	}
+}
+
+.btn--clean {}
+
+.btn--link {
+	color: @blue;
+	&:hover, 
+	&:active, 
+	&:focus {
+		color: @middleblack;		
+	}
+}
+
+.btn--hidden {}
+
+.btn--inactive {}
+
+.btn--icon {
+	&:hover, 
+	&:active, 
+	&:focus {}
+}
+
 a.btn--icon {}
 button.btn {
 	&:active, 

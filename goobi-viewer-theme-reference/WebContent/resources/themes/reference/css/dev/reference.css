@@ -652,6 +652,37 @@ table,
 /* BREAKPOINT FOR SMARTPHONES */
 /* VIEWER COMPONENTS */
 /* ==============================================================
+   Forms
+   style declarations for forms
+   ==============================================================*/
+/* INPUT PLACEHOLDER */
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+/* iOS Webkit Hack to prevent input zoom in */
+/* ==============================================================
+   Form Conrols
+   style declarations for form controls
+   ==============================================================*/
+/* MODIFICATIONS */
+.custom-control--select select {
+  font-size: 1.4rem;
+}
+/* ==============================================================
    Alphabetic Paginator
    style declarations for alphabeticPaginator.xhtml
    ==============================================================*/
@@ -793,7 +824,6 @@ table,
 .btn {
   color: #444;
   font-size: 1.4rem;
-  /* MODIFICATION */
 }
 .btn:hover,
 .btn:active,
@@ -806,6 +836,7 @@ table,
 .btn:active.focus {
   color: #fff;
 }
+/* MODIFICATIONS */
 .btn--default {
   color: #555;
 }
@@ -847,7 +878,6 @@ table,
 .btn--link:focus {
   color: #444;
 }
-/* MODIFICATIONS */
 button.btn:active,
 button.btn:focus,
 button.btn:active:focus {
@@ -938,43 +968,6 @@ button.btn:active:focus {
 /* BLOCK */
 .e-pub {
   /* ELEMENT */
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Forms
-   style declarations for forms
-   ==============================================================*/
-/* INPUT MODIFICATIONS */
-/* CUSTOM CONTROL */
-/* BLOCK */
-.custom-control {
-  /* ELEMENT */
-  /* MODIFICATION */
-}
-.custom-control--select select {
-  font-size: 1.4rem;
-}
-/* INPUT PLACEHOLDER */
-/* WebKit, Blink, Edge */
-::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-}
-/* Mozilla Firefox 4 to 18 */
-:-moz-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-/* Mozilla Firefox 19+ */
-::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-/* Internet Explorer 10-11 */
-:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.25);
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */

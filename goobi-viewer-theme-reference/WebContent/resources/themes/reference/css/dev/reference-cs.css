@@ -685,7 +685,6 @@ table,
 .btn {
   color: #444;
   font-size: 1.4rem;
-  /* MODIFICATION */
 }
 .btn:hover,
 .btn:active,
@@ -698,6 +697,7 @@ table,
 .btn:active.focus {
   color: #fff;
 }
+/* MODIFICATIONS */
 .btn--default {
   color: #555;
 }
@@ -739,7 +739,6 @@ table,
 .btn--link:focus {
   color: #444;
 }
-/* MODIFICATIONS */
 button.btn:active,
 button.btn:focus,
 button.btn:active:focus {
