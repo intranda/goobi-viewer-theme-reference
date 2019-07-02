@@ -81,8 +81,23 @@ $( document ).ready( function() {
     
     // set content height to window height
     setContentHeight();
-    
+
+    // do things on resize and orientation change
+    $(window).on('resize orientationchange', function () {
+        setContentHeight();
+    });
+
+    // do things on JSF AJAX event
+    if (typeof jsf !== 'undefined') {
+        jsf.ajax.addOnEvent(function (data) {
+            switch (data.status) {
+                case 'success':
+                    setContentHeight();
+                    break;
+            }
+        });
+    }
+
     // mobile view manipulations
-    if ( window.matchMedia( '(max-width: 768px)' ).matches ) {}
-    $( window ).on( 'resize orientationchange', function() {} );
+    if (window.matchMedia('(max-width: 768px)').matches) { }
 } );
