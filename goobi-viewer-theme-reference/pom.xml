@@ -32,12 +32,12 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>[3.4.8,)</version>
+			<version>3.4.6</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>[3.4.1,)</version>
+			<version>3.4.1</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
