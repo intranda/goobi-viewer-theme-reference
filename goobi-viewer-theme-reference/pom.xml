@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>3.4.1</version>
+			<version>3.4.2</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -56,7 +56,7 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>1.0-SNAPSHOT</version>
+					<version>1.0.0</version>
 				</dependency>
 			</dependencies>
 		</profile>
