@@ -4,7 +4,10 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="viewer-core-3.4.11.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
+        <dependent-module archiveName="viewer-core-3.5.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="iiif-api-model-1.1.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/iiif-api-model/iiif-api-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="normdataimporter-1.2.6-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/NormDataImporter/NormDataImporter">

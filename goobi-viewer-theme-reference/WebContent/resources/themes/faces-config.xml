@@ -12,7 +12,7 @@
 			<supported-locale>fr</supported-locale>
 			<supported-locale>ar</supported-locale>
 			<supported-locale>en</supported-locale>
-			<supported-locale>he</supported-locale>
+			<supported-locale>iw</supported-locale>
 		</locale-config>
 	</application>
 </faces-config>
