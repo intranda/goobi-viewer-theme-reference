@@ -36,7 +36,7 @@
                     <!-- CHANGE LOCAL -->
                     <div id="changeLocalWrapper" class="page-header__top-actions-language">
                     	<button type="button" class="btn btn--clean" data-toggle="local" aria-label="#{msg.aria_label__switch_language}">
-                    		#{navigationHelper.localeString}
+                    		#{msg['changeLocal_' += navigationHelper.localeString]}
                     	</button>
                         <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
                     </div>
