@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>3.4.0</version>
+	<version>3.6.0</version>
 	<packaging>war</packaging>
 
 
@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>3.4.2</version>
+			<version>3.5.2</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -102,7 +102,7 @@
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core</excludeArtifactIds>
 							<includeArtifacIds>viewer-core-config</includeArtifacIds>
-							<excludes>MANIFEST.MF,**/pom.*</excludes>
+							<excludes>MANIFEST.MF,**/pom.*,install/</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
