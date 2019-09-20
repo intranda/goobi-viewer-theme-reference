@@ -59,12 +59,14 @@
 <ui:insert name="metadata" />
 
 <h:body id="crowd">
-    <f:view locale="#{navigationHelper.locale}">
-        <!-- LAYOUT -->
-        <ui:include src="/resources/crowdsourcing/includes/layout/crowdsourcing_layout.xhtml" />
-        
-        <!-- CUSTOM JAVASCRIPT -->
-        <ui:include src="includes/customJS.xhtml" />
-    </f:view>
+	<h:panelGroup id="subBody">
+	    <f:view locale="#{navigationHelper.locale}">
+	        <!-- LAYOUT -->
+	        <ui:include src="/resources/crowdsourcing/includes/layout/crowdsourcing_layout.xhtml" />
+	        
+	        <!-- CUSTOM JAVASCRIPT -->
+	        <ui:include src="includes/customJS.xhtml" />
+	    </f:view>
+    </h:panelGroup>
 </h:body>
 </html>
