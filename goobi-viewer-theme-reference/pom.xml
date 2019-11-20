@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>4.0.2</version>
+	<version>4.0.0</version>
 	<packaging>war</packaging>
 
 
@@ -17,6 +17,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
+		
+		<!-- Manifest information -->
+		<themeName>reference</themeName>
+		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
+		<buildDate>${maven.build.timestamp}</buildDate>
 	</properties>
 
 
@@ -28,16 +33,22 @@
 	</repositories>
 
 
+	<scm>
+		<url>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</url>
+		<connection>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</connection>
+	</scm>
+	
+
 	<dependencies>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>4.0.5</version>
+			<version>4.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>4.0.0</version>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -142,6 +153,51 @@
 							<directory>${project.build.directory}/templates/META-INF/resources</directory>
 						</webResource>
 					</webResources>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifestEntries>
+							<ApplicationName>Goobi-viewer-theme-${themeName}</ApplicationName>
+							<version>${project.version}</version>
+							<Implementation-Version>${buildNumber}</Implementation-Version>
+							<Implementation-Build-Date>${buildDate}</Implementation-Build-Date>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- get git version number -->
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<commitIdGenerationMode>flat</commitIdGenerationMode>
+					<gitDescribe>
+						<skip>true</skip>
+					</gitDescribe>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<shortRevisionLength>7</shortRevisionLength>
+					<doCheck>false</doCheck>
 				</configuration>
 			</plugin>
 		</plugins>
