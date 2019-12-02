@@ -24,6 +24,9 @@
 	/* DROPDOWN LIST */
 	&__dropdown-list {
 		li {
+			&:hover {
+			background-color: @lightgray;
+			}
 			&:last-child {}
 			.empty {}
 		}
@@ -103,11 +106,16 @@
 	&__body-loader {}
 	&__body-list {
 		li {
+		&:hover {
+			background-color: @lightgray;} 
 			.empty {}
 		}
 		[data-bookshelf-type="add"] {
-			.fa {}
-			span {}
+			&:hover {
+			color: @black;
+			} 
+			.fa {} 
+			span {}  
 		}
 	}
 	&__footer {

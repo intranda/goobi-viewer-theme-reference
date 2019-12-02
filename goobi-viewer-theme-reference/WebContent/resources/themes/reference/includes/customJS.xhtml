@@ -9,16 +9,15 @@
     xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/huba/components">
 
-    <script type="text/javascript">
+    <script>
     	var currentPage = "#{navigationHelper.currentPage}";
     	var currentLang = "#{navigationHelper.localeString}";
     	var currentPath = "#{request.contextPath}";
     	var currentTheme = "#{navigationHelper.theme}";
     	var userLoggedIn = #{userBean.loggedIn};
     	var bookshelvesEnabled = #{configurationBean.bookshelvesEnabled};
-    	var subTheme = "#{navigationHelper.subThemeDiscriminatorValue}";
     	var watchlistConfig = {
     		root: "#{request.contextPath}",
     		msg: {
@@ -38,7 +37,8 @@
             		fileNotFound: "#{msg.noImage_fileNotFound}"
             	}
             };
-            viewerJS.fullscreen.init( fullscreenConfig );
+                
+    		viewerJS.fullscreen.init( fullscreenConfig );
     	}
     	
     	// init admin module
@@ -48,9 +48,10 @@
     	
     	// init cms module functions
     	cmsJS.modules.init();
+    	
     </script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js"></script>
+    <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
+     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js"></script>
     <script>
         // mount riot tags
         // riot.mount( '' );
