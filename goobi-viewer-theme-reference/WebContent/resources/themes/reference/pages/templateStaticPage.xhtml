@@ -35,10 +35,6 @@
         <h:panelGroup rendered="#{browseBean.browsingMenuEnabled}">
             <widgetComponent:widget_browsing />
         </h:panelGroup>
-
-        <h:panelGroup rendered="#{userBean.loggedIn}">
-        	<widgetComponent:widget_mySearches />
-        </h:panelGroup>
         
         <c:forEach var="module" items="#{configurationBean.modules}">
             <c:forEach var="contribution" items="#{module.sidebarContributions}">
