@@ -32,14 +32,9 @@ $( document ).ready( function() {
     
     // init bookshelves if enabled
     if ( bookshelvesEnabled ) {
-        if ( userLoggedIn ) {
-            viewerJS.bookshelvesUser.init( watchlistConfig );
-        }
-        else {
-            viewerJS.bookshelvesSession.init( watchlistConfig );
-        }
-    }
-    
+        viewerJS.bookmarks.init( watchlistConfig );
+    } 
+     
     // toggle change local
     $( 'body' ).on( 'click', '[data-toggle="local"]', function() {
     	$( '#changeLocal' ).fadeToggle( 200 );
