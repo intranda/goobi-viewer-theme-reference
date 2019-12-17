@@ -64,7 +64,10 @@
             	restEndpoint : "#{configurationBean.restApiUrl}",
             	userLoggedIn: #{userBean.loggedIn},
             };
-            
+            let currBookmarkListId = "#{bookmarkBean.currentBookmarkListId}";
+            if(currBookmarkListId != null) {                
+    			sessionStorage.setItem( 'bookmarkListId', currBookmarkListId );
+            }
             viewerJS.mirador.init( miradorConfig );
         </script>
     </f:view>
