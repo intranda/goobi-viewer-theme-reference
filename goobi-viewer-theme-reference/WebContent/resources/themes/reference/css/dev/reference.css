@@ -2201,7 +2201,6 @@ button.btn:active:focus {
   padding: 1rem 1.5rem;
   border: 1px solid #d5d5d5;
   border-top: 0;
-  border-bottom: 0;
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -2333,9 +2332,17 @@ button.btn:active:focus {
    Widget Convolutes
    style declarations for widget_convolutes.xhtml
    ==============================================================*/
-#widgetConvolutes {
-  display: none;
-  visibility: hidden;
+#widgetConvolutes ul {
+  padding: 0;
+}
+#widgetConvolutes ul a {
+  color: #fff;
+  padding: 0;
+}
+#widgetConvolutes ul a:hover,
+#widgetConvolutes ul a:active,
+#widgetConvolutes ul a:focus {
+  text-decoration: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
