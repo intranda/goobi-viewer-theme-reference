@@ -7,12 +7,6 @@
         <dependent-module archiveName="viewer-core-4.3.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="tei-conversion-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TEI-Conversion/TEI-Conversion">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="iiif-api-model-1.5.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/iiif-api-model/iiif-api-model">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="viewer"/>
         <property name="component.exclusion.patterns" value="**/rebel.xml"/>
     </wb-module>

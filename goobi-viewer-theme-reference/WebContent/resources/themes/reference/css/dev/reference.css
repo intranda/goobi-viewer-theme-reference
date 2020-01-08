@@ -2271,8 +2271,7 @@ button.btn:active:focus {
   font-size: 1.6rem;
 }
 .widget-chronology-slider__item.chronology-slider-actions {
-  height: 37px;
-  padding-top: .2rem;
+  padding-top: .25rem;
   padding-right: 1.5rem;
 }
 .widget-chronology-slider__item.chronology-slider-actions [data-reset="chrono-slider"] {
