@@ -4,67 +4,71 @@
    ==============================================================*/
 	.widget-convolutes {
 		margin-bottom: 0;
-	}
-
-	.widget-convolutes-series {
-    	h3 {
-    		background-color: transparent;
-    	}
-		ul {
-			padding: 0;
-			background-color: @blue;
-		a {
-			color: @white;
-			font-size: 1.6rem;
-			padding: 0;
-			&:hover,
-			&:focus,
-			&:active {
-			text-decoration: none;
-			color: @white;
-			}
-		} 
-	    }
-	   }
-	   
-	.widget-convolutes-list {
-    	h3 {} 
-		a {
-			color: @blue;
-			&:hover,
-			&:focus,
-			&:active {
-			text-decoration: none;
-			color: @blue;
+		&__series {
+	    	h3 {
+	    		background-color: transparent;
+	    	}
+			ul {
+				padding: 0;
+				background-color: @blue;
+			a {
+				color: @white;
+				font-size: 1.6rem;
+				padding: 0;
+				&:hover,
+				&:focus,
+				&:active {
+				text-decoration: none;
+				color: @white;
 				}
-		ul {
-			padding: 1rem 1.5rem;
-			margin-bottom: 20px; 
+			} 
+		    }
+		   }
+		   
+		&__list {
+	    	h3 {} 
+			a {
+				color: @blue;
+				&:hover,
+				&:focus,
+				&:active {
+				text-decoration: none;
+				color: @blue;
+				&:hover,
+				&:active {
+				color: @black;
+				text-decoration: underline;
+				}
+				}
+			ul {
+				padding: 1rem 1.5rem;
+				margin-bottom: 20px; 
+				}
 			}
 		}
-	}
-	
-		.widget-convolutes-anchor {
-			margin-bottom: 20px;
-    	h3 {
-    		background-color: transparent;
-    	}
-		ul {
-			padding: 0;
-			background-color: @blue;
-		a {
-			color: @white;
-			font-size: 1.6rem;
-			padding: 0;
-			&:hover,
-			&:focus,
-			&:active {
-			text-decoration: none;
-			color: @white;
-			}
-		} 
-	    }
-	   }
+		
+			&__anchor {
+				margin-bottom: 20px;
+	    	h3 {
+	    		background-color: transparent;
+	    	}
+			ul {
+				padding: 0;
+				background-color: @blue;
+			a {
+				color: @white;
+				font-size: 1.6rem;
+				padding: 0;
+				&:hover,
+				&:focus,
+				&:active {
+				text-decoration: none;
+				color: @white;
+				}
+			} 
+		    }
+		   }
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
 
