@@ -2258,21 +2258,15 @@ button.btn:active:focus {
 }
 .widget-chronology-slider__item.chronology-slider-label,
 .widget-chronology-slider__item.chronology-slider-actions {
-  padding-top: .7rem;
-  padding-bottom: .7rem;
   color: #fff;
-  border: 1px solid #3365a9;
-  border-bottom: 0;
   background-color: #3365a9;
+  min-height: 34.2px;
+  padding: 5px 10px;
 }
 .widget-chronology-slider__item.chronology-slider-label {
   padding-left: 1.5rem;
   font-weight: 400;
   font-size: 1.6rem;
-}
-.widget-chronology-slider__item.chronology-slider-actions {
-  padding-top: .25rem;
-  padding-right: 1.5rem;
 }
 .widget-chronology-slider__item.chronology-slider-actions [data-reset="chrono-slider"] {
   margin-left: .5rem;
