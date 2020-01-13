@@ -2324,17 +2324,69 @@ button.btn:active:focus {
    Widget Convolutes
    style declarations for widget_convolutes.xhtml
    ==============================================================*/
-#widgetConvolutes ul {
-  padding: 0;
+.widget-convolutes {
+  margin-bottom: 0;
 }
-#widgetConvolutes ul a {
+.widget-convolutes__series h3 {
+  background-color: transparent;
+}
+.widget-convolutes__series ul {
+  padding: 0;
+  background-color: #3365a9;
+}
+.widget-convolutes__series ul a {
   color: #fff;
+  font-size: 1.6rem;
   padding: 0;
 }
-#widgetConvolutes ul a:hover,
-#widgetConvolutes ul a:active,
-#widgetConvolutes ul a:focus {
+.widget-convolutes__series ul a:hover,
+.widget-convolutes__series ul a:focus,
+.widget-convolutes__series ul a:active {
   text-decoration: none;
+  color: #fff;
+}
+.widget-convolutes__list a {
+  color: #3365a9;
+}
+.widget-convolutes__list a:hover,
+.widget-convolutes__list a:focus,
+.widget-convolutes__list a:active {
+  text-decoration: none;
+  color: #3365a9;
+}
+.widget-convolutes__list a:hover:hover,
+.widget-convolutes__list a:focus:hover,
+.widget-convolutes__list a:active:hover,
+.widget-convolutes__list a:hover:active,
+.widget-convolutes__list a:focus:active,
+.widget-convolutes__list a:active:active {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+.widget-convolutes__list a ul {
+  padding: 1rem 1.5rem;
+  margin-bottom: 20px;
+}
+.widget-convolutes__anchor {
+  margin-bottom: 20px;
+}
+.widget-convolutes__anchor h3 {
+  background-color: transparent;
+}
+.widget-convolutes__anchor ul {
+  padding: 0;
+  background-color: #3365a9;
+}
+.widget-convolutes__anchor ul a {
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 0;
+}
+.widget-convolutes__anchor ul a:hover,
+.widget-convolutes__anchor ul a:focus,
+.widget-convolutes__anchor ul a:active {
+  text-decoration: none;
+  color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
