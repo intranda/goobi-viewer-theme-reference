@@ -1,14 +1,15 @@
 /* ==============================================================
-   User Bookshelves
-   style declarations for userBackendBookshelves.xhtml
+   User Bookmarks
+   style declarations for userBackendBookmark.xhtml
    ==============================================================*/
-/* USER BOOKSHELVES */
+/* USER BOOKMARKS */
 /* BLOCK */
-.user-bookshelves {
+.user-bookmark {
 	/* ELEMENT */
 	h2 {}
 	/* ADD */
-	&__add-bookshelf {
+	&__add-bookmark {
+		margin-top: -46px;
 		input {}
 		button {}
 	}
@@ -36,7 +37,12 @@
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
-
+@media screen and (max-width: @smallBreakpoint) {
+	.user-bookmark {
+	&__add-bookmark {
+		margin-top: 0px;
+		}
+	}
+}
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {}

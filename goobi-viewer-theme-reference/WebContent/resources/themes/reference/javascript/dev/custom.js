@@ -30,7 +30,7 @@ $( document ).ready( function() {
     
     viewerJS.init( viewerConfig );
     
-    // init bookshelves if enabled
+    // init bookmarks if enabled
     if ( bookshelvesEnabled ) {
         viewerJS.bookmarks.init( watchlistConfig );
     } 
