@@ -186,7 +186,7 @@ table,
       justify-content: flex-end;
 }
 .page-header__top-actions-language,
-.page-header__top-actions-watchlist,
+.page-header__top-actions-bookmark,
 .page-header__top-actions-login {
   margin-left: 1.5rem;
 }
@@ -672,99 +672,126 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Bookshelves
-   style declarations for all bookshelf actions,
+   Booksmarks
+   style declarations for all bookmark actions,
    ==============================================================*/
-/* BOOKSHELF NAVIGATION */
+/* BOOKMARK NAVIGATION */
 /* BLOCK */
-.bookshelf-navigation {
+.bookmark-navigation {
   /* ELEMENT */
   /* TOOGLE DROPDOWN */
   /* DROPDOWN */
   /* DROPDOWN LIST */
   /* DROPDOWN ACTIONS */
 }
-.bookshelf-navigation__dropdown-wrapper > .btn {
+.bookmark-navigation__dropdown-wrapper > .btn {
   font-size: 1.4rem;
 }
-.bookshelf-navigation__counter {
+.bookmark-navigation__counter {
   background-color: #3365a9;
 }
-.bookshelf-navigation__dropdown {
+.bookmark-navigation__dropdown {
   top: calc(100% + 5px);
 }
-.bookshelf-navigation__dropdown-list li {
+.bookmark-navigation__dropdown-list li {
   color: #1a1a1a;
 }
-.bookshelf-navigation__dropdown-list li:hover {
+.bookmark-navigation__dropdown-list li:hover {
   background-color: #eee;
 }
-.bookshelf-navigation__dropdown-list a {
+.bookmark-navigation__dropdown-list a {
   color: #1a1a1a;
 }
-.bookshelf-navigation__dropdown-list a:hover,
-.bookshelf-navigation__dropdown-list a:active,
-.bookshelf-navigation__dropdown-list a:focus {
+.bookmark-navigation__dropdown-list a:hover,
+.bookmark-navigation__dropdown-list a:active,
+.bookmark-navigation__dropdown-list a:focus {
   color: #1a1a1a;
 }
-.bookshelf-navigation__dropdown-list-counter {
+.bookmark-navigation__dropdown-list-counter {
   background-color: #3365a9;
 }
-.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
+.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
   font-size: 1.4rem;
   color: #1a1a1a;
 }
-.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
-.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
-.bookshelf-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
+.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
+.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
+.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
   color: #1a1a1a;
 }
-.bookshelf-navigation__dropdown-list-reset a,
-.bookshelf-navigation__dropdown-list-send a,
-.bookshelf-navigation__dropdown-list-search a,
-.bookshelf-navigation__dropdown-list-mirador a,
-.bookshelf-navigation__dropdown-list-reset button,
-.bookshelf-navigation__dropdown-list-send button,
-.bookshelf-navigation__dropdown-list-search button,
-.bookshelf-navigation__dropdown-list-mirador button {
+.bookmark-navigation__dropdown-list-reset:hover,
+.bookmark-navigation__dropdown-list-send:hover,
+.bookmark-navigation__dropdown-list-search:hover,
+.bookmark-navigation__dropdown-list-mirador:hover,
+.bookmark-navigation__dropdown-list-reset:active,
+.bookmark-navigation__dropdown-list-send:active,
+.bookmark-navigation__dropdown-list-search:active,
+.bookmark-navigation__dropdown-list-mirador:active,
+.bookmark-navigation__dropdown-list-reset:focus,
+.bookmark-navigation__dropdown-list-send:focus,
+.bookmark-navigation__dropdown-list-search:focus,
+.bookmark-navigation__dropdown-list-mirador:focus {
+  background-color: #eee;
+}
+.bookmark-navigation__dropdown-list-reset a,
+.bookmark-navigation__dropdown-list-send a,
+.bookmark-navigation__dropdown-list-search a,
+.bookmark-navigation__dropdown-list-mirador a,
+.bookmark-navigation__dropdown-list-reset button,
+.bookmark-navigation__dropdown-list-send button,
+.bookmark-navigation__dropdown-list-search button,
+.bookmark-navigation__dropdown-list-mirador button {
   font-size: 1.4rem;
   color: #1a1a1a;
 }
-.bookshelf-navigation__dropdown-list-reset a:hover,
-.bookshelf-navigation__dropdown-list-send a:hover,
-.bookshelf-navigation__dropdown-list-search a:hover,
-.bookshelf-navigation__dropdown-list-mirador a:hover,
-.bookshelf-navigation__dropdown-list-reset button:hover,
-.bookshelf-navigation__dropdown-list-send button:hover,
-.bookshelf-navigation__dropdown-list-search button:hover,
-.bookshelf-navigation__dropdown-list-mirador button:hover,
-.bookshelf-navigation__dropdown-list-reset a:active,
-.bookshelf-navigation__dropdown-list-send a:active,
-.bookshelf-navigation__dropdown-list-search a:active,
-.bookshelf-navigation__dropdown-list-mirador a:active,
-.bookshelf-navigation__dropdown-list-reset button:active,
-.bookshelf-navigation__dropdown-list-send button:active,
-.bookshelf-navigation__dropdown-list-search button:active,
-.bookshelf-navigation__dropdown-list-mirador button:active,
-.bookshelf-navigation__dropdown-list-reset a:focus,
-.bookshelf-navigation__dropdown-list-send a:focus,
-.bookshelf-navigation__dropdown-list-search a:focus,
-.bookshelf-navigation__dropdown-list-mirador a:focus,
-.bookshelf-navigation__dropdown-list-reset button:focus,
-.bookshelf-navigation__dropdown-list-send button:focus,
-.bookshelf-navigation__dropdown-list-search button:focus,
-.bookshelf-navigation__dropdown-list-mirador button:focus {
+.bookmark-navigation__dropdown-list-reset a:hover,
+.bookmark-navigation__dropdown-list-send a:hover,
+.bookmark-navigation__dropdown-list-search a:hover,
+.bookmark-navigation__dropdown-list-mirador a:hover,
+.bookmark-navigation__dropdown-list-reset button:hover,
+.bookmark-navigation__dropdown-list-send button:hover,
+.bookmark-navigation__dropdown-list-search button:hover,
+.bookmark-navigation__dropdown-list-mirador button:hover,
+.bookmark-navigation__dropdown-list-reset a:active,
+.bookmark-navigation__dropdown-list-send a:active,
+.bookmark-navigation__dropdown-list-search a:active,
+.bookmark-navigation__dropdown-list-mirador a:active,
+.bookmark-navigation__dropdown-list-reset button:active,
+.bookmark-navigation__dropdown-list-send button:active,
+.bookmark-navigation__dropdown-list-search button:active,
+.bookmark-navigation__dropdown-list-mirador button:active,
+.bookmark-navigation__dropdown-list-reset a:focus,
+.bookmark-navigation__dropdown-list-send a:focus,
+.bookmark-navigation__dropdown-list-search a:focus,
+.bookmark-navigation__dropdown-list-mirador a:focus,
+.bookmark-navigation__dropdown-list-reset button:focus,
+.bookmark-navigation__dropdown-list-send button:focus,
+.bookmark-navigation__dropdown-list-search button:focus,
+.bookmark-navigation__dropdown-list-mirador button:focus {
+  color: #1a1a1a;
+}
+.bookmark-navigation__dropdown-list-reset button span {
+  color: #1a1a1a;
+}
+.bookmark-navigation__dropdown-list-reset button .fa {
   color: #1a1a1a;
 }
 /* POPUPS */
 /* BLOCK */
-.bookshelf-popup {
+.bookmark-popup {
   /* ELEMENT */
 }
-.bookshelf-popup__body-list li:hover {
+.bookmark-popup__body-list li:hover,
+.bookmark-popup__body-list li:active,
+.bookmark-popup__body-list li:focus {
   background-color: #eee;
 }
-.bookshelf-popup__body-list [data-bookshelf-type="add"]:hover {
+.bookmark-popup__body-list li button.btn:hover,
+.bookmark-popup__body-list li button.btn:active,
+.bookmark-popup__body-list li button.btn:focus {
+  color: #1a1a1a;
+}
+.bookmark-popup__body-list [data-bookshelf-type="add"]:hover {
   color: #1a1a1a;
 }
 /* ACTION BUTTONS */
@@ -1781,15 +1808,15 @@ button.btn:active:focus {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Bookshelf Edit
-   style declarations for userBackendEditBookshelf.xhtml
+   User Bookmark Edit
+   style declarations for userBackendEditBookmark.xhtml
    ==============================================================*/
-/* USER BOOKSHELF EDIT */
+/* USER BOOKMARK EDIT */
 /* BLOCK */
-.user-bookshelf-edit {
+.user-bookmark-edit {
   /* ELEMENT */
 }
-.user-bookshelf-edit__form {
+.user-bookmark-edit__form {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1797,15 +1824,15 @@ button.btn:active:focus {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Bookshelf Send List
-   style declarations for userBookshelfSendList.xhtml
+   User Bookmark Send List
+   style declarations for userBookmarkSendList.xhtml
    ==============================================================*/
-/* USER BOOKSHELF SEND LIST */
+/* USER BOOKMARK SEND LIST */
 /* BLOCK */
-.user-bookshelf-send-list {
+.user-bookmark-send-list {
   /* ELEMENT */
 }
-.user-bookshelf-send-list__form {
+.user-bookmark-send-list__form {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1813,15 +1840,15 @@ button.btn:active:focus {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User view Bookshelf
-   style declarations for userBackendViewBookshelf.xhtml
+   User view Bookmark
+   style declarations for userBackendViewBookmark.xhtml
    ==============================================================*/
-/* USER VIEW BOOKSHELF */
+/* USER VIEW BOOKMARK */
 /* BLOCK */
-.view-bookshelf {
+.view-bookmark {
   /* ELEMENT */
 }
-.view-bookshelf__item {
+.view-bookmark__item {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1829,22 +1856,30 @@ button.btn:active:focus {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Bookshelves
-   style declarations for userBackendBookshelves.xhtml
+   User Bookmarks
+   style declarations for userBackendBookmark.xhtml
    ==============================================================*/
-/* USER BOOKSHELVES */
+/* USER BOOKMARKS */
 /* BLOCK */
-.user-bookshelves {
+.user-bookmark {
   /* ELEMENT */
   /* ADD */
   /* PANEL */
 }
-.user-bookshelves__panel {
+.user-bookmark__add-bookmark {
+  margin-top: -46px;
+}
+.user-bookmark__panel {
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: 768px) {
+  .user-bookmark__add-bookmark {
+    margin-top: 0px;
+  }
+}
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    User Login
@@ -2196,38 +2231,6 @@ button.btn:active:focus {
   background-color: #fff;
   border-bottom: 1px solid #d5d5d5;
 }
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Widget Bookshelf List
-   style declarations for widget_bookshelfList.xhtml
-   ==============================================================*/
-/* WIDGET BOOKSHELF LIST */
-/* BLOCK */
-.widget-bookshelf-list {
-  /* BACK */
-}
-.widget-bookshelf-list ul {
-  margin: 0;
-  padding-bottom: 10px;
-  border-bottom: none;
-}
-.widget-bookshelf-list__back {
-  border: 1px solid #d5d5d5;
-  border-top: 0;
-  padding: 10px 15px;
-  background-color: #fff;
-}
-/* BREAKPOINT FOR LARGE DESKTOPS */
-/* BREAKPOINT FOR DESKTOPS */
-/* BREAKPOINT FOR TABLETS */
-/* BREAKPOINT FOR SMARTPHONES */
-/* ==============================================================
-   Widget Bookshelves
-   style declarations for widget_bookshelves.xhtml
-   ==============================================================*/
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */

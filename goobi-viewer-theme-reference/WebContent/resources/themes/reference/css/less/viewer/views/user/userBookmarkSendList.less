@@ -1,14 +1,25 @@
 /* ==============================================================
-   Widget Bookshelves
-   style declarations for widget_bookshelves.xhtml
+   User Bookmark Send List
+   style declarations for userBookmarkSendList.xhtml
    ==============================================================*/
-#widgetBookshelves {}
+/* USER BOOKMARK SEND LIST */
+/* BLOCK */
+.user-bookmark-send-list {
+    /* ELEMENT */
+    &__form {
+    	background-color: @white;
+    	form {}
+    }
+    .control-label {}
+	.form-control {}
+	&__action {}
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {} 
+@media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {}
