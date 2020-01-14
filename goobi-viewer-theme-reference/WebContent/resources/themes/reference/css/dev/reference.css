@@ -719,6 +719,20 @@ table,
 .bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
   color: #1a1a1a;
 }
+.bookmark-navigation__dropdown-list-reset:hover,
+.bookmark-navigation__dropdown-list-send:hover,
+.bookmark-navigation__dropdown-list-search:hover,
+.bookmark-navigation__dropdown-list-mirador:hover,
+.bookmark-navigation__dropdown-list-reset:active,
+.bookmark-navigation__dropdown-list-send:active,
+.bookmark-navigation__dropdown-list-search:active,
+.bookmark-navigation__dropdown-list-mirador:active,
+.bookmark-navigation__dropdown-list-reset:focus,
+.bookmark-navigation__dropdown-list-send:focus,
+.bookmark-navigation__dropdown-list-search:focus,
+.bookmark-navigation__dropdown-list-mirador:focus {
+  background-color: #eee;
+}
 .bookmark-navigation__dropdown-list-reset a,
 .bookmark-navigation__dropdown-list-send a,
 .bookmark-navigation__dropdown-list-search a,
@@ -754,6 +768,12 @@ table,
 .bookmark-navigation__dropdown-list-send button:focus,
 .bookmark-navigation__dropdown-list-search button:focus,
 .bookmark-navigation__dropdown-list-mirador button:focus {
+  color: #1a1a1a;
+}
+.bookmark-navigation__dropdown-list-reset button span {
+  color: #1a1a1a;
+}
+.bookmark-navigation__dropdown-list-reset button .fa {
   color: #1a1a1a;
 }
 /* POPUPS */
