@@ -186,7 +186,7 @@ table,
       justify-content: flex-end;
 }
 .page-header__top-actions-language,
-.page-header__top-actions-watchlist,
+.page-header__top-actions-bookmark,
 .page-header__top-actions-login {
   margin-left: 1.5rem;
 }
@@ -672,10 +672,10 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Bookshelves
+   Booksmarks
    style declarations for all bookmark actions,
    ==============================================================*/
-/* BOOKSHELF NAVIGATION */
+/* BOOKMARK NAVIGATION */
 /* BLOCK */
 .bookmark-navigation {
   /* ELEMENT */
@@ -1808,7 +1808,7 @@ button.btn:active:focus {
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   User Bookshelf Edit
+   User Bookmark Edit
    style declarations for userBackendEditBookmark.xhtml
    ==============================================================*/
 /* USER BOOKMARK EDIT */
