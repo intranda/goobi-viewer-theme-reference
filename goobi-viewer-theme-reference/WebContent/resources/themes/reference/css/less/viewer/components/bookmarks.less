@@ -1,10 +1,10 @@
 /* ==============================================================
-   Bookshelves
-   style declarations for all bookshelf actions,
+   Booksmarks
+   style declarations for all bookmark actions,
    ==============================================================*/
-/* BOOKSHELF NAVIGATION */
+/* BOOKMARK NAVIGATION */
 /* BLOCK */
-.bookshelf-navigation {
+.bookmark-navigation {
 	/* ELEMENT */
 	&__dropdown-wrapper {
 		& > .btn {
@@ -62,6 +62,11 @@
 	&__dropdown-list-send,
 	&__dropdown-list-search,
 	&__dropdown-list-mirador {
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: @lightgray;				
+		}
 		a, button {
 			font-size: @fontMedium;
 			color: @black;
@@ -74,8 +79,12 @@
 	}
 	&__dropdown-list-reset {
 		button {
-			span {}
-			.fa {}
+			span {
+			color: @black;
+			}
+			.fa {
+			color: @black;
+			}
 		}
 	}
 	&__dropdown-list-send,
@@ -91,7 +100,7 @@
 
 /* POPUPS */
 /* BLOCK */
-.bookshelf-popup {
+.bookmark-popup {
 	&.top {}
 	&.right {}
 	&.bottom {
@@ -107,8 +116,20 @@
 	&__body-loader {}
 	&__body-list {
 		li {
-		&:hover {
-			background-color: @lightgray;} 
+			&:hover,
+			&:active,
+			&:focus {
+			background-color: @lightgray;
+			} 
+			button {
+				&.btn {
+					&:hover,
+					&:active,
+					&:focus {
+						color: @black;
+					}
+			}
+		}
 			.empty {}
 		}
 		[data-bookshelf-type="add"] {
@@ -149,6 +170,7 @@
 [data-bookshelf-type="delete"] {}
 [data-bookshelf-type="link"] {}
 [data-bookshelf-type="reset"] {}
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 

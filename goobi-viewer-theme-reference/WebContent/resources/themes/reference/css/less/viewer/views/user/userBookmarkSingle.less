@@ -1,31 +1,33 @@
 /* ==============================================================
-   User Bookshelves
-   style declarations for userBackendBookshelves.xhtml
+   User view Bookmark
+   style declarations for userBackendViewBookmark.xhtml
    ==============================================================*/
-/* USER BOOKSHELVES */
+/* USER VIEW BOOKMARK */
 /* BLOCK */
-.user-bookshelves {
+.view-bookmark {
 	/* ELEMENT */
 	h2 {}
-	/* ADD */
-	&__add-bookshelf {
-		input {}
-		button {}
+	p {}
+	&__action {
+		a {}
 	}
-	/* PANEL */
-	&__panel {
+	&__item {
 		background-color: @white;
+		&:hover {}
 	}
-	&__panel-header {
+	&__item-image,
+	&__item-info,
+	&__item-action {}
+	&__item-image {
+		a {}
+	}
+	&__item-info {
 		h4 {}
-		a {}
-		small {}
+		textarea {}
 	}
-	&__panel-body {
-		p {}
-	}
-	&__panel-action {
+	&__item-action {
 		a {}
+		[data-bookshelf-type="delete"] {}
 	}
 }
 

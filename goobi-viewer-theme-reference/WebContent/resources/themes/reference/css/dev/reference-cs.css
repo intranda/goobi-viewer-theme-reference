@@ -173,7 +173,7 @@ table,
       justify-content: flex-end;
 }
 .page-header__top-actions-language,
-.page-header__top-actions-watchlist,
+.page-header__top-actions-bookmark,
 .page-header__top-actions-login {
   margin-left: 1.5rem;
 }

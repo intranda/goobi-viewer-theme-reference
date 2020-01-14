@@ -1,22 +1,32 @@
 /* ==============================================================
-   User Bookshelf Edit
-   style declarations for userBackendEditBookshelf.xhtml
+   User Bookmarks
+   style declarations for userBackendBookmark.xhtml
    ==============================================================*/
-/* USER BOOKSHELF EDIT */
+/* USER BOOKMARKS */
 /* BLOCK */
-.user-bookshelf-edit {
+.user-bookmark {
 	/* ELEMENT */
 	h2 {}
-	&__form {
+	/* ADD */
+	&__add-bookmark {
+		margin-top: -46px;
+		input {}
+		button {}
+	}
+	/* PANEL */
+	&__panel {
 		background-color: @white;
-    	form {}
-    }
-    .control-label {}
-	.form-control {}
-	textarea {}
-	&__action {}
-	&__action {
-		.btn {}
+	}
+	&__panel-header {
+		h4 {}
+		a {}
+		small {}
+	}
+	&__panel-body {
+		p {}
+	}
+	&__panel-action {
+		a {}
 	}
 }
 
@@ -27,7 +37,12 @@
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
-
+@media screen and (max-width: @smallBreakpoint) {
+	.user-bookmark {
+	&__add-bookmark {
+		margin-top: 0px;
+		}
+	}
+}
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {}
