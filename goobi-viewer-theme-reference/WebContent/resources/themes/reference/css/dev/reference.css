@@ -2664,6 +2664,7 @@ button.btn:active:focus {
    ==============================================================*/
 /* WIDGET USAGE */
 .widget-usage {
+  margin-bottom: 0;
   /* LICENSE TEXT */
   /* DOWNLOADS */
   /* WORK DOWNLOADS */
