@@ -28,13 +28,8 @@ $( document ).ready( function() {
         widgetNerSidebarRight: true,
     };
     
-    viewerJS.init( viewerConfig );
-    
-    // init bookmarks if enabled
-    if ( bookshelvesEnabled ) {
-        viewerJS.bookmarks.init( watchlistConfig );
-    } 
-     
+    viewerJS.init( viewerConfig ); 
+   
     // toggle change local
     $( 'body' ).on( 'click', '[data-toggle="local"]', function() {
     	$( '#changeLocal' ).fadeToggle( 200 );
