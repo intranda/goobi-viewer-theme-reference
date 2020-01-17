@@ -2401,6 +2401,12 @@ button.btn:active:focus {
    Widget Custom
    style declarations for widget_custom.xhtml
    ==============================================================*/
+#widgetCustom span {
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  border-top: none;
+  background-color: #fff;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -2741,6 +2747,7 @@ button.btn:active:focus {
   padding: 10px;
   border: 1px solid #d5d5d5;
   border-top: none;
+  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
