@@ -2331,6 +2331,7 @@ button.btn:active:focus {
 .widget-convolutes__series ul {
   padding: 0;
   background-color: #3365a9;
+  border: 1px solid #3365a9;
 }
 .widget-convolutes__series ul a {
   color: #fff;
@@ -2364,6 +2365,7 @@ button.btn:active:focus {
 .widget-convolutes__list a ul {
   padding: 1rem 1.5rem;
   margin-bottom: 20px;
+  border: 1px solid #3365a9;
 }
 .widget-convolutes__anchor {
   margin-bottom: 20px;
@@ -2374,6 +2376,7 @@ button.btn:active:focus {
 .widget-convolutes__anchor ul {
   padding: 0;
   background-color: #3365a9;
+  border: 1px solid #3365a9;
 }
 .widget-convolutes__anchor ul a {
   color: #fff;
