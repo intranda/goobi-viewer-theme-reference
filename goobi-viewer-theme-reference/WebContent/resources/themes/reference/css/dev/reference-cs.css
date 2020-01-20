@@ -137,6 +137,7 @@ table,
 .page-header__top a,
 .page-header__top button {
   color: #fff;
+  vertical-align: unset;
 }
 .page-header__top a:hover,
 .page-header__top button:hover,
