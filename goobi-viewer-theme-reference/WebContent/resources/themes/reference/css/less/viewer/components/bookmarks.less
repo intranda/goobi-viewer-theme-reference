@@ -1,5 +1,5 @@
 /* ==============================================================
-   Booksmarks
+   Bookmarks
    style declarations for all bookmark actions,
    ==============================================================*/
 /* BOOKMARK NAVIGATION */
@@ -8,7 +8,7 @@
 	/* ELEMENT */
 	&__dropdown-wrapper {
 		& > .btn {
-			font-size: @fontMedium;
+			font-size: @fontMedium; 
 		}
 	}
 	/* TOOGLE DROPDOWN */
@@ -46,7 +46,6 @@
 	}
 	&__dropdown-list-image {}
 	&__dropdown-list-remove {
-		[data-bookshelf-type="delete"] {
 			font-size: @fontMedium;
 			color: @black;
 			&:hover,
@@ -54,7 +53,6 @@
 			&:focus {
 				color: @black;				
 			}
-		}
 	}
 	/* DROPDOWN ACTIONS */
 	&__dropdown-list-actions {}
@@ -132,44 +130,18 @@
 		}
 			.empty {}
 		}
-		[data-bookshelf-type="add"] {
 			&:hover {
 			color: @black;
 			} 
 			.fa {} 
 			span {}  
-		}
 	}
 	&__footer {
 		input {}
-		[data-bookshelf-type="add"] {
 			&.added {}
-		}
 	}
 	&__list {}
 }
-
-/* ACTION BUTTONS */
-[data-bookshelf-type="dropdown"],
-[data-bookshelf-type="get"],
-[data-bookshelf-type="add"],
-[data-bookshelf-type="add-bookshelf"],
-[data-bookshelf-type="delete"],
-[data-bookshelf-type="link"],
-[data-bookshelf-type="reset"] {}
-[data-bookshelf-type="dropdown"] {
-	display: inline-block;
-}
-[data-bookshelf-type="get"] {}
-[data-bookshelf-type="add"] {
-	&.white {}
-	&.added {
-		&.white {}	
-	}
-}
-[data-bookshelf-type="delete"] {}
-[data-bookshelf-type="link"] {}
-[data-bookshelf-type="reset"] {}
 
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -673,7 +673,7 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Booksmarks
+   Bookmarks
    style declarations for all bookmark actions,
    ==============================================================*/
 /* BOOKMARK NAVIGATION */
@@ -711,13 +711,13 @@ table,
 .bookmark-navigation__dropdown-list-counter {
   background-color: #3365a9;
 }
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
+.bookmark-navigation__dropdown-list-remove {
   font-size: 1.4rem;
   color: #1a1a1a;
 }
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
+.bookmark-navigation__dropdown-list-remove:hover,
+.bookmark-navigation__dropdown-list-remove:active,
+.bookmark-navigation__dropdown-list-remove:focus {
   color: #1a1a1a;
 }
 .bookmark-navigation__dropdown-list-reset:hover,
@@ -792,12 +792,8 @@ table,
 .bookmark-popup__body-list li button.btn:focus {
   color: #1a1a1a;
 }
-.bookmark-popup__body-list [data-bookshelf-type="add"]:hover {
+.bookmark-popup__body-list:hover {
   color: #1a1a1a;
-}
-/* ACTION BUTTONS */
-[data-bookshelf-type="dropdown"] {
-  display: inline-block;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
