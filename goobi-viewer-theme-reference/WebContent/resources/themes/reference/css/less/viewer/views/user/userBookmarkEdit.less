@@ -1,11 +1,27 @@
 /* ==============================================================
-   Widget Bookshelves
-   style declarations for widget_bookshelves.xhtml
+   User Bookmark Edit
+   style declarations for userBackendEditBookmark.xhtml
    ==============================================================*/
-#widgetBookshelves {}
+/* USER BOOKMARK EDIT */
+/* BLOCK */
+.user-bookmark-edit {
+	/* ELEMENT */
+	h2 {}
+	&__form {
+		background-color: @white;
+    	form {}
+    }
+    .control-label {}
+	.form-control {}
+	textarea {}
+	&__action {}
+	&__action {
+		.btn {}
+	}
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

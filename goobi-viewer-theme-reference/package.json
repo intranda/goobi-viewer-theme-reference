@@ -5,16 +5,17 @@
   "author": "intranda GmbH",
   "repository": {
     "type": "git",
-    "url": "https://github.com/intranda/goobi-viewer-theme-reference"
+    "url": "https://gitea.intranda.com/goobi-viewer/goobi-viewer-theme-reference.git"
   },
   "license": "GPL-2.0-or-later",
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-riot": "*",
-    "less-plugin-autoprefix": "*"
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-riot": "^0.1.8",
+    "grunt-sync": "^0.8.1",
+    "less-plugin-autoprefix": "^1.5.1"
   }
 }

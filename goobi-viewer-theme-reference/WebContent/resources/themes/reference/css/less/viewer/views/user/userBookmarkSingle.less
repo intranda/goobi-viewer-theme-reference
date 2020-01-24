@@ -1,22 +1,37 @@
 /* ==============================================================
-   User Bookshelf Send List
-   style declarations for userBookshelfSendList.xhtml
+   User view Bookmark
+   style declarations for userBackendViewBookmark.xhtml
    ==============================================================*/
-/* USER BOOKSHELF SEND LIST */
+/* USER VIEW BOOKMARK */
 /* BLOCK */
-.user-bookshelf-send-list {
-    /* ELEMENT */
-    &__form {
-    	background-color: @white;
-    	form {}
-    }
-    .control-label {}
-	.form-control {}
-	&__action {}
+.view-bookmark {
+	/* ELEMENT */
+	h2 {}
+	p {}
+	&__action {
+		a {}
+	}
+	&__item {
+		background-color: @white;
+		&:hover {}
+	}
+	&__item-image,
+	&__item-info,
+	&__item-action {}
+	&__item-image {
+		a {}
+	}
+	&__item-info {
+		h4 {}
+		textarea {}
+	}
+	&__item-action {
+		a {}
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

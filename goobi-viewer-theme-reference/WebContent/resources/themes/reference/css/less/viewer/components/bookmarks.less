@@ -1,14 +1,14 @@
 /* ==============================================================
-   Bookshelves
-   style declarations for all bookshelf actions,
+   Bookmarks
+   style declarations for all bookmark actions,
    ==============================================================*/
-/* BOOKSHELF NAVIGATION */
+/* BOOKMARK NAVIGATION */
 /* BLOCK */
-.bookshelf-navigation {
+.bookmark-navigation {
 	/* ELEMENT */
 	&__dropdown-wrapper {
 		& > .btn {
-			font-size: @fontMedium;
+			font-size: @fontMedium; 
 		}
 	}
 	/* TOOGLE DROPDOWN */
@@ -24,6 +24,10 @@
 	/* DROPDOWN LIST */
 	&__dropdown-list {
 		li {
+			color: @black;
+			&:hover {
+			background-color: @lightgray;
+			}
 			&:last-child {}
 			.empty {}
 		}
@@ -38,11 +42,10 @@
 		}
 	}
 	&__dropdown-list-counter {
-		background-color: @blue;
+		background-color: @blue;  
 	}
 	&__dropdown-list-image {}
 	&__dropdown-list-remove {
-		[data-bookshelf-type="delete"] {
 			font-size: @fontMedium;
 			color: @black;
 			&:hover,
@@ -50,7 +53,6 @@
 			&:focus {
 				color: @black;				
 			}
-		}
 	}
 	/* DROPDOWN ACTIONS */
 	&__dropdown-list-actions {}
@@ -58,6 +60,11 @@
 	&__dropdown-list-send,
 	&__dropdown-list-search,
 	&__dropdown-list-mirador {
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: @lightgray;				
+		}
 		a, button {
 			font-size: @fontMedium;
 			color: @black;
@@ -70,8 +77,12 @@
 	}
 	&__dropdown-list-reset {
 		button {
-			span {}
-			.fa {}
+			span {
+			color: @black;
+			}
+			.fa {
+			color: @black;
+			}
 		}
 	}
 	&__dropdown-list-send,
@@ -87,7 +98,7 @@
 
 /* POPUPS */
 /* BLOCK */
-.bookshelf-popup {
+.bookmark-popup {
 	&.top {}
 	&.right {}
 	&.bottom {
@@ -103,43 +114,35 @@
 	&__body-loader {}
 	&__body-list {
 		li {
+			&:hover,
+			&:active,
+			&:focus {
+			background-color: @lightgray;
+			} 
+			button {
+				&.btn {
+					&:hover,
+					&:active,
+					&:focus {
+						color: @black;
+					}
+			}
+		}
 			.empty {}
 		}
-		[data-bookshelf-type="add"] {
-			.fa {}
-			span {}
-		}
+			&:hover {
+			color: @black;
+			} 
+			.fa {} 
+			span {}  
 	}
 	&__footer {
 		input {}
-		[data-bookshelf-type="add"] {
 			&.added {}
-		}
 	}
 	&__list {}
 }
 
-/* ACTION BUTTONS */
-[data-bookshelf-type="dropdown"],
-[data-bookshelf-type="get"],
-[data-bookshelf-type="add"],
-[data-bookshelf-type="add-bookshelf"],
-[data-bookshelf-type="delete"],
-[data-bookshelf-type="link"],
-[data-bookshelf-type="reset"] {}
-[data-bookshelf-type="dropdown"] {
-	display: inline-block;
-}
-[data-bookshelf-type="get"] {}
-[data-bookshelf-type="add"] {
-	&.white {}
-	&.added {
-		&.white {}	
-	}
-}
-[data-bookshelf-type="delete"] {}
-[data-bookshelf-type="link"] {}
-[data-bookshelf-type="reset"] {}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 

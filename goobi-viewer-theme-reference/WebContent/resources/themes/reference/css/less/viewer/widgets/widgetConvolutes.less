@@ -2,16 +2,76 @@
    Widget Convolutes
    style declarations for widget_convolutes.xhtml
    ==============================================================*/
-#widgetConvolutes {
-    display: none;
-    visibility: hidden;
+	.widget-convolutes {
+		margin-bottom: 0;
+		&__series {
+	    	h3 {
+	    		background-color: transparent;
+	    	}
+			ul {
+				padding: 0;
+				background-color: @blue;
+				border: 1px solid @blue;
+			a {
+				color: @white;
+				font-size: 1.6rem;
+				padding: 0;
+				&:hover,
+				&:focus,
+				&:active {
+				text-decoration: none;
+				color: @white;
+				}
+			} 
+		    }
+		   }
+		   
+		&__list {
+	    	h3 {} 
+			a {
+				color: @blue;
+				&:hover,
+				&:focus,
+				&:active {
+				text-decoration: none;
+				color: @blue;
+				&:hover,
+				&:active {
+				color: @black;
+				text-decoration: underline;
+				}
+				}
+			ul {
+				padding: 1rem 1.5rem;
+				margin-bottom: 20px;
+				border: 1px solid @blue;
+				}
+			}
+		}
+		
+			&__anchor {
+				margin-bottom: 20px;
+	    	h3 {
+	    		background-color: transparent;
+	    	}
+			ul {
+				padding: 0;
+				background-color: @blue;
+				border: 1px solid @blue;
+			a {
+				color: @white;
+				font-size: 1.6rem;
+				padding: 0;
+				&:hover,
+				&:focus,
+				&:active {
+				text-decoration: none;
+				color: @white;
+				}
+			} 
+		    }
+		   }
 }
-
-.widget-convolutes {
-    &__series {}
-    &__anchor {}
-}
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
 

@@ -31,11 +31,15 @@
 		color: @white;
 		a, button {
 			color: @white;
+			vertical-align: unset;
 			&:hover,
 			&:active,
 			&:focus {
 				color: @white;
 				text-decoration: none;
+			}
+			.fa-ban {
+				color: @black;
 			}
 		}
 	}
@@ -58,7 +62,7 @@
 		justify-content: flex-end;		
 	}
 	&__top-actions-language,
-	&__top-actions-watchlist,
+	&__top-actions-bookmark,
 	&__top-actions-login {
 		margin-left: 1.5rem;
 	}
@@ -69,7 +73,7 @@
 			text-transform: uppercase;			
 		}
 	}
-	&__top-actions-watchlist {}
+	&__top-actions-bookmark {}
 	&__top-actions-login {}
 	&__top-mobile-sidebar {
 		text-align: right;
