@@ -2250,25 +2250,18 @@ button.btn:active:focus {
    ==============================================================*/
 /* WIDGET CHRONOLOGY */
 /* BLOCK */
-.widget-chronology-slider {
-  padding: 0;
-}
 .widget-chronology-slider__topbar {
   background-color: #3365a9;
 }
 .widget-chronology-slider__item.chronology-slider-label,
 .widget-chronology-slider__item.chronology-slider-actions {
   color: #fff;
-  height: 100%;
-  padding: 7px 5px 0px 5px;
 }
 .widget-chronology-slider__item.chronology-slider-label {
-  padding-left: 1.5rem;
   font-weight: 400;
   font-size: 1.6rem;
 }
 .widget-chronology-slider__item.chronology-slider-actions [data-reset="chrono-slider"] {
-  margin-left: .5rem;
   color: #fff;
 }
 .widget-chronology-slider__item.chronology-slider-start,
