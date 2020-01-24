@@ -7,13 +7,15 @@
 /* BLOCK */
 .widget-chronology-slider {
 	padding: 0;
+	&__topbar {
+		background-color: @blue; 
+	}	
 	&__item {
 		&.chronology-slider-label,
 		&.chronology-slider-actions {
 	    	color: @white;
-	    	background-color: @blue;
-	    	min-height: 34.2px;
-			padding: 5px 10px;
+	    	height: 100%;
+			padding: 7px 5px 0px 5px;
 		}
 		&.chronology-slider-label {
 			padding-left: 1.5rem;

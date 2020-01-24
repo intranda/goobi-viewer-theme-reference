@@ -148,6 +148,10 @@ table,
   color: #fff;
   text-decoration: none;
 }
+.page-header__top a .fa-ban,
+.page-header__top button .fa-ban {
+  color: #1a1a1a;
+}
 .page-header__top-mobile-nav,
 .page-header__top-mobile-sidebar {
   display: none;
