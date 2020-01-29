@@ -161,6 +161,10 @@ table,
   color: #fff;
   text-decoration: none;
 }
+.page-header__top a .fa-ban,
+.page-header__top button .fa-ban {
+  color: #1a1a1a;
+}
 .page-header__top-mobile-nav,
 .page-header__top-mobile-sidebar {
   display: none;
@@ -673,7 +677,7 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Booksmarks
+   Bookmarks
    style declarations for all bookmark actions,
    ==============================================================*/
 /* BOOKMARK NAVIGATION */
@@ -711,13 +715,13 @@ table,
 .bookmark-navigation__dropdown-list-counter {
   background-color: #3365a9;
 }
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"] {
+.bookmark-navigation__dropdown-list-remove {
   font-size: 1.4rem;
   color: #1a1a1a;
 }
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:hover,
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:active,
-.bookmark-navigation__dropdown-list-remove [data-bookshelf-type="delete"]:focus {
+.bookmark-navigation__dropdown-list-remove:hover,
+.bookmark-navigation__dropdown-list-remove:active,
+.bookmark-navigation__dropdown-list-remove:focus {
   color: #1a1a1a;
 }
 .bookmark-navigation__dropdown-list-reset:hover,
@@ -792,12 +796,8 @@ table,
 .bookmark-popup__body-list li button.btn:focus {
   color: #1a1a1a;
 }
-.bookmark-popup__body-list [data-bookshelf-type="add"]:hover {
+.bookmark-popup__body-list:hover {
   color: #1a1a1a;
-}
-/* ACTION BUTTONS */
-[data-bookshelf-type="dropdown"] {
-  display: inline-block;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -2250,23 +2250,18 @@ button.btn:active:focus {
    ==============================================================*/
 /* WIDGET CHRONOLOGY */
 /* BLOCK */
-.widget-chronology-slider {
-  padding: 0;
+.widget-chronology-slider__topbar {
+  background-color: #3365a9;
 }
 .widget-chronology-slider__item.chronology-slider-label,
 .widget-chronology-slider__item.chronology-slider-actions {
   color: #fff;
-  background-color: #3365a9;
-  min-height: 34.2px;
-  padding: 5px 10px;
 }
 .widget-chronology-slider__item.chronology-slider-label {
-  padding-left: 1.5rem;
   font-weight: 400;
   font-size: 1.6rem;
 }
 .widget-chronology-slider__item.chronology-slider-actions [data-reset="chrono-slider"] {
-  margin-left: .5rem;
   color: #fff;
 }
 .widget-chronology-slider__item.chronology-slider-start,

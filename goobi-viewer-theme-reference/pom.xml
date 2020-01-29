@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>4.2.1</version>
+	<version>4.4.0</version>
 	<packaging>war</packaging>
 
 
@@ -43,12 +43,12 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>4.3.0-SNAPSHOT</version>
+			<version>4.4.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>4.3.3</version>
+			<version>4.3.4</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -67,7 +67,7 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>1.1.8-SNAPSHOT</version>
+					<version>1.1.9</version>
 				</dependency>
 			</dependencies>
 		</profile>
