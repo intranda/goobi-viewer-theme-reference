@@ -15,7 +15,9 @@
 	&.active:focus, 
 	&.focus, 
 	&:active.focus {
-		color: @white;
+		.fa {
+			color: @blue;
+		}
 	}
 }
 
@@ -85,14 +87,7 @@
 }
 
 a.btn--icon {}
-button.btn {
-	&:active, 
-	&:focus, 
-	&:active:focus {
-		color: @white;
-	}
-}
-
+ 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
 

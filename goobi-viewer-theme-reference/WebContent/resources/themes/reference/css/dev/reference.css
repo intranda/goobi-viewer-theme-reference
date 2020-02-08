@@ -834,16 +834,16 @@ table,
   color: #444;
   font-size: 1.4rem;
 }
-.btn:hover,
-.btn:active,
-.btn:focus,
-.btn:active:focus,
-.btn.active,
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus {
-  color: #fff;
+.btn:hover .fa,
+.btn:active .fa,
+.btn:focus .fa,
+.btn:active:focus .fa,
+.btn.active .fa,
+.btn.active.focus .fa,
+.btn.active:focus .fa,
+.btn.focus .fa,
+.btn:active.focus .fa {
+  color: #3365a9;
 }
 /* MODIFICATIONS */
 .btn--default {
@@ -886,11 +886,6 @@ table,
 .btn--link:active,
 .btn--link:focus {
   color: #444;
-}
-button.btn:active,
-button.btn:focus,
-button.btn:active:focus {
-  color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
