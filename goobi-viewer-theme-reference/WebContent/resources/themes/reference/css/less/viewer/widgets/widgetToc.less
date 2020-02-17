@@ -20,6 +20,30 @@
 				color: @white;
 			}
 			&:first-child {}
+			.fa {
+			color: @white;
+				&:hover,
+				&:active,
+				&:focus {
+					color: @white;
+				}
+			.btn {
+				&:hover,
+				&:active,
+				&:focus,
+				&:active:focus,
+				&.active,
+				&.active.focus, 
+				&.active:focus, 
+				&.focus, 
+				&:active.focus {
+					.fa {
+						color: @blue;
+					}
+					}
+				}
+			}
+
 		}
 	}
 	/* ELEMENTS */
