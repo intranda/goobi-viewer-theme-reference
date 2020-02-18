@@ -652,17 +652,6 @@ table,
   color: #444;
   font-size: 1.4rem;
 }
-.btn:hover .fa,
-.btn:active .fa,
-.btn:focus .fa,
-.btn:active:focus .fa,
-.btn.active .fa,
-.btn.active.focus .fa,
-.btn.active:focus .fa,
-.btn.focus .fa,
-.btn:active.focus .fa {
-  color: #3365a9;
-}
 /* MODIFICATIONS */
 .btn--default {
   color: #555;
