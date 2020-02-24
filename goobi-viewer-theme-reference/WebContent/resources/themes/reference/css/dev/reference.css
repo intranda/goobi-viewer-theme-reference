@@ -2029,6 +2029,10 @@ table,
 .view-object__image-mobile {
   background-color: #fff;
 }
+.view-object__video {
+  display: -ms-flexbox;
+  display: flex;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
