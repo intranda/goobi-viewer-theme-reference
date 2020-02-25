@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         theme: {
             name: 'reference',
             subThemeOne: 'subtheme1',
-            subThemeTwo: 'subtheme2'
+            subThemeTwo: 'subtheme2' 
         },
         pkg: grunt.file.readJSON('package.json'),
         src: {
@@ -51,8 +51,6 @@ module.exports = function(grunt) {
                 files: {
                     '<%=src.cssDevFolder %><%=theme.name%>.css': '<%=src.lessDevViewerFolder%>constructor.less',
                     '<%=src.cssDevFolder %><%=theme.name%>-cs.css': '<%=src.lessDevCsFolder%>csConstructor.less',
-                	'<%=src.cssDistFolder %><%=theme.subThemeOne%>.min.css': '<%=src.lessSubThemeOneFolder%>subThemeConstructor.less',
-                	'<%=src.cssDistFolder %><%=theme.subThemeTwo%>.min.css': '<%=src.lessSubThemeTwoFolder%>subThemeConstructor.less',
                 }
             },
             production: {
@@ -68,6 +66,8 @@ module.exports = function(grunt) {
                 files: {
                     '<%=src.cssDistFolder %><%=theme.name%>.min.css': '<%=src.lessDevViewerFolder%>constructor.less',
                     '<%=src.cssDistFolder %><%=theme.name%>-cs.min.css': '<%=src.lessDevCsFolder%>csConstructor.less',
+                	'<%=src.cssDistFolder %><%=theme.subThemeOne%>.min.css': '<%=src.lessSubThemeOneFolder%>subThemeConstructor.less',
+                	'<%=src.cssDistFolder %><%=theme.subThemeTwo%>.min.css': '<%=src.lessSubThemeTwoFolder%>subThemeConstructor.less',
                 }
             }
         },
