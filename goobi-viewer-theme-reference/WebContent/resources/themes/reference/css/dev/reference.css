@@ -834,17 +834,6 @@ table,
   color: #444;
   font-size: 1.4rem;
 }
-.btn:hover,
-.btn:active,
-.btn:focus,
-.btn:active:focus,
-.btn.active,
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus {
-  color: #fff;
-}
 /* MODIFICATIONS */
 .btn--default {
   color: #555;
@@ -886,11 +875,6 @@ table,
 .btn--link:active,
 .btn--link:focus {
   color: #444;
-}
-button.btn:active,
-button.btn:focus,
-button.btn:active:focus {
-  color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -2645,6 +2629,25 @@ button.btn:active:focus {
 .widget-toc__title-expand a:active,
 .widget-toc__title-expand a:focus {
   color: #fff;
+}
+.widget-toc__title-expand a .fa {
+  color: #fff;
+}
+.widget-toc__title-expand a .fa:hover,
+.widget-toc__title-expand a .fa:active,
+.widget-toc__title-expand a .fa:focus {
+  color: #fff;
+}
+.widget-toc__title-expand a .fa .btn:hover .fa,
+.widget-toc__title-expand a .fa .btn:active .fa,
+.widget-toc__title-expand a .fa .btn:focus .fa,
+.widget-toc__title-expand a .fa .btn:active:focus .fa,
+.widget-toc__title-expand a .fa .btn.active .fa,
+.widget-toc__title-expand a .fa .btn.active.focus .fa,
+.widget-toc__title-expand a .fa .btn.active:focus .fa,
+.widget-toc__title-expand a .fa .btn.focus .fa,
+.widget-toc__title-expand a .fa .btn:active.focus .fa {
+  color: #3365a9;
 }
 .widget-toc__elements {
   border: 1px solid #d5d5d5;

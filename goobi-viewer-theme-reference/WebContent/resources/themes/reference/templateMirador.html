@@ -36,14 +36,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/javascript/libs/mirador/css/mirador-combined.min.css" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${buildNumber}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css" />
 
     <!-- JS -->
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rx.lite.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rxjs.umd.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/mirador/mirador.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${buildNumber}"></script>
 </h:head>
 
 <ui:insert name="metadata" />
@@ -66,6 +66,20 @@
             viewerJS.mirador.init( miradorConfig );
 
         </script>
+        
+<!--         <script type="text/javascript"> -->
+// 	        $(function() {
+// 	            Mirador({
+// 	              "id": "miradorViewer", // The CSS ID selector for the containing element.
+// 	              "data": [ 
+// 	              	{
+// 	              	    "collectionUri": "http://localhost:8082/viewer/rest/iiif/collections/DC/dcnewspaper/"
+// 	              	}
+// 	              ],
+// 	            });
+// 	          });
+<!--         </script> -->
+        
     </f:view>
 
     <!-- PIWIK -->
