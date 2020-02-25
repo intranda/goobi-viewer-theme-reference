@@ -11,7 +11,9 @@ module.exports = function(grunt) {
 	// ---------- PROJECT CONFIG ----------
     grunt.initConfig({
         theme: {
-            name: 'reference'
+            name: 'reference',
+            subThemeOne: 'subtheme1',
+            subThemeTwo: 'subtheme2'
         },
         pkg: grunt.file.readJSON('package.json'),
         src: {
@@ -19,6 +21,8 @@ module.exports = function(grunt) {
             jsDistFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dist/',
             lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/cs/',
             lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/viewer/',
+            lessSubThemeOneFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
+            lessSubThemeTwoFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeTwo%>/',
             cssDevFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dev/',
             cssDistFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dist/'
         },
@@ -47,6 +51,8 @@ module.exports = function(grunt) {
                 files: {
                     '<%=src.cssDevFolder %><%=theme.name%>.css': '<%=src.lessDevViewerFolder%>constructor.less',
                     '<%=src.cssDevFolder %><%=theme.name%>-cs.css': '<%=src.lessDevCsFolder%>csConstructor.less',
+                	'<%=src.cssDistFolder %><%=theme.subThemeOne%>.min.css': '<%=src.lessSubThemeOneFolder%>subThemeConstructor.less',
+                	'<%=src.cssDistFolder %><%=theme.subThemeTwo%>.min.css': '<%=src.lessSubThemeTwoFolder%>subThemeConstructor.less',
                 }
             },
             production: {
