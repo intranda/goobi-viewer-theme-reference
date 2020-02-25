@@ -234,6 +234,9 @@ table,
   margin-right: 1rem;
   vertical-align: middle;
 }
+.page-header__bottom-span {
+  display: inline-block;
+}
 .page-header__bottom-search {
   -ms-flex: 0 0 25%;
       flex: 0 0 25%;
