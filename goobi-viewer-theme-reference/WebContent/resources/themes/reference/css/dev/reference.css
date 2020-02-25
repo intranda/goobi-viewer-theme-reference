@@ -2026,30 +2026,8 @@ table,
   border-top: 0;
   background-color: #fff;
 }
-.view-object form {
-  -ms-flex-pack: center;
-      justify-content: center;
-}
-.view-object form .image-controls__actions {
-  -ms-flex-positive: 0;
-      flex-grow: 0;
-}
-.view-object form .image-controls__options {
-  margin-left: 0;
-}
 .view-object__image-mobile {
   background-color: #fff;
-}
-.view-object__video {
-  display: -ms-flexbox;
-  display: flex;
-}
-.view-object__text {
-  text-align: center;
-  background-color: white;
-  border: 1px solid #d5d5d5;
-  border-top: 0;
-  padding: 10px;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
