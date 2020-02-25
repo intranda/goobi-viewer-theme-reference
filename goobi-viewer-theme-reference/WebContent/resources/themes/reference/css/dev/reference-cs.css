@@ -679,6 +679,7 @@ table,
 .btn--full {
   color: #fff;
   background-color: #3365a9;
+  border-color: #3365a9;
 }
 .btn--full:hover,
 .btn--full:active,
