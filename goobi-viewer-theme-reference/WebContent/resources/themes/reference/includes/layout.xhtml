@@ -4,6 +4,7 @@
     xmlns:c="http://java.sun.com/jsp/jstl/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html" 
     xmlns:f="http://xmlns.jcp.org/jsf/core" 
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
     xmlns:jsf="http://xmlns.jcp.org/jsf"
     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" 
     xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
@@ -33,13 +34,15 @@
 
                 <!-- PAGE HEADER TOP ACTIONS -->            
                 <div class="page-header__top-actions">
-                    <!-- CHANGE LOCAL -->
-                    <div id="changeLocalWrapper" class="page-header__top-actions-language">
-                    	<button type="button" class="btn btn--clean" data-toggle="local" aria-label="#{msg.aria_label__switch_language}">
-                    		#{msg['changeLocal_' += navigationHelper.localeString]}
-                    	</button>
-                        <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
-                    </div>
+                    <!-- CHANGE LOCALE -->
+                    <ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
+                        <div id="changeLocalWrapper" class="page-header__top-actions-language">
+                    	   <button type="button" class="btn btn--clean" data-toggle="local" aria-label="#{msg.aria_label__switch_language}">
+                    		  #{msg['changeLocal_' += navigationHelper.localeString]}
+                    	   </button>
+                            <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
+                        </div>
+                    </ui:fragment>
                     <!-- BOOKMARKS -->
                     <div class="page-header__top-actions-bookmark">
                         <viewerComponent:bookmarkListNavigation />
@@ -69,7 +72,9 @@
                     <h1>
                         <a href="#{request.contextPath}/">
                             <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg" alt="Goobi Logo" />
-                            <span>Goobi viewer</span>
+                            <div class="page-header__bottom-span">
+                            	<span>Goobi viewer</span>
+                        	</div>
                         </a>
                     </h1>
                 </div>

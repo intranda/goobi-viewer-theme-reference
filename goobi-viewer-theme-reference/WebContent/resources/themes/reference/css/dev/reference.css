@@ -247,6 +247,9 @@ table,
   margin-right: 1rem;
   vertical-align: middle;
 }
+.page-header__bottom-span {
+  display: inline-block;
+}
 .page-header__bottom-search {
   -ms-flex: 0 0 25%;
       flex: 0 0 25%;
@@ -858,6 +861,7 @@ table,
 .btn--full {
   color: #fff;
   background-color: #3365a9;
+  border-color: #3365a9;
 }
 .btn--full:hover,
 .btn--full:active,
@@ -1016,6 +1020,9 @@ table,
 }
 .login-navigation [data-login="true"] .login-navigation__user-dropdown-item:hover {
   background-color: #eee;
+}
+.login-navigation [data-login="true"] .login-navigation__user-dropdown-item-icon .fa {
+  color: #3365a9;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
