@@ -2903,16 +2903,13 @@ table,
   /* SOLR-QUERY */
 }
 .tpl-solr-query__content {
-  margin-bottom: 0;
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  border-bottom: 0;
-  background-color: #fff;
+  margin-left: 20px;
+  margin-top: 30px;
 }
-.tpl-solr-query .solr-query-collection {
+.tpl-solr-query .solr-query-collection__thumbs {
   padding: 10px;
+  margin-bottom: 20px;
   border: 1px solid #d5d5d5;
-  border-top: 0;
   background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
