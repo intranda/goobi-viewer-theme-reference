@@ -1516,6 +1516,14 @@ table,
   /* ELEMENTS */
   /* LOADING */
 }
+.fullscreen .widget-toc__title-expand a .fa {
+  color: #1a1a1a;
+}
+.fullscreen .widget-toc__title-expand a .fa:hover,
+.fullscreen .widget-toc__title-expand a .fa:active,
+.fullscreen .widget-toc__title-expand a .fa:focus {
+  color: #1a1a1a;
+}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
