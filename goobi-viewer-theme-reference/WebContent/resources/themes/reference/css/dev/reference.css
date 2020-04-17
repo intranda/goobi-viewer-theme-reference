@@ -55,10 +55,6 @@ h6,
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 600;
-  -o-hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 h1,
 .h1 {
