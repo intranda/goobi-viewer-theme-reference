@@ -445,6 +445,7 @@ table,
     -ms-flex: 0 0 48%;
         flex: 0 0 48%;
     max-width: 48%;
+    margin-left: auto;
   }
   .page-header__bottom-wrapper {
     position: -webkit-sticky;
