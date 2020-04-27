@@ -2661,28 +2661,28 @@ table,
   /* PAGE DOWNLOADS */
   /* CITE LINKS */
 }
-.widget-usage__work-downloads .label-default,
-.widget-usage__struct-downloads .label-default,
-.widget-usage__page-downloads .label-default,
-.widget-usage__image-fragment .label-default,
-.widget-usage__citelinks .label-default {
+.widget-usage__work-downloads .badge,
+.widget-usage__struct-downloads .badge,
+.widget-usage__page-downloads .badge,
+.widget-usage__image-fragment .badge,
+.widget-usage__citelinks .badge {
   padding: .3rem .5rem;
 }
-.widget-usage__work-downloads .label-default:hover,
-.widget-usage__struct-downloads .label-default:hover,
-.widget-usage__page-downloads .label-default:hover,
-.widget-usage__image-fragment .label-default:hover,
-.widget-usage__citelinks .label-default:hover,
-.widget-usage__work-downloads .label-default:active,
-.widget-usage__struct-downloads .label-default:active,
-.widget-usage__page-downloads .label-default:active,
-.widget-usage__image-fragment .label-default:active,
-.widget-usage__citelinks .label-default:active,
-.widget-usage__work-downloads .label-default:focus,
-.widget-usage__struct-downloads .label-default:focus,
-.widget-usage__page-downloads .label-default:focus,
-.widget-usage__image-fragment .label-default:focus,
-.widget-usage__citelinks .label-default:focus {
+.widget-usage__work-downloads .badge:hover,
+.widget-usage__struct-downloads .badge:hover,
+.widget-usage__page-downloads .badge:hover,
+.widget-usage__image-fragment .badge:hover,
+.widget-usage__citelinks .badge:hover,
+.widget-usage__work-downloads .badge:active,
+.widget-usage__struct-downloads .badge:active,
+.widget-usage__page-downloads .badge:active,
+.widget-usage__image-fragment .badge:active,
+.widget-usage__citelinks .badge:active,
+.widget-usage__work-downloads .badge:focus,
+.widget-usage__struct-downloads .badge:focus,
+.widget-usage__page-downloads .badge:focus,
+.widget-usage__image-fragment .badge:focus,
+.widget-usage__citelinks .badge:focus {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
