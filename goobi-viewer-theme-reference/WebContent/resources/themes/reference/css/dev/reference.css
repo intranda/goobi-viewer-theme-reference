@@ -458,6 +458,7 @@ table,
     -ms-flex: 0 0 48%;
         flex: 0 0 48%;
     max-width: 48%;
+    margin-left: auto;
   }
   .page-header__bottom-wrapper {
     position: -webkit-sticky;
@@ -957,12 +958,12 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   ePub
-   style declarations for ePub.xhtml
+   born-digital
+   style declarations for bornDigital.xhtml
    ==============================================================*/
 /* EPUB */
 /* BLOCK */
-.e-pub {
+.born-digital {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -1515,6 +1516,14 @@ table,
   /* TITLE */
   /* ELEMENTS */
   /* LOADING */
+}
+.fullscreen .widget-toc__title-expand a .fa {
+  color: #1a1a1a;
+}
+.fullscreen .widget-toc__title-expand a .fa:hover,
+.fullscreen .widget-toc__title-expand a .fa:active,
+.fullscreen .widget-toc__title-expand a .fa:focus {
+  color: #1a1a1a;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -2084,43 +2093,9 @@ table,
    View Timematrix
    style declarations for viewTimematrix.xhtml
    ==============================================================*/
-#timeMatrix .timematrix-selection {
-  padding: 52px 50px 10px 39px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-}
-#timeMatrix .timematrix-selection #slider-range .ui-slider-handle {
+.timematrix__selection #slider-range .ui-slider-handle {
+  border: 1px solid #3365a9;
   background-color: #3365a9;
-}
-#timeMatrix .btn {
-  margin-right: -40px;
-}
-#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb {
-  border-color: #d5d5d5;
-}
-#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb:hover {
-  border-color: #3365a9;
-}
-#timematrixCanvas .timematrix-box .timematrix-body .timematrix-thumb.marker:before {
-  border-color: transparent transparent #3365a9 transparent;
-}
-.timematrix-popover {
-  border-color: #3365a9;
-  background-color: #3365a9;
-}
-.timematrix-popover .timematrix-popover-close {
-  color: #fff;
-}
-.timematrix-popover .timematrix-popover-header {
-  color: #fff;
-  border-bottom-color: #3365a9;
-}
-.timematrix-popover .timematrix-popover-footer {
-  font-size: 13px;
-  border-top-color: #d5d5d5;
-}
-.timematrix-popover .timematrix-popover-footer a {
-  color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
