@@ -3223,17 +3223,9 @@ table,
 .tpl-faq {
   /* ELEMENT */
 }
-.tpl-faq__description,
-.tpl-faq__list {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-}
-.tpl-faq__description {
-  position: relative;
-  top: 1px;
-  margin-bottom: 0;
-  border-bottom: 0;
+.tpl-faq__list .panel-body .tpl-faq-single__content {
+  padding: 0;
+  border: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -3247,11 +3239,6 @@ table,
 /* BLOCK */
 .tpl-faq-single {
   /* ELEMENT */
-}
-.tpl-faq-single__text {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
