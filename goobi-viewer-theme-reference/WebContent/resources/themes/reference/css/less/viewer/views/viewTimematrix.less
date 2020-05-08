@@ -2,92 +2,93 @@
    View Timematrix
    style declarations for viewTimematrix.xhtml
    ==============================================================*/
-#timeMatrix {
+.timematrix {
     h2 {}
     p {}
     h3 {}
-    .timematrix-selection {
-        padding: 52px 50px 10px 39px;
-        border: 1px solid @middlegray;
-        background-color: @white;
+    &__subarea {}
+    &__selection-header {}
+    &__loader {
+    	img {}
+    }
+    &__loaderImg {
+    	img {}
+    }
+    &__selection {
+        #locateTimematrix {}
         #slider-range {
             .ui-slider-range {}
             .ui-slider-handle {
+                border: 1px solid @ci-color1;
                 background-color: @ci-color1;
+                &.top {}
+                &:focus {}
                 .timematrix-slider-bubble-startDate,
-                .timematrix-slider-bubble-endDate {
-                    &:before {}
-                }
-                .timematrix-slider-bubble-startDate {}
+                .timematrix-slider-bubble-endDate {}
                 .timematrix-slider-bubble-endDate {}
             }
-        }
-    }
-    .btn {
-        margin-right: -40px;
-    }
-}
-
-#timematrixCanvas {
-    .timematrix-box {
-        .timematrix-header {
-            h3 {}
-        }
-        .timematrix-body {
-            .timematrix-thumb {
-                border-color: @middlegray;
-                &:hover {
-                    border-color: @ci-color1;
-                }
-                img {}
-                &.marker:before {
-                    border-color: transparent transparent @ci-color1 transparent;
+			.ui-slider-handle {
+                &::before {}
+                &:last-child {
+                	&::before {}
                 }
             }
         }
-        .timematrix-footer {}
+        .btn {}
+    	button {}
     }
+    &__selectionRangeInput {}
+    &__bar {}
+    &__period {
+    	span {
+			&:last-of-type {}
+    	}
+    }
+    &__hitsForm {
+		label, input {}
+		label::after {}
+	}
+	&__hitsInput {
+		span {}
+		input {}
+	}
+	&__objects {}
+
+	&__content {}
+	&__img {
+		img {}
+		img[onError] {}
+	}
+	&__text {
+		&:hover {}
+		 p {}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__img img:hover + &__text {}
+	&__footer {
+		a {
+		&:hover,
+		&:active,
+		&:focus {}
+		}
+	}
 }
 
-.timematrix-popover {
-    border-color: @ci-color1;
-    background-color: @ci-color1;
-    .timematrix-popover-close {
-    	color: @white;
-    }
-    .timematrix-popover-header,
-    .timematrix-popover-body,
-    .timematrix-popover-footer {}
-    .timematrix-popover-header {
-        color: @white;
-        border-bottom-color: @ci-color1;
-        h4 {}
-    }
-    .timematrix-popover-body {
-        .timematrix-popover-imageloader {}
-        a {
-            img {}
-        }
-    }
-    .timematrix-popover-footer {
-        font-size: 13px;
-        border-top-color: @middlegray;
-        a {
-            color: @white;
-        }
-    }
-}
+.tpl-timeMatrix__text {}
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {}
-
-@media screen and (max-width: 400px) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {}

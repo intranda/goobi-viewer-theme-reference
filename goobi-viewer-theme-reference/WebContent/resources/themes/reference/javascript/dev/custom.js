@@ -43,6 +43,7 @@ $( document ).ready( function() {
     	}
     } );
     
+    
     // toggle mobile menu
     $( 'body' ).on( 'click', '[data-open="menu"]', function() {
     	$( 'html' ).addClass( 'no-overflow' );
@@ -68,6 +69,15 @@ $( document ).ready( function() {
     	$( '.mobile-overlay' ).fadeOut( 300 );
     	$( '#sidebar' ).removeClass( 'in' );
     } );
+
+	 // hide sidebar toggle button if sidebar empty
+	
+	 $( document ).ready( function() {
+	 	if ( $('.page-content__sidebar .widget' ).length === 0)
+	 	{
+	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
+	 	}
+	 } );
     
     // set content height to window height
     setContentHeight();

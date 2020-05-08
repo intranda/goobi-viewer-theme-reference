@@ -9,7 +9,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
       xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components"
+      lang="#{navigationHelper.localeString}">
 
 <h:head profile="http://dublincore.org/documents/dcq-html/">
 
@@ -55,12 +56,13 @@
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${buildNumber}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${buildNumber}" />
 
 	<!-- CUSTOM CSS -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${buildNumber}" />
     
     <!-- SUBTHEME CSS -->
-    <h:panelGroup rendered="#{navigationHelper.subthemeSelected}">
+    <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${buildNumber}" />
     </h:panelGroup>
     
@@ -82,6 +84,7 @@
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/browsersupport.min.js?${buildNumber}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${buildNumber}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${buildNumber}"></script>
+	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/leaflet.js"></script>
 </h:head>
 
 <ui:insert name="metadata" />
