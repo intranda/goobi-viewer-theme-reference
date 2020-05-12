@@ -2306,19 +2306,10 @@ table,
 .widget-related-groups__list a:hover,
 .widget-related-groups__list a:focus,
 .widget-related-groups__list a:active {
-  text-decoration: none;
-  color: #3365a9;
-}
-.widget-related-groups__list a:hover:hover,
-.widget-related-groups__list a:focus:hover,
-.widget-related-groups__list a:active:hover,
-.widget-related-groups__list a:hover:active,
-.widget-related-groups__list a:focus:active,
-.widget-related-groups__list a:active:active {
-  color: #1a1a1a;
   text-decoration: underline;
+  color: #1a1a1a;
 }
-.widget-related-groups__list a ul {
+.widget-related-groups__list ul {
   padding: 1rem 1.5rem;
   margin-bottom: 20px;
   border: 1px solid #3365a9;

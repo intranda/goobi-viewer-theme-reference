@@ -2,7 +2,8 @@
    Widget RelatedGroups
    style declarations for widget_RelatedGroups.xhtml
    ==============================================================*/
-   
+#widgetRelatedGroups {}
+
 .widget-related-groups {
 	&__series {
     	h3 {
@@ -21,7 +22,7 @@
 				}
 			}
     	}
-	} 
+	}
 	&__list {
     	h3 {} 
 		a {
@@ -29,21 +30,16 @@
 			&:hover,
 			&:focus,
 			&:active {
-			text-decoration: none;
-			color: @ci-color1;
-			&:hover,
-			&:active {
-			color: @black;
-			text-decoration: underline;
+				text-decoration: underline;
+				color: @black;
 			}
-			}
+		}
 		ul {
 			padding: 1rem 1.5rem;
 			margin-bottom: 20px;
 			border: 1px solid @ci-color1;
 			}
 		}
-	}
 	&__anchor {
     	h3 {
     		background-color: transparent;
