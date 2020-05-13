@@ -2284,52 +2284,6 @@ table,
    Widget RelatedGroups
    style declarations for widget_RelatedGroups.xhtml
    ==============================================================*/
-.widget-related-groups__series h3 {
-  background-color: transparent;
-  background-color: #3365a9;
-  border: 1px solid #3365a9;
-}
-.widget-related-groups__series h3 a {
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 0;
-}
-.widget-related-groups__series h3 a:hover,
-.widget-related-groups__series h3 a:focus,
-.widget-related-groups__series h3 a:active {
-  text-decoration: none;
-  color: #fff;
-}
-.widget-related-groups__list a {
-  color: #3365a9;
-}
-.widget-related-groups__list a:hover,
-.widget-related-groups__list a:focus,
-.widget-related-groups__list a:active {
-  text-decoration: underline;
-  color: #1a1a1a;
-}
-.widget-related-groups__list ul {
-  padding: 1rem 1.5rem;
-  margin-bottom: 20px;
-  border: 1px solid #3365a9;
-}
-.widget-related-groups__anchor h3 {
-  background-color: transparent;
-  background-color: #3365a9;
-  border: 1px solid #3365a9;
-}
-.widget-related-groups__anchor h3 a {
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 0;
-}
-.widget-related-groups__anchor h3 a:hover,
-.widget-related-groups__anchor h3 a:focus,
-.widget-related-groups__anchor h3 a:active {
-  text-decoration: none;
-  color: #fff;
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
