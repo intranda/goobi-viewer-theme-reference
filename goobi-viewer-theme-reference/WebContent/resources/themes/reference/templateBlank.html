@@ -27,15 +27,15 @@
         <meta name="robots" content="noindex" />
     </ui:fragment>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
-    <ui:insert name="head" />
-    
+
     <!-- TWITTER CARD / OPENGRAPH -->
     <ui:include src="/resources/includes/embed/twittercard.xhtml" />
     <ui:include src="/resources/includes/embed/opengraph.xhtml" />
 
     <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />intranda GmbH</title>
     
+    <ui:insert name="head" />
+
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
     
