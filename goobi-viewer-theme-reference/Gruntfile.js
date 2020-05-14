@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         	jsDevFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dev/',
             jsDistFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dist/',
             lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/cs/',
-            lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/viewer/',
+            lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/',
             lessSubThemeOneFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
             lessSubThemeTwoFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeTwo%>/',
             cssDevFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dev/',
