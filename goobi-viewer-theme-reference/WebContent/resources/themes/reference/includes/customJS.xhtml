@@ -43,6 +43,10 @@
     	// init cms module functions
     	cmsJS.modules.init();
     	
+    	// reset global bootstrap boundary of tooltips to window
+    	$.fn.tooltip.Constructor.Default.boundary = "window";
+		$.fn.dropdown.Constructor.Default.boundary = "window";
+    
     </script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
      <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js"></script>
