@@ -958,12 +958,12 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   ePub
-   style declarations for ePub.xhtml
+   born-digital
+   style declarations for bornDigital.xhtml
    ==============================================================*/
-/* EPUB */
+/* BORN-DIGITAL */
 /* BLOCK */
-.e-pub {
+.born-digital {
   /* ELEMENT */
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -2036,6 +2036,7 @@ table,
   /* AUDIO */
   /* TEXT */
 }
+.view-object__object-3d,
 .view-object__image {
   padding: 10px;
   border: 1px solid #d5d5d5;
@@ -2280,76 +2281,9 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Widget Convolutes
-   style declarations for widget_convolutes.xhtml
+   Widget RelatedGroups
+   style declarations for widget_RelatedGroups.xhtml
    ==============================================================*/
-.widget-convolutes {
-  margin-bottom: 0;
-}
-.widget-convolutes__series h3 {
-  background-color: transparent;
-}
-.widget-convolutes__series ul {
-  padding: 0;
-  background-color: #3365a9;
-  border: 1px solid #3365a9;
-}
-.widget-convolutes__series ul a {
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 0;
-}
-.widget-convolutes__series ul a:hover,
-.widget-convolutes__series ul a:focus,
-.widget-convolutes__series ul a:active {
-  text-decoration: none;
-  color: #fff;
-}
-.widget-convolutes__list a {
-  color: #3365a9;
-}
-.widget-convolutes__list a:hover,
-.widget-convolutes__list a:focus,
-.widget-convolutes__list a:active {
-  text-decoration: none;
-  color: #3365a9;
-}
-.widget-convolutes__list a:hover:hover,
-.widget-convolutes__list a:focus:hover,
-.widget-convolutes__list a:active:hover,
-.widget-convolutes__list a:hover:active,
-.widget-convolutes__list a:focus:active,
-.widget-convolutes__list a:active:active {
-  color: #1a1a1a;
-  text-decoration: underline;
-}
-.widget-convolutes__list a ul {
-  padding: 1rem 1.5rem;
-  margin-bottom: 20px;
-  border: 1px solid #3365a9;
-}
-.widget-convolutes__anchor {
-  margin-bottom: 20px;
-}
-.widget-convolutes__anchor h3 {
-  background-color: transparent;
-}
-.widget-convolutes__anchor ul {
-  padding: 0;
-  background-color: #3365a9;
-  border: 1px solid #3365a9;
-}
-.widget-convolutes__anchor ul a {
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 0;
-}
-.widget-convolutes__anchor ul a:hover,
-.widget-convolutes__anchor ul a:focus,
-.widget-convolutes__anchor ul a:active {
-  text-decoration: none;
-  color: #fff;
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -3222,17 +3156,9 @@ table,
 .tpl-faq {
   /* ELEMENT */
 }
-.tpl-faq__description,
-.tpl-faq__list {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-}
-.tpl-faq__description {
-  position: relative;
-  top: 1px;
-  margin-bottom: 0;
-  border-bottom: 0;
+.tpl-faq__list .panel-body .tpl-faq-single__content {
+  padding: 0;
+  border: none;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -3246,11 +3172,6 @@ table,
 /* BLOCK */
 .tpl-faq-single {
   /* ELEMENT */
-}
-.tpl-faq-single__text {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */

@@ -1,22 +1,25 @@
 /* ==============================================================
-   CMS Template "FAQ Single"
-   style declarations for cms_template_22_faqSingle.xhtml
+   born-digital
+   style declarations for bornDigital.xhtml
    ==============================================================*/
-/* FAQ SINGLE */
+/* BORN-DIGITAL */
 /* BLOCK */
-.tpl-faq-single {
-    /* ELEMENT */
-    h2 {}
-    &__content {
-
-    } 
-    &__text {
-
-    }
+.born-digital {
+	/* ELEMENT */
+	h3 {}
+	p {}
+	&__items {}
+	&__item {
+		&:before,
+		&:after {}
+		&:before {}
+		&:after {}
+	}
+	&__item-order-label {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

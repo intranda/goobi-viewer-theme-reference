@@ -9,15 +9,8 @@
 	h1 {}
 	&__description,
 	&__list {
-		padding: 10px;
-		border: 1px solid @middlegray;
-		background-color: @white;
 	}
 	&__description {
-		position: relative;
-		top: 1px;
-		margin-bottom: 0;
-		border-bottom: 0;
 	}
 	&__list {
 		.panel {}
@@ -35,6 +28,14 @@
 				&.collapsed {
 					.fa-chevron-down {}
 					.fa-chevron-up {}
+				}
+			}
+		}
+		.panel-body {
+			.tpl-faq-single {
+				&__content {
+					padding: 0;
+					border: none;
 				}
 			}
 		}
