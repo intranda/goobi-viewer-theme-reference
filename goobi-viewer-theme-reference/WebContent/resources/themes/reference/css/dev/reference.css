@@ -3113,7 +3113,7 @@ table,
   background-color: #fff;
 }
 #feedback {
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   padding-left: 20px;
   border: 1px solid #d5d5d5;
   background-color: #fff;
