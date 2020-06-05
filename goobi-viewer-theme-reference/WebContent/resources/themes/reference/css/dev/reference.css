@@ -24,87 +24,71 @@
    Theme Fonts
    ==============================================================*/
 /* ==============================================================
-   General Styling
+   LESS Mixins
    ==============================================================*/
-html {
-  font-size: 62.5%;
+/* CLEARFLOATS */
+.mx-clearfloats:before,
+.mx-clearfloats:after {
+  content: " ";
+  display: table;
 }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.4rem;
-  font-feature-settings: "kern" 1;
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f2f3f4;
+.mx-clearfloats:after {
+  clear: both;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 600;
+/* BACKGROUND IMAGE */
+/* CSS TRIANGLE */
+/* HIDDEN */
+.mx-visible {
+  display: block !important;
+  visibility: visible !important;
 }
-h1,
-.h1 {
-  font-size: 3.2rem;
+/* HIDDEN */
+.mx-hidden {
+  display: none !important;
+  visibility: hidden !important;
 }
-h2,
-.h2 {
-  font-size: 2.8rem;
+/* VISUALLY HIDDEN */
+.mx-v-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  overflow: hidden;
 }
-h3,
-.h3 {
-  font-size: 2.1rem;
+/* GRID */
+/* LIST RESET */
+.mx-list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-h4,
-.h4 {
-  font-size: 1.8rem;
+/* ==============================================================
+   Print CSS
+   style declarations for print views
+   ==============================================================*/
+@media print {
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:link:after {
+    content: "";
+  }
+  abbr[title]:after {
+    content: "";
+  }
 }
-h5,
-h6,
-.h5,
-.h6 {
-  font-size: 1.6rem;
-}
-p {
-  margin-bottom: 2rem;
-  letter-spacing: .05rem;
-}
-pre {
-  margin-bottom: 2rem;
-}
-ul,
-ol {
-  padding-left: 4rem;
-  margin-bottom: 2rem;
-}
-a {
-  color: #3365a9;
-}
-a:hover,
-a:active,
-a:focus {
-  color: #444;
-}
-small {
-  font-size: 1.2rem;
-}
-table,
-.table {
-  width: 100%;
-  margin-bottom: 2rem;
+/* ==============================================================
+   Resets for CSS Libs
+   ==============================================================*/
+/* BOOTSTRAP */
+/* TABS */
+/* FORMS */
+/* MODALS */
+.modal {
+  z-index: 9999;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -550,71 +534,87 @@ table,
   }
 }
 /* ==============================================================
-   LESS Mixins
+   General Styling
    ==============================================================*/
-/* CLEARFLOATS */
-.mx-clearfloats:before,
-.mx-clearfloats:after {
-  content: " ";
-  display: table;
+html {
+  font-size: 62.5%;
 }
-.mx-clearfloats:after {
-  clear: both;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.4rem;
+  font-feature-settings: "kern" 1;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f2f3f4;
 }
-/* BACKGROUND IMAGE */
-/* CSS TRIANGLE */
-/* HIDDEN */
-.mx-visible {
-  display: block !important;
-  visibility: visible !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
-/* HIDDEN */
-.mx-hidden {
-  display: none !important;
-  visibility: hidden !important;
+h1,
+.h1 {
+  font-size: 3.2rem;
 }
-/* VISUALLY HIDDEN */
-.mx-v-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  overflow: hidden;
+h2,
+.h2 {
+  font-size: 2.8rem;
 }
-/* GRID */
-/* LIST RESET */
-.mx-list-reset {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+h3,
+.h3 {
+  font-size: 2.1rem;
 }
-/* ==============================================================
-   Print CSS
-   style declarations for print views
-   ==============================================================*/
-@media print {
-  a,
-  a:visited {
-    color: #444 !important;
-    text-decoration: underline;
-  }
-  a:link:after {
-    content: "";
-  }
-  abbr[title]:after {
-    content: "";
-  }
+h4,
+.h4 {
+  font-size: 1.8rem;
 }
-/* ==============================================================
-   Resets for CSS Libs
-   ==============================================================*/
-/* BOOTSTRAP */
-/* TABS */
-/* FORMS */
-/* MODALS */
-.modal {
-  z-index: 9999;
+h5,
+h6,
+.h5,
+.h6 {
+  font-size: 1.6rem;
+}
+p {
+  margin-bottom: 2rem;
+  letter-spacing: .05rem;
+}
+pre {
+  margin-bottom: 2rem;
+}
+ul,
+ol {
+  padding-left: 4rem;
+  margin-bottom: 2rem;
+}
+a {
+  color: #3365a9;
+}
+a:hover,
+a:active,
+a:focus {
+  color: #444;
+}
+small {
+  font-size: 1.2rem;
+}
+table,
+.table {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -2281,76 +2281,9 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
-   Widget Convolutes
-   style declarations for widget_convolutes.xhtml
+   Widget RelatedGroups
+   style declarations for widget_RelatedGroups.xhtml
    ==============================================================*/
-.widget-convolutes {
-  margin-bottom: 0;
-}
-.widget-convolutes__series h3 {
-  background-color: transparent;
-}
-.widget-convolutes__series ul {
-  padding: 0;
-  background-color: #3365a9;
-  border: 1px solid #3365a9;
-}
-.widget-convolutes__series ul a {
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 0;
-}
-.widget-convolutes__series ul a:hover,
-.widget-convolutes__series ul a:focus,
-.widget-convolutes__series ul a:active {
-  text-decoration: none;
-  color: #fff;
-}
-.widget-convolutes__list a {
-  color: #3365a9;
-}
-.widget-convolutes__list a:hover,
-.widget-convolutes__list a:focus,
-.widget-convolutes__list a:active {
-  text-decoration: none;
-  color: #3365a9;
-}
-.widget-convolutes__list a:hover:hover,
-.widget-convolutes__list a:focus:hover,
-.widget-convolutes__list a:active:hover,
-.widget-convolutes__list a:hover:active,
-.widget-convolutes__list a:focus:active,
-.widget-convolutes__list a:active:active {
-  color: #1a1a1a;
-  text-decoration: underline;
-}
-.widget-convolutes__list a ul {
-  padding: 1rem 1.5rem;
-  margin-bottom: 20px;
-  border: 1px solid #3365a9;
-}
-.widget-convolutes__anchor {
-  margin-bottom: 20px;
-}
-.widget-convolutes__anchor h3 {
-  background-color: transparent;
-}
-.widget-convolutes__anchor ul {
-  padding: 0;
-  background-color: #3365a9;
-  border: 1px solid #3365a9;
-}
-.widget-convolutes__anchor ul a {
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 0;
-}
-.widget-convolutes__anchor ul a:hover,
-.widget-convolutes__anchor ul a:focus,
-.widget-convolutes__anchor ul a:active {
-  text-decoration: none;
-  color: #fff;
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
 /* BREAKPOINT FOR TABLETS */
@@ -3180,7 +3113,7 @@ table,
   background-color: #fff;
 }
 #feedback {
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   padding-left: 20px;
   border: 1px solid #d5d5d5;
   background-color: #fff;
