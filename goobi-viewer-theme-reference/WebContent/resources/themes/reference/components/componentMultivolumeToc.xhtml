@@ -39,7 +39,7 @@
 										</h:panelGroup>
 
 										<div class="row">
-											<div class="col-xs-12 col-sm-8 col-md-9">
+											<div class="col-12 col-sm-8 col-md-9">
 												<!-- MV TITLE -->
 												<h:panelGroup rendered="#{tocElement.label != null and tocElement.pageNo != null}">
 													<div class="toc__mv-element-title">
@@ -47,7 +47,7 @@
 													</div>
 												</h:panelGroup>
 											</div>
-											<div class="col-xs-6 col-sm-2">
+											<div class="col-6 col-sm-2">
 												<!-- MV GROUPLINK -->
 												<h:panelGroup rendered="#{activeDocumentBean.anchor and fn:length(tocElement.groupIds) > 0}">
 													<div class="toc__mv-element-link text-right">
@@ -59,7 +59,7 @@
 													</div>
 												</h:panelGroup>
 											</div>
-											<div class="col-xs-6 col-sm-2 col-md-1">
+											<div class="col-6 col-sm-2 col-md-1">
 												<!-- MV IMAGE -->
 												<div class="toc__mv-element-img text-center">
 													<h:outputLink rendered="#{tocElement.thumbnailUrl != null and configurationBean.showThumbnailsInToc()}" value="#{tocElement.url}">
@@ -82,7 +82,7 @@
 										</h:panelGroup>
 
 										<div class="row">
-											<div class="col-xs-6 col-sm-8 col-md-9">
+											<div class="col-6 col-sm-8 col-md-9">
 												<!-- MV TITLE -->
 												<h:panelGroup rendered="#{tocElement.label != null and tocElement.pageNo != null}">
 													<div class="toc__mv-element-title">
@@ -90,7 +90,7 @@
 													</div>
 												</h:panelGroup>
 											</div>
-											<div class="col-xs-6 col-sm-2">
+											<div class="col-6 col-sm-2">
 												<!-- MV GROUPLINK -->
 												<h:panelGroup rendered="#{fn:length(tocElement.groupIds) > 0}">
 													<div class="toc__mv-element-link text-right">
@@ -102,7 +102,7 @@
 													</div>
 												</h:panelGroup>
 											</div>
-											<div class="col-xs-6 col-sm-2 col-md-1">
+											<div class="col-6 col-sm-2 col-md-1">
 												<!-- MV IMAGE -->
 												<div class="toc__mv-element-img text-center">
 													<h:outputLink rendered="#{tocElement.thumbnailUrl != null and configurationBean.showThumbnailsInToc()}" value="#{tocElement.url}">
