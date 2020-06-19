@@ -2587,28 +2587,28 @@ table,
   /* PAGE DOWNLOADS */
   /* CITE LINKS */
 }
-.widget-usage__work-downloads .label-default,
-.widget-usage__struct-downloads .label-default,
-.widget-usage__page-downloads .label-default,
-.widget-usage__image-fragment .label-default,
-.widget-usage__citelinks .label-default {
+.widget-usage__work-downloads .badge-dark,
+.widget-usage__struct-downloads .badge-dark,
+.widget-usage__page-downloads .badge-dark,
+.widget-usage__image-fragment .badge-dark,
+.widget-usage__citelinks .badge-dark {
   padding: .3rem .5rem;
 }
-.widget-usage__work-downloads .label-default:hover,
-.widget-usage__struct-downloads .label-default:hover,
-.widget-usage__page-downloads .label-default:hover,
-.widget-usage__image-fragment .label-default:hover,
-.widget-usage__citelinks .label-default:hover,
-.widget-usage__work-downloads .label-default:active,
-.widget-usage__struct-downloads .label-default:active,
-.widget-usage__page-downloads .label-default:active,
-.widget-usage__image-fragment .label-default:active,
-.widget-usage__citelinks .label-default:active,
-.widget-usage__work-downloads .label-default:focus,
-.widget-usage__struct-downloads .label-default:focus,
-.widget-usage__page-downloads .label-default:focus,
-.widget-usage__image-fragment .label-default:focus,
-.widget-usage__citelinks .label-default:focus {
+.widget-usage__work-downloads .badge-dark:hover,
+.widget-usage__struct-downloads .badge-dark:hover,
+.widget-usage__page-downloads .badge-dark:hover,
+.widget-usage__image-fragment .badge-dark:hover,
+.widget-usage__citelinks .badge-dark:hover,
+.widget-usage__work-downloads .badge-dark:active,
+.widget-usage__struct-downloads .badge-dark:active,
+.widget-usage__page-downloads .badge-dark:active,
+.widget-usage__image-fragment .badge-dark:active,
+.widget-usage__citelinks .badge-dark:active,
+.widget-usage__work-downloads .badge-dark:focus,
+.widget-usage__struct-downloads .badge-dark:focus,
+.widget-usage__page-downloads .badge-dark:focus,
+.widget-usage__image-fragment .badge-dark:focus,
+.widget-usage__citelinks .badge-dark:focus {
   color: #fff;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -3148,7 +3148,7 @@ table,
 .tpl-faq {
   /* ELEMENT */
 }
-.tpl-faq__list .panel-body .tpl-faq-single__content {
+.tpl-faq__list .card-body .tpl-faq-single__content {
   padding: 0;
   border: none;
 }
@@ -3164,6 +3164,9 @@ table,
 /* BLOCK */
 .tpl-faq-single {
   /* ELEMENT */
+}
+.tpl-faq-single__text span p {
+  margin-bottom: 0;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
