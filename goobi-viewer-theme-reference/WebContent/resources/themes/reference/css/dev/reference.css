@@ -2942,19 +2942,12 @@ table,
   /* ELEMENT */
 }
 .tpl-single-collection__description {
-  margin-bottom: 0;
   color: #1a1a1a;
   border: 1px solid #d5d5d5;
   border-top: 0;
-  border-bottom: 0;
   background-color: #fff;
 }
 .tpl-single-collection .search-list {
-  padding: 10px;
-  /* Is this needed?
-	  * border: 1px solid @middlegray;
-    	border-top: 0; */
-  background-color: #fff;
   /* OPTIONS */
 }
 /* MODIFICATION */
