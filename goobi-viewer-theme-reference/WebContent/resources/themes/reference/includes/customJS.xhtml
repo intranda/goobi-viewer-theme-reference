@@ -28,6 +28,7 @@
     			msg: {
             		fileNotFound: "#{msg.noImage_fileNotFound}"
             	},
+                // set standard open panel for sidebar in fullscreen mode, openPanel: "none" for all panels closed
             	openPanel: "panel-1",
             	persistentIdentifier: "#{activeDocumentBean.topDocumentIddoc}"
             };
@@ -42,10 +43,6 @@
     	
     	// init cms module functions
     	cmsJS.modules.init();
-    	
-    	// reset global bootstrap boundary of tooltips to window
-    	$.fn.tooltip.Constructor.Default.boundary = "window";
-		$.fn.dropdown.Constructor.Default.boundary = "window";
     
     </script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>

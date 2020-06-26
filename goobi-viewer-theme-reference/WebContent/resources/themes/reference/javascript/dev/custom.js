@@ -101,7 +101,3 @@ $( document ).ready( function() {
     // mobile view manipulations
     if (window.matchMedia('(max-width: 768px)').matches) { }
 } );
-
-	//reset global bootstrap boundary of tooltips to window
-	$.fn.tooltip.Constructor.Default.boundary = "window";
-	$.fn.dropdown.Constructor.Default.boundary = "window";
