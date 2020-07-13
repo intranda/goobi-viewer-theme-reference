@@ -2364,11 +2364,15 @@ table,
    Widget Custom
    style declarations for widget_custom.xhtml
    ==============================================================*/
-#widgetCustom span {
-  padding: 10px;
+.widget-custom a {
+  display: inline;
+}
+.widget-custom > span {
+  padding: 1rem 1.5rem;
   border: 1px solid #d5d5d5;
   border-top: none;
   background-color: #fff;
+  display: block;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
