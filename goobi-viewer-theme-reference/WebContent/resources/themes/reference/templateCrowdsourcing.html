@@ -49,7 +49,7 @@
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
     <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
     
-    <!-- JAVASCRIPT -->   
+    <!-- JAVASCRIPT LIBS -->   
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js"></script>
@@ -57,11 +57,13 @@
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/riot/riot.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${buildNumber}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/openseadragon/openseadragon.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/openseadragon/openseadragon-viewerinputhook.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/imageView.min.js?${buildNumber}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${buildNumber}"></script>
+    <!-- JAVASCRIPT DIST FILES -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/imageView.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>
+
 </h:head>
 
 <ui:insert name="metadata" />
