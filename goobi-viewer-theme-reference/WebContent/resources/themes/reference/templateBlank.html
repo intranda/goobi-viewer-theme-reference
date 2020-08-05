@@ -55,23 +55,24 @@
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome.min.css" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${buildNumber}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${buildNumber}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/extra-markers/leaflet.extra-markers.min.css?${buildNumber}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/extra-markers/leaflet.extra-markers.min.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/markercluster/MarkerCluster.css?${navigationHelper.buildVersion}" />
 
 	<!-- CUSTOM CSS -->
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${buildNumber}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${navigationHelper.buildVersion}" />
     
     <!-- SUBTHEME CSS -->
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${buildNumber}" />
+        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
     
     <!-- FORCES PRIMEFACES TO INCLUDE JQUERY & JQUERY-UI -->
     <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
     <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
     
-    <!-- JAVASCRIPT -->   
+    <!-- JAVASCRIPT LIBS -->   
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/datatables.min.js"></script>
@@ -82,12 +83,14 @@
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/pdfjs/pdf.js"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/riot/riot.min.js"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/browsersupport.min.js?${buildNumber}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${buildNumber}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${buildNumber}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/leaflet.js"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/extra-markers/leaflet.extra-markers.min.js"></script>
-	
+	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/markercluster/leaflet.markercluster.js"></script>
+	<!-- JAVASCRIPT DIST FILES -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/browsersupport.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>	
+
 </h:head>
 
 <ui:insert name="metadata" />

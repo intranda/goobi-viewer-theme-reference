@@ -1225,6 +1225,78 @@ table,
 /* BREAKPOINT FOR TABLETS */
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
+   style declarations for sidebarMenu component
+   ==============================================================*/
+.sidebar-menu button,
+.sidebar-menu a {
+  color: white;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px 14px;
+  padding-bottom: 0;
+}
+.sidebar-menu button:hover,
+.sidebar-menu a:hover,
+.sidebar-menu button:focus,
+.sidebar-menu a:focus,
+.sidebar-menu button:active,
+.sidebar-menu a:active {
+  color: white;
+}
+.sidebar-menu li {
+  background: #3365a9;
+}
+.sidebar-menu span {
+  border-bottom: 1px dotted rgba(218, 218, 218, 0.4);
+  display: block;
+  padding-bottom: 1.4rem;
+  padding-left: 1.4rem;
+}
+.sidebar-menu__submenu {
+  font-size: 1.6rem;
+}
+.sidebar-menu__submenu li {
+  background: #eee;
+  padding-bottom: 0;
+  color: black;
+}
+.sidebar-menu__submenu li:hover,
+.sidebar-menu__submenu li:focus,
+.sidebar-menu__submenu li:active {
+  background: #3365a9;
+  color: white;
+}
+.sidebar-menu__submenu li:hover a,
+.sidebar-menu__submenu li:focus a,
+.sidebar-menu__submenu li:active a {
+  color: white;
+}
+.sidebar-menu__submenu li:last-of-type span {
+  border-bottom: none;
+}
+.sidebar-menu__submenu a {
+  padding: 10px 20px 14px;
+  padding-bottom: 0;
+  color: black;
+}
+.sidebar-menu__submenu a:hover,
+.sidebar-menu__submenu a:focus,
+.sidebar-menu__submenu a:active {
+  color: white;
+  background: transparent;
+}
+.sidebar-menu__submenu span {
+  border-bottom: 1px dotted #666;
+  padding-left: 2.6rem;
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+}
+/* BREAKPOINT FOR LARGE DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR SMARTPHONES */
+/* ==============================================================
    Simple (Numeric) Paginator
    style declarations for simplePaginator.xhtml
    ==============================================================*/
@@ -2292,11 +2364,15 @@ table,
    Widget Custom
    style declarations for widget_custom.xhtml
    ==============================================================*/
-#widgetCustom span {
-  padding: 10px;
+.widget-custom a {
+  display: inline;
+}
+.widget-custom > span {
+  padding: 1rem 1.5rem;
   border: 1px solid #d5d5d5;
   border-top: none;
   background-color: #fff;
+  display: block;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
@@ -3008,12 +3084,6 @@ table,
 .tpl-stacked-collection {
   /* ELEMENT */
 }
-.tpl-stacked-collection__text,
-.tpl-stacked-collection__collections {
-  padding: 10px;
-  border: 1px solid #d5d5d5;
-  background-color: #fff;
-}
 .tpl-stacked-collection__text {
   margin-bottom: 0;
   border-bottom: 0;
@@ -3289,7 +3359,7 @@ table,
 /* BREAKPOINT FOR SMARTPHONES */
 /* ==============================================================
    CMS Template "Overview Page Legacy"
-   style declarations for cms_template_25_overviewPage.xhtml
+   style declarations for cms_template_26_overviewPageLegacy.xhtml
    ==============================================================*/
 /* OVERVIEW PAGE LEGACY */
 .tpl-overviewpage-legacy {
