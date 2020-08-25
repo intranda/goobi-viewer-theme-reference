@@ -3155,6 +3155,10 @@ table,
    ==============================================================*/
 /* TPL FEEDBACK */
 /* BLOCK */
+.view-feedback {
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
 .tpl-feedback {
   /* ELEMENT */
   /* MODIFICATION */
@@ -3166,12 +3170,6 @@ table,
   margin-bottom: 0;
   border: 1px solid #d5d5d5;
   border-bottom: 0;
-  background-color: #fff;
-}
-#feedback {
-  padding: 10px 10px 0 10px;
-  padding-left: 20px;
-  border: 1px solid #d5d5d5;
   background-color: #fff;
 }
 /* BREAKPOINT FOR LATGE DESKTOPS */
