@@ -5,6 +5,25 @@
 /* METADATA */
 /* BLOCK */
 .metadata {
+	&__title-wrapper {}
+	&__title {}
+    &__bookmark-button {
+    	&[data-bookmark-list-type="add"] {
+		    color: @ci-color1;
+		    font-size: 2rem;
+		    .fa-bookmark-o,
+		    .fa-bookmark {
+		        color: @ci-color1;
+		    }
+		    .fa-bookmark-o {}
+		    .fa-bookmark {}
+		    &.added, 
+		    &:hover {
+		        .fa-bookmark-o {}
+		        .fa-bookmark {}
+		    }
+		}
+	}
     .fa {}
 	/* ELEMENTS / EVENTS */
 	&__elements,

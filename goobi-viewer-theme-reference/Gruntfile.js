@@ -5,7 +5,7 @@ let config = JSON.parse(rawdata);
 
 function getTomcatDir() {
 	return config.tomcat_dir;
-} 
+}
 
 module.exports = function(grunt) {
 	// ---------- PROJECT CONFIG ----------
