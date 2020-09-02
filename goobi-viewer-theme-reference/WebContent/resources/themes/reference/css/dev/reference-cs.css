@@ -11,6 +11,76 @@
    Theme Fonts
    ==============================================================*/
 /* ==============================================================
+   LESS Mixins
+   ==============================================================*/
+/* CLEARFLOATS */
+.mx-clearfloats:before,
+.mx-clearfloats:after {
+  content: " ";
+  display: table;
+}
+.mx-clearfloats:after {
+  clear: both;
+}
+/* BACKGROUND IMAGE */
+/* CSS TRIANGLE */
+/* HIDDEN */
+.mx-visible {
+  display: block !important;
+  visibility: visible !important;
+}
+/* HIDDEN */
+.mx-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* VISUALLY HIDDEN */
+.mx-v-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* GRID */
+/* LIST RESET */
+.mx-list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* ==============================================================
+   Print CSS
+   style declarations for print views
+   ==============================================================*/
+@media print {
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:link:after {
+    content: "";
+  }
+  abbr[title]:after {
+    content: "";
+  }
+}
+/* ==============================================================
+   Variables
+   ==============================================================*/
+/* FONTS */
+/* BASIC COLORS */
+/* CI COLORS */
+/* MESSAGE COLORS */
+/* BUTTON COLORS */
+/* STATISTICS */
+/* NER COLORS */
+/* READING MODE COLORS */
+/* CROWDSOURCING COLORS */
+/* MEDIA QUERY BREAK POINTS */
+/* ==============================================================
    General Styling
    ==============================================================*/
 html {
@@ -536,76 +606,6 @@ table,
     right: calc(80% + 1.5rem);
   }
 }
-/* ==============================================================
-   LESS Mixins
-   ==============================================================*/
-/* CLEARFLOATS */
-.mx-clearfloats:before,
-.mx-clearfloats:after {
-  content: " ";
-  display: table;
-}
-.mx-clearfloats:after {
-  clear: both;
-}
-/* BACKGROUND IMAGE */
-/* CSS TRIANGLE */
-/* HIDDEN */
-.mx-visible {
-  display: block !important;
-  visibility: visible !important;
-}
-/* HIDDEN */
-.mx-hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-/* VISUALLY HIDDEN */
-.mx-v-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  overflow: hidden;
-}
-/* GRID */
-/* LIST RESET */
-.mx-list-reset {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-/* ==============================================================
-   Print CSS
-   style declarations for print views
-   ==============================================================*/
-@media print {
-  a,
-  a:visited {
-    color: #444 !important;
-    text-decoration: underline;
-  }
-  a:link:after {
-    content: "";
-  }
-  abbr[title]:after {
-    content: "";
-  }
-}
-/* ==============================================================
-   Variables
-   ==============================================================*/
-/* FONTS */
-/* BASIC COLORS */
-/* CI COLORS */
-/* MESSAGE COLORS */
-/* BUTTON COLORS */
-/* STATISTICS */
-/* NER COLORS */
-/* READING MODE COLORS */
-/* CROWDSOURCING COLORS */
-/* MEDIA QUERY BREAK POINTS */
 /* VIEWER COMPONENTS */
 /* ==============================================================
    viewer Controls
