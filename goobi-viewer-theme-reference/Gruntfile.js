@@ -5,7 +5,7 @@ let config = JSON.parse(rawdata);
 
 function getTomcatDir() {
 	return config.tomcat_dir;
-} 
+}
 
 module.exports = function(grunt) {
 	// ---------- PROJECT CONFIG ----------
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         src: {
         	jsDevFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dev/',
             jsDistFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dist/',
-            lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/cs/',
+            lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/crowdsourcing/',
             lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/',
             lessSubThemeOneFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
             lessSubThemeTwoFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeTwo%>/',
@@ -111,10 +111,11 @@ module.exports = function(grunt) {
     
 	// ---------- LOAD TASKS ----------
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-sync');
     
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
     grunt.registerTask( 'default', [ 'watch', 'sync' ] );
 };
+

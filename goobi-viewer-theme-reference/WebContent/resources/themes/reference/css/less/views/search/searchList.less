@@ -110,14 +110,37 @@
     }
     &__hit-thumbnail {
         img {}
+        [data-bookmark-list-type="add"] {
+        	color: @ci-color1;
 		    .fa-bookmark-o,
-		    .fa-bookmark {}
-		    &.added,
-		    &:hover {
-		    	.fa-bookmark-o,
-			    .fa-bookmark {}
+		    .fa-bookmark {
+		    	color: @ci-color1;
 		    }
+		    .fa-bookmark-o {}
+		    .fa-bookmark {}
+		    &.added, 
+		    &:hover {
+		        .fa-bookmark-o {}
+		        .fa-bookmark {}
+		    }
+		}
     }
+	&__no-thumb-bookmark {
+    	&[data-bookmark-list-type="add"] {
+		    color: @ci-color1;
+		    .fa-bookmark-o,
+		    .fa-bookmark {
+		        color: @ci-color1;
+		    }
+		    .fa-bookmark-o {}
+		    .fa-bookmark {}
+		    &.added, 
+		    &:hover {
+		        .fa-bookmark-o {}
+		        .fa-bookmark {}
+		    }
+		}
+    }    
     &__hit-type {}
     &__hit-docstruct {
     	font-size: @fontSmall;
