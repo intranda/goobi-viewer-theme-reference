@@ -1711,6 +1711,13 @@ table,
 .search-list__hit-title h4 {
   font-size: 1.6rem;
 }
+.search-list__no-thumb-bookmark[data-bookmark-list-type="add"] {
+  color: #3365a9;
+}
+.search-list__no-thumb-bookmark[data-bookmark-list-type="add"] .fa-bookmark-o,
+.search-list__no-thumb-bookmark[data-bookmark-list-type="add"] .fa-bookmark {
+  color: #3365a9;
+}
 .search-list__hit-thumbnail [data-bookmark-list-type="add"] {
   color: #3365a9;
 }
