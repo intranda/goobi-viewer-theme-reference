@@ -123,11 +123,14 @@
 	                <ui:insert name="content" />
 	                
 				<viewerComponent:modalFeedbackForm />
-				<viewerComponent:modalUserLogin />
+				
+				
+				<viewerComponent:modalUserLogin id="loginComponent"/>
+				<viewerComponent:modalUserTerms />
 				
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">feedback</button>
     				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userLoginModal">login</button>
-    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Nutzungsbedingungen</button>
+    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userTermsModal">Nutzungsbedingungen</button>
     				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Merkliste</button>
     				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Download Modal über ITM</button>
     				
@@ -136,10 +139,8 @@
 	            		<h:panelGroup binding="#{dynamicBean.formGroup}"></h:panelGroup>
     				</div>
     				
-    				
-    				
-    				
-	                
+
+
 	            </main>
 	            
 	            <!-- SIDEBAR -->
@@ -225,7 +226,9 @@
 	</div>
     
     <!-- USER LOGIN -->
-    <ui:include src="/resources/includes/user/userLogin.xhtml" />
+
+    
+    <!-- OVERLAY FOR MAPS -->
     <ui:include src="/resources/includes/mapOverlay.xhtml" />
     
     <!-- IE 11 NOT SUPPORTED -->
