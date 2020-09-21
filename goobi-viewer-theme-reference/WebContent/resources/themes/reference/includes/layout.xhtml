@@ -121,6 +121,25 @@
 	            	<ui:insert name="breadcrumbs" />
 	            
 	                <ui:insert name="content" />
+	                
+				<viewerComponent:modalFeedbackForm />
+				<viewerComponent:modalUserLogin />
+				
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">feedback</button>
+    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userLoginModal">login</button>
+    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Nutzungsbedingungen</button>
+    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Merkliste</button>
+    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Download Modal über ITM</button>
+    				
+    				<div id="modal-overlay">
+	            		<h:commandButton action="#{dynamicBean.removeComponents()}"></h:commandButton>
+	            		<h:panelGroup binding="#{dynamicBean.formGroup}"></h:panelGroup>
+    				</div>
+    				
+    				
+    				
+    				
+	                
 	            </main>
 	            
 	            <!-- SIDEBAR -->
@@ -139,6 +158,10 @@
 				<button type="button" class="btn btn--clean" data-close="sidebar" aria-label="#{msg.aria_label__close_sidebar}">
 					<span></span>
 				</button>
+				
+				
+
+				
             </div>
         </div>
     </div>
@@ -203,7 +226,7 @@
     
     <!-- USER LOGIN -->
     <ui:include src="/resources/includes/user/userLogin.xhtml" />
-    <ui:include src="/resources/includes/overlay.xhtml" />
+    <ui:include src="/resources/includes/mapOverlay.xhtml" />
     
     <!-- IE 11 NOT SUPPORTED -->
     <div class="support-overlay">
