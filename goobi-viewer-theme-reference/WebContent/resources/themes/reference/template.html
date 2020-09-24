@@ -92,6 +92,26 @@
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>
 
+    <script>
+        <!-- TODO: Generic root URL + move to external file + include in other templates -->
+        var socket = null;
+        if (socket == null) {
+            if (window.location.protocol == "https:") {
+                socket = new WebSocket('wss://' + window.location.host + '/viewer/session.socket');
+            } else {
+                socket = new WebSocket('ws://' + window.location.host + '/viewer/session.socket');
+            }
+            
+        }
+        
+        function sendMessage(message) {
+            if (socket == null) {
+                return;
+            }
+        	socket.send(message);
+        }
+    </script>
+
 </h:head>
 
 <ui:insert name="metadata" />
