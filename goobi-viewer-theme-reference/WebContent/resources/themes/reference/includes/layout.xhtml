@@ -123,16 +123,16 @@
 	                <ui:insert name="content" />
 	                
 				<viewerComponent:modalFeedbackForm />
-				
-				
 				<viewerComponent:modalUserLogin id="loginComponent"/>
 				<viewerComponent:modalUserTerms />
-				
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">feedback</button>
-    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userLoginModal">login</button>
-    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userTermsModal">Nutzungsbedingungen</button>
-    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Merkliste</button>
-    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Download Modal über ITM</button>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">feedback</button>
+  				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userLoginModal">login</button>
+  				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userTermsModal">Nutzungsbedingungen</button>
+    				
+    				
+<!--     				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Merkliste</button> -->
+<!--     				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Download Modal über ITM</button> -->
     				
     				<div id="modal-overlay">
 	            		<h:commandButton action="#{dynamicBean.removeComponents()}"></h:commandButton>
@@ -255,7 +255,7 @@
 <!--     </div> -->
 
     <ui:include src="/resources/includes/overlay.xhtml" />
-    
+
     
     <!-- IE 11 NOT SUPPORTED -->
     <div class="support-overlay">
