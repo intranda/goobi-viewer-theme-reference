@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.2 http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.2.xsd">
    
     <!-- URL MAPPINGS -->
     <url-mapping id="index">
