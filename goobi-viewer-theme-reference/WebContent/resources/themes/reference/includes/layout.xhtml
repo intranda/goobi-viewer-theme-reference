@@ -121,15 +121,6 @@
 	            	<ui:insert name="breadcrumbs" />
 	            
 	                <ui:insert name="content" />
-	                
-				<viewerComponent:modalFeedbackForm />
-				<viewerComponent:modalUserLogin id="loginComponent"/>
-				<viewerComponent:modalUserTerms/>
-
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">feedback</button>
-  				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userLoginModal">login</button>
-  				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userTermsModal">Nutzungsbedingungen</button>
-
 	            </main>
 	            
 	            <!-- SIDEBAR -->
@@ -148,10 +139,6 @@
 				<button type="button" class="btn btn--clean" data-close="sidebar" aria-label="#{msg.aria_label__close_sidebar}">
 					<span></span>
 				</button>
-				
-				
-
-				
             </div>
         </div>
     </div>
@@ -214,34 +201,13 @@
 		</div>
 	</div>
 
-    
-<!--     <button id="openLogin">LOGIN</button> -->
-<!--     <div data-overlay="content" data-overlay-trigger="openLogin" data-overlay-closable="true"> -->
-<!-- 	    <ui:include src="/resources/includes/user/userLogin.xhtml" /> -->
-<!--     </div> -->
-    
-<!--     FEEDBACK -->
-<!--     <button id="openFeedback">FEEDBACK</button> -->
-<!--     <div data-overlay="content" data-overlay-trigger="openFeedback" data-overlay-closable="true" data-overlay-fullscreen="true"> -->
-<!-- 	    <viewerComponent:feedbackForm/> -->
-<!--     </div> -->
-    
-<!--      MODAL -->
-<!--     <button id="openModal">MODAL</button> -->
-<!--     <div data-overlay="content" data-overlay-trigger="openModal" data-overlay-closable="true" data-overlay-type="modal"> -->
-<!-- 	    <div data-overlay-content="header">Titel des Modals</div> -->
-<!-- 	    <div data-overlay-content="body"> -->
-<!-- 	    	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p> -->
-<!-- 	    </div> -->
-<!-- 	    <div data-overlay-content="footer"> -->
-<!-- 	    	<button type="button" class="btn btn-primary">Save changes</button> -->
-<!--         	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-<!-- 	    </div> -->
-<!--     </div> -->
-
+	<!--  GENERIC OVERLAY -->
     <ui:include src="/resources/includes/overlay.xhtml" />
 
-    
+    <!-- USER LOGIN + TERMS -->
+	<viewerComponent:modalUserLogin id="userLoginModal"/>
+	<viewerComponent:modalUserTerms id="userTermsModal"/>
+
     <!-- IE 11 NOT SUPPORTED -->
     <div class="support-overlay">
         <div class="support-overlay__box">
