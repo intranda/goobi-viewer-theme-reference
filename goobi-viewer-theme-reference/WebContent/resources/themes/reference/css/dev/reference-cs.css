@@ -187,7 +187,6 @@ table,
   /* BOTTOM */
 }
 .page-header__top-wrapper {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: #444;
@@ -322,7 +321,6 @@ table,
 }
 /* NAVIGATION */
 .page-navigation {
-  position: -webkit-sticky;
   position: sticky;
   top: 30px;
   z-index: 2010;
@@ -518,7 +516,6 @@ table,
     margin-left: auto;
   }
   .page-header__bottom-wrapper {
-    position: -webkit-sticky;
     position: sticky;
     top: 30px;
     z-index: 2010;
