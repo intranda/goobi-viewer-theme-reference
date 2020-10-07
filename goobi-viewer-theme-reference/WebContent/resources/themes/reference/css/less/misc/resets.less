@@ -28,18 +28,26 @@
 /* MODALS */
 .modal {
 	z-index: 9999;
-    .modal-dialog {
-        .modal-content {
-            .modal-header {
-                button {}
-                h4 {}
-            }
-            .modal-body {}
-            .modal-footer {
-                .btn {}
-            }
-        }
-    }
+}
+
+.modal.fade .modal-dialog {}
+
+.modal-open[style] {}
+
+.modal-backdrop.show {}
+
+.modal-backdrop {}
+
+.modal-header {
+	.fancy-close {
+		&:hover {}
+	}
+}
+
+.modal-body {}
+
+@media screen and (min-width: 576px) {
+	.modal-dialog {}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
