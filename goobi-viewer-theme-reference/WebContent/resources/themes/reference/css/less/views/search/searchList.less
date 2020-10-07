@@ -105,8 +105,25 @@
     &__hit-info {}
     &__hit-title {
         h4 {
-        	font-size: @fontNormal;
+			font-size: @fontNormal;
         }
+    	&.-noThumbnail {}
+    }
+    &__no-thumb-bookmark {
+    	&[data-bookmark-list-type="add"] {
+    			color: @ci-color1;
+		    .fa-bookmark-o,
+		    .fa-bookmark {
+		    	color: @ci-color1;
+		    }
+		    .fa-bookmark-o {}
+		    .fa-bookmark {}
+		    &.added, 
+		    &:hover {
+		        .fa-bookmark-o {}
+		        .fa-bookmark {}
+		    }
+		}
     }
     &__hit-thumbnail {
         img {}

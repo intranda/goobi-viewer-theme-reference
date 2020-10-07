@@ -200,11 +200,14 @@
 			</div>
 		</div>
 	</div>
-    
-    <!-- USER LOGIN -->
-    <ui:include src="/resources/includes/user/userLogin.xhtml" />
+
+	<!--  GENERIC OVERLAY -->
     <ui:include src="/resources/includes/overlay.xhtml" />
-    
+
+    <!-- USER LOGIN + TERMS -->
+	<viewerComponent:modalUserLogin id="userLoginModal"/>
+	<viewerComponent:modalUserTerms id="userTermsModal"/>
+
     <!-- IE 11 NOT SUPPORTED -->
     <div class="support-overlay">
         <div class="support-overlay__box">
