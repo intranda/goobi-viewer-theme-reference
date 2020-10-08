@@ -45,8 +45,8 @@
     	cmsJS.modules.init();
     
     </script>
-    <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js"></script>
-     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js"></script>
+    <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js?${navigationHelper.buildVersion}"></script>
+     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js?${navigationHelper.buildVersion}"></script>
     <script>
         // mount riot tags
         // riot.mount( '' );
