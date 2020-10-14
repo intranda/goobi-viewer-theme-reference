@@ -27,22 +27,26 @@
 			/* USER DROPDOWN */
 			&__user-dropdown {
 				top: calc(~"100% + 5px");
+				background-color: @middleblack;
 				ul {}
-				li {}
+				li {
+					border-bottom: none;
+				}
 			}
 			&__user-dropdown-item {
 				font-size: @fontMedium;
 				&:hover {
-					background-color: @lightgray;
+					background-color: #606060;
 				}
 			}
 			&__user-dropdown-item-icon {
 				.fa {
-					color: @ci-color1;
+					color: @white;
 				}
 			}
 			&__user-dropdown-item-string {
 				a {
+					color: @white;
 					&:hover,
 					&:active,
 					&:focus {}
