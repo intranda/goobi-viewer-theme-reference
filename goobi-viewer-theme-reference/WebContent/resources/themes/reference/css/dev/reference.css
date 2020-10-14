@@ -691,6 +691,7 @@ table,
   /* TOOGLE DROPDOWN */
   /* DROPDOWN */
   /* DROPDOWN LIST */
+  /* CSS OVERRIDE */
   /* DROPDOWN ACTIONS */
 }
 .bookmark-navigation__dropdown-wrapper > .btn {
@@ -701,23 +702,41 @@ table,
 }
 .bookmark-navigation__dropdown {
   top: calc(100% + 5px);
+  border: none;
+}
+.bookmark-navigation__dropdown-list {
+  background-color: #444;
 }
 .bookmark-navigation__dropdown-list li {
-  color: #1a1a1a;
+  border-bottom: none;
+  color: #fff;
 }
 .bookmark-navigation__dropdown-list li:hover {
-  background-color: #eee;
+  background-color: #606060;
 }
 .bookmark-navigation__dropdown-list a {
-  color: #1a1a1a;
+  color: #fff;
 }
 .bookmark-navigation__dropdown-list a:hover,
 .bookmark-navigation__dropdown-list a:active,
 .bookmark-navigation__dropdown-list a:focus {
-  color: #1a1a1a;
+  color: #fff;
 }
 .bookmark-navigation__dropdown-list-counter {
   background-color: #3365a9;
+}
+.bookmark-navigation__dropdown-title {
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /*! autoprefixer: on */
+}
+.bookmark-navigation .list a {
+  display: -webkit-box;
 }
 .bookmark-navigation__dropdown-list-remove {
   font-size: 1.4rem;
@@ -727,6 +746,16 @@ table,
 .bookmark-navigation__dropdown-list-remove:active,
 .bookmark-navigation__dropdown-list-remove:focus {
   color: #1a1a1a;
+}
+.bookmark-navigation__dropdown-list-actions {
+  background: #444;
+  border-top: none;
+}
+.bookmark-navigation__dropdown-list-reset,
+.bookmark-navigation__dropdown-list-send,
+.bookmark-navigation__dropdown-list-search,
+.bookmark-navigation__dropdown-list-mirador {
+  border-bottom: none;
 }
 .bookmark-navigation__dropdown-list-reset:hover,
 .bookmark-navigation__dropdown-list-send:hover,
@@ -740,7 +769,7 @@ table,
 .bookmark-navigation__dropdown-list-send:focus,
 .bookmark-navigation__dropdown-list-search:focus,
 .bookmark-navigation__dropdown-list-mirador:focus {
-  background-color: #eee;
+  background-color: #606060;
 }
 .bookmark-navigation__dropdown-list-reset a,
 .bookmark-navigation__dropdown-list-send a,
@@ -751,7 +780,7 @@ table,
 .bookmark-navigation__dropdown-list-search button,
 .bookmark-navigation__dropdown-list-mirador button {
   font-size: 1.4rem;
-  color: #1a1a1a;
+  color: #fff;
 }
 .bookmark-navigation__dropdown-list-reset a:hover,
 .bookmark-navigation__dropdown-list-send a:hover,
@@ -777,13 +806,13 @@ table,
 .bookmark-navigation__dropdown-list-send button:focus,
 .bookmark-navigation__dropdown-list-search button:focus,
 .bookmark-navigation__dropdown-list-mirador button:focus {
-  color: #1a1a1a;
+  color: #fff;
 }
 .bookmark-navigation__dropdown-list-reset button span {
-  color: #1a1a1a;
+  color: #fff;
 }
 .bookmark-navigation__dropdown-list-reset button .fa {
-  color: #1a1a1a;
+  color: #fff;
 }
 /* POPUPS */
 /* BLOCK */
@@ -1019,6 +1048,7 @@ table,
 .login-navigation [data-login="true"] .login-navigation__user-dropdown {
   top: calc(100% + 5px);
   background-color: #444;
+  width: auto;
 }
 .login-navigation [data-login="true"] .login-navigation__user-dropdown li {
   border-bottom: none;
@@ -1034,6 +1064,7 @@ table,
 }
 .login-navigation [data-login="true"] .login-navigation__user-dropdown-item-string a {
   color: #fff;
+  white-space: nowrap;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */

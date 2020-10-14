@@ -34,6 +34,10 @@
 
                 <!-- PAGE HEADER TOP ACTIONS -->            
                 <div class="page-header__top-actions">
+                    <!-- BOOKMARKS -->
+                    <div class="page-header__top-actions-bookmark">
+                        <viewerComponent:bookmarkListNavigation />
+                    </div>
                     <!-- CHANGE LOCALE -->
                     <ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
                         <div id="changeLocalWrapper" class="page-header__top-actions-language">
@@ -43,10 +47,6 @@
                             <viewerComponent:changeLocal toggleLanguage="false" showFlags="false" />
                         </div>
                     </ui:fragment>
-                    <!-- BOOKMARKS -->
-                    <div class="page-header__top-actions-bookmark">
-                        <viewerComponent:bookmarkListNavigation />
-                    </div>
                     <!-- LOGIN NAVIGATION -->
                     <div class="page-header__top-actions-login">
                         <viewerComponent:loginNavigation />
