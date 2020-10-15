@@ -701,8 +701,9 @@ table,
   background-color: #3365a9;
 }
 .bookmark-navigation__dropdown {
-  top: calc(100% + 5px);
+  top: calc(100% + 4px);
   border: none;
+  right: -4px;
 }
 .bookmark-navigation__dropdown-list {
   background-color: #444;
@@ -925,26 +926,13 @@ table,
 .change-local {
   display: none;
   position: absolute;
-  top: 3.2rem;
+  top: calc(100% + 4px);
   left: 50%;
   margin-left: -2.35rem;
   padding-top: .1rem;
   background-color: #444;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   z-index: 2000;
-}
-.change-local:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  top: -1.2rem;
-  left: 50%;
-  margin-left: -0.6rem;
-  border-width: .6rem;
-  border-style: solid;
-  border-color: transparent transparent #444 transparent;
 }
 .change-local li {
   display: list-item;
@@ -1046,7 +1034,7 @@ table,
   /* USER DROPDOWN ACTION */
 }
 .login-navigation [data-login="true"] .login-navigation__user-dropdown {
-  top: calc(100% + 5px);
+  top: calc(100% + 4px);
   background-color: #444;
   width: auto;
 }
