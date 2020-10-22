@@ -1036,7 +1036,6 @@ table,
 .login-navigation [data-login="true"] .login-navigation__user-dropdown {
   top: calc(100% + 4px);
   background-color: #444;
-  width: auto;
 }
 .login-navigation [data-login="true"] .login-navigation__user-dropdown li {
   border-bottom: none;
@@ -1749,13 +1748,6 @@ table,
 }
 .search-list__hit-thumbnail [data-bookmark-list-type="add"] .fa-bookmark-o,
 .search-list__hit-thumbnail [data-bookmark-list-type="add"] .fa-bookmark {
-  color: #3365a9;
-}
-.search-list__no-thumb-bookmark[data-bookmark-list-type="add"] {
-  color: #3365a9;
-}
-.search-list__no-thumb-bookmark[data-bookmark-list-type="add"] .fa-bookmark-o,
-.search-list__no-thumb-bookmark[data-bookmark-list-type="add"] .fa-bookmark {
   color: #3365a9;
 }
 .search-list__hit-docstruct {
