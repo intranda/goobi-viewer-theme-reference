@@ -1032,6 +1032,7 @@ table,
   /* TOGGLE USER DROPDOWN */
   /* USER DROPDOWN */
   /* USER DROPDOWN ACTION */
+  /* BOOKMARK DROPDOWN */
 }
 .login-navigation [data-login="true"] .login-navigation__user-dropdown {
   top: calc(100% + 4px);
@@ -1052,6 +1053,14 @@ table,
 .login-navigation [data-login="true"] .login-navigation__user-dropdown-item-string a {
   color: #fff;
   white-space: nowrap;
+}
+.login-navigation [data-login="true"] .login-navigation__bookmarks-small-list {
+  background: #3a3a3a;
+}
+.login-navigation [data-login="true"] .login-navigation__bookmarks-name a:hover,
+.login-navigation [data-login="true"] .login-navigation__bookmarks-icon-list .fa:hover,
+.login-navigation [data-login="true"] .login-navigation__bookmarks-overview-link:hover {
+  color: #ffd65b;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
