@@ -1,0 +1,56 @@
+/* ==============================================================
+   CMS Template "FAQ"
+   style declarations for cms_template_21_faq.xhtml
+   ==============================================================*/
+/* FAQ */
+/* BLOCK */
+.tpl-faq {
+	/* ELEMENT */
+	h1 {}
+	&__description,
+	&__list {
+	}
+	&__description {
+	}
+	&__list {
+		.card {}
+		.card-heading {
+			&:hover {}
+		}
+		.card-title {
+			a {
+				&:hover,
+				&:active,
+				&:focus {}
+				.fa {}
+				.fa-chevron-down {}
+				.fa-chevron-up {}
+				&.collapsed {
+					.fa-chevron-down {}
+					.fa-chevron-up {}
+				}
+			}
+		}
+		.card-body {
+			.tpl-faq-single {
+				&__content {
+					padding: 0;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,50 @@
+/* ==============================================================
+   Simple (Numeric) Paginator
+   style declarations for simplePaginator.xhtml
+   ==============================================================*/
+/* NUMERIC PAGINATOR */
+/* BLOCK */
+.numeric-paginator {
+	/* ELEMENT */
+	ul {}
+	li {}
+	a, span {
+		font-size: @fontMedium;
+		background-color: @white;
+	}
+	a {
+		&:hover,
+		&:active,
+		&:focus {}
+	}
+	span {}
+	&__active {
+		a, span {
+			color: @white;
+			background-color: @ci-color1;
+		}
+	}
+	&__dots {
+		a, span {
+			background-color: transparent;
+		}
+	}
+	&__navigate {}
+	/* MODIFICATION */
+	li.numeric-paginator__dots {}
+	li.numeric-paginator__active {
+		border-color: @ci-color1;		
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

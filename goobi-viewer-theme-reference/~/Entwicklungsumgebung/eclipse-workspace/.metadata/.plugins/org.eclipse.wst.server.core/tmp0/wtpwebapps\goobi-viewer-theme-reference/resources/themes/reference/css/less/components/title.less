@@ -1,0 +1,41 @@
+/* ==============================================================
+   Title
+   style declarations for title.xhtml
+   ==============================================================*/
+/* TITLE */
+.title {
+	/* HEADER */
+	&__header {
+		h3 {}
+		.fa {
+			&.in {}
+		}
+	}
+	&__header-page-type {}
+	&__header-label {}
+	/* BODY */
+	&__body {}
+	&__body-download {}
+	&__body-metadata {
+		dl {
+			dt, dd {}
+			dt {}
+			dd {}
+		}
+	}
+	&__body-metadata-breadcrumbs {
+		a, i {}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
