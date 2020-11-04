@@ -28,7 +28,7 @@ $( document ).ready( function() {
         widgetNerSidebarRight: true,
     };
     
-    viewerJS.init( viewerConfig ); 
+    viewerJS.init( viewerConfig );
    
     // toggle change local
     $( 'body' ).on( 'click', '[data-toggle="local"]', function() {
