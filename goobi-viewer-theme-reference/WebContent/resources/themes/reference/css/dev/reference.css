@@ -1025,7 +1025,7 @@ table,
 .login-navigation [data-login="false"] button[data-toggle="modal"] {
   font-size: 1.4rem;
 }
-.login-navigation [data-login="true"] button[data-toggle="login"] {
+.login-navigation [data-login="true"] button[data-toggle="modal"] {
   font-size: 1.4rem;
 }
 .login-navigation [data-login="true"] .login-navigation {
@@ -1053,14 +1053,6 @@ table,
 .login-navigation [data-login="true"] .login-navigation__user-dropdown-item-string a {
   color: #fff;
   white-space: nowrap;
-}
-.login-navigation [data-login="true"] .login-navigation__bookmarks-small-list {
-  background: #3a3a3a;
-}
-.login-navigation [data-login="true"] .login-navigation__bookmarks-name a:hover,
-.login-navigation [data-login="true"] .login-navigation__bookmarks-icon-list .fa:hover,
-.login-navigation [data-login="true"] .login-navigation__bookmarks-overview-link:hover {
-  color: #ffd65b;
 }
 /* BREAKPOINT FOR LARGE DESKTOPS */
 /* BREAKPOINT FOR DESKTOPS */
