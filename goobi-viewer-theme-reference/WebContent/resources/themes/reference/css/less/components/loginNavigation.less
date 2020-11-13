@@ -7,7 +7,7 @@
 .login-navigation {
 	/* NOT LOGGED IN */
 	[data-login="false"] {
-		button[data-toggle="login"] {
+		button[data-toggle="modal"] {
 			font-size: @fontMedium;
 			span {}
 			.fa {}
@@ -15,7 +15,7 @@
 	}
 	/* LOGGED IN */
 	[data-login="true"] {
-		button[data-toggle="login"] {
+		button[data-toggle="modal"] {
 					font-size: @fontMedium;
 		}
 		.login-navigation {
@@ -26,23 +26,28 @@
 			}
 			/* USER DROPDOWN */
 			&__user-dropdown {
-				top: calc(~"100% + 5px");
+				top: calc(~"100% + 4px");
+				background-color: @middleblack;
 				ul {}
-				li {}
+				li {
+					border-bottom: none;
+				}
 			}
 			&__user-dropdown-item {
 				font-size: @fontMedium;
 				&:hover {
-					background-color: @lightgray;
+					background-color: #606060;
 				}
 			}
 			&__user-dropdown-item-icon {
 				.fa {
-					color: @ci-color1;
+					color: @white;
 				}
 			}
 			&__user-dropdown-item-string {
 				a {
+					color: @white;
+					white-space: nowrap;
 					&:hover,
 					&:active,
 					&:focus {}
@@ -51,6 +56,31 @@
 			/* USER DROPDOWN ACTION */
 			&__user-dropdown-action {
 				.btn {}
+			}
+			/* BOOKMARK DROPDOWN */
+			&__bookmarks-list-wrapper {
+				.-opened {
+					.fa-caret-down {}
+				}
+			}
+			&__bookmarks-dropdown {}
+			&__bookmarks-small-list {}
+			&__bookmarks-entry {}
+			&__bookmarks-name {
+				a {}
+			}
+			&__bookmarks-name a, 
+			&__bookmarks-icon-list .fa, 
+			&__bookmarks-overview-link {
+				&:hover {}
+			}
+			&__bookmarks-icon-list {
+				a {}
+			}
+			&__bookmarks-counter {}
+			&__bookmarks-overview-link {}
+			&__bookmarks-trigger {
+				.fa-caret-down {}
 			}
 		}
 	}	
