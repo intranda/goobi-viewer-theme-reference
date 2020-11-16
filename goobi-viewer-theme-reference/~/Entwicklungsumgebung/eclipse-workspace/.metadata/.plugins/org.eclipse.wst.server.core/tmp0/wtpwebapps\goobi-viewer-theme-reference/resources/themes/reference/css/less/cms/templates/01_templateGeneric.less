@@ -1,0 +1,36 @@
+/* ==============================================================
+   CMS Template "Generic"
+   style declarations for cms_template_01_generic.xhtml
+   ==============================================================*/
+/* GENERIC */
+/* BLOCK */
+.tpl-generic {
+    /* ELEMENT */
+    &__content {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    }
+    &__image {
+        figcaption {}
+    }
+    &__text {}
+    /* SOLR-QUERY */
+    .solr-query-collection {
+    	padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+    }
+} 
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

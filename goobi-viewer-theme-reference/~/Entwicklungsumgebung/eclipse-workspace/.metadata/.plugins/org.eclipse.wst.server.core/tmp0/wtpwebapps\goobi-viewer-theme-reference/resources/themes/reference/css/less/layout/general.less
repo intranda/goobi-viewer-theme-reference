@@ -1,0 +1,97 @@
+/* ==============================================================
+   General Styling
+   ==============================================================*/
+html, 
+body {}
+
+html {
+	font-size: 62.5%; // sets basic font-size to 10px for easier rem use
+}
+
+body {
+	font-family: @fontFamily;
+	font-size: @fontMedium;
+	font-feature-settings: "kern" 1;
+	font-kerning: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: @neutralgray;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	line-height: 1.2;
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-weight: 600;
+}
+
+h1, .h1 {
+	font-size: 3.2rem;
+}
+
+h2, .h2 {
+	font-size: 2.8rem;
+}
+
+h3, .h3 {
+	font-size: 2.1rem;
+}
+
+h4, .h4 {
+	font-size: 1.8rem;
+}
+
+h5, h6,
+.h5, .h6 {	
+	font-size: 1.6rem;
+}
+
+p {
+	margin-bottom: 2rem;
+	letter-spacing: .05rem;
+}
+
+pre {
+	margin-bottom: 2rem;
+}
+
+ul, ol {
+	padding-left: 4rem;
+	margin-bottom: 2rem;
+}
+
+ul {}
+
+ol {}
+
+a {
+	color: @ci-color1;
+    &:hover,
+    &:active,
+    &:focus {
+    	color: @middleblack;
+    }
+}
+
+small {
+	font-size: @fontSmall;
+}
+
+table,
+.table {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

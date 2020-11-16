@@ -1,0 +1,40 @@
+/* ==============================================================
+   User Activity
+   style declarations for userBackendActivity.xhtml
+   ==============================================================*/
+/* USER SCORE */
+/* BLOCK */
+.user-score {
+	padding: 10px;
+	border: 1px solid @middlegray;
+	background-color: @white;
+    /* ELEMENT */
+    &__table {
+        tr td:first-child {}
+        tr td:last-child {}
+    }
+}
+/* USER ACTIVITY */
+/* BLOCK */
+.user-activity {
+	padding: 10px;
+	border: 1px solid @middlegray;
+	background-color: @white;
+    /* ELEMENT */
+    &__table {
+        .glyphicon {}
+        .popover {}
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

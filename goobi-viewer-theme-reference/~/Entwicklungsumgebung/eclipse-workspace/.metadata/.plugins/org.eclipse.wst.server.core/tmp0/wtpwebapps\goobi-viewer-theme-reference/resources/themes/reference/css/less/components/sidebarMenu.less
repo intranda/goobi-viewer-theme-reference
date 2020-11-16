@@ -1,0 +1,86 @@
+/* ==============================================================
+   style declarations for sidebarMenu component
+   ==============================================================*/
+
+.sidebar-menu {
+	button, a {
+		color: white;
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 14px 20px 14px;
+		padding-bottom: 0;
+	    &:hover, 
+	    &:focus, 
+	    &:active {
+	    	color: white;
+	    }
+	}
+	button {}
+	a {}
+	ul {}
+	li {
+		background: @ci-color1;
+	}
+	span {
+		border-bottom: 1px dotted rgba(218,218,218,0.4);
+		display: block;
+		padding-bottom: 1.4rem;
+		padding-left: 1.4rem;
+	}
+	&__submenu-container {}
+	&__submenu-button {
+		&.-active {}
+	}
+	&__submenu {
+		font-size: 1.6rem;
+		ul {}
+		li {
+			background: #eee;
+			padding-bottom: 0;
+			color: black;
+			&:hover, 
+		    &:focus, 
+		    &:active {
+			    background: @ci-color1;
+			    color: white;
+			    a {
+			    	color: white;
+			    }
+		    }
+		    &:last-of-type {
+				span { border-bottom: none;
+				}
+			}
+		}
+		a {
+			padding: 10px 20px 14px;
+			padding-bottom: 0;
+			color: black;
+			&:hover, 
+		    &:focus, 
+		    &:active {
+		    	color: white;
+		    	background: transparent;
+		    }
+	    }
+	    span {
+			border-bottom: 1px dotted #666;
+			padding-left: 2.6rem;
+			padding-bottom: 1rem;
+			font-size: 1.4rem;
+			}
+	}
+}
+	
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
