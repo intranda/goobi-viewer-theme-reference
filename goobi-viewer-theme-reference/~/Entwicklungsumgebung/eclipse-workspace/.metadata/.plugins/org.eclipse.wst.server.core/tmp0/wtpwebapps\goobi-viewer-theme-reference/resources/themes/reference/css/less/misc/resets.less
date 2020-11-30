@@ -1,0 +1,63 @@
+/* ==============================================================
+   Resets for CSS Libs
+   ==============================================================*/
+ /* BOOTSTRAP */
+.page-header {}
+/* TABS */
+.nav-tabs {
+	li {
+		a {}
+		span {}
+		&.active {
+			a {}
+		}
+	}
+}
+.tab-pane {}
+/* FORMS */
+.form-control {
+    &:focus {}
+}
+.form-horizontal {
+    .form-group {
+        label {}
+        .form-control {}
+        .btn {}
+    }
+}
+/* MODALS */
+.modal {
+	z-index: 9999;
+}
+
+.modal.fade .modal-dialog {}
+
+.modal-open[style] {}
+
+.modal-backdrop.show {}
+
+.modal-backdrop {}
+
+.modal-header {
+	.fancy-close {
+		&:hover {}
+	}
+}
+
+.modal-body {}
+
+@media screen and (min-width: 576px) {
+	.modal-dialog {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

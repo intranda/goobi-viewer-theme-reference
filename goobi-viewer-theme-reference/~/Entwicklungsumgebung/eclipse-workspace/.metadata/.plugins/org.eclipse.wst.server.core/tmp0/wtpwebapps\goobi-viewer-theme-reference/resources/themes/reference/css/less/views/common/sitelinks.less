@@ -1,0 +1,43 @@
+/* ==============================================================
+   Sitelinks
+   style declarations for sitelinks.xhtml
+   ==============================================================*/
+/* SITELINKS */
+/* BLOCK */
+.sitelinks {
+	/* ELEMENT */
+	h2 {}
+	form {
+		padding: 10px;
+    	border: 1px solid @middlegray;
+    	background-color: @white;
+	}
+	&__tags {
+		a {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+	}
+	&__hits {
+		ul {}
+		li {}
+		a {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

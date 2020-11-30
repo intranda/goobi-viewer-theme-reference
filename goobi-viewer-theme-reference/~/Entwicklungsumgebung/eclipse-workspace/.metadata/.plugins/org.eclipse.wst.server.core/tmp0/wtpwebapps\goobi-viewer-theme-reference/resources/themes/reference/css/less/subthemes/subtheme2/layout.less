@@ -1,0 +1,26 @@
+/***************************************************************
+ * subtheme2 - Layout
+ **************************************************************/
+ 
+.page-header__bottom-span span {
+  display: none;
+}
+.page-header__bottom-span:after {
+  content: 'Subtheme 2';
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+	.page-header__bottom-span:after {
+	  content: '';
+	}
+}
