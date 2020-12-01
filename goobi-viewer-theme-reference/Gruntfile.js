@@ -23,7 +23,6 @@ module.exports = function(grunt) {
             lessDevViewerFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/',
             lessSubThemeOneFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeOne%>/',
             lessSubThemeTwoFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/subthemes/<%=theme.subThemeTwo%>/',
-            cssDevFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dev/',
             cssDistFolder: 'WebContent/resources/themes/<%=theme.name%>/css/dist/'
         },
         sync: {
@@ -47,10 +46,6 @@ module.exports = function(grunt) {
                     ],
                     compress: false,
                     optimization: 9
-                },
-                files: {
-                    '<%=src.cssDevFolder %><%=theme.name%>.css': '<%=src.lessDevViewerFolder%>constructor.less',
-                    '<%=src.cssDevFolder %><%=theme.name%>-cs.css': '<%=src.lessDevCsFolder%>csConstructor.less',
                 }
             },
             production: {
@@ -118,4 +113,3 @@ module.exports = function(grunt) {
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
     grunt.registerTask( 'default', [ 'watch', 'sync' ] );
 };
-
