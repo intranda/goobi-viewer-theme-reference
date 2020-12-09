@@ -1,0 +1,43 @@
+/* ==============================================================
+   CMS Template RSS Feed
+   style declarations for cms_template_14_RSSFeed.xhtml
+   ==============================================================*/
+/* TPL RSS FEED */
+/* BLOCK */
+.tpl-rss {
+    h1 {}
+    /* ELEMENT */
+    &__text,
+    &__feed {}
+    &__text {}
+    &__feed {}
+    &__item {
+    	background-color: @white;
+    }
+    &__item-title {
+    	h3 {}
+    	a {}
+    }
+    &__item-image {
+    	img {}
+    }
+    &__item-date {}
+    &__item-metadata {
+    	dt {}
+    	dd {}
+    }
+}
+
+/* MODIFICATION */
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -1,0 +1,100 @@
+<!DOCTYPE html [
+	<!ENTITY copy "&#169;">
+	<!ENTITY times "&#215;">
+	<!ENTITY nbsp "&#160;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
+      xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/sbnue/components"
+      lang="#{navigationHelper.localeString}">
+
+<h:head profile="http://dublincore.org/documents/dcq-html/">
+
+	<ui:insert name="head" />
+
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<meta name="generator" content="Goobi viewer" />
+	<meta name="application" content="#{navigationHelper.applicationName}" />
+	<meta name="version" content="#{navigationHelper.version}" />
+	<meta name="public version" content="#{navigationHelper.publicVersion}" />
+	<meta name="build date" content="#{navigationHelper.buildDate}" />
+	<meta name="git-revision" content="#{navigationHelper.buildVersion}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- TWITTER CARD / OPENGRAPH -->
+    <ui:include src="/resources/includes/embed/twittercard.xhtml" />
+    <ui:include src="/resources/includes/embed/opengraph.xhtml" />
+
+    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{configurationBean.name}</title>
+    
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
+    
+    <!-- RELATIVE URL TAGS -->
+    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
+    
+    <!-- OPENSEARCH -->
+    <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/rest/opensearch/getxml/" />
+    
+    <!-- OEMBED -->
+    <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
+        <link rel="alternate" type="application/json+oembed" href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.encodedUrl}&amp;format=json" title="Goobi viewer oEmbed Profile" />
+    </ui:fragment>
+    
+    <!-- BASIC CSS -->
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.custom.css?${navigationHelper.buildVersion}" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css?${navigationHelper.buildVersion}" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css?${navigationHelper.buildVersion}" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome.min.css?${navigationHelper.buildVersion}" />
+
+	<!-- CUSTOM CSS + DIST FILES -->
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${navigationHelper.buildVersion}" />
+    
+    <!-- SUBTHEME CSS -->
+    <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
+        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
+    </h:panelGroup>
+    
+    <!-- FORCES PRIMEFACES TO INCLUDE JQUERY & JQUERY-UI -->
+    <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
+    <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
+    
+    <!-- JAVASCRIPT LIBS -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rxjs.umd.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/intersection-observer_polyfill.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/riot/riot.min.js?${navigationHelper.buildVersion}"></script>
+    
+    <!-- JAVASCRIPT DIST FILES -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>
+
+</h:head>
+
+<ui:insert name="metadata" />
+
+<h:body id="fullscreen">
+    <f:view locale="#{navigationHelper.locale}">    
+        <!-- CONTENT FULLSCREEN -->
+        <ui:insert name="content-fullscreen" />
+        
+        <!-- CUSTOM JS -->
+        <ui:include src="includes/customJS.xhtml" />
+    </f:view>
+    
+    <!-- PIWIK -->
+    <ui:fragment rendered="#{configurationBean.piwikTracking}">
+        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
+    </ui:fragment>
+</h:body>
+</html>

@@ -1,0 +1,38 @@
+/* ==============================================================
+   Widget User Interactions
+   style declarations for widget_userInteractions.xhtml
+   ==============================================================*/
+/* WIDGET USER INTERACTIONS */
+#widgetUserInteractions {
+	ul {}
+}
+.widget-user-interactions {
+	background-color: @white;
+	&__delete-record,
+	&__delete-record-message {
+		padding: 5px 15px 10px 15px;
+	}
+	&__delete-record-message {
+		span {}
+	}
+	&__delete-record-action {
+		&.has-no-urn {
+			.btn {}
+		}
+		&.has-urn {
+			.btn {}			
+		}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

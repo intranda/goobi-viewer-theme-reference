@@ -1,0 +1,109 @@
+/* ==============================================================
+   Login Navigation
+   style declarations for loginNavigation.xhtml
+   ==============================================================*/
+/* LOGIN NAVIGATION */
+/* BLOCK */
+.login-navigation {
+	/* NOT LOGGED IN */
+	[data-login="false"] {
+		button[data-toggle="modal"] {
+			font-size: @fontMedium;
+			span {}
+			.fa {}
+		}
+	}
+	/* LOGGED IN */
+	[data-login="true"] {
+		button[data-toggle="modal"] {
+					font-size: @fontMedium;
+		}
+		.login-navigation {
+			/* TOGGLE USER DROPDOWN */
+			&__user-name {}			
+			&__user-icon {
+				img {}
+			}
+			/* USER DROPDOWN */
+			&__user-dropdown {
+				top: calc(~"100% + 4px");
+				background-color: @middleblack;
+				ul {}
+				li {
+					border-bottom: none;
+				}
+			}
+			&__user-dropdown-item {
+				font-size: @fontMedium;
+				&:hover {
+					background-color: #606060;
+				}
+			}
+			&__user-dropdown-item-icon {
+				.fa {
+					color: @white;
+				}
+			}
+			&__user-dropdown-item-string {
+				a {
+					color: @white;
+					white-space: nowrap;
+					&:hover,
+					&:active,
+					&:focus {}
+				}
+			}
+			/* USER DROPDOWN ACTION */
+			&__user-dropdown-action {
+				.btn {}
+			}
+			/* BOOKMARK DROPDOWN */
+			&__bookmarks-list-wrapper {
+				.-opened {
+					.fa-caret-down {}
+				}
+			}
+			&__bookmarks-dropdown {}
+			&__bookmarks-small-list {}
+			&__bookmarks-entry {}
+			&__bookmarks-name {
+				a {}
+			}
+			&__bookmarks-name a, 
+			&__bookmarks-icon-list .fa, 
+			&__bookmarks-overview-link {
+				&:hover {}
+			}
+			&__bookmarks-icon-list {
+				a {}
+			}
+			&__bookmarks-counter {}
+			&__bookmarks-overview-link {}
+			&__bookmarks-trigger {
+				.fa-caret-down {}
+			}
+		}
+	}	
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+	.login-navigation {
+		[data-login="true"] {
+			.login-navigation {
+				&__user-icon {
+					display: none;
+				}
+			}
+		}
+	}
+} 

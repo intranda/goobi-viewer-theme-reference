@@ -1,0 +1,66 @@
+/* ==============================================================
+   CMS Template Single Collection
+   style declarations for cms_template_12_singleCollection.xhtml
+   ==============================================================*/
+/* TPL SINGLE COLLECTION */
+/* BLOCK */
+.tpl-single-collection {
+    h1 {}
+    /* ELEMENT */
+    &__image {
+    	img {}
+    	h2 {}
+    }
+    &__description {
+    	color: @black;
+    	border: 1px solid @middlegray;
+    	border-top: 0;
+    	background-color: @white;
+    }
+    .search-list {
+    	/* OPTIONS */
+	    &__options {
+	        a, button {
+	            &:hover,
+	            &:focus,
+	            &:active,
+	            &.active {}
+	        }
+	        form {}
+	    }
+	    &__hitcount,
+	    &__rss,
+	    &__save-search,
+	    &__excel-export,
+	    &__views {}
+	    &__hitcount {}
+	    &__rss {}
+	    &__save-search {}
+	    &__excel-export {
+	        a {}
+	        .excel-export-loader {
+	            img {}
+	        }
+	    }
+	    &__views {
+	    	button {}
+	    	[data-view="search-list-default"] {}
+	    	[data-view="search-list-grid"] {}
+	    	[data-view="search-list-list"] {}
+	    }
+    } 
+}
+
+/* MODIFICATION */
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

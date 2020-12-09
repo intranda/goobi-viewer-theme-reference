@@ -1,0 +1,143 @@
+/* ==============================================================
+   View Toc
+   style declarations for viewToc.xhtml
+   ==============================================================*/
+/* VIEW TOC */
+/* BLOCK */
+.toc {
+	/* MULTI VOLUME TOC */
+	/* ELEMENT */
+	h4 {}
+	&__multi-volume {}
+	&__mv-group {}
+	&__mv-element {
+	    padding: 10px 0;
+	    transition: all 0s linear;
+	    &:hover {
+	       background-color: @lightgray;
+	    }
+		&.level-0 {
+		    h4 {
+		        display: none;
+		    }
+		}
+		a {}
+		.row {}
+	}
+	&__mv-element-title {}
+	&__mv-element-link {}
+	&__mv-element-img {
+	    text-align: right;
+	    img {
+	        display: inline-block;
+	    }
+	}
+	/* TOC TREEVIEW */
+	/* ELEMENT */
+	&__list-expandable,
+	&__list-full {
+		margin: 0;
+		padding: 5px 10px;
+		border: 1px solid @middlegray;
+		background-color: @white;
+		li {
+			border-color: @neutralgray;
+			&:first-child {}
+			&:last-child {
+				border: 0;
+			}
+			&:hover {
+				a {}
+			}
+		}
+	}
+	&__list-expandable-title,
+	&__list-full-title {
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__list-expandable-number,
+	&__list-full-number {
+		li {}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	/* EXPAND ALL */
+	&__list-expandable-all {
+		ul {}
+		li {}
+		a {}
+	}
+	/* TOC EXPANDABLE */
+	&__list-expandable {}
+	&__list-expandable-elem {
+		&.parent {}
+		&.child {}
+	}
+	&__list-expandable-expand {
+		a {}
+	}
+	&__list-expandable-title {
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__list-expandable-number {
+		li {}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	/* TOC FULL */
+	&__list-full {}
+	&__list-full-title {
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__list-full-number {
+		li {}
+		a {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+}
+
+
+/* DOWNLOAD MODAL */
+#reCaptchaWrapper {}
+
+div[id*="Modal"] {
+    p {}
+    .email-form {
+        .form-group {
+            p {}
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

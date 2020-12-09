@@ -1,0 +1,111 @@
+/* ==============================================================
+   Image Controls
+   Style declarations for imageControls.xhtml
+   ==============================================================*/
+/* IMAGE CONTROLS */
+/* BLOCK */
+.image-controls {
+	background-color: @white;
+	border: 1px solid @middlegray;
+	border-bottom: 0;
+	/* DOCUMENT OPTIONS */
+	&__options {
+		ul {}
+	    li {}
+	}
+	&__option {
+		a, 
+		span, 
+		button {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		a, button {}
+		&.fulltext {}
+		&.add-to-bookmark {
+				.fa-bookmark-o,
+				.fa-bookmark {}
+			    &.added, 
+			    &:hover {
+			    	.fa-bookmark-o,
+			    	.fa-bookmark {}
+			    }
+		}
+	}
+    /* ACTIONS */
+    &__actions {
+    	ul {}
+	    li {}
+    }
+    &__action {
+	    /* ELEMENT */
+	    a, 
+		span, 
+		button {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		[class*="image-"] {}
+		&.inactive {
+	    	a,
+	    	span,
+	    	button {}
+		}    
+	    /* ELEMENT */
+	    &.start {}
+	    &.page-browse,
+	    &.select {}
+	    &.page-browse {
+	        a, span {}
+	    }
+	    &.back {}
+	    &.select-text {
+	    	span {}
+	    }
+	    &.select {
+	        .form-control__select {
+	            select {}
+	        }
+	    }
+	    &.forward {}
+	    &.end {}
+	    &.double-page-view,
+	    &.single-page-view,
+	    &.switch-pages {
+		    [class*="image-"] {}
+	    }
+	    &.double-page-view {}
+	    &.single-page-view {}
+	    &.switch-pages {
+			[class*="image-"] {}
+	    }
+	    &.rotate-left,
+	    &.rotate-right {
+	    	[class*="image-"] {}
+	    }
+	    &.rotate-left {}
+	    &.rotate-right {}
+	    &.reset {}
+	    &.enter-fullscreen {}
+	    &.zoom-slider-wrapper {
+	        .zoom-slider {}
+	        .zoom-slider-handle {}
+	    }
+	}
+    /* MODIFICATION */
+	.labeltext {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOP */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

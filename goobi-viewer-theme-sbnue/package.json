@@ -1,0 +1,21 @@
+{
+  "name": "goobi-viewer-theme-reference",
+  "version": "3.4.0",
+  "description": "This is a theme template for the Goobi viewer.",
+  "author": "intranda GmbH",
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.intranda.com/goobi-viewer/goobi-viewer-theme-sbnue.git"
+  },
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-riot": "^0.1.8",
+    "grunt-sync": "^0.8.2",
+    "less-plugin-autoprefix": "^1.5.1"
+  }
+}
