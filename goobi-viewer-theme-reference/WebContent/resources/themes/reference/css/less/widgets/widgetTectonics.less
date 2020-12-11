@@ -1,0 +1,36 @@
+/* ==============================================================
+   Widget Tectonics
+   style declarations for widget_tectonics.xhtml
+   ==============================================================*/
+.widget-tectonics {
+	.widget-tectonics {
+		&__entry {
+			&:after {}
+			&:nth-last-child(2) {
+				&::after {}
+			}
+		}
+		&__archives-link {}
+		&__heading {}
+		&__prev,
+		&__next {
+			&.-disabled {}
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		&__prev {}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
