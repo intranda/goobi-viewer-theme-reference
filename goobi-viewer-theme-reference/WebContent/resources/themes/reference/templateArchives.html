@@ -21,13 +21,12 @@
     <meta name="generator" content="Goobi viewer" />
 	<meta name="application" content="#{navigationHelper.applicationName}" />
 	<meta name="version" content="#{navigationHelper.version}" />
-	<meta name="public version" content="#{navigationHelper.publicVersion}" />
 	<meta name="build date" content="#{navigationHelper.buildDate}" />
 	<meta name="git-revision" content="#{navigationHelper.buildVersion}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Tectonics archive - #{configurationBean.name}</title>
+    <title>#{msg.archives__archiveViewHeading} - #{configurationBean.name}</title>
     
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
@@ -77,7 +76,7 @@
 
 <ui:insert name="metadata" />
 
-<h:body id="tectonics">
+<h:body id="archivesWrapper">
 	<h:panelGroup id="subBody">
 	    <f:view locale="#{navigationHelper.locale}">
 	        <!-- LAYOUT -->
