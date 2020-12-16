@@ -1,0 +1,82 @@
+/* ==============================================================
+   View archive tree
+   style declarations for archivetree.xhtml
+   ==============================================================*/
+   
+/* EAD TREE */
+.archives-tree {
+	&__inner {}
+	&__expand-minimize-all {
+		a {
+			&:last-child {}
+		}
+	}
+	&__entry {
+		&:first-child {
+			.archives-tree__list-expandable-title {}
+		}
+		&.child {
+			.archives-tree__metadata-box {}
+		}
+	}
+	&__list-expandable-title {
+		.fa-stack {}
+		.fa-stack-text {
+			&.-archives-selected {}
+		}
+		.fa-file-o {
+			&.-archives-selected {}
+		}
+		.fa-caret-up,
+		.fa-caret-down {}
+		a {}
+	}
+	&__title {}
+	&__selected {}
+	&__active-title {
+		&::after {}
+	}
+	&__inactive-title {
+		&::after {}
+	}
+	&__expandable-icon {
+		a {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		.fa {}
+	}
+	&__metadata-box {}
+	&__metadata-box-fields-row {}
+	&__metadata-box-field-name {}
+	&__metadata-box-field-value {}
+	&__metadata-box-links {
+		a {}
+	}
+	&__loader {}
+}
+
+// ajax loading indicator for ead tree
+#AJAXLoader.archives-tree__loader {}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+	.archives-tree {
+		&__entry {
+			&.parent {}
+			&.child {}
+		}
+		&__metadata-box-fields-row {}
+		&__metadata-box-field-name {}
+	}
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

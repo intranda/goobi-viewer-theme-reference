@@ -1,0 +1,165 @@
+/* ==============================================================
+   Archives 
+   global style declarations for archivesLayout.xhtml
+   ==============================================================*/
+.archives {
+	&__top-wrapper {
+		.container {}
+		.login-navigation [data-login="true"] .login-navigation__user-dropdown {}
+	}
+	&__header {
+		a, .btn, button {
+			&:hover,
+			&:focus,
+			&:active {}
+		}
+	}
+	&__top {
+		a, button {
+			&:hover,
+			&:active,
+			&:focus {}
+		}
+		.bookmark-navigation {
+			&__dropdown-list {
+				a {}
+			}
+		}
+	}
+	&__top-mobile-nav,
+	&__top-mobile-sidebar {}
+	&__top-brand {
+		a {
+			&:hover {}
+		}
+		h1 {}
+	}
+	&__top-title {}
+	&__top-actions {}
+	&__top-actions-language,
+	&__top-actions-bookmark,
+	&__top-actions-login {}
+	&__top-actions-language {
+		[data-toggle="local"] {		
+		}
+		.change-local {
+			ul {}
+			li {}
+			a {
+				&:hover,
+				&:active,
+				&:focus {
+				}
+				&.activeLang {
+				}
+			}
+			img {}
+		}
+	}
+	&__wrapper {}
+	&__left-side {} 
+	&__right-side {}
+	&__graphic-tree {}
+	&__text-tree {
+		&.-showAsOneLine {
+			.archives__text-tree-entry {
+				&:last-child {
+					.archives__text-tree-value {
+						&::after {
+						}
+					}
+				}
+			}
+			.archives__text-tree-entry:nth-child(n+0){}
+			.archives__text-tree-level {}
+			.archives__text-tree-value {
+				&::after {}
+			}
+		}
+	// adding more padding to every following child element
+	//	.archives__text-tree-staircase (@indexstart,@index) when (@indexstart < @index ){
+	//		.archives__text-tree-entry:nth-child(@{indexstart}){
+	//				padding-left: (@indexstart - 1 ) * 20px + 20px;
+	//	 	}
+	//		.archives__text-tree-staircase (@indexstart + 1,@index);
+	//	}
+	//	.archives__text-tree-staircase (2,15);
+	}
+	&__text-tree-entry {}
+	&__text-tree-level {}
+	&__text-tree-value {}
+	&__text-tree-entry {}
+	&__object-info {}
+	&__object-metadata-entry {}
+	&__object-title {}
+	&__object-block-label {}
+	&__object-field-name {}
+	&__object-field-value {}
+	&__object-image {
+		img {
+		}
+	}
+	&__object-image-link {
+		&:hover {
+			.archives__object-image-overlay {}
+			.archives__object-image-hover-icon {}
+			.archives__object-image-hover-text {}
+		}
+	}
+	&__object-image-overlay {}
+	&__object-image-hover-icon {
+		.fa {
+		}
+	}
+	&__object-image-hover-text {}
+	&__main {}
+	&__content-wrapper {}
+	&__loader-wrapper {}
+	&__content-left {
+		.imageview_wrapper {
+			.image-controls__actions {}
+			.image_container {
+				.image {}
+			}
+		}
+	}
+	&__search-input-wrapper {}
+	&__search-input {}
+	&__search-submit-button {}
+	&__search-clear {}
+	&__content-right {}
+	&__content-right-title {}
+	&__questions-wrapper {
+		&.area-selector-question {
+			&.active {
+			}
+		}
+	}
+	&__search-input {}
+	
+	.login-navigation [data-login="true"] .login-navigation__bookmarks-list {}
+	.archives-tree__inactive-title,
+	.archives-tree__active-title {
+		&::after {}
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+	.archives__right-side, .archives__left-side {}
+	.archives__top-title {}
+	.archives__object-info {}
+	.archives__object-metadata {}
+	.archives__object-image {}
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+	.archives__text-tree .archives__text-tree-entry:nth-child(n+0) {}
+}

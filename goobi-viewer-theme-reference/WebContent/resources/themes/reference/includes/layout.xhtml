@@ -17,7 +17,7 @@
 
     <!-- HEADER -->
     <!-- PAGE HEADER TOP -->
-    <div id="pageHeaderTop" class="page-header__top-wrapper">
+    <div id="pageHeaderTop" class="page-header__top-wrapper" role="region" aria-label="#{msg.aria_label__top_header_description}">
         <div class="container">
             <div class="page-header__top">
 	            <!-- OPEN MOBILE NAVIGATION -->
@@ -64,7 +64,7 @@
     </div>
 
     <!-- PAGE HEADER BOTTOM -->
-    <div id="pageHeaderBottom" class="page-header__bottom-wrapper">
+    <header id="pageHeaderBottom" class="page-header__bottom-wrapper">
         <div class="container">
             <div class="page-header__bottom">
                 <!-- PAGE HEADER BOTTOM LOGO -->
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
     
     <!-- NAVIGATION -->
     <div id="pageNavigation" class="page-navigation">
@@ -144,7 +144,7 @@
     </div>
 
     <!-- FOOTER -->
-	<div id="pageFooter" class="page-footer">
+	<footer id="pageFooter" class="page-footer">
 		<div class="container">
 			<div class="page-footer__wrapper">
 				<!-- FOOTER LINKS -->
@@ -199,7 +199,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</footer>
 
 	<!--  GENERIC OVERLAY -->
     <ui:include src="/resources/includes/overlay.xhtml" />
@@ -218,7 +218,7 @@
                 <h:outputText value="#{msg.ie11_text}" escape="false" />
             </section>
             <footer class="support-overlay__box-footer">
-                powered by <a href="http://www.intranda.com/digiverso/goobi-viewer/goobi-viewer-overview/" target="_blank">Goobi viewer</a>
+                powered by <a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
             </footer>
         </div>
     </div>
