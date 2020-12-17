@@ -22,7 +22,13 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent"/>
-        <dependent-module archiveName="viewer-core-4.13.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
+        <dependent-module archiveName="viewer-core-4.13.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="iiif-api-model-1.10.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/iiif-api-model/iiif-api-model">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="normdataimporter-1.5.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/NormDataImporter/NormDataImporter">
             <dependency-type>uses</dependency-type>
         </dependent-module>
                                 
