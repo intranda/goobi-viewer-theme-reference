@@ -18,7 +18,12 @@
     	var currentTheme = "#{navigationHelper.theme}";
     	var userLoggedIn = #{userBean.loggedIn};
     	var bookmarksEnabled = #{configurationBean.bookmarksEnabled};
-    	var mapBoxToken = "#{configurationBean.mapBoxToken}";
+    	viewerJS.mapBoxConfig = {
+    	        token : "#{configurationBean.mapBoxToken}",
+    	        user : "#{configurationBean.mapBoxUser}",
+    	        styleId : "#{configurationBean.mapBoxStyleId}",
+
+    	};
     	var rootURL = "#{request.contextPath}";
     	var restURL = "#{configurationBean.restApiUrl}";
     	
