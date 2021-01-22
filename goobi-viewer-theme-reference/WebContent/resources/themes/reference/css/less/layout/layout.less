@@ -163,6 +163,17 @@
 	}
 }
 
+@{RTL} .page-content {
+	&__main {
+		padding-right: unset;
+		padding-left: 1.5rem;
+	}
+	&__sidebar {
+		padding-right: 1.5rem;
+		padding-left: unset;
+	}
+}
+
 /* FOOTER */
 .page-footer {
 	font-size: @fontMedium;
@@ -210,6 +221,13 @@
 				font-size: @fontLarge;
 			}
 		}
+	}
+}
+
+@{RTL} .page-footer {
+	&__social {
+		margin-left: unset;
+		margin-right: auto;
 	}
 }
 

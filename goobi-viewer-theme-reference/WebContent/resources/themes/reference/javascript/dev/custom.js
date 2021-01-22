@@ -97,7 +97,30 @@ $( document ).ready( function() {
             }
         });
     }
+    
+
 
     // mobile view manipulations
     if (window.matchMedia('(max-width: 768px)').matches) { }
 } );
+
+
+// rtl switch - can be removed for production
+$(document).ready(function(){
+   // $("html[lang=ar]").attr("dir", "rtl");
+    $('.dir-switch').on( "click", function() {
+    	
+    	if ( $('html').attr('dir') == 'ltr' )
+	    	{
+	    		$("html").attr("dir", "rtl");
+	    		console.log('else');
+	    	}
+	    	else {
+	    		$("html").attr("dir", "ltr");
+	    		console.log('else');
+	    	}
+    })
+    
+});
+
+
