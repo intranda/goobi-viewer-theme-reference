@@ -81,6 +81,16 @@
 	&__megamenu-item {}
 }
 
+@{RTL} {
+	.navigation {
+		&__submenu {
+			.caret {
+				transform: rotate(90deg);
+			}
+		}
+	}
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
 
@@ -127,7 +137,7 @@
 		    top: inherit;
 		    left: inherit;
 		    min-width: inherit;
-		    padding-left: 2rem;
+		    padding-inline-start: 2rem;
 		    border: 0;
 		    z-index: 2030;
 		    .caret {
@@ -145,7 +155,18 @@
 			}
 	    }
 	}
+	@{RTL} {
+		.navigation {
+			&__submenu {
+				.caret {
+					transform: unset;
+				}
+			}
+		}
+	}
 }
+
+
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
