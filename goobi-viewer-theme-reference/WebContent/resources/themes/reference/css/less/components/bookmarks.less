@@ -36,14 +36,6 @@
 			.empty {}
 		}
 		h4 {}
-		a {
-			color: @white;
-			&:hover,
-			&:active,
-			&:focus {
-				color: @white;
-			}
-		}
 	}
 	&__dropdown-list-counter {
 		background-color: @ci-color1;  
@@ -77,6 +69,8 @@
 		background: @middleblack;
 		border-top: none;
 	}
+	&__dropdown-list-single-entry {}
+	&__dropdown-list-title {}
 	&__dropdown-list-reset,
 	&__dropdown-list-send,
 	&__dropdown-list-search,
@@ -87,26 +81,26 @@
 		&:focus {
 			background-color: #606060;				
 		}
-		a, button {
-			font-size: @fontMedium;
+	}
+	/* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
+	&__dropdown-list-single-entry,
+	&__dropdown-list-title,
+	&__dropdown-list-remove,
+	&__dropdown-list-reset,
+	&__dropdown-list-send,	
+	&__dropdown-list-search,
+	&__dropdown-list-mirador {
+		button, a, span, h4
+		{
 			color: @white;
 			&:hover,
-			&:active,
-			&:focus {
-				color: @white;				
+			&:focus,
+			&:active {
+				color: @white;
 			}
 		}
 	}
-	&__dropdown-list-reset {
-		button {
-			span {
-			color: @white;
-			}
-			.fa {
-			color: @white;
-			}
-		}
-	}
+	&__dropdown-list-reset {}
 	&__dropdown-list-send,
 	&__dropdown-list-mirador {
 		a {

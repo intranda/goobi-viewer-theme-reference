@@ -14,10 +14,16 @@
         .search-result-navigation-left,
         .search-result-navigation-center,
         .search-result-navigation-right {}
+        .search-result-navigation-left,
+        .search-result-navigation-right {
+            &:hover {
+            	svg {}
+            }
+        }
         .search-result-navigation-left {
             a {}
             span {}
-            img {}
+            svg {}
         }
         .search-result-navigation-center {
             span {}
@@ -25,7 +31,7 @@
         .search-result-navigation-right {
             a {}
             span {}
-            img {}
+            svg {}
         }
     }
     .search-result-navigation-back-to-collection {
@@ -36,9 +42,10 @@
     	border-top: 0;
     	background-color: @white;
         a {
-            img {
-            	margin: -.3rem 1rem 0 0;
-            }
+            svg {}
+        }
+        &:hover {
+        	svg {}
         }
     }
 }

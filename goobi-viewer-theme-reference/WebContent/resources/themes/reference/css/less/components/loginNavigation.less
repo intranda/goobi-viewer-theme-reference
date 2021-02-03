@@ -44,14 +44,13 @@
 					color: @white;
 				}
 			}
-			&__user-dropdown-item-string {
-				a {
-					color: @white;
-					white-space: nowrap;
-					&:hover,
-					&:active,
-					&:focus {}
-				}
+			&__user-dropdown-item-string a,
+			&__bookmarks-trigger {
+				color: @white;
+				white-space: nowrap;
+				&:hover,
+				&:active,
+				&:focus {}
 			}
 			/* USER DROPDOWN ACTION */
 			&__user-dropdown-action {
@@ -72,7 +71,12 @@
 			&__bookmarks-name a, 
 			&__bookmarks-icon-list .fa, 
 			&__bookmarks-overview-link {
-				&:hover {}
+				color: @white;
+				&:hover,
+				&:active,
+				&:focus {
+					color: #ffd65b;
+				}
 			}
 			&__bookmarks-icon-list {
 				a {}

@@ -42,7 +42,7 @@
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
     
     <!-- OPENSEARCH -->
-    <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/rest/opensearch/getxml/" />
+    <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/api/v1/opensearch/" />
     
     <!-- OEMBED -->
     <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
