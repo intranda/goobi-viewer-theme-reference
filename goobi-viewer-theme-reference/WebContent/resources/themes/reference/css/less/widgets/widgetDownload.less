@@ -1,28 +1,22 @@
 /* ==============================================================
-   Widget Record Notes (sidenotes and information for objects)
+   Widget Download
+   style declarations for widget_download.xhtml
    ==============================================================*/
-   
-.widget-record-notes {
-	// show edit link only on hover
-	&:hover {
-		.widget-record-notes__action-link {}
+#widgetDownload {}
+.widget-download {
+	&__license-text {
+		background: @white;
+		padding: 1rem 1.5rem 0rem 1.5rem;
+		border-left: 1px solid @middlegray;
+		border-right: 1px solid @middlegray;
+		a {}
 	}
-	.widget__title {}
-	.widget__body {
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	} 
-	&__action-link {
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
+	ul {}
+	li {
+		a {}
 	}
 }
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 

@@ -163,6 +163,24 @@
 	}
 }
 
+@{RTL} {
+	.page-header {
+		&__top-mobile-sidebar {
+			text-align: left;
+		}
+	}
+	.page-content {
+		&__main {
+			padding-right: unset;
+			padding-left: 1.5rem;
+		}
+		&__sidebar {
+			padding-right: 1.5rem;
+			padding-left: unset;
+		}
+	}
+}
+
 /* FOOTER */
 .page-footer {
 	font-size: @fontMedium;
@@ -212,6 +230,33 @@
 		}
 	}
 }
+
+
+@{RTL} {	
+	.page-footer {
+		&__social {
+			margin-left: unset;
+			margin-right: auto;
+		}
+		&__links a + span {
+	    	padding-left: 0;
+		}
+		&__links span {
+			padding-right: 1.2rem;
+		}
+	}
+	[data-open="sidebar"] {
+		transform: rotate(180deg);
+		span {
+			&::before {
+				left: unset;
+				right: 0.6rem;
+			}
+		}
+	}
+}
+
+
 
 /* MOBILE ACTIONS */
 [data-open="menu"],
@@ -302,6 +347,13 @@
 	right: calc(~"50% + 1.5rem");
 }
 
+@{RTL} .page-header {
+	&__top-actions-login {
+		margin-left: unset;
+		margin-right: 1.5rem;
+	}
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
 
@@ -378,6 +430,14 @@
 			&.in {
 				right: 0;
 			}
+		}
+	}
+}
+
+@{RTL} {
+	.page-content {
+		&__sidebar {
+			padding: 1.5rem;
 		}
 	}
 }

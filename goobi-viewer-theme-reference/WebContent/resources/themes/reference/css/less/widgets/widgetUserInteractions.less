@@ -4,24 +4,41 @@
    ==============================================================*/
 /* WIDGET USER INTERACTIONS */
 #widgetUserInteractions {
-	ul {}
+		ul {
+			border-bottom: none;
+		li:first-of-type {
+			a {}
+		}
+		&:last-of-type {
+			border-bottom: 1px solid @middlegray;
+		}
+	}
 }
 .widget-user-interactions {
-	background-color: @white;
-	&__delete-record,
-	&__delete-record-message {
-		padding: 5px 15px 10px 15px;
-	}
+	&__info-text {}
+	&__delete-record {}
 	&__delete-record-message {
 		span {}
 	}
-	&__delete-record-action {
+	&__delete-record-action,
+	&__clear-cache-action {
 		&.has-no-urn {
 			.btn {}
+			a {}
 		}
 		&.has-urn {
 			.btn {}			
 		}
+	}
+	h4 {}
+}
+
+// MODIFICATION
+.widget-user-interactions .btn--full {
+	&:hover,
+	&:active,
+	&:focus {
+		color: @white;
 	}
 }
 
