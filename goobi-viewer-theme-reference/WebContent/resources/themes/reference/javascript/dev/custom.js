@@ -27,9 +27,15 @@ $( document ).ready( function() {
         localStoragePossible: viewerJS.localStoragePossible,
         widgetNerSidebarRight: true,
     };
-    
-    viewerJS.init( viewerConfig );
-   
+
+	//update swiper config with
+	// let partialConfig = {...}
+	// viewerJS.slideshows.update('styleName', partialConfig);
+
+	//add new swiper config
+	// let config = {...}
+	// viewerJS.slideshows.set('myNewStyleName', config);
+
     // toggle change local
     $( 'body' ).on( 'click', '[data-toggle="local"]', function() {
     	$( '#changeLocal' ).fadeToggle( 200 );
