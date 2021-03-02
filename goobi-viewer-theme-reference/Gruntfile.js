@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         			src: [
         				'**'
         			],
-        			dest: getTomcatDir() + '\\goobi-viewer-theme-reference'
+        			dest: getTomcatDir() + '/goobi-viewer-theme-reference'
         		}],
         		verbose: true
         	}
