@@ -27,7 +27,7 @@ function setContentHeight() {
 */
 function initSliders() {
 	//update swiper config with
-	// let partialConfig = {
+	    // var partialConfig = {
         // swiperConfig: {
         //        loop: true,
         //        slidesPerView: 2
