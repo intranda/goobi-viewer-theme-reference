@@ -26,15 +26,24 @@ function setContentHeight() {
 * This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
 */
 function initSliders() {
-	
 	//update swiper config with
-	// let partialConfig = {...}
+	// let partialConfig = {
+        // swiperConfig: {
+        //        loop: true,
+        //        slidesPerView: 2
+        //    }
+        // }
 	// viewerJS.slideshows.update('styleName', partialConfig);
 
-	//add new swiper config
-	// let config = {...}
+        // add new swiper config
+        // var config = {
+        //    swiperConfig: {
+        //        slidesPerView: 3,
+        //        spaceBetween: 50,
+        //        loop: true
+        //    }
+        //}
 	// viewerJS.slideshows.set('myNewStyleName', config);
-
 }
 initSliders();
 
