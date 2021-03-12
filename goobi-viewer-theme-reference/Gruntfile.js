@@ -100,16 +100,36 @@ module.exports = function(grunt) {
                 options: {
                 	spawn: false,
                 }
+            },
+			riot: {
+				files: [
+					'<%=src.jsDevFolder %>/*.tag'
+				],
+				tasks: ['riot', 'sync'],
+				options: {
+					spawn: false,
+				}
+			}
+        },
+		riot: {
+            options:{
+                concat: true
+            },
+            dist: {
+                expand: false,
+                src: '<%=src.jsDevFolder %>/*.tag',
+                dest: '<%=src.jsDistFolder%><%=theme.name%>-tags.js'
             }
-        }
+        },
     });
     
 	// ---------- LOAD TASKS ----------
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-riot');
     grunt.loadNpmTasks('grunt-sync');
     
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
-    grunt.registerTask( 'default', [ 'watch', 'sync' ] );
+    grunt.registerTask('default', [ 'watch', 'sync' ]);
 };
