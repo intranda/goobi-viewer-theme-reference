@@ -61,9 +61,11 @@
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/markercluster/MarkerCluster.css?${navigationHelper.buildVersion}" />
 
 	<!-- CUSTOM CSS -->
-	<h:panelGroup rendered="#{navigationHelper.currentPage != 'label__api_swagger'}">
-		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${navigationHelper.buildVersion}" />
-    </h:panelGroup>
+	<!-- EXCLUDED PREVENT MESSED UP STYLING FOR NEW MIRADOR AND SWAGGER API PAGE -->
+	<!-- 	<h:panelGroup rendered="#{navigationHelper.currentPage != 'label__api_swagger'}"> -->
+	<!-- 		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${navigationHelper.buildVersion}" /> -->
+	<!--    </h:panelGroup> -->
+    
     
     <!-- SUBTHEME CSS -->
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-' and navigationHelper.currentPage != 'label__api_swagger'}">

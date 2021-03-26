@@ -4,14 +4,16 @@
    ==============================================================*/
 /* WIDGET USER INTERACTIONS */
 #widgetUserInteractions {
-		ul {
-			border-bottom: none;
+	ul {
+		padding: 0;
 		li:first-of-type {
-			a {}
+		a {}
 		}
-		&:last-of-type {
-			border-bottom: 1px solid @middlegray;
-		}
+		&:last-of-type {}
+	}
+	h3 {
+		padding: 0;
+		margin-bottom: 2rem;
 	}
 }
 .widget-user-interactions {
@@ -33,14 +35,6 @@
 	h4 {}
 }
 
-// MODIFICATION
-.widget-user-interactions .btn--full {
-	&:hover,
-	&:active,
-	&:focus {
-		color: @white;
-	}
-}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
