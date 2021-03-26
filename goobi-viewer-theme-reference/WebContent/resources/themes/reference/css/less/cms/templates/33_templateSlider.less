@@ -1,11 +1,43 @@
+/* ==============================================================
+   CMS Template "Slider"
+   style declarations for cms_template_33_slider.xhtml
+   ==============================================================*/
+
+#templateSlider {
+	.swiper-container {
+		a:hover {}
+	}
+	.swiper-wrapper {}
+	.swiper-slide {}
+	.swiper-link {
+		&:hover {
+			.swiper-heading {}
+		}
+	}
+	.swiper-heading {
+	}
+	// REDEFINE IMAGE HEIGHT
+	.swiper-image {}
+	.swiper-description {}
+	.swiper-pagination {}
+}
+
 .tpl-slider {
 	&__inner {
-		padding: 2rem;
-		margin-bottom: 20px;
 		border: 1px solid @middlegray;
 		background-color: @white;
 	}
-	&__slider {
-		margin: 0rem 0 3.5rem 0;
-	}
+	&__slider {}
 }
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
