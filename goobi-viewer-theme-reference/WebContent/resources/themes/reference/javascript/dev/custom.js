@@ -34,7 +34,6 @@ function initSliders() {
         //    }
         // }
 	// viewerJS.slideshows.update('styleName', partialConfig);
-
         // add new swiper config
         // var config = {
         //    swiperConfig: {
