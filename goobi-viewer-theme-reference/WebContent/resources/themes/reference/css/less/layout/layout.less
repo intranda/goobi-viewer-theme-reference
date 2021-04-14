@@ -20,7 +20,10 @@
 		position: sticky;
 		top: 0;
 		background-color: @middleblack;
-		z-index: 2020;		
+		z-index: 2020;	
+		&.-loggedIn {
+			top: 35px;
+		}
 	}
 	&__top {
 		display: flex;
@@ -133,7 +136,7 @@
 /* NAVIGATION */
 .page-navigation {
 	position: sticky;
-	top: 30px;
+	top: 65px;
 	z-index: 2010;
 	background-color: @ci-color1;
 	&__wrapper {

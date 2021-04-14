@@ -15,9 +15,12 @@
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
 
+	<!-- ADMIN TOPBAR FRONTEND -->
+	<viewerComponent:frontEndAdminTopBar />
+
     <!-- HEADER -->
     <!-- PAGE HEADER TOP -->
-    <div id="pageHeaderTop" class="page-header__top-wrapper" role="region" aria-label="#{msg.aria_label__top_header_description}">
+    <div id="pageHeaderTop" class="page-header__top-wrapper #{userBean.loggedIn ? '-loggedIn':''}" role="region" aria-label="#{msg.aria_label__top_header_description}">
         <div class="container">
             <div class="page-header__top">
 	            <!-- OPEN MOBILE NAVIGATION -->
