@@ -21,7 +21,7 @@
 		top: 0;
 		background-color: @middleblack;
 		z-index: 2020;	
-		&.-loggedIn {
+		&.-adminActive {
 			top: 35px;
 		}
 	}
@@ -136,9 +136,12 @@
 /* NAVIGATION */
 .page-navigation {
 	position: sticky;
-	top: 65px;
+	top: 30px;
 	z-index: 2010;
 	background-color: @ci-color1;
+	&.-adminActive {
+		top: 65px;
+	}
 	&__wrapper {
 		position: relative;
 		display: flex;
