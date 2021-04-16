@@ -20,10 +20,10 @@ function setContentHeight() {
     }
 }
 
-/**
-* initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
-* list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
-* This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
+/*
+ initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
+ list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
+ This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
 */
 function initSliders() {
 	//update swiper config with
@@ -34,7 +34,6 @@ function initSliders() {
         //    }
         // }
 	// viewerJS.slideshows.update('styleName', partialConfig);
-
         // add new swiper config
         // var config = {
         //    swiperConfig: {
