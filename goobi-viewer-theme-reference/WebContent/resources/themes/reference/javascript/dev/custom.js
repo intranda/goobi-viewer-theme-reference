@@ -44,6 +44,40 @@ function initSliders() {
         //    }
         //}
 	// viewerJS.slideshows.set('myNewStyleName', config);
+	
+	
+	// SINGLE STORY SLIDER
+	var singleStoryConfig = {
+     		maxSlides: 8,
+     		timeout: 10000,
+     		imageWidth: 1400,
+     		imageHeight: 1200,
+     		layout: "stories",
+			swiperConfig: {
+				  slidesPerView: 1,
+				  loop: true,
+				  autoplay: {
+					   delay: 5000,
+				  },
+				  speed: 1100,
+				  effect: 'fade',
+				  fadeEffect: {
+				    crossFade: true
+				  },
+				  vertical: true,
+			      navigation: {
+			          nextEl: '.slider-single-story__next',
+			          prevEl: '.slider-single-story__prev',
+			      },
+			      pagination: {
+			          el: '.slider-single-story__pagination',
+			          clickable: true
+			      },
+			}
+		}
+		 
+	viewerJS.slider.set('single-story', singleStoryConfig);
+	
 }
 initSliders();
 
