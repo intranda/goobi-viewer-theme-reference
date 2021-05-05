@@ -7,6 +7,7 @@
 	<application>
 		<locale-config>
 			<default-locale>de</default-locale>
+			<!-- EDIT NEXT 2 LINES FOR LANGUAGE TOGGLE -->
 			<supported-locale>de</supported-locale>
 			<supported-locale>en</supported-locale>
 			<supported-locale>fr</supported-locale>

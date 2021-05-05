@@ -67,6 +67,7 @@
             var miradorConfig = {
             	root: "#{request.contextPath}",
             	restEndpoint : "#{configurationBean.restApiUrl}",
+            	manifestEndpoint : "#{configurationBean.restApiUrlForIIIFPresention}/"
 			};
             viewerJS.mirador.init( miradorConfig );
 
