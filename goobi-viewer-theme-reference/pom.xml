@@ -108,7 +108,7 @@
 				</executions>
 			</plugin>
 
-			<!-- Maven Resource Plugin - important: nonfilteredfileextensions to prevend file corruption -->
+			<!-- Maven Resource Plugin - important: nonfilteredfileextensions to prevent file corruption -->
 			<plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-resources-plugin</artifactId>
