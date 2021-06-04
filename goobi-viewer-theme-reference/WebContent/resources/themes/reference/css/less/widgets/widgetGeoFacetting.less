@@ -1,0 +1,92 @@
+/* ==============================================================
+   Widget geofacetting
+   style declarations for widget_geoFacetting.xhtml
+   ==============================================================*/
+
+.widget.widget-geofacetting {}
+.widget-geofacetting {
+	&__topbar {
+		background-color: @ci-color1;
+	}
+	&__item {}
+	&__label {}
+	&__actions {
+		color: @white;
+		.btn {
+			color: @white;
+		}
+	}
+	h3 {
+	}
+	&__action-expand {
+		&:hover,
+		&:active,
+		&:focus {}	
+	}
+	&__action-reset {
+		&.active {}
+		&:hover,
+		&:active,
+		&:focus {}
+	}
+	&__overlay {
+		&__geo-map {}
+		.ajax_loader {
+			img {}
+		}
+	}
+	&__loader-wrapper {}
+	&__loader-animated-image {}
+	.geo-map {
+		.mapboxgl-popup-content {
+		}
+		.leaflet-popup-content {
+		}
+		.leaflet-control-zoom  {
+			a {
+			}
+		}
+		.leaflet-control-container {
+			.leaflet-top {
+				a {					
+				}
+			}
+			.leaflet-bottom {
+				a {
+				}
+			}
+		}
+	}
+	&__overlay-buttons-wrapper {}
+	&__overlay-reset-search {}
+	&__overlay-submit-search {}
+}
+
+.overlay__geomap {
+	.geo-map {
+		&__wrapper {}
+		&__buttons-wrapper {}
+		&__reset-search {}
+		&__submit-search {}
+	}
+
+	.geocoder {
+	}
+	.mapboxgl-ctrl-geocoder--input {
+		&:focus {
+		}
+	}
+	
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
