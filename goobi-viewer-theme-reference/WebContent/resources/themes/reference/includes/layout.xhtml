@@ -11,10 +11,6 @@
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
-    
-    <f:metadata>
-			<f:viewAction action="#{userBean.createFeedback}" />
-	</f:metadata>
 
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
@@ -202,10 +198,7 @@
 						aria-label="#{msg.social__follow_on_slideshare}">
 						<span class="sr-only">#{msg.social__follow_on_slideshare}</span>
 						<i class="fa fa-slideshare" aria-hidden="true"></i>
-					</a>
-					<button type="button" class="btn btn--clean" data-toggle="modal" data-target="#feedbackModal" aria-label="#{msg.userNotLoggedIn}">
-                    	<span>Schnelles Feedback</span>
-                    </button>			
+					</a>		
 				</div>
 			</div>
 		</div>
@@ -217,9 +210,6 @@
     <!-- USER LOGIN + TERMS -->
 	<viewerComponent:modalUserLogin id="userLoginModal"/>
 	<viewerComponent:modalUserTerms id="userTermsModal"/>
-	
-	<!-- FEEDBACK MODAL -->
-	<viewerComponent:modalFeedbackForm id="feedbackModal"/>
 
     <!-- IE 11 NOT SUPPORTED -->
     <div class="support-overlay">
