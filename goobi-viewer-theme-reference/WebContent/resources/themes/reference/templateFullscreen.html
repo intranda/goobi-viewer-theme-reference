@@ -61,12 +61,9 @@
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
-    
-    <!-- FORCES PRIMEFACES TO INCLUDE JQUERY & JQUERY-UI -->
-    <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
-    <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
-    
+
     <!-- JAVASCRIPT LIBS -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rxjs.umd.min.js?${navigationHelper.buildVersion}"></script>
