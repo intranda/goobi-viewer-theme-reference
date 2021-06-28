@@ -68,6 +68,7 @@
 		margin-left: 1.5rem;
 	}
 	&__top-actions-language {
+		display: flex;
 		position: relative;
 		[data-toggle="local"] {
 			font-size: @fontMedium;
@@ -79,6 +80,10 @@
 	&__top-mobile-sidebar {
 		text-align: right;
 	}
+	/* SLIDER */
+	&__slider {
+		height: 320px;
+	}
 	/* BOTTOM */
 	&__bottom-wrapper {
 		background-color: rgba(242,243,244,0.95);
@@ -87,7 +92,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		padding: 2rem 0;
+		padding: 3rem 0;
 	}
 	&__bottom-logo {
 		flex: 0 0 75%;
@@ -100,6 +105,8 @@
 			font-size: 3.2rem;
 			font-weight: 600; 
 			a {
+				display: flex;
+				align-items: center;
 				color: @middleblack;
 				&:hover,
 				&:active,
@@ -110,12 +117,15 @@
 			}
 			img {
 				display: inline-block;
-				max-width: 13rem;
-				margin-right: 1rem;
+				max-width: 8rem;
+				margin-right: 2rem;
 				vertical-align: middle;
 			}
 			span {}
 		}
+	}
+	&__bottom-actions {
+		display: flex;
 	}
 	&__bottom-span {
 		display: inline-block;
@@ -131,6 +141,40 @@
 	&__bottom-search-link {
 		padding: .3rem 0 0 .7rem;
 		font-size: @fontSmall;
+	}
+}
+
+/* REFERENCE SLIDER STYLING */
+.slider-reference {
+	&__container {}
+	&__wrapper {
+		height: 320px;
+		position: relative;
+		pointer-events: none;
+		cursor: default;
+	}
+	&__image {
+		height: 320px;
+	}
+	&__link {
+		pointer-events: none;
+		cursor: default;
+		display: block;
+	}
+	&__header {
+		position: absolute;
+		left: 20%;
+		top: 50%;
+		background: rgba(0, 0, 0, 0.3);
+		padding: 1.2rem 2rem;
+		color: @white;
+		font-size: 3.5rem;
+		z-index: 100;
+		font-weight: 300;
+		transform: translatey(-50%);
+	}
+	&__description {
+		display: none;
 	}
 }
 
@@ -386,6 +430,9 @@
 			max-width: 48%;
 			margin-left: auto;
 		}
+		&__slider {
+			height: 150px;
+		}
 		&__bottom-wrapper {
 			position: sticky;
 			top: 30px;
@@ -410,6 +457,21 @@
 		&__bottom-search {
 			flex: 0 0 40%;
 			max-width: 40%;
+		}
+	}
+	.slider-reference {
+		&__container {}
+		&__wrapper {
+			height: 150px;
+		}
+		&__header {
+			font-size: 20px;
+			padding: 1.5rem 2rem;
+		}
+		&__image {
+			background-size: cover;
+			background-position: center center;
+			height: 150px;
 		}
 	}
 	.page-navigation {
