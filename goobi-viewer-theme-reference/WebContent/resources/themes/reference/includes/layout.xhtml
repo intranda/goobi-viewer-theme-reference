@@ -62,11 +62,17 @@
 <!--     </div> -->
     
     	            <!-- OPEN MOBILE NAVIGATION -->
-            	<div class="page-header__top-mobile-sidebar">
-					<button type="button" class="btn btn--clean" data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
-						<span></span>
+            	<div class="page-header__mobile-sidebar-trigger">
+					<button type="button" class="btn btn--icon twobar arrow page-header__mobile-sidebar-trigger-arrow" data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
+						<span class="page-header__mobile-sidebar-trigger-arrow-inner">
+							<span class="bar"></span>
+							<span class="bar"></span>
+						</span>
 					</button>
 				</div>
+
+				
+				
 
     <!-- PAGE HEADER BOTTOM -->
     <header id="pageHeaderBottom" class="page-header__bottom-wrapper #{userBean.admin ? '-adminActive':''}">
@@ -77,7 +83,7 @@
                     <h1>
                         <a href="#{request.contextPath}/">
                             <img src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg" alt="Goobi Logo" />
-                            <div class="page-header__bottom-span">Goobi viewer</div>
+                            <span class="page-header__bottom-span">Goobi viewer</span>
                         </a>
                     </h1>
                 </div>
@@ -101,6 +107,14 @@
                     <div class="page-header__top-actions-login">
                         <viewerComponent:loginNavigation />
                     </div>
+                	<button class="btn btn--icon page-header__search-button">
+                		<i class="fa fa-search"></i>
+                	</button>
+                    <div data-open="menu" class="page-header__mobile-burger-menu">
+                      <div></div>
+					  <div></div>
+					  <div></div>
+                	</div>
                 </div>
                 
     
@@ -122,10 +136,10 @@
         </div>
     </header>
 
-    <ui:fragment 
-        rendered="#{navigationHelper.currentPage == 'cms_0009'}">
+
+ <ui:fragment rendered="#{navigationHelper.currentPage == 'index'}">
         <div class="page-header__slider">
-        <viewerComponent:cmsSlider slider="#{cmsSliderBean.getSlider(12)}"/>
+        	<viewerComponent:cmsSlider slider="#{cmsSliderBean.getSlider(12)}"/>
         </div>
     </ui:fragment>
     
