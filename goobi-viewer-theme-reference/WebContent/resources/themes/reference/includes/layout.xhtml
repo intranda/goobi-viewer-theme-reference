@@ -109,7 +109,7 @@
 
  	<ui:fragment rendered="#{navigationHelper.currentPage == 'index'}">
         <div class="page-header__slider">
-        	<viewerComponent:cmsSlider slider="#{cmsSliderBean.getSlider(12)}"/>
+        	<ui:insert name="topbar" />
         </div>
     </ui:fragment>
 

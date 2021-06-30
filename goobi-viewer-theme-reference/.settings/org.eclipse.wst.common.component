@@ -11,10 +11,10 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent"/>
-        <dependent-module archiveName="viewer-core-21.05-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
+        <dependent-module archiveName="viewer-core-21.06-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="module-crowdsourcing-21.05-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-module-crowdsourcing/goobi-viewer-module-crowdsourcing">
+        <dependent-module archiveName="module-crowdsourcing-21.06-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-module-crowdsourcing/goobi-viewer-module-crowdsourcing">
             <dependency-type>uses</dependency-type>
         </dependent-module>
 
