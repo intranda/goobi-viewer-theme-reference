@@ -121,7 +121,15 @@ $( document ).ready( function() {
     $( 'body' ).on( 'click', '[data-open="search"]', function() {
     	$( '[data-target="search-box"]' ).addClass('-searchOn');
     	$( '.page-header__inner' ).addClass('-searchOn');
-    	$('[data-target="search-overlay"]').fadeIn();
+    	$('[data-target="search-overlay"]').fadeIn('fast');
+    	$('.page-header__inner .widget-searchfield input[type=text]').focus();
+    } );
+    
+    // close search overlay on click
+    $( 'body' ).on( 'click', '[data-target="search-overlay"]', function() {
+    	$( '[data-target="search-box"]' ).removeClass('-searchOn');
+    	$( '.page-header__inner' ).removeClass('-searchOn');
+    	$('[data-target="search-overlay"]').fadeOut('fast');
     } );
 
 
