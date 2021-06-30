@@ -15,10 +15,13 @@
 	&__counter {
 		background-color: @ci-color1;
 	}
-	&__string {}
+	&__string {
+		font-weight: 700;
+	}
 	&__icon {}
 	/* DROPDOWN */
 	&__dropdown {
+		z-index: 2020;
 		top: calc(~"100% + 4px");
 		border: none;
 		right: -4px;
@@ -166,7 +169,11 @@
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+	.bookmark-navigation__string {
+		display: none;
+	}
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {}

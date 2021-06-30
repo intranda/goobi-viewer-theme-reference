@@ -69,7 +69,8 @@
 	}
 	&__top-actions-language,
 	&__top-actions-bookmark,
-	&__top-actions-login {
+	&__top-actions-login,
+	&__search-button {
 		margin-left: 1.5rem;
 	}
 	&__top-actions-language {
@@ -91,20 +92,62 @@
 		height: 320px;
 	}
 	/* BOTTOM */
-	&__bottom-wrapper {
+	&__wrapper {
 		background-color: rgba(242,243,244,0.95);
+		z-index: 2021;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		&.-scrolled {
+			.page-header__logo {
+				h1 {
+					font-size: 2.5rem;
+				}
+				img {
+					max-width: 5rem;
+				}
+			}
+//			position: sticky;
+//			top: 0;
+//			left: 0;
+//			width: 100vw;
+		}
+		&.-adminActive {
+			position: relative;
+		}
 	}
-	&__bottom {
+	&__spacer {
+		position: relative;
+		z-index: -1;
+		opacity: 0;
+		&.-scrolled {
+			position: relative;
+		}
+		&.-adminActive {
+			display: none;
+		}
+	}
+	// .page-header__inner :not(.page-header__search-box)
+	&__inner {
+		position: relative;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		padding: 3rem 0;
+		transition: padding 0.2s linear;
+		&.-scrolled {
+			padding: 1rem 0;
+		}
+		&.-searchOn > * {
+        	visibility: hidden;
+        	opacity: 0;
+    	}
 	}
-	&__bottom-logo {
-		flex: 0 0 75%;
-		max-width: 75%;
+	&__logo {
 		padding-right: .75rem;
 		h1 {
+			transition: 0.2s all ease;
 			display: flex;
 			align-items: center;
 			margin: 0;
@@ -122,6 +165,7 @@
 				}
 			}
 			img {
+				transition: 0.2s all ease;
 				display: inline-block;
 				max-width: 8rem;
 				margin-right: 2rem;
@@ -130,30 +174,61 @@
 			span {}
 		}
 	}
-	&__bottom-actions {
+	&__actions {
 		display: flex;
 		margin-left: auto;
 		align-items: center;
 	}
-	&__bottom-span {
+	&__span {
 		display: block;
 	}
 	&__search-button {
-		margin-left: 1.5rem;
 		.fa {
 			font-size: 1.6rem;
 		}
 		color: @middleblack;
 	}
-	&__bottom-search {
-		flex: 0 0 25%;
-		max-width: 25%;
-		padding-left: .75rem;
-		.widget {
+//	&__search {
+//		flex: 0 0 25%;
+//		max-width: 25%;
+//		padding-left: .75rem;
+//		.widget {
+//			margin-bottom: 0;
+//		}		
+//	}
+	&__search-box {
+		opacity: 0;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		transition: opacity 0.2s ease;
+		.widget-searchfield {
 			margin-bottom: 0;
-		}		
+			width: 25%;
+			transition: width 0.2s ease;
+		}
+		visibility: hidden;
+		&.-searchOn {
+			opacity: 1;
+			visibility: visible;
+			.widget-searchfield {
+				width: 40%;
+			}
+		}
 	}
-	&__bottom-search-link {
+	&__search-overlay {
+		display: none;
+		z-index: 2020;
+		background: rgba(0, 0, 0, 0.8);
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+	}
+	&__search-link {
 		padding: .3rem 0 0 .7rem;
 		font-size: @fontSmall;
 	}
@@ -161,10 +236,14 @@
 		display: none;
 		position: fixed;
 		bottom: 18px;
-		right: 15px;
+		left: calc(~"100% - 50px");
 		background: @ci-color1;
 		z-index: 2040;
 		border-radius: 40px;
+		transition: left 0.2s ease;
+		&.-opened {
+			left: 15px;
+		}
 	}
 	
 	&__mobile-sidebar-trigger-arrow {
@@ -194,7 +273,7 @@
 			}
 		}
 	
-		&.arrow {
+		&.-arrow {
 			.bar {
 			}
 	
@@ -208,7 +287,7 @@
 			}
 		}
 	
-		&.cross {
+		&.-cross {
 			.bar:nth-child(1) {
 				transform: translateX(0) rotate(45deg) scaleX(1.4);
 				background: @white;
@@ -315,8 +394,7 @@
 
 /* NAVIGATION */
 .page-navigation {
-	position: sticky;
-	top: 30px;
+	position: relative;
 	z-index: 2010;
 	background-color: @ci-color1;
 	&.-adminActive {
@@ -453,6 +531,7 @@
 	position: relative;
 	width: 2.8rem;
 	height: 2.8rem;
+	z-index: 2031;
 	span {
 		display: inline-block;
 		position: absolute;
@@ -494,30 +573,12 @@
 	}
 }
 
-//[data-open="sidebar"] {
-//	span {
-//		top: 1.9rem;
-//		left: .6rem;
-//		width: 1.3rem;
-//		height: .2rem;
-//		margin-top: -.2rem;
-//		transform: rotate(45deg);
-//		&:before {
-//			top: -.6rem;
-//			left: -.6rem;
-//			width: 1.3rem;
-//			height: .2rem;
-//			transform: rotate(90deg);
-//		}
-//	}
-//}
-
 [data-close="menu"],
 [data-close="sidebar"] {
 	display: none;
 	position: fixed;
 	top: 3rem;
-	z-index: 2030;
+	z-index: 2031;
 	span {
 		transform: rotate(45deg);
 		&:before {
@@ -527,7 +588,7 @@
 }
 
 [data-close="menu"] {
-	left: calc(~"50% + 1.5rem");
+	right: 30px;
 }
 
 [data-close="sidebar"] {
@@ -545,57 +606,54 @@
 @media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+	&__search-box {
+		&.-searchOn {
+			.widget-searchfield {
+				width: 60%;
+			}
+		}
+	}
+}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 	.page-header {
-		// OBSOLETE?
-		&__top-mobile-nav,
-		&__top-mobile-sidebar {
-			display: block;
-			flex: 0 0 11%;
-			max-width: 11%;
-		}
 		&__mobile-sidebar-trigger {
 			display: block;
 		}
-		&__top-brand {
-			flex: 0 0 30%;
-			max-width: 30%;
-		}
-		&__top-actions {
-			flex: 0 0 48%;
-			max-width: 48%;
-			margin-left: auto;
+		&__inner {
+			padding: 1rem 0;
 		}
 		&__slider {
 			height: 150px;
 		}
-		&__bottom-wrapper {
-			position: sticky;
-			top: 0px;
-			z-index: 2010;	
+		&__wrapper {
 			&.-adminActive {
 				position: relative;
 				top: unset;
 			}
 		}
-		&__bottom {
-			padding: 1rem 0;
-		}
-		&__bottom-logo {
-			flex: 0 0 60%;
-			max-width: 60%;
+		&__logo {
 			h1 {
+				font-size: 2.5rem;
 				img {
 					max-width: 6rem;
 				}
 			}
 		}
-		&__bottom-search {
+		&__search {
 			flex: 0 0 40%;
 			max-width: 40%;
+		}
+		&__search-box {
+			.widget-searchfield {
+			}
+			&.-searchOn {
+				.widget-searchfield {
+					width: 70%;
+				}
+			}
 		}
 		&__mobile-burger-menu {
 			display: block;
@@ -619,7 +677,7 @@
 	.page-navigation {
 		position: inherit;
 		top: inherit;
-		z-index: 2030;
+		z-index: 2031;
 	}
 	.page-content {
 		&__wrapper {
@@ -634,18 +692,18 @@
 			flex: unset;
 			position: fixed;
 			top: 0;
-			left: -100%;
+			right: -100%;
 			bottom: 0;
 			width: 60%;
     		max-width: unset;
 			padding: 1.5rem;
 			padding-top: 4rem;
 			background-color: @neutralgray;
-			transition: left .2s linear;
+			transition: right .2s ease;
 			overflow-y: auto;
 			z-index: 2030;
 			&.in {
-				left: 0;
+				right: 0;
 			}
 		}
 	}
@@ -662,10 +720,10 @@
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 	.page-header {
-		&__bottom {
+		&__inner {
 			align-items: center;
 		}
-		&__bottom-logo {
+		&__logo {
 			flex: 0 0 30%;
 			max-width: 30%;
 			h1 {
@@ -674,7 +732,7 @@
 				}
 			}
 		}
-		&__bottom-search {
+		&__search {
 			flex: 0 0 70%;
 			max-width: 70%;
 		}
