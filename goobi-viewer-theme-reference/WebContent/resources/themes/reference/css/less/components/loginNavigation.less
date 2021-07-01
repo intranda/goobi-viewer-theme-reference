@@ -8,6 +8,7 @@
 	/* NOT LOGGED IN */
 	[data-login="false"] {
 		button[data-toggle="modal"] {
+			display: block;
 			font-weight: 700;
 			.fa {}
 		}
@@ -16,10 +17,16 @@
 	[data-login="true"] {
 		button[data-toggle="modal"] {
 			font-weight: 700;
+			display: block;
 		}
+//		[data-toggle="user-dropdown"] {
+//			display: block;
+//		}
 		.login-navigation {
 			/* TOGGLE USER DROPDOWN */
-			&__user-name {}			
+			&__user-name {
+				font-weight: 700;
+			}			
 			&__user-icon {
 				img {}
 			}

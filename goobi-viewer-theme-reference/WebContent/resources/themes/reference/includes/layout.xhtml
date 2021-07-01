@@ -25,11 +25,13 @@
 			</span>
 		</button>
 	</div>
+	
+	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}">spacer</div>
+
 
 	<!-- PAGE HEADER -->
-	<header id="pageHeader"
-		class="page-header__wrapper #{userBean.admin ? '-adminActive':''}">
-		<div class="container">
+	<header id="pageHeader" class="page-header #{userBean.admin ? '-adminActive':''}">
+		<div class="container page-header__wrapper">
 			<div class="page-header__inner">
 				<!-- PAGE HEADER BOTTOM LOGO -->
 				<div class="page-header__logo">
@@ -52,8 +54,8 @@
 					<ui:fragment
 						rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
 						<div id="changeLocalWrapper"
-							class="page-header__top-actions-language">
-							<button type="button" class="btn btn--clean" data-toggle="local"
+							class="page-header__actions-language">
+							<button type="button" class="btn btn--clean page-header__actions-language-button" data-toggle="local"
 								aria-label="#{msg.aria_label__switch_language}">
 								#{msg['changeLocal_' += navigationHelper.localeString]}</button>
 							<viewerComponent:changeLocal toggleLanguage="false"
@@ -61,17 +63,28 @@
 						</div>
 					</ui:fragment>
 					<!-- LOGIN NAVIGATION -->
-					<div class="page-header__top-actions-login">
+					<div class="page-header__actions-login">
 						<viewerComponent:loginNavigation />
 					</div>
-					<button data-open="search" class="btn btn--icon page-header__search-button">
+					<button data-open="search" class="btn btn--icon page-header__actions-search-button">
 						<i class="fa fa-search"></i>
 					</button>
-					<div data-open="menu" class="page-header__mobile-burger-menu">
-						<div></div>
-						<div></div>
-						<div></div>
+					
+					<div data-open="menu" class="page-header__mobile-burger-menu-alternative">
+						<span></span>
 					</div>
+					
+	
+<!-- 					<div data-open="menu" class="page-header__mobile-burger-menu"> -->
+					
+<!-- 						<div></div> -->
+<!-- 						<div></div> -->
+<!-- 						<div></div> -->
+<!-- 					</div> -->
+					
+					
+					
+					
 				</div>
 				
 				<!-- SEARCH BOX -->
@@ -80,12 +93,11 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- NAVIGATION -->
 		<div id="pageNavigation"
 			class="page-navigation #{userBean.admin ? '-adminActive':''}">
-			<div class="container">
-				<div class="page-navigation__wrapper">
+			<div class="container page-navigation__wrapper">
 					<viewerComponent:navigation megaMenu="false" />
 
 					<!-- MOBILE NAVIGATION CLOSE -->
@@ -93,25 +105,39 @@
 						aria-label="#{msg.aria_label__close_navigation}">
 						<span></span>
 					</button>
-				</div>
 			</div>
 		</div>
 		
-		<!-- MOBILE OVERLAY -->
-		<div class="mobile-overlay"></div>
+		<!-- NAVIGATION -->
+		<div id="pageNavigation"
+			class="page-navigation #{userBean.admin ? '-adminActive':''}">
+			<div class="container page-navigation__wrapper">
+					<viewerComponent:navigation megaMenu="false" />
 
+					<!-- MOBILE NAVIGATION CLOSE -->
+					<button type="button" class="btn btn--clean" data-close="menu"
+						aria-label="#{msg.aria_label__close_navigation}">
+						<span></span>
+					</button>
+			</div>
+		</div>
+
+		<!-- MOBILE MENU OVERLAY/BACKGROUND -->
+		<div class="page-header__navigation-mobile-background"></div>
+		
 	</header>
 	
-	<!-- SEARCH OVERLAY -->
-	<div data-target="search-overlay" class="page-header__search-overlay"></div>
-				
-	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}">spacer</div>
-
- 	<ui:fragment rendered="#{navigationHelper.currentPage == 'index'}">
+	<ui:fragment rendered="#{navigationHelper.currentPage == 'index'}">
         <div class="page-header__slider">
         	<ui:insert name="topbar" />
         </div>
     </ui:fragment>
+	
+	<!-- MOBILE OVERLAY -->
+	<div class="mobile-overlay"></div>
+	
+	<!-- SEARCH OVERLAY -->
+	<div data-target="search-overlay" class="page-header__search-overlay"></div>
 
     <!-- MAIN -->
     <div id="pageContent" class="page-content">
@@ -202,6 +228,13 @@
 			</div>
 		</div>
 	</footer>
+	
+	<!-- MOBILE ONLY NAVIGATION -->
+<!-- 	<div id="pageNavigationMobile" class="page-navigation__mobile"> -->
+<!-- 		<div class="page-navigation__mobile-wrapper"> -->
+<!-- 			<viewerComponent:navigation megaMenu="false" /> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 
 	<!--  GENERIC OVERLAY -->
     <ui:include src="/resources/includes/overlay.xhtml" />

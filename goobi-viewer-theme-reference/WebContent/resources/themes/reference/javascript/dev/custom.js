@@ -72,8 +72,6 @@ function initSliders() {
 initSliders();
 
 
-
-
 $( document ).ready( function() {
     var viewerConfig = {
         currentPage: currentPage,
@@ -81,7 +79,6 @@ $( document ).ready( function() {
         localStoragePossible: viewerJS.localStoragePossible,
         widgetNerSidebarRight: true,
     };
-
 	
 	viewerJS.init( viewerConfig );
 	
@@ -89,12 +86,12 @@ $( document ).ready( function() {
 	$(document).on("scroll", function(){
 		if
       ($(document).scrollTop() > 70){
-		  $(".page-header__wrapper").addClass("-scrolled");
+		  $(".page-header").addClass("-scrolled");
 //		  $(".page-header__spacer").addClass("-scrolled");
 		}
 		else
 		{
-			$(".page-header__wrapper").removeClass("-scrolled");
+			$(".page-header").removeClass("-scrolled");
 //			$(".page-header__spacer").removeClass("-scrolled");
 		}
 		if
@@ -107,13 +104,13 @@ $( document ).ready( function() {
 		}
 		
 	});
-	
+
 	// calculate spacer height on page load and resize
-	var headerStartHeight = $('.page-header__wrapper').height();
+	var headerStartHeight = $('.page-header').height();
 	$('.page-header__spacer').height(headerStartHeight);
 	
 	$(window).on('resize', function(){
-		var headerHeight = $('.page-header__wrapper').height();
+		var headerHeight = $('.page-header').height();
 			$('.page-header__spacer').height(headerHeight);
 		});
 
@@ -145,22 +142,17 @@ $( document ).ready( function() {
     		$( '#changeLocal' ).hide();
     	}
     } );
-    
-    
+
     // toggle mobile menu
     $( 'body' ).on( 'click', '[data-open="menu"]', function() {
-    	$( 'html' ).addClass( 'no-overflow' );
-    	$( '.mobile-overlay, [data-close="menu"]' ).fadeIn( 300 );
-    	$( '#navigation' ).addClass( 'in' );
-    	$('[data-open="sidebar"]').toggle(); 
+    	$( 'html' ).toggleClass( 'no-overflow' );
+    	$( '.page-navigation' ).fadeToggle(200, "linear");
+    	$( '.page-header' ).toggleClass('-mobileMenuOpen');
+    	$( '.page-header__navigation-mobile-background' ).fadeToggle(200, "linear");
+    	$('[data-open="sidebar"]').toggle();
+    	$(this).toggleClass('in');
     } );
-    $( 'body' ).on( 'click', '[data-close="menu"]', function() {
-    	$( 'html' ).removeClass( 'no-overflow' );
-    	$( this ).hide();
-    	$( '.mobile-overlay' ).fadeOut( 300 );
-    	$( '#navigation' ).removeClass( 'in' );
-    	$('[data-open="sidebar"]').toggle(); 
-    } );
+
 
     // toggle mobile sidebar
     $( 'body' ).on( 'click', '[data-open="sidebar"]', function() {

@@ -100,16 +100,12 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 	.navigation {
-		position: fixed;
-		top: -100vh;
-		bottom: 0;
-		left: 0;
+		position: relative;
 		width: 100%;
-		padding-top: 7rem;
 	    overflow-y: auto;
 	    transition: top .3s ease;
 	    z-index: 2031;
-	    max-height: 80vh;
+	    background: unset;
 	    &.in {
 	    	top: 0;
 	    }
@@ -171,8 +167,4 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-	.navigation {
-		top: -100vh;
-		width: 100%;
-	}
 }
