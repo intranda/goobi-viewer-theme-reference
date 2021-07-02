@@ -150,14 +150,14 @@ $( document ).ready( function() {
     } );
 
     // mobile submenu animation 
-    $( ".navigation__submenu-trigger" ).click(function() {
+    $( "#pageNavigationMobile .navigation__submenu-trigger" ).click(function() {
     	// $('.navigation__submenu').removeAttr('style');
-    	$(this).find('.navigation__submenu:first').slideToggle('');
+    	$(this).find('.navigation__submenu:first').slideToggle('fast');
     	event.stopPropagation();
     	var menuTarget = $(this).find('.navigation__submenu:first');
     	var menuTarget2 = $(this).parents('.navigation__submenu');
     	// $('.navigation__submenu-trigger').parents('.navigation__submenu').show();
-    	$(".navigation__submenu").not(menuTarget, menuTarget2).slideUp();
+    	$("#pageNavigationMobile .navigation__submenu").not(menuTarget, menuTarget2).slideUp('fast');
     	
     });
 
