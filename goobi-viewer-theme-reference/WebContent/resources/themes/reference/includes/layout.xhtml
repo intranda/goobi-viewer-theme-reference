@@ -94,37 +94,9 @@
 			</div>
 		</div>
 
-		<!-- NAVIGATION -->
-		<div id="pageNavigation"
-			class="page-navigation #{userBean.admin ? '-adminActive':''}">
-			<div class="container page-navigation__wrapper">
-					<viewerComponent:navigation megaMenu="false" />
-
-					<!-- MOBILE NAVIGATION CLOSE -->
-					<button type="button" class="btn btn--clean" data-close="menu"
-						aria-label="#{msg.aria_label__close_navigation}">
-						<span></span>
-					</button>
-			</div>
-		</div>
-		
-		<!-- NAVIGATION -->
-		<div id="pageNavigation"
-			class="page-navigation #{userBean.admin ? '-adminActive':''}">
-			<div class="container page-navigation__wrapper">
-					<viewerComponent:navigation megaMenu="false" />
-
-					<!-- MOBILE NAVIGATION CLOSE -->
-					<button type="button" class="btn btn--clean" data-close="menu"
-						aria-label="#{msg.aria_label__close_navigation}">
-						<span></span>
-					</button>
-			</div>
-		</div>
-
 		<!-- MOBILE MENU OVERLAY/BACKGROUND -->
 		<div class="page-header__navigation-mobile-background"></div>
-		
+
 	</header>
 	
 	<ui:fragment rendered="#{navigationHelper.currentPage == 'index'}">
@@ -132,6 +104,14 @@
         	<ui:insert name="topbar" />
         </div>
     </ui:fragment>
+    
+	<!-- NAVIGATION -->
+	<div id="pageNavigation"
+		class="page-navigation #{userBean.admin ? '-adminActive':''}">
+		<div class="container page-navigation__wrapper">
+				<viewerComponent:navigation id="page-header__nav-menu-desktop" megaMenu="false" />
+		</div>
+	</div>
 	
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
@@ -228,13 +208,14 @@
 			</div>
 		</div>
 	</footer>
-	
+
+
 	<!-- MOBILE ONLY NAVIGATION -->
-<!-- 	<div id="pageNavigationMobile" class="page-navigation__mobile"> -->
-<!-- 		<div class="page-navigation__mobile-wrapper"> -->
-<!-- 			<viewerComponent:navigation megaMenu="false" /> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
+	<div class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
+		<div class="container page-navigation__wrapper">
+			<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
+		</div>
+	</div>
 
 	<!--  GENERIC OVERLAY -->
     <ui:include src="/resources/includes/overlay.xhtml" />
