@@ -81,6 +81,32 @@
 	&__megamenu-item {}
 }
 
+// MOBILE ADAPTIONS OF ICONS
+
+#pageNavigationMobile {
+	.navigation__submenu-trigger {
+		.caret {
+			border: none;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font: normal normal normal 14px / 1 FontAwesome;
+			&:before {
+				content: "\f067";
+			}
+		}
+		&.active {
+			.caret {
+				&:before {
+					content: "\f068";
+				}
+			}
+		}
+	}
+}
+
 @{RTL} {
 	.navigation {
 		&__submenu {
@@ -90,6 +116,7 @@
 		}
 	}
 }
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
