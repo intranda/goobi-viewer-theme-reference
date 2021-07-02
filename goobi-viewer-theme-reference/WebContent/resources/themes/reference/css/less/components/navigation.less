@@ -85,7 +85,7 @@
 
 #pageNavigationMobile {
 	.navigation__submenu-trigger {
-		.caret {
+		> button > .caret {
 			border: none;
 			width: 20px;
 			height: 20px;
@@ -98,7 +98,7 @@
 			}
 		}
 		&.active {
-			.caret {
+			> button > .caret {
 				&:before {
 					content: "\f068";
 				}
@@ -106,6 +106,12 @@
 		}
 	}
 }
+
+.navigation__submenu.in {
+	display: none;
+}
+
+
 
 @{RTL} {
 	.navigation {

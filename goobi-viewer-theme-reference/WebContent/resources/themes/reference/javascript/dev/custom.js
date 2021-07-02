@@ -149,6 +149,17 @@ $( document ).ready( function() {
     	$(this).toggleClass('in');
     } );
 
+    // mobile submenu animation 
+    $( ".navigation__submenu-trigger" ).click(function() {
+    	// $('.navigation__submenu').removeAttr('style');
+    	$(this).find('.navigation__submenu:first').slideToggle('');
+    	event.stopPropagation();
+    	var menuTarget = $(this).find('.navigation__submenu:first');
+    	var menuTarget2 = $(this).parents('.navigation__submenu');
+    	// $('.navigation__submenu-trigger').parents('.navigation__submenu').show();
+    	$(".navigation__submenu").not(menuTarget, menuTarget2).slideUp();
+    	
+    });
 
     // toggle mobile sidebar
     $( 'body' ).on( 'click', '[data-open="sidebar"]', function() {
