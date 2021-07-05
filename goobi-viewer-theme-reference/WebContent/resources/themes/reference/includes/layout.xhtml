@@ -1,16 +1,15 @@
-<ui:composition 
-    xmlns="http://www.w3.org/1999/xhtml" 
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
-    xmlns:c="http://java.sun.com/jsp/jstl/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html" 
-    xmlns:f="http://xmlns.jcp.org/jsf/core" 
-    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-    xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" 
-    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
-    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components" 
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+	xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+	xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
 	<!-- ADMIN TOPBAR FRONTEND -->
 	<viewerComponent:frontEndAdminTopBar />
@@ -25,12 +24,13 @@
 			</span>
 		</button>
 	</div>
-	
+
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}">spacer</div>
 
 
 	<!-- PAGE HEADER -->
-	<header id="pageHeader" class="page-header #{userBean.admin ? '-adminActive':''}">
+	<header id="pageHeader"
+		class="page-header #{userBean.admin ? '-adminActive':''}">
 		<div class="container page-header__wrapper">
 			<div class="page-header__inner">
 				<!-- PAGE HEADER BOTTOM LOGO -->
@@ -53,9 +53,10 @@
 					<!-- CHANGE LOCALE -->
 					<ui:fragment
 						rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
-						<div id="changeLocalWrapper"
-							class="page-header__actions-language">
-							<button type="button" class="btn btn--clean page-header__actions-language-button" data-toggle="local"
+						<div id="changeLocalWrapper" class="page-header__actions-language">
+							<button type="button"
+								class="btn btn--clean page-header__actions-language-button"
+								data-toggle="local"
 								aria-label="#{msg.aria_label__switch_language}">
 								#{msg['changeLocal_' += navigationHelper.localeString]}</button>
 							<viewerComponent:changeLocal toggleLanguage="false"
@@ -66,30 +67,19 @@
 					<div class="page-header__actions-login">
 						<viewerComponent:loginNavigation />
 					</div>
-					<button data-open="search" class="btn btn--icon page-header__actions-search-button">
+					<button data-open="search"
+						class="btn btn--icon page-header__actions-search-button">
 						<i class="fa fa-search"></i>
+						<div class="page-header__actions-search-close">
+							<span></span>
+						</div>
 					</button>
-					
-					<div data-open="menu" class="page-header__mobile-burger-menu-alternative">
+
+					<div data-open="menu"
+						class="page-header__mobile-burger-menu-alternative">
 						<span></span>
 					</div>
-					
-	
-<!-- 					<div data-open="menu" class="page-header__mobile-burger-menu"> -->
-					
-<!-- 						<div></div> -->
-<!-- 						<div></div> -->
-<!-- 						<div></div> -->
-<!-- 					</div> -->
-					
-					
-					
-					
-				</div>
-				
-				<!-- SEARCH BOX -->
-				<div data-target="search-box" class="page-header__search-box">
-					<widgetComponent:widget_searchField />
+
 				</div>
 			</div>
 		</div>
@@ -97,113 +87,105 @@
 		<!-- MOBILE MENU OVERLAY/BACKGROUND -->
 		<div class="page-header__navigation-mobile-background"></div>
 
+
+		<!-- SEARCH BOX -->
+		<div data-target="search-box" class="page-header__search-box">
+			<widgetComponent:widget_searchField />
+		</div>
+
 	</header>
-	
-	<ui:fragment rendered="#{navigationHelper.currentPage == 'index'}">
-        <div class="page-header__slider">
-        	<ui:insert name="topbar" />
-        </div>
-    </ui:fragment>
-    
+
+	<ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
+		<div class="page-header__slider">
+			<ui:insert name="topbar" />
+		</div>
+	</ui:fragment>
+
 	<!-- NAVIGATION -->
 	<div id="pageNavigation"
 		class="page-navigation #{userBean.admin ? '-adminActive':''}">
 		<div class="container page-navigation__wrapper">
-				<viewerComponent:navigation id="page-header__nav-menu-desktop" megaMenu="false" />
+			<viewerComponent:navigation id="page-header__nav-menu-desktop"
+				megaMenu="false" />
 		</div>
 	</div>
-	
+
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
-	
+
 	<!-- SEARCH OVERLAY -->
 	<div data-target="search-overlay" class="page-header__search-overlay"></div>
 
-    <!-- MAIN -->
-    <div id="pageContent" class="page-content">
-        <div class="container">
-            <div class="page-content__wrapper">
-	            <!-- CONTENT -->
-	            <main id="main" class="page-content__main">
-	            	<!-- BREADCRUMBS -->
-	            	<ui:insert name="breadcrumbs" />
-	            
-	                <ui:insert name="content" />
-	            </main>
-	            
-	            <!-- SIDEBAR -->
-	            <aside id="sidebar" class="page-content__sidebar">	   
-	                <!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
-  					<!-- <viewerComponent:sidebarMenu /> -->
-  
-	                <!-- SIDEBAR WIDGETS -->
-				    <ui:insert name="sidebar" />
+	<!-- MAIN -->
+	<div id="pageContent" class="page-content">
+		<div class="container">
+			<div class="page-content__wrapper">
+				<!-- CONTENT -->
+				<main id="main" class="page-content__main"> <!-- BREADCRUMBS -->
+				<ui:insert name="breadcrumbs" /> <ui:insert name="content" /> </main>
 
-				    <!-- RSS FEED -->
-				    <ui:insert name="rssFeed" />
-	            </aside>
-	            
-	            <!-- MOBILE SIDEBAR CLOSE -->
-				<button type="button" class="btn btn--clean" data-close="sidebar" aria-label="#{msg.aria_label__close_sidebar}">
+				<!-- SIDEBAR -->
+				<aside id="sidebar" class="page-content__sidebar">
+					<!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
+					<!-- <viewerComponent:sidebarMenu /> -->
+
+					<!-- SIDEBAR WIDGETS -->
+					<ui:insert name="sidebar" />
+
+					<!-- RSS FEED -->
+					<ui:insert name="rssFeed" />
+				</aside>
+
+				<!-- MOBILE SIDEBAR CLOSE -->
+				<button type="button" class="btn btn--clean" data-close="sidebar"
+					aria-label="#{msg.aria_label__close_sidebar}">
 					<span></span>
 				</button>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 
-    <!-- FOOTER -->
+	<!-- FOOTER -->
 	<footer id="pageFooter" class="page-footer">
 		<div class="container">
 			<div class="page-footer__wrapper">
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
-					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| 
-					<a href="#{request.contextPath}/feedback/">#{msg.feedbackLeaveFeedback}</a>|
-					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>|
-					<a href="#{request.contextPath}/imprint/">#{msg.imprint}</a>|
-					<span>powered by</span>
-					<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
+					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| <a
+						href="#{request.contextPath}/feedback/">#{msg.feedbackLeaveFeedback}</a>|
+					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>| <a
+						href="#{request.contextPath}/imprint/">#{msg.imprint}</a>| <span>powered
+						by</span> <a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi
+						viewer</a>
 				</div>
-	
+
 				<!-- FOOTER SOCIAL MEDIA -->
 				<div class="page-footer__social">
-					<a 
-						href="https://github.com/intranda" 
-						title="#{msg.social__follow_on_github}" 
-						data-toggle="tooltip" 
-						target="_blank" rel="noopener" 
-						aria-label="#{msg.social__follow_on_github}">
-						<span class="sr-only">#{msg.social__follow_on_github}</span>
-						<i class="fa fa-github" aria-hidden="true"></i>
-					</a>					
-					<a 
-						href="https://twitter.com/intranda" 
-						title="#{msg.social__follow_on_twitter}"
-						data-toggle="tooltip" 
-						target="_blank" 
-						rel="noopener" 
-						aria-label="#{msg.social__follow_on_twitter}">
-						<span class="sr-only">#{msg.social__follow_on_twitter}</span>
-						<i class="fa fa-twitter" aria-hidden="true"></i>
+					<a href="https://github.com/intranda"
+						title="#{msg.social__follow_on_github}" data-toggle="tooltip"
+						target="_blank" rel="noopener"
+						aria-label="#{msg.social__follow_on_github}"> <span
+						class="sr-only">#{msg.social__follow_on_github}</span> <i
+						class="fa fa-github" aria-hidden="true"></i>
+					</a> <a href="https://twitter.com/intranda"
+						title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
+						target="_blank" rel="noopener"
+						aria-label="#{msg.social__follow_on_twitter}"> <span
+						class="sr-only">#{msg.social__follow_on_twitter}</span> <i
+						class="fa fa-twitter" aria-hidden="true"></i>
+					</a> <a href="https://www.youtube.com/channel/UCbajMwS60cQcKh-kGFtb6Qg"
+						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
+						target="_blank" rel="noopener"
+						aria-label="#{msg.social__follow_on_youtube}"> <span
+						class="sr-only">#{msg.social__follow_on_youtube}</span> <i
+						class="fa fa-youtube" aria-hidden="true"></i>
+					</a> <a href="https://www.slideshare.net/intranda/"
+						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
+						target="_blank" rel="noopener"
+						aria-label="#{msg.social__follow_on_slideshare}"> <span
+						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
+						class="fa fa-slideshare" aria-hidden="true"></i>
 					</a>
-					<a 
-						href="https://www.youtube.com/channel/UCbajMwS60cQcKh-kGFtb6Qg" 
-						title="#{msg.social__follow_on_youtube}" 
-						data-toggle="tooltip" 
-						target="_blank" rel="noopener" 
-						aria-label="#{msg.social__follow_on_youtube}">
-						<span class="sr-only">#{msg.social__follow_on_youtube}</span>
-						<i class="fa fa-youtube" aria-hidden="true"></i>
-					</a>					
-					<a 
-						href="https://www.slideshare.net/intranda/" 
-						title="#{msg.social__follow_on_slideshare}" 
-						data-toggle="tooltip" 
-						target="_blank" rel="noopener" 
-						aria-label="#{msg.social__follow_on_slideshare}">
-						<span class="sr-only">#{msg.social__follow_on_slideshare}</span>
-						<i class="fa fa-slideshare" aria-hidden="true"></i>
-					</a>		
 				</div>
 			</div>
 		</div>
@@ -211,31 +193,34 @@
 
 
 	<!-- MOBILE ONLY NAVIGATION -->
-	<div class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
+	<div
+		class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
 		<div class="container page-navigation__wrapper">
-			<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
+			<viewerComponent:navigation id="pageNavigationMobile"
+				megaMenu="false" />
 		</div>
 	</div>
 
 	<!--  GENERIC OVERLAY -->
-    <ui:include src="/resources/includes/overlay.xhtml" />
+	<ui:include src="/resources/includes/overlay.xhtml" />
 
-    <!-- USER LOGIN + TERMS -->
-	<viewerComponent:modalUserLogin id="userLoginModal"/>
-	<viewerComponent:modalUserTerms id="userTermsModal"/>
+	<!-- USER LOGIN + TERMS -->
+	<viewerComponent:modalUserLogin id="userLoginModal" />
+	<viewerComponent:modalUserTerms id="userTermsModal" />
 
-    <!-- IE 11 NOT SUPPORTED -->
-    <div class="support-overlay">
-        <div class="support-overlay__box">
-            <header class="support-overlay__box-header">
-                <h3>#{msg.ie11_heading}</h3>
-            </header>
-            <section class="support-overlay__box-body">
-                <h:outputText value="#{msg.ie11_text}" escape="false" />
-            </section>
-            <footer class="support-overlay__box-footer">
-                powered by <a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
-            </footer>
-        </div>
-    </div>
+	<!-- IE 11 NOT SUPPORTED -->
+	<div class="support-overlay">
+		<div class="support-overlay__box">
+			<header class="support-overlay__box-header">
+				<h3>#{msg.ie11_heading}</h3>
+			</header>
+			<section class="support-overlay__box-body">
+				<h:outputText value="#{msg.ie11_text}" escape="false" />
+			</section>
+			<footer class="support-overlay__box-footer">
+				powered by <a href="#{msg.intrandaViewer}" target="_blank"
+					rel="noopener">Goobi viewer</a>
+			</footer>
+		</div>
+	</div>
 </ui:composition>

@@ -114,17 +114,23 @@ $( document ).ready( function() {
 
 	// open search box
     $( 'body' ).on( 'click', '[data-open="search"]', function() {
-    	$( '[data-target="search-box"]' ).addClass('-searchOn');
-    	$( '.page-header__inner' ).addClass('-searchOn');
-    	$('[data-target="search-overlay"]').fadeIn('fast');
-    	$('.page-header__inner .widget-searchfield input[type=text]').focus();
+    	$(this).toggleClass('-searchOn')
+    	$('.page-header__actions-search-close').toggleClass('-searchOn')
+    	$( '[data-target="search-box"]' ).toggleClass('-searchOn');
+    	$( '.page-header__inner' ).toggleClass('-searchOn');
+    	$('[data-target="search-overlay"]').fadeToggle('fast');
+    	$('.page-header__search-box .widget-searchfield input[type=text]').focus();
+    	$( '[data-open="sidebar"]' ).toggle();
     } );
     
     // close search overlay on click
     $( 'body' ).on( 'click', '[data-target="search-overlay"]', function() {
+    	$('[data-open="search"]').removeClass('-searchOn');
+    	$('.page-header__actions-search-close').removeClass('-searchOn');
     	$( '[data-target="search-box"]' ).removeClass('-searchOn');
     	$( '.page-header__inner' ).removeClass('-searchOn');
     	$('[data-target="search-overlay"]').fadeOut('fast');
+    	$( '[data-open="sidebar"]' ).toggle();
     } );
 
 
@@ -146,6 +152,7 @@ $( document ).ready( function() {
     	$( 'html' ).toggleClass( 'no-overflow' );
     	$( '.page-navigation__mobile' ).fadeToggle(150, "linear");
     	$( '.page-header' ).toggleClass('-mobileMenuOpen');
+    	$( '[data-open="sidebar"]' ).toggle();
     	$(this).toggleClass('in');
     } );
 
@@ -154,11 +161,7 @@ $( document ).ready( function() {
     	// $('.navigation__submenu').removeAttr('style');
     	$(this).find('.navigation__submenu:first').slideToggle('fast');
     	event.stopPropagation();
-    	var menuTarget = $(this).find('.navigation__submenu:first');
-    	var menuTarget2 = $(this).parents('.navigation__submenu');
-    	// $('.navigation__submenu-trigger').parents('.navigation__submenu').show();
-    	$("#pageNavigationMobile .navigation__submenu").not(menuTarget, menuTarget2).slideUp('fast');
-    	
+    	$("#pageNavigationMobile .navigation__submenu").not(".navigation__submenu.in").slideUp('fast');
     });
 
     // toggle mobile sidebar

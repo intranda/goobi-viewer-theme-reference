@@ -78,6 +78,50 @@
 		margin-left: 1.5rem;
 		position: relative;
 	}
+	&__actions-search-button {
+		.fa {
+			font-size: 1.6rem;
+		}
+		color: @middleblack;
+		&.-searchOn {
+			.fa {
+			display: none;
+			}
+		}
+	}
+	&__actions-search-close {
+		display: none;
+		height: 1.6rem;
+		position: relative;
+		width: 2rem;
+		cursor: pointer;
+		span,
+		&::before, 
+		&::after {
+		    display: block;
+		    content: "";
+		    width: 100%;
+		    height: 0;
+		    border-top: 3px solid @middleblack;
+		    position: absolute;
+		    transition: all 0.2s ease;
+		}
+		&:before {
+			top: calc(~"50% - 1px");
+			transform: rotate(45deg);
+		}
+		span {
+			opacity: 0;
+			transform: scale(0.5,0.5);
+		}
+		&::after {
+			top: calc(~"50% - 1px");
+			transform: rotate(-45deg);
+		}
+		&.-searchOn {
+			display: block;
+		}
+	}
 	&__actions-language {
 		margin-left: 0;
 	}
@@ -115,7 +159,7 @@
 		&.-scrolled {
 			padding: 1rem 0;
 		}
-		&.-searchOn > * {
+		&.-searchOn .page-header__actions > *:not(.page-header__actions-search-button) {
         	visibility: hidden;
         	opacity: 0;
     	}
@@ -158,20 +202,17 @@
 	&__span {
 		display: block;
 	}
-	&__search-button {
-		.fa {
-			font-size: 1.6rem;
-		}
-		color: @middleblack;
-	}
 	&__search-box {
 		opacity: 0;
 		position: absolute;
 		display: flex;
 		align-items: center;
 		width: 100%;
-		height: 100%;
 		transition: opacity 0.2s ease;
+		display: flex;
+		justify-content: center;
+		padding: 2rem 1rem;
+		background: @ci-color1;
 		.widget-searchfield {
 			margin-bottom: 0;
 			width: 25%;
@@ -182,7 +223,7 @@
 			opacity: 1;
 			visibility: visible;
 			.widget-searchfield {
-				width: 40%;
+				width: 80%;
 			}
 		}
 	}
@@ -394,6 +435,10 @@
 				padding: 0;
 		}
 	}
+	&.-adminActive {
+		position: relative;
+		top: unset;
+	}
 }
 
 /* PAGE CONTENT AREA */
@@ -511,7 +556,7 @@
 	&__search-box {
 		&.-searchOn {
 			.widget-searchfield {
-				width: 60%;
+				width: 80%;
 			}
 		}
 	}
@@ -579,7 +624,7 @@
 			}
 			&.-searchOn {
 				.widget-searchfield {
-					width: 70%;
+					width: 85%;
 				}
 			}
 		}
