@@ -75,8 +75,20 @@
 	&__actions-bookmark,
 	&__actions-login,
 	&__actions-search-button {
-		margin-left: 1.5rem;
+		padding: 0 1.1rem;
 		position: relative;
+		border-left: 1px solid @middleblack;
+	}
+	&__actions-language {
+		border-left: none;
+	}
+	&__actions-bookmark {
+		border-left: none;
+		border-right: 1px solid @middleblack;
+	}
+	&__actions-language-button {
+		font-weight: 700;
+		display: block;
 	}
 	&__actions-search-button {
 		.fa {
@@ -84,6 +96,7 @@
 		}
 		color: @middleblack;
 		&.-searchOn {
+			border-left: none;
 			.fa {
 			display: none;
 			}
@@ -116,18 +129,16 @@
 		}
 		&::after {
 			top: calc(~"50% - 1px");
-			transform: rotate(-45deg);
+			transition: all 0.2s ease;
+			transform: rotate(0deg);
 		}
 		&.-searchOn {
 			display: block;
+			&:before {}
+			&::after {
+				animation: searchButtonAnim 0.2s ease forwards;
+			}
 		}
-	}
-	&__actions-language {
-		margin-left: 0;
-	}
-	&__actions-language-button {
-		font-weight: 700;
-		display: block;
 	}
 	/* SLIDER */
 	&__slider {
@@ -211,20 +222,56 @@
 		transition: opacity 0.2s ease;
 		display: flex;
 		justify-content: center;
-		padding: 2rem 1rem;
-		background: @ci-color1;
+		padding: 1rem 1rem 2rem 1rem;
+		background: @neutralgray;
+		top: 100%;
 		.widget-searchfield {
 			margin-bottom: 0;
-			width: 25%;
-			transition: width 0.2s ease;
+			width: 100%;
+			.input-group {
+				flex-direction: row-reverse;	
+			}
+			.form-control {
+				background: transparent;
+				border: none;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+				font-size: 1.8rem;
+				height: 30px;
+			}
+			.input-group-addon {
+				background: transparent;
+				border: none;
+				margin-right: 2rem;
+				margin-left: 5rem;
+				button {
+					i {
+						&.fa {
+							font-size: 3rem;
+							color: @middleblack;
+						}
+					}
+				}
+			}
+			::-webkit-input-placeholder {
+		         color: transparent;
+		    }
+		    :-moz-placeholder {
+		         color: transparent;
+		    }
+		    ::-moz-placeholder {
+		         color: transparent;
+		    }
+		    :-ms-input-placeholder {
+		         color: transparent;
+		    }
+		    input::placeholder {
+		         color: transparent;
+		    }
 		}
 		visibility: hidden;
 		&.-searchOn {
 			opacity: 1;
 			visibility: visible;
-			.widget-searchfield {
-				width: 80%;
-			}
 		}
 	}
 	&__search-overlay {
@@ -246,7 +293,7 @@
 		height: 1.6rem;
 		position: relative;
 		width: 2rem;
-		margin-left: 1.5rem;
+		margin-left: .5rem;
 		cursor: pointer;
 		span,
 		&::before, 
@@ -549,14 +596,28 @@
 	}
 }
 
+@keyframes searchButtonAnim {
+  from {
+  	transform: rotate(0deg);
+  }
+  to {
+	transform: rotate(-45deg);
+  }
+}
+
 @media screen and (max-width: @largeBreakpoint) {} 
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
-	&__search-box {
-		&.-searchOn {
-			.widget-searchfield {
-				width: 80%;
+	.page-header {
+		&__search-box {
+			&.-searchOn {
+				.widget-searchfield {
+					width: 80%;
+				}
+				.input-group-addon {
+					margin-left: 0;
+				}
 			}
 		}
 	}
@@ -631,6 +692,14 @@
 		&__mobile-burger-menu {
 			display: block;
 		}
+		&__actions-language,
+		&__actions-bookmark,
+		&__actions-login,
+		&__actions-search-button {
+			border: none;
+			padding: 0 0.5rem;
+		}
+		
 	}
 	.page-navigation {
 		display: none;

@@ -58,7 +58,7 @@
 								class="btn btn--clean page-header__actions-language-button"
 								data-toggle="local"
 								aria-label="#{msg.aria_label__switch_language}">
-								#{msg['changeLocal_' += navigationHelper.localeString]}</button>
+								#{msg['changeLocal_long_' += navigationHelper.localeString]}</button>
 							<viewerComponent:changeLocal toggleLanguage="false"
 								showFlags="false" />
 						</div>
@@ -90,7 +90,9 @@
 
 		<!-- SEARCH BOX -->
 		<div data-target="search-box" class="page-header__search-box">
-			<widgetComponent:widget_searchField />
+			<div class="container">
+				<widgetComponent:widget_searchField />
+			</div>
 		</div>
 
 	</header>

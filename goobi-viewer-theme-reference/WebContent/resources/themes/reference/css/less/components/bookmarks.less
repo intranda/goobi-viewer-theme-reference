@@ -5,6 +5,7 @@
 /* BOOKMARK NAVIGATION */
 /* BLOCK */
 .bookmark-navigation {
+	margin-right: -5px;
 	/* ELEMENT */
 	&__dropdown-wrapper {
 		& > .btn {
@@ -14,6 +15,12 @@
 	/* TOOGLE DROPDOWN */
 	&__counter {
 		background-color: @ci-color1;
+		position: relative;
+		right: .4rem;
+		top: -0.9rem;
+		border-radius: 30px;
+		height: 20px;
+		width: 20px;
 	}
 	&__string {
 		font-weight: 700;
@@ -170,8 +177,15 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-	.bookmark-navigation__string {
-		display: none;
+	.bookmark-navigation {
+		margin-right: unset;
+		&__string {
+			display: none;
+		}
+		&__counter {
+			top: unset;
+			right: unset;
+		}
 	}
 }
 
