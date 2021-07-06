@@ -58,9 +58,10 @@
 								class="btn btn--clean page-header__actions-language-button"
 								data-toggle="local"
 								aria-label="#{msg.aria_label__switch_language}">
+								<!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
 								#{msg['changeLocal_long_' += navigationHelper.localeString]}</button>
-							<viewerComponent:changeLocal toggleLanguage="false"
-								showFlags="false" />
+								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
+							<viewerComponent:changeLocal toggleLanguage="true" longLanguageStrings="true"/>
 						</div>
 					</ui:fragment>
 					<!-- LOGIN NAVIGATION -->
@@ -109,6 +110,7 @@
 		<div class="container page-navigation__wrapper">
 			<viewerComponent:navigation id="page-header__nav-menu-desktop"
 				megaMenu="false" />
+				
 		</div>
 	</div>
 
@@ -195,11 +197,31 @@
 
 
 	<!-- MOBILE ONLY NAVIGATION -->
-	<div
-		class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
+	<div class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
 		<div class="container page-navigation__wrapper">
-			<viewerComponent:navigation id="pageNavigationMobile"
-				megaMenu="false" />
+			<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
+			<!-- CHANGE LANGUAGE -->
+			<ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
+				<div class="page-navigation__mobile-languages-wrapper">
+					<div class="page-navigation__mobile-languages-trigger" data-trigger="mobileToggleLanguages">
+						<i class="fa fa-globe" aria-hidden="true"></i>
+						<button class="btn btn--clean">#{msg.MD_LANGUAGE}</button>
+						<i class="fa fa-plus page-navigation__mobile-languages-toggle-indicator" aria-hidden="true"></i>
+					</div>
+					<h:form id="changeLocalFormMobile" prependId="false">
+		                <ul class="page-navigation__mobile-languages-selection" data-target="mobileLanguageSelection">
+		                    <ui:repeat var="lang" value="#{navigationHelper.supportedLanguages}">
+		                        <li>
+		                             <h:commandLink styleClass="#{navigationHelper.localeString == lang ?'activeLang':''}">
+		                                 <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
+		                                 <f:setPropertyActionListener target="#{navigationHelper.localeString}" value="#{lang}" />
+		                             </h:commandLink>
+		                         </li>
+		                     </ui:repeat>
+		                 </ul>
+	                 </h:form>
+	            </div>
+			</ui:fragment>
 		</div>
 	</div>
 

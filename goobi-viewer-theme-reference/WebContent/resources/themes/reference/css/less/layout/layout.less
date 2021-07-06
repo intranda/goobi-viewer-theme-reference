@@ -22,7 +22,7 @@
 		left: 0;
 		width: 100vw;
 		background: @neutralgray;
-		transition: background 0.15s linear;
+		transition: background 0.2s linear;
 		height: 105px;
 		&.-scrolled {
 			position: fixed;
@@ -166,7 +166,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		padding: 3rem 0;
-		transition: padding 0.175s ease;
+		// transition: padding 0.175s ease;
 		&.-scrolled {
 			padding: 1rem 0;
 		}
@@ -178,7 +178,7 @@
 	&__logo {
 		padding-right: .75rem;
 		h1 {
-			transition: 0.2s all ease;
+			// transition: 0.2s all ease;
 			display: flex;
 			align-items: center;
 			margin: 0;
@@ -470,16 +470,63 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		transition: background 0.15s linear;
+		// transition: background 0.15s linear;
 		z-index: 998;
 		#pageNavigationMobile {
 				height: calc(~"100% - (50px + 30px + 30px)");
-				position: fixed;
+				position: relative;
 				width: 100%;
 				bottom: 0;
 				left: 0;
 				overflow: auto;
 				padding: 0;
+				margin-top: 8rem;
+		}
+	}
+	&__mobile-languages-wrapper {
+		border-bottom: 1px solid @white;
+	}
+	&__mobile-languages-trigger {
+		display: flex;
+		align-items: center;
+		color: @white;
+		padding: .6rem 1.2rem;
+		font-size: 1.6rem;
+		cursor: pointer;
+		button {
+			color: @white;
+			font-size: 1.6rem;
+			&:hover,
+			&:active,
+			&:focus {
+				color: @white;
+			}
+		}
+		.fa {
+			margin-right: 0.8rem;
+		}
+		
+	}
+	&__mobile-languages-toggle-indicator {
+		margin-left: auto;
+	}
+	&__mobile-languages-selection {
+			padding-left: 2.5rem;
+			list-style: none;
+			margin-left: 0;
+			display: none;
+			margin-bottom: 0.2rem;
+		a {
+			color: @white;
+			padding: .6rem 1.2rem;
+			font-size: 1.4rem;
+			display: block;
+			&:hover,
+			&:focus, 
+			&:active {
+				color: @white;
+				text-decoration: none;
+			}
 		}
 	}
 	&.-adminActive {
@@ -626,9 +673,12 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 	.page-header {
+		&__actions-language {
+			display: none;
+		}
 		height: 55px;
 		&.-mobileMenuOpen {
-			background: transparent;
+			background: @ci-color1;
 			.page-header__span,
 			.page-header__actions-language,
 			.page-header__actions-login,
@@ -706,7 +756,7 @@
 		padding-top: 2rem;
 		background: unset;
 		&__wrapper {
-			max-height: 80vh;
+			max-height: 90vh;
 			overflow-y: scroll;
 		}
 	}

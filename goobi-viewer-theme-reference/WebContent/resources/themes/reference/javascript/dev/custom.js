@@ -150,7 +150,7 @@ $( document ).ready( function() {
     // toggle mobile menu
     $( 'body' ).on( 'click', '[data-open="menu"]', function() {
     	$( 'html' ).toggleClass( 'no-overflow' );
-    	$( '.page-navigation__mobile' ).fadeToggle(150, "linear");
+    	$( '.page-navigation__mobile' ).fadeToggle(200, "linear");
     	$( '.page-header' ).toggleClass('-mobileMenuOpen');
     	$( '[data-open="sidebar"]' ).toggle();
     	$(this).toggleClass('in');
@@ -162,6 +162,12 @@ $( document ).ready( function() {
     	$(this).find('.navigation__submenu:first').slideToggle('fast');
     	event.stopPropagation();
     	$("#pageNavigationMobile .navigation__submenu").not(".navigation__submenu.in").slideUp('fast');
+    });
+    
+    // toggle language selection
+    $( 'body' ).on( 'click', '[data-trigger="mobileToggleLanguages"]', function() {
+    	$( '[data-target="mobileLanguageSelection"]' ).slideToggle('fast');
+    	$('.page-navigation__mobile-languages-toggle-indicator').toggleClass('fa-plus').toggleClass('fa-minus');
     });
 
     // toggle mobile sidebar
