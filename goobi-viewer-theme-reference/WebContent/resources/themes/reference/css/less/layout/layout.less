@@ -22,7 +22,7 @@
 		left: 0;
 		width: 100vw;
 		background: @neutralgray;
-		transition: background 0.2s linear;
+		transition: background 0.2s ease;
 		height: 105px;
 		&.-scrolled {
 			position: fixed;
@@ -93,6 +93,7 @@
 	&__actions-search-button {
 		.fa {
 			font-size: 1.6rem;
+			width: 2rem;
 		}
 		color: @middleblack;
 		&.-searchOn {
@@ -293,7 +294,7 @@
 		height: 1.6rem;
 		position: relative;
 		width: 2rem;
-		margin-left: .5rem;
+		padding-left: .5rem;
 		cursor: pointer;
 		span,
 		&::before, 
@@ -463,15 +464,16 @@
 	&__wrapper {
 	}
 	&__mobile {
-		display: none;
-		background: @ci-color1;
+		z-index: -1;
+		opacity: 0;
+		pointer-events: none;
+		background: transparent;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		// transition: background 0.15s linear;
-		z-index: 998;
+		transition: all 0.2s ease;
 		#pageNavigationMobile {
 				height: calc(~"100% - (50px + 30px + 30px)");
 				position: relative;
@@ -482,9 +484,15 @@
 				padding: 0;
 				margin-top: 8rem;
 		}
+		&.-mobileMenuOpen {
+			z-index: 998;
+			opacity: 1;
+			pointer-events: auto;
+			background: @ci-color1;
+		}
 	}
 	&__mobile-languages-wrapper {
-		border-bottom: 1px solid @white;
+		margin-top: 2.5rem;
 	}
 	&__mobile-languages-trigger {
 		display: flex;
@@ -526,6 +534,13 @@
 			&:active {
 				color: @white;
 				text-decoration: none;
+			}
+			&.activeLang {
+				&:after {
+					font: normal normal normal 14px/1 FontAwesome;
+					content: "\f00c";
+					margin-left: 0.7rem;
+				}
 			}
 		}
 	}

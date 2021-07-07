@@ -150,7 +150,7 @@ $( document ).ready( function() {
     // toggle mobile menu
     $( 'body' ).on( 'click', '[data-open="menu"]', function() {
     	$( 'html' ).toggleClass( 'no-overflow' );
-    	$( '.page-navigation__mobile' ).fadeToggle(200, "linear");
+    	$( '.page-navigation__mobile' ).toggleClass('-mobileMenuOpen');
     	$( '.page-header' ).toggleClass('-mobileMenuOpen');
     	$( '[data-open="sidebar"]' ).toggle();
     	$(this).toggleClass('in');

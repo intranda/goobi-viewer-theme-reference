@@ -30,7 +30,7 @@
 		&:focus,
 		&:active {
 			color: @white;
-			background-color: @ci-hovercolor1;
+			background-color: @ci-color1;
 		}
 	}
 	.caret {
@@ -44,7 +44,7 @@
 		border-color: transparent;
 		background-color: transparent;
 		li {
-			background-color: @ci-color1;
+			background-color: @ci-hovercolor1;
 		    &:last-child {
 		    	border-bottom: 0;
 		    }
@@ -80,32 +80,39 @@
 	&__megamenu-item {}
 }
 
-// MOBILE ADAPTIONS OF ICONS
+// MOBILE ADAPTIONS
 
 #pageNavigationMobile {
-	.navigation__submenu-trigger {
-		> button > .caret {
-			border: none;
-			width: 20px;
-			height: 20px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font: normal normal normal 14px / 1 FontAwesome;
-			&:before {
-				content: "\f067";
-			}
-		}
-		&.active {
+	.navigation {
+		&__submenu-trigger {
 			> button > .caret {
+				border: none;
+				width: 20px;
+				height: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font: normal normal normal 14px / 1 FontAwesome;
 				&:before {
-					content: "\f068";
+					content: "\f067";
+				}
+			}
+			&.active {
+				> button > .caret {
+					&:before {
+						content: "\f068";
+					}
 				}
 			}
 		}
-	}
-	.navigation__submenu.in {
-		display: none;
+		&__submenu.in {
+			display: none;
+		}
+		&__submenu {
+			li {
+				background-color: @ci-color1;
+			}
+		}
 	}
 }
 
