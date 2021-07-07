@@ -30,14 +30,18 @@
 		&:focus,
 		&:active {
 			color: @white;
-			background-color: @ci-color1;
+			background-color: @ci-hovercolor1;
 		}
 	}
 	.caret {
 		color: @white;
 	}
 	/* STANDARD MENU */
-	&__submenu-trigger {}
+	&__submenu-trigger {
+		button {
+			transition: none;
+		}
+	}
 	&__submenu {
 		border: none;
 		top: calc(~"100%");
@@ -49,9 +53,25 @@
 		    	border-bottom: 0;
 		    }
 			&.divider {}
+			&.active {
+				&:hover {
+					a, button {
+						&:hover,
+						&:focus,
+						&:active {
+							background-color: @ci-color1;
+						}
+					}
+				}
+			}
 		}
 		a, button {
 			font-size: @fontMedium;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: @ci-color1;
+			}
 		}
 		.caret {
 			transform: rotate(-90deg);
