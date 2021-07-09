@@ -152,7 +152,7 @@
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core</excludeArtifactIds>
 							<includeArtifacIds>viewer-core-config</includeArtifacIds>
-							<excludes>MANIFEST.MF,**/pom.*,install/</excludes>
+							<excludes>MANIFEST.MF,**/pom.*,install/,docker/</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
