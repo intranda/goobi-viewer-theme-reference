@@ -14,7 +14,7 @@
         <dependent-module archiveName="viewer-core-21.06-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-core/goobi-viewer-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="iiif-api-model-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/iiif-api-model/iiif-api-model">
+        <dependent-module archiveName="module-crowdsourcing-21.06-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/goobi-viewer-module-crowdsourcing/goobi-viewer-module-crowdsourcing">
             <dependency-type>uses</dependency-type>
         </dependent-module>
                 

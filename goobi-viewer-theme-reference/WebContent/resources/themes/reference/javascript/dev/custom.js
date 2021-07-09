@@ -21,44 +21,53 @@ function setContentHeight() {
 }
 
 /*
- initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
- list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
- This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
+initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
+list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
+This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
 */
 function initSliders() {
+	//update swiper config with
+	    // var partialConfig = {
+       // swiperConfig: {
+       //        loop: true,
+       //        slidesPerView: 2
+       //    }
+       // }
+	// viewerJS.slideshows.update('styleName', partialConfig);
+       // add new swiper config
+       // var config = {
+       //    swiperConfig: {
+       //        slidesPerView: 3,
+       //        spaceBetween: 50,
+       //        loop: true
+       //    }
+       //}
+	// viewerJS.slideshows.set('myNewStyleName', config);
 	
-// EXAMPLE SLIDER
-
-//	var sliderExampleConfig = {
-//		maxSlides: 8,
-//		timeout: 10000,
-//		imageWidth: 1100,
-//		imageHeight: 500,
-//		 swiperConfig: {
-//			  slidesPerView: 3,
-//			  spaceBetween: 30,
-//			  loop: true,
-//			  speed: 400,
-//		      pagination: {
-//		          el: '.slider-example__dots',
-//		          clickable: true
-//		      },
-//		      breakpoints: {
-//		          300: { 
-//		             slidesPerView: 1.2,
-//		          },
-//		          600: {  
-//		             slidesPerView: 2.3,
-//		          },
-//		          900: {
-//		             slidesPerView: 3.5,   
-//		          } 
-//		      }
-//		}
-//	}
-
-//	viewerJS.slider.set('example-slider', sliderExampleConfig);
-
+	
+	// SINGLE STORY SLIDER
+	var headerSliderConfig = {
+    		maxSlides: 8,
+    		timeout: 10000,
+    		imageWidth: 1920,
+    		imageHeight: 700,
+			swiperConfig: {
+				  slidesPerView: 1,
+				  loop: true,
+				  allowTouchMove: false,				  
+				  autoplay: {
+					   delay: 3000,
+				  },
+				  speed: 3500,
+				  effect: 'fade',
+				  fadeEffect: {
+				    crossFade: true
+				  },
+			}
+		}
+		 
+	viewerJS.slider.set('reference', headerSliderConfig);
+	
 }
 initSliders();
 
@@ -70,9 +79,60 @@ $( document ).ready( function() {
         localStoragePossible: viewerJS.localStoragePossible,
         widgetNerSidebarRight: true,
     };
-
 	
 	viewerJS.init( viewerConfig );
+	
+	// shrink header on scroll
+	$(document).on("scroll", function(){
+		if
+      ($(document).scrollTop() > 0){
+		  $(".page-header").addClass("-scrolled");
+		}
+		else
+		{
+			$(".page-header").removeClass("-scrolled");
+		}
+		if
+	      ($(document).scrollTop() > 0){
+			  $(".page-header__inner").addClass("-scrolled");
+		}
+		else
+		{
+				$(".page-header__inner").removeClass("-scrolled");
+		}
+		
+	});
+
+	// calculate spacer height on page load and resize
+	var headerStartHeight = $('.page-header').height();
+	$('.page-header__spacer').height(headerStartHeight);
+	
+	$(window).on('resize', function(){
+		var headerHeight = $('.page-header').height();
+			$('.page-header__spacer').height(headerHeight);
+		});
+
+	// open search box
+    $( 'body' ).on( 'click', '[data-open="search"]', function() {
+    	$(this).toggleClass('-searchOn')
+    	$('.page-header__actions-search-close').toggleClass('-searchOn')
+    	$( '[data-target="search-box"]' ).toggleClass('-searchOn');
+    	$( '.page-header__inner' ).toggleClass('-searchOn');
+    	$('[data-target="search-overlay"]').fadeToggle('fast');
+    	$('.page-header__search-box .widget-searchfield input[type=text]').focus();
+    	$( '[data-open="sidebar"]' ).toggle();
+    } );
+    
+    // close search overlay on click
+    $( 'body' ).on( 'click', '[data-target="search-overlay"]', function() {
+    	$('[data-open="search"]').removeClass('-searchOn');
+    	$('.page-header__actions-search-close').removeClass('-searchOn');
+    	$( '[data-target="search-box"]' ).removeClass('-searchOn');
+    	$( '.page-header__inner' ).removeClass('-searchOn');
+    	$('[data-target="search-overlay"]').fadeOut('fast');
+    	$( '[data-open="sidebar"]' ).toggle();
+    } );
+
 
     // toggle change local
     $( 'body' ).on( 'click', '[data-toggle="local"]', function() {
@@ -86,41 +146,48 @@ $( document ).ready( function() {
     		$( '#changeLocal' ).hide();
     	}
     } );
-    
-    
+
     // toggle mobile menu
     $( 'body' ).on( 'click', '[data-open="menu"]', function() {
-    	$( 'html' ).addClass( 'no-overflow' );
-    	$( '.mobile-overlay, [data-close="menu"]' ).fadeIn( 300 );
-    	$( '#navigation' ).addClass( 'in' );
+    	$( 'html' ).toggleClass( 'no-overflow' );
+    	$( '.page-navigation__mobile' ).toggleClass('-mobileMenuOpen');
+    	$( '.page-header' ).toggleClass('-mobileMenuOpen');
+    	$( '[data-open="sidebar"]' ).toggle();
+    	$(this).toggleClass('in');
     } );
-    $( 'body' ).on( 'click', '[data-close="menu"]', function() {
-    	$( 'html' ).removeClass( 'no-overflow' );
-    	$( this ).hide();
-    	$( '.mobile-overlay' ).fadeOut( 300 );
-    	$( '#navigation' ).removeClass( 'in' );
-    } );
+
+    // mobile submenu animation 
+    $( "#pageNavigationMobile .navigation__submenu-trigger" ).click(function() {
+    	// $('.navigation__submenu').removeAttr('style');
+    	$(this).find('.navigation__submenu:first').slideToggle('fast');
+    	event.stopPropagation();
+    	$("#pageNavigationMobile .navigation__submenu").not(".navigation__submenu.in").slideUp('fast');
+    });
+    
+    // toggle language selection
+    $( 'body' ).on( 'click', '[data-trigger="mobileToggleLanguages"]', function() {
+    	$( '[data-target="mobileLanguageSelection"]' ).slideToggle('fast');
+    	$('.page-navigation__mobile-languages-toggle-indicator').toggleClass('fa-plus').toggleClass('fa-minus');
+    });
 
     // toggle mobile sidebar
     $( 'body' ).on( 'click', '[data-open="sidebar"]', function() {
-    	$( 'html' ).addClass( 'no-overflow' );
-    	$( '.mobile-overlay, [data-close="sidebar"]' ).fadeIn( 300 );
-    	$( '#sidebar' ).addClass( 'in' );
-    } );
-    $( 'body' ).on( 'click', '[data-close="sidebar"]', function() {
-    	$( 'html' ).removeClass( 'no-overflow' );
-    	$( this ).hide();
-    	$( '.mobile-overlay' ).fadeOut( 300 );
-    	$( '#sidebar' ).removeClass( 'in' );
+    	$( 'html' ).toggleClass( 'no-overflow' );
+    	$( '.mobile-overlay, [data-close="sidebar"]' ).fadeToggle( 300 );
+    	$( '#sidebar' ).toggleClass( 'in' );
+    	$('.page-header__mobile-sidebar-trigger-arrow').toggleClass('-arrow');
+    	$('.page-header__mobile-sidebar-trigger-arrow').toggleClass('-cross');
+    	$('.page-header__mobile-sidebar-trigger').toggleClass('-opened')
     } );
 
 	 // hide sidebar toggle button if sidebar empty
-	
 	 $( document ).ready( function() {
+		 
 	 	if ( $('.page-content__sidebar .widget' ).length === 0)
 	 	{
 	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
 	 	}
+	 	
 	 } );
     
     // set content height to window height
@@ -141,8 +208,6 @@ $( document ).ready( function() {
             }
         });
     }
-    
-
 
     // mobile view manipulations
     if (window.matchMedia('(max-width: 768px)').matches) { }
