@@ -22,14 +22,14 @@
 		left: 0;
 		width: 100vw;
 		background: @neutralgray;
-		transition: background 0.2s ease;
+		transition: all 0.175s ease;
 		height: 105px;
 		&.-scrolled {
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: unset;
+			height: 50px;
 			.page-header__logo {
 				h1 {
 					font-size: 2.5rem;
@@ -409,14 +409,19 @@
 		}
 	}
 	&__navigation-mobile-background {
-		display: none;
+		opacity: 0;
 		background: @ci-color1;
-		position: relative;
-		height: 100vh;
-		width: 100vw;
-		position: fixed;
+		height: 100%;
+		width: 100%;
+		position: absolute;
 		top: 0;
-		z-index: 2015;
+		z-index: 2020;
+		left: 0;
+		transition: all 0.2s ease;
+		&.-mobileMenuOpen {
+			opacity: 1;
+			display: block;
+		}
 	}
 }
 
@@ -673,6 +678,7 @@
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 	.page-header {
+		transition: all .2s ease;
 		&__search-box {
 			&.-searchOn {
 				.widget-searchfield {
@@ -694,16 +700,12 @@
 		}
 		height: 55px;
 		&.-mobileMenuOpen {
-			background: @ci-color1;
 			.page-header__span,
 			.page-header__actions-language,
 			.page-header__actions-login,
 			.page-header__actions-bookmark,
 			.page-header__actions-search-button {
 				display: none;
-			}
-			.page-header__wrapper {
-				background-color: transparent;
 			}
 			.page-header__mobile-burger-menu-alternative {
 				span,

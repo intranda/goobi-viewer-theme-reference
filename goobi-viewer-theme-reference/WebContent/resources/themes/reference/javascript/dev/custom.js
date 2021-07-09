@@ -82,26 +82,40 @@ $( document ).ready( function() {
 	
 	viewerJS.init( viewerConfig );
 	
+	
+	 // hide sidebar toggle button if sidebar empty
+	 $( document ).ready( function() {
+		 
+	 	if ( $('.page-content__sidebar .widget' ).length === 0)
+	 	{
+	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
+	 	}
+	 	
+	 } );
+	
 	// shrink header on scroll
-	$(document).on("scroll", function(){
-		if
-      ($(document).scrollTop() > 0){
-		  $(".page-header").addClass("-scrolled");
-		}
-		else
-		{
-			$(".page-header").removeClass("-scrolled");
-		}
-		if
-	      ($(document).scrollTop() > 0){
-			  $(".page-header__inner").addClass("-scrolled");
-		}
-		else
-		{
+	 $(document).ready(function() {
+		  $(document).on('scroll', function() {
+			if
+			($(document).scrollTop() > 20){
+				$(".page-header").addClass("-scrolled");
+				// $(".page-header__spacer").addClass("-scrolled");
+			}
+			else
+			{
+				$(".page-header").removeClass("-scrolled");
+				// $(".page-header__spacer").removeClass("-scrolled");
+			}
+			if
+		    ($(document).scrollTop() > 20){
+				  $(".page-header__inner").addClass("-scrolled");
+			}
+			else
+			{
 				$(".page-header__inner").removeClass("-scrolled");
-		}
-		
-	});
+			}
+		  }).trigger('scroll');
+		});
 
 	// calculate spacer height on page load and resize
 	var headerStartHeight = $('.page-header').height();
@@ -152,6 +166,7 @@ $( document ).ready( function() {
     	$( 'html' ).toggleClass( 'no-overflow' );
     	$( '.page-navigation__mobile' ).toggleClass('-mobileMenuOpen');
     	$( '.page-header' ).toggleClass('-mobileMenuOpen');
+    	$( '.page-header__navigation-mobile-background' ).toggleClass('-mobileMenuOpen');
     	$( '[data-open="sidebar"]' ).toggle();
     	$(this).toggleClass('in');
     } );
