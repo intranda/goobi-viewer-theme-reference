@@ -37,22 +37,41 @@
 		color: @white;
 	}
 	/* STANDARD MENU */
-	&__submenu-trigger {}
+	&__submenu-trigger {
+		button {
+			transition: none;
+		}
+	}
 	&__submenu {
-		top: calc(~"100% + 2px");
+		border: none;
+		top: calc(~"100%");
 		border-color: transparent;
 		background-color: transparent;
 		li {
-			margin-bottom: .1rem;
-			border-bottom: 1px solid transparent;
-			background-color: @ci-color1;
+			background-color: @ci-hovercolor1;
 		    &:last-child {
 		    	border-bottom: 0;
 		    }
 			&.divider {}
+			&.active {
+				&:hover {
+					a, button {
+						&:hover,
+						&:focus,
+						&:active {
+							background-color: @ci-color1;
+						}
+					}
+				}
+			}
 		}
 		a, button {
 			font-size: @fontMedium;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: @ci-color1;
+			}
 		}
 		.caret {
 			transform: rotate(-90deg);
@@ -81,6 +100,43 @@
 	&__megamenu-item {}
 }
 
+// MOBILE ADAPTIONS
+
+#pageNavigationMobile {
+	.navigation {
+		&__submenu-trigger {
+			> button > .caret {
+				border: none;
+				width: 20px;
+				height: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font: normal normal normal 14px / 1 FontAwesome;
+				&:before {
+					content: "\f067";
+				}
+			}
+			&.active {
+				> button > .caret {
+					&:before {
+						content: "\f068";
+					}
+				}
+			}
+		}
+		&__submenu.in {
+			display: none;
+		}
+		&__submenu {
+			li {
+				background-color: @ci-color1;
+			}
+		}
+	}
+}
+
+
 @{RTL} {
 	.navigation {
 		&__submenu {
@@ -91,6 +147,7 @@
 	}
 }
 
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
 
@@ -100,17 +157,14 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 	.navigation {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: -50%;
-		width: 50%;
-		padding-top: 3rem;
+		position: relative;
+		width: 100%;
 	    overflow-y: auto;
-	    transition: left .3s linear;
-	    z-index: 2030;
+	    transition: top .3s ease;
+	    z-index: 2031;
+	    background: unset;
 	    &.in {
-	    	left: 0;
+	    	top: 0;
 	    }
 	    form > ul {
 	    	border-top: 1px solid @white;
@@ -170,8 +224,4 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-	.navigation {
-		left: -80%;
-		width: 80%;
-	}
 }

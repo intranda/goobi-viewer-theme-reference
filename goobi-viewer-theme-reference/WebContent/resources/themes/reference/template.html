@@ -74,16 +74,14 @@
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
     
-    <!-- FORCES PRIMEFACES TO INCLUDE JQUERY & JQUERY-UI -->
-    <h:outputScript library="primefaces" name="/jquery/jquery.js" target="head" />
-    <h:outputScript library="primefaces" name="/jquery/jquery-plugins.js" target="head" />
-    
     <!-- JAVASCRIPT LIBS -->
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
+    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.11.0/jquery.ui.touch-punch.min.js?${navigationHelper.buildVersion}"></script>
+	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/plugins/jquery.ui.slider-1.12.1-rtl.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/datatables.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.11.0/jquery.ui.touch-punch.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rxjs.umd.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js?${navigationHelper.buildVersion}"></script>
@@ -94,7 +92,6 @@
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/markercluster/leaflet.markercluster.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/draw/leaflet.draw.js?${navigationHelper.buildVersion}"></script>	
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/swiper/swiper-bundle.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/plugins/jquery.ui.slider-1.12.1-rtl.js?${navigationHelper.buildVersion}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/sweetalert/sweetalert2.min.js?${navigationHelper.buildVersion}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/mapbox/geocoder/mapbox-gl-geocoder.min.js?${navigationHelper.buildVersion}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/mapbox/mapbox-gl.js?${navigationHelper.buildVersion}"></script>
@@ -103,8 +100,6 @@
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/browsersupport.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>
-
-
 
 </h:head>
 
