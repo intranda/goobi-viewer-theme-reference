@@ -459,13 +459,6 @@
 	}
 }
 
-// stretch slider images to the edges on very big screens
-@media screen and (min-width: 1920px) {
-	.slider-reference__image {
-		background-size: cover;
-	}
-}
-
 /* NAVIGATION */
 .page-navigation {
 	background: @ci-color1;
@@ -678,6 +671,14 @@
   to {
 	transform: rotate(-45deg);
   }
+}
+
+
+// stretch slider images to the edges on very big screens
+@media screen and (min-width: 1920px) {
+	.slider-reference__image {
+		background-size: cover;
+	}
 }
 
 @media screen and (max-width: @largeBreakpoint) {} 
