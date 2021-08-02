@@ -59,7 +59,10 @@
 								data-toggle="local"
 								aria-label="#{msg.aria_label__switch_language}">
 								<!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
-								#{msg['changeLocal_long_' += navigationHelper.localeString]}</button>
+								<!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
+								
+								<!-- GENERIC ICON AND MESSAGE -->
+								<span class="fa fa-globe"></span>#{msg.language}</button>
 								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
 							<viewerComponent:changeLocal toggleLanguage="false" longLanguageStrings="true"/>
 						</div>
@@ -95,6 +98,16 @@
 			</div>
 		</div>
 
+		<!-- DESKTOP NAVIGATION -->
+		<div id="pageNavigation"
+			class="page-navigation #{userBean.admin ? '-adminActive':''}">
+			<div class="container page-navigation__wrapper">
+				<viewerComponent:navigation id="page-header__nav-menu-desktop"
+					megaMenu="false" />
+					
+			</div>
+		</div>
+
 	</header>
 
 	<ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
@@ -102,16 +115,6 @@
 			<ui:insert name="topbar" />
 		</div>
 	</ui:fragment>
-
-	<!-- NAVIGATION -->
-	<div id="pageNavigation"
-		class="page-navigation #{userBean.admin ? '-adminActive':''}">
-		<div class="container page-navigation__wrapper">
-			<viewerComponent:navigation id="page-header__nav-menu-desktop"
-				megaMenu="false" />
-				
-		</div>
-	</div>
 
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
