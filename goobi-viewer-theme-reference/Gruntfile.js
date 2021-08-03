@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         			src: [
         				'**'
         			],
-        			dest: getTomcatDir() + '/goobi-viewer-theme-reference'
+        			dest: getTomcatDir() + '/goobi-viewer-theme-<%=theme.name%>'
         		}],
         		verbose: true
         	}
@@ -66,13 +66,15 @@ module.exports = function(grunt) {
                 }
             }
         },
-        uglify: {
-            my_target: {
-                files: {
-                    '<%=src.jsDistFolder %>custom.min.js': ['<%=src.jsDevFolder %>custom.js']
-                }
-            }
-        },
+		concat : {
+			options : {
+				separator : ';',
+			},
+			dist : {
+				src : [ '<%=src.jsDevFolder %>custom.js' ],
+				dest : '<%=src.jsDistFolder %>custom.min.js',
+			},
+		},
         watch: {
         	configFiles : {
 				files : [ 'Gruntfile.js' ],
@@ -89,7 +91,7 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: [ '<%=src.jsDevFolder %>*.js' ],
-                tasks: [ 'uglify', 'sync' ],
+                tasks: [ 'concat', 'sync' ],
                 options: {
                 	spawn: false,
                 }
@@ -125,8 +127,8 @@ module.exports = function(grunt) {
     
 	// ---------- LOAD TASKS ----------
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch' );
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-riot');
     grunt.loadNpmTasks('grunt-sync');
     
