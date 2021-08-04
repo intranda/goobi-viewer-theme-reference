@@ -229,11 +229,14 @@
 
 	<!--  GENERIC OVERLAY -->
 	<ui:include src="/resources/includes/overlay.xhtml" />
+	<!-- FULL OVERLAY LOADING SCREEN (DISPLAYED WHILE REDIRECTING PAGES) -->
+	<ui:include src="/resources/includes/loadingOverlay.xhtml" />
 
 	<!-- USER LOGIN + TERMS + FEEDBACK -->
 	<viewerComponent:modalUserLogin id="userLoginModal" />
 	<viewerComponent:modalUserTerms id="userTermsModal" />
 	<viewerComponent:modalFeedbackForm id="feedbackModal" />
+
 
 	<!-- IE 11 NOT SUPPORTED -->
 	<div class="support-overlay">
