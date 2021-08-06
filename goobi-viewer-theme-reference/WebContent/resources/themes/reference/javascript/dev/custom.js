@@ -118,7 +118,7 @@ $( document ).ready( function() {
 		});
 
 	// calculate spacer height on page load and resize
-	var headerStartHeight = $('.page-header').height();
+	var headerStartHeight = $('header').height();
 	$('.page-header__spacer').height(headerStartHeight);
 	
 	$(window).on('resize', function(){

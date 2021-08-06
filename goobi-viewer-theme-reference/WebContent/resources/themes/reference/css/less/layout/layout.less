@@ -23,13 +23,11 @@
 		width: 100vw;
 		background: @neutralgray;
 		transition: all 0.175s ease;
-		height: 105px;
 		&.-scrolled {
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: 50px;
 			.page-header__logo {
 				h1 {
 					font-size: 2.5rem;
@@ -78,6 +76,8 @@
 		padding: 0 1.1rem;
 		position: relative;
 		border-left: 1px solid @middleblack;
+		transition: opacity 0.2s ease;
+		opacity: 1;
 	}
 	&__actions-language {
 		border-left: none;
@@ -89,6 +89,9 @@
 	&__actions-language-button {
 		font-weight: 700;
 		display: block;
+		.fa {
+			padding-right: 0.5rem;
+		}
 	}
 	&__actions-search-button {
 		.fa {
@@ -153,7 +156,7 @@
 		position: relative;
 		z-index: -1;
 		opacity: 0;
-		height: 105px;
+		height: 142px;
 		&.-scrolled {
 			position: relative;
 		}
@@ -418,9 +421,9 @@
 		z-index: 2020;
 		left: 0;
 		transition: all 0.2s ease;
+		display: none;
 		&.-mobileMenuOpen {
 			opacity: 1;
-			display: block;
 		}
 	}
 }
@@ -589,6 +592,7 @@
 	a {
 		display: inline-block;		
 		color: @white;
+		cursor: pointer;
 		&:hover,
 		&:active,
 		&:focus {
@@ -671,6 +675,14 @@
   to {
 	transform: rotate(-45deg);
   }
+}
+
+
+// stretch slider images to the edges on very big screens
+@media screen and (min-width: 1920px) {
+	.slider-reference__image {
+		background-size: cover;
+	}
 }
 
 @media screen and (max-width: @largeBreakpoint) {} 
@@ -767,7 +779,9 @@
 			border: none;
 			padding: 0 0.7rem;
 		}
-		
+		&__navigation-mobile-background {
+			display: block;
+		}
 	}
 	.page-navigation {
 		display: none;
@@ -815,7 +829,7 @@
 			background-color: @neutralgray;
 			transition: right .3s ease;
 			overflow-y: auto;
-			z-index: 2030;
+			z-index: 2031;
 			&.in {
 				right: 0;
 			}

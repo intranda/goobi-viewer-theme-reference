@@ -59,7 +59,10 @@
 								data-toggle="local"
 								aria-label="#{msg.aria_label__switch_language}">
 								<!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
-								#{msg['changeLocal_long_' += navigationHelper.localeString]}</button>
+								<!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
+								
+								<!-- GENERIC ICON AND MESSAGE -->
+								<span class="fa fa-globe"></span>#{msg.language}</button>
 								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
 							<viewerComponent:changeLocal toggleLanguage="false" longLanguageStrings="true"/>
 						</div>
@@ -95,6 +98,16 @@
 			</div>
 		</div>
 
+		<!-- DESKTOP NAVIGATION -->
+		<div id="pageNavigation"
+			class="page-navigation #{userBean.admin ? '-adminActive':''}">
+			<div class="container page-navigation__wrapper">
+				<viewerComponent:navigation id="page-header__nav-menu-desktop"
+					megaMenu="false" />
+					
+			</div>
+		</div>
+
 	</header>
 
 	<ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
@@ -102,16 +115,6 @@
 			<ui:insert name="topbar" />
 		</div>
 	</ui:fragment>
-
-	<!-- NAVIGATION -->
-	<div id="pageNavigation"
-		class="page-navigation #{userBean.admin ? '-adminActive':''}">
-		<div class="container page-navigation__wrapper">
-			<viewerComponent:navigation id="page-header__nav-menu-desktop"
-				megaMenu="false" />
-				
-		</div>
-	</div>
 
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
@@ -155,7 +158,7 @@
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
 					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| <a
-						href="#{request.contextPath}/feedback/">#{msg.feedbackLeaveFeedback}</a>|
+						data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</a>|
 					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>| <a
 						href="#{request.contextPath}/imprint/">#{msg.imprint}</a>| <span>powered
 						by</span> <a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi
@@ -226,10 +229,14 @@
 
 	<!--  GENERIC OVERLAY -->
 	<ui:include src="/resources/includes/overlay.xhtml" />
+	<!-- FULL OVERLAY LOADING SCREEN (DISPLAYED WHILE REDIRECTING PAGES) -->
+	<ui:include src="/resources/includes/loadingOverlay.xhtml" />
 
-	<!-- USER LOGIN + TERMS -->
+	<!-- USER LOGIN + TERMS + FEEDBACK -->
 	<viewerComponent:modalUserLogin id="userLoginModal" />
 	<viewerComponent:modalUserTerms id="userTermsModal" />
+	<viewerComponent:modalFeedbackForm id="feedbackModal" />
+
 
 	<!-- IE 11 NOT SUPPORTED -->
 	<div class="support-overlay">
