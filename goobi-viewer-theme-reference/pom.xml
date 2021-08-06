@@ -138,7 +138,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.1.1</version>
+				<version>3.1.2</version>
 				<executions>
 					<!-- Config files -->
 					<execution>
@@ -177,7 +177,7 @@
 			<!-- Maven WAR Plugin -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
+				<version>3.3.1</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<warName>viewer</warName>
@@ -207,7 +207,7 @@
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
-				<version>4.0.0</version>
+				<version>4.0.1</version>
 				<executions>
 					<execution>
 						<goals>
