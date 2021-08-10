@@ -20,6 +20,36 @@ function setContentHeight() {
     }
 }
 
+// HELPER: check if element exists
+function isElement(element) {
+    return (typeof(element) != 'undefined' && element != null);
+}
+
+// Set aria-hidden attributes
+function setAriaHidden(element, state) {
+  element.setAttribute('aria-hidden', state);
+}
+
+// Set aria-hidden attributes for mobile and desktop nav elements 
+function setNavAriaStates() {
+  var desktopNav = document.querySelector('#pageNavigation');
+  var mobileNav = document.querySelector('#pageNavigationMobile');
+
+  // Check if nav elements exist
+  if(isElement(desktopNav) && isElement(mobileNav)) {
+    // Add mobile nav to accessibility tree & remove desktop nav
+    if (window.matchMedia('(max-width: 768px)').matches) { 
+      setAriaHidden(desktopNav, true);
+      setAriaHidden(mobileNav, false);
+      return
+    }
+    // Add desktop nav to accessibility tree & remove mobile nav
+    setAriaHidden(desktopNav, false);
+    setAriaHidden(mobileNav, true);
+  }
+}
+
+
 /*
 initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
 list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
@@ -118,7 +148,7 @@ $( document ).ready( function() {
 		});
 
 	// calculate spacer height on page load and resize
-	var headerStartHeight = $('header').height();
+	var headerStartHeight = $('.page-header').height();
 	$('.page-header__spacer').height(headerStartHeight);
 	
 	$(window).on('resize', function(){
@@ -207,10 +237,13 @@ $( document ).ready( function() {
     
     // set content height to window height
     setContentHeight();
+    setNavAriaStates();
 
     // do things on resize and orientation change
     $(window).on('resize orientationchange', function () {
-        setContentHeight();
+      setContentHeight();
+      setNavAriaStates();
+        
     });
 
     // do things on JSF AJAX event
@@ -225,5 +258,5 @@ $( document ).ready( function() {
     }
 
     // mobile view manipulations
-    if (window.matchMedia('(max-width: 768px)').matches) { }
+    if (window.matchMedia('(max-width: 768px)').matches) {}
 } );

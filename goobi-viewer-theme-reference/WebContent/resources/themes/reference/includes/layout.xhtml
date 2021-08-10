@@ -25,96 +25,101 @@
 		</button>
 	</div>
 
-	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}">spacer</div>
+	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
 
 
 	<!-- PAGE HEADER -->
-	<header id="pageHeader"
-		class="page-header #{userBean.admin ? '-adminActive':''}">
-		<div class="container page-header__wrapper">
-			<div class="page-header__inner">
-				<!-- PAGE HEADER BOTTOM LOGO -->
-				<div class="page-header__logo">
-					<h1>
-						<a href="#{request.contextPath}/"> <img
-							src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg"
-							alt="Goobi Logo" /> <span class="page-header__span">Goobi
-								viewer</span>
-						</a>
-					</h1>
-				</div>
+  <header id="pageHeader">
+    <div class="page-header #{userBean.admin ? '-adminActive':''}">
+      <div class="container page-header__wrapper">
+        <div class="page-header__inner">
+          <!-- PAGE HEADER BOTTOM LOGO -->
+          <div class="page-header__logo">
+            <h1>
+              <a href="#{request.contextPath}/"> <img
+                src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg"
+                alt="Goobi Logo" /> <span class="page-header__span">Goobi
+                  viewer</span>
+              </a>
+            </h1>
+          </div>
 
-				<!-- PAGE HEADER TOP ACTIONS -->
-				<div class="page-header__actions">
-					<!-- BOOKMARKS -->
-					<div class="page-header__actions-bookmark">
-						<viewerComponent:bookmarkListNavigation />
-					</div>
-					<!-- CHANGE LOCALE -->
-					<ui:fragment
-						rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
-						<div id="changeLocalWrapper" class="page-header__actions-language">
-							<button type="button"
-								class="btn btn--clean page-header__actions-language-button"
-								data-toggle="local"
-								aria-label="#{msg.aria_label__switch_language}">
-								<!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
-								<!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
-								
-								<!-- GENERIC ICON AND MESSAGE -->
-								<span class="fa fa-globe"></span>#{msg.language}</button>
-								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
-							<viewerComponent:changeLocal toggleLanguage="false" longLanguageStrings="true"/>
-						</div>
-					</ui:fragment>
-					<!-- LOGIN NAVIGATION -->
-					<div class="page-header__actions-login">
-						<viewerComponent:loginNavigation />
-					</div>
-					<button data-open="search"
-						class="btn btn--icon page-header__actions-search-button">
-						<i class="fa fa-search"></i>
-						<div class="page-header__actions-search-close">
-							<span></span>
-						</div>
-					</button>
+          <!-- PAGE HEADER TOP ACTIONS -->
+          <div class="page-header__actions">
+            <!-- BOOKMARKS -->
+            <div class="page-header__actions-bookmark">
+              <viewerComponent:bookmarkListNavigation />
+            </div>
+            <!-- CHANGE LOCALE -->
+            <ui:fragment
+              rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
+              <div id="changeLocalWrapper" class="page-header__actions-language">
+                <button type="button"
+                  class="btn btn--clean page-header__actions-language-button"
+                  data-toggle="local"
+                  aria-label="#{msg.aria_label__switch_language}">
+                  <!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
+                  <!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
+                  
+                  <!-- GENERIC ICON AND MESSAGE -->
+                  <span class="fa fa-globe"></span>#{msg.language}</button>
+                  <!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
+                <viewerComponent:changeLocal toggleLanguage="false" longLanguageStrings="true"/>
+              </div>
+            </ui:fragment>
+            <!-- LOGIN NAVIGATION -->
+            <div class="page-header__actions-login">
+              <viewerComponent:loginNavigation />
+            </div>
+            <button 
+              data-open="search"
+              class="btn btn--icon page-header__actions-search-button"
+              aria-label="#{msg.search}">
+              <i class="fa fa-search"></i>
+              <div class="page-header__actions-search-close">
+                <span></span>
+              </div>
+            </button>
 
-					<div data-open="menu"
-						class="page-header__mobile-burger-menu-alternative">
-						<span></span>
-					</div>
+            <div data-open="menu"
+              class="page-header__mobile-burger-menu-alternative">
+              <span></span>
+            </div>
 
-				</div>
-			</div>
-		</div>
+          </div>
+        </div>
+      </div>
 
-		<!-- MOBILE MENU OVERLAY/BACKGROUND -->
-		<div class="page-header__navigation-mobile-background"></div>
+      <!-- MOBILE MENU OVERLAY/BACKGROUND -->
+      <div class="page-header__navigation-mobile-background"></div>
 
-		<!-- SEARCH BOX -->
-		<div data-target="search-box" class="page-header__search-box">
-			<div class="container">
-				<widgetComponent:widget_searchField />
-			</div>
-		</div>
+      <!-- SEARCH BOX -->
+      <div data-target="search-box" class="page-header__search-box">
+        <div class="container">
+          <widgetComponent:widget_searchField />
+        </div>
+      </div>
 
-		<!-- DESKTOP NAVIGATION -->
-		<div id="pageNavigation"
-			class="page-navigation #{userBean.admin ? '-adminActive':''}">
-			<div class="container page-navigation__wrapper">
-				<viewerComponent:navigation id="page-header__nav-menu-desktop"
-					megaMenu="false" />
-					
-			</div>
-		</div>
+      <!-- DESKTOP NAVIGATION -->
+      <div id="pageNavigation"
+        class="page-navigation #{userBean.admin ? '-adminActive':''}">
+        <div class="container page-navigation__wrapper">
+          <viewerComponent:navigation id="page-header__nav-menu-desktop"
+            megaMenu="false" />
+            
+        </div>
+      </div>
 
+    </div> <!-- End class="page-header" -->
+
+    <!-- HERO SLIDER -->
+    <ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
+      <div class="page-header__slider">
+        <ui:insert name="topbar" />
+      </div>
+    </ui:fragment>
 	</header>
 
-	<ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
-		<div class="page-header__slider">
-			<ui:insert name="topbar" />
-		</div>
-	</ui:fragment>
 
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>

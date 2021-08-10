@@ -463,6 +463,10 @@
 }
 
 /* NAVIGATION */
+.page-navigation__mobile {
+  display: none;
+}
+
 .page-navigation {
 	background: @ci-color1;
 	position: relative;
@@ -472,8 +476,8 @@
 	&__wrapper {
 	}
 	&__mobile {
-		z-index: -1;
 		opacity: 0;
+		z-index: -1;
 		pointer-events: none;
 		background: transparent;
 		position: fixed;
@@ -792,6 +796,11 @@
 			overflow-y: scroll;
 		}
 	}
+
+	.page-navigation__mobile {
+    display: block;
+  }
+
 	.slider-reference {
 		&__container {}
 		&__wrapper {
@@ -864,6 +873,7 @@
 			}
 		}
 	}
+  
 	.page-content {
 		&__sidebar {
 			right: -80%;
