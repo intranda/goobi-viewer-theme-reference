@@ -14,16 +14,6 @@
 	<!-- ADMIN TOPBAR FRONTEND -->
 	<viewerComponent:frontEndAdminTopBar />
 
-	<!-- OPEN MOBILE NAVIGATION -->
-	<div class="page-header__mobile-sidebar-trigger">
-		<button type="button"
-			class="btn btn--icon page-header__mobile-sidebar-trigger-arrow -arrow"
-			data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
-			<span class="page-header__mobile-sidebar-trigger-arrow-inner">
-				<span class="bar"></span> <span class="bar"></span>
-			</span>
-		</button>
-	</div>
 
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
 
@@ -106,7 +96,6 @@
         <div class="container page-navigation__wrapper">
           <viewerComponent:navigation id="page-header__nav-menu-desktop"
             megaMenu="false" />
-            
         </div>
       </div>
 
@@ -118,6 +107,7 @@
         <ui:insert name="topbar" />
       </div>
     </ui:fragment>
+
 	</header>
 
 
@@ -129,14 +119,29 @@
 
 	<!-- MAIN -->
 	<div id="pageContent" class="page-content">
+
+
 		<div class="container">
 			<div class="page-content__wrapper">
 				<!-- CONTENT -->
-				<main id="main" class="page-content__main"> <!-- BREADCRUMBS -->
-				<ui:insert name="breadcrumbs" /> <ui:insert name="content" /> </main>
+				<main id="main" class="page-content__main"> 
 
-				<!-- SIDEBAR -->
-				<aside id="sidebar" class="page-content__sidebar">
+          <!-- OPEN MOBILE NAVIGATION -->
+          <div class="page-header__mobile-sidebar-trigger">
+            <button type="button"
+              class="btn btn--icon page-header__mobile-sidebar-trigger-arrow -arrow"
+              data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
+              <span class="page-header__mobile-sidebar-trigger-arrow-inner">
+                <span class="bar"></span> <span class="bar"></span>
+              </span>
+            </button>
+          </div>
+
+          <!-- BREADCRUMBS -->
+          <ui:insert name="breadcrumbs" /> <ui:insert name="content" /> </main>
+
+          <!-- SIDEBAR -->
+          <aside id="sidebar" class="page-content__sidebar">
 					<!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
 					<!-- <viewerComponent:sidebarMenu /> -->
 
@@ -157,8 +162,8 @@
 			<div class="page-footer__wrapper">
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
-					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| <a
-						data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</a>|
+					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| 
+					<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>|
 					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>| <a
 						href="#{request.contextPath}/imprint/">#{msg.imprint}</a>| <span>powered
 						by</span> <a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi
@@ -199,7 +204,7 @@
 
 
 	<!-- MOBILE ONLY NAVIGATION -->
-	<div class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
+	<nav class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
 		<div class="container page-navigation__wrapper">
 			<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
 			<!-- CHANGE LANGUAGE -->
@@ -225,7 +230,7 @@
 	            </div>
 			</ui:fragment>
 		</div>
-	</div>
+	</nav>
 
 	<!--  GENERIC OVERLAY -->
 	<ui:include src="/resources/includes/overlay.xhtml" />

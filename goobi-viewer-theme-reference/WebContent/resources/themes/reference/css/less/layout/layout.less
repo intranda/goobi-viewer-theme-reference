@@ -593,7 +593,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 	}
-	a {
+	a, button {
 		display: inline-block;		
 		color: @white;
 		cursor: pointer;
@@ -601,7 +601,11 @@
 		&:active,
 		&:focus {
 			color: @white;
+			text-decoration: underline;
 		}	
+		&:focus {
+			text-decoration: none;
+		}
 	}		
 	&__links,
 	&__social {
@@ -611,7 +615,7 @@
 	}
 	&__links {
 		flex-wrap: wrap;
-		a, span {
+		a, span, button {
 			padding: .6rem 1.2rem;	
 		}
 		span {
