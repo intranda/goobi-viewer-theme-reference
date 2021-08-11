@@ -5,13 +5,17 @@
  * Method to set the content height to a min-height, equal to the viewport height.
  */
 function setContentHeight() {
-    var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
-    var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
-    var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+    // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
+    // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
+    // var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+  
+    var pageHeaderHeight = $('.page-header__spacer').outerHeight();
     var pageWrapperHeight = $( '#pageContent' ).outerHeight();
     var pageFooterHeight = $( '#pageFooter' ).outerHeight();
     var pageWrapper = $( '#pageContent' );
-    var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+
+    // var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+    var additionalHeight = pageHeaderHeight + pageWrapperHeight + pageFooterHeight;
     var windowHeight = $( window ).outerHeight();
     var diff = windowHeight - additionalHeight;
     
@@ -19,36 +23,6 @@ function setContentHeight() {
         pageWrapper.css( 'min-height', ( pageWrapperHeight + diff ) + 'px' );
     }
 }
-
-// HELPER: check if element exists
-function isElement(element) {
-    return (typeof(element) != 'undefined' && element != null);
-}
-
-// Set aria-hidden attributes
-function setAriaHidden(element, state) {
-  element.setAttribute('aria-hidden', state);
-}
-
-// Set aria-hidden attributes for mobile and desktop nav elements 
-function setNavAriaStates() {
-  var desktopNav = document.querySelector('#pageNavigation');
-  var mobileNav = document.querySelector('#pageNavigationMobile');
-
-  // Check if nav elements exist
-  if(isElement(desktopNav) && isElement(mobileNav)) {
-    // Add mobile nav to accessibility tree & remove desktop nav
-    if (window.matchMedia('(max-width: 768px)').matches) { 
-      setAriaHidden(desktopNav, true);
-      setAriaHidden(mobileNav, false);
-      return
-    }
-    // Add desktop nav to accessibility tree & remove mobile nav
-    setAriaHidden(desktopNav, false);
-    setAriaHidden(mobileNav, true);
-  }
-}
-
 
 /*
 initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
@@ -237,13 +211,10 @@ $( document ).ready( function() {
     
     // set content height to window height
     setContentHeight();
-    setNavAriaStates();
 
     // do things on resize and orientation change
     $(window).on('resize orientationchange', function () {
       setContentHeight();
-      setNavAriaStates();
-        
     });
 
     // do things on JSF AJAX event
@@ -258,5 +229,7 @@ $( document ).ready( function() {
     }
 
     // mobile view manipulations
-    if (window.matchMedia('(max-width: 768px)').matches) {}
+    if (window.matchMedia('(max-width: 768px)').matches) {
+    }
+
 } );
