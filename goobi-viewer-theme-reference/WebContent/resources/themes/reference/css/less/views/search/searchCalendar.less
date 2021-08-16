@@ -52,7 +52,16 @@
     &__month-week {}
     &__month-day {
         a, 
-        span {}
+        span {
+          color: @ci-color1;
+
+          &:focus,
+          &:hover,
+          &:active {
+            background-color: @ci-color1;
+            color: @white;
+          }
+        }
     }
     &__month-day-empty {}
     &__action {}
