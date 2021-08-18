@@ -1,11 +1,6 @@
 pipeline {
 
-  agent {
-    docker {
-      image 'maven:3-jdk-8'
-      args '-v $HOME/.m2:/var/maven/.m2:z -u 1000 -ti -e _JAVA_OPTIONS=-Duser.home=/var/maven -e MAVEN_CONFIG=/var/maven/.m2'
-    }
-  }
+  agent none
 
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '15', daysToKeepStr: '90', numToKeepStr: '')
@@ -13,21 +8,73 @@ pipeline {
 
   stages {
     stage('prepare') {
+      agent any
       steps {
         sh 'git clean -fdx'
       }
     }
     stage('build') {
+      agent {
+        docker {
+          image 'maven:3-jdk-8'
+          args '-v $HOME/.m2:/var/maven/.m2:z -u 1000 -ti -e _JAVA_OPTIONS=-Duser.home=/var/maven -e MAVEN_CONFIG=/var/maven/.m2'
+        }
+      }
       steps {
               sh 'mvn -f goobi-viewer-theme-reference/pom.xml clean install'
               recordIssues enabledForFailure: true, aggregatingResults: true, tools: [java(), javaDoc()]
+              archiveArtifacts artifacts: '**/target/*.war', fingerprint: true, onlyIfSuccessful: true
+      }
+    }
+
+    stage('build docker image') {
+      agent any
+      steps {
+        script{
+          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
+            viewerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+          }
+        }
+      }
+    }
+    stage('basic tests'){
+      agent any
+      steps{
+        script {
+          viewerimage.inside {
+            sh 'test -d /usr/local/tomcat/webapps/viewer && echo "/usr/local/tomcat/webapps/viewer missing or no directory"'
+            sh 'test -d /opt/digiverso/viewer || echo "/opt/digiverso/viewer missing or no directory"'
+            sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || echo "/usr/local/tomcat/conf/viewer.xml.template missing"'
+            sh 'envsubst -V'
+          }
+        }
+      }
+    }
+    stage('publish docker devel image to internal repository'){
+      agent any
+      steps{
+        script {
+          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
+            viewerimage.push("${env.BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            viewerimage.push("${env.BRANCH_NAME}")
+          }
+        }
+      }
+    }
+    stage('publish docker production image to internal repository'){
+      agent any
+      when { branch 'master' }
+      steps{
+        script {
+          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
+            viewerimage.push("${env.TAG_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            viewerimage.push("latest")
+          }
+        }
       }
     }
   }
   post {
-    success {
-      archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
-    }
     changed {
       emailext(
         subject: '${DEFAULT_SUBJECT}',
