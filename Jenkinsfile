@@ -16,7 +16,7 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          image 'maven:3-jdk-8'
+          image 'maven:3-jdk-11'
           args '-v $HOME/.m2:/var/maven/.m2:z -u 1000 -ti -e _JAVA_OPTIONS=-Duser.home=/var/maven -e MAVEN_CONFIG=/var/maven/.m2'
         }
       }
