@@ -32,7 +32,7 @@ pipeline {
       steps {
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            viewerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
           }
         }
       }
@@ -41,7 +41,7 @@ pipeline {
       agent any
       steps{
         script {
-          viewerimage.inside {
+          dockerimage.inside {
             sh 'test -d /usr/local/tomcat/webapps/viewer && echo "/usr/local/tomcat/webapps/viewer missing or no directory"'
             sh 'test -d /opt/digiverso/viewer || echo "/opt/digiverso/viewer missing or no directory"'
             sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || echo "/usr/local/tomcat/conf/viewer.xml.template missing"'
@@ -55,8 +55,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            viewerimage.push("${env.BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
-            viewerimage.push("${env.BRANCH_NAME}")
+            dockerimage.push("${env.BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage.push("${env.BRANCH_NAME}")
           }
         }
       }
@@ -67,8 +67,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            viewerimage.push("${env.TAG_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
-            viewerimage.push("latest")
+            dockerimage.push("${env.TAG_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage.push("latest")
           }
         }
       }
