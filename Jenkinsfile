@@ -33,7 +33,7 @@ pipeline {
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
             dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
-            dockerimage_public = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
           }
         }
       }
