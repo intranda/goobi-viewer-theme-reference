@@ -5,13 +5,17 @@
  * Method to set the content height to a min-height, equal to the viewport height.
  */
 function setContentHeight() {
-    var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
-    var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
-    var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+    // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
+    // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
+    // var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+  
+    var pageHeaderHeight = $('.page-header__spacer').outerHeight();
     var pageWrapperHeight = $( '#pageContent' ).outerHeight();
     var pageFooterHeight = $( '#pageFooter' ).outerHeight();
     var pageWrapper = $( '#pageContent' );
-    var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+
+    // var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+    var additionalHeight = pageHeaderHeight + pageWrapperHeight + pageFooterHeight;
     var windowHeight = $( window ).outerHeight();
     var diff = windowHeight - additionalHeight;
     
@@ -118,7 +122,7 @@ $( document ).ready( function() {
 		});
 
 	// calculate spacer height on page load and resize
-	var headerStartHeight = $('header').height();
+	var headerStartHeight = $('.page-header').height();
 	$('.page-header__spacer').height(headerStartHeight);
 	
 	$(window).on('resize', function(){
@@ -210,7 +214,7 @@ $( document ).ready( function() {
 
     // do things on resize and orientation change
     $(window).on('resize orientationchange', function () {
-        setContentHeight();
+      setContentHeight();
     });
 
     // do things on JSF AJAX event
@@ -225,5 +229,7 @@ $( document ).ready( function() {
     }
 
     // mobile view manipulations
-    if (window.matchMedia('(max-width: 768px)').matches) { }
+    if (window.matchMedia('(max-width: 768px)').matches) {
+    }
+
 } );

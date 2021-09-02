@@ -18,7 +18,9 @@
             &:hover,
             &:focus,
             &:active,
-            &.active {}
+            &.active {
+              color: @ci-color1;
+            }
         }
         form {}
     }
@@ -215,8 +217,8 @@
     }
     &__struct-chapter {}
     &__struct-chapter + .search-list__struct-title  {}
-    /* DRILLDOWN HEADING */
-    &__drilldown-heading {}
+    /* FACETS HEADING */
+    &__facets-heading {}
 }
 /* MODIFICATION */
 .search-list--highlight {}
