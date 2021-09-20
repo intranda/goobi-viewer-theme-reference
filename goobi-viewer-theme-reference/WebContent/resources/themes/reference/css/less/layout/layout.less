@@ -297,7 +297,7 @@
 		height: 1.6rem;
 		position: relative;
 		width: 2rem;
-		padding-left: .7rem;
+		margin-left: .7rem;
 		cursor: pointer;
 		span,
 		&::before, 
@@ -567,7 +567,7 @@
 .page-content {
 	background: @neutralgray;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 	&__wrapper {
 		position: relative;
 		display: flex;
@@ -827,6 +827,8 @@
 		}
 	}
 	.page-content {
+		z-index: unset;
+		position: unset;
 		&__wrapper {
 			flex-wrap: wrap;
 		}
@@ -853,6 +855,9 @@
 				right: 0;
 			}
 		}
+	}
+	.page-footer {
+		position: relative;
 	}
 }
 

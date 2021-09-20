@@ -4,24 +4,78 @@
 /* FULLSCREEN METADATA */
 .fullscreen {
 	.metadata {
-	    .fa {}
+		&__title-wrapper {
+		}
+		&__title {
+		}
+	    &__bookmark-button {
+	    	&[data-bookmark-list-type="add"] {
+			    .fa-bookmark-o,
+			    .fa-bookmark {
+			    }
+			    .fa-bookmark-o {
+			    }
+			    .fa-bookmark {
+			    }
+			    &.added, 
+			    &:hover {
+			        .fa-bookmark-o {
+			        }
+			        .fa-bookmark {
+			        }
+			    }
+			}
+		}
+	    .fa {
+	    }
 		/* ELEMENTS / EVENTS */
 		&__elements,
 		&__events {
-			&:last-child {}
+			dd {
+			}
 		}
+		&_wrapper {}
 		&__element,
 		&__event {}
 		&__element-dl,
 		&__event-dl {
-			dt {}
-			dd {}
+			dt {
+			}
+			dd {
+			}
 		}
 		&__element-value,
 		&__event-value {
-			&:last-child {}
+			&:last-child {
+			}
 		}
 		/* ELEMENT */
+		&__element {
+			&-level-0 {
+				.metadata__element-dl {
+				}
+				&:hover {
+				}
+				&:first-child {
+				}
+			}
+	        &-level-1 {
+				.metadata__element-dl {
+				}
+				.metadata__element-dl {
+				}
+				dt {
+					&::before {
+					}
+				}
+			}
+	        &-level-2 {
+				.metadata__element-dl {
+				}
+			}
+	        &-level-3 {}
+	        &-level-4 {}
+		}
 		&__elements {
 			&.level-0 {}
 	        &.level-1 {}
@@ -34,12 +88,27 @@
 	        &.level-8 {}
 	        &.level-9 {}
 		}
-		&__elements-h3 {}
-		&__element-wrapper {}
+		&__elements {
+			&-level-0 {}
+	        &-level-1 {
+			}
+	        &-level-2 {
+			}
+		}
+		&__elements-h3 {
+			&:first-child {}
+		}
+		&__element-wrapper-single {
+			dt {
+			}
+		}
 		&__element {}
 		&__element-dl {
+			dt {
+			}
 			dt {}
-			dd {}
+			dd {
+			}
 		}
 		&__element-value {}
 		/* EVENT */
@@ -50,6 +119,56 @@
 			dd {}
 		}
 		&__event-value {}
+		&__grouped-wrapper {
+			border: none;
+			.metadata__element-dl {
+				&:last-child {
+				}
+			}
+			dt, dd {
+			}
+			.metadata__element-wrapper {
+			}
+		}
+		&__ungrouped-wrapper {
+			border: none;
+		}
+		&__element-ungrouped {
+			dt {
+			}
+		}
+		&__heading {
+			&.level-1,
+			&.level-2 {
+				&:before {
+				}
+			}
+			&.level-1 {}
+			&.level-2 {}
+		}
+	}
+	
+	/* DOWNLOADS */
+	#viewMetadataDownloads {
+	    ul {
+	        li {
+	            a {}
+	            .btn {}
+	            /* BLOCK */
+	            &.dl-links {
+	                /* ELEMENT */
+	                &__mets {}
+	                &__mets-all {}
+	                &__marcxml {}
+	                &__dc {}
+	                &__ese {}
+	                &__dfg {}
+	                &__opac {}
+	                &__pdf {}
+	                &__epub {}
+	            }
+	        }
+	    }
 	}
 }
 

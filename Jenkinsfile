@@ -16,7 +16,7 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          image 'maven:3-jdk-8'
+          image 'maven:3-jdk-11'
           args '-v $HOME/.m2:/var/maven/.m2:z -u 1000 -ti -e _JAVA_OPTIONS=-Duser.home=/var/maven -e MAVEN_CONFIG=/var/maven/.m2'
         }
       }
@@ -32,7 +32,8 @@ pipeline {
       steps {
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            viewerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
           }
         }
       }
@@ -41,7 +42,7 @@ pipeline {
       agent any
       steps{
         script {
-          viewerimage.inside {
+          dockerimage.inside {
             sh 'test -d /usr/local/tomcat/webapps/viewer && echo "/usr/local/tomcat/webapps/viewer missing or no directory"'
             sh 'test -d /opt/digiverso/viewer || echo "/opt/digiverso/viewer missing or no directory"'
             sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || echo "/usr/local/tomcat/conf/viewer.xml.template missing"'
@@ -55,8 +56,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            viewerimage.push("${env.BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
-            viewerimage.push("${env.BRANCH_NAME}")
+            dockerimage.push("${env.BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage.push("${env.BRANCH_NAME}")
           }
         }
       }
@@ -67,12 +68,39 @@ pipeline {
       steps{
         script {
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            viewerimage.push("${env.TAG_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
-            viewerimage.push("latest")
+            dockerimage.push("${env.TAG_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage.push("latest")
           }
         }
       }
     }
+    stage('publish develop image to Docker Hub'){
+      agent any
+      when {
+        branch 'develop'
+      }
+      steps{
+        script{
+          docker.withRegistry('','0b13af35-a2fb-41f7-8ec7-01eaddcbe99d'){
+            dockerimage_public.push("${env.BRANCH_NAME}")
+          }
+        }
+      }
+    }
+    stage('publish production image to Docker Hub'){
+      agent any
+      when {
+        branch 'master'
+      }
+      steps{
+        script{
+          docker.withRegistry('','0b13af35-a2fb-41f7-8ec7-01eaddcbe99d'){
+            dockerimage_public.push("${env.TAG_NAME}")
+            dockerimage_public.push("latest")
+          }
+        }
+      }
+    }    
   }
   post {
     changed {
