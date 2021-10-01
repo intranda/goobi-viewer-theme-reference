@@ -39,7 +39,7 @@ pipeline {
         }
       }
     }
-    stage('build docker image with config from master branch') {
+    stage('build docker image with config from develop branch') {
       agent any
       when { not { branch 'master' } }
       steps {
