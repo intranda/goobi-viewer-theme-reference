@@ -27,13 +27,26 @@ pipeline {
       }
     }
 
-    stage('build docker image') {
+    stage('build docker image with config from master branch') {
       agent any
+      when { branch 'master' }
       steps {
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache .")
-            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=master .")
+            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=master .")
+          }
+        }
+      }
+    }
+    stage('build docker image with config from master branch') {
+      agent any
+      when { not { branch 'master' } }
+      steps {
+        script{
+          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
+            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=develop .")
+            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=develop .")
           }
         }
       }
