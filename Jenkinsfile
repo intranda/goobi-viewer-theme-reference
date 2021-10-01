@@ -64,11 +64,15 @@ pipeline {
     }
     stage('publish docker production image to internal repository'){
       agent any
-      when { branch 'master' }
+      when { 
+        tag "v*" 
+        branch 'master'
+      }
       steps{
         script {
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage.push("${env.TAG_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
+            dockerimage.push("${env.TAG_NAME}-${env.BUILD_ID}")
+            dockerimage.push("${env.TAG_NAME}")
             dockerimage.push("latest")
           }
         }
@@ -90,6 +94,7 @@ pipeline {
     stage('publish production image to Docker Hub'){
       agent any
       when {
+        tag "v*"
         branch 'master'
       }
       steps{
