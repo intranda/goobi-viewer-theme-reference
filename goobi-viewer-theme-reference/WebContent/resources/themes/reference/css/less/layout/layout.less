@@ -297,7 +297,7 @@
 		height: 1.6rem;
 		position: relative;
 		width: 2rem;
-		padding-left: .7rem;
+		margin-left: .7rem;
 		cursor: pointer;
 		span,
 		&::before, 
@@ -656,6 +656,32 @@
 		&__actions {
 			margin-left: unset;
 			margin-right: auto;
+		}
+		&__logo {
+			h1 {
+				img {
+					margin-left: 2rem;
+					margin-right: unset;
+				}
+			}
+		}
+		&__actions-language,
+		&__actions-bookmark,
+		&__actions-login,
+		&__actions-search-button {
+			border-right: 1px solid @middleblack;
+			border-left: none;
+		}
+		&__actions-search-button {
+			&.-searchOn {
+				border-right: none;
+			}
+		}
+		&__actions-language-button {
+			.fa {
+				padding-right: 0;
+				padding-left: 0.5rem;
+			}
 		}
 	}
 	.page-content {
