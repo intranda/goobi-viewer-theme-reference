@@ -153,7 +153,7 @@
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core</excludeArtifactIds>
 							<includeArtifacIds>viewer-core-config</includeArtifacIds>
-							<excludes>MANIFEST.MF,**/pom.*,install/,docker/</excludes>
+							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
@@ -167,7 +167,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/templates</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core-config</excludeArtifactIds>
+							<excludeArtifactIds>viewer-core-config,connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core</includeArtifacIds>
 							<includes>META-INF/resources/resources/cms/templates/*</includes>
 							<excludeTransitive>true</excludeTransitive>
