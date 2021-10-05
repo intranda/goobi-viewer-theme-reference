@@ -51,6 +51,11 @@
 			<version>21.10-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>io.goobi.viewer</groupId>
+            <artifactId>connector</artifactId>
+            <version>21.10-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 
