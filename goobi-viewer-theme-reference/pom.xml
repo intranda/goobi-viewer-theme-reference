@@ -43,7 +43,7 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>21.09.3</version>
+			<version>21.09.4</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
