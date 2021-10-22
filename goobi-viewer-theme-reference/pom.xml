@@ -151,9 +151,9 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core</excludeArtifactIds>
+							<excludeArtifactIds>viewer-core,connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core-config</includeArtifacIds>
-							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class</excludes>
+							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class,web-fragment.xml</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
