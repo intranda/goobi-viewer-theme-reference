@@ -29,7 +29,9 @@ pipeline {
 
     stage('build docker image with config from master branch') {
       agent any
-      when { branch 'master' }
+      when {
+        anyOf { branch 'master'; tag "v*" }
+      }
       steps {
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
@@ -41,7 +43,11 @@ pipeline {
     }
     stage('build docker image with config from develop branch') {
       agent any
-      when { not { branch 'master' } }
+      when {
+        not {
+          anyOf { branch 'master'; tag "v*" }
+        }
+      }
       steps {
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
@@ -77,9 +83,8 @@ pipeline {
     }
     stage('publish docker production image to internal repository'){
       agent any
-      when { 
-        tag "v*" 
-        branch 'master'
+      when {
+        tag "v*"
       }
       steps{
         script {
@@ -108,7 +113,6 @@ pipeline {
       agent any
       when {
         tag "v*"
-        branch 'master'
       }
       steps{
         script{
@@ -118,7 +122,7 @@ pipeline {
           }
         }
       }
-    }    
+    }
   }
   post {
     changed {
