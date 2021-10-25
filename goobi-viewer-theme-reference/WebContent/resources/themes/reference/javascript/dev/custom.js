@@ -208,6 +208,11 @@ $( document ).ready( function() {
 	 	}
 	 	
 	 } );
+
+	// sticky sidebar
+ 	$('[data-target="sticky-sidebar"]').hcSticky({
+    	top: 50,
+ 	});	
     
     // set content height to window height
     setContentHeight();
