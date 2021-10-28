@@ -51,6 +51,11 @@
 			<version>21.10-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>io.goobi.viewer</groupId>
+            <artifactId>connector</artifactId>
+            <version>21.10-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 
@@ -146,9 +151,9 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core</excludeArtifactIds>
+							<excludeArtifactIds>viewer-core,connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core-config</includeArtifacIds>
-							<excludes>MANIFEST.MF,**/pom.*,install/,docker/</excludes>
+							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class,web-fragment.xml</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
@@ -162,7 +167,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/templates</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core-config</excludeArtifactIds>
+							<excludeArtifactIds>viewer-core-config,connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core</includeArtifacIds>
 							<includes>META-INF/resources/resources/cms/templates/*</includes>
 							<excludeTransitive>true</excludeTransitive>
