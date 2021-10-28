@@ -51,11 +51,11 @@
 			<version>21.10-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
-        <dependency>
-            <groupId>io.goobi.viewer</groupId>
-            <artifactId>viewer-connector</artifactId>
-            <version>21.10-SNAPSHOT</version>
-        </dependency>
+		<dependency>
+			<groupId>io.goobi.viewer</groupId>
+			<artifactId>viewer-connector</artifactId>
+			<version>21.10-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 
@@ -151,7 +151,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core,connector</excludeArtifactIds>
+							<excludeArtifactIds>viewer-core,viewer-connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core-config</includeArtifacIds>
 							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class,web-fragment.xml</excludes>
 							<excludeTransitive>true</excludeTransitive>
@@ -167,7 +167,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/templates</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core-config,connector</excludeArtifactIds>
+							<excludeArtifactIds>viewer-core-config,viewer-connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core</includeArtifacIds>
 							<includes>META-INF/resources/resources/cms/templates/*</includes>
 							<excludeTransitive>true</excludeTransitive>
