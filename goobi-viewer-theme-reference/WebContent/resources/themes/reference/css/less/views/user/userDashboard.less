@@ -1,0 +1,68 @@
+/* ==============================================================
+   User
+   style declarations for userDashboard.xhtml
+   ==============================================================*/
+/* USER DASHBOARD */
+.user-dashboard {
+	&__form-wrapper-container {
+	}
+	&__form-wrapper {
+		&.-w50 {}
+		&.-w100 {}
+	}
+	&__show-all-link {}
+	&__last-activities-wrapper {}
+	&__last-activities-placeholder-wrappper {
+		p {}
+		.fa-rocket {}
+	}
+	&__last-activities-timeline-wrapper {}
+	&__last-activities-timeline-item {
+		&::after {}
+		&::before {}
+		&:first-child {
+			&:before {}	
+			&:after {}
+		}
+		&:last-child {
+			&:before {}
+		}
+	}
+	&__last-activities-timeline-item-type {
+		.fa {}
+	}
+	&__bookmarks-list,
+	&__searches-list {}
+	&__last-activities-wrapper,
+	&__searches-wrapper, 
+	&__comments-wrapper {
+		&.-noEntry {}
+	}
+	&__comments-wrapper {}
+	&__searches-wrapper {}
+	&__searches-list {}
+	&__searches-list-item {}
+	&__searches-count,
+	&__comments-count,
+	&__bookmarks-count {}
+	&__comments-wrapper {}
+	&__comments-list {}
+	&__comments-count {}
+	&__comments-item {}
+	&__comments-text {}
+	&__comments-open-record {}
+	&__sidebar-settings-button-wrapper {}
+	&__sidebar-settings-button {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
