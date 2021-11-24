@@ -32,6 +32,7 @@ RUN echo "Using ${CONFIG_BRANCH} branch of goobi-viewer-core-config..."
 RUN git clone --branch=${CONFIG_BRANCH} --depth=1 https://github.com/intranda/goobi-viewer-core-config.git /goobi-viewer-core-config/ && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/install/* /opt/digiverso/viewer/config/  && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/viewer.xml.template /usr/local/tomcat/conf/ && \
+	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/config_oai.xml.template /usr/local/tomcat/conf/ && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/run.sh / && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/setenv.sh /usr/local/tomcat/bin/setenv.sh && \
 	patch --output=/usr/local/tomcat/conf/server.xml.template /usr/local/tomcat/conf/server.xml </goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/server.xml.patch && \
