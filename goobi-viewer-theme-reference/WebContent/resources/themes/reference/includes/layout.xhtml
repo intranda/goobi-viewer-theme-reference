@@ -124,23 +124,27 @@
 		<div class="container">
 			<div class="page-content__wrapper">
 				<!-- CONTENT -->
-				<main id="main" class="page-content__main"> 
-          <!-- OPEN MOBILE NAVIGATION -->
-          <div class="page-header__mobile-sidebar-trigger">
-            <button type="button"
-              class="btn btn--icon page-header__mobile-sidebar-trigger-arrow -arrow"
-              data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
-              <span class="page-header__mobile-sidebar-trigger-arrow-inner">
-                <span class="bar"></span> <span class="bar"></span>
-              </span>
-            </button>
-          </div>
+				<main id="main" class="page-content__main">
+					<!-- OPEN MOBILE NAVIGATION -->
+					<div class="page-header__mobile-sidebar-trigger">
+						<button type="button"
+							class="btn btn--icon page-header__mobile-sidebar-trigger-arrow -arrow"
+							data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
+							<span class="page-header__mobile-sidebar-trigger-arrow-inner">
+								<span class="bar"></span> <span class="bar"></span>
+							</span>
+						</button>
+					</div>
 
-          <!-- BREADCRUMBS -->
-          <ui:insert name="breadcrumbs" /> <ui:insert name="content" /> </main>
+					<!-- BREADCRUMBS -->
+					<viewerComponent:breadcrumbs showIcon="false" showStartText="true" />
 
-          <!-- SIDEBAR -->
-          <aside id="sidebar" class="page-content__sidebar">
+					<ui:insert name="content" />
+
+				</main>
+
+				<!-- SIDEBAR -->
+				<aside id="sidebar" class="page-content__sidebar">
 					<!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
 					<!-- <viewerComponent:sidebarMenu /> -->
 
