@@ -99,7 +99,9 @@
     /* HITS */
     &__hits {}
     &__hit {
-    	background-color: @white;
+    	background-color: @bg-content-box;
+      color: @fg-content-box;
+      border: @border;
     }
     &__hit-header {}
     &__hit-title,
@@ -120,7 +122,7 @@
 		    }
 		    .fa-bookmark-o {}
 		    .fa-bookmark {}
-		    &.added, 
+		    &.added,
 		    &:hover {
 		        .fa-bookmark-o {}
 		        .fa-bookmark {}
@@ -137,13 +139,13 @@
 		    }
 		    .fa-bookmark-o {}
 		    .fa-bookmark {}
-		    &.added, 
+		    &.added,
 		    &:hover {
 		        .fa-bookmark-o {}
 		        .fa-bookmark {}
 		    }
 		}
-    } 
+    }
     &__hit-type {}
     &__hit-docstruct {
     	font-size: @fontSmall;
@@ -153,7 +155,7 @@
         a {}
     }
     &__hit-text {
-    	font-size: @fontMedium;    	
+    	font-size: @fontMedium;
     }
     &__hit-text-label,
     &__hit-text-value {}
@@ -193,7 +195,7 @@
     }
     &__hit-content-more {
         .btn {
-	    	font-size: @fontMedium;        	
+	    	font-size: @fontMedium;
         }
     }
     &__struct-title,

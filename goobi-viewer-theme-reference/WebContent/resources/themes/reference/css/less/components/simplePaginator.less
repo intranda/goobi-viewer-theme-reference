@@ -10,7 +10,8 @@
 	li {}
 	a, span {
 		font-size: @fontMedium;
-		background-color: @white;
+		background-color: @bg-content-box;
+		border: @border;
 	}
 	a {
 		&:hover,
@@ -20,20 +21,21 @@
 	span {}
 	&__active {
 		a, span {
-			color: @white;
+			color: @bg-content-box;
 			background-color: @ci-color1;
 		}
 	}
 	&__dots {
 		a, span {
 			background-color: transparent;
+			border: 0;
 		}
 	}
 	&__navigate {}
 	/* MODIFICATION */
 	li.numeric-paginator__dots {}
 	li.numeric-paginator__active {
-		border-color: @ci-color1;		
+		border-color: @ci-color1;
 	}
 }
 

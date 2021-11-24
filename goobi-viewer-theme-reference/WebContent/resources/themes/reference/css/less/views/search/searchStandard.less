@@ -1,17 +1,21 @@
 /* ==============================================================
    Search Standard
-   style declarations for searchOptions.xhtml 
+   style declarations for searchOptions.xhtml
    ==============================================================*/
 /* SEARCH STANDARD */
 /* BLOCK */
 .search-standard {
-	background-color: @white;
+	background-color: @bg-content-box;
+  border: @border;
     /* ELEMENT */
     &__help {
         button {}
     }
     &__title {
-        h3 {}
+        h3 {
+
+        color: @fg-content-box;
+        }
     }
     &__input {}
     &__input-label,
@@ -28,6 +32,7 @@
     	label {
     		font-size: @fontMedium;
     		font-weight: 400;
+        color: @fg-content-box;
     	}
     }
     &__filter-link {

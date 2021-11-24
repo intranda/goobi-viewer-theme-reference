@@ -11,8 +11,6 @@
     	font-size: @fontNormal;
     	font-weight: 400;
     	color: @white;
-    	border: 1px solid @ci-color1;
-    	border-bottom: 0;
     	background-color: @ci-color1;
     }
     ul {}
@@ -20,7 +18,7 @@
     	&.active {
     		a {
     			font-weight: 600;
-	    		color: @middleblack;    			
+	    		color: @middleblack;
     		}
     	}
     	&.unpublished {
@@ -50,7 +48,7 @@
     		.fa {}
 	    	&.in {
 	    		.fa-angle-down {}
-	    	}    		
+	    	}
     	}
     }
     &__body {
@@ -61,15 +59,15 @@
     dl,
     &__body {
     	padding: 1rem 1.5rem;
-    	border: 1px solid @middlegray;
+    	border: @border;
     	border-top: 0;
-    	background-color: @white;
-    	border-bottom: 1px solid @middlegray;	 
+      background-color: @bg-content-box;
+    	border-bottom: @border;
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
