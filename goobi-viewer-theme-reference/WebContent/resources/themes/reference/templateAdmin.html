@@ -33,7 +33,7 @@
     <title>Goobi viewer - Backend</title>
     
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
+    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(request.contextPath.concat(&quot;/resources/themes/reference/images/template/favicon.ico&quot;))}" />
     
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
