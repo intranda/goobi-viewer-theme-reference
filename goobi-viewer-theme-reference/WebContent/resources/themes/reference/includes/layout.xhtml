@@ -171,14 +171,14 @@
 					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
 					
 					<c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<a href="#{adminThemesBean.getFooterUrl('contact', 'default contact link')}">#{msg.contact}</a>
+						<a href="#{adminThemesBean.getFooterUrl('legal', 'default_legal_link')}">#{msg.contact}</a>
 					</c:if>
 					
 					<c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
 						<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>
 					</c:if>
 					
-					<a href="#{adminThemesBean.getFooterUrl('privacy', '#{request.contextPath}/privacy')}">#{msg.privacy}</a>
+					<a href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">#{msg.privacy}</a>
 					
 					<a href="#{adminThemesBean.getFooterUrl('legal', 'default_legal_link')}">#{msg.imprint}</a> <span>powered by</span> 
 					
@@ -190,7 +190,7 @@
 				<!-- FOOTER SOCIAL MEDIA -->
 				<div class="page-footer__social">
 
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}">
+				<c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
 					
 					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
 						title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
@@ -202,7 +202,7 @@
 					
 				</c:if>
 
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}">
+				<c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
 					
 					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
 						title="#{msg.social__follow_on_github}" data-toggle="tooltip"
@@ -214,7 +214,7 @@
 					
 				</c:if>
 					
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}">
+				<c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
 
 					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
 						title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
@@ -226,7 +226,7 @@
 					
 				</c:if>	
 				
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}">
+				<c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
 					
 					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
 						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
@@ -238,7 +238,7 @@
 					
 				</c:if>
 				
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}">
+				<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
 					
 					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
 						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
@@ -250,7 +250,7 @@
 					
 				</c:if>
 				
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}">
+				<c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
 					
 					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
 						title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"

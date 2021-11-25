@@ -77,14 +77,12 @@
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
     
-    <!-- QUICK CSS IN VIEWER BACKEND -->
-    <c:if test="#{adminThemesBean.currentThemeConfigured}">
-   	<style>
-    	<h:outputFormat value="#{adminThemesBean.currentTheme.styleSheet}"></h:outputFormat>
-    </style>
+    <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
+	<c:if test="#{adminThemesBean.currentThemeConfigured}">
+		<h:outputText value="#{adminThemesBean.styleSheet}" escape="false"></h:outputText>
 	</c:if>
-    
-    <!-- JAVASCRIPT LIBS -->
+
+	<!-- JAVASCRIPT LIBS -->
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/plugins/jquery.ui.touch-punch.min.js?${navigationHelper.buildVersion}"></script>
