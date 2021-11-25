@@ -5,15 +5,19 @@
 /* BROWSE */
 /* BLOCK */
 .collections {
+	border: @border;
+	border-top: none;
 	/* ELEMENT */
 	&__wrapper {
-		background-color: @white;
+		background-color: @bg-content-box;
 	}
 }
 .collection {
 	/* ELEMENT */
 	.row {}
-	&__item {}
+	&__item {
+		border-top: @border;
+	}
 	&__structure,
 	&__title,
 	&__description-toggle,

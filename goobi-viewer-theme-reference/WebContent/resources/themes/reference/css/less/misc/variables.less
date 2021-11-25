@@ -63,30 +63,43 @@
 @btnFullHoverBgc: #cce5ff;
 
 /* THEMING */
-
-// Define main accent color
+:root {
+	--bg: lightblue;
+}
 @ci-color1: olive; // blue
 @ci-hovercolor1: darkred; // blue
-// Color main parts of a page
-// eg. body, header, sidebar backgrounds + fonts
+@border: 1px dotted  orangered; // 1px solid #ccc; // @middlegray
+
 @bg-general: #0f0; // @neutralgray
 @fg-general: #f0f;
-@border: 2px dotted  orangered; // 1px solid #ccc; // @middlegray
-// Color everything that's a box in main or aside
-// eg. search-boxes + hits, widgets etc.
+@lk-general: @ci-color1;
+@lh-general: @middleblack;
+
 @bg-content-box: #0ff;
 @fg-content-box: #ff0;
+@lk-content-box: pink; // links in content boxes
+@lh-content-box: lightgray; // link hover color in content boxes
 
 /*
-// Regular reference theme styles
+// REGULAR REFERENCE THEME STYLES
 @ci-color1: #3365a9; // blue
 @ci-hovercolor1: #4576BA; // slightly lighter blue
-@fg-general: rgb(33, 37, 41);
+
+@border: 1px solid #ccc;
+
+// General styles => header, body etc
+@fg-general: rgb(33, 37, 41); // bootstrap standard font color
 @bg-general: @neutralgray;
+@lk-general: @ci-color1;
+@lh-general: @middleblack;
+
+// Content Boxes => search-boxes + hits, widgets etc
 @bg-content-box: @white;
-@fg-content-box: inherit; // inherits from fg-general
-@border: 1px solid @neutralgray;
+@fg-content-box: inherit; // fonts, icons etc, inherits from fg-general
+@lk-content-box: @lk-general; // links in content boxes
+@lh-content-box: @lh-general; // link hover color in content boxes
 */
+
 
 @main-fg: #f0f;
 @main-bg: #0f0;

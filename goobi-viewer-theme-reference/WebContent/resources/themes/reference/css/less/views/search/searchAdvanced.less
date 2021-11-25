@@ -1,13 +1,14 @@
 /* ==============================================================
    Search Advanced
-   style declarations for searchAdvanced.xhtml 
+   style declarations for searchAdvanced.xhtml
    ==============================================================*/
 /* SAERCH ADVANCED */
 /* BLOCK */
 .search-advanced {
     /* ELEMENT */
     &__group {
-    	background-color: @white;
+    	background-color: @bg-content-box;
+      border: @border;
         span.remove {}
         .remove {
         	&:hover {
@@ -58,9 +59,9 @@
     }
     &__action {
         .btn {}
-    } 
+    }
 }
-/* MODIFICATION */    
+/* MODIFICATION */
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
