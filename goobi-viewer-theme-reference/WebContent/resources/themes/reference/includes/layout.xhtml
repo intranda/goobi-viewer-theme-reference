@@ -27,7 +27,7 @@
           <div class="page-header__logo">
             <h1>
               <a href="#{request.contextPath}/"> <img
-                src="#{adminThemesBean.getLogo(request.contextPath.concat(&quot;/resources/themes/reference/images/template/goobi_logo.svg&quot;))}"
+                src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo.svg"
                 alt="Goobi Logo" /> <span class="page-header__span">Goobi
                   viewer</span>
               </a>
@@ -137,7 +137,7 @@
 					</div>
 
 					<!-- BREADCRUMBS -->
-<!-- 					<viewerComponent:breadcrumbs showIcon="true" showStartText="false" /> -->
+					<viewerComponent:breadcrumbs showIcon="true" showStartText="false" />
 
 					<ui:insert name="content" />
 
@@ -163,106 +163,43 @@
 	<footer id="pageFooter" class="page-footer">
 		<div class="container">
 			<div class="page-footer__wrapper">
-			
-			
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
-				
-					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
-					
-					<c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<a href="#{adminThemesBean.getFooterUrl('contact', 'default contact link')}">#{msg.contact}</a>
-					</c:if>
-					
-					<c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>
-					</c:if>
-					
-					<a href="#{adminThemesBean.getFooterUrl('privacy', '#{request.contextPath}/privacy')}">#{msg.privacy}</a>
-					
-					<a href="#{adminThemesBean.getFooterUrl('legal', 'default_legal_link')}">#{msg.imprint}</a> <span>powered by</span> 
-					
-					<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
-
+					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| 
+					<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>|
+					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>| <a
+						href="#{request.contextPath}/imprint/">#{msg.imprint}</a>| <span>powered
+						by</span> <a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi
+						viewer</a>
 				</div>
-
 
 				<!-- FOOTER SOCIAL MEDIA -->
 				<div class="page-footer__social">
-
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}">
-					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
-						title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_facebook}"> <span
-						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
-						class="fa fa-facebook" aria-hidden="true"></i>
-					</a>
-					
-				</c:if>
-
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}">
-					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
+					<a href="https://github.com/intranda"
 						title="#{msg.social__follow_on_github}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_github}"> <span
 						class="sr-only">#{msg.social__follow_on_github}</span> <i
 						class="fa fa-github" aria-hidden="true"></i>
-					</a> 
-					
-				</c:if>
-					
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}">
-
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
+					</a> <a href="https://twitter.com/intranda"
 						title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_twitter}"> <span
 						class="sr-only">#{msg.social__follow_on_twitter}</span> <i
 						class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-					
-				</c:if>	
-				
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}">
-					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
+					</a> <a href="https://www.youtube.com/channel/UCbajMwS60cQcKh-kGFtb6Qg"
 						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_youtube}"> <span
 						class="sr-only">#{msg.social__follow_on_youtube}</span> <i
 						class="fa fa-youtube" aria-hidden="true"></i>
-					</a> 
-					
-				</c:if>
-				
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}">
-					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
+					</a> <a href="https://www.slideshare.net/intranda/"
 						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_slideshare}"> <span
 						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
 						class="fa fa-slideshare" aria-hidden="true"></i>
 					</a>
-					
-				</c:if>
-				
-				<c:if test="#{adminThemesBean.currentThemeConfigured and not empty adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}">
-					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
-						title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_slideshare}"> <span
-						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
-						class="fa fa-instagram" aria-hidden="true"></i>
-					</a>
-					
-				</c:if>
-				
-					
 				</div>
 			</div>
 		</div>
