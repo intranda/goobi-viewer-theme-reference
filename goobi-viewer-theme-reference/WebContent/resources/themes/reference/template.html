@@ -16,7 +16,7 @@
       lang="#{navigationHelper.localeString}"
       dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}">
 
-<h:head profile="http://dublincore.org/documents/dcq-html/">
+	<h:head profile="http://dublincore.org/documents/dcq-html/">
 
 	<ui:insert name="head" />
 
@@ -76,6 +76,11 @@
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
+    
+    <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
+    <c:if test="#{adminThemesBean.currentThemeConfigured}">
+    	<h:outputFormat value="#{adminThemesBean.currentTheme.styleSheet}"></h:outputFormat>
+	</c:if>
     
     <!-- JAVASCRIPT LIBS -->
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>
