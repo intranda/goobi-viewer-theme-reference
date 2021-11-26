@@ -26,9 +26,10 @@
           <!-- PAGE HEADER BOTTOM LOGO -->
           <div class="page-header__logo">
             <h1>
-              <a href="#{request.contextPath}/"> <img
+              <a href="#{request.contextPath}/"> 
+              <img
                 src="#{adminThemesBean.getLogo(request.contextPath.concat(&quot;/resources/themes/reference/images/template/goobi_logo.svg&quot;), 80, 53)}"
-                alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" /> <span class="page-header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
+                alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo"/> <span class="page-header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
               </a>
             </h1>
           </div>
@@ -136,7 +137,7 @@
 					</div>
 
 					<!-- BREADCRUMBS -->
-					<viewerComponent:breadcrumbs showIcon="false" showStartText="true" />
+					<viewerComponent:breadcrumbs showIcon="true" showStartText="false" />
 
 					<ui:insert name="content" />
 
@@ -162,8 +163,6 @@
 	<footer id="pageFooter" class="page-footer">
 		<div class="container">
 			<div class="page-footer__wrapper">
-			
-			
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
 				
@@ -184,7 +183,6 @@
 					<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
 
 				</div>
-
 
 				<!-- FOOTER SOCIAL MEDIA -->
 				<div class="page-footer__social">
@@ -216,6 +214,7 @@
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
 
 					<a href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
+
 						title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_twitter}"> <span
@@ -228,6 +227,7 @@
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
 					
 					<a href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
+
 						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_youtube}"> <span
@@ -240,6 +240,7 @@
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
 					
 					<a href="https://slideshare.net/#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
+
 						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_slideshare}"> <span
@@ -261,7 +262,6 @@
 					
 				</c:if>
 				
-					
 				</div>
 			</div>
 		</div>
