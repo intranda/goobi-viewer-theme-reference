@@ -30,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Crowdsourcing - #{configurationBean.name}</title>
+    <title>Crowdsourcing - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
     
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{adminThemesBean.getIcon(request.contextPath.concat(&quot;/resources/themes/reference/images/template/favicon.ico&quot;))}" />

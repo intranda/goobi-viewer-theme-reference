@@ -34,7 +34,7 @@
     <ui:include src="/resources/includes/embed/twittercard.xhtml" />
     <ui:include src="/resources/includes/embed/opengraph.xhtml" />
 
-    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{configurationBean.name}</title>
+    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
     
     <!-- FAVICON -->
     <link rel="shortcut icon" href="#{adminThemesBean.getIcon(request.contextPath.concat(&quot;/resources/themes/reference/images/template/favicon.ico&quot;))}" />
@@ -43,7 +43,7 @@
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
     
     <!-- OPENSEARCH -->
-    <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/api/v1/opensearch/" />
+    <link rel="search" type="application/opensearchdescription+xml" title="#{adminThemesBean.getThemeLabel(configurationBean.name)}" href="#{request.contextPath}/api/v1/opensearch/" />
     
     <!-- OEMBED -->
     <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">

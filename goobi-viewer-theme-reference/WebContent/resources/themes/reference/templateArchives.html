@@ -32,10 +32,10 @@
 
 	<c:choose>
 		<c:when test="#{archiveBean.databaseLoaded}">
-		    <title>#{archiveBean.archiveId} - #{configurationBean.name}</title>
+		    <title>#{archiveBean.archiveId} - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
 		</c:when>
 		<c:otherwise>
-		    <title>#{msg.archives__archiveViewHeading} - #{configurationBean.name}</title>
+		    <title>#{msg.archives__archiveViewHeading} - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
 		</c:otherwise>
 	</c:choose>
     
