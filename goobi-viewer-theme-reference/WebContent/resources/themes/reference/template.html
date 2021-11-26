@@ -77,10 +77,8 @@
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
     
-    <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
-    <c:if test="#{adminThemesBean.currentThemeConfigured}">
-    	<h:outputFormat value="#{adminThemesBean.currentTheme.styleSheet}"></h:outputFormat>
-	</c:if>
+	<!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
+	<h:outputText escape="false" value="#{adminThemesBean.styleSheet}"/>
     
     <!-- JAVASCRIPT LIBS -->
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>

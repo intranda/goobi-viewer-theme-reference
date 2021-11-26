@@ -72,9 +72,7 @@
     </h:panelGroup>
     
     <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
-    <c:if test="#{adminThemesBean.currentThemeConfigured}">
-    	<h:outputFormat value="#{adminThemesBean.currentTheme.styleSheet}"></h:outputFormat>
-	</c:if>
+	<h:outputText escape="false" value="#{adminThemesBean.styleSheet}"/>
 
     <!-- JAVASCRIPT LIBS -->
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>

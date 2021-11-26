@@ -49,14 +49,13 @@
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/mapbox/geocoder/mapbox-gl-geocoder.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/mapbox/mapbox-gl.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
 	
 	<!-- CUSTOM CSS + DIST FILES -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
 
     <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
-    <c:if test="#{adminThemesBean.currentThemeConfigured}">
-    	<h:outputFormat value="#{adminThemesBean.currentTheme.styleSheet}"></h:outputFormat>
-	</c:if>
+	<h:outputText escape="false" value="#{adminThemesBean.styleSheet}"/>
 
     <!-- JAVASCRIPT LIBS -->   
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>
