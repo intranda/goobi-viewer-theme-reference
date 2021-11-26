@@ -27,9 +27,8 @@
           <div class="page-header__logo">
             <h1>
               <a href="#{request.contextPath}/"> <img
-                src="#{adminThemesBean.getLogo(request.contextPath.concat(&quot;/resources/themes/reference/images/template/goobi_logo.svg&quot;))}"
-                alt="Goobi Logo" /> <span class="page-header__span">Goobi
-                  viewer</span>
+                src="#{adminThemesBean.getLogo(request.contextPath.concat(&quot;/resources/themes/reference/images/template/goobi_logo.svg&quot;), 80, 53)}"
+                alt="Goobi Logo" /> <span class="page-header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
               </a>
             </h1>
           </div>
@@ -137,7 +136,7 @@
 					</div>
 
 					<!-- BREADCRUMBS -->
-					<viewerComponent:breadcrumbs showIcon="true" showStartText="false" />
+					<viewerComponent:breadcrumbs showIcon="false" showStartText="true" />
 
 					<ui:insert name="content" />
 
@@ -171,7 +170,7 @@
 					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
 					
 					<c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<a href="#{adminThemesBean.getFooterUrl('legal', 'default_legal_link')}">#{msg.contact}</a>
+						<a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">#{msg.contact}</a>
 					</c:if>
 					
 					<c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
@@ -192,7 +191,7 @@
 
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
 					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
+					<a href="https://facebook.com/#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}/"
 						title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_facebook}"> <span
@@ -204,7 +203,7 @@
 
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
 					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
+					<a href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
 						title="#{msg.social__follow_on_github}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_github}"> <span
@@ -216,7 +215,7 @@
 					
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
 
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
+					<a href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
 						title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_twitter}"> <span
@@ -228,7 +227,7 @@
 				
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
 					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
+					<a href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
 						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_youtube}"> <span
@@ -240,7 +239,7 @@
 				
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
 					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
+					<a href="https://slideshare.net/#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
 						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_slideshare}"> <span
@@ -252,7 +251,7 @@
 				
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
 					
-					<a href="#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
+					<a href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
 						title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_slideshare}"> <span
