@@ -4,6 +4,49 @@
 /**
  * Method to set the content height to a min-height, equal to the viewport height.
  */
+
+function lightMode() {
+	const colorsLight = {
+		'--ci-color1': '#3365a9',
+		'--ci-hovercolor1': '#4576BA',
+		'--border': '1px solid #ccc',
+		'--bg-general': '#f2f3f4',
+		'--fg-general': 'rgb(33, 37, 41)',
+		'--lk-general': '#3365a9',
+		'--lh-general': '#444',
+		'--bg-content-box': '#fff',
+		'--fg-content-box': 'rgb(33, 37, 41)',
+		'--lk-content-box': '#3365a9',
+		'--lh-content-box': '#444',
+	} 
+	switchTheme(colorsLight);
+}
+
+function darkMode() {
+	const colorsLight = {};
+	const colorsDark = {
+		'--ci-color1': '#71B2E5',
+		'--ci-hovercolor1': '#1B70B1',
+		'--border': 'px solid #71B2E5',
+		'--bg-general': '#121212',
+		'--fg-general': 'rgba(255, 255, 255, .8)',
+		'--lk-general': 'var(--ci-color1)',
+		'--lh-general': 'rgba(255, 255, 255, .8)',
+		'--bg-content-box': '#1F1F1F',
+		'--fg-content-box': 'rgba(255, 255, 255, .8)',
+		'--lk-content-box': '#71B2E5',
+		'--lh-content-box': 'rgba(255, 255, 255, .8)',
+	} 
+	switchTheme(colorsDark);
+}
+darkMode();
+
+function switchTheme(colors) {
+	for(const [propName, color] of Object.entries(colors)) {
+		document.documentElement.style.setProperty(propName, color);
+	}
+}
+
 function setContentHeight() {
     // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
     // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
