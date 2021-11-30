@@ -1,42 +1,70 @@
 /* ==============================================================
-   Archives 
+   Archives
    global style declarations for archivesLayout.xhtml
    ==============================================================*/
 
+#archivesWrapper {
+	background-color: @bg-general;
+
+}
 .archives {
+	&__top-wrapper,
+	&__wrapper {
+		background-color: @bg-general;
+		color: @fg-general;
+	}
+	&__top-wrapper a {
+		color: @fg-general;
+		&:hover,
+		&:focus,
+		&:active {
+			color: @lh-general;
+		}
+
+	}
 	&__header {
-		border-bottom: 1px solid @middlegray;	
+		border-bottom: @border;
+		color: @fg-general;
 	}
 	&__object-info-heading {
 		background-color: @ci-color1;
 		border: 1px solid @middlegray;
+		border: @border;
 		border-bottom: none;
 		color: @white;
 	}
 	&__tree-heading {
 		background-color: @ci-color1;
-		border: 1px solid @middlegray;
+		border: @border;
 		border-bottom: none;
 		color: @white;
 	}
 	&__graphic-tree {
 		border: 1px solid @middlegray;
 		border-top: none;
+		background-color: @bg-content-box;
+		border: @border;
 	}
 	&__text-tree {
 		border: 1px solid @middlegray;
+		background-color: @bg-content-box;
+		border: @border;
 	}
 	&__object-info {
 		border: 1px solid @middlegray;
 		border-top: none;
+		background-color: @bg-content-box;
+		border: @border;
 	}
 	&__select-database-dropdown-element-select {
 		border: 1px solid @middlegray;
+		background-color: @bg-content-box;
+		border: @border;
 	}
 
 }
-	
-	
+
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

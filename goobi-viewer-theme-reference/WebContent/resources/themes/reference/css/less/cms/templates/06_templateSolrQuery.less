@@ -12,12 +12,15 @@
     }
     /* SOLR-QUERY */
     .solr-query-collection {
-    	&__thumbs {    		
+    	&__thumbs {
 	    	padding: 10px;
 	    	margin-bottom: 20px;
-	    	border: 1px solid @middlegray;
-	    	background-color: @white;
+	    	border: @border;
+	    	background-color: @bg-content-box;
     	}
+      &__thumb, &__image, &__title {
+	    	background-color: @bg-content-box;
+      }
     }
 }
 

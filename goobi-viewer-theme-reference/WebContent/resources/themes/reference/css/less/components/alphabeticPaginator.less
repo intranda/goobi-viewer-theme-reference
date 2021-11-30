@@ -11,23 +11,24 @@
 		border-color: @middlegray;
 		&.active {
 			a {
-				color: @lowerblack;
-				background-color: @lightgray;
+				color: @fg-content-box;
+				background-color: @bg-content-box;
 			}
 		}
 	}
 	a {
-		background-color: @white;
+		background-color: @bg-content-box;
 		&:hover,
 		&:active,
 		&:focus {
 			background-color: @lightgray;
+			color: @ci-hovercolor1;
 		}
 	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
@@ -36,4 +37,4 @@
 @media screen and (max-width: @smallBreakpoint) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {} 
+@media screen and (max-width: @xSmallBreakpoint) {}

@@ -22,6 +22,7 @@
 		left: 0;
 		width: 100vw;
 		background: @bg-general;
+		color: @fg-general;
 		transition: all 0.175s ease;
 		&.-scrolled {
 			position: fixed;
@@ -78,6 +79,9 @@
 		border-left: 1px solid @middleblack;
 		transition: opacity 0.2s ease;
 		opacity: 1;
+		span, i {
+			color: @fg-general;
+		}
 	}
 	&__actions-language {
 		border-left: none;
@@ -86,19 +90,28 @@
 		border-left: none;
 		border-right: 1px solid @middleblack;
 	}
-	&__actions-language-button {
+	#changeLocalWrapper &__actions-language-button {
 		font-weight: 700;
 		display: block;
+		color: @fg-general;
 		.fa {
 			padding-right: 0.5rem;
 		}
 	}
 	&__actions-search-button {
+		color: @middleblack;
 		.fa {
 			font-size: 1.6rem;
 			width: 2rem;
 		}
-		color: @middleblack;
+		&:focus,
+		&:hover,
+		&:active {
+			.fa, .-searchOn {
+				color: @fg-general !important;
+
+			}
+		}
 		&.-searchOn {
 			border-left: none;
 			.fa {
@@ -119,7 +132,7 @@
 		    content: "";
 		    width: 100%;
 		    height: 0;
-		    border-top: 3px solid @middleblack;
+		    border-top: 3px solid @fg-general;
 		    position: absolute;
 		    transition: all 0.2s ease;
 		}
@@ -191,11 +204,11 @@
 			a {
 				display: flex;
 				align-items: center;
-				color: @middleblack;
+				color: @fg-general;
 				&:hover,
 				&:active,
 				&:focus {
-					color: @middleblack;
+					color: @fg-general;
 					text-decoration: none;
 				}
 			}

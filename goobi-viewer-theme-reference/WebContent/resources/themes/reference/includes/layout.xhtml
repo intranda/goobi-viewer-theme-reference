@@ -15,6 +15,7 @@
 	<viewerComponent:frontEndAdminTopBar />
 
 
+ <div id="bodyWrapper">
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
 
 
@@ -50,7 +51,7 @@
                   aria-label="#{msg.aria_label__switch_language}">
                   <!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
                   <!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
-                  
+
                   <!-- GENERIC ICON AND MESSAGE -->
                   <span class="fa fa-globe"></span>#{msg.language}</button>
                   <!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
@@ -61,7 +62,7 @@
             <div class="page-header__actions-login">
               <viewerComponent:loginNavigation />
             </div>
-            <button 
+            <button
               data-open="search"
               class="btn btn--icon page-header__actions-search-button"
               aria-label="#{msg.search}">
@@ -124,7 +125,7 @@
 		<div class="container">
 			<div class="page-content__wrapper">
 				<!-- CONTENT -->
-				<main id="main" class="page-content__main"> 
+				<main id="main" class="page-content__main">
           <!-- OPEN MOBILE NAVIGATION -->
           <div class="page-header__mobile-sidebar-trigger">
             <button type="button"
@@ -161,7 +162,7 @@
 			<div class="page-footer__wrapper">
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
-					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>| 
+					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>|
 					<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>|
 					<a href="#{request.contextPath}/privacy/">#{msg.privacy}</a>| <a
 						href="#{request.contextPath}/imprint/">#{msg.imprint}</a>| <span>powered
@@ -200,6 +201,7 @@
 			</div>
 		</div>
 	</footer>
+</div>
 
 
 	<!-- MOBILE ONLY NAVIGATION -->

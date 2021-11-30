@@ -15,6 +15,8 @@
     	img {}
     }
     &__selection {
+        background-color: @bg-content-box;
+        border: @border;
         #locateTimematrix {}
         #slider-range {
             .ui-slider-range {}
@@ -40,12 +42,19 @@
     &__selectionRangeInput {}
     &__bar {}
     &__period {
+      label, input {
+        background-color: @bg-content-box;
+        color: @fg-content-box;
+      }
     	span {
 			&:last-of-type {}
     	}
     }
     &__hitsForm {
-		label, input {}
+      label, input {
+        background-color: @bg-content-box;
+        color: @fg-content-box;
+      }
 		label::after {}
 	}
 	&__hitsInput {
@@ -82,7 +91,7 @@
 
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

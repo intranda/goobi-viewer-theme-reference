@@ -64,21 +64,51 @@
 
 /* THEMING */
 :root {
-	--bg: lightblue;
+	--ci-color1: #71B2E5;
+	--ci-hovercolor1: #1B70B1;
+	--border: 1px solid #71B2E5;
+
+	--bg-general: #121212;
+	--fg-general: rgba(255, 255, 255, .8);
+	--lk-general: var(--ci-color1);
+	--lh-general: rgba(255, 255, 255, .8);
+
+	--bg-content-box: #1F1F1F;
+	--fg-content-box: rgba(255, 255, 255, .8);
+	--lk-content-box: #71B2E5;
+	--lh-content-box: rgba(255, 255, 255, .8);
+
+	// Regular Reference Theme colors
+	--ci-color1: #3365a9;
+	--ci-hovercolor1: #4576BA;
+	--border: 1px solid #ccc;
+
+	--bg-general: @neutralgray;
+	--fg-general: rgb(33, 37, 41);
+	--lk-general: var(--ci-color1);
+	--lh-general: @middleblack;
+
+	--bg-content-box: @white;
+	--fg-content-box: inherit;
+	--lk-content-box: var(--lk-general);
+	--lh-content-box: var(--lh-general);
 }
-@ci-color1: olive; // blue
-@ci-hovercolor1: darkred; // blue
-@border: 1px dotted  orangered; // 1px solid #ccc; // @middlegray
 
-@bg-general: #0f0; // @neutralgray
-@fg-general: #f0f;
-@lk-general: @ci-color1;
-@lh-general: @middleblack;
+@ci-color1: var(--ci-color1);
+@ci-hovercolor1: var(--ci-hovercolor1);
+@border: var(--border);
 
-@bg-content-box: #0ff;
-@fg-content-box: #ff0;
-@lk-content-box: pink; // links in content boxes
-@lh-content-box: lightgray; // link hover color in content boxes
+@bg-general: var(--bg-general);
+@fg-general: var(--fg-general);
+// general link colors
+@lk-general: var(--lk-general);
+@lh-general: var(--lh-general); // hover
+
+@bg-content-box: var(--bg-content-box);
+@fg-content-box: var(--fg-content-box);
+// link colors in content boxes
+@lk-content-box: var(--lk-content-box);
+@lh-content-box: var(--lh-content-box); // hover
 
 /*
 // REGULAR REFERENCE THEME STYLES
