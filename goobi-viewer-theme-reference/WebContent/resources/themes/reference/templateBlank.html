@@ -122,7 +122,7 @@
 	    </f:view>
 	    
 	    <!-- PIWIK -->
-	    <ui:fragment rendered="#{configurationBean.piwikTracking}">
+	    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
 	        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
 	    </ui:fragment>
 </h:body>
