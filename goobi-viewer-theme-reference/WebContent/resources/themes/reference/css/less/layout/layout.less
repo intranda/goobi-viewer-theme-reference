@@ -30,6 +30,7 @@
 		width: 100vw;
 		background: @bg-general;
 		color: @fg-general;
+		color: var(--fg-header);
 		transition: all 0.175s ease;
 		&.-scrolled {
 			position: fixed;
@@ -87,7 +88,7 @@
 		transition: opacity 0.2s ease;
 		opacity: 1;
 		span, i {
-			color: @fg-general;
+			color: @fg-header;
 		}
 	}
 	&__actions-language {
@@ -100,7 +101,7 @@
 	#changeLocalWrapper &__actions-language-button {
 		font-weight: 700;
 		display: block;
-		color: @fg-general;
+		color: @fg-header;
 		.fa {
 			padding-right: 0.5rem;
 		}
@@ -115,7 +116,7 @@
 		&:hover,
 		&:active {
 			.fa, .-searchOn {
-				color: @fg-general !important;
+				color: @fg-header !important;
 
 			}
 		}
@@ -211,11 +212,11 @@
 			a {
 				display: flex;
 				align-items: center;
-				color: @fg-general;
+				color: @fg-header;
 				&:hover,
 				&:active,
 				&:focus {
-					color: @fg-general;
+					color: @fg-header;
 					text-decoration: none;
 				}
 			}

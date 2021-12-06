@@ -25,7 +25,7 @@
 				&:hover,
 				&:active,
 				&:focus {
-					color: @white;
+					color: @lh-content-box;
 				}
 			.btn {
 				&:hover,
@@ -33,9 +33,9 @@
 				&:focus,
 				&:active:focus,
 				&.active,
-				&.active.focus, 
-				&.active:focus, 
-				&.focus, 
+				&.active.focus,
+				&.active:focus,
+				&.focus,
 				&:active.focus {
 					.fa {
 						color: @ci-color1;
@@ -48,7 +48,7 @@
 	}
 	/* ELEMENTS */
 	&__elements {
-		border: 1px solid @middlegray;
+		border: @border;
 		border-top: 0;
 		ul {
 			border: 0;
@@ -58,8 +58,10 @@
 		&:hover {}
 		&.parent {}
 		&.child {}
+		&:focus,
+		&:hover,
 		&.active {
-			background-color: @lightgray;
+			background-color: @bg-general;
 		}
 	}
 	&__element-expand {}
@@ -67,11 +69,14 @@
 		a {
 			&:hover,
 			&:active,
-			&:focus {}
+			&:focus {
+				background-color: @bg-general;
+
+			}
 		}
 		&.has-pagenumber {}
 		&.non-tree-view {
-			&.has-pagenumber {}			
+			&.has-pagenumber {}
 		}
 		&.active {
 			a {}

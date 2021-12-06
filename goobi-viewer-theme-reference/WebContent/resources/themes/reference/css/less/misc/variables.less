@@ -70,6 +70,7 @@
 
 	--bg-general: #121212;
 	--fg-general: rgba(255, 255, 255, .8);
+	--fg-header: rgba(255, 255, 255, .8);
 	--lk-general: var(--ci-color1);
 	--lh-general: rgba(255, 255, 255, .8);
 
@@ -88,6 +89,8 @@
 	--lk-general: var(--ci-color1);
 	--lh-general: @middleblack;
 
+	--fg-header: @middleblack;
+
 	--bg-content-box: @white;
 	--fg-content-box: inherit;
 	--lk-content-box: var(--lk-general);
@@ -100,9 +103,12 @@
 
 @bg-general: var(--bg-general);
 @fg-general: var(--fg-general);
-// general link colors
+// General link colors
 @lk-general: var(--lk-general);
 @lh-general: var(--lh-general); // hover
+
+// Header text color
+@fg-header: var(--fg-header);
 
 @bg-content-box: var(--bg-content-box);
 @fg-content-box: var(--fg-content-box);

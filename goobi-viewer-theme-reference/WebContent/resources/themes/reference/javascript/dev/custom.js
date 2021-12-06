@@ -1,8 +1,10 @@
 /*****************************************************************************************
  * Custom JavaScript for "reference"
  ****************************************************************************************/
-function lightMode() {
-	const colorsLight = {
+
+// Test color vars
+const colors = {
+	light: {
 		'--ci-color1': '#3365a9',
 		'--ci-hovercolor1': '#4576BA',
 		'--border': '1px solid #ccc',
@@ -10,38 +12,63 @@ function lightMode() {
 		'--fg-general': 'rgb(33, 37, 41)',
 		'--lk-general': '#3365a9',
 		'--lh-general': '#444',
+		'--fg-header': '#444',
 		'--bg-content-box': '#fff',
 		'--fg-content-box': 'rgb(33, 37, 41)',
 		'--lk-content-box': '#3365a9',
 		'--lh-content-box': '#444',
-	} 
-	switchTheme(colorsLight);
-}
-
-function darkMode() {
-	const colorsLight = {};
-	const colorsDark = {
+	},
+	dark: {
 		'--ci-color1': '#71B2E5',
 		'--ci-hovercolor1': '#1B70B1',
-		'--border': 'px solid #71B2E5',
+		'--border': '0',
 		'--bg-general': '#121212',
 		'--fg-general': 'rgba(255, 255, 255, .8)',
 		'--lk-general': 'var(--ci-color1)',
 		'--lh-general': 'rgba(255, 255, 255, .8)',
+		'--fg-header':  'rgba(255, 255, 255, .8)',
 		'--bg-content-box': '#1F1F1F',
 		'--fg-content-box': 'rgba(255, 255, 255, .8)',
 		'--lk-content-box': '#71B2E5',
 		'--lh-content-box': 'rgba(255, 255, 255, .8)',
-	} 
-	switchTheme(colorsDark);
+	},
+	eighties: {
+		'--ci-color1': '#70E4EF',
+		'--ci-hovercolor1': '#F038FF',
+		'--border': '1px solid #70E4EF',
+		'--bg-general': '#EF709D',
+		'--fg-general': '#000',
+		'--lk-general': '#EF709D',
+		'--lh-general': '#F038FF',
+		'--fg-header':  '#70E4EF',
+		'--bg-content-box': '#E2EF70',
+		'--fg-content-box': '#121212',
+		'--lk-content-box': '#EF709D',
+		'--lh-content-box': '#F038FF',
+	},
+	xmas: {
+		'--ci-color1': '#D90429',
+		'--ci-hovercolor1': '#EF233C',
+		'--border': '1px solid #D90429',
+		'--bg-general': '#003E1F',
+		'--fg-general': '#D5F2E3',
+		'--lk-general': '#EF709D',
+		'--lh-general': '#EF233C',
+		'--fg-header':  '#D5F2E3',
+		'--bg-content-box': '#D5F2E3',
+		'--fg-content-box': '#003E1F',
+		'--lk-content-box': '#D90429',
+		'--lh-content-box': '#EF233C',
+	}
 }
-darkMode();
 
 function switchTheme(colors) {
 	for(const [propName, color] of Object.entries(colors)) {
 		document.documentElement.style.setProperty(propName, color);
 	}
 }
+// switchTheme(colors.eighties);
+switchTheme(colors.dark);
 
 /**
  * Method to set the content height to a min-height, equal to the viewport height.

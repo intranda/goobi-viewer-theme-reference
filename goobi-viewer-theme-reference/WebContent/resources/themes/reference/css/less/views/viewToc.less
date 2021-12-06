@@ -38,8 +38,8 @@
 	&__list-full {
 		margin: 0;
 		padding: 5px 10px;
-		border: 1px solid @middlegray;
-		background-color: @white;
+		border: @border;
+		background-color: @bg-content-box;
 		li {
 			border-color: @neutralgray;
 			&:first-child {}
@@ -54,6 +54,7 @@
 	&__list-expandable-title,
 	&__list-full-title {
 		a {
+			color: @lk-content-box;
 			&:hover,
 			&:focus,
 			&:active {}

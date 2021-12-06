@@ -9,8 +9,19 @@
 	h2 {}
 	/* ADD */
 	&__add-bookmark {
-		input {}
-		button {}
+		input {
+			color: @fg-general;
+
+		}
+		button, a {
+			color: @fg-general;
+			opacity: .5;
+		}
+
+		::placeholder {
+			color: @fg-general;
+			opacity: .5;
+		}
 	}
 	/* PANEL */
 	&__panel {

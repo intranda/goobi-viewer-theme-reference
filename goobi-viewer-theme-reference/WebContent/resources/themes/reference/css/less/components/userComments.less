@@ -9,15 +9,16 @@
 	&__message-login {
 		padding-top: 0;
 		text-align: left;
+		border: @border;
 		border-top: 0;
-		background-color: @white;
+		background-color: @bg-content-box;
 		h3 {
 			margin-left: -16px;
 			margin-right: -16px;
 			padding-bottom: 1.3125rem;
 			padding-left: 1px;
-			border-bottom: 1px solid @middlegray;
-			background-color: @neutralgray;
+			border-bottom: @border;
+			background-color: @bg-general;
 		}
 		.btn {}
 	}
@@ -31,7 +32,7 @@
 		&-date {}
 	}
 	&__comment-content {
-		background-color: @white;
+		background-color: @bg-content-box;
 		&-options {
 			border-bottom: 0;
 			span {}
@@ -78,11 +79,11 @@
 		&-submit {
 			.btn {}
 		}
-	}	
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

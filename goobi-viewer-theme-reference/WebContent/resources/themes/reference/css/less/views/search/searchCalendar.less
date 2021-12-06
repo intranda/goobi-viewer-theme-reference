@@ -56,15 +56,17 @@
     }
     &__month-week {}
     &__month-day {
-      a {}
+      a {
+          background-color: @middlegray;
+      }
       a,
       span {
-        color: @fg-content-box;
+        color: @lk-content-box;
         &:focus,
         &:hover,
         &:active {
-          background-color: @ci-color1;
-          color: @white;
+          background-color: @lk-content-box;
+          color: @bg-content-box;
         }
       }
     }
@@ -76,7 +78,10 @@
     /* MODIFICATION */
     &__month-day {
         &.active {
-            a {}
+            a {
+                color: @bg-content-box;
+
+            }
         }
     }
 }

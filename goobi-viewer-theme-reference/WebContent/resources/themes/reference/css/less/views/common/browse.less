@@ -5,7 +5,9 @@
 /* BROWSE */
 /* BLOCK */
 .collections {
-	border: @border;
+	a {
+		color: @lk-content-box;
+	}
 	border-top: none;
 	/* ELEMENT */
 	&__wrapper {
@@ -13,10 +15,13 @@
 	}
 }
 .collection {
+	border-top: 0;
 	/* ELEMENT */
 	.row {}
 	&__item {
 		border-top: @border;
+
+
 	}
 	&__structure,
 	&__title,

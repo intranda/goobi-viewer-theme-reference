@@ -5,8 +5,8 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-	background-color: @white;
-	border: 1px solid @middlegray;
+	background-color: @bg-content-box;
+	border: @border;
 	border-bottom: 0;
 	/* DOCUMENT OPTIONS */
 	&__options {
@@ -14,8 +14,8 @@
 	    li {}
 	}
 	&__option {
-		a, 
-		span, 
+		a,
+		span,
 		button {
 			&:hover,
 			&:active,
@@ -26,7 +26,7 @@
 		&.add-to-bookmark {
 				.fa-bookmark-o,
 				.fa-bookmark {}
-			    &.added, 
+			    &.added,
 			    &:hover {
 			    	.fa-bookmark-o,
 			    	.fa-bookmark {}
@@ -40,19 +40,21 @@
     }
     &__action {
 	    /* ELEMENT */
-	    a, 
-		span, 
+	    a,
+		span,
 		button {
 			&:hover,
 			&:active,
-			&:focus {}
+			&:focus {
+
+			}
 		}
 		[class*="image-"] {}
 		&.inactive {
 	    	a,
 	    	span,
 	    	button {}
-		}    
+		}
 	    /* ELEMENT */
 	    &.start {}
 	    &.page-browse,
@@ -99,7 +101,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOP */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
