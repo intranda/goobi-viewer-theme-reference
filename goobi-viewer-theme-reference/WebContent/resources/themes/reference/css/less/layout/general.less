@@ -23,6 +23,11 @@ body {
 		.mx-focus-visible !important;
 	}
 
+	// No outline offset when an input is in focus
+	// Does not apply if inputs are styled as buttons
+	&.using-keyboard input:not(.btn):focus-visible {
+		outline-offset: 0 !important;
+	}
 }
 
 @{RTL} body {

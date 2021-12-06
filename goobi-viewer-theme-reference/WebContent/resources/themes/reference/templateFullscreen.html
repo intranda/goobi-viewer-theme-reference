@@ -34,16 +34,16 @@
     <ui:include src="/resources/includes/embed/twittercard.xhtml" />
     <ui:include src="/resources/includes/embed/opengraph.xhtml" />
 
-    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{configurationBean.name}</title>
+    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
     
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/favicon.ico" />
-    
+    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(&quot;images/template/favicon.ico&quot;, 32, 32)}" />
+
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
     
     <!-- OPENSEARCH -->
-    <link rel="search" type="application/opensearchdescription+xml" title="#{configurationBean.name}" href="#{request.contextPath}/api/v1/opensearch/" />
+    <link rel="search" type="application/opensearchdescription+xml" title="#{adminThemesBean.getThemeLabel(configurationBean.name)}" href="#{request.contextPath}/api/v1/opensearch/" />
     
     <!-- OEMBED -->
     <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
@@ -54,6 +54,7 @@
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.custom.css?${navigationHelper.buildVersion}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css?${navigationHelper.buildVersion}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome/css/font-awesome.min.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/extra-markers/leaflet.extra-markers.min.css?${navigationHelper.buildVersion}" />
@@ -65,11 +66,14 @@
 	<!-- CUSTOM CSS + DIST FILES -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${navigationHelper.buildVersion}" />
-    
+
     <!-- SUBTHEME CSS -->
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
+    
+    <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
+	<h:outputText escape="false" value="#{adminThemesBean.styleSheet}"/>
 
     <!-- JAVASCRIPT LIBS -->
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>
@@ -80,6 +84,7 @@
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/intersection-observer_polyfill.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/riot/riot.min.js?${navigationHelper.buildVersion}"></script>
+	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/sweetalert/sweetalert2.min.js?${navigationHelper.buildVersion}"></script>
     <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/leaflet.js?${navigationHelper.buildVersion}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/extra-markers/leaflet.extra-markers.min.js?${navigationHelper.buildVersion}"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/markercluster/leaflet.markercluster.js?${navigationHelper.buildVersion}"></script>
@@ -105,7 +110,7 @@
     </f:view>
     
     <!-- PIWIK -->
-    <ui:fragment rendered="#{configurationBean.piwikTracking}">
+    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
         <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
     </ui:fragment>
 </h:body>
