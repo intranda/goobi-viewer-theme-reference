@@ -33,7 +33,7 @@
     <title>Crowdsourcing - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
     
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(request.contextPath.concat(&quot;/resources/themes/reference/images/template/favicon.ico&quot;), 32, 32)}" />
+    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(&quot;images/template/favicon.ico&quot;, 32, 32)}" />
 
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
@@ -42,14 +42,13 @@
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.custom.css?${navigationHelper.buildVersion}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css?${navigationHelper.buildVersion}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css?${navigationHelper.buildVersion}" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome/css/font-awesome.min.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/extra-markers/leaflet.extra-markers.min.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/markercluster/MarkerCluster.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/mapbox/geocoder/mapbox-gl-geocoder.css?${navigationHelper.buildVersion}" />
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/mapbox/mapbox-gl.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
 	
 	<!-- CUSTOM CSS + DIST FILES -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
