@@ -67,8 +67,9 @@ function switchTheme(colors) {
 		document.documentElement.style.setProperty(propName, color);
 	}
 }
+
 // switchTheme(colors.eighties);
-switchTheme(colors.dark);
+// switchTheme(colors.dark);
 
 /**
  * Method to set the content height to a min-height, equal to the viewport height.

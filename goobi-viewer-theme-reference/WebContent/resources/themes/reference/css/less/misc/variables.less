@@ -20,8 +20,8 @@
 @colorOutline: #FF0038;
 
 /* CI COLORS */
-@ci-color1: #3365a9; // blue
-@ci-hovercolor1: #4576BA; // slightly lighter blue
+@ciColor1: #3365a9; // blue
+@ciHovercolor1: #4576BA; // slightly lighter blue
 
 @ci-color2: #000; // CI Color 2
 @ci-hovercolor2: #000; // CI Color 2
@@ -62,87 +62,6 @@
 @btnSuccessHoverBgc: #155724;
 @btnFullHoverBgc: #cce5ff;
 
-/* THEMING */
-:root {
-	--ci-color1: #71B2E5;
-	--ci-hovercolor1: #1B70B1;
-	--border: 1px solid #71B2E5;
-
-	--bg-general: #121212;
-	--fg-general: rgba(255, 255, 255, .8);
-	--fg-header: rgba(255, 255, 255, .8);
-	--lk-general: var(--ci-color1);
-	--lh-general: rgba(255, 255, 255, .8);
-
-	--bg-content-box: #1F1F1F;
-	--fg-content-box: rgba(255, 255, 255, .8);
-	--lk-content-box: #71B2E5;
-	--lh-content-box: rgba(255, 255, 255, .8);
-
-	// Regular Reference Theme colors
-	--ci-color1: #3365a9;
-	--ci-hovercolor1: #4576BA;
-	--border: 1px solid #ccc;
-
-	--bg-general: @neutralgray;
-	--fg-general: rgb(33, 37, 41);
-	--lk-general: var(--ci-color1);
-	--lh-general: @middleblack;
-
-	--fg-header: @middleblack;
-
-	--bg-content-box: @white;
-	--fg-content-box: inherit;
-	--lk-content-box: var(--lk-general);
-	--lh-content-box: var(--lh-general);
-}
-
-@ci-color1: var(--ci-color1);
-@ci-hovercolor1: var(--ci-hovercolor1);
-@border: var(--border);
-
-@bg-general: var(--bg-general);
-@fg-general: var(--fg-general);
-// General link colors
-@lk-general: var(--lk-general);
-@lh-general: var(--lh-general); // hover
-
-// Header text color
-@fg-header: var(--fg-header);
-
-@bg-content-box: var(--bg-content-box);
-@fg-content-box: var(--fg-content-box);
-// link colors in content boxes
-@lk-content-box: var(--lk-content-box);
-@lh-content-box: var(--lh-content-box); // hover
-
-/*
-// REGULAR REFERENCE THEME STYLES
-@ci-color1: #3365a9; // blue
-@ci-hovercolor1: #4576BA; // slightly lighter blue
-
-@border: 1px solid #ccc;
-
-// General styles => header, body etc
-@fg-general: rgb(33, 37, 41); // bootstrap standard font color
-@bg-general: @neutralgray;
-@lk-general: @ci-color1;
-@lh-general: @middleblack;
-
-// Content Boxes => search-boxes + hits, widgets etc
-@bg-content-box: @white;
-@fg-content-box: inherit; // fonts, icons etc, inherits from fg-general
-@lk-content-box: @lk-general; // links in content boxes
-@lh-content-box: @lh-general; // link hover color in content boxes
-*/
-
-
-@main-fg: #f0f;
-@main-bg: #0f0;
-@sidebar-fg: #f0f;
-@sidebar-bg: #0f0;
-@footer-fg: #f0f;
-@footer-bg: #0f0;
 
 /* STATISTICS */
 @statBackgroundColor: #fffdf6;
@@ -172,3 +91,43 @@
 @smallBreakpoint: 768px;
 @mediumBreakpoint: 992px;
 @largeBreakpoint: 1200px;
+
+/* ==================================== >>
+THEMING
+ << =================================== */
+:root {
+	// Regular Reference Theme colors
+	--ci-color1: @ciColor1;
+	--ci-hovercolor1: @ciHovercolor1;
+	--border: 1px solid #ccc;
+
+	--bg-general: @neutralgray;
+	--fg-general: rgb(33, 37, 41);
+	--lk-general: var(--ci-color1);
+	--lh-general: @middleblack;
+
+	--fg-header: @middleblack;
+
+	--bg-content-box: @white;
+	--fg-content-box: inherit;
+	--lk-content-box: var(--lk-general);
+	--lh-content-box: var(--lh-general);
+}
+
+// Assign custom properties to allow switching themes on runtime
+@ci-color1: var(--ci-color1);
+@ci-hovercolor1: var(--ci-hovercolor1);
+@border: var(--border);
+@bg-general: var(--bg-general);
+@fg-general: var(--fg-general);
+// Link colors outside of content boxes
+@lk-general: var(--lk-general);
+@lh-general: var(--lh-general); // hover
+// Link colors in content boxes
+@lk-content-box: var(--lk-content-box);
+@lh-content-box: var(--lh-content-box); // hover
+// Header text color
+@fg-header: var(--fg-header);
+@bg-content-box: var(--bg-content-box);
+@fg-content-box: var(--fg-content-box);
+
