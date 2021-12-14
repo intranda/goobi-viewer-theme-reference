@@ -42,11 +42,14 @@
 	    /* ELEMENT */
 	    a,
 		span,
+		select,
 		button {
+			background: @bg-content-box;
+			color: @fg-general;
 			&:hover,
 			&:active,
 			&:focus {
-
+				background: @bg-hover !important;
 			}
 		}
 		[class*="image-"] {}

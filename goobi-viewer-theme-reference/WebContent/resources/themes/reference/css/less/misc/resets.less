@@ -27,7 +27,23 @@
 }
 /* MODALS */
 .modal {
+	color: rgb(33, 37, 41);
 	z-index: 9999;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: rgb(33, 37, 41);
+	}
+	.custom-control--select {
+		border: 1px solid #ccc;
+		background: @white;
+	}
+	.btn.btn--clean {
+		color: rgb(33, 37, 41);
+	}
+	.btn.btn--full {
+		background: @ciColor1;
+		border-color: @ciColor1;
+	}
 }
 
 .modal.fade .modal-dialog {}
@@ -63,7 +79,7 @@
 
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

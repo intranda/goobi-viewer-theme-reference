@@ -1,12 +1,14 @@
 /* ==============================================================
    Fullscreen
-   style declarations for viewObjectFullscreen.xhtml 
+   style declarations for viewObjectFullscreen.xhtml
    ==============================================================*/
 /* FULLSCREEN */
 #fullscreen {}
 .fullscreen {
     /* HEADER */
     &__header {
+			background-color: @bg-general;
+			border: @border;
     	&.fullscreen {}
     }
     &__header-brand,
@@ -34,6 +36,7 @@
 	&__view {}
 	/* PANEL CONTROLS */
 	&__view-sidebar-panel-controls {
+		background-color: @bg-general;
 		[data-close="all-tabs"],
 		[data-open="all-tabs"] {}
 		[data-close="all-tabs"] {}
@@ -56,7 +59,7 @@
 	&__view-image-thumb-preloader {}
 	&__view-image-thumb-image {
 		img {
-			&.in {}			
+			&.in {}
 		}
 		figcaption {}
 	}
@@ -65,19 +68,23 @@
 	}
 	/* SIDEBAR */
 	&__view-sidebar-open {
+		background-color: @bg-general;
+		color: @fg-general;
 		.btn {
+			color: @fg-general;
 			&:hover,
 			&:active,
 			&:focus,
 			&:active:focus,
 			&.active,
-			&.active.focus, 
-			&.active:focus, 
-			&.focus, 
+			&.active.focus,
+			&.active:focus,
+			&.focus,
 			&:active.focus {}
 		}
 	}
 	&__view-sidebar {
+		background-color: @bg-general;
 		.ui-resizable-handle {
 			&:before,
 			&:after {}
@@ -86,17 +93,24 @@
 		}
 		.ui-resizable-w {}
 	}
-	&__view-sidebar-inner {}
+	&__view-sidebar-inner {
+		background-color: @bg-general;
+	}
 	&__view-sidebar-controls {
+		background-color: @bg-general;
 		.btn {}
 		[data-close="fs-sidebar"] {}
 	}
 	/* SIDEBAR WORK TITLE */
 	&__view-sidebar-work-title {
+		background-color: @bg-content-box;
 		h1, h2 {}
 	}
 	/* SIDEBAR ACCORDEON */
-	&__view-sidebar-accordeon {}
+	&__view-sidebar-accordeon {
+		background-color: @bg-general;
+
+	}
 	&__view-sidebar-accordeon-panel {
 		&.fs-metadata {}
 		&.fs-toc {
@@ -110,11 +124,17 @@
 		}
 	}
 	&__view-sidebar-accordeon-panel-title {
-		&:hover {}
+		background-color: @bg-content-box;
+		&:hover {
+			background-color: @bg-hover;
+		}
 		span {}
-		&.in {}
+		&.in {
+			background-color: @bg-content-box;
+		}
 	}
 	&__view-sidebar-accordeon-panel-body {
+		background-color: @bg-content-box;
 		& > h1 {}
 	}
 	/* MODIFICATION */
@@ -123,7 +143,7 @@
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
- 
+
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
 
