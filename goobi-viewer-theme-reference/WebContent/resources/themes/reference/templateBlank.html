@@ -26,6 +26,7 @@
 
   <h:head profile="http://dublincore.org/documents/dcq-html/">
   <ui:insert name="head" />
+  <meta name="templateBlank" />
 
     <title>
       <h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{adminThemesBean.getThemeLabel(configurationBean.name)}
