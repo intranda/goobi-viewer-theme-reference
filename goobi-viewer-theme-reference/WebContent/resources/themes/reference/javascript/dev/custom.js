@@ -268,6 +268,7 @@ const colors = {
 	light: {
 		'--ci-color1': '#3365a9',
 		'--ci-hovercolor1': '#4576BA',
+    '--bg-hover': '#f6f6f6',
 		'--border': '1px solid #ccc',
 		'--bg-general': '#f2f3f4',
 		'--fg-general': 'rgb(33, 37, 41)',
@@ -282,6 +283,7 @@ const colors = {
 	dark: {
 		'--ci-color1': '#71B2E5',
 		'--ci-hovercolor1': '#1B70B1',
+    '--bg-hover': '#1f1f1f',
 		'--border': '0',
 		'--bg-general': '#121212',
 		'--fg-general': 'rgba(255, 255, 255, .8)',
