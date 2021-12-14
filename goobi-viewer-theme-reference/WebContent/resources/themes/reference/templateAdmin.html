@@ -20,7 +20,7 @@
   <!-- templateName determines which CSS + JS libraries will be included -->
   <c:set var="templateName" value="templateAdmin" />
 
-  <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
+  <!-- You can force exclude default css and js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
   <c:set var="excludeCSS" value="#{['themeCSS']}" />
   <c:set var="excludeJS" value="#{[]}" />
 
@@ -38,57 +38,24 @@
       <ui:param name="excludeCSS" value="#{excludeCSS}" />
     </ui:include>
 
-    <!-- BASIC CSS -->
-    <!--
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.custom.css?${navigationHelper.buildVersion}" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css?${navigationHelper.buildVersion}" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css?${navigationHelper.buildVersion}" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome/css/font-awesome.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/extra-markers/leaflet.extra-markers.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/markercluster/MarkerCluster.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/swiper/swiper-bundle.min.css" />
+    <!-- JAVASCRIPT -->
+    <ui:include src="/resources/includes/templateHeads/js.xhtml">
+      <ui:param name="templateName" value="#{templateName}" />
+      <ui:param name="excludeJS" value="#{excludeJS}" />
+    </ui:include>
 
-    -->
-	<!-- DIST FILES CSS -->
-  <!--
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
+  </h:head>
+  <ui:insert name="metadata" />
 
-  -->
-
-
-    <!-- JAVASCRIPT LIBS -->
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rxjs.umd.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/riot/riot.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/leaflet.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/extra-markers/leaflet.extra-markers.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/markercluster/leaflet.markercluster.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/hcsticky/hc-sticky.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/swiper/swiper-bundle.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/sweetalert/sweetalert2.min.js?${navigationHelper.buildVersion}"></script>
-
-	<!-- JAVASCRIPT DIST FILES -->
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>
-
-</h:head>
-
-<ui:insert name="metadata" />
-
-<h:body id="admin">
+  <!-- BODY -->
+  <h:body id="admin">
     <f:view locale="#{navigationHelper.locale}">
-        <!-- LAYOUT -->
-        <ui:include src="/resources/admin/includes/layout/admin_layout.xhtml" />
+      <!-- LAYOUT -->
+      <ui:include src="/resources/admin/includes/layout/admin_layout.xhtml" />
 
-        <!-- CUSTOM JAVASCRIPT -->
-        <ui:include src="includes/customJS.xhtml" />
+      <!-- CUSTOM JAVASCRIPT -->
+      <ui:include src="includes/customJS.xhtml" />
     </f:view>
-</h:body>
+  </h:body>
+
 </html>
