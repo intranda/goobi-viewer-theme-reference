@@ -256,6 +256,6 @@ $( document ).ready( function() {
     // mobile view manipulations
     if (window.matchMedia('(max-width: 768px)').matches) {
     }
-    
 
 } );
+
