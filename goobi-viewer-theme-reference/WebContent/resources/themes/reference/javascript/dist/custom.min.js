@@ -256,50 +256,6 @@ $( document ).ready( function() {
     // mobile view manipulations
     if (window.matchMedia('(max-width: 768px)').matches) {
     }
-    
 
 } );
 
-// Test color vars
-const colors = {
-	light: {
-		'--ci-color1': '#3365a9',
-		'--ci-hovercolor1': '#4576BA',
-		'--border': '1px solid #ccc',
-    '--bg-hover': '#eee',
-    '--fg-hover': 'rgb(33, 37, 41)',
-		'--fg-controls': 'rgb(111, 111, 111)',
-		'--bg-general': '#f2f3f4',
-		'--fg-general': 'rgb(33, 37, 41)',
-		'--lk-general': '#3365a9',
-		'--lh-general': '#444',
-		'--fg-header': '#444',
-		'--bg-content-box': '#fff',
-		'--fg-content-box': 'rgb(33, 37, 41)',
-		'--lk-content-box': '#3365a9',
-		'--lh-content-box': '#444',
-	},
-	dark: {
-		'--ci-color1': '#71B2E5',
-		'--ci-hovercolor1': '#1B70B1',
-		'--border': '0',
-    '--bg-hover': '#121212',
-    '--fg-hover': 'rgb(33, 37, 41)',
-		'--fg-controls': 'rgba(255, 255, 255, .8)',
-		'--bg-general': '#121212',
-		'--fg-general': 'rgba(255, 255, 255, .8)',
-		'--lk-general': 'rgba(255, 255, 255, .8)',
-		'--lh-general': 'rgba(255, 255, 255, .8)',
-		'--fg-header':  'rgba(255, 255, 255, .8)',
-		'--bg-content-box': '#1F1F1F',
-		'--fg-content-box': 'rgba(255, 255, 255, .8)',
-		'--lk-content-box': 'rgba(255, 255, 255, .8)',
-		'--lh-content-box': 'rgba(255, 255, 255, .8)',
-	}
-}
-
- function switchTheme(colors) {
- 	for(const [propName, color] of Object.entries(colors)) {
- 		document.documentElement.style.setProperty(propName, color);
- 	}
- }
