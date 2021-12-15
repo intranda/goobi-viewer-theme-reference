@@ -81,7 +81,8 @@
 	&__actions-language,
 	&__actions-bookmark,
 	&__actions-login,
-	&__actions-search-button {
+	&__actions-search-button,
+	&__actions-color-switch {
 		padding: 0 1.1rem;
 		position: relative;
 		border-left: 1px solid @middleblack;
@@ -117,7 +118,6 @@
 		&:active {
 			.fa, .-searchOn {
 				color: @fg-header !important;
-
 			}
 		}
 		&.-searchOn {
@@ -165,6 +165,15 @@
 			}
 		}
 	}
+	&__actions-color-switch {
+		button {
+			font-size: 1.6rem;
+			&:hover {
+				color: @fg-header !important;
+			}
+		}
+	}
+		
 	/* SLIDER */
 	&__slider {
 		height: 250px;
@@ -322,6 +331,7 @@
 		position: relative;
 		width: 2rem;
 		margin-left: .7rem;
+		margin-right: .7rem;
 		cursor: pointer;
 		span,
 		&::before,
@@ -840,7 +850,8 @@
 		&__actions-language,
 		&__actions-bookmark,
 		&__actions-login,
-		&__actions-search-button {
+		&__actions-search-button,
+		&__actions-color-switch {
 			border: none;
 			padding: 0 0.7rem;
 		}
