@@ -140,7 +140,7 @@
 		    content: "";
 		    width: 100%;
 		    height: 0;
-		    border-top: 3px solid @fg-general;
+		    border-top: 3px solid @fg-header;
 		    position: absolute;
 		    transition: all 0.2s ease;
 		}
@@ -173,7 +173,7 @@
 			}
 		}
 	}
-		
+
 	/* SLIDER */
 	&__slider {
 		height: 250px;
@@ -336,13 +336,13 @@
 		span,
 		&::before,
 		&::after {
-		    display: block;
-		    content: "";
-		    width: 100%;
-		    height: 0;
-		    border-top: 3px solid @middleblack;
-		    position: absolute;
-		    transition: all 0.2s ease;
+			display: block;
+			content: "";
+			width: 100%;
+			height: 0;
+			border-top: 3px solid @fg-header;
+			position: absolute;
+			transition: all 0.2s ease;
 		}
 		span {
 			top: calc(~"0px");
