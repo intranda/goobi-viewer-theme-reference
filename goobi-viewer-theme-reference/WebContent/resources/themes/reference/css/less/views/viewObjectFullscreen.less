@@ -86,6 +86,7 @@
 	&__view-sidebar {
 		background-color: @bg-general;
 		.ui-resizable-handle {
+			border: @border;
 			&:before,
 			&:after {}
 			&:before {}
@@ -100,6 +101,10 @@
 		background-color: @bg-general;
 		.btn {}
 		[data-close="fs-sidebar"] {}
+	}
+	&__view-sidebar-share {
+		border-top: @border;
+		border-bottom: @border;
 	}
 	/* SIDEBAR WORK TITLE */
 	&__view-sidebar-work-title {

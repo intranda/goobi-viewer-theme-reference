@@ -302,8 +302,8 @@ const colors = {
 	}
 }
 
-function switchTheme(colors) {
-	for(const [propName, color] of Object.entries(colors)) {
-		document.documentElement.style.setProperty(propName, color);
-	}
-}
+ function switchTheme(colors) {
+ 	for(const [propName, color] of Object.entries(colors)) {
+ 		document.documentElement.style.setProperty(propName, color);
+ 	}
+ }
