@@ -17,6 +17,8 @@
 		a,
 		span,
 		button {
+			color: @fg-controls;
+			fill: @fg-controls;
 			&:hover,
 			&:active,
 			&:focus {}
@@ -40,12 +42,20 @@
     }
     &__action {
 	    /* ELEMENT */
+			&:hover,
+			&:active,
+			&:focus {
+				background: @bg-hover !important;
+			}
+
 	    a,
+			a svg,
 		span,
 		select,
 		button {
 			background: @bg-content-box;
-			color: @fg-general;
+			color: @fg-controls;
+			fill: @fg-controls;
 			&:hover,
 			&:active,
 			&:focus {
@@ -95,8 +105,15 @@
 	    &.reset {}
 	    &.enter-fullscreen {}
 	    &.zoom-slider-wrapper {
-	        .zoom-slider {}
-	        .zoom-slider-handle {}
+				.zoom-slider {
+					color: @fg-controls;
+					fill: @fg-controls;
+					border-color: @fg-controls;
+				}
+				.zoom-slider-handle {
+					color: @fg-controls;
+					fill: @fg-controls;
+				}
 	    }
 	}
     /* MODIFICATION */

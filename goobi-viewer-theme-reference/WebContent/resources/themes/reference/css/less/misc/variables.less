@@ -99,7 +99,7 @@ THEMING
 	// Regular Reference Theme colors
 	--ci-color1: @ciColor1;
 	--ci-hovercolor1: @ciHovercolor1;
-	--bg-hover: #f6f6f6;
+	--bg-hover: #eee;
 	--border: 1px solid #ccc;
 
 	--bg-general: @neutralgray;
@@ -118,6 +118,8 @@ THEMING
 .color-theme-dark {
 		--ci-color1 : #71B2E5;
 		--ci-hovercolor1: #1B70B1;
+		--bg-hover: #121212;
+		--fg-controls: rgba(255, 255, 255, .8);
 		--border: 0;
 		--bg-general: #121212;
 		--fg-general: rgba(255, 255, 255, .8);
@@ -133,6 +135,8 @@ THEMING
 .color-theme-light {
 		--ci-color1: #3365a9;
 		--ci-hovercolor1: #4576BA;
+		--bg-hover: #eee;
+		--fg-controls: rgb(111, 111, 111);
 		--border: 1px solid #ccc;
 		--bg-general: #f2f3f4;
 		--fg-general: rgb(33, 37, 41);
@@ -149,6 +153,8 @@ THEMING
 @ci-color1: var(--ci-color1);
 @ci-hovercolor1: var(--ci-hovercolor1);
 @bg-hover: var(--bg-hover);
+@fg-controls: var(--fg-controls);
+
 @border: var(--border);
 @bg-general: var(--bg-general);
 @fg-general: var(--fg-general);
