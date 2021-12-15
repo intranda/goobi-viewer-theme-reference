@@ -22,7 +22,9 @@
 		}
 		.btn {}
 	}
-	&__comment {}
+	&__comment {
+		border: @border;
+	}
 	&__comment-image {
 		img {}
 	}
@@ -31,9 +33,13 @@
 		&-creator {}
 		&-date {}
 	}
+	&__comment-info {
+		color: rgb(33, 37, 41);
+	}
 	&__comment-content {
 		background-color: @bg-content-box;
 		&-options {
+			background-color: @bg-content-box;
 			border-bottom: 0;
 			span {}
 			a, button {
