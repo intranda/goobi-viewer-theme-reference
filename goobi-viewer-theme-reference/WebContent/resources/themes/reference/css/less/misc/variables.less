@@ -115,7 +115,31 @@ THEMING
 	--lh-content-box: var(--lh-general);
 }
 
+
+	
+
+
+// OS OR BROWSER WANTS DARK THEME
+@media (prefers-color-scheme: dark) { 
+	:root {
+		// DARK MODE COLORS
+		--ci-color1 : #71B2E5;
+		--ci-hovercolor1: #1B70B1;
+		--border: 0;
+		--bg-general: #121212;
+		--fg-general: rgba(255, 255, 255, .8);
+		--lk-general: var(--ci-color1);
+		--lh-general: rgba(255, 255, 255, .8);
+		--fg-header:  rgba(255, 255, 255, .8);
+		--bg-content-box: #1F1F1F;
+		--fg-content-box: rgba(255, 255, 255, .8);
+		--lk-content-box: #71B2E5;
+		--lh-content-box: rgba(255, 255, 255, .8);
+	}
+}
+
 .color-theme-dark {
+		// DARK MODE COLORS
 		--ci-color1 : #71B2E5;
 		--ci-hovercolor1: #1B70B1;
 		--border: 0;
@@ -144,6 +168,7 @@ THEMING
 		--lk-content-box: #3365a9;
 		--lh-content-box: #444;
 }
+
 
 // Assign custom properties to allow switching themes on runtime
 @ci-color1: var(--ci-color1);
