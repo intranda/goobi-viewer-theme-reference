@@ -257,12 +257,6 @@ $( document ).ready( function() {
     if (window.matchMedia('(max-width: 768px)').matches) {
     }
     
-	function switchTheme(colors) {
-		for(const [propName, color] of Object.entries(colors)) {
-			document.documentElement.style.setProperty(propName, color);
-		}
-	}
-	
 
 } );
 
