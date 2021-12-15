@@ -42,7 +42,6 @@
 		border: @border;
 		background-color: @bg-content-box;
 		li {
-			border-color: @neutralgray;
 			&:first-child {}
 			&:last-child {
 				border: 0;
@@ -101,7 +100,15 @@
 		}
 	}
 	/* TOC FULL */
-	&__list-full {}
+	&__list-full {
+			border-top: @border;
+		li {
+			border-bottom: @border;
+			&:hover {
+				background-color: @bg-hover;
+			}
+		}
+	}
 	&__list-full-title {
 		a {
 			&:hover,
@@ -110,12 +117,17 @@
 		}
 	}
 	&__list-full-number {
-		li {}
+		li {
+			border: none;
+		}
 		a {
 			&:hover,
 			&:focus,
 			&:active {}
 		}
+	}
+	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
+		color: @fg-hover;
 	}
 }
 

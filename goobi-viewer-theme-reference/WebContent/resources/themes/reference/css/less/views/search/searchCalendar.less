@@ -32,19 +32,18 @@
         .btn {}
     }
     &__months {
-
     }
     &__month {}
     &__month-title {
     padding: 5px 10px;
-		border: 1px solid @middlegray;
+		border: @middlegray;
 		border-bottom: 0;
 		background-color: @fg-content-box;
     background-color: @bg-content-box;
     }
     &__month-days,
     &__month-week {
-		border: 1px solid @middlegray;
+		border: @border;
 		border-top: 0;
     background-color: @bg-content-box;
     }
@@ -57,17 +56,21 @@
     &__month-week {}
     &__month-day {
       a {
-          background-color: @middlegray;
+          background-color: @bg-hover;
+          color: @fg-hover;
+          &:focus,
+          &:hover,
+          &:active {
+            background-color: @lk-content-box;
+            color: @bg-content-box;
+          }
       }
       a,
       span {
         color: @lk-content-box;
         &:focus,
         &:hover,
-        &:active {
-          background-color: @lk-content-box;
-          color: @bg-content-box;
-        }
+        &:active {}
       }
     }
     &__month-day-empty {}
