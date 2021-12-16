@@ -35,11 +35,11 @@
     }
     &__month {}
     &__month-title {
-    padding: 5px 10px;
-		border: @middlegray;
+    	padding: 5px 10px;
+		border: @border;
 		border-bottom: 0;
 		background-color: @fg-content-box;
-    background-color: @bg-content-box;
+   		background-color: @bg-content-box;
     }
     &__month-days,
     &__month-week {
@@ -56,18 +56,30 @@
     &__month-week {}
     &__month-day {
       a {
-          background-color: @bg-hover;
-          color: @fg-hover;
+		  .mx-dark-mode-rules ({
+		    background-color: @bg-active;
+			
+		  });
+		  .mx-light-mode-rules ({
+		    background-color: @ci-color1;
+			color: @white;
+		  });
           &:focus,
           &:hover,
           &:active {
-            background-color: @lk-content-box;
-            color: @bg-content-box;
+			  .mx-dark-mode-rules ({
+			    background-color: @bg-hover;
+				color: @fg-general;
+			  });
+			  .mx-light-mode-rules ({
+				color: @white;
+			    background-color: @bg-active;
+			  });	
           }
       }
       a,
       span {
-        color: @lk-content-box;
+		color: var(--fg-general);
         &:focus,
         &:hover,
         &:active {}

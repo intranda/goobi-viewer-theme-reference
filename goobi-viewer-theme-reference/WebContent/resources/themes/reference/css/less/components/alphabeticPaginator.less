@@ -8,7 +8,7 @@
 	/* ELEMENT */
 	ul {}
 	li {
-		border-color: @middlegray;
+		border: @border;
 		&.active {
 			a {
 				color: @fg-content-box;
@@ -22,10 +22,14 @@
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: @lightgray;
-			color: @ci-hovercolor1;
+			background-color: @bg-hover;
+			color: @fg-general;
 		}
 	}
+}
+
+.color-theme-dark {
+	
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -631,7 +631,14 @@
 	z-index: 1;
 	font-size: @fontMedium;
 	color: @white;
-	background-color: @middleblack;
+	.mx-light-mode-rules ({
+		background-color: @middleblack;
+		color: @white;
+	});
+	.mx-dark-mode-rules ({
+		background-color: @bg-content-box;
+		color: @fg-content-box;
+	});
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;

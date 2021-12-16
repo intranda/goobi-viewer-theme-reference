@@ -17,6 +17,13 @@
 	&__citelinks {
 		a {}
 		.badge-dark {
+			  .mx-dark-mode-rules ({
+			    background-color: @bg-active;
+			  });
+			  .mx-light-mode-rules ({
+			    background-color: #343a40;
+			  });
+			
 			padding: .3rem .5rem;
 			color: @white;
 
@@ -24,6 +31,12 @@
 			&:active,
 			&:focus {
 				color: @white;
+				.mx-dark-mode-rules ({
+			    	background-color: @bg-hover;
+			  	});
+			  .mx-light-mode-rules ({
+			    background-color: #5e5e5e;
+			  });
 			}
 		}
 	}

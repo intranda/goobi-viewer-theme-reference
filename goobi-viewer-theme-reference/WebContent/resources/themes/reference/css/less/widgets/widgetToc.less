@@ -65,7 +65,13 @@
 		&:focus,
 		&:hover,
 		&.active {
-			background-color: @bg-general;
+			.mx-light-mode-rules ({
+				background-color: @bg-general;
+			});
+			.mx-dark-mode-rules ({
+				background-color: @bg-active;
+				color: @fg-content-box;
+			});
 		}
 	}
 	&__element-expand {}
@@ -73,10 +79,7 @@
 		a {
 			&:hover,
 			&:active,
-			&:focus {
-				background-color: @bg-general;
-
-			}
+			&:focus {}
 		}
 		&.has-pagenumber {}
 		&.non-tree-view {

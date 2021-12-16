@@ -107,20 +107,34 @@ THEMING
 }
 
 // DARK THEME
-.color-theme-dark {
+@color-theme-dark: color-theme-dark;
+
+.@{color-theme-dark} {
 	.mx-theme-dark;
 }
 
+.mx-dark-mode-rules(@darkmodeProps) {
+  @media (prefers-color-scheme: dark) { @darkmodeProps(); }
+  .@{color-theme-dark} &              { @darkmodeProps(); }
+}
+
 // LIGHT THEME
-.color-theme-light {
+@color-theme-light: color-theme-light;
+
+.@{color-theme-light} {
 	.mx-theme-light;
 }
 
+.mx-light-mode-rules(@lightmodeProps) {
+  @media (prefers-color-scheme: light) { @lightmodeProps(); }
+  .@{color-theme-light} &              { @lightmodeProps(); }
+}
 
 // Assign custom properties to allow switching themes on runtime
 @ci-color1: var(--ci-color1);
 @ci-hovercolor1: var(--ci-hovercolor1);
 @bg-hover: var(--bg-hover);
+@bg-active: var(--bg-active);
 @fg-hover: var(--fg-hover);
 
 @fg-controls: var(--fg-controls);
