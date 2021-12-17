@@ -5,6 +5,15 @@
 /* USER COMMENTS */
 /* BLOCK */
 .user-comments {
+	&__table {
+		background: @bg-content-box;
+		border: @border;
+	}
+	&__table-entry {
+		&:hover {
+			background: @bg-hover;
+		}
+	}
 	/* ELEMENT */
 	&__message-login {
 		padding-top: 0;
@@ -20,21 +29,32 @@
 			border-bottom: @border;
 			background-color: @bg-general;
 		}
-		.btn {}
+		.btn {
+			.mx-light-mode-rules ({
+				color: @ci-color1;
+			});
+			.mx-dark-mode-rules ({
+				color: @fg-general;
+			});
+		}
 	}
 	&__comment {
 		border: @border;
 	}
 	&__comment-image {
-		img {}
+		img {
+			border: @border;
+		}
 	}
 	&__comment-metadata {
+		color: @fg-general;
 		span {}
 		&-creator {}
 		&-date {}
 	}
 	&__comment-info {
 		color: rgb(33, 37, 41);
+		background: @bg-content-box;
 	}
 	&__comment-content {
 		background-color: @bg-content-box;

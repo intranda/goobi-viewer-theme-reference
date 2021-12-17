@@ -14,13 +14,39 @@
     }
     &__options {
         a, button {
+			position: relative;
           color: @fg-general;
         	font-size: @fontMedium;
             &:hover,
             &:focus,
-            &:active,
-            &.active {
+            &:active {
               color: @ci-color1;
+            }
+            &.active {
+				.mx-light-mode-rules ({
+					 color: @ci-color1;
+					.fa {
+						&:after {
+							display: none;
+						}
+					}
+				});
+				.mx-dark-mode-rules ({
+             		color: #ff7800;
+					.fa {
+						&:after {
+							content: '';
+							position: absolute;
+							top: -2px;
+							left: 50%;
+							border-radius: 100%;
+							background: #ff7800;
+							width: 5px;
+							height: 5px;
+							transform: translate(-50%,0%);
+						}
+					}
+				});
             }
         }
         form {}
@@ -134,7 +160,14 @@
 		}
     }
     &__hit-thumbnail {
-        img {}
+        img {
+			.mx-light-mode-rules ({
+				border: 2px solid #fff;
+			});
+			.mx-dark-mode-rules ({
+				border: none;
+			});
+		}
         [data-bookmark-list-type="add"] {
         	color: @ci-color1;
 		    .fa-bookmark-o,

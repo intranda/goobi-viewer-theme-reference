@@ -7,11 +7,18 @@
 		input[type="radio"] {
 		}
     &__icon {}
+
+
     .fa-circle-o,
 		.fa-square-o,
     .fa-check-circle-o,
 		.fa-check-square-o {
-			color: @ci-color1;
+			.mx-light-mode-rules ({
+				color: @ci-color1;
+			});
+			.mx-dark-mode-rules ({
+				color: @fg-general;
+			});
 		}
 }
 
