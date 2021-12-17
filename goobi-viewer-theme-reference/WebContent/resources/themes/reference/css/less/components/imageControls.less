@@ -21,7 +21,10 @@
 			fill: @fg-controls;
 			&:hover,
 			&:active,
-			&:focus {}
+			&:focus {
+				color: @fg-controls;
+				fill: @fg-controls;
+			}
 		}
 		a, button {}
 		&.fulltext {}
@@ -52,25 +55,25 @@
 		span,
 		select,
 		button {
-			background: @bg-general;
+			background: @bg-active;
 			color: @fg-controls;
 			fill: @fg-controls;
 			&:hover,
 			&:active,
 			&:focus {
-				// background: @bg-hover !important;
+				background: @bg-hover !important;
 			}
 		}
-
 		a svg {
 			fill: @fg-controls;
 		}
-
 		[class*="image-"] {}
 		&.inactive {
+			fill: @fg-controls;
 	    	a,
 	    	span,
-	    	button {}
+	    	button {
+		}
 		}
 	    /* ELEMENT */
 	    &.start {}
@@ -109,13 +112,24 @@
 	    &.reset {}
 	    &.enter-fullscreen {}
 	    &.zoom-slider-wrapper {
-				.zoom-slider {
-					/*border-color: @fg-controls;*/
+	        .zoom-slider {
+	            //Firefox
+		        &::-moz-range-thumb {
+					background-color: @bg-active;
+					border: 1px solid #6f6f6f;
+		        }
+				&:focus {
 				}
-				.zoom-slider-handle {
-					color: @fg-controls;
-					fill: @fg-controls;
+		        &::-webkit-slider-thumb {
+	              background-color: @bg-active;
+					border: 1px solid #6f6f6f;
 				}
+				&::-webkit-slider-runnable-track {
+				}
+	        }
+			.zoom-slider-handle {
+				fill: @fg-controls;
+			}
 	    }
 	}
     /* MODIFICATION */
