@@ -71,7 +71,12 @@
     }
     &__action {
         .btn--default {
-			background: @fg-general;
+			.mx-dark-mode-rules ({
+				background: @fg-general;
+			});
+			.mx-light-mode-rules ({
+				background: #f7f7f7;
+			});
 		}
     }
 	&__additional-wrapper {
