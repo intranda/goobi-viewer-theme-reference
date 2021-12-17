@@ -275,6 +275,14 @@
 				background: transparent;
 				border: none;
 				border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+				.mx-dark-mode-rules ({
+					border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+					color: @fg-general;
+				});
+				.mx-light-mode-rules ({
+					border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+					color: @fg-general;
+				});
 				font-size: 1.8rem;
 				height: 30px;
 			}
@@ -801,7 +809,8 @@
 			.page-header__actions-language,
 			.page-header__actions-login,
 			.page-header__actions-bookmark,
-			.page-header__actions-search-button {
+			.page-header__actions-search-button,
+			.page-header__actions-color-switch {
 				display: none;
 			}
 			.page-header__mobile-burger-menu-alternative {

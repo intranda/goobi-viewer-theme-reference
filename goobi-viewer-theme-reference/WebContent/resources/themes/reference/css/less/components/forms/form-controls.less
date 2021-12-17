@@ -46,6 +46,12 @@
 	select {
 		font-size: @fontMedium;
 		&.disabled {}
+		.mx-dark-mode-rules ({
+			background: @fg-general;
+		});
+		.mx-light-mode-rules ({
+			background: @white;
+		});
 	}
 	select[disabled="disabled"] {}
 }

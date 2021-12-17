@@ -9,7 +9,9 @@
   border: @border;
     /* ELEMENT */
     &__help {
-        button {}
+        button {
+		color: @fg-general;
+	}
     }
     &__title {
         h3 {
@@ -23,7 +25,15 @@
     &__input-label {}
     &__input-autocomplete {
         .ui-autocomplete {
-            .ui-autocomplete-input {}
+            .ui-autocomplete-input {
+				.mx-dark-mode-rules ({
+					background: @fg-general;
+					color: @black;
+				});
+				.mx-light-mode-rules ({
+					background: @white;
+				});
+			}
         }
     }
     &__filter {}
