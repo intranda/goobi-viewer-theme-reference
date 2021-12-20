@@ -1,0 +1,40 @@
+/* ==============================================================
+   Style declarations for userBackendAnnotations.xhtml
+   ==============================================================*/
+/* USER ANNOTATIONS TABLE */
+#userAnnotationsTable {}
+
+.user-annotations {
+	&__table {}
+	&__table-title {}
+	&__table-body {}
+	.admin__table-sorting-arrow-hidden {}
+	&__table-title-target,
+	&__table-title-campaign,
+	&__table-title-date,
+	&__table-title-review-state {
+		&:hover {
+			.admin__table-sorting-arrow-hidden {
+			}
+		}
+	}
+	&__table-entry {
+		&:hover {
+			.user-annotations__table-entry-action-link {}
+		}
+	}
+	&__table-entry-label-record {}
+	&__table-entry-action-link {}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

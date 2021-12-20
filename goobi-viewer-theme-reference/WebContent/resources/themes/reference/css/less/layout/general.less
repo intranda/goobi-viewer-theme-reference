@@ -1,7 +1,7 @@
 /* ==============================================================
    General Styling
    ==============================================================*/
-html, 
+html,
 body {}
 
 html {
@@ -16,6 +16,18 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: @neutralgray;
+
+	// Style focused elements when navigating with the keyboard
+	// Define rules in the mixin `.mx-focus-visible`
+	&.using-keyboard :focus-visible {
+		.mx-focus-visible !important;
+	}
+
+	// No outline offset when an input is in focus
+	// Does not apply if inputs are styled as buttons
+	&.using-keyboard input:not(.btn):focus-visible {
+		outline-offset: 0 !important;
+	}
 }
 
 @{RTL} body {
@@ -47,7 +59,7 @@ h4, .h4 {
 }
 
 h5, h6,
-.h5, .h6 {	
+.h5, .h6 {
 	font-size: 1.6rem;
 }
 
