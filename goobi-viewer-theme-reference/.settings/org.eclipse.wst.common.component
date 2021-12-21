@@ -12,7 +12,7 @@
         
         
         
-        <wb-resource deploy-path="/" source-path="/src" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/src"/>
                                                         
         
         
@@ -26,7 +26,7 @@
         
         
         
-        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
                                                         
         
         
