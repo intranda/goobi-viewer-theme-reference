@@ -28,8 +28,11 @@
 
     <title>#{msg.viewMirador} - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
 
-    <!-- META TAGS + FAVICON -->
+    <!-- META TAGS -->
     <ui:include src="/resources/includes/templateHeads/metaTags.xhtml" />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(&quot;images/template/favicon.ico&quot;, 32, 32)}" />
 
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
