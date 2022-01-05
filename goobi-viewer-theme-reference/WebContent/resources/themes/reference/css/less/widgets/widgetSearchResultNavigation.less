@@ -17,7 +17,14 @@
         .search-result-navigation-left,
         .search-result-navigation-right {
             &:hover {
-            	svg {}
+            	svg {
+					.mx-dark-mode-rules ({
+            			background-color: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+            			background-color: @lightgray;
+					});
+				}
             }
         }
         .search-result-navigation-left {
@@ -45,7 +52,14 @@
             svg {}
         }
         &:hover {
-        	svg {}
+        	svg {
+				.mx-dark-mode-rules ({
+        			background-color: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+        			background-color: @lightgray;
+				});
+			}
         }
     }
 }

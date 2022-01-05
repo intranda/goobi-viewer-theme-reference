@@ -11,11 +11,16 @@
 	&__multi-volume {}
 	&__mv-group {}
 	&__mv-element {
-			background-color: @bg-content-box;
+		background-color: @bg-content-box;
 	    padding: 10px 0;
 	    transition: all 0s linear;
 	    &:hover {
-	       background-color: @lightgray;
+			.mx-dark-mode-rules ({
+				background-color: @bg-hover;
+			});
+			.mx-light-mode-rules ({
+				background-color: @lightgray;
+			});
 	    }
 		&.level-0 {
 		    h4 {

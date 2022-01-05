@@ -53,7 +53,13 @@
 		&-date {}
 	}
 	&__comment-info {
-		color: rgb(33, 37, 41);
+		.mx-dark-mode-rules ({
+			color: @fg-general;
+		});
+		.mx-light-mode-rules ({
+			color: rgb(33, 37, 41);
+		});
+
 		background: @bg-content-box;
 	}
 	&__comment-content {
