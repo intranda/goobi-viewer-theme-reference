@@ -35,12 +35,25 @@
 			}
 			/* USER DROPDOWN */
 			&__user-dropdown {
+					.mx-dark-mode-rules ({
+						background: @bg-active;
+					});
+					.mx-light-mode-rules ({
+						background: #444;
+					});
 				ul {}
 				li {}
 
 			}
 			&__user-dropdown-item {
-				&:hover {}
+				&:hover {
+					.mx-dark-mode-rules ({
+						background: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+						background: #444;
+					});
+				}
 			}
 			&__user-dropdown-item-icon {
 				.fa {}
