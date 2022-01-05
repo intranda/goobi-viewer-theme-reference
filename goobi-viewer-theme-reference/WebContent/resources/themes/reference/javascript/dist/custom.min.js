@@ -212,18 +212,6 @@ $( document ).ready( function() {
 	 	
 	 } );
 
-	// sticky sidebar
- 	$('[data-target="sticky-sidebar"]').hcSticky({
-    	top: 50,
- 	});	
-    
-    // set content height to window height
-//    setContentHeight();
-
-    // do things on resize and orientation change
-//    $(window).on('resize orientationchange', function () {
-//      setContentHeight();
-//    });
 
     // do things on JSF AJAX event
     if (typeof jsf !== 'undefined') {
