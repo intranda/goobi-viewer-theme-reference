@@ -88,7 +88,8 @@ $( document ).ready( function() {
     };
 	
 	viewerJS.init( viewerConfig );
-	
+    //Initialize sticky elements for admin pages
+    viewerJS.stickyElements.init({initFrontend:true});
 	
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
@@ -143,7 +144,7 @@ $( document ).ready( function() {
     	$('.page-header__search-box .widget-searchfield input[type=text]').focus();
     	$( '[data-open="sidebar"]' ).toggle();
     } );
-    
+     
     // close search overlay on click
     $( 'body' ).on( 'click', '[data-target="search-overlay"]', function() {
     	$('[data-open="search"]').removeClass('-searchOn');
