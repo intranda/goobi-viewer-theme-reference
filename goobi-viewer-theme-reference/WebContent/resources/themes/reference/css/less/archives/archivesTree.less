@@ -8,6 +8,7 @@
 	&__inner {}
 	&__expand-minimize-all {
 		a {
+			color: @fg-general;
 			&:last-child {}
 		}
 	}
@@ -20,12 +21,29 @@
 		}
 	}
 	&__list-expandable-title {
-		.fa-stack {}
-		.fa-stack-text {
-			&.-archives-selected {}
+		&.-archives-selected {
+			.fa-stack {
+				.mx-light-mode-rules ({
+					color: green;
+				});
+				.mx-dark-mode-rules ({
+					color: #ff7800;
+				});
+			}
 		}
-		.fa-file-o {
-			&.-archives-selected {}
+		&.-archives-selected {
+			.fa-stack-text {
+			}
+		}
+		&.-archives-selected {
+			.fa-file-o {
+				.mx-light-mode-rules ({
+					color: green;
+				});
+				.mx-dark-mode-rules ({
+					color: #ff7800;
+				});
+			}
 		}
 		.fa-caret-up,
 		.fa-caret-down {}
