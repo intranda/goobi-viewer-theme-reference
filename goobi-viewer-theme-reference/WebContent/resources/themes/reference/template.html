@@ -77,7 +77,7 @@
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-'}">
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
-    
+
 	<!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
 	<h:outputText escape="false" value="#{adminThemesBean.styleSheet}"/>
     
