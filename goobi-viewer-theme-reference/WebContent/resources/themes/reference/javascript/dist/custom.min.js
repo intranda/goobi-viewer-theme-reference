@@ -7,7 +7,7 @@ initSliders may be used to add new cms slider styles (swiper configuration objec
 list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
 This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
 */
-function initSliders() {
+function initSliders() { 
 	//update swiper config with
 	    // var partialConfig = {
        // swiperConfig: {
@@ -88,7 +88,8 @@ $( document ).ready( function() {
     };
 	
 	viewerJS.init( viewerConfig );
-	
+    //Initialize sticky elements for admin pages
+    viewerJS.stickyElements.init({initFrontend:true});
 	
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
@@ -143,7 +144,7 @@ $( document ).ready( function() {
     	$('.page-header__search-box .widget-searchfield input[type=text]').focus();
     	$( '[data-open="sidebar"]' ).toggle();
     } );
-    
+     
     // close search overlay on click
     $( 'body' ).on( 'click', '[data-target="search-overlay"]', function() {
     	$('[data-open="search"]').removeClass('-searchOn');
@@ -211,14 +212,7 @@ $( document ).ready( function() {
 	 	}
 	 	
 	 } );
-    
-    // set content height to window height
-//    setContentHeight();
 
-    // do things on resize and orientation change
-//    $(window).on('resize orientationchange', function () {
-//      setContentHeight();
-//    });
 
     // do things on JSF AJAX event
     if (typeof jsf !== 'undefined') {
