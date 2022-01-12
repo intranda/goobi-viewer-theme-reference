@@ -25,10 +25,17 @@
     	span {}
     }
     &__header-controls {
-    	[data-show="thumbs"] {
-    		&.in {}
-    	}
-    }
+		&__options {
+			.btn--clean[data-show="thumbs"] {
+				svg {
+					stroke: @fg-general;
+				}
+		    	[data-show="thumbs"] {
+		    		&.in {}
+			    }
+		    }
+		}
+	}
     &__header-exit {
     	a {
 			svg {
