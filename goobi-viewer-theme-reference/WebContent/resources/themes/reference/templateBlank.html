@@ -16,114 +16,87 @@
       lang="#{navigationHelper.localeString}"
       dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}">
 
-<h:head profile="http://dublincore.org/documents/dcq-html/">
+  <!-- templateName determines which CSS + JS libraries will be included -->
+  <c:set var="templateName" value="templateBlank" />
 
-	<meta charset="utf-8" />
-	<meta name="description" content="" />
-	<meta name="generator" content="Goobi viewer" />
-	<meta name="application" content="#{navigationHelper.applicationName}" />
-	<meta name="version" content="#{navigationHelper.version}" />
-	<meta name="build date" content="#{navigationHelper.buildDate}" />
-	<meta name="git-revision" content="#{navigationHelper.buildVersion}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <ui:fragment rendered="#{navigationHelper.displayNoIndexMetaTag}">
-        <meta name="robots" content="noindex" />
-    </ui:fragment>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- You can force exclude default css and js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
+	<!-- CUSTOM CSS EXCLUDED TO PREVENT MESSED UP STYLING OF MIRADOR AND SWAGGER API PAGE -->
+  <c:set var="excludeCSS" value="#{['themeCSS']}" />
+  <c:set var="excludeJS" value="#{[]}" />
+
+  <h:head profile="http://dublincore.org/documents/dcq-html/">
+  <ui:insert name="head" />
+  <meta name="templateBlank" />
+
+    <title>
+      <h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{adminThemesBean.getThemeLabel(configurationBean.name)}
+    </title>
+
+    <!-- META TAGS -->
+    <ui:include src="/resources/includes/templateHeads/metaTags.xhtml" />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(&quot;images/template/favicon.ico&quot;, 32, 32)}" />
 
     <!-- TWITTER CARD / OPENGRAPH -->
     <ui:include src="/resources/includes/embed/twittercard.xhtml" />
     <ui:include src="/resources/includes/embed/opengraph.xhtml" />
 
-    <title><h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel != null}" />#{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
-    
-    <ui:insert name="head" />
-
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(&quot;images/template/favicon.ico&quot;, 32, 32)}" />
-
     <!-- RELATIVE URL TAGS -->
     <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
-    
+
     <!-- OPENSEARCH -->
     <link rel="search" type="application/opensearchdescription+xml" title="#{adminThemesBean.getThemeLabel(configurationBean.name)}" href="#{request.contextPath}/api/v1/opensearch/" />
-    
+
     <!-- OEMBED -->
     <ui:fragment rendered="#{activeDocumentBean.recordLoaded}">
         <link rel="alternate" type="application/json+oembed" href="#{navigationHelper.applicationUrl}oembed?url=#{navigationHelper.encodedUrl}&amp;format=json" title="Goobi viewer oEmbed Profile" />
     </ui:fragment>
 
-    <!-- BASIC CSS -->
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/bs/bootstrap.custom.css?${navigationHelper.buildVersion}" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.min.css?${navigationHelper.buildVersion}" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/jQueryUI-1.12.1/jquery-ui.structure.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/sweetalert/sweetalert2.min.css?${navigationHelper.buildVersion}" />
-    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/font-awesome/css/font-awesome.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/leaflet.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/extra-markers/leaflet.extra-markers.min.css?${navigationHelper.buildVersion}" />
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/leaflet/markercluster/MarkerCluster.css?${navigationHelper.buildVersion}" />
+    <!-- CSS -->
+    <ui:include src="/resources/includes/templateHeads/css.xhtml">
+      <ui:param name="templateName" value="#{templateName}" />
+      <ui:param name="excludeCSS" value="#{excludeCSS}" />
+    </ui:include>
 
-	<!-- CUSTOM CSS -->
-	<!-- EXCLUDED PREVENT MESSED UP STYLING FOR NEW MIRADOR AND SWAGGER API PAGE -->
-	<!-- 	<h:panelGroup rendered="#{navigationHelper.currentPage != 'label__api_swagger'}"> -->
-	<!-- 		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.theme}.min.css?${navigationHelper.buildVersion}" /> -->
-	<!--    </h:panelGroup> -->
-    
-    
     <!-- SUBTHEME CSS -->
     <h:panelGroup rendered="#{navigationHelper.subthemeSelected and navigationHelper.subThemeDiscriminatorValue!='-' and navigationHelper.currentPage != 'label__api_swagger'}">
         <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/css/dist/#{navigationHelper.subThemeDiscriminatorValue}.min.css?${navigationHelper.buildVersion}" />
     </h:panelGroup>
-    
-    <!-- JAVASCRIPT LIBS -->   
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jquery/jquery.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/bs/bootstrap.bundle.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/tinymce/tinymce.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/datatables.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/1.12.1/jquery-ui.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/jqueryUi/plugins/jquery.ui.touch-punch.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/reactiveX/rxjs.umd.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/q-promises/q.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/clipboard/clipboard.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/pdfjs/pdf.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/riot/riot.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/sweetalert/sweetalert2.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/leaflet.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/extra-markers/leaflet.extra-markers.min.js?${navigationHelper.buildVersion}"></script>
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/leaflet/markercluster/leaflet.markercluster.js?${navigationHelper.buildVersion}"></script>
-	
-	<!-- JAVASCRIPT DIST FILES -->
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/browsersupport.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/viewer.min.js?${navigationHelper.buildVersion}"></script>
-    <script type="text/javascript" src="#{request.contextPath}/resources/javascript/dist/riot-tags.js?${navigationHelper.buildVersion}"></script>	
 
-</h:head>
+    <!-- JAVASCRIPT -->
+    <ui:include src="/resources/includes/templateHeads/js.xhtml">
+      <ui:param name="templateName" value="#{templateName}" />
+      <ui:param name="excludeJS" value="#{excludeJS}" />
+    </ui:include>
 
-<ui:insert name="metadata" />
+  </h:head>
+  <ui:insert name="metadata" />
 
-<h:body id="viewer" class="blank-page">
-	    <f:view locale="#{navigationHelper.locale}">        
-	        <!-- COinS -->
-	        <span class="Z3988" title="#{activeDocumentBean.viewManager.contextObject}"></span>
-	        
-	        <!-- MESSAGES -->
-			<div class="messages">
+  <!-- BODY -->
+  <h:body id="viewer" class="blank-page">
+	  <f:view locale="#{navigationHelper.locale}">
+      <!-- COinS -->
+      <span class="Z3988" title="#{activeDocumentBean.viewManager.contextObject}"></span>
+
+      <!-- MESSAGES -->
+      <div class="messages">
 				<h:messages id="messages" infoClass="alert alert-success" errorClass="alert alert-danger" />
 			</div>
-	        
-	        <!-- LAYOUT -->
-	        <main id="main" class="blank-page__main">
-                <ui:insert name="content" />
-            </main>
-	        
-	        <!-- CUSTOM JAVASCRIPT -->
-	        <ui:include src="includes/customJS.xhtml" />        
-	    </f:view>
-	    
-	    <!-- PIWIK -->
-	    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
-	        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-	    </ui:fragment>
-</h:body>
+
+	    <!-- LAYOUT -->
+      <main id="main" class="blank-page__main">
+        <ui:insert name="content" />
+      </main>
+
+      <!-- CUSTOM JAVASCRIPT -->
+      <ui:include src="includes/customJS.xhtml" />
+    </f:view>
+
+    <!-- PIWIK -->
+    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
+        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
+    </ui:fragment>
+
+  </h:body>
 </html>
