@@ -12,8 +12,9 @@
 	&__action {
 		a {}
 	}
-	&__item {
-		background-color: @white;
+	&__single-entry {
+		background-color: @bg-content-box;
+		border: @border;
 		&:hover {}
 	}
 	&__item-image,
@@ -32,7 +33,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

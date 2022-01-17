@@ -1,17 +1,23 @@
 /* ==============================================================
    Search Standard
-   style declarations for searchOptions.xhtml 
+   style declarations for searchOptions.xhtml
    ==============================================================*/
 /* SEARCH STANDARD */
 /* BLOCK */
 .search-standard {
-	background-color: @white;
+	background-color: @bg-content-box;
+  	border: @border;
     /* ELEMENT */
     &__help {
-        button {}
+        button {
+		color: @fg-general;
+	}
     }
     &__title {
-        h3 {}
+        h3 {
+
+        color: @fg-content-box;
+        }
     }
     &__input {}
     &__input-label,
@@ -19,7 +25,15 @@
     &__input-label {}
     &__input-autocomplete {
         .ui-autocomplete {
-            .ui-autocomplete-input {}
+            .ui-autocomplete-input {
+				.mx-dark-mode-rules ({
+					background: @fg-general;
+					color: @black;
+				});
+				.mx-light-mode-rules ({
+					background: @white;
+				});
+			}
         }
     }
     &__filter {}
@@ -28,13 +42,21 @@
     	label {
     		font-size: @fontMedium;
     		font-weight: 400;
+        color: @fg-content-box;
     	}
     }
     &__filter-link {
         a {}
     }
     &__action {
-        .btn {}
+        .btn--default {
+				.mx-dark-mode-rules ({
+					background: @fg-general;
+				});
+				.mx-light-mode-rules ({
+					background: #f7f7f7;
+				});
+		}
     }
     /* MODIFICATION */
 }

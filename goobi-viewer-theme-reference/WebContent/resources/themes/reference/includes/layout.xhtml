@@ -12,12 +12,13 @@
 	xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
 	<div id="bodyWrapper">
-	
+
 	<!-- ADMIN TOPBAR FRONTEND -->
 	<viewerComponent:frontEndAdminTopBar />
 
+
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
-	
+
     <!-- PAGE HEADER -->
 	<header id="pageHeader">
 		<div class="page-header #{userBean.admin ? '-adminActive':''}">
@@ -72,6 +73,10 @@
 								<span></span>
 							</div>
 						</button>
+
+						<div class="page-header__actions-color-switch">
+							<viewerComponent:colorThemeToggle/>
+						</div>
 
 						<div data-open="menu"
 							class="page-header__mobile-burger-menu-alternative">
@@ -128,6 +133,7 @@
 			<div class="page-content__wrapper" data-target="content-wrapper">
 				<!-- CONTENT -->
 				<main id="main" class="page-content__main">
+
 					<!-- OPEN MOBILE NAVIGATION -->
 					<div class="page-header__mobile-sidebar-trigger">
 						<button type="button"
@@ -168,21 +174,21 @@
 			<div class="page-footer__wrapper">
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
-				
+
 					<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
-					
+
 					<c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
 						<a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">#{msg.contact}</a>
 					</c:if>
-					
+
 					<c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
 						<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>
 					</c:if>
-					
+
 					<a href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">#{msg.privacy}</a>
-					
-					<a href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">#{msg.imprint}</a> <span>powered by</span> 
-					
+
+					<a href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">#{msg.imprint}</a> <span>powered by</span>
+
 					<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
 
 				</div>
@@ -191,7 +197,7 @@
 				<div class="page-footer__social">
 
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
-					
+
 					<a href="https://facebook.com/#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
 						title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
@@ -199,21 +205,21 @@
 						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
 						class="fa fa-facebook" aria-hidden="true"></i>
 					</a>
-					
+
 				</c:if>
 
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
-					
+
 					<a href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
 						title="#{msg.social__follow_on_github}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
 						aria-label="#{msg.social__follow_on_github}"> <span
 						class="sr-only">#{msg.social__follow_on_github}</span> <i
 						class="fa fa-github" aria-hidden="true"></i>
-					</a> 
-					
+					</a>
+
 				</c:if>
-					
+
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
 
 					<a href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
@@ -224,11 +230,11 @@
 						class="sr-only">#{msg.social__follow_on_twitter}</span> <i
 						class="fa fa-twitter" aria-hidden="true"></i>
 					</a>
-					
-				</c:if>	
-				
+
+				</c:if>
+
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
-					
+
 					<a href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
 
 						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
@@ -236,12 +242,12 @@
 						aria-label="#{msg.social__follow_on_youtube}"> <span
 						class="sr-only">#{msg.social__follow_on_youtube}</span> <i
 						class="fa fa-youtube" aria-hidden="true"></i>
-					</a> 
-					
+					</a>
+
 				</c:if>
-				
+
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
-					
+
 					<a href="https://slideshare.net/#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
 
 						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
@@ -250,11 +256,11 @@
 						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
 						class="fa fa-slideshare" aria-hidden="true"></i>
 					</a>
-					
+
 				</c:if>
-				
+
 				<c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
-					
+
 					<a href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
 						title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
@@ -262,14 +268,14 @@
 						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
 						class="fa fa-instagram" aria-hidden="true"></i>
 					</a>
-					
+
 				</c:if>
-				
+
 				</div>
 			</div>
 		</div>
 	</footer>
-	
+
 	</div>
 
 

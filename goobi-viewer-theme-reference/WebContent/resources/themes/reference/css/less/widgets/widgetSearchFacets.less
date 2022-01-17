@@ -11,7 +11,9 @@
 		ul {}
 		li {
 			&.active {
-				a {}
+				a {
+					background-color: @bg-hover;
+				}
 				.row {}
 				.col-11,
 				.col-1 {}
@@ -26,6 +28,8 @@
 		input, button {}
 		input {
 			background-color: @ci-hovercolor1;
+			border-bottom: 1px solid @bg-content-box;
+
 			&::-webkit-input-placeholder {}
 			&:-moz-placeholder {}
 			&::-moz-placeholder {}
@@ -50,7 +54,7 @@
 
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

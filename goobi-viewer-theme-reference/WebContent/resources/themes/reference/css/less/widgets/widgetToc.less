@@ -4,6 +4,10 @@
    ==============================================================*/
 /* WIDGET TOC */
 .widget-toc {
+	&__overlay {
+		background-color: @bg-content-box;
+		opacity: .85;
+	}
 	/* TITLE */
 	&__title {
 		background-color: @ci-color1;
@@ -25,7 +29,7 @@
 				&:hover,
 				&:active,
 				&:focus {
-					color: @white;
+					color: @lh-content-box;
 				}
 			.btn {
 				&:hover,
@@ -33,9 +37,9 @@
 				&:focus,
 				&:active:focus,
 				&.active,
-				&.active.focus, 
-				&.active:focus, 
-				&.focus, 
+				&.active.focus,
+				&.active:focus,
+				&.focus,
 				&:active.focus {
 					.fa {
 						color: @ci-color1;
@@ -48,7 +52,7 @@
 	}
 	/* ELEMENTS */
 	&__elements {
-		border: 1px solid @middlegray;
+		border: @border;
 		border-top: 0;
 		ul {
 			border: 0;
@@ -58,8 +62,16 @@
 		&:hover {}
 		&.parent {}
 		&.child {}
+		&:focus,
+		&:hover,
 		&.active {
-			background-color: @lightgray;
+			.mx-light-mode-rules ({
+				background-color: @bg-general;
+			});
+			.mx-dark-mode-rules ({
+				background-color: @bg-active;
+				color: @fg-content-box;
+			});
 		}
 	}
 	&__element-expand {}
@@ -71,7 +83,7 @@
 		}
 		&.has-pagenumber {}
 		&.non-tree-view {
-			&.has-pagenumber {}			
+			&.has-pagenumber {}
 		}
 		&.active {
 			a {}

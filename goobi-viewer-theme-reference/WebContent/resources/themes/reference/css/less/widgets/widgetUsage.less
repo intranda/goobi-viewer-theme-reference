@@ -3,7 +3,7 @@
    style declarations for widget_usage.xhtml
    ==============================================================*/
 /* WIDGET USAGE */
-.widget-usage { 
+.widget-usage {
 	h3 {}
 	h4 {}
 	&__subtitle {}
@@ -17,17 +17,32 @@
 	&__citelinks {
 		a {}
 		.badge-dark {
-			padding: .3rem .5rem;  
+			  .mx-dark-mode-rules ({
+			    background-color: @bg-active;
+			  });
+			  .mx-light-mode-rules ({
+			    background-color: #343a40;
+			  });
+			
+			padding: .3rem .5rem;
+			color: @white;
+
 			&:hover,
 			&:active,
-			&:focus { 
-				color: @white; 
+			&:focus {
+				color: @white;
+				.mx-dark-mode-rules ({
+			    	background-color: @bg-hover;
+			  	});
+			  .mx-light-mode-rules ({
+			    background-color: #5e5e5e;
+			  });
 			}
 		}
 	}
 	/* WORK DOWNLOADS */
 	&__work-downloads {
-		a {} 
+		a {}
 		.badge-dark {}
 	}
 	&__work-link-dfg-viewer {}
@@ -95,7 +110,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

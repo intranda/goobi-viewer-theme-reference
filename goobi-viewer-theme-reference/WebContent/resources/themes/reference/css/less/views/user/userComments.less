@@ -25,6 +25,34 @@
 	}
 	&__table-entry-label-record {}
 	&__table-entry-action-link {}
+	.admin__search-action {
+		background: @bg-content-box;
+			.mx-dark-mode-rules ({
+				border: none;
+			});
+			.mx-light-mode-rules ({
+				border: 1px solid #ccc;
+			});
+			&:hover,
+			&:active, 
+			&:focus {
+				.btn--icon {
+					.mx-dark-mode-rules ({
+						color: @fg-general;
+					});
+					.mx-light-mode-rules ({
+						border: @fg-general;
+					});
+				}
+			}
+	}
+	.data-table-paginator__button {
+		&:hover,
+		&:active,
+		&:focus {
+			color: @fg-general;
+		}
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

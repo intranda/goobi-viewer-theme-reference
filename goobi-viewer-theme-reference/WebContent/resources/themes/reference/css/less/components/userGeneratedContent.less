@@ -21,9 +21,16 @@
         }
     }
     #user_generated_content_nav .ugc-highlight {
-        border-bottom-color: @neutralgray;
-        background-color: @neutralgray;
-        color: @lowerblack;
+		.mx-dark-mode-rules ({
+			background-color: @bg-hover;
+        	color: @lowerblack;
+			border-bottom-color: @neutralgray;
+		});
+		.mx-light-mode-rules ({
+			background-color: @neutralgray;
+        	color: @lowerblack;
+			border-bottom-color: @neutralgray;
+		});
     }
 }
 

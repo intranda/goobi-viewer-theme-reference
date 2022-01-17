@@ -8,8 +8,8 @@
     /* ELEMENT */
     &__content {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
+    	border: @border;
+    	background-color: @bg-content-box;
     }
     &__image {
         figcaption {}
@@ -17,15 +17,15 @@
     &__text {}
     &__list {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
+    	border: @border;
+    	background-color: @bg-content-box;
     	.row {
     		margin: 0;
-    	}    	
+    	}
     }
     &__list-item {
     	padding-bottom: 1.5rem;
-    	border-bottom: 1px solid @middlegray;
+    	border-bottom: @border;
     	&:last-child {
     		margin: 0;
     		padding: 0;
@@ -40,7 +40,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

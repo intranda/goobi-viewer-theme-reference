@@ -1,11 +1,46 @@
 /* ==============================================================
    Style declarations for userBackendAnnotations.xhtml
    ==============================================================*/
+#userAnnotations {
+	.admin__search-action {
+		background: @bg-content-box;
+			.mx-dark-mode-rules ({
+				border: none;
+			});
+			.mx-light-mode-rules ({
+				border: 1px solid #ccc;
+			});
+			&:hover,
+			&:active, 
+			&:focus {
+				.btn--icon {
+					.mx-dark-mode-rules ({
+						color: @fg-general;
+					});
+					.mx-light-mode-rules ({
+						border: @fg-general;
+					});
+				}
+			}
+	}
+	.data-table-paginator__button {
+		&:hover,
+		&:active,
+		&:focus {
+			color: @fg-general;
+		}
+	}
+}
+
+
 /* USER ANNOTATIONS TABLE */
 #userAnnotationsTable {}
 
 .user-annotations {
-	&__table {}
+	&__table {
+		border: @border;
+		background: @bg-content-box;
+	}
 	&__table-title {}
 	&__table-body {}
 	.admin__table-sorting-arrow-hidden {}
@@ -20,6 +55,7 @@
 	}
 	&__table-entry {
 		&:hover {
+			background: @bg-hover;
 			.user-annotations__table-entry-action-link {}
 		}
 	}

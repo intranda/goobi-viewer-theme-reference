@@ -12,7 +12,7 @@
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
     <script>
-    	var currentPage = "#{navigationHelper.currentPage}";
+    	var currentPage = "#{navigationHelper.currentPage}"; 
     	var currentLang = "#{navigationHelper.localeString}";
     	var currentPath = "#{request.contextPath}";
     	var currentTheme = "#{navigationHelper.theme}";
@@ -51,8 +51,9 @@
     </script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js?${navigationHelper.buildVersion}"></script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js?${navigationHelper.buildVersion}"></script>
-    <script>
-        // mount riot tags
-        // riot.mount( '' );
-    </script>
+    	<script>
+    	//TODO: replace with better solution so colorTheme gets set earlier
+        	// switchTheme(#{sessionBean.get('colorTheme')});
+    		
+    	</script>
 </ui:composition>

@@ -5,9 +5,12 @@
 /* MY SEARCHES */
 /* BLOCK */
 .my-searches {
+	background: @bg-content-box;
+	padding: 1rem;
 	/* ELEMENT */
 	h2 {}
 	&__table {
+		color: @fg-general;
 		thead {
             tr {
                 th {
@@ -29,9 +32,12 @@
 	}
 	&__action,
 	&__delete-button {
+		color: @fg-general;
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus {
+			color: @fg-general;
+		}
 	}
 	&__action {}
 	&__delete-button {}

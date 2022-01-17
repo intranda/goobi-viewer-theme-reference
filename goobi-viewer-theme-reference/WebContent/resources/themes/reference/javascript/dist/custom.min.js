@@ -1,6 +1,28 @@
 /*****************************************************************************************
  * Custom JavaScript for "reference"
  ****************************************************************************************/
+/**
+ * Method to set the content height to a min-height, equal to the viewport height.
+ */
+function setContentHeight() {
+    // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
+    // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
+    // var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+   
+    var pageHeaderHeight = $('.page-header__spacer').outerHeight();
+    var pageWrapperHeight = $( '#pageContent' ).outerHeight();
+    var pageFooterHeight = $( '#pageFooter' ).outerHeight();
+    var pageWrapper = $( '#pageContent' );
+
+    // var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+    var additionalHeight = pageHeaderHeight + pageWrapperHeight + pageFooterHeight;
+    var windowHeight = $( window ).outerHeight();
+    var diff = windowHeight - additionalHeight;
+    
+    if ( additionalHeight < windowHeight ) {
+        pageWrapper.css( 'min-height', ( pageWrapperHeight + diff ) + 'px' );
+    }
+}
 
 /*
 initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
@@ -230,3 +252,4 @@ $( document ).ready( function() {
     }
 
 } );
+

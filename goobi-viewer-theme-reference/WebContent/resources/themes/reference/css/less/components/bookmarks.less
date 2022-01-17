@@ -35,12 +35,22 @@
 	}
 	/* DROPDOWN LIST */
 	&__dropdown-list {
-		background-color: @middleblack;
+			.mx-dark-mode-rules ({
+				background: @bg-active;
+			});
+			.mx-light-mode-rules ({
+				background-color: #606060;
+			});
 		li {
 			border-bottom: none;
 			color: @white;
 			&:hover {
-			background-color: #606060;
+				.mx-dark-mode-rules ({
+					background: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+					background-color: #606060;
+				});
 			}
 			&:last-child {}
 			.empty {}
@@ -72,7 +82,12 @@
 	}
 	/* DROPDOWN ACTIONS */
 	&__dropdown-list-actions {
-		background: @middleblack;
+		.mx-dark-mode-rules ({
+			background: @bg-active;
+		});
+		.mx-light-mode-rules ({
+			background-color: #606060;
+		});
 		border-top: none;
 	}
 	&__dropdown-list-single-entry {}
@@ -85,7 +100,12 @@
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: #606060;				
+			.mx-dark-mode-rules ({
+				background: @bg-hover;
+			});
+			.mx-light-mode-rules ({
+				background-color: #606060;
+			});			
 		}
 	}
 	/* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
@@ -123,6 +143,9 @@
 .bookmark-popup {
 	&.top {}
 	&.right {}
+	&__radio-buttons {
+		background: @bg-content-box;
+	}
 	&.bottom {
 		&:before {}
 	}

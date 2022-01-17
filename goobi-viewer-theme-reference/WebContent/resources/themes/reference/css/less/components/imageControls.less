@@ -5,8 +5,8 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-	background-color: @white;
-	border: 1px solid @middlegray;
+	background-color: @bg-content-box;
+	border: @border;
 	border-bottom: 0;
 	/* DOCUMENT OPTIONS */
 	&__options {
@@ -14,19 +14,24 @@
 	    li {}
 	}
 	&__option {
-		a, 
-		span, 
+		a,
+		span,
 		button {
+			color: @fg-controls;
+			fill: @fg-controls;
 			&:hover,
 			&:active,
-			&:focus {}
+			&:focus {
+				color: @fg-controls;
+				fill: @fg-controls;
+			}
 		}
 		a, button {}
 		&.fulltext {}
 		&.add-to-bookmark {
 				.fa-bookmark-o,
 				.fa-bookmark {}
-			    &.added, 
+			    &.added,
 			    &:hover {
 			    	.fa-bookmark-o,
 			    	.fa-bookmark {}
@@ -39,20 +44,54 @@
 	    li {}
     }
     &__action {
+			.mx-dark-mode-rules ({
+				&:not(.zoom-slider-wrapper) {
+					background: @bg-active;
+				}
+			});
+			.mx-light-mode-rules ({
+				&:not(.zoom-slider-wrapper) {
+					background-color: transparent;
+				}
+			});
 	    /* ELEMENT */
-	    a, 
-		span, 
-		button {
 			&:hover,
 			&:active,
-			&:focus {}
+			&:focus {
+				background-color: @bg-hover;
+			}
+
+	    a,
+		span,
+		select,
+		button {
+			.mx-dark-mode-rules ({
+				background: @bg-active;
+				color: @fg-general;
+			});
+			.mx-light-mode-rules ({
+				background-color: transparent;
+			});
+
+			color: @fg-controls;
+			fill: @fg-controls;
+			&:hover,
+			&:active,
+			&:focus {
+				background: @bg-hover !important;
+			}
+		}
+		a svg {
+			fill: @fg-controls;
 		}
 		[class*="image-"] {}
 		&.inactive {
+			fill: @fg-controls;
 	    	a,
 	    	span,
-	    	button {}
-		}    
+	    	button {
+		}
+		}
 	    /* ELEMENT */
 	    &.start {}
 	    &.page-browse,
@@ -90,8 +129,36 @@
 	    &.reset {}
 	    &.enter-fullscreen {}
 	    &.zoom-slider-wrapper {
-	        .zoom-slider {}
-	        .zoom-slider-handle {}
+	        .zoom-slider {
+	            //Firefox
+		        &::-moz-range-thumb {
+					.mx-dark-mode-rules ({
+						background-color: @bg-active;
+						border: 1px solid #6f6f6f;
+					});
+					.mx-light-mode-rules ({
+						background: #6f6f6f;
+						border: inherit;
+					});
+		        }
+				&:focus {
+				}
+		        &::-webkit-slider-thumb {
+					.mx-dark-mode-rules ({
+						background-color: @bg-active;
+						border: 1px solid #6f6f6f;
+					});
+					.mx-light-mode-rules ({
+						background: transparent;
+						border: inherit;
+					});
+				}
+				&::-webkit-slider-runnable-track {
+				}
+	        }
+			.zoom-slider-handle {
+				fill: @fg-controls;
+			}
 	    }
 	}
     /* MODIFICATION */
@@ -99,7 +166,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOP */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
