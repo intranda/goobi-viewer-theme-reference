@@ -3,7 +3,7 @@
    style declarations for widget_nerFacetting.xhtml
    ==============================================================*/
 #widgetNerFacetting {
-    border: 1px solid @middlegray;
+    border: @border;
     h3 {
         margin: 0;
         padding: .7rem 1.5rem;
@@ -15,8 +15,10 @@
     }
     .facetting-content {
         .nav-tabs {
+		border-bottom: @border;
             li {
                 a {
+					background: @bg-content-box;
                     border: none;
                     border-radius: 0;
                     border-bottom: 1px solid @middlegray;
@@ -24,11 +26,14 @@
                     .glyphicon {}
                 }
                 &.active {
-                    a {}
+                    a {
+						background: @bg-hover;
+					}
                 }
             }
         }
         .tab-content {
+			background: @bg-general;
             .tab-pane {
                 &.active {}
                 h4 {}                

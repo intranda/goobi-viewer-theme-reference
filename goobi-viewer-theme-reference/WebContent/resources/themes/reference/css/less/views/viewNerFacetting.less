@@ -46,7 +46,13 @@
         .page-tag {
             &.empty {}
             &.person {
-                color: @personColor;
+				.mx-dark-mode-rules ({
+					color: @lk-general;
+				});
+				.mx-light-mode-rules ({
+					color: @personColor;
+				});
+
             }
             &.location {
                 color: @locationColor;
@@ -62,6 +68,7 @@
                 div {}
                 .page-number {
                     a {
+						color: @lk-general;
                         &:hover,
                         &:active,
                         &:focus {}
