@@ -51,7 +51,14 @@
         li {
             a {
                 &:hover {}
-                &[data-type="person"] {}
+                &[data-type="person"] {
+				.mx-dark-mode-rules ({
+					color: @lk-general;
+				});
+				.mx-light-mode-rules ({
+					color: @personColor;
+				});
+			}
                 &[data-type="location"] {}
                 &[data-type="corporation"] {}
             }
@@ -100,7 +107,14 @@
                     .page-tag {
                         &:hover {}
                         &.empty {}
-                        &.person {}
+                        &.person {
+							.mx-dark-mode-rules ({
+								color: @lk-general;
+							});
+							.mx-light-mode-rules ({
+								color: @personColor;
+							});
+			            }
                         &.location {}
                         &.corporation {}
                     }
