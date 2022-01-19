@@ -13,6 +13,7 @@
 	&__mv-element {
 		background-color: @bg-content-box;
 	    padding: 10px 0;
+		border: @border;
 	    transition: all 0s linear;
 	    &:hover {
 			.mx-dark-mode-rules ({
@@ -29,6 +30,9 @@
 		}
 		a {}
 		.row {}
+		&:last-child {
+			border-bottom: @border;
+		}
 	}
 	&__mv-element-title {}
 	&__mv-element-link {}
