@@ -27,13 +27,13 @@
                 }
                 	a {
 	                	&.active {
-						background: @bg-hover;
-					}
+							background: @bg-hover;
 						}
+					}
             }
         }
         .tab-content {
-			background: @bg-general;
+			background: @bg-content-box;
             .tab-pane {
                 &.active {}
                 h4 {}                
@@ -66,7 +66,12 @@
         .page-tag {
             &.empty {}
             &.person {
-                color: @personColor;
+				.mx-dark-mode-rules ({
+					color: @lk-general;
+				});
+				.mx-light-mode-rules ({
+					color: @personColor;
+				});
             }
             &.location {
                 color: @locationColor;
@@ -83,9 +88,12 @@
                 div {}
                 .page-number {
                     a {
+						color: @lk-general;
                         &:hover,
                         &:active,
-                        &:focus {}
+                        &:focus {
+							color: @lh-general;
+						}
                     }
                 }
                 .tag-container {
