@@ -3,7 +3,7 @@
    style declarations for widget_nerFacetting.xhtml
    ==============================================================*/
 #widgetNerFacetting {
-    border: 1px solid @middlegray;
+    border: @border;
     h3 {
         margin: 0;
         padding: .7rem 1.5rem;
@@ -15,20 +15,25 @@
     }
     .facetting-content {
         .nav-tabs {
+		border-bottom: @border;
             li {
                 a {
+					background: @bg-content-box;
                     border: none;
                     border-radius: 0;
                     border-bottom: 1px solid @middlegray;
                     .fa {}
                     .glyphicon {}
                 }
-                &.active {
-                    a {}
-                }
+                	a {
+	                	&.active {
+							background: @bg-hover;
+						}
+					}
             }
         }
         .tab-content {
+			background: @bg-content-box;
             .tab-pane {
                 &.active {}
                 h4 {}                
@@ -46,7 +51,14 @@
         li {
             a {
                 &:hover {}
-                &[data-type="person"] {}
+                &[data-type="person"] {
+				.mx-dark-mode-rules ({
+					color: @lk-general;
+				});
+				.mx-light-mode-rules ({
+					color: @personColor;
+				});
+			}
                 &[data-type="location"] {}
                 &[data-type="corporation"] {}
             }
@@ -61,7 +73,12 @@
         .page-tag {
             &.empty {}
             &.person {
-                color: @personColor;
+				.mx-dark-mode-rules ({
+					color: @lk-general;
+				});
+				.mx-light-mode-rules ({
+					color: @personColor;
+				});
             }
             &.location {
                 color: @locationColor;
@@ -78,16 +95,26 @@
                 div {}
                 .page-number {
                     a {
+						color: @lk-general;
                         &:hover,
                         &:active,
-                        &:focus {}
+                        &:focus {
+							color: @lh-general;
+						}
                     }
                 }
                 .tag-container {
                     .page-tag {
                         &:hover {}
                         &.empty {}
-                        &.person {}
+                        &.person {
+							.mx-dark-mode-rules ({
+								color: @lk-general;
+							});
+							.mx-light-mode-rules ({
+								color: @personColor;
+							});
+			            }
                         &.location {}
                         &.corporation {}
                     }
