@@ -26,13 +26,11 @@
 				<div class="page-header__inner">
 					<!-- PAGE HEADER BOTTOM LOGO -->
 					<div class="page-header__logo">
-						<h1>
-							<a href="#{request.contextPath}/"> <img
-								src="#{adminThemesBean.getLogo(&quot;/images/template/goobi_logo.svg&quot;, 80, 53)}"
-								alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
-								<span class="page-header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
-							</a>
-						</h1>
+					  <a href="#{request.contextPath}/"> <img
+						  src="#{adminThemesBean.getLogo(&quot;/images/template/goobi_logo.svg&quot;, 80, 53)}"
+						  alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
+						<span class="page-header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
+					  </a>
 					</div>
 
 					<!-- PAGE HEADER TOP ACTIONS -->
@@ -325,7 +323,7 @@
 	<div class="support-overlay">
 		<div class="support-overlay__box">
 			<header class="support-overlay__box-header">
-				<h3>#{msg.ie11_heading}</h3>
+				<h2>#{msg.ie11_heading}</h2>
 			</header>
 			<section class="support-overlay__box-body">
 				<h:outputText value="#{msg.ie11_text}" escape="false" />
