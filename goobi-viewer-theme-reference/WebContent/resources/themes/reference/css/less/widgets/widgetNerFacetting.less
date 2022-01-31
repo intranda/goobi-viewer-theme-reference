@@ -69,6 +69,7 @@
 /* OVERVIEW */
 #overview {
     .current-tags {
+		background: @bg-hover;
         &:before {}
         .page-tag {
             &.empty {}
@@ -117,6 +118,9 @@
 			            }
                         &.location {}
                         &.corporation {}
+						&:hover {
+							background: @bg-hover;
+						}
                     }
                 }
             }
