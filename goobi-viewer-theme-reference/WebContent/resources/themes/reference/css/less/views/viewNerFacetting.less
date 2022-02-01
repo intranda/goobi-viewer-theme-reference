@@ -66,6 +66,7 @@
 #nerFacetting #overview {
 	border: @border;
     .current-tags {
+		background: @bg-hover;
         &:before {}
         .page-tag {
             &.empty {}
@@ -99,7 +100,9 @@
                 }
                 .tag-container {
                     .page-tag {
-                        &:hover {}
+                        &:hover {
+							background-color: @bg-hover;
+						}
                         &.empty {}
                         &.person {}
                         &.location {}
