@@ -4,78 +4,95 @@
    ==============================================================*/
 /* WIDGETS */
 .widget {
-    h3 {
-    	margin-top: 0;
-    	margin-bottom: 0;
-    	padding: .7rem 1.5rem;
-    	font-size: @fontNormal;
-    	font-weight: 400;
-    	color: @white;
-    	background-color: @ci-color1;
+  h2,
+  h1,
+  .h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.7rem 1.5rem;
+    font-size: @fontNormal;
+    font-weight: 400;
+    color: @white;
+    background-color: @ci-color1;
+  }
+  ul {
+  }
+  li {
+    &.active {
+      a {
+        font-weight: 600;
+        color: @lh-content-box;
+      }
     }
-    ul {}
-    li {
-    	&.active {
-    		a {
-    			font-weight: 600;
-	    		color: @lh-content-box;
-    		}
-    	}
-    	&.unpublished {
-    		a {}
-    	}
+    &.unpublished {
+      a {
+      }
     }
-	// CHECK IF STILL NEEDED
-    a:not(.widget-geofacetting__body a, .widget-geomap a, .widget-usage .badge, .widget-archives a, .widget-related-groups a, h3 a, .widget-record-notes a, .widget-annotations a) {
-      	color: @lk-content-box;
-    	display: block;
-    	line-height: 1.2;
-    	padding: .5rem 0;
-    	&:hover,
-    	&:active,
-    	&:focus {
-    		color: @lh-content-box;
-    	}
+  }
+  // CHECK IF STILL NEEDED
+  a:not(.widget-geofacetting__body a, .widget-geomap a, .widget-usage
+      .badge, .widget-archives a, .widget-related-groups a, h2
+      a, .widget-record-notes a, .widget-annotations a) {
+    color: @lk-content-box;
+    display: block;
+    line-height: 1.2;
+    padding: 0.5rem 0;
+    &:hover,
+    &:active,
+    &:focus {
+      color: @lh-content-box;
     }
-    dl {}
-    dt,
-    dd {}
-    dt {}
-    dd {}
-    &__title {
-    	.fa {
-    		font-size: @fontMedium;
-    	}
-    	&.collapseable {
-    		.fa {}
-	    	&.in {
-	    		.fa-angle-down {}
-	    	}
-    	}
+  }
+  dl {
+  }
+  dt,
+  dd {
+  }
+  dt {
+  }
+  dd {
+  }
+  &__title {
+    .fa {
+      font-size: @fontMedium;
     }
-    &__body {
-    	&.collapseable {}
+    &.collapseable {
+      .fa {
+      }
+      &.in {
+        .fa-angle-down {
+        }
+      }
     }
-    /* MODIFICATION */
-    ul,
-    dl,
-    &__body {
-    	padding: 1rem 1.5rem;
-    	border: @border;
-    	border-top: 0;
-      background-color: @bg-content-box;
-    	border-bottom: @border;
+  }
+  &__body {
+    &.collapseable {
     }
+  }
+  /* MODIFICATION */
+  ul,
+  dl,
+  &__body {
+    padding: 1rem 1.5rem;
+    border: @border;
+    border-top: 0;
+    background-color: @bg-content-box;
+    border-bottom: @border;
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -7,8 +7,8 @@
    ==============================================================*/
 /* TAGS */
 #tags {
-	h2 {
-		& + h3 {
+	h1 {
+		& + h2 {
 			margin-bottom: 0;
 			border: @border;
 			border-bottom: 0;
@@ -28,7 +28,7 @@
 	&:last-child {
 		border-bottom: @border;
 	}
-	& + h3 {
+	& + h2 {
 		margin-bottom: 0;
 		padding: 10px;
 		border: @border;
@@ -44,7 +44,7 @@
 }
 
 #tags {
-	h3 {
+	h2 {
 		padding: 2rem;
 	}
 }
@@ -52,14 +52,14 @@
 .tpl-tags {
     /* ELEMENT */
     &__content {
-    	h2 {}
+    	h1 {}
     }
     &__text,
     #tagcloudWrapper {
     	padding: 10px;
     	border: @border;
     	background-color: @bg-content-box;
-    	& + h3 {
+    	& + h2 {
     		margin-bottom: 0;
 	    	padding: 10px;
 	    	border: @border;

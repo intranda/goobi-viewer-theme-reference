@@ -3,20 +3,38 @@
    style declarations for viewNerFacetting.xhtml
    ==============================================================*/
 #nerFacetting {
-    h3 {}
+    h2 {}
     .facetting-content {
         .nav-tabs {
+			border-bottom: @border;
             li {
                 a {
+					border: @border;
+					.mx-dark-mode-rules ({
+						background: @bg-content-box;
+					});
+					.mx-light-mode-rules ({
+						background: @bg-hover;
+					});
                     .fa {}
                     .glyphicon {}
                 }
+				&.active a {
+					color: @fg-general;
+					.mx-dark-mode-rules ({
+						background: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+						background: @white;
+					});
+				}
             }
         }
         .tab-content {
+			background: @bg-content-box;
             .tab-pane {
                 &.active {}
-                h4 {}                
+                h3 {}                
             }
         }
     }
@@ -46,7 +64,9 @@
 
 /* OVERVIEW */
 #nerFacetting #overview {
+	border: @border;
     .current-tags {
+		background: @bg-hover;
         &:before {}
         .page-tag {
             &.empty {}
@@ -80,7 +100,9 @@
                 }
                 .tag-container {
                     .page-tag {
-                        &:hover {}
+                        &:hover {
+							background-color: @bg-hover;
+						}
                         &.empty {}
                         &.person {}
                         &.location {}

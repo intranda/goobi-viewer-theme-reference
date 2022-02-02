@@ -44,6 +44,12 @@
 .custom-control--select {
 	border: @border;
 	background-color: @bg-content-box;
+	.mx-dark-mode-rules ({
+		background: @fg-general;
+	});
+	.mx-light-mode-rules ({
+		background: @white;
+	});
 	&:after {}
 	&:after {}
 	&.multiple {
