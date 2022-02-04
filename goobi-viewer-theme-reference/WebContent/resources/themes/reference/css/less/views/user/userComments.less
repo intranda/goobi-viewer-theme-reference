@@ -2,39 +2,97 @@
    Style declarations for userBackendComments.xhtml
    ==============================================================*/
 /* USER COMMENTS TABLE */
-#userCommentsTable {}
+#userCommentsTable {
+}
 
 .user-comments {
-	&__table {
-	}
-	&__table-title {
-	}
-	&__table-body {}
-	.admin__table-sorting-arrow-hidden {}
-	&__table-title-target,
-	&__table-title-comment,
-	&__table-title-date {
-		&:hover {
-			.admin__table-sorting-arrow-hidden {}
-		}
-	}
-	&__table-entry {
-		&:hover {
-			.user-comments__table-entry-action-link {}
-		}
-	}
-	&__table-entry-label-record {}
-	&__table-entry-action-link {}
+  .admin__table-sorting {
+    &__heading {
+      color: @fg-general;
+    }
+    .fa {
+      color: @fg-general;
+    }
+  }
+
+  &__table {
+  }
+  &__table-title {
+  }
+  &__table-body {
+  }
+
+  .admin__table-sorting-arrow-hidden {
+  }
+  &__table-title-target,
+  &__table-title-comment,
+  &__table-title-date {
+    &:hover {
+      .admin__table-sorting-arrow-hidden {
+      }
+    }
+  }
+  &__table-entry {
+    &:hover {
+      .user-comments__table-entry-action-link {
+      }
+    }
+  }
+  &__table-entry-label {
+    color: @fg-general;
+  }
+  &__table-entry-label-record {
+  }
+  &__table-entry-action-link {
+  }
+  .admin__search-action {
+    background: @bg-content-box;
+    .mx-dark-mode-rules ({
+				border: none;
+			});;
+    .mx-light-mode-rules ({
+				border: 1px solid #ccc;
+			});;
+    &:hover,
+    &:active,
+    &:focus {
+      .btn--icon {
+        .mx-dark-mode-rules ({
+						color: @fg-general;
+					});;
+        .mx-light-mode-rules ({
+						border: @fg-general;
+					});;
+      }
+    }
+  }
+  .data-table-paginator__button {
+    &:hover,
+    &:active,
+    &:focus {
+      color: @fg-general;
+    }
+  }
+  &__edit-comment-button {
+    color: @lk-general;
+    &:hover {
+      color: @lk-general;
+    }
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

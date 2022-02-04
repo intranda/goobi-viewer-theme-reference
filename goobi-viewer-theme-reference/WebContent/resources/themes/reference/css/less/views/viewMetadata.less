@@ -1,6 +1,6 @@
 /* ==============================================================
    View Metadata
-   style declarations for viewMetadata.xhtml 
+   style declarations for viewMetadata.xhtml
    ==============================================================*/
 /* METADATA */
 /* BLOCK */
@@ -18,7 +18,7 @@
 		    }
 		    .fa-bookmark {
 		    }
-		    &.added, 
+		    &.added,
 		    &:hover {
 		        .fa-bookmark-o {
 		        }
@@ -30,14 +30,20 @@
     .fa {
     }
 	&__wrapper {
+		// background-color: @bg-content-box;
 		&.-isBoxed {
-			border: 1px solid @middlegray;
+			border: @border;
+			background-color: @bg-content-box;
+
 			.metadata__ungrouped-wrapper {
 				border: none;
 			}
 			.metadata__element-wrapper-single {
 				border: none;
 			}
+		}
+		a {
+			color: @lk-content-box;
 		}
 	}
 	/* ELEMENTS / EVENTS */
@@ -83,9 +89,9 @@
         &-level-1 {}
         &-level-2 {}
 	}
-	&__elements-h3 {}
+	&__elements-h2 {}
 	&__element-wrapper-single {
-		border: 1px solid @middlegray;
+		border: @border;
 		dt {
 		}
 	}
@@ -106,20 +112,23 @@
 	}
 	&__event-value {}
 	&__grouped-wrapper {
-		border: 1px solid @middlegray;
+		background-color: @bg-content-box;
+		border: @border;
 		dt, dd {
 		}
 		.metadata__element-wrapper {
+			background-color: @bg-content-box;
 		}
 	}
 	&__ungrouped-wrapper {
-		border: 1px solid @middlegray;
+		border: @border;
 	}
 	&__element-ungrouped {
 		dt {
 		}
 	}
 	&__heading {
+		background-color: @bg-content-box;
 		&.level-1,
 		&.level-2 {
 			&:before {

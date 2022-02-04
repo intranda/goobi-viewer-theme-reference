@@ -5,15 +5,25 @@
 /* BROWSE */
 /* BLOCK */
 .collections {
+	a {
+		color: @lk-content-box;
+	}
+	border-top: none;
 	/* ELEMENT */
 	&__wrapper {
-		background-color: @white;
+		background-color: @bg-content-box;
 	}
 }
 .collection {
+	border: @border;
+	border-top: 0;
 	/* ELEMENT */
 	.row {}
-	&__item {}
+	&__item {
+		border-top: @border;
+
+
+	}
 	&__structure,
 	&__title,
 	&__description-toggle,
@@ -29,7 +39,7 @@
 	   .fa {
             padding: 2px 3px;
             font-size: @fontSmall;
-            border: 1px solid @middlegray;
+            border: @border;
         }
 	}
 	&__rss {

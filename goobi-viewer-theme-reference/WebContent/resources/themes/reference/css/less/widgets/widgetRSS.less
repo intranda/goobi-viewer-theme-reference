@@ -3,59 +3,65 @@
    style declarations for rssFeed.xhtml
    ==============================================================*/
 .rss_elem_wrapp {
-    h3 {
-    	display: flex;
-    	align-items: center;
-    	justify-content: space-between;
-        a {
-        	float: none;
-        	padding: 0;
-        }
+  h2,
+  h1,
+  .h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      float: none;
+      padding: 0;
     }
-    .rss-wrapp {
-    	padding: 1rem 1.5rem;
-    	border: 1px solid @middlegray;
-    	border-top: 0;
-    	background-color: @white;
-        .rss-elem {
-            dl {
-            	padding: 0;
-            	border: 0;
-                .rss-elem-title {
-                	font-weight: 400;
-                    a {
-                        &:hover {}
-                    }
-                }
-                .rss-elem-info {
-                	line-height: 1.1;
-                	margin-bottom: .5rem;
-                	padding-bottom: 1rem;
-                	border-bottom: 1px solid @middlegray;
-                }
+  }
+  .rss-wrapp {
+    padding: 1rem 1.5rem;
+    border: @border;
+    border-top: 0;
+    background-color: @bg-content-box;
+    .rss-elem {
+      dl {
+        padding: 0;
+        border: 0;
+        .rss-elem-title {
+          font-weight: 400;
+          a {
+            &:hover {
             }
-            &:last-child {
-	            dl {
-	                .rss-elem-info {
-	                	margin-bottom: .5rem;
-	                	padding-bottom: 0;
-	                	border: 0;
-	                }
-	            }
-            	
-            }
+          }
         }
+        .rss-elem-info {
+          line-height: 1.1;
+          margin-bottom: 0.5rem;
+          padding-bottom: 1rem;
+          border-bottom: @border;
+        }
+      }
+      &:last-child {
+        dl {
+          .rss-elem-info {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0;
+            border: 0;
+          }
+        }
+      }
     }
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

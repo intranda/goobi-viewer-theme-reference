@@ -3,20 +3,38 @@
    style declarations for viewNerFacetting.xhtml
    ==============================================================*/
 #nerFacetting {
-    h3 {}
+    h2 {}
     .facetting-content {
         .nav-tabs {
+			border-bottom: @border;
             li {
                 a {
+					border: @border;
+					.mx-dark-mode-rules ({
+						background: @bg-content-box;
+					});
+					.mx-light-mode-rules ({
+						background: @bg-hover;
+					});
                     .fa {}
                     .glyphicon {}
                 }
+				&.active a {
+					color: @fg-general;
+					.mx-dark-mode-rules ({
+						background: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+						background: @white;
+					});
+				}
             }
         }
         .tab-content {
+			background: @bg-content-box;
             .tab-pane {
                 &.active {}
-                h4 {}                
+                h3 {}                
             }
         }
     }
@@ -39,14 +57,26 @@
     }
 }
 
+// LOADER STYLES
+#nerFacettingLoader {
+	background-color: @bg-general;
+}
+
 /* OVERVIEW */
 #nerFacetting #overview {
+	border: @border;
     .current-tags {
+		background: @bg-hover;
         &:before {}
         .page-tag {
             &.empty {}
             &.person {
-                color: @personColor;
+				.mx-dark-mode-rules ({
+					color: @lk-general;
+				});
+				.mx-light-mode-rules ({
+					color: @personColor;
+				});
             }
             &.location {
                 color: @locationColor;
@@ -62,6 +92,7 @@
                 div {}
                 .page-number {
                     a {
+						color: @lk-general;
                         &:hover,
                         &:active,
                         &:focus {}
@@ -69,7 +100,9 @@
                 }
                 .tag-container {
                     .page-tag {
-                        &:hover {}
+                        &:hover {
+							background-color: @bg-hover;
+						}
                         &.empty {}
                         &.person {}
                         &.location {}

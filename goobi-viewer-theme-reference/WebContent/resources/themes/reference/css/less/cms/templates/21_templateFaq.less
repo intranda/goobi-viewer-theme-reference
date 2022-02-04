@@ -9,11 +9,25 @@
 	h1 {}
 	&__description,
 	&__list {
+		background-color: @bg-content-box;
+		border: @border;
 	}
 	&__description {
 	}
 	&__list {
-		.card {}
+		.card {
+			background-color: @bg-general;
+			h2 a, a::before {
+				color: @fg-general;
+				&:focus,
+				&:hover,
+				&:active {
+					color: @fg-general;
+				}
+
+			}
+
+		}
 		.card-heading {
 			&:hover {}
 		}
@@ -21,7 +35,9 @@
 			a {
 				&:hover,
 				&:active,
-				&:focus {}
+				&:focus {
+					color: @fg-general;
+				}
 				.fa {}
 				.fa-chevron-down {}
 				.fa-chevron-up {}
@@ -32,8 +48,10 @@
 			}
 		}
 		.card-body {
+			background-color: @bg-content-box;
 			.tpl-faq-single {
 				&__content {
+					background-color: @bg-content-box;
 					padding: 0;
 					border: none;
 				}

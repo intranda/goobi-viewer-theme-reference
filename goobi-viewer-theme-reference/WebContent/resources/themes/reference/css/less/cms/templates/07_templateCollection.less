@@ -6,10 +6,22 @@
 /* BLOCK */
 .tpl-collection {
     /* ELEMENT */
+    .collection {
+      border: @border;
+      border-top: 0;
+    }
     &__text,
     &__wrapper {}
     &__text {}
     &__wrapper {}
+
+    .crowdsourcing-campaigns-overview {
+        &__campaign {
+            background-color: @bg-content-box;
+            border: @border;
+
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

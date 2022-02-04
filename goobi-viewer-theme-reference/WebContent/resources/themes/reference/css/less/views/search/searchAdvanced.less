@@ -1,13 +1,14 @@
 /* ==============================================================
    Search Advanced
-   style declarations for searchAdvanced.xhtml 
+   style declarations for searchAdvanced.xhtml
    ==============================================================*/
 /* SAERCH ADVANCED */
 /* BLOCK */
 .search-advanced {
     /* ELEMENT */
     &__group {
-    	background-color: @white;
+    	background-color: @bg-content-box;
+      border: @border;
         span.remove {}
         .remove {
         	&:hover {
@@ -25,11 +26,22 @@
             	& + .input-group-addon {}
             }
         }
-        .input-group-addon {
-            a {
+        .input-group-append {
+			margin-left: 0;
+			.mx-dark-mode-rules ({
+				background: @fg-general;
+				color: @black;
+			});
+			.mx-light-mode-rules ({
+				background: @white;
+			});
+            button {
+				color: @black;
                 &:hover,
                 &:focus,
-                &:active {}
+                &:active {
+					color: @black;
+				}
             }
         }
         .custom-control--select {
@@ -39,9 +51,10 @@
         select {}
         button {}
         .row .col-sm-1 {}
-    }
+	}
     &__input-col {
         a {
+			color: @fg-general;
             &:hover,
             &:focus,
             &:active {}
@@ -57,10 +70,24 @@
         }
     }
     &__action {
-        .btn {}
-    } 
+        .btn--default {
+			.mx-dark-mode-rules ({
+				background: @fg-general;
+			});
+			.mx-light-mode-rules ({
+				background: #f7f7f7;
+			});
+		}
+    }
+	&__additional-wrapper {
+		color: @fg-general;
+		.mx-dark-mode-rules ({
+		});
+		.mx-light-mode-rules ({
+		});
+	}
 }
-/* MODIFICATION */    
+/* MODIFICATION */
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

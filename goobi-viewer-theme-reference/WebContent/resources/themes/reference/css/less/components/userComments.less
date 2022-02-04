@@ -5,34 +5,67 @@
 /* USER COMMENTS */
 /* BLOCK */
 .user-comments {
+	&__table {
+		background: @bg-content-box;
+		border: @border;
+	}
+	&__table-entry {
+		&:hover {
+			background: @bg-hover;
+		}
+	}
 	/* ELEMENT */
 	&__message-login {
 		padding-top: 0;
 		text-align: left;
+		border: @border;
 		border-top: 0;
-		background-color: @white;
-		h3 {
+		background-color: @bg-content-box;
+		h2 {
 			margin-left: -16px;
 			margin-right: -16px;
 			padding-bottom: 1.3125rem;
 			padding-left: 1px;
-			border-bottom: 1px solid @middlegray;
-			background-color: @neutralgray;
+			border-bottom: @border;
+			background-color: @bg-general;
 		}
-		.btn {}
+		.btn {
+			.mx-light-mode-rules ({
+				color: @ci-color1;
+			});
+			.mx-dark-mode-rules ({
+				color: @fg-general;
+			});
+		}
 	}
-	&__comment {}
+	&__comment {
+		border: @border;
+	}
 	&__comment-image {
-		img {}
+		img {
+			border: @border;
+		}
 	}
 	&__comment-metadata {
+		color: @fg-general;
 		span {}
 		&-creator {}
 		&-date {}
 	}
+	&__comment-info {
+		.mx-dark-mode-rules ({
+			color: @fg-general;
+		});
+		.mx-light-mode-rules ({
+			color: rgb(33, 37, 41);
+		});
+
+		background: @bg-content-box;
+	}
 	&__comment-content {
-		background-color: @white;
+		background-color: @bg-content-box;
 		&-options {
+			background-color: @bg-content-box;
 			border-bottom: 0;
 			span {}
 			a, button {
@@ -71,18 +104,21 @@
 			}
 		}
 		&-add {
+				border: @border;
+				background-color: @bg-content-box;
 			textarea {
+				border: @border;
 				&:focus {}
 			}
 		}
 		&-submit {
 			.btn {}
 		}
-	}	
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}
