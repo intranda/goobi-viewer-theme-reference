@@ -110,7 +110,8 @@ $( document ).ready( function() {
     };
 	
 	viewerJS.init( viewerConfig );
-    //Initialize sticky elements for admin pages
+	
+    //Initialize sticky elements for frontend sidebar
     viewerJS.stickyElements.init({initFrontend:true});
 	
 	 // hide sidebar toggle button if sidebar empty
