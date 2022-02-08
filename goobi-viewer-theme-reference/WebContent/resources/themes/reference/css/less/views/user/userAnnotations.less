@@ -42,6 +42,9 @@
 		background: @bg-content-box;
 	}
 	&__table-title {}
+	.admin__table-sorting .fa {
+		color: @fg-general;
+	}
 	&__table-body {}
 	.admin__table-sorting-arrow-hidden {}
 	&__table-title-target,
@@ -61,6 +64,30 @@
 	}
 	&__table-entry-label-record {}
 	&__table-entry-action-link {}
+}
+
+// NEEDS TO BE REWORKED
+#campaignAnnotations {
+	.admin__search-action {
+		background: @bg-content-box;
+		border: @border;
+	}
+	.admin__table-content {
+		border: @border;
+		background: @bg-content-box;
+	}
+	.admin__table-title {
+		background: @bg-content-box;
+	}
+	.admin__table-sorting .fa {
+		color: @fg-general;
+	}
+	.admin__table-entry {
+		&:hover {
+			background: @bg-hover;
+		}
+
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
