@@ -75,32 +75,6 @@ function initSliders() {
 }
 initSliders();
 
-
-/**
- * Method to set the content height to a min-height, equal to the viewport height.
- */
-//function setContentHeight() {
-//    // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
-//    // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
-//    // var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
-//  
-//    var pageHeaderHeight = $('.page-header__spacer').outerHeight();
-//    var pageWrapperHeight = $( '#pageContent' ).outerHeight();
-//    var pageFooterHeight = $( '#pageFooter' ).outerHeight();
-//    var pageWrapper = $( '#pageContent' );
-//
-//    // var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
-//    var additionalHeight = pageHeaderHeight + pageWrapperHeight + pageFooterHeight;
-//    var windowHeight = $( window ).outerHeight();
-//    var diff = windowHeight - additionalHeight;
-//    
-//    if ( additionalHeight < windowHeight ) {
-//        pageWrapper.css( 'min-height', ( pageWrapperHeight + diff ) + 'px' );
-//    }
-//}
-
-
-
 $( document ).ready( function() {
     var viewerConfig = {
         currentPage: currentPage,
@@ -226,16 +200,12 @@ $( document ).ready( function() {
     	$('.page-header__mobile-sidebar-trigger').toggleClass('-opened')
     } );
 
-	 // hide sidebar toggle button if sidebar empty
-	 $( document ).ready( function() {
-		 
-	 	if ( $('.page-content__sidebar .widget' ).length === 0)
-	 	{
-	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
-	 	}
-	 	
-	 } );
-
+	// Hide open sidebar button if sidebar is completely empty
+	if ($('#sidebar').length ) {
+		if($.trim($('#sidebar').html())==''){
+			$('[data-open="sidebar"]').hide()
+		}
+	}
 
     // do things on JSF AJAX event
     if (typeof jsf !== 'undefined') {
