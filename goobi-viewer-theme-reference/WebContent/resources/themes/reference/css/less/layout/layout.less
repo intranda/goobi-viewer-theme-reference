@@ -519,33 +519,32 @@
 }
 
 .page-navigation {
-  background: @ci-color1;
-  position: relative;
-  position: sticky;
-  top: 50px;
-  z-index: 2010;
-  &__wrapper {
-  }
-  &__mobile {
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s ease;
-    #pageNavigationMobile {
-      height: calc(~"100% - (50px + 30px + 30px)");
-      position: relative;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      overflow: auto;
-      padding: 0;
-      margin-top: 8rem;
+	background: @ci-color1;
+	position: relative;
+	position: sticky;
+	top: 50px;
+	z-index: 2010;
+	&__wrapper {}
+	&__mobile {
+		opacity: 0;
+		z-index: -1;
+		pointer-events: none;
+		background: transparent;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	transition: all 0.2s ease;
+	#pageNavigationMobile {
+		height: calc(~"100% - (50px + 30px + 30px)");
+		position: relative;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		overflow: auto;
+		padding: 0;
+		margin-top: 8rem;
     }
     &.-mobileMenuOpen {
       z-index: 998;
@@ -557,7 +556,7 @@
   &__mobile-languages-wrapper {
     margin-top: 2.5rem;
   }
-  &__mobile-languages-trigger {
+	&__mobile-languages-trigger {
     display: flex;
     align-items: center;
     color: @white;
@@ -565,12 +564,12 @@
     font-size: 1.6rem;
     cursor: pointer;
     button {
-      color: @white;
-      font-size: 1.6rem;
-      &:hover,
-      &:active,
-      &:focus {
-        color: @white;
+    	color: @white;
+    	font-size: 1.6rem;
+		&:hover,
+		&:active,
+		&:focus {
+		color: @white;
       }
     }
     .fa {
@@ -963,8 +962,6 @@
       align-items: center;
     }
     &__logo {
-      h1 {
-        max-width: 6rem;
         span {
           display: none;
         }
@@ -972,7 +969,6 @@
           max-width: 100%;
           margin-right: 0.2rem;
         }
-      }
     }
   }
 

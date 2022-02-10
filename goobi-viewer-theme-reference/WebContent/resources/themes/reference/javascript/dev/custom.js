@@ -112,7 +112,7 @@ $( document ).ready( function() {
 	viewerJS.init( viewerConfig );
 	
     //Initialize sticky elements for frontend sidebar
-    viewerJS.stickyElements.init({initFrontend:true});
+     viewerJS.stickyElements.init({initFrontend:true});
 	
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
