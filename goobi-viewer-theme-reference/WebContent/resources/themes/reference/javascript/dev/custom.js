@@ -85,8 +85,12 @@ $( document ).ready( function() {
 	
 	viewerJS.init( viewerConfig );
 	
-    //Initialize sticky elements for frontend sidebar
-     viewerJS.stickyElements.init({initFrontend:true});
+	// Check if sidebar should be sticky, then activate sticky frontend functions
+    // Initialize sticky elements for frontend sidebar
+	if ($('[data-target="sticky-sidebar"]').length ) {
+	     viewerJS.stickyElements.init({initFrontend:true});
+	}
+
 	
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
