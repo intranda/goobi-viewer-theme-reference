@@ -79,9 +79,6 @@
       <!-- COinS -->
       <span class="Z3988" title="#{activeDocumentBean.viewManager.contextObject}"></span>
 
-	<!-- COOKIE BANNER -->
-    <ui:include src="/resources/includes/cookieBanner.xhtml" />
-
       <!-- MESSAGES -->
       <div class="messages">
 				<h:messages id="messages" infoClass="alert alert-success" errorClass="alert alert-danger" />
@@ -95,11 +92,6 @@
       <!-- CUSTOM JAVASCRIPT -->
       <ui:include src="includes/customJS.xhtml" />
     </f:view>
-
-    <!-- PIWIK -->
-    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
-        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-    </ui:fragment>
 
   </h:body>
 </html>
