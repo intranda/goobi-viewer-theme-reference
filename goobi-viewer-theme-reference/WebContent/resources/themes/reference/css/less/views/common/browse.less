@@ -5,9 +5,15 @@
 /* BROWSE */
 /* BLOCK */
 .collections {
-	a {
+	a, button {
 		color: @lk-content-box;
+		&:focus,
+		&:hover,
+		&:active {
+		color: @lk-content-box;
+		}
 	}
+
 	border-top: none;
 	/* ELEMENT */
 	&__wrapper {
@@ -28,7 +34,7 @@
 	&__title,
 	&__description-toggle,
 	&__rss {
-		a {}
+		a, button {}
 	}
 	&__structure {}
 	&__title {}
