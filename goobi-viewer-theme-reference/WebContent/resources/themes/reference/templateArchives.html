@@ -75,6 +75,14 @@
         <!-- CUSTOM JAVASCRIPT -->
         <ui:include src="includes/customJS.xhtml" />
       </f:view>
+      
+	<!-- COOKIE BANNER -->
+    <ui:include src="/resources/includes/cookieBanner.xhtml" />
+      <!-- PIWIK -->
+    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
+        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
+    </ui:fragment>
+      
     </h:panelGroup>
   </h:body>
 </html>
