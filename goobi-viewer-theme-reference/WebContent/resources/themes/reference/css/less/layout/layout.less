@@ -273,10 +273,18 @@
     .widget-searchfield {
       margin-bottom: 0;
       width: 100%;
-      .input-group {
-        flex-direction: row-reverse;
-      }
+		.input-group {
+			&:before {
+				content: "\f002";
+				font-family: FontAwesome;
+				display: flex;
+				align-items: center;
+				font-size: 24px;
+				color: @ci-color1;
+		}
+	}
       .form-control {
+		margin: 0 1.5rem;
         background: transparent;
         border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -294,7 +302,6 @@
       .input-group-addon {
         background: transparent;
         border: none;
-        margin-right: 2rem;
         margin-left: 5rem;
         button {
           i {
@@ -792,9 +799,6 @@
     transition: all 0.2s ease;
     &__search-box {
       &.-searchOn {
-        .widget-searchfield {
-          width: 80%;
-        }
         .input-group-addon {
           margin-left: 0;
         }
@@ -860,11 +864,6 @@
     }
     &__search-box {
       .widget-searchfield {
-      }
-      &.-searchOn {
-        .widget-searchfield {
-          width: 85%;
-        }
       }
     }
     &__mobile-burger-menu {
