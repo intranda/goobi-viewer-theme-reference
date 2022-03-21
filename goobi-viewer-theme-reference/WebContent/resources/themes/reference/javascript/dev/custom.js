@@ -95,7 +95,7 @@ $( document ).ready( function() {
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
 	 	if ( $('.page-content__sidebar .widget' ).length === 0) { 
-			$( '[data-open="sidebar"]' ).fadeOut('fast');
+			$( '[data-open="sidebar"]' ).fadeIn('fast');
 	 	}
 	 } );
 	
