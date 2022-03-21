@@ -94,12 +94,9 @@ $( document ).ready( function() {
 	
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
-		 
-	 	if ( $('.page-content__sidebar .widget' ).length === 0)
-	 	{
-	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
+	 	if ( $('.page-content__sidebar .widget' ).length === 0) { 
+			$( '[data-open="sidebar"]' ).fadeOut('fast');
 	 	}
-	 	
 	 } );
 	
 	// shrink header on scroll
