@@ -53,9 +53,15 @@
 /* FORMS */
 .form-control {
 	.mx-dark-mode-rules ({
+		&:disabled {
+			background: #e9ecef;
+		}
 		background: @fg-general;
 	});
 	.mx-light-mode-rules ({
+		&:disabled {
+			background: #e9ecef;
+		}
 		background: @white;
 	});
     &:focus {}
