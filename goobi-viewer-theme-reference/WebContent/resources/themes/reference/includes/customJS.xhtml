@@ -48,6 +48,10 @@
     	
     	// init cms module functions
     	cmsJS.modules.init();
+    	
+        viewerJS.thumbnailLoader = new viewerJS.loadThumbnails("#{request.contextPath}#{navigationHelper.getResource('images/image_not_found.png')}",
+               					"#{request.contextPath}#{navigationHelper.getResource('images/thumbnail_access_denied.jpg')}");
+
     
     </script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js?${navigationHelper.buildVersion}"></script>
