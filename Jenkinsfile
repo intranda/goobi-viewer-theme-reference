@@ -62,9 +62,11 @@ pipeline {
       steps{
         script {
           dockerimage.inside {
-            sh 'test -d /usr/local/tomcat/webapps/viewer && echo "/usr/local/tomcat/webapps/viewer missing or no directory"'
-            sh 'test -d /opt/digiverso/viewer || echo "/opt/digiverso/viewer missing or no directory"'
-            sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || echo "/usr/local/tomcat/conf/viewer.xml.template missing"'
+            sh 'test -d /usr/local/tomcat/webapps/viewer || ( echo "/usr/local/tomcat/webapps/viewer missing or no directory"; exit 1 )'
+            sh 'test -d /opt/digiverso/viewer || ( echo "/opt/digiverso/viewer missing or no directory"; exit 1 )'
+            sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || ( echo "/usr/local/tomcat/conf/viewer.xml.template missing"; exit 1 )'
+            sh 'test -f /usr/local/tomcat/conf/server.xml.template || ( echo "/usr/local/tomcat/conf/server.xml.template missing"; exit 1 )'
+            sh 'test -f /usr/local/tomcat/conf/context.xml.template || ( echo "/usr/local/tomcat/conf/context.xml.template missing"; exit 1 )'
             sh 'envsubst -V'
           }
         }
