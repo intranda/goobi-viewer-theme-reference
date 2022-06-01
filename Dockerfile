@@ -14,6 +14,7 @@ ENV DB_USER viewer
 ENV DB_PASSWORD viewer
 ENV SOLR_URL http://solr:8983/solr/collection1
 ENV VIEWER_DOMAIN localhost
+ENV TOMCAT_SAMESITECOOKIES strict
 
 RUN sed -i 's|main$|main contrib|' /etc/apt/sources.list
 RUN apt-get update && \
