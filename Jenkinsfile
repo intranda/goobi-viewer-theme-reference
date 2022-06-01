@@ -21,7 +21,7 @@ pipeline {
         }
       }
       steps {
-              sh 'mvn -f goobi-viewer-theme-reference/pom.xml clean install'
+              sh 'mvn -f goobi-viewer-theme-reference/pom.xml clean verify'
               recordIssues enabledForFailure: true, aggregatingResults: true, tools: [java(), javaDoc()]
               archiveArtifacts artifacts: '**/target/*.war', fingerprint: true, onlyIfSuccessful: true
       }
