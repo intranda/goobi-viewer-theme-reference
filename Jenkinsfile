@@ -30,7 +30,7 @@ pipeline {
     stage('build docker image with config from master branch') {
       agent any
       when {
-        anyOf { branch 'master'; tag "v*" }
+        tag "v*"
       }
       steps {
         script{
