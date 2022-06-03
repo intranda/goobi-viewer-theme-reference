@@ -159,8 +159,6 @@
 					<!-- SIDEBAR WIDGETS -->
 					<ui:insert name="sidebar" />
 
-					<!-- RSS FEED -->
-					<ui:insert name="rssFeed" />
 				</aside>
 
 			</div>
@@ -318,6 +316,10 @@
 	<viewerComponent:modalUserLogin id="userLoginModal" />
 	<viewerComponent:modalUserTerms id="userTermsModal" />
 	<viewerComponent:modalFeedbackForm id="feedbackModal" />
+	<ui:fragment rendered="#{configurationBean.contentUploadEnabled}">
+		<viewerComponent:modalContentUpload id="contentUploadModal" />
+	</ui:fragment>
+	
 
 
 	<!-- IE 11 NOT SUPPORTED -->

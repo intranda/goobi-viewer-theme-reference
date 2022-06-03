@@ -14,6 +14,7 @@ ENV DB_USER viewer
 ENV DB_PASSWORD viewer
 ENV SOLR_URL http://solr:8983/solr/collection1
 ENV VIEWER_DOMAIN localhost
+ENV TOMCAT_SAMESITECOOKIES strict
 
 RUN sed -i 's|main$|main contrib|' /etc/apt/sources.list
 RUN apt-get update && \
@@ -35,7 +36,7 @@ RUN git clone --branch=${CONFIG_BRANCH} --depth=1 https://github.com/intranda/go
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/run.sh / && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/setenv.sh /usr/local/tomcat/bin/setenv.sh && \
 	patch --output=/usr/local/tomcat/conf/server.xml.template /usr/local/tomcat/conf/server.xml </goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/server.xml.patch && \
-	patch /usr/local/tomcat/conf/context.xml </goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/context.xml.patch && \
+	patch --output=/usr/local/tomcat/conf/context.xml.template /usr/local/tomcat/conf/context.xml </goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/context.xml.patch && \
 	rm -rf /goobi-viewer-core-config
 
 RUN mkdir -p /usr/local/tomcat/conf/Catalina/localhost/ && mkdir -p /usr/local/tomcat/webapps/viewer

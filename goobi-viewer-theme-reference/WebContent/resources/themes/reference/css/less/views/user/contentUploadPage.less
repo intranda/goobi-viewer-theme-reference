@@ -1,0 +1,72 @@
+/* ==============================================================
+   Content User Upload Page
+   ==============================================================*/
+
+.user-content-upload {
+	&__table {
+    	background: @bg-content-box;
+    	border: @border;
+    	margin-bottom: 2rem;
+  	}
+	&__table-title {
+	}
+	&__table-title-status,
+	&__table-title-title,
+	&__table-title-date {
+	}
+	&__table-title-status {
+	}
+	&__table-finished-job-link {
+		color: @fg-general;
+		&:hover {
+		}
+	}
+	&__table-entry {
+	    .mx-dark-mode-rules ({
+//			&:nth-child(2n+1) {
+//					background: @bg-content-box;
+//					&:hover {
+//						background-color: @bg-hover;
+//					}
+//			}
+		});
+	    .mx-light-mode-rules ({
+	
+		});
+    	&:hover {
+			background-color: @bg-hover;
+    	}
+	    &-status {
+	    }
+	    &-label {
+	    }
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+	.user-content-upload {
+		&__table-entry {
+    	.mx-dark-mode-rules ({
+			&:nth-child(2n+1) {
+				background: @bg-hover;
+				&:hover {
+					background-color: @bg-hover;
+				}
+			}
+			});
+		    .mx-light-mode-rules ({
+		
+			});
+	}
+	}
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
