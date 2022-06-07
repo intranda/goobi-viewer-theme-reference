@@ -10,8 +10,9 @@
     &__text,
     .grid {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
+    	border: @border;
+    	background-color: @bg-content-box;
+      color: @fg-content-box;
     }
     &__text {
     	margin-bottom: 0;
@@ -30,14 +31,15 @@
             img {}
         }
     }
+    .grid-sizer {
+    }
     .grid-item {
-    	width: 31.33333333%;
     }
     .grid-item-title,
     .grid-item-caption {}
     .grid-item-title {}
     .grid-item-caption {
-        h3 {}
+        h2 {}
         a {}
         .fa {}
     }
@@ -56,10 +58,4 @@
 @media screen and (max-width: @smallBreakpoint) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {
-	.tpl-masonry {
-	    .grid-item {
-	    	    width: calc(~"100% - 20px");
-	    }
-	}
-}
+@media screen and (max-width: @xSmallBreakpoint) {}

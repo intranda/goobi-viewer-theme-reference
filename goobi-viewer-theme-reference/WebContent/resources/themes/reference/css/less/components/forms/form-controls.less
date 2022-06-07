@@ -4,10 +4,22 @@
    ==============================================================*/
 .custom-control {
     input[type="checkbox"],
-    input[type="radio"] {}
+		input[type="radio"] {
+		}
     &__icon {}
+
+
+    .fa-circle-o,
+		.fa-square-o,
     .fa-check-circle-o,
-    .fa-check-square-o {}	
+		.fa-check-square-o {
+			.mx-light-mode-rules ({
+				color: @ci-color1;
+			});
+			.mx-dark-mode-rules ({
+				color: @fg-general;
+			});
+		}
 }
 
 .custom-control__icon {
@@ -19,7 +31,7 @@
 	input[type="checkbox"] {
 		&:checked ~ .custom-control__icon .fa-square-o {}
 		&:checked ~ .custom-control__icon .fa-check-square-o {}
-		&.disabled ~ .custom-control__icon .fa-square-o, 
+		&.disabled ~ .custom-control__icon .fa-square-o,
 		&.disabled ~ .custom-control__icon .fa-check-square-o {}
 	}
 }
@@ -30,6 +42,14 @@
 	}
 }
 .custom-control--select {
+	border: @border;
+	background-color: @bg-content-box;
+	.mx-dark-mode-rules ({
+		background: @fg-general;
+	});
+	.mx-light-mode-rules ({
+		background: @white;
+	});
 	&:after {}
 	&:after {}
 	&.multiple {
@@ -39,6 +59,12 @@
 	select {
 		font-size: @fontMedium;
 		&.disabled {}
+		.mx-dark-mode-rules ({
+			background: @fg-general;
+		});
+		.mx-light-mode-rules ({
+			background: @white;
+		});
 	}
 	select[disabled="disabled"] {}
 }

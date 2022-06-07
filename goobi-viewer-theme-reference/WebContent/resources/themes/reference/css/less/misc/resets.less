@@ -2,7 +2,43 @@
    Resets for CSS Libs
    ==============================================================*/
  /* BOOTSTRAP */
-.page-header {}
+.popover-header {
+	color: @fg-general;
+	background: @bg-content-box;
+}
+.popover-body {
+	.mx-dark-mode-rules ({
+		a {
+			color: #222;
+			&:hover,
+			&:focus,
+			&:active {
+				color: #222;
+			}
+		}
+	});
+}
+
+
+
+.tooltipp {
+	.mx-dark-mode-rules ({
+		color: #222;
+	});
+	.mx-light-mode-rules ({
+	});
+}
+.admin__form-help-text {
+	.mx-dark-mode-rules ({
+		color: @fg-general;
+		opacity: 0.6;
+	});
+	.mx-light-mode-rules ({
+		color: @fg-general;
+		opacity: 0.6;
+	});
+}
+
 /* TABS */
 .nav-tabs {
 	li {
@@ -16,6 +52,18 @@
 .tab-pane {}
 /* FORMS */
 .form-control {
+	.mx-dark-mode-rules ({
+		&:disabled {
+			background: #e9ecef;
+		}
+		background: @fg-general;
+	});
+	.mx-light-mode-rules ({
+		&:disabled {
+			background: #e9ecef;
+		}
+		background: @white;
+	});
     &:focus {}
 }
 .form-horizontal {
@@ -27,7 +75,23 @@
 }
 /* MODALS */
 .modal {
+	color: rgb(33, 37, 41);
 	z-index: 9999;
+
+	h1, h2, h3, h4, h5 {
+		color: rgb(33, 37, 41);
+	}
+	.custom-control--select {
+		border: 1px solid #ccc;
+		background: @white;
+	}
+	.btn.btn--clean {
+		color: rgb(33, 37, 41);
+	}
+	.btn.btn--full {
+		background: @ciColor1;
+		border-color: @ciColor1;
+	}
 }
 
 .modal.fade .modal-dialog {}
@@ -50,6 +114,14 @@
 	.modal-dialog {}
 }
 
+.data-table-paginator__button {
+	.mx-dark-mode-rules ({
+		background-color: @bg-general;
+	});
+	.mx-light-mode-rules ({
+		background-color: @bg-general;;
+	});
+}
 
 // TEMPORARY IMPLEMENTATION FOR SLIDER (SWIPER PAGINATION)
 .swiper-pagination-bullets {
@@ -60,10 +132,8 @@
 	background: @ci-color1;
 }
 
-
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

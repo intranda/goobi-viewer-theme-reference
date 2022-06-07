@@ -9,13 +9,16 @@
     /* ELEMENT */
     &__image {
     	img {}
-    	h2 {}
+			h1 {
+				background-color: @bg-content-box;
+				opacity: .8;
+			}
     }
     &__description {
-    	color: @black;
-    	border: 1px solid @middlegray;
+    	color: @fg-content-box;
+    	border: @border;
     	border-top: 0;
-    	background-color: @white;
+    	background-color: @bg-content-box;
     }
     .search-list {
     	/* OPTIONS */
@@ -48,7 +51,7 @@
 	    	[data-view="search-list-grid"] {}
 	    	[data-view="search-list-list"] {}
 	    }
-    } 
+    }
 }
 
 /* MODIFICATION */

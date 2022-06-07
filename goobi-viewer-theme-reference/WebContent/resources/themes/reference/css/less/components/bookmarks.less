@@ -24,6 +24,7 @@
 	}
 	&__string {
 		font-weight: 700;
+		color: @fg-header;
 	}
 	&__icon {}
 	/* DROPDOWN */
@@ -35,17 +36,27 @@
 	}
 	/* DROPDOWN LIST */
 	&__dropdown-list {
-		background-color: @middleblack;
+			.mx-dark-mode-rules ({
+				background: @bg-active;
+			});
+			.mx-light-mode-rules ({
+				background-color: @middleblack;
+			});
 		li {
 			border-bottom: none;
 			color: @white;
 			&:hover {
-			background-color: #606060;
+				.mx-dark-mode-rules ({
+					background: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+					background-color: @middleblackHover;
+				});
 			}
 			&:last-child {}
 			.empty {}
 		}
-		h4 {}
+		h3 {}
 	}
 	&__dropdown-list-counter {
 		background-color: @ci-color1;  
@@ -72,7 +83,12 @@
 	}
 	/* DROPDOWN ACTIONS */
 	&__dropdown-list-actions {
-		background: @middleblack;
+		.mx-dark-mode-rules ({
+			background: @bg-active;
+		});
+		.mx-light-mode-rules ({
+			background-color: @middleblack;
+		});
 		border-top: none;
 	}
 	&__dropdown-list-single-entry {}
@@ -85,7 +101,12 @@
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: #606060;				
+			.mx-dark-mode-rules ({
+				background: @bg-hover;
+			});
+			.mx-light-mode-rules ({
+				background-color: @middleblackHover;
+			});			
 		}
 	}
 	/* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
@@ -96,7 +117,7 @@
 	&__dropdown-list-send,	
 	&__dropdown-list-search,
 	&__dropdown-list-mirador {
-		button, a, span, h4
+		button, a, span, h3
 		{
 			color: @white;
 			&:hover,
@@ -123,6 +144,9 @@
 .bookmark-popup {
 	&.top {}
 	&.right {}
+	&__radio-buttons {
+		background: @bg-content-box;
+	}
 	&.bottom {
 		&:before {}
 	}

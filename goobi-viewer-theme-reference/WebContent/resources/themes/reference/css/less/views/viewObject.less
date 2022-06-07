@@ -1,18 +1,18 @@
 /* ==============================================================
    View Object
-   style declarations for viewObject.xhtml 
+   style declarations for viewObject.xhtml
    ==============================================================*/
 /* VIEW OBJECT */
 /* BLOCK */
 .view-object {
 	/* ELEMENT */
 	/* IMAGE */
-	&__object-3d, 
+	&__object-3d,
 	&__image {
 		padding: 10px;
-		border: 1px solid @middlegray;
+		border: @border;
 		border-top: 0;
-		background-color: @white;
+		background-color: @bg-content-box;
 	}
 	&__image-loader {}
 	&__image-map {
@@ -25,14 +25,14 @@
 	}
 	/* IMAGE MOBILE */
 	&__image-mobile {
-		background-color: @white;
+		background-color: @bg-content-box;
 	}
-	/* VIDEO, AUDIO, TEXT */ 
+	/* VIDEO, AUDIO, TEXT */
 	&__video,
 	&__audio,
 	&__text {}
 	/* VIDEO */
-	&__video {} 
+	&__video {}
 	/* AUDIO */
 	&__audio {}
 	/* TEXT */
@@ -40,7 +40,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

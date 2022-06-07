@@ -4,32 +4,32 @@
    ==============================================================*/
 /* BUTTONS */
 .btn {
-	color: @middleblack;
+	color: @fg-header;
 	font-size: @fontMedium;
 	&:hover,
 	&:active,
 	&:focus,
 	&:active:focus,
 	&.active,
-	&.active.focus, 
-	&.active:focus, 
-	&.focus, 
+	&.active.focus,
+	&.active:focus,
+	&.focus,
 	&:active.focus {
 		.fa {}
-	} 
+	}
 }
 
 /* MODIFICATIONS */
 .btn--default {
 	color: @btnDefault;
-	&:hover, 
-	&:active, 
-	&:focus, 
-	&:active:focus, 
-	&.active, 
-	&.active.focus, 
-	&.active:focus, 
-	&.focus, 
+	&:hover,
+	&:active,
+	&:focus,
+	&:active:focus,
+	&.active,
+	&.active.focus,
+	&.active:focus,
+	&.focus,
 	&:active.focus {
 		color: @black;
 	}
@@ -37,15 +37,15 @@
 
 .btn--success {
 	color: @btnSuccess;
-	&:hover, 
-	&:active, 
+	&:hover,
+	&:active,
 	&:focus {}
 }
 
 .btn--danger {
 	color: @btnDanger;
-	&:hover, 
-	&:active, 
+	&:hover,
+	&:active,
 	&:focus {}
 }
 
@@ -53,14 +53,15 @@
 	color: @white;
 	background-color: @ci-color1;
 	border-color: @ci-color1;
-	&:hover, 
-	&:active, 
-	&:focus, 
-	&.active:focus, 
-	&.focus, 
+	&:hover,
+	&:active,
+	&:focus,
+	&.active:focus,
+	&.focus,
 	&:active.focus {
 		color: @white;
 		background-color: @ci-hovercolor1;
+		border-color: @ci-hovercolor1;
 	}
 }
 
@@ -68,10 +69,10 @@
 
 .btn--link {
 	color: @ci-color1;
-	&:hover, 
-	&:active, 
+	&:hover,
+	&:active,
 	&:focus {
-		color: @middleblack;		
+		color: @middleblack;
 	}
 }
 
@@ -80,15 +81,15 @@
 .btn--inactive {}
 
 .btn--icon {
-	&:hover, 
-	&:active, 
+	&:hover,
+	&:active,
 	&:focus {}
 }
 
 a.btn--icon {}
- 
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

@@ -10,8 +10,8 @@
     &__text,
     &__grid {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
+    	border: @border;
+    	background-color: @bg-content-box;
     }
     &__text {
     	margin-bottom: 0;
@@ -22,8 +22,9 @@
     }
 }
 .grid-tile {
+    background-color: @bg-content-box;
 	&__title {
-		h4 {}
+		h3 {}
 	}
 	&__image {
 		a {}

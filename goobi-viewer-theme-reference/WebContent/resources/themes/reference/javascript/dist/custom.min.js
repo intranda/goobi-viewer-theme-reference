@@ -5,13 +5,17 @@
  * Method to set the content height to a min-height, equal to the viewport height.
  */
 function setContentHeight() {
-    var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
-    var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
-    var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+    // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
+    // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
+    // var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
+   
+    var pageHeaderHeight = $('.page-header__spacer').outerHeight();
     var pageWrapperHeight = $( '#pageContent' ).outerHeight();
     var pageFooterHeight = $( '#pageFooter' ).outerHeight();
     var pageWrapper = $( '#pageContent' );
-    var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+
+    // var additionalHeight = pageHeaderTopHeight + pageHeaderBottomHeight + pageNavigationHeight + pageWrapperHeight + pageFooterHeight;
+    var additionalHeight = pageHeaderHeight + pageWrapperHeight + pageFooterHeight;
     var windowHeight = $( window ).outerHeight();
     var diff = windowHeight - additionalHeight;
     
@@ -25,7 +29,7 @@ initSliders may be used to add new cms slider styles (swiper configuration objec
 list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
 This method MUST be called before document.ready for them to show up in the styles dropdown in the cms backend
 */
-function initSliders() {
+function initSliders() { 
 	//update swiper config with
 	    // var partialConfig = {
        // swiperConfig: {
@@ -71,7 +75,6 @@ function initSliders() {
 }
 initSliders();
 
-
 $( document ).ready( function() {
     var viewerConfig = {
         currentPage: currentPage,
@@ -82,15 +85,18 @@ $( document ).ready( function() {
 	
 	viewerJS.init( viewerConfig );
 	
+	// Check if sidebar should be sticky, then activate sticky frontend functions
+    // Initialize sticky elements for frontend sidebar
+	if ($('[data-target="sticky-sidebar"]').length ) {
+	     viewerJS.stickyElements.init({initFrontend:true});
+	}
+
 	
 	 // hide sidebar toggle button if sidebar empty
 	 $( document ).ready( function() {
-		 
-	 	if ( $('.page-content__sidebar .widget' ).length === 0)
-	 	{
-	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
+	 	if ( $('.page-content__sidebar .widget' ).length != 0) { 
+			$( '[data-open="sidebar"]' ).fadeIn('fast');
 	 	}
-	 	
 	 } );
 	
 	// shrink header on scroll
@@ -118,7 +124,7 @@ $( document ).ready( function() {
 		});
 
 	// calculate spacer height on page load and resize
-	var headerStartHeight = $('header').height();
+	var headerStartHeight = $('.page-header').height();
 	$('.page-header__spacer').height(headerStartHeight);
 	
 	$(window).on('resize', function(){
@@ -136,7 +142,7 @@ $( document ).ready( function() {
     	$('.page-header__search-box .widget-searchfield input[type=text]').focus();
     	$( '[data-open="sidebar"]' ).toggle();
     } );
-    
+     
     // close search overlay on click
     $( 'body' ).on( 'click', '[data-target="search-overlay"]', function() {
     	$('[data-open="search"]').removeClass('-searchOn');
@@ -195,35 +201,27 @@ $( document ).ready( function() {
     	$('.page-header__mobile-sidebar-trigger').toggleClass('-opened')
     } );
 
-	 // hide sidebar toggle button if sidebar empty
-	 $( document ).ready( function() {
-		 
-	 	if ( $('.page-content__sidebar .widget' ).length === 0)
-	 	{
-	 		$( '.page-header__top-mobile-sidebar' ).fadeOut('fast');
-	 	}
-	 	
-	 } );
-    
-    // set content height to window height
-    setContentHeight();
-
-    // do things on resize and orientation change
-    $(window).on('resize orientationchange', function () {
-        setContentHeight();
-    });
+	// Hide open sidebar button if sidebar is completely empty
+	if ($('#sidebar').length ) {
+		if($.trim($('#sidebar').html())==''){
+			$('[data-open="sidebar"]').hide()
+		}
+	}
 
     // do things on JSF AJAX event
     if (typeof jsf !== 'undefined') {
         jsf.ajax.addOnEvent(function (data) {
             switch (data.status) {
                 case 'success':
-                    setContentHeight();
+					// DO SOMETHING
                     break;
             }
         });
     }
 
     // mobile view manipulations
-    if (window.matchMedia('(max-width: 768px)').matches) { }
+    if (window.matchMedia('(max-width: 768px)').matches) {
+    }
+
 } );
+

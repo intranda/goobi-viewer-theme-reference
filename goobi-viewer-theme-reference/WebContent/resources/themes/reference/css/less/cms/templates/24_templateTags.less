@@ -7,68 +7,84 @@
    ==============================================================*/
 /* TAGS */
 #tags {
-	h2 {
-		& + h3 {
+	h1 {
+		& + h2 {
 			margin-bottom: 0;
-			padding: 10px;
-			border: 1px solid @middlegray;
+			border: @border;
 			border-bottom: 0;
-			background-color: @white;			
+			background-color: @bg-content-box;
+			color: @fg-content-box;
 		}
 	}
 }
 #tagcloudWrapper {
 	margin: 0;
-	padding: 10px;
-	border: 1px solid @middlegray;
+	padding: 2rem;
+	border: @border;
 	border-top: 0;
 	border-bottom: 0;
-	background-color: @white;
+	background-color: @bg-content-box;
+	color: @fg-content-box;
 	&:last-child {
-		border-bottom: 1px solid @middlegray;
+		border-bottom: @border;
 	}
-	& + h3 {
+	& + h2 {
 		margin-bottom: 0;
 		padding: 10px;
-		border: 1px solid @middlegray;
+		border: @border;
 		border-top: 0;
 		border-bottom: 0;
-		background-color: @white;
+		background-color: @bg-content-box;
+		color: @fg-content-box;
+	}
+
+	.tagcloudElement[class^='tag'] a {
+		// color: @fg-content-box !important;
+	}
+}
+
+#tags {
+	h2 {
+		padding: 2rem;
 	}
 }
 
 .tpl-tags {
     /* ELEMENT */
     &__content {
-    	h2 {}
+    	h1 {}
     }
     &__text,
     #tagcloudWrapper {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
-    	& + h3 {
+    	border: @border;
+    	background-color: @bg-content-box;
+    	& + h2 {
     		margin-bottom: 0;
 	    	padding: 10px;
-	    	border: 1px solid @middlegray;
+	    	border: @border;
 	    	border-top: 0;
 	    	border-bottom: 0;
-	    	background-color: @white;    		
-    	}    	
+	    	background-color: @bg-content-box;
+    	}
     }
     &__text {
     	margin-bottom: 0;
     	border-bottom: 0;
     }
-    #tagcloudWrapper {
+    #tagcloudWrapper { 
     	margin: 0;
-    	border-top: 0; 
+    	border-top: 0;
     	border-bottom: 0;
     	&:last-child {
-    		border-bottom: 1px solid @middlegray;
+    		border-bottom: @border;
     	}
     }
 }
+
+each(range(100),{
+    .tag@{value} a { color: @lk-content-box !important; }
+});
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

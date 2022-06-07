@@ -12,7 +12,7 @@
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
     <script>
-    	var currentPage = "#{navigationHelper.currentPage}";
+    	var currentPage = "#{navigationHelper.currentPage}"; 
     	var currentLang = "#{navigationHelper.localeString}";
     	var currentPath = "#{request.contextPath}";
     	var currentTheme = "#{navigationHelper.theme}";
@@ -25,6 +25,7 @@
     	};
     	var rootURL = "#{request.contextPath}";
     	var restURL = "#{configurationBean.restApiUrl}";
+    	viewerJS.disclaimerConfig = #{disclaimerBean.disclaimerConfig};
     	
     	// set fullscreen config
     	if ( currentPage === "fullscreen" ) {
@@ -47,12 +48,17 @@
     	
     	// init cms module functions
     	cmsJS.modules.init();
+    	
+        viewerJS.thumbnailLoader = new viewerJS.loadThumbnails("#{request.contextPath}#{navigationHelper.getResource('images/image_not_found.png')}",
+               					"#{request.contextPath}#{navigationHelper.getResource('images/thumbnail_access_denied.jpg')}");
+
     
     </script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js?${navigationHelper.buildVersion}"></script>
     <script src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js?${navigationHelper.buildVersion}"></script>
-    <script>
-        // mount riot tags
-        // riot.mount( '' );
-    </script>
+    	<script>
+    	//TODO: replace with better solution so colorTheme gets set earlier
+        	// switchTheme(#{sessionBean.get('colorTheme')});
+    		
+    	</script>
 </ui:composition>

@@ -12,10 +12,20 @@
     &__text {}
     &__feed {}
     &__item {
-    	background-color: @white;
+    	background-color: @bg-content-box;
+      color: @fg-content-box;
+      border: @border;
+    }
+    a {
+      color: @lk-content-box;
+      &:focus,
+      &:hover,
+      &:active {
+        color: @lh-content-box;
+      }
     }
     &__item-title {
-    	h3 {}
+    	h2 {}
     	a {}
     }
     &__item-image {

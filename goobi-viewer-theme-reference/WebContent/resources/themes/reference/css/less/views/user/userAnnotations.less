@@ -1,0 +1,106 @@
+/* ==============================================================
+   Style declarations for userBackendAnnotations.xhtml
+   ==============================================================*/
+#userAnnotations {
+	.admin__search-action {
+		background: @bg-content-box;
+			.mx-dark-mode-rules ({
+				border: none;
+			});
+			.mx-light-mode-rules ({
+				border: 1px solid #ccc;
+			});
+			&:hover,
+			&:active, 
+			&:focus {
+				.btn--icon {
+					.mx-dark-mode-rules ({
+						color: @fg-general;
+					});
+					.mx-light-mode-rules ({
+						border: @fg-general;
+					});
+				}
+			}
+	}
+	.data-table-paginator__button {
+		&:hover,
+		&:active,
+		&:focus {
+			color: @fg-general;
+		}
+	}
+}
+
+
+/* USER ANNOTATIONS TABLE */
+#userAnnotationsTable {}
+
+.user-annotations {
+	&__table {
+		border: @border;
+		background: @bg-content-box;
+	}
+	&__table-title {}
+	.admin__table-sorting .fa {
+		color: @fg-general;
+	}
+	&__table-body {}
+	.admin__table-sorting-arrow-hidden {}
+	&__table-title-target,
+	&__table-title-campaign,
+	&__table-title-date,
+	&__table-title-review-state {
+		button {
+			color: @lk-general;
+		}
+		&:hover {
+			.admin__table-sorting-arrow-hidden {
+			}
+		}
+	}
+	&__table-entry {
+		&:hover {
+			background: @bg-hover;
+			.user-annotations__table-entry-action-link {}
+		}
+	}
+	&__table-entry-label-record {}
+	&__table-entry-action-link {}
+}
+
+// NEEDS TO BE REWORKED
+#campaignAnnotations {
+	.admin__search-action {
+		background: @bg-content-box;
+		border: @border;
+	}
+	.admin__table-content {
+		border: @border;
+		background: @bg-content-box;
+	}
+	.admin__table-title {
+		background: @bg-content-box;
+	}
+	.admin__table-sorting .fa {
+		color: @fg-general;
+	}
+	.admin__table-entry {
+		&:hover {
+			background: @bg-hover;
+		}
+
+	}
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {} 
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}

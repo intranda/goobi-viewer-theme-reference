@@ -11,8 +11,8 @@
     &__date {}
     &__content {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
+    	border: @border;
+    	background-color: @bg-content-box;
     }
     &__image {
         figcaption {}
@@ -21,13 +21,13 @@
     /* SOLR-QUERY */
     .solr-query-collection {
     	padding: 10px;
-    	border: 1px solid @middlegray;
-    	background-color: @white;
+    	border: @border;
+    	background-color: @bg-content-box;
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

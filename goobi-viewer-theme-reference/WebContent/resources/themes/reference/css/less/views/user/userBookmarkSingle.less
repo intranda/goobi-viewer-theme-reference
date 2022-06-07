@@ -6,14 +6,15 @@
 /* BLOCK */
 .view-bookmark {
 	/* ELEMENT */
+	h1 {}
 	h2 {}
-	h3 {}
 	p {}
 	&__action {
 		a {}
 	}
-	&__item {
-		background-color: @white;
+	&__single-entry {
+		background-color: @bg-content-box;
+		border: @border;
 		&:hover {}
 	}
 	&__item-image,
@@ -23,7 +24,7 @@
 		a {}
 	}
 	&__item-info {
-		h4 {}
+		h3 {}
 		textarea {}
 	}
 	&__item-action {
@@ -32,7 +33,7 @@
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {}

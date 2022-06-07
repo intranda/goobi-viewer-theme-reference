@@ -3,19 +3,61 @@
    style declarations for user.xhtml
    ==============================================================*/
 /* USERDATA */
-.userdata {
-	padding: 10px;
-	border: 1px solid @middlegray;
-	background-color: @white;
-	h3 {}
-	&__gravatar {
-		img {}
-	}
-	&__data {}
-	&__action {
-		.btn {}
+/* BLOCK */
+
+.page-content__sidebar  {
+	.user-settings__profile-image-box {
+		background-color: @bg-content-box;
+		border: @border;
 	}
 }
+
+#userAccount {
+	.user-settings {
+		h2 {}
+		&__profile-image-box {
+			background-color: @bg-content-box;
+			border: @border;
+		}
+		&__profile-image {}
+		&__profile-image-edit-button {}
+		&__form-wrapper {
+			background-color: @bg-content-box;
+			border: @border;
+		}
+		&__actions {}
+		&__image-thumbnail {
+
+		}
+		&__choose-image-option {
+			label {
+			}
+		}
+		&__upload-button-wrapper {
+		}
+		&__upload-button-input {
+		}
+		&__delete-image-button {
+		}
+		&__image-actions-wrapper {
+		}
+		&__image-actions {
+		}
+		&__edit-image-wrapper {
+		}
+		&__edit-image-default-wrapper {
+		}
+	}
+	.admin__default-block {
+		background-color: @bg-content-box;
+	}
+	.admin__cancel-button {
+		color: @fg-content-box;
+
+	}
+}
+
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

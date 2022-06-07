@@ -7,35 +7,52 @@
 .numeric-paginator {
 	/* ELEMENT */
 	ul {}
-	li {}
+	li {
+		border: @border;
+	}
 	a, span {
 		font-size: @fontMedium;
-		background-color: @white;
+		background-color: @bg-content-box;
 	}
 	a {
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus {
+			background-color: @ci-color1;
+			  .mx-dark-mode-rules ({
+			    background-color: @bg-active;
+			  });
+			  .mx-light-mode-rules ({
+			    background-color: @ci-color1;
+				color: @white;
+			  });
+		}
 	}
 	span {}
 	&__active {
 		a, span {
-			color: @white;
+			color: @bg-content-box;
 			background-color: @ci-color1;
+			  .mx-dark-mode-rules ({
+				color: @white;
+			    background-color: @bg-active;
+			  });	
 		}
 	}
 	&__dots {
 		a, span {
 			background-color: transparent;
+			border: 0;
 		}
 	}
 	&__navigate {}
 	/* MODIFICATION */
 	li.numeric-paginator__dots {}
 	li.numeric-paginator__active {
-		border-color: @ci-color1;		
+		border: @border;
 	}
 }
+
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

@@ -3,21 +3,28 @@
    style declarations for widget_searchresultNavigation.xhtml
    ==============================================================*/
 #widgetSearchResultNavigation {
-    h3 {}
+    h2 {}
     .search-result-navigation-wrapp {
     	display: flex;
     	align-items: center;
         padding: 10px;
-	    border-right: 1px solid @middlegray;
-    	border-left: 1px solid @middlegray;
-    	background-color: @white;
+	    border-right: @border;
+    	border-left: @border;
+    	background-color: @bg-content-box;
         .search-result-navigation-left,
         .search-result-navigation-center,
         .search-result-navigation-right {}
         .search-result-navigation-left,
         .search-result-navigation-right {
             &:hover {
-            	svg {}
+            	svg {
+					.mx-dark-mode-rules ({
+            			background-color: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+            			background-color: @lightgray;
+					});
+				}
             }
         }
         .search-result-navigation-left {
@@ -38,14 +45,21 @@
         padding: 10px;
         padding-top: 0;
         font-size: @fontMedium;
-        border: 1px solid @middlegray;
-    	border-top: 0;
-    	background-color: @white;
+        border: @border;
+        border-top: 0;
+        background-color: @bg-content-box;
         a {
             svg {}
         }
         &:hover {
-        	svg {}
+        	svg {
+				.mx-dark-mode-rules ({
+        			background-color: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+        			background-color: @lightgray;
+				});
+			}
         }
     }
 }

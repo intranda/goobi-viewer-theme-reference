@@ -6,16 +6,20 @@
 /* BLOCK */
 .born-digital {
 	/* ELEMENT */
-	h3 {}
+	h2 {}
 	p {}
 	&__items {}
 	&__item {
+		background: @bg-content-box;
+		border: @border;
 		&:before,
 		&:after {}
 		&:before {}
 		&:after {}
 	}
-	&__item-order-label {}
+	&__item-order-label {
+    background: @ci-color1;
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
