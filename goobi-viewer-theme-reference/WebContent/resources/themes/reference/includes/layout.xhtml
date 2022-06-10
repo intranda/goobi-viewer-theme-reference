@@ -77,9 +77,11 @@
 							<viewerComponent:colorThemeToggle/>
 						</div>
 						
-						<div class="page-header__client-status">
-							<viewerComponent:clientApplicationStatus/>
-						</div>
+						<ui:fragment rendered="#{adminClientsBean.clientLoggedIn}">
+							<div class="page-header__client-status">
+								<viewerComponent:clientApplicationStatus/>
+							</div>
+						</ui:fragment>
 
 						<div data-open="menu"
 							class="page-header__mobile-burger-menu-alternative">
