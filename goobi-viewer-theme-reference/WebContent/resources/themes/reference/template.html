@@ -24,6 +24,8 @@
   <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files, all available strings are listed when passing 'showCSS' resp. 'showJS') -->
   <c:set var="excludeCSS" value="#{[]}" />
   <c:set var="excludeJS" value="#{[]}" />
+  
+
 
 
 	<h:head profile="http://dublincore.org/documents/dcq-html/">
@@ -75,6 +77,10 @@
       <ui:param name="templateName" value="#{templateName}" />
       <ui:param name="excludeJS" value="#{excludeJS}" />
     </ui:include>
+    
+      
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/simpleLightbox/simpleLightbox.min.css?${navigationHelper.buildVersion}" />
+	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/simpleLightbox/simpleLightbox.min.js?${navigationHelper.buildVersion}"></script>
 
 </h:head>
 
