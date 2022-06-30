@@ -23,7 +23,7 @@ function setContentHeight() {
         pageWrapper.css( 'min-height', ( pageWrapperHeight + diff ) + 'px' );
     }
 }
-
+ 
 /*
 initSliders may be used to add new cms slider styles (swiper configuration objects) to the 
 list of availabe slider styles, or alter existing ones. See the commented out examples below for each use case
