@@ -59,6 +59,11 @@ pipeline {
     }
     stage('basic tests'){
       agent any
+      when {
+        not {
+          branch 'master'
+        }
+      }
       steps{
         script {
           dockerimage.inside {

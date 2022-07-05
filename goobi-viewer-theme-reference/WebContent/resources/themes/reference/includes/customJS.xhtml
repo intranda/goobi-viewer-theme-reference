@@ -11,6 +11,9 @@
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
 
+	<!-- add response header for current language -->
+	<f:event type="preRenderView" listener="#{facesContext.externalContext.response.setHeader('Content-Language', navigationHelper.locale.language)}" />
+
     <script>
     	var currentPage = "#{navigationHelper.currentPage}"; 
     	var currentLang = "#{navigationHelper.localeString}";
@@ -26,6 +29,7 @@
     	var rootURL = "#{request.contextPath}";
     	var restURL = "#{configurationBean.restApiUrl}";
     	viewerJS.disclaimerConfig = #{disclaimerBean.disclaimerConfig};
+    	viewerJS.useWebSocket = #{activeDocumentBean.requiresWebSocket};
     	
     	// set fullscreen config
     	if ( currentPage === "fullscreen" ) {

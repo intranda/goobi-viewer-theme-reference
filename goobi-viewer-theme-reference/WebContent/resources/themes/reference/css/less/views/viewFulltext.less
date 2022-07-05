@@ -12,6 +12,14 @@
 		border-top: 0;
 		background-color: @bg-content-box;
 	}
+	&__content {
+		.mx-light-mode-rules ({
+			color: @fg-general;
+		});
+		.mx-dark-mode-rules ({
+			color: @bg-content-box;
+		});
+	}
 	&__box {
 		pre {}
 	}
