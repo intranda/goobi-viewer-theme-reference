@@ -26,8 +26,7 @@ pipeline {
               archiveArtifacts artifacts: '**/target/*.war', fingerprint: true, onlyIfSuccessful: true
       }
     }
-
-    stage('build docker image with config from master branch') {
+    stage('build docker image with config from release tag in master branch') {
       agent any
       when {
         tag "v*"
@@ -79,6 +78,11 @@ pipeline {
     }
     stage('publish docker devel image to internal repository'){
       agent any
+      when {
+        not {
+          anyOf { branch 'master'; tag "v*" }
+        }
+      }
       steps{
         script {
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
