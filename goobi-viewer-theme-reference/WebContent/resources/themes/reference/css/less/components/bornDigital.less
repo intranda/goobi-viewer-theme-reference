@@ -8,10 +8,14 @@
 	/* ELEMENT */
 	h2 {}
 	p {}
-	&__items {
+	&__items-wrapper {
+		&:hover {
+			background: @bg-hover;
+		}
+	}
+	&__box {
 		border: @border;
 		background-color: @bg-content-box;
-		padding: 1.5rem;
 	}
 	&__head {
 	}
