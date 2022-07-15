@@ -5,7 +5,7 @@ WORKDIR /viewer
 RUN mvn -f goobi-viewer-theme-reference/pom.xml clean package
 
 # Build actual application container
-FROM tomcat:9-jre11 as ASSEMBLE
+FROM tomcat:9-jre11-openjdk-bullseye as ASSEMBLE
 
 ENV DB_SERVER viewer-db
 ENV DB_PORT 3306

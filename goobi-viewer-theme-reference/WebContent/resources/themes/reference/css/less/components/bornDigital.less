@@ -2,24 +2,31 @@
    born-digital
    style declarations for bornDigital.xhtml
    ==============================================================*/
-/* BORN-DIGITAL */
+/* BORN DIGITAL */
 /* BLOCK */
 .born-digital {
 	/* ELEMENT */
+	&__no-access-box {
+		border: @border;
+		background-color: @bg-content-box;
+	}
 	h2 {}
 	p {}
-	&__items {}
-	&__item {
-		background: @bg-content-box;
-		border: @border;
-		&:before,
-		&:after {}
-		&:before {}
-		&:after {}
+	&__items-wrapper {
+		&:hover {
+			background: @bg-hover;
+		}
 	}
+	&__box {
+		border: @border;
+		background-color: @bg-content-box;
+	}
+	&__head {
+	}
+	&__item {
+	}   
 	&__item-order-label {
-    background: @ci-color1;
-  }
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -29,7 +36,11 @@
 @media screen and (max-width: @mediumBreakpoint) {}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+	.born-digital__items-wrapper:nth-child(odd) {
+	  background: @bg-hover;
+	}
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {}
