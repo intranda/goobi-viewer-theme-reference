@@ -15,6 +15,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-riot": "^0.1.8",
     "grunt-sync": "^0.8.2",
+	"grunt-replace": "2.0.2",
     "less-plugin-autoprefix": "^1.5.1"
   }
 }

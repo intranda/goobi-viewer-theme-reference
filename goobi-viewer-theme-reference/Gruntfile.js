@@ -17,6 +17,7 @@ module.exports = function(grunt) {
         },
         pkg: grunt.file.readJSON('package.json'),
         src: {
+			templatesFolder: 'WebContent/resources/themes/<%=theme.name%>/',
         	jsDevFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dev/',
             jsDistFolder: 'WebContent/resources/themes/<%=theme.name%>/javascript/dist/',
             lessDevCsFolder: 'WebContent/resources/themes/<%=theme.name%>/css/less/crowdsourcing/',
@@ -87,14 +88,14 @@ module.exports = function(grunt) {
 			},
             css: {
                 files: [ 'WebContent/resources/themes/<%=theme.name%>/css/**/*.less' ],
-                tasks: [ 'less', 'sync' ],
+                tasks: [ 'less', 'sync', 'replace' ],
                 options: {
                     spawn: false,
                 }
             },
             scripts: {
                 files: [ '<%=src.jsDevFolder %>*.js' ],
-                tasks: [ 'concat', 'sync' ],
+                tasks: [ 'concat', 'sync', 'replace' ],
                 options: {
                 	spawn: false,
                 }
@@ -126,6 +127,26 @@ module.exports = function(grunt) {
                 dest: '<%=src.jsDistFolder%><%=theme.name%>-tags.js'
             }
         },
+		replace: {
+        	dist: {
+            	options:{
+	          		patterns: [ {
+						match: /cachetimestamp=[0-9-]+/g,
+						replacement: 'cachetimestamp=<%= new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate()+"-"+(new Date().getHours())+"-"+(new Date().getMinutes())+"-"+(new Date().getSeconds()) %>' 
+					} ],
+					usePrefix: false,
+            	},
+			  files: [
+			    {
+			     expand: true, flatten: true, src: ['<%=src.templatesFolder%>*.html'], dest: '<%=src.templatesFolder%>'
+			    },
+			    {
+			     expand: false, flatten: true, src: ['WebContent/resources/themes/<%=theme.name%>/includes/customJS.xhtml'], dest: 'WebContent/resources/themes/<%=theme.name%>/includes/customJS.xhtml'
+			    }
+			  ]
+
+            }
+        },
     });
     
 	// ---------- LOAD TASKS ----------
@@ -134,7 +155,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-riot');
     grunt.loadNpmTasks('grunt-sync');
+	grunt.loadNpmTasks('grunt-replace');
     
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
-    grunt.registerTask('default', [ 'watch', 'sync' ]);
+    grunt.registerTask('default', [ 'sync', 'replace', 'watch' ]);
+    grunt.registerTask('watchCache', [ 'sync', 'replace', 'watch' ]);
 };
