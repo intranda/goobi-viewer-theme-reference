@@ -86,16 +86,17 @@ module.exports = function(grunt) {
 					reload : true
 				}
 			},
+			
             css: {
                 files: [ 'WebContent/resources/themes/<%=theme.name%>/css/**/*.less' ],
-                tasks: [ 'less', 'sync', 'replace' ],
+                tasks: [ 'less', 'sync' ],
                 options: {
                     spawn: false,
                 }
             },
             scripts: {
                 files: [ '<%=src.jsDevFolder %>*.js' ],
-                tasks: [ 'concat', 'sync', 'replace' ],
+                tasks: [ 'concat', 'sync' ],
                 options: {
                 	spawn: false,
                 }
@@ -158,6 +159,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-replace');
     
 	// ---------- REGISTER DEVELOPMENT TASKS ----------
-    grunt.registerTask('default', [ 'sync', 'replace', 'watch' ]);
-    grunt.registerTask('watchCache', [ 'sync', 'replace', 'watch' ]);
+    grunt.registerTask('default', [ 'sync', 'watch' ]);
+    grunt.registerTask('cache', [ 'sync', 'replace' ]);
+
 };
