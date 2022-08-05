@@ -11,6 +11,13 @@
 		stroke: #000;
 	}
 	&__label-style {
+		border: @border;
+			.mx-light-mode-rules ({
+				background: white;
+			});
+			.mx-dark-mode-rules ({
+				background: @bg-content-box;
+			});
         &.-green {
 			.copyright-indicator__status-icon {
 				&:before {}
@@ -33,7 +40,14 @@
         }
 	}
     &__dot-wrapper {}
-    &__dot {}
+    &__dot {
+		.mx-light-mode-rules ({
+			color: #000;
+		});
+		.mx-dark-mode-rules ({
+			color: white;
+		});
+	} 
     &__icon-wrapper {
         img,
         svg {}
