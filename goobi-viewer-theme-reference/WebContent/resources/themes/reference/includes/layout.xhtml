@@ -178,7 +178,7 @@
 				<!-- FOOTER LINKS -->
 				<div class="page-footer__links">
 
-                    <ui:fragment rendered="#{fn:length(sitelinkBean.availableValues) > 0}">
+                    <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
 					   <a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
 					</ui:fragment>
 

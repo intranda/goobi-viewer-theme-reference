@@ -57,6 +57,7 @@
     <ui:include src="/resources/includes/templateHeads/css.xhtml">
       <ui:param name="templateName" value="#{templateName}" />
       <ui:param name="excludeCSS" value="#{excludeCSS}" />
+      <ui:param name="cacheBuster" value="-cachetimestamp=2022-8-4-13-2-40" />
     </ui:include>
 
     <!-- SUBTHEME CSS -->
@@ -68,6 +69,7 @@
     <ui:include src="/resources/includes/templateHeads/js.xhtml">
       <ui:param name="templateName" value="#{templateName}" />
       <ui:param name="excludeJS" value="#{excludeJS}" />
+      <ui:param name="cacheBuster" value="-cachetimestamp=2022-8-4-13-2-40" />
     </ui:include>
 
   </h:head>
