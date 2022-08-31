@@ -27,7 +27,7 @@
         .ui-autocomplete {
             .ui-autocomplete-input {
 				.mx-dark-mode-rules ({
-					background: @fg-general;
+					background: @white;
 					color: @black;
 				});
 				.mx-light-mode-rules ({
@@ -45,6 +45,18 @@
         color: @fg-content-box;
     	}
     }
+	&__filter-select {
+		.custom-control--select {
+			& select {
+				.mx-dark-mode-rules ({
+					background: @fg-general;
+				});
+				.mx-light-mode-rules ({
+					background: #f7f7f7;
+				});
+			}
+		}
+	}
     &__filter-link {
         a {}
     }
