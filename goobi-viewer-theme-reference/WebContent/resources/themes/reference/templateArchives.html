@@ -52,6 +52,7 @@
     <ui:include src="/resources/includes/templateHeads/css.xhtml">
       <ui:param name="templateName" value="#{templateName}" />
       <ui:param name="excludeCSS" value="#{excludeCSS}" />
+      <ui:param name="cacheBuster" value="-cachetimestamp=2022-9-1-10-5-6" />
     </ui:include>
 
     <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
@@ -61,6 +62,7 @@
     <ui:include src="/resources/includes/templateHeads/js.xhtml">
       <ui:param name="templateName" value="#{templateName}" />
       <ui:param name="excludeJS" value="#{excludeJS}" />
+      <ui:param name="cacheBuster" value="-cachetimestamp=2022-9-1-10-5-6" />
     </ui:include>
 
   </h:head>
