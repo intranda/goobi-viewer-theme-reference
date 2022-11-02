@@ -47,6 +47,7 @@ pipeline {
             sh 'test -f /usr/local/tomcat/conf/context.xml.template || ( echo "/usr/local/tomcat/conf/context.xml.template missing"; exit 1 )'
             sh 'envsubst -V'
           }
+        }
 
         // publish docker image to internal repository
         script {
