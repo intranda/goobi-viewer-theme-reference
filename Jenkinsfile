@@ -30,7 +30,7 @@ pipeline {
       }
       steps {
         // get viewer.war from build stage
-        unstash 'app
+        unstash 'app'
 
         // build docker images
         script{
@@ -80,7 +80,7 @@ pipeline {
       }
       steps {
         // get viewer.war from build stage
-        unstash 'app
+        unstash 'app'
 
         // build docker images
         script{
