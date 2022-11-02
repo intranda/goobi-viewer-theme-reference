@@ -20,7 +20,8 @@ RUN sed -i 's|main$|main contrib|' /etc/apt/sources.list
 RUN apt-get update && \
 	apt-get -y install git \
 	  gettext-base \
-	  ttf-mscorefonts-installer && \
+	  ttf-mscorefonts-installer \\
+	libopenjp2-7 && \
 	apt-get -y clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	rm -rf ${CATALINA_HOME}/webapps/*
