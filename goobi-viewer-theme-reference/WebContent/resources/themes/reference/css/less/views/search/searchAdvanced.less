@@ -6,86 +6,98 @@
 /* BLOCK */
 .search-advanced {
     /* ELEMENT */
-    &__group {
-    	background-color: @bg-content-box;
-      border: @border;
+    &__entry-area {
+        background-color: @bg-content-box;
+        border: @border;
         span.remove {}
         .remove {
-        	&:hover {
-        		color: @black;
-        	}
+            &:hover {
+                color: @black;
+            }
         }
     }
     &__loader {}
-    &__connector {}
     &__input-group {
         .form-control__select,
         input[type="text"] {}
         input[type="text"] {
             &:focus {
-            	& + .input-group-addon {}
+                & + .input-group-addon {}
             }
         }
-        .input-group-append {
-			margin-left: 0;
-			.mx-dark-mode-rules ({
-				background: @fg-general;
-				color: @black;
-			});
-			.mx-light-mode-rules ({
-				background: @white;
-			});
-            button {
-				color: @black;
-                &:hover,
-                &:focus,
-                &:active {
-					color: @black;
-				}
-            }
-        }
-        .custom-control--select {
-            &:after {}
-            select[disabled] {}
-        }
-        select {}
-        button {}
-        .row .col-sm-1 {}
+	.custom-control--select {
+	    &:after {}
+	    select[disabled] {}
+	}
+	select {}
+	button {}
+	.row .col-sm-1 {}
+	}
+	
+	&__input-group-field {
+	}
+	&__input-value {
+	    .mx-dark-mode-rules ({
+	    	background: @white;
+	     });
+	    .mx-light-mode-rules ({
+	    	background: @white;
+	    });
+	}
+	&__select-values {
+	}
+
+	&__action {
+	    .btn--default {
+	        .mx-dark-mode-rules ({
+	            background: @fg-general;
+	        });
+	    .mx-light-mode-rules ({
+	        background: #f7f7f7;
+	    });
+	}
+	}
+	&__additional-wrapper {
+	    color: @fg-general;
 	}
     &__input-col {
-        a {
-			color: @fg-general;
+        a,
+        button {
             &:hover,
             &:focus,
-            &:active {}
+            &:active {
+            }
+            &[disabled="disabled"] {
+            }
         }
-        span {}
-    }
-    &__connect-group {}
-    &__add-group {
-        a {
-            &:hover,
-            &:focus,
-            &:active {}
+        span {
+        }
+        .form-group {
         }
     }
     &__action {
-        .btn--default {
-			.mx-dark-mode-rules ({
-				background: @fg-general;
-			});
-			.mx-light-mode-rules ({
-				background: #f7f7f7;
-			});
-		}
+        .btn {
+        }
     }
-	&__additional-wrapper {
-		color: @fg-general;
-		.mx-dark-mode-rules ({
-		});
-		.mx-light-mode-rules ({
-		});
+    &__fuzzy-search-option-wrapper {
+    }
+	&__additional-options-area {
 	}
+	&__nav-helper-box {
+	    background-color: @bg-content-box;
+	    border: @border;
+	}
+	&__nav-helper-item {
+	}
+	&__nav-helper-label {}
+	&__custom-control {
+		select {
+		}
+	}
+
+	
+	// GAP SIZING VARIABLE
+	// @gap-sizer: 5px;
 }
 /* MODIFICATION */
 
