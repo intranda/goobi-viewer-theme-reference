@@ -169,7 +169,7 @@
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core-config,viewer-connector</excludeArtifactIds>
 							<includeArtifacIds>viewer-core</includeArtifacIds>
-							<includes>META-INF/resources/resources/cms/templates/*</includes>
+							<includes>META-INF/resources/resources/cms/templates/**/*</includes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
 					</execution>
