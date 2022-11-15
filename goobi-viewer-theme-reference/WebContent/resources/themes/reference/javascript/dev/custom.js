@@ -151,7 +151,7 @@ $( document ).ready( function() {
     	$( '.page-header__inner' ).removeClass('-searchOn');
     	$('[data-target="search-overlay"]').fadeOut('fast');
     	$( '[data-open="sidebar"]' ).toggle();
-    } );
+    });
 
 
     // toggle change local

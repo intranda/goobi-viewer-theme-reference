@@ -56,16 +56,16 @@
     }
     &__text,
     #tagcloudWrapper {
-    	padding: 10px;
-    	border: @border;
-    	background-color: @bg-content-box;
+//    	padding: 10px;
+//    	border: @border;
+//    	background-color: @bg-content-box;
     	& + h2 {
-    		margin-bottom: 0;
-	    	padding: 10px;
-	    	border: @border;
-	    	border-top: 0;
-	    	border-bottom: 0;
-	    	background-color: @bg-content-box;
+//    		margin-bottom: 0;
+//	    	padding: 10px;
+//	    	border: @border;
+//	    	border-top: 0;
+//	    	border-bottom: 0;
+//	    	background-color: @bg-content-box;
     	}
     }
     &__text {
@@ -85,6 +85,17 @@
 each(range(100),{
     .tag@{value} a { color: @lk-content-box !important; }
 });
+
+.tag-cloud {
+	h2 {
+		margin-bottom: 0;
+		padding: 10px;
+		border: @border;
+		border-top: 0;
+		border-bottom: 0;
+		background-color: @bg-content-box;
+	}
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
