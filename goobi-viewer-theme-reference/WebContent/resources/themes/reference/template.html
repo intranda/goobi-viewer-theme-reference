@@ -24,8 +24,6 @@
   <c:set var="excludeCSS" value="#{[]}" />
   <c:set var="excludeJS" value="#{[]}" />
   
-
-
 	<h:head profile="http://dublincore.org/documents/dcq-html/">
 
 	<ui:insert name="head" />
@@ -77,10 +75,6 @@
       <ui:param name="excludeJS" value="#{excludeJS}" />
 	  <ui:param name="cacheBuster" value="cachetimestamp=2022-9-1-10-5-6" />
     </ui:include>
-    
-      
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/libs/simpleLightbox/simpleLightbox.min.css?${navigationHelper.buildVersion}" />
-	<script type="text/javascript" src="#{request.contextPath}/resources/javascript/libs/simpleLightbox/simpleLightbox.min.js?${navigationHelper.buildVersion}"></script>
 
 </h:head>
 
