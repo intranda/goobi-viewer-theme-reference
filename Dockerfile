@@ -1,8 +1,10 @@
 FROM maven:3.6-jdk-11 AS BUILD
+# you can use --build-arg build=false to skip viewer.war compilation, a viewer.war file needs to be available in target/viewer.war then
+ARG build=true
 
 COPY ./ /viewer/
 WORKDIR /viewer
-RUN mvn -f goobi-viewer-theme-reference/pom.xml clean package
+RUN echo $build; if [ "$build" = "true" ]; then mvn -f goobi-viewer-theme-reference/pom.xml clean package; elif [ -f "/viewer/goobi-viewer-theme-reference/target/viewer.war" ]; then echo "using existing viewer.war"; else echo "not supposed to build, but no viewer.war found either"; exit 1; fi 
 
 # Build actual application container
 FROM tomcat:9-jre11-openjdk-bullseye as ASSEMBLE
@@ -20,7 +22,8 @@ RUN sed -i 's|main$|main contrib|' /etc/apt/sources.list
 RUN apt-get update && \
 	apt-get -y install git \
 	  gettext-base \
-	  ttf-mscorefonts-installer && \
+	  ttf-mscorefonts-installer \
+	  libopenjp2-7 && \
 	apt-get -y clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	rm -rf ${CATALINA_HOME}/webapps/*
