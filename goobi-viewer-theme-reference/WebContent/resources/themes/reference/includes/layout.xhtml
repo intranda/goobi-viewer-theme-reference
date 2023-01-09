@@ -115,7 +115,7 @@
 		<!-- End class="page-header" -->
 
 		<!-- HERO SLIDER -->
-		<ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
+		<ui:fragment rendered="#{cmsPage.hasTopbarComponents()}">
 			<div class="page-header__slider">
 				<ui:insert name="topbar" />
 			</div>

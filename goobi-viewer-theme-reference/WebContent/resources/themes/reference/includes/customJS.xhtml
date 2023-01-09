@@ -29,8 +29,8 @@
     	var rootURL = "#{request.contextPath}";
     	var restURL = "#{configurationBean.restApiUrl}";
     	viewerJS.disclaimerConfig = #{disclaimerBean.disclaimerConfig};
-    	viewerJS.useWebSocket = #{activeDocumentBean.requiresWebSocket};
-    	
+
+	
     	// set fullscreen config
     	if ( currentPage === "fullscreen" ) {
     		var fullscreenConfig = {
