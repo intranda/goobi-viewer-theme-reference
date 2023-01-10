@@ -104,6 +104,14 @@
 	}
 }
 
+#bodyWrapper {
+	transition: filter 0.2s linear;
+}
+
+.modal-open #bodyWrapper {
+	filter: blur(2px);
+}
+
 .modal.fade .modal-dialog {}
 
 .modal-open[style] {}
