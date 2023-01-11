@@ -6,15 +6,9 @@
 	&-wrapper {}
 	&-list {}
 	&-list-entry {
-		border: @border;
-		&.active {
-			a {
-				color: @fg-content-box;
-				background-color: @bg-content-box;
-			}
-		}
 	}
 	&-link {
+		border: @border;
 		background-color: @bg-content-box;
 		color: @lk-content-box;
 		&:hover,
@@ -22,6 +16,11 @@
 		&:focus {
 			background-color: @bg-hover;
 			color: @fg-general;
+		}
+		&.-active {
+				color: @fg-content-box;
+				background-color: @bg-content-box;
+				font-weight: 700;
 		}
 	}
 	&-reset {}
