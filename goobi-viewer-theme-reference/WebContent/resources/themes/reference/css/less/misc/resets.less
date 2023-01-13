@@ -112,6 +112,25 @@
 	filter: blur(2px);
 }
 
+.modal-backdrop.show {
+  opacity: .6;
+}
+
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+}
+
+.swal2-container.swal2-backdrop-show {
+	transition: filter 0.2s linear;
+}
+
+.alt-backdrop {
+	transition: filter 0.2s linear;
+	opacity: .6;
+	backdrop-filter: blur(2px);
+}
+
 .modal.fade .modal-dialog {}
 
 .modal-open[style] {}
