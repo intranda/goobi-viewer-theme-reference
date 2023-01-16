@@ -17,7 +17,18 @@
 		}
 	}
 }
-#tagcloudWrapper {
+
+.content-component__tag-cloud > h2:first-child  {
+	margin-bottom: 0;
+	border: @border;
+	border-bottom: 0;
+	background-color: @bg-content-box;
+	color: @fg-content-box;
+	border-top: @border;
+	padding: 20px 20px 10px 20px;
+}
+
+#tagcloudWrapper, .tag-cloud__wrapper {
 	margin: 0;
 	padding: 2rem;
 	border: @border;
@@ -25,12 +36,12 @@
 	border-bottom: 0;
 	background-color: @bg-content-box;
 	color: @fg-content-box;
-	&:last-child {
+	&:last-child { 
 		border-bottom: @border;
 	}
 	& + h2 {
 		margin-bottom: 0;
-		padding: 10px;
+		padding: 10px 20px;
 		border: @border;
 		border-top: 0;
 		border-bottom: 0;
