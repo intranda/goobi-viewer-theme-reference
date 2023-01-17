@@ -23,7 +23,7 @@
   <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files, all available strings are listed when passing 'showCSS' resp. 'showJS') -->
   <c:set var="excludeCSS" value="#{[]}" />
   <c:set var="excludeJS" value="#{[]}" />
-
+  
 	<h:head profile="http://dublincore.org/documents/dcq-html/">
 
 	<ui:insert name="head" />
@@ -81,7 +81,7 @@
 <ui:insert name="metadata" />
 
 <h:body id="viewer">
-	<h:panelGroup id="subBody">
+	<h:panelGroup id="subBody" layout="block">
 
 	  <f:view locale="#{navigationHelper.locale}">
       <!-- TOP ANCHOR FOR SCROLLING TO TOP -->

@@ -104,6 +104,21 @@
 	}
 }
 
+#bodyWrapper {
+	transition: filter 0.2s linear;
+}
+
+.modal-open {
+	#bodyWrapper > *:not(#pageHeader),
+	.page-header {
+    	 filter: blur(3px);
+	}
+}
+
+.alt-backdrop, .modal-backdrop.show {
+	opacity: 0.6;
+}
+
 .modal.fade .modal-dialog {}
 
 .modal-open[style] {}

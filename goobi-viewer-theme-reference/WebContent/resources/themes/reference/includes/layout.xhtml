@@ -115,7 +115,7 @@
 		<!-- End class="page-header" -->
 
 		<!-- HERO SLIDER -->
-		<ui:fragment rendered="#{cmsPage.topBarSliderId != null}">
+		<ui:fragment rendered="#{cmsPage.hasTopbarComponents()}">
 			<div class="page-header__slider">
 				<ui:insert name="topbar" />
 			</div>
@@ -269,8 +269,8 @@
 					<a href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
 						title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
 						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_slideshare}"> <span
-						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
+						aria-label="#{msg.social__follow_on_instagram}"> <span
+						class="sr-only">#{msg.social__follow_on_instagram}</span> <i
 						class="fa fa-instagram" aria-hidden="true"></i>
 					</a>
 
