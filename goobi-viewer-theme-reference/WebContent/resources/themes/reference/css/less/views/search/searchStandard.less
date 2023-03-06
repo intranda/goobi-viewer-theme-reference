@@ -27,13 +27,16 @@
     &__input-autocomplete {
         .ui-autocomplete {
             .ui-autocomplete-input {
-				.mx-dark-mode-rules ({
-					background: @white; 
-					color: @black;
-				});
-				.mx-light-mode-rules ({
-					background: @white;
-				});
+				background: @white;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						background: @white; 
+						color: @black;
+					});
+					.mx-light-mode-rules ({
+						background: @white;
+					});
+				}
 			}
         }
     }
@@ -49,12 +52,15 @@
 	&__filter-select {
 		.custom-control--select {
 			& select {
-				.mx-dark-mode-rules ({
-					background: @fg-general;
-				});
-				.mx-light-mode-rules ({
-					background: #f7f7f7;
-				});
+				background: #f7f7f7;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						background: @fg-general;
+					});
+					.mx-light-mode-rules ({
+						background: #f7f7f7;
+					});
+				}
 			}
 		}
 	}
@@ -63,12 +69,15 @@
     }
     &__action {
         .btn--default {
+			background: #f7f7f7;
+			& when (@colorModes = true) {
 				.mx-dark-mode-rules ({
 					background: @fg-general;
 				});
 				.mx-light-mode-rules ({
 					background: #f7f7f7;
 				});
+			}
 		}
     }
     /* MODIFICATION */

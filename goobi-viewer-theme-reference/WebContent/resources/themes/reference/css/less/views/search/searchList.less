@@ -25,6 +25,13 @@
 				color: @fg-general;
 			}
             &.active {
+			 color: @ci-color1;
+			.fa {
+				&:after {
+					display: none;
+				}
+			}
+			& when (@colorModes = true) {
 				.mx-light-mode-rules ({
 					 color: @ci-color1;
 					.fa {
@@ -50,9 +57,10 @@
 						}
 					}
 				});
-            }
+			}
         }
-        form {}
+    }
+    form {}
     }
     &__hitcount,
     &__rss,
@@ -168,12 +176,15 @@
     }
     &__hit-thumbnail {
         img {
-			.mx-light-mode-rules ({
-				border: 2px solid #fff;
-			});
-			.mx-dark-mode-rules ({
-				border: none;
-			});
+			border: 2px solid #fff;
+			& when (@colorModes = true) {
+				.mx-light-mode-rules ({
+					border: 2px solid #fff;
+				});
+				.mx-dark-mode-rules ({
+					border: none;
+				});
+			}
 		}
         [data-bookmark-list-type="add"] {
         	color: @ci-color1;

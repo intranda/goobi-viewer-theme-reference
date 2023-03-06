@@ -32,21 +32,27 @@
 
 
 .tooltipp {
-	.mx-dark-mode-rules ({
-		color: #222;
-	});
-	.mx-light-mode-rules ({
-	});
+	& when (@colorModes = true) {
+		.mx-dark-mode-rules ({
+			color: #222;
+		});
+		.mx-light-mode-rules ({
+		});
+	}
 }
 .admin__form-help-text {
-	.mx-dark-mode-rules ({
-		color: @fg-general;
-		opacity: 0.6;
-	});
-	.mx-light-mode-rules ({
-		color: @fg-general;
-		opacity: 0.6;
-	});
+	color: @fg-general;
+	opacity: 0.6;
+	& when (@colorModes = true) {
+		.mx-dark-mode-rules ({
+			color: @fg-general;
+			opacity: 0.6;
+		});
+		.mx-light-mode-rules ({
+			color: @fg-general;
+			opacity: 0.6;
+		});
+	}
 }
 
 /* TABS */
@@ -62,18 +68,24 @@
 .tab-pane {}
 /* FORMS */
 .form-control {
-	.mx-dark-mode-rules ({
-		&:disabled {
-			background: #e9ecef;
-		}
-		background: @fg-general;
-	});
-	.mx-light-mode-rules ({
-		&:disabled {
-			background: #e9ecef;
-		}
-		background: @white;
-	});
+	&:disabled {
+		background: #e9ecef;
+	}
+	background: @white;
+	& when (@colorModes = true) {
+		.mx-dark-mode-rules ({
+			&:disabled {
+				background: #e9ecef;
+			}
+			background: @fg-general;
+		});
+		.mx-light-mode-rules ({
+			&:disabled {
+				background: #e9ecef;
+			}
+			background: @white;
+		});
+	}
     &:focus {}
 }
 .form-horizontal {
@@ -140,12 +152,15 @@
 }
 
 .data-table-paginator__button {
-	.mx-dark-mode-rules ({
-		background-color: @bg-general;
-	});
-	.mx-light-mode-rules ({
-		background-color: @bg-general;;
-	});
+	background-color: @bg-general;
+	& when (@colorModes = true) {
+		.mx-dark-mode-rules ({
+			background-color: @bg-general;
+		});
+		.mx-light-mode-rules ({
+			background-color: @bg-general;
+		});
+	}
 }
 
 // TEMPORARY IMPLEMENTATION FOR SLIDER (SWIPER PAGINATION)

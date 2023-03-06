@@ -35,24 +35,30 @@
 			}
 			/* USER DROPDOWN */
 			&__user-dropdown {
+				background: #444;
+				& when (@colorModes = true) {
 					.mx-dark-mode-rules ({
 						background: @bg-active;
 					});
 					.mx-light-mode-rules ({
 						background: #444;
 					});
+				}
 				ul {}
 				li {}
 
 			}
 			&__user-dropdown-item {
 				&:hover {
-					.mx-dark-mode-rules ({
-						background: @bg-hover;
-					});
-					.mx-light-mode-rules ({
-						background: @middleblackHover;
-					});
+					background: @middleblackHover;
+					& when (@colorModes = true) {
+						.mx-dark-mode-rules ({
+							background: @bg-hover;
+						});
+						.mx-light-mode-rules ({
+							background: @middleblackHover;
+						});
+					}
 				}
 			}
 			&__user-dropdown-item-icon {
@@ -80,12 +86,15 @@
 			&__bookmarks-dropdown {
 			}
 			&__bookmarks-small-list {
-				.mx-dark-mode-rules ({
-					background: @bg-content-box;
-				});
-				.mx-light-mode-rules ({
-					background: @middleblackContrast;
-				});
+				background: @middleblackContrast;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						background: @bg-content-box;
+					});
+					.mx-light-mode-rules ({
+						background: @middleblackContrast;
+					});
+				}
 			}
 			&__bookmarks-entry {}
 			&__bookmarks-name {

@@ -47,6 +47,10 @@
 	}
     &__action {
 		border: @border;
+		&:not(.zoom-slider-wrapper) {
+			background-color: transparent;
+		}
+		& when (@colorModes = true) {
 			.mx-dark-mode-rules ({
 				&:not(.zoom-slider-wrapper) {
 					background: @bg-active;
@@ -57,6 +61,7 @@
 					background-color: transparent;
 				}
 			});
+		}
 	    /* ELEMENT */
 			&:hover,
 			&:active,
@@ -68,14 +73,16 @@
 		span,
 		select,
 		button {
-			.mx-dark-mode-rules ({
-				background: @bg-active;
-				color: @fg-general;
-			});
-			.mx-light-mode-rules ({
-				background-color: transparent;
-			});
-
+			background-color: transparent;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					background: @bg-active;
+					color: @fg-general;
+				});
+				.mx-light-mode-rules ({
+					background-color: transparent;
+				});
+			}
 			color: @fg-controls;
 			fill: @fg-controls;
 			&:hover,
@@ -136,26 +143,34 @@
 	        .zoom-slider {
 	            //Firefox
 		        &::-moz-range-thumb {
-					.mx-dark-mode-rules ({
-						background-color: @bg-active;
-						border: 1px solid #6f6f6f;
-					});
-					.mx-light-mode-rules ({
-						background: #6f6f6f;
-						border: inherit;
-					});
+					background: #6f6f6f;
+					border: inherit;
+					& when (@colorModes = true) {
+						.mx-dark-mode-rules ({
+							background-color: @bg-active;
+							border: 1px solid #6f6f6f;
+						});
+						.mx-light-mode-rules ({
+							background: #6f6f6f;
+							border: inherit;
+						});
+					}
 		        }
 				&:focus {
 				}
 		        &::-webkit-slider-thumb {
-					.mx-dark-mode-rules ({
-						background-color: @bg-active;
-						border: 1px solid #6f6f6f;
-					});
-					.mx-light-mode-rules ({
-						background: @gray;
-						border: inherit;
-					});
+					background: @gray;
+					border: inherit;
+					& when (@colorModes = true) {
+						.mx-dark-mode-rules ({
+							background-color: @bg-active;
+							border: 1px solid #6f6f6f;
+						});
+						.mx-light-mode-rules ({
+							background: @gray;
+							border: inherit;
+						});
+					}
 				}
 				&::-webkit-slider-runnable-track {
 				}

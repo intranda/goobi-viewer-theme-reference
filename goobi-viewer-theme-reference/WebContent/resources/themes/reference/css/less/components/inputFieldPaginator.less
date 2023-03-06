@@ -19,12 +19,15 @@
 			}
 		}
 		svg {
-			.mx-dark-mode-rules ({
-				fill: @white;
-			});
-			.mx-light-mode-rules ({
-				fill: @black;
-  			});
+			fill: @black;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					fill: @white;
+				});
+				.mx-light-mode-rules ({
+					fill: @black;
+	  			});
+			}
 		}
 	}
 	&__navigate-text {
@@ -36,12 +39,15 @@
 			border: none;
 			outline: none;
 			background-color: transparent;
-			.mx-dark-mode-rules ({
-				color: @fg-general;
-			});
-			.mx-light-mode-rules ({
-				color: @fg-general;
-  			});
+			color: @fg-general;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					color: @fg-general;
+				});
+				.mx-light-mode-rules ({
+					color: @fg-general;
+	  			});
+			}
 		}
 	}
 }

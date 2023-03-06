@@ -33,17 +33,19 @@
     }
   }
   &__table-entry {
-    .mx-dark-mode-rules ({
-		&:nth-child(2n+1) {
-				background: @bg-content-box;
-				&:hover {
-					background-color: @bg-hover;
+		& when (@colorModes = true) {
+		    .mx-dark-mode-rules ({
+				&:nth-child(2n+1) {
+						background: @bg-content-box;
+						&:hover {
+							background-color: @bg-hover;
+						}
 				}
+			});
+		    .mx-light-mode-rules ({
+		
+			});
 		}
-	});
-    .mx-light-mode-rules ({
-
-	});
     &:hover {
       .user-comments__table-entry-action-link {
       }
@@ -58,22 +60,28 @@
   }
   .admin__search-action {
     background: @bg-content-box;
-    .mx-dark-mode-rules ({
-				border: none;
-			});
-    .mx-light-mode-rules ({
-				border: 1px solid #ccc;
-			});
+	border: 1px solid #ccc;
+	& when (@colorModes = true) {
+	    .mx-dark-mode-rules ({
+			border: none;
+		});
+	    .mx-light-mode-rules ({
+			border: 1px solid #ccc;
+		});
+	}
     &:hover,
     &:active,
     &:focus {
       .btn--icon {
+		border: @fg-general;
+		& when (@colorModes = true) {
         .mx-dark-mode-rules ({
-						color: @fg-general;
-					});;
+			color: @fg-general;
+		});
         .mx-light-mode-rules ({
-						border: @fg-general;
-					});;
+			border: @fg-general;
+		});
+		}
       }
     }
   }

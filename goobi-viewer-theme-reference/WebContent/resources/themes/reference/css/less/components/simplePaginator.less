@@ -23,6 +23,8 @@
 		&:active,
 		&:focus {
 			background-color: @ci-color1;
+			color: @white;
+			& when (@colorModes = true) {
 			  .mx-dark-mode-rules ({
 			    background-color: @bg-active;
 			  });
@@ -30,6 +32,7 @@
 			    background-color: @ci-color1;
 				color: @white;
 			  });
+			}
 		}
 	}
 	span {}
@@ -37,10 +40,14 @@
 		a, span {
 			color: @bg-content-box;
 			background-color: @ci-color1;
+			& when (@colorModes = true) {
+			  .mx-light-mode-rules ({
+			  });
 			  .mx-dark-mode-rules ({
 				color: @white;
 			    background-color: @bg-active;
-			  });	
+			  });
+			}
 		}
 	}
 	&__dots {
@@ -52,12 +59,7 @@
 	&__navigate {
 		&.inactive {
 			a {
-				i {				
-				  .mx-dark-mode-rules ({
-				  });
-				  .mx-light-mode-rules ({
-				  });
-				}
+				i {}
 
 			}
 		}
@@ -74,6 +76,10 @@
 		}
 	}
 	&__page-number-input {
+		margin-bottom: 0px;
+		background-color: @white;
+		color: @black;
+		& when (@colorModes = true) {
 		  .mx-dark-mode-rules ({
 			margin-bottom: 2px;
 		  });
@@ -82,18 +88,24 @@
 		    background-color: @white;
 			color: @black;
 		  });
+		}
 		input {
 		border: none;
 		outline: none;
-	  .mx-dark-mode-rules ({
-	    background-color: @bg-active;
-		color: @white;
-	  });
-	  .mx-light-mode-rules ({
 		padding-top: 2px;
-	    background-color: @white;
+		background-color: @white;
 		color: @black;
-	  });
+		& when (@colorModes = true) {
+		  .mx-dark-mode-rules ({
+		    background-color: @bg-active;
+			color: @white;
+		  });
+		  .mx-light-mode-rules ({
+			padding-top: 2px;
+		    background-color: @white;
+			color: @black;
+		  });
+		}
 		}		
 	}
 }

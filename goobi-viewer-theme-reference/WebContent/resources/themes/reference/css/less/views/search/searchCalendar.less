@@ -56,6 +56,9 @@
     &__month-week {}
     &__month-day {
       a {
+		background-color: @middlegray;
+		color: @fg-general;
+		& when (@colorModes = true) {
 		  .mx-dark-mode-rules ({
 		    background-color: @bg-active;
 			
@@ -64,6 +67,7 @@
 		    background-color: @middlegray;
 			color: @fg-general;
 		  });
+		}
           &:focus,
           &:hover,
           &:active {
