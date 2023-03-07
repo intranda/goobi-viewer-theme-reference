@@ -10,23 +10,29 @@
             li {
                 a {
 					border: @border;
-					.mx-dark-mode-rules ({
-						background: @bg-content-box;
-					});
-					.mx-light-mode-rules ({
-						background: @bg-hover;
-					});
+					background: @bg-hover;
+					& when (@colorModes = true) {
+						.mx-dark-mode-rules ({
+							background: @bg-content-box;
+						});
+						.mx-light-mode-rules ({
+							background: @bg-hover;
+						});
+					}
                     .fa {}
                     .glyphicon {}
                 }
 				&.active a {
 					color: @fg-general;
-					.mx-dark-mode-rules ({
-						background: @bg-hover;
-					});
-					.mx-light-mode-rules ({
-						background: @white;
-					});
+					background: @white;
+					& when (@colorModes = true) {
+						.mx-dark-mode-rules ({
+							background: @bg-hover;
+						});
+						.mx-light-mode-rules ({
+							background: @white;
+						});
+					}
 				}
             }
         }
@@ -71,12 +77,15 @@
         .page-tag {
             &.empty {}
             &.person {
-				.mx-dark-mode-rules ({
-					color: @lk-general;
-				});
-				.mx-light-mode-rules ({
-					color: @personColor;
-				});
+				color: @personColor;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						color: @lk-general;
+					});
+					.mx-light-mode-rules ({
+						color: @personColor;
+					});
+				}
             }
             &.location {
                 color: @locationColor;

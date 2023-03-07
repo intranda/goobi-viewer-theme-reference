@@ -23,12 +23,15 @@
 	&__list-expandable-title {
 		&.-archives-selected {
 			.fa-stack {
-				.mx-light-mode-rules ({
-					color: green;
-				});
-				.mx-dark-mode-rules ({
-					color: #ff7800;
-				});
+				color: green;
+				& when (@colorModes = true) {
+					.mx-light-mode-rules ({
+						color: green;
+					});
+					.mx-dark-mode-rules ({
+						color: #ff7800;
+					});
+				}
 			}
 		}
 		&.-archives-selected {
@@ -37,12 +40,15 @@
 		}
 		&.-archives-selected {
 			.fa-file-o {
-				.mx-light-mode-rules ({
-					color: green;
-				});
-				.mx-dark-mode-rules ({
-					color: #ff7800;
-				});
+				color: green;
+				& when (@colorModes = true) {
+					.mx-light-mode-rules ({
+						color: green;
+					});
+					.mx-dark-mode-rules ({
+						color: #ff7800;
+					});
+				}
 			}
 		}
 		.fa-caret-up,

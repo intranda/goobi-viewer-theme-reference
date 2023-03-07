@@ -21,12 +21,15 @@
 		background-color: @bg-general;
 		color: @fg-general;
 		a {
-			.mx-light-mode-rules ({
-				text-decoration: none;
-			});
-			.mx-dark-mode-rules ({
-				text-decoration: underline;
-			});
+			text-decoration: none;
+			& when (@colorModes = true) {
+				.mx-light-mode-rules ({
+					text-decoration: none;
+				});
+				.mx-dark-mode-rules ({
+					text-decoration: underline;
+				});
+			}
 		}
 		p {
 		}

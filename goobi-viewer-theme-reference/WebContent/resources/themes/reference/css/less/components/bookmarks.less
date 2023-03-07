@@ -36,22 +36,28 @@
 	}
 	/* DROPDOWN LIST */
 	&__dropdown-list {
+		background-color: @middleblack;
+		& when (@colorModes = true) {
 			.mx-dark-mode-rules ({
 				background: @bg-active;
 			});
 			.mx-light-mode-rules ({
 				background-color: @middleblack;
 			});
+		}
 		li {
 			border-bottom: none;
 			color: @white;
 			&:hover {
-				.mx-dark-mode-rules ({
-					background: @bg-hover;
-				});
-				.mx-light-mode-rules ({
-					background-color: @middleblackHover;
-				});
+				background-color: @middleblackHover;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						background: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+						background-color: @middleblackHover;
+					});
+				}
 			}
 			&:last-child {}
 			.empty {}
@@ -83,13 +89,16 @@
 	}
 	/* DROPDOWN ACTIONS */
 	&__dropdown-list-actions {
-		.mx-dark-mode-rules ({
-			background: @bg-active;
-		});
-		.mx-light-mode-rules ({
-			background-color: @middleblack;
-		});
 		border-top: none;
+		background-color: @middleblack;
+		& when (@colorModes = true) {
+			.mx-dark-mode-rules ({
+				background: @bg-active;
+			});
+			.mx-light-mode-rules ({
+				background-color: @middleblack;
+			});
+		}
 	}
 	&__dropdown-list-single-entry {}
 	&__dropdown-list-title {}
@@ -101,12 +110,15 @@
 		&:hover,
 		&:active,
 		&:focus {
-			.mx-dark-mode-rules ({
-				background: @bg-hover;
-			});
-			.mx-light-mode-rules ({
-				background-color: @middleblackHover;
-			});			
+			background-color: @middleblackHover;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					background: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+					background-color: @middleblackHover;
+				});
+			}	
 		}
 	}
 	/* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */

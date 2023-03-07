@@ -4,36 +4,50 @@
    ==============================================================*/
 .widget-copyright-info {
 	border-top: @border;
-	.mx-light-mode-rules ({
-		background: white;
-	});
-	.mx-dark-mode-rules ({
-		background: @bg-content-box;
-	});
-    &__dot {
+	background: white;
+	.rs-svg-path {
+		fill: #000;
+	}
+	.paragraph-svg-path {
+		fill: #000;
+	}
+	& when (@colorModes = true) {
 		.mx-light-mode-rules ({
-			color: #000;
+			.rs-svg-path {
+				fill: #000;
+			}
+			.paragraph-svg-path {
+				fill: #000;
+			}
 		});
 		.mx-dark-mode-rules ({
-			color: white;
+			.rs-svg-path {
+				fill: #fff;
+			}
+			.paragraph-svg-path {
+				fill: #fff;
+			}
 		});
 	}
-	.mx-light-mode-rules ({
-		.rs-svg-path {
-			fill: #000;
+	& when (@colorModes = true) {
+		.mx-light-mode-rules ({
+			background: white;
+		});
+		.mx-dark-mode-rules ({
+			background: @bg-content-box;
+		});
+	}
+    &__dot {
+		color: #000;
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				color: #000;
+			});
+			.mx-dark-mode-rules ({
+				color: white;
+			});
 		}
-		.paragraph-svg-path {
-			fill: #000;
-		}
-	});
-	.mx-dark-mode-rules ({
-		.rs-svg-path {
-			fill: #fff;
-		}
-		.paragraph-svg-path {
-			fill: #fff;
-		}
-	});
+	}
 
 }
 

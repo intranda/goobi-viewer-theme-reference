@@ -16,12 +16,15 @@
 		border: @border;
 	    transition: all 0s linear;
 	    &:hover {
-			.mx-dark-mode-rules ({
-				background-color: @bg-hover;
-			});
-			.mx-light-mode-rules ({
-				background-color: @lightgray;
-			});
+			background-color: @lightgray;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					background-color: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+					background-color: @lightgray;
+				});
+			}
 	    }
 		&.level-0 {
 		    h3 {

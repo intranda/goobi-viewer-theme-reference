@@ -37,24 +37,30 @@
 	&__input-group-field {
 	}
 	&__input-value {
-	    .mx-dark-mode-rules ({
-	    	background: @white;
-	     });
-	    .mx-light-mode-rules ({
-	    	background: @white;
-	    });
+		background: @white;
+		& when (@colorModes = true) {
+		    .mx-dark-mode-rules ({
+		    	background: @white;
+		     });
+		    .mx-light-mode-rules ({
+		    	background: @white;
+		    });
+		}
 	}
 	&__select-values {
 	}
 
 	&__action {
 	    .btn--default {
+		background: #f7f7f7;
+		& when (@colorModes = true) {
 	        .mx-dark-mode-rules ({
 	            background: @fg-general;
 	        });
-	    .mx-light-mode-rules ({
-	        background: #f7f7f7;
-	    });
+		    .mx-light-mode-rules ({
+		        background: #f7f7f7;
+		    });
+		}
 	}
 	}
 	&__additional-wrapper {

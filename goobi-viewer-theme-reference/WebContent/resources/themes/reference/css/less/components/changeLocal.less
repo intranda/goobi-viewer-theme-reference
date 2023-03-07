@@ -9,12 +9,15 @@
 	top: calc(~"100% + 4px");
 	left: 1.2rem;
 	padding-top: .1rem;
-		.mx-dark-mode-rules ({
-			background: @bg-active;
-		});
-		.mx-light-mode-rules ({
-			background: @middleblack;
-		});
+	background: @middleblack;
+		& when (@colorModes = true) {
+			.mx-dark-mode-rules ({
+				background: @bg-active;
+			});
+			.mx-light-mode-rules ({
+				background: @middleblack;
+			});
+		}
 	box-shadow: 0px 6px 10px rgba(0,0,0,.25);
 	z-index: 2030;
 //	&:before {
@@ -43,23 +46,29 @@
 		&:hover,
 		&:active,
 		&:focus {
-			.mx-dark-mode-rules ({
-				background: @bg-hover;
-			});
-			.mx-light-mode-rules ({
-				background-color: #606060;
-			});
+			background-color: #606060;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					background: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+					background-color: #606060;
+				});
+			}
 			
 			
 			text-decoration: none;
 		}
 		&.activeLang {
-			.mx-dark-mode-rules ({
-				background: @bg-hover;
-			});
-			.mx-light-mode-rules ({
-				background-color: #606060;
-			});
+			background-color: #606060;
+			& when (@colorModes = true) {
+				.mx-dark-mode-rules ({
+					background: @bg-hover;
+				});
+				.mx-light-mode-rules ({
+					background-color: #606060;
+				});
+			}
 		}
 	}
 	img {}

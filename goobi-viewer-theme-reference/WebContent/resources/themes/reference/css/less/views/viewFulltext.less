@@ -13,12 +13,15 @@
 		background-color: @bg-content-box;
 	}
 	&__content {
-		.mx-light-mode-rules ({
-			color: @fg-general;
-		});
-		.mx-dark-mode-rules ({
-			color: @bg-content-box;
-		});
+		color: @fg-general;
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				color: @fg-general;
+			});
+			.mx-dark-mode-rules ({
+				color: @bg-content-box;
+			});
+		}
 	}
 	&__box {
 		pre {}

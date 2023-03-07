@@ -65,13 +65,16 @@
 		&:focus,
 		&:hover,
 		&.active {
-			.mx-light-mode-rules ({
-				background-color: @bg-general;
-			});
-			.mx-dark-mode-rules ({
-				background-color: @bg-active;
-				color: @fg-content-box;
-			});
+			background-color: @bg-general;
+			& when (@colorModes = true) {
+				.mx-light-mode-rules ({
+					background-color: @bg-general;
+				});
+				.mx-dark-mode-rules ({
+					background-color: @bg-active;
+					color: @fg-content-box;
+				});
+			}
 		}
 	}
 	&__element-expand {}

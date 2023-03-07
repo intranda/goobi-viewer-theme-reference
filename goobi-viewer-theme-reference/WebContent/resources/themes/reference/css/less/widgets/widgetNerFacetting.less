@@ -52,12 +52,15 @@
             a {
                 &:hover {}
                 &[data-type="person"] {
-				.mx-dark-mode-rules ({
-					color: @lk-general;
-				});
-				.mx-light-mode-rules ({
-					color: @personColor;
-				});
+				color: @personColor;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						color: @lk-general;
+					});
+					.mx-light-mode-rules ({
+						color: @personColor;
+					});
+				}
 			}
                 &[data-type="location"] {}
                 &[data-type="corporation"] {}
@@ -74,12 +77,15 @@
         .page-tag {
             &.empty {}
             &.person {
-				.mx-dark-mode-rules ({
-					color: @lk-general;
-				});
-				.mx-light-mode-rules ({
-					color: @personColor;
-				});
+				color: @personColor;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+						color: @lk-general;
+					});
+					.mx-light-mode-rules ({
+						color: @personColor;
+					});
+				}
             }
             &.location {
                 color: @locationColor;
@@ -109,12 +115,15 @@
                         &:hover {}
                         &.empty {}
                         &.person {
-							.mx-dark-mode-rules ({
-								color: @lk-general;
-							});
-							.mx-light-mode-rules ({
-								color: @personColor;
-							});
+							color: @personColor;
+							& when (@colorModes = true) {
+								.mx-dark-mode-rules ({
+									color: @lk-general;
+								});
+								.mx-light-mode-rules ({
+									color: @personColor;
+								});
+							}
 			            }
                         &.location {}
                         &.corporation {}

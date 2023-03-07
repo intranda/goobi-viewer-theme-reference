@@ -18,12 +18,15 @@
         .search-result-navigation-right {
             &:hover {
             	svg {
-					.mx-dark-mode-rules ({
-            			background-color: @bg-hover;
-					});
-					.mx-light-mode-rules ({
-            			background-color: @lightgray;
-					});
+	            	background-color: @lightgray;
+					& when (@colorModes = true) {
+						.mx-dark-mode-rules ({
+	            			background-color: @bg-hover;
+						});
+						.mx-light-mode-rules ({
+	            			background-color: @lightgray;
+						});
+					}
 				}
             }
         }
@@ -53,12 +56,15 @@
         }
         &:hover {
         	svg {
-				.mx-dark-mode-rules ({
-        			background-color: @bg-hover;
-				});
-				.mx-light-mode-rules ({
-        			background-color: @lightgray;
-				});
+	        	background-color: @lightgray;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+	        			background-color: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+	        			background-color: @lightgray;
+					});
+				}
 			}
         }
     }

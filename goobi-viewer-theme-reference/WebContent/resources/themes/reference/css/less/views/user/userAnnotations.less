@@ -4,16 +4,21 @@
 #userAnnotations {
 	.admin__search-action {
 		background: @bg-content-box;
+		border: 1px solid #ccc;
+		& when (@colorModes = true) {
 			.mx-dark-mode-rules ({
 				border: none;
 			});
 			.mx-light-mode-rules ({
 				border: 1px solid #ccc;
 			});
-			&:hover,
-			&:active, 
-			&:focus {
-				.btn--icon {
+		}
+		&:hover,
+		&:active, 
+		&:focus {
+			.btn--icon {
+				border: @fg-general;
+				& when (@colorModes = true) {
 					.mx-dark-mode-rules ({
 						color: @fg-general;
 					});
@@ -22,6 +27,7 @@
 					});
 				}
 			}
+		}
 	}
 	.data-table-paginator__button {
 		&:hover,

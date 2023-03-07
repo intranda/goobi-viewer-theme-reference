@@ -101,10 +101,18 @@ THEMING
 	.mx-theme-light;
 }
 
+// ****************************************** //
+// **** EN-DISABLE COLOR MODE PROPERTIES **** //
+@colorModes: true;
+// ****************************************** //
+// ****************************************** //
+
 // OS OR BROWSER WANTS DARK THEME
 @media (prefers-color-scheme: dark) {
 	:root {
-		.mx-theme-dark;
+		& when (@colorModes = true) {
+			.mx-theme-dark;
+		}
 	}
 }
 
@@ -112,7 +120,9 @@ THEMING
 @color-theme-dark: color-theme-dark;
 
 .@{color-theme-dark} {
-	.mx-theme-dark;
+	& when (@colorModes = true) {
+		.mx-theme-dark;
+	}
 }
 
 .mx-dark-mode-rules(@darkmodeProps) {
@@ -124,7 +134,9 @@ THEMING
 @color-theme-light: color-theme-light;
 
 .@{color-theme-light} {
-	.mx-theme-light;
+	& when (@colorModes = true) {
+		.mx-theme-light;
+	}
 }
 
 .mx-light-mode-rules(@lightmodeProps) {

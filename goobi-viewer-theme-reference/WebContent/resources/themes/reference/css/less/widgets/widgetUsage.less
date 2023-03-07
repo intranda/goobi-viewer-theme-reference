@@ -18,24 +18,30 @@
 	&__citelinks {
 		a {}
 		.badge-dark {
-			  .mx-dark-mode-rules ({
-			    background-color: @bg-active;
-			  });
-			  .mx-light-mode-rules ({
-			    background-color: #343a40;
-			  });
+			background-color: #343a40;
+			& when (@colorModes = true) {
+				  .mx-dark-mode-rules ({
+				    background-color: @bg-active;
+				  });
+				  .mx-light-mode-rules ({
+				    background-color: #343a40;
+				  });
+			}
 			color: @white;
 
 			&:hover,
 			&:active,
 			&:focus {
 				color: @white;
-				.mx-dark-mode-rules ({
-			    	background-color: @bg-hover;
-			  	});
-			  .mx-light-mode-rules ({
-			    background-color: #5e5e5e;
-			  });
+				background-color: #5e5e5e;
+				& when (@colorModes = true) {
+				  .mx-dark-mode-rules ({
+				  		background-color: @bg-hover;
+				  });
+				  .mx-light-mode-rules ({
+				   		background-color: #5e5e5e;
+				  });
+				}
 			}
 		}
 	}
@@ -89,12 +95,15 @@
 	}
 	&__citerecommendation-text-info {}
 	&__citelinks-input {
-		.mx-light-mode-rules ({
-			background: @white;
-		});
-		.mx-dark-mode-rules ({
-			background: @white;
-		});
+		background: @white;
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				background: @white;
+			});
+			.mx-dark-mode-rules ({
+				background: @white;
+			});
+		}
 	}
 }
 

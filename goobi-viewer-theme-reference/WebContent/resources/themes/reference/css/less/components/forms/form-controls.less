@@ -13,12 +13,16 @@
 		.fa-square-o,
     .fa-check-circle-o,
 		.fa-check-square-o {
-			.mx-light-mode-rules ({
-				color: @ci-color1;
-			});
-			.mx-dark-mode-rules ({
-				color: @fg-general;
-			});
+			color: @ci-color1;
+			& when (@colorModes = true) {
+				.mx-light-mode-rules ({
+					color: @ci-color1;
+				});
+				.mx-dark-mode-rules ({
+					color: @fg-general;
+				});
+			}
+
 		}
 }
 
@@ -41,15 +45,18 @@
 		&:checked ~ .custom-control__icon .fa-check-circle-o {}
 	}
 }
-.custom-control--select {
+.custom-control--select { 
 	border: @border;
 	background-color: @bg-content-box;
-	.mx-dark-mode-rules ({
-		background: @fg-general;
-	});
-	.mx-light-mode-rules ({
+	& when (@colorModes = true) {
 		background: @white;
-	});
+		.mx-dark-mode-rules ({
+			background: @fg-general;
+		});
+		.mx-light-mode-rules ({
+			background: @white;
+		});
+	}
 	&:after {}
 	&:after {}
 	&.multiple {
@@ -58,13 +65,16 @@
 	}
 	select {
 		font-size: @fontMedium;
+		background: @white;
+		& when (@colorModes = true) {
+			.mx-dark-mode-rules ({
+				background: @fg-general;
+			});
+			.mx-light-mode-rules ({
+				background: @white;
+			});
+		}
 		&.disabled {}
-		.mx-dark-mode-rules ({
-			background: @fg-general;
-		});
-		.mx-light-mode-rules ({
-			background: @white;
-		});
 	}
 	select[disabled="disabled"] {}
 }
