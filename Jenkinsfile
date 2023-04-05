@@ -68,6 +68,14 @@ pipeline {
             dockerimage_public.push("latest")
           }
         }
+
+        // publish docker image to GitHub container registry
+        script{
+          docker.withRegistry('https://ghcr.io','jenkins-github-container-registry'){          
+            dockerimage_public.push("${env.TAG_NAME}")
+            dockerimage_public.push("latest")
+          }
+        }
       }
     }
 
@@ -115,6 +123,15 @@ pipeline {
           if (env.BRANCH_NAME == 'develop') {
             docker.withRegistry('','0b13af35-a2fb-41f7-8ec7-01eaddcbe99d'){
               dockerimage_public.push("${env.BRANCH_NAME}")
+            }
+          }
+        }
+
+        // publish docker image from develop branch to GitHub container registry
+        script{
+          if (env.BRANCH_NAME == 'develop') {
+              docker.withRegistry('https://ghcr.io','jenkins-github-container-registry'){
+                dockerimage_public.push("${env.BRANCH_NAME}")
             }
           }
         }
