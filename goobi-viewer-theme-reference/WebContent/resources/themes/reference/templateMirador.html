@@ -63,10 +63,19 @@
 		<!-- TODO: REST-Aufrufe entwickeln, die die notwendigen Parameter an Mirador übergeben. -->
 
 		<script type="text/javascript">
+		
+			function getPageFromQueryParameter()  {
+				let query = window.location.search;
+				let params = new URLSearchParams(query);
+				let page = params.get("page");
+				return page;
+			}
+		
             var miradorConfig = {
                 root: "#{request.contextPath}",
                 restEndpoint: "#{configurationBean.restApiUrl}",
-                manifestEndpoint: "#{configurationBean.restApiUrlForIIIFPresention}/"
+                manifestEndpoint: "#{configurationBean.restApiUrlForIIIFPresention}/",
+                startPage: getPageFromQueryParameter()
             };
             viewerJS.mirador.init( miradorConfig );
         </script>

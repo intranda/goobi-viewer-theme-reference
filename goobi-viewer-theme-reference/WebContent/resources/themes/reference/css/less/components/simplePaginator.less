@@ -23,14 +23,15 @@
 		&:active,
 		&:focus {
 			background-color: @ci-color1;
-			color: @white;
 			& when (@colorModes = true) {
 			  .mx-dark-mode-rules ({
 			    background-color: @bg-active;
+				color: @white;
 			  });
 			  .mx-light-mode-rules ({
-			    background-color: @ci-color1;
-				color: @white;
+			    background-color: @bg-hover;
+				// color: @white; 
+				color: @fg-general;
 			  });
 			}
 		}
@@ -42,7 +43,8 @@
 			background-color: @ci-color1;
 			& when (@colorModes = true) {
 			  .mx-light-mode-rules ({
-			  });
+				 background-color: @ci-color1;
+			  }); 
 			  .mx-dark-mode-rules ({
 				color: @white;
 			    background-color: @bg-active;
