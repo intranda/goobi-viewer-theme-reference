@@ -17,33 +17,7 @@
 	&__image-fragment,
 	&__citelinks {
 		a {}
-		.badge-dark {
-			background-color: #343a40;
-			& when (@colorModes = true) {
-				  .mx-dark-mode-rules ({
-				    background-color: @bg-active;
-				  });
-				  .mx-light-mode-rules ({
-				    background-color: #343a40;
-				  });
-			}
-			color: @white;
 
-			&:hover,
-			&:active,
-			&:focus {
-				color: @white;
-				background-color: #5e5e5e;
-				& when (@colorModes = true) {
-				  .mx-dark-mode-rules ({
-				  		background-color: @bg-hover;
-				  });
-				  .mx-light-mode-rules ({
-				   		background-color: #5e5e5e;
-				  });
-				}
-			}
-		}
 	}
 	/* WORK DOWNLOADS */
 	&__work-downloads {
@@ -89,9 +63,12 @@
 		.fa-quote-right {}
 	}
 	&__citerecommendation-copy-text {
+		color: @lk-content-box;
 		&:hover,
 		&:active,
-		&:focus {}
+		&:focus {
+			color: @lk-content-box;
+		}
 	}
 	&__citerecommendation-text-info {}
 	&__citelinks-input {

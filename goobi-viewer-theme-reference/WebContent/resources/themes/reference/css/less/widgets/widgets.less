@@ -30,9 +30,19 @@
     }
   }
   // CHECK IF STILL NEEDED
-  a:not(.widget-geofacetting__body a, .widget-geomap a, .widget-usage
-      .badge, .widget-archives a, .widget-related-groups a, h2
-      a, .widget-record-notes a, .widget-annotations a, .widget-copyright-info a, .widget-highlight a) {
+  a:not(.widget-geofacetting__body a, 
+  .widget-geomap a, 
+  .widget-usage .badge,
+  .widget-downloads .badge,
+  .widget-citation .badge,
+  .widget-format-links .badge,
+  .widget-archives a, 
+  .widget-related-groups a,
+  h2 a,
+  .widget-record-notes a, 
+  .widget-annotations a, 
+  .widget-copyright-info a, 
+  .widget-highlight a) {
     color: @lk-content-box;
     display: block;
     line-height: 1.2;
@@ -78,6 +88,40 @@
     border-top: 0;
     background-color: @bg-content-box;
     border-bottom: @border;
+  }
+  &__badge-container {
+	a, form, button {
+	}
+	.badge-dark {
+		background-color: #343a40;
+		& when (@colorModes = true) {
+			  .mx-dark-mode-rules ({
+			    background-color: @bg-active;
+			  });
+			  .mx-light-mode-rules ({
+			    background-color: #343a40;
+			  });
+		}
+		color: @white;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: @white;
+			background-color: #5e5e5e;
+			& when (@colorModes = true) {
+			  .mx-dark-mode-rules ({
+			  		background-color: @bg-hover;
+			  });
+			  .mx-light-mode-rules ({
+			   		background-color: #5e5e5e;
+			  });
+			}
+		}
+	}
+  }
+  &__badge-container-heading {
+
   }
 }
 
