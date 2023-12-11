@@ -171,11 +171,9 @@ $( document ).ready( function() {
     $( 'body' ).on( 'click', '[data-open="menu"]', function() {
 		// ACCESSBILITY FOCUS JUMP
 		if (!$("page-navigation__mobile").hasClass("in")) {
-			console.log('hat nicht');
 			$('#sidebar a:visible:first').focus();
 		} else { 
 			$('[data-open="sidebar"]').focus();
-			console.log('hat klasse');
 		}
     	$( 'html' ).toggleClass( 'no-overflow' );
     	$( '.page-navigation__mobile' ).toggleClass('-mobileMenuOpen');
