@@ -17,6 +17,13 @@
 	<!-- ADMIN TOPBAR FRONTEND -->
 	<viewerComponent:frontEndAdminTopBar />
 
+	<!-- ONLY FOR KEYBOARD - SKIP TO MAIN CONTENT LINK -->
+	<div class="skip-menu">
+		<a href="#main" class="skip-menu__link">
+		Skip to main content
+		</a>
+	</div>
+
 
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
 
@@ -137,7 +144,7 @@
 		<div class="container">
 			<div class="page-content__wrapper" data-target="content-wrapper">
 				<!-- CONTENT -->
-				<main id="main" class="page-content__main">
+				<main id="main" class="page-content__main" role="main">
 
 					<!-- OPEN MOBILE NAVIGATION -->
 					<div class="page-header__mobile-sidebar-trigger">
