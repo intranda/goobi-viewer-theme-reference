@@ -5,6 +5,18 @@
 /* USER BOOKMARK SEND LIST */
 /* BLOCK */
 .user-bookmark-send-list {
+	input {
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				background: @fg-general;
+				border-color: #ced4da;
+			});
+			.mx-dark-mode-rules ({
+				border-color: #c6c6c6;
+				background: rgb(28, 37, 52);
+			}); 
+		}
+	}
     /* ELEMENT */
     &__form {
     	background-color: @white;
