@@ -17,6 +17,13 @@
 	<!-- ADMIN TOPBAR FRONTEND -->
 	<viewerComponent:frontEndAdminTopBar />
 
+	<!-- ONLY FOR KEYBOARD - SKIP TO MAIN CONTENT LINK -->
+	<div class="skip-menu">
+		<a href="#main" class="skip-menu__link">
+		#{msg.accessibility__skip_menu__jump_to_main}
+		</a>
+	</div>
+
 
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
 
@@ -83,10 +90,10 @@
 							</div>
 						</ui:fragment>
 
-						<div data-open="menu"
+						<button type="button" data-open="menu" aria-label="#{msg.aria_label__open_navigation}"
 							class="page-header__mobile-burger-menu-alternative">
 							<span></span>
-						</div>
+						</button>
 
 					</div>
 				</div>
@@ -137,7 +144,7 @@
 		<div class="container">
 			<div class="page-content__wrapper" data-target="content-wrapper">
 				<!-- CONTENT -->
-				<main id="main" class="page-content__main">
+				<main id="main" class="page-content__main" role="main">
 
 					<!-- OPEN MOBILE NAVIGATION -->
 					<div class="page-header__mobile-sidebar-trigger">

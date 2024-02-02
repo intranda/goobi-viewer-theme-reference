@@ -17,6 +17,9 @@
 	background: @bg-content-box;
 }
 .popover-body {
+	.btn--full {
+		color: white;
+	}
 	.mx-dark-mode-rules ({
 		a {
 			color: #222;
@@ -24,6 +27,24 @@
 			&:focus,
 			&:active {
 				color: #222;
+			}
+		}
+		.btn--full {
+			color: white;
+			&:hover,
+			&:focus,
+			&:active {
+				color: white;
+			}
+		}
+	});
+	.mx-light-mode-rules ({
+		.btn--full {
+			color: white;
+			&:hover,
+			&:focus,
+			&:active {
+				color: white;
 			}
 		}
 	});
