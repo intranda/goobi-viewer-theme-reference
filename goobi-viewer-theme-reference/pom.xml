@@ -17,7 +17,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
-		<maven.compiler.target>11</maven.compiler.target>
 		
 		<!-- Manifest information -->
 		<themeName>reference</themeName>
@@ -80,9 +79,8 @@
 	</profiles>
 
 
-	<build>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>test</testSourceDirectory>
+    <build>
+        <finalName>viewer</finalName>
 		<resources>
 			<resource>
 				<directory>WebContent</directory>
@@ -96,7 +94,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.0.0-M3</version>
+				<version>3.4.1</version>
 				<executions>
 					<execution>
 						<id>enforce-maven</id>
@@ -134,13 +132,13 @@
 			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.12.1</version>
 			</plugin>
 			<!-- Maven Dependency Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.1.2</version>
+				<version>3.6.1</version>
 				<executions>
 					<!-- Config files -->
 					<execution>
@@ -153,7 +151,7 @@
 							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core,viewer-connector</excludeArtifactIds>
-							<includeArtifacIds>viewer-core-config</includeArtifacIds>
+							<includeArtifactIds>viewer-core-config</includeArtifactIds>
 							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class,web-fragment.xml</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
@@ -169,7 +167,7 @@
 							<outputDirectory>${project.build.directory}/templates</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core-config,viewer-connector</excludeArtifactIds>
-							<includeArtifacIds>viewer-core</includeArtifacIds>
+							<includeArtifactIds>viewer-core</includeArtifactIds>
 							<includes>META-INF/resources/resources/cms/templates/**/*</includes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
@@ -179,12 +177,9 @@
 			<!-- Maven WAR Plugin -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>3.3.1</version>
+				<version>3.4.0</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
-					<warName>viewer</warName>
-					<wtpversion>2.0</wtpversion>
-					<wtpContextName>viewer</wtpContextName>
 					<packagingExcludes>**/rebel.xml</packagingExcludes>
 					<webResources>
 						<webResource>
