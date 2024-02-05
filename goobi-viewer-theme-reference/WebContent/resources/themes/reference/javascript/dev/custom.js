@@ -5,9 +5,6 @@
  * Method to set the content height to a min-height, equal to the viewport height.
  */
 function setContentHeight() {
-    // var pageHeaderTopHeight = $( '#pageHeaderTop' ).outerHeight();
-    // var pageHeaderBottomHeight = $( '#pageHeaderBottom' ).outerHeight();
-    // var pageNavigationHeight = $( '#pageNavigation' ).outerHeight();
    
     var pageHeaderHeight = $('.page-header__spacer').outerHeight();
     var pageWrapperHeight = $( '#pageContent' ).outerHeight();
