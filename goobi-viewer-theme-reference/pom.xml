@@ -17,7 +17,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
-		
+
 		<!-- Manifest information -->
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
@@ -37,7 +37,7 @@
 		<url>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</url>
 		<connection>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</connection>
 	</scm>
-	
+
 
 	<dependencies>
 		<dependency>
@@ -128,7 +128,7 @@
 				</nonFilteredFileExtensions>
 		        </configuration>
 		     </plugin>
-			
+
 			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
