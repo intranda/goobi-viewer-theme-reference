@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>24.02</version>
+	<version>24.03-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 
@@ -17,7 +17,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
-		
+
 		<!-- Manifest information -->
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
@@ -37,24 +37,24 @@
 		<url>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</url>
 		<connection>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</connection>
 	</scm>
-	
+
 
 	<dependencies>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>24.02</version>
+			<version>24.03-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>24.02</version>
+			<version>24.03-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-connector</artifactId>
-			<version>24.02</version>
+			<version>24.03-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
@@ -72,7 +72,7 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>24.02</version>
+					<version>24.03-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -128,11 +128,11 @@
 				</nonFilteredFileExtensions>
 		        </configuration>
 		     </plugin>
-			
+
 			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.12.1</version>
+				<version>3.13.0</version>
 			</plugin>
 			<!-- Maven Dependency Plugin -->
 			<plugin>
