@@ -29,6 +29,54 @@
 	}
 }
 
+.download-external-resource {
+	&__wrapper {
+
+	}
+	&__heading {
+
+	}
+	&__list {
+
+	}
+	&__item {
+		&:hover {
+			background: @bg-hover;
+		}
+	}
+	&__error_wrapper {
+
+	}
+	&__inner-wrapper {
+		&.-active {
+
+		}
+	}
+	&__label {
+	}
+	&__order {
+		&.-active {
+		}
+	}
+	&__waiting_animation {
+		&.-active {
+		}
+	}
+	&__loading_animation {
+		&.-active {
+		}
+	}
+	&__cancel_download {
+		&.-active {
+		}
+	}
+	&__results {
+		&.-active {
+		}
+	}
+
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
 
@@ -39,6 +87,9 @@
 @media screen and (max-width: @smallBreakpoint) {
 	.born-digital__items-wrapper:nth-child(odd) {
 	  background: @bg-hover;
+	}
+	.download-external-resource__item:nth-child(odd) {
+	  // background: @bg-hover;
 	}
 }
 
