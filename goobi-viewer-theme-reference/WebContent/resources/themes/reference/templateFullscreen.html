@@ -85,6 +85,9 @@
 		<ui:param name="excludeJS" value="#{excludeJS}" />
       	<ui:param name="cacheBuster" value="-cachetimestamp=2022-9-1-10-5-6" />
 	</ui:include>
+	
+    <!-- QUICK JS IN VIEWER BACKEND - ADDS <script> NODE -->
+	<h:outputText escape="false" value="#{adminThemesBean.javascript}"/>
 
 </h:head>
 
