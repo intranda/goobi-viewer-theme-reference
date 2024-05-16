@@ -48,8 +48,18 @@
 	<!-- CUSTOM CSS + DIST FILES -->
 	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
 
-    <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE -->
-	<h:outputText escape="false" value="#{adminThemesBean.styleSheet}"/>
+	 <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
+	 <ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.mainThemeName)}">
+	    <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
+	    	<ui:param name="style" value="#{adminThemesBean.getStylesheet(adminThemesBean.mainThemeName)}"></ui:param>
+	    </ui:include>				
+    </ui:fragment>
+    <!-- QUICK CSS FROM SUBTHEMES -->
+	<ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.currentSubThemeName)}">
+	    <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
+	    	<ui:param name="style" value="#{adminThemesBean.getStylesheet(adminThemesBean.currentSubThemeName)}"></ui:param>
+	    </ui:include>	
+    </ui:fragment>
 
     <!-- JAVASCRIPT -->
     <ui:include src="/resources/includes/templateHeads/js.xhtml">
