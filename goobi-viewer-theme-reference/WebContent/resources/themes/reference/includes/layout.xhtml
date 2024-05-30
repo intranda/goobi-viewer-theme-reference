@@ -18,11 +18,11 @@
 	<viewerComponent:frontEndAdminTopBar />
 
 	<!-- ONLY FOR KEYBOARD - SKIP TO MAIN CONTENT LINK -->
-	<div class="skip-menu" role="navigation" aria-labelledby="jumpToMainLink">
-		<a id="jumpToMainLink" href="#main" class="skip-menu__link">
+	<nav id="skipmenu" aria-label="#{msg.a11y__skip_menu}" class="skip-menu">
+		<a href="#main" class="skip-menu__link">
 		#{msg.accessibility__skip_menu__jump_to_main}
 		</a>
-	</div>
+	</nav>
 
 
 	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
