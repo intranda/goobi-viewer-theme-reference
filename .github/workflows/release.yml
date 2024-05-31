@@ -27,10 +27,8 @@ jobs:
 
     - uses: actions/checkout@v4
       name: Checkout Goobi viewer Theme Reference
-      with:
-        repository: intranda/goobi-viewer-theme-reference
 
-    - name: Create viewer.war with reference theme
+    - name: Create viewer.war
       run: mvn -f goobi-viewer-theme-reference/pom.xml clean package -U -B
 
     - name: Create a Github release
