@@ -55,7 +55,7 @@ function initSliders() {
 			swiperConfig: {
 				  slidesPerView: 1,
 				  loop: true,
-				  allowTouchMove: false,				  
+				  allowTouchMove: false,		  
 				  autoplay: {
 					   delay: 3000,
 				  },
