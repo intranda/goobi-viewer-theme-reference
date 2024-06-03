@@ -17,7 +17,7 @@
 	dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}">
 
 <!-- templateName determines which CSS + JS libraries will be included -->
-<c:set var="templateName" value="templateMirador" />
+<c:set var="templateName" value="templateBlankUnstyled" />
 
 <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
 <c:set var="excludeCSS" value="#{[]}" />
@@ -53,33 +53,7 @@
 <h:body id="viewer">
 	<f:view locale="#{navigationHelper.locale}">
 
-
-		<!-- MIRADOR WRAPPER -->
-		<div id="viewMirador" class="view-mirador">
-			<!-- MIRADOR CONTAINER -->
-			<div id="miradorViewer" class="view-mirador__viewer"></div>
-		</div>
-
-		<!-- TODO: REST-Aufrufe entwickeln, die die notwendigen Parameter an Mirador übergeben. -->
-
-		<script type="text/javascript">
-		
-			function getPageFromQueryParameter()  {
-				let query = window.location.search;
-				let params = new URLSearchParams(query);
-				let page = params.get("page");
-				return page;
-			}
-		
-            var miradorConfig = {
-                root: "#{request.contextPath}",
-                restEndpoint: "#{configurationBean.restApiUrl}",
-                manifestEndpoint: "#{configurationBean.restApiUrlForIIIFPresention}/",
-                startPage: getPageFromQueryParameter()
-            };
-            viewerJS.mirador.init( miradorConfig );
-        </script>
-
+		<ui:insert name="content" />
 
 	</f:view>
 
