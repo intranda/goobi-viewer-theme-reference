@@ -38,6 +38,54 @@
 	/* TEXT */
 	&__text {}
 	
+	// COLORS FOR BORDERS BASED ON DOCSTRUCT TYPE
+	// MAYBE CLEANUP/RECONSTRUCTION NEEDED
+	&.docstructtype__work {
+		.image-controls, .view-object__image {
+			border-width: 2px;
+			border-color: #b13b29;
+		}
+		.metadata__wrapper {
+			border: 2px solid #b13b29;
+		}
+	}
+	&.docstructtype__person {
+		.image-controls, .view-object__image {
+			border-width: 2px;
+			border-color: #dc7e2e;
+		}
+		.metadata__wrapper {
+			border: 2px solid #dc7e2e;
+		}
+	}
+	&.docstructtype__agent {
+		.image-controls, .view-object__image {
+			border-width: 2px;
+			border-color: #8966ca;
+		}
+		.metadata__wrapper {
+			border-border: 2px solid #8966ca;
+		}
+	}
+	&.docstructtype__award {
+		.image-controls, .view-object__image {
+			border-width: 2px;
+			border-color: #2e8d38;
+		}
+		.metadata__wrapper {
+			border-border: 2px solid #2e8d38;
+		}
+	}
+	&.docstructtype__event {
+		.image-controls, .view-object__image {
+			border-width: 2px;
+			border-color: #3365a9;
+		}
+		.metadata__wrapper {
+			border: 2px solid #3365a9;
+		}
+	}
+	
 }
 
 .view-object-content {

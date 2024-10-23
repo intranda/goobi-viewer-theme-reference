@@ -54,9 +54,30 @@
         border: @border;
         border-bottom: none;
         background-color: @ci-color1;
+		&.-result-group-standard {
+			color: @fg-general;
+			background: @ci-color1;
+		} 
+		/* COLORING FOR THE ENTITY GHOUPS */
+		&.-result-group-docstructtype__work {
+			background: #b13b29;
+		}
+		&.-result-group-docstructtype__person {
+			background: #dc7e2e;
+		}
+		&.-result-group-docstructtype__agent {
+			background: #8966ca;
+		}
+		&.-result-group-docstructtype__award {
+			background: #2e8d38;
+		}
+		&.-result-group-docstructtype__event {
+			background: #3365a9;
+		}
 	}
 	&__entity-tab-link-wrapper {
 		&.-active {
+			// ARROW POINTING DOWN
 			&:after {
 				display: inline-block;
 				width: 0;
@@ -70,6 +91,45 @@
 				transform: translate(-50%, 100%);
 				position: absolute;
 			}
+				&.-result-group-standard {
+					&::after {
+						border-top-color: @fg-general;
+					}
+	
+				} 
+				/* COLORING FOR THE ENTITY GHOUPS */
+				&.-result-group-docstructtype__work {
+					&::after {
+						border-top-color: #b13b29;
+					}
+				}
+				&.-result-group-docstructtype__person {
+					&::after {
+					border-top-color: #dc7e2e;
+					}
+				}
+				&.-result-group-docstructtype__agent {
+					&::after {
+					border-top-color: #8966ca;
+					}
+				}
+				&.-result-group-docstructtype__award {
+					&::after {
+					border-top-color: #2e8d38;
+					}
+				}
+				&.-result-group-docstructtype__event {
+					&::after {
+					border-top-color: #3365a9;
+					}
+				}
+			.search-advanced__entity-tab-link {
+
+			}
+			
+
+
+
 		}
 	}
 	&__entity-tab-link {
@@ -79,32 +139,41 @@
 		&:focus,
 		&:active {
 			color: rgb(255, 255, 255);
+		} 
+		&.-result-group-standard {
+			&:hover {
+				color: @fg-general;
+				background: @ci-color1;	
+			}
+		} 
+		/* COLORING FOR THE ENTITY GHOUPS */
+		&.-result-group-docstructtype__work {
+			&:hover {
+				background: #b13b29;
+			}
 		}
-//		&.-standard {
-//			// border: 1px solid #222;
-//			color: @fg-general;
-//		}
-//		/* COLORING FOR THE ENTITY GHOUPS */
-//		&.-group0 {
-//			// border: 1px solid #b13b29;
-//			background: #b13b29;
-//		}
-//		&.-group1 {
-//			// border: 1px solid #dc7e2e;
-//			background: #dc7e2e;
-//		}
-//		&.-group2 {
-//			// border: 1px solid #8966ca;
-//			background: #8966ca;
-//		}
-//		&.-group3 {
-//			// border: 1px solid #2e8d38;
-//			background: #2e8d38;
-//		}
-//		&.-group4 {
-//			// border: 1px solid #3365a9;
-//			background: #3365a9;
-//		}
+		&.-result-group-docstructtype__person {
+			&:hover {
+				background: #dc7e2e;
+			}	
+		}
+		&.-result-group-docstructtype__agent {
+			&:hover {
+				background: #8966ca;
+			}
+		}
+		&.-result-group-docstructtype__award {
+			&:hover {
+				background: #2e8d38;
+			}
+		}
+		&.-result-group-docstructtype__event {
+			&:hover {
+				background: #3365a9;
+			}
+		}
+		
+		
 	}
  
 	&__action {
