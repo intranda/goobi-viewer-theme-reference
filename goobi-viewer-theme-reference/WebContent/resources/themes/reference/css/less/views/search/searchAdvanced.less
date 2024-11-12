@@ -109,8 +109,6 @@
 		}
 	}
 	&__entity-tab-link {
-        border: @border;
-        border-bottom: none;
  		background-color: @bg-general;
 		&.-result-group-standard {
 			&:hover,
@@ -158,6 +156,7 @@
 		}
 		&.-active {
 			background: @bg-content-box;
+			color: @fg-general;
 			&.-result-group-standard {
 				border-top: 3px solid @ci-color1;
 			} 
@@ -176,6 +175,16 @@
 			&.-result-group-docstructtype__event {
 				border-top: 3px solid #8966CA;
 			}
+		}
+		& when (@colorModes = true) { 
+		    .mx-dark-mode-rules ({
+		    	border: 1px solid transparent;
+       			border-bottom: none;
+		     });
+		    .mx-light-mode-rules ({
+		    	border: @border;
+		    	border-bottom: none;
+		    });
 		}
 		
 	}
