@@ -110,12 +110,17 @@
 	}
 	&__entity-tab-link {
  		background-color: @bg-general;
+ 		// TOP BORDER FOR ENTITY TABS MIXIN
+		 .tabpseudoelementmixin1(@color) {
+			border-top: 3px solid @color;
+			padding-top: 7px;
+		}
+ 		
 		&.-result-group-standard {
 			&:hover,
 			&:focus,
 			&:active {
-				border-top: 3px solid @ci-color1;
-				
+				.tabpseudoelementmixin1(@ci-color1);
 			}
 		} 
 		/* COLORING FOR THE ENTITY GHOUPS */
@@ -123,57 +128,58 @@
 			&:hover,
 			&:focus,
 			&:active {
-				border-top: 3px solid #DC7E2E;
+				.tabpseudoelementmixin1(#DC7E2E);
 			}
 		}
 		&.-result-group-docstructtype__person {
 			&:hover,
 			&:focus,
 			&:active {
-				border-top: 3px solid #B13B29;
+				.tabpseudoelementmixin1(#B13B29);
 			}	
 		}
 		&.-result-group-docstructtype__agent {
 			&:hover,
 			&:focus,
 			&:active {
-				border-top: 3px solid #568FB2;
+				.tabpseudoelementmixin1(#568FB2);
 			}
 		}
 		&.-result-group-docstructtype__award {
 			&:hover,
 			&:focus,
 			&:active {
-				border-top: 3px solid #2E8D38;
+				.tabpseudoelementmixin1(#2E8D38);
 			}
 		}
 		&.-result-group-docstructtype__event {
 			&:hover,
 			&:focus,
 			&:active {
-				border-top: 3px solid #8966CA;
+				.tabpseudoelementmixin1(#8966CA);
 			}
 		}
 		&.-active {
+			padding-top: 7px;
 			background: @bg-content-box;
 			color: @fg-general;
 			&.-result-group-standard {
-				border-top: 3px solid @ci-color1;
+				.tabpseudoelementmixin1(@ci-color1);
 			} 
 			&.-result-group-docstructtype__work {
-				border-top: 3px solid #DC7E2E;
+				.tabpseudoelementmixin1(#DC7E2E);
 			}
 			&.-result-group-docstructtype__person {
-				border-top: 3px solid #B13B29;
+				.tabpseudoelementmixin1(#B13B29);
 			}
 			&.-result-group-docstructtype__agent {
-				border-top: 3px solid #568FB2;
+				.tabpseudoelementmixin1(#568FB2);
 			}
 			&.-result-group-docstructtype__award {
-				border-top: 3px solid #2E8D38;
+				.tabpseudoelementmixin1(#2E8D38);
 			}
 			&.-result-group-docstructtype__event {
-				border-top: 3px solid #8966CA;
+				.tabpseudoelementmixin1(#8966CA);
 			}
 		}
 		& when (@colorModes = true) { 
@@ -190,25 +196,25 @@
 	}
     // REWORK NEEDED
     &__action-search-button {
+		// SUBMIT BUTTON COLORS MIXIN
+		.entitySearchAdvancedButtonColor(@color) {
+			border: 1px solid @color;
+			background: @color;
+		}
 		&.-result-group-docstructtype__work {
-			border: 1px solid #DC7E2E;
-			background: #DC7E2E;
+			.entitySearchAdvancedButtonColor(#DC7E2E);
 		}
 		&.-result-group-docstructtype__person {
-			border: 1px solid #B13B29;
-			background: #B13B29;
+			.entitySearchAdvancedButtonColor(#B13B29);
 		}
 		&.-result-group-docstructtype__agent {
-			border: 1px solid #568FB2;
-			background: #568FB2;
+			.entitySearchAdvancedButtonColor(#568FB2);
 		}
 		&.-result-group-docstructtype__award {
-			border: 1px solid #2E8D38;
-			background: #2E8D38;
+			.entitySearchAdvancedButtonColor(#2E8D38);
 		}
 		&.-result-group-docstructtype__event {
-			border: 1px solid #8966CA;
-			background: #8966CA;
+			.entitySearchAdvancedButtonColor(#8966CA);
 		}
 	}
 
@@ -219,10 +225,7 @@
  		background-color: @bg-content-box;
 	}
 	&__entity-tabs-dropdown-button-wrapper {
-		border: @border;
-		border-left: none;
-  		border-right: none;
-  		border-top: none;
+
 	}
 	&__entity-tabs-dropdown-toggle-button {
         border: @border;
@@ -233,30 +236,26 @@
  		&:hover {
 			color: @fg-content-box;
 		}
-		&.-result-group-docstructtype__work {
-			border: 1px solid #DC7E2E;
-			background: #DC7E2E;
+		// MOBILE ENTITY DROPDOWN TOGGLE BUTTON COLORS MIXIN
+		.entitySearchAdvancedDropdownToggleColor(@color) {
+			border: 1px solid @color;
+			background: @color;
 			color: white;
+		}
+		&.-result-group-docstructtype__work {
+			.entitySearchAdvancedDropdownToggleColor(#DC7E2E);
 		}
 		&.-result-group-docstructtype__person {
-			border: 1px solid #B13B29;
-			background: #B13B29;
-			color: white;
+			.entitySearchAdvancedDropdownToggleColor(#B13B29);
 		}
 		&.-result-group-docstructtype__agent {
-			border: 1px solid #568FB2;
-			background: #568FB2;
-			color: white;
+			.entitySearchAdvancedDropdownToggleColor(#568FB2);
 		}
 		&.-result-group-docstructtype__award {
-			border: 1px solid #2E8D38;
-			background: #2E8D38;
-			color: white;
+			.entitySearchAdvancedDropdownToggleColor(#2E8D38);
 		}
 		&.-result-group-docstructtype__event {
-			border: 1px solid #8966CA;
-			background: #8966CA;
-			color: white;
+			.entitySearchAdvancedDropdownToggleColor(#8966CA);
 		}
 	}
 	&__entity-tabs-dropdown-link {
