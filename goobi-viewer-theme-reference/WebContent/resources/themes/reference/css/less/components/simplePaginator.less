@@ -14,14 +14,17 @@
 			background: none;
 		}
 	}
-	a, span {
+	a, button {
 		font-size: @fontMedium;
 		background-color: @bg-content-box;
 	}
-	a {
+	a, button {
+		color: @lk-general;
+		background: @bg-content-box;
 		&:hover,
 		&:active,
 		&:focus {
+			color: @lk-general;
 			background-color: @ci-color1;
 			& when (@colorModes = true) {
 			  .mx-dark-mode-rules ({
@@ -37,21 +40,6 @@
 		}
 	}
 	span {}
-	&__active {
-		a, span {
-			color: @bg-content-box;
-			background-color: @ci-color1;
-			& when (@colorModes = true) {
-			  .mx-light-mode-rules ({
-				 background-color: @ci-color1;
-			  }); 
-			  .mx-dark-mode-rules ({
-				color: @white;
-			    background-color: @bg-active;
-			  });
-			}
-		}
-	}
 	&__dots {
 		a, span {
 			background-color: transparent;
@@ -59,6 +47,27 @@
 		}
 	}
 	&__navigate {
+		&.-active {
+			a, span, button {
+				color: @bg-content-box;
+				background-color: @ci-color1;
+				&:hover,
+				&:active,
+				&:focus {
+					color: @bg-content-box;
+					background-color: @ci-color1;
+				}
+				& when (@colorModes = true) {
+				  .mx-light-mode-rules ({
+					 background-color: @ci-color1;
+				  }); 
+				  .mx-dark-mode-rules ({
+					color: @white;
+				    background-color: @bg-active;
+				  });
+				}
+			}
+		}
 		&.inactive {
 			a {
 				i {}
@@ -72,7 +81,7 @@
 		border: @border;
 	}
 	&__page-number-label {
-		span, a {
+		span, a, button {
 			border: none;
 			background: none;
 		}
