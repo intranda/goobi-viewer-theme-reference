@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>24.12</version>
+	<version>25.01-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 
@@ -16,7 +16,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>17</maven.compiler.release>
+		<maven.compiler.release>21</maven.compiler.release>
 
 		<!-- Manifest information -->
 		<themeName>reference</themeName>
@@ -43,18 +43,18 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>24.12</version>
+			<version>25.01-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>24.12</version>
+			<version>25.01-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-connector</artifactId>
-			<version>24.12</version>
+			<version>25.01-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
@@ -72,7 +72,7 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>24.12</version>
+					<version>25.01-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -138,7 +138,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>3.8.1</version>
 				<executions>
 					<!-- Config files -->
 					<execution>
