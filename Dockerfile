@@ -1,4 +1,4 @@
-FROM maven:3-eclipse-temurin-17 AS BUILD
+FROM maven:3-eclipse-temurin-21 AS BUILD
 
 LABEL org.opencontainers.image.authors="Matthias Geerdsen <matthias.geerdsen@intranda.com>"
 LABEL org.opencontainers.image.source="https://github.com/intranda/goobi-viewer-theme-reference"
@@ -12,7 +12,7 @@ WORKDIR /viewer
 RUN echo $build; if [ "$build" = "true" ]; then mvn -f goobi-viewer-theme-reference/pom.xml clean package; elif [ -f "/viewer/goobi-viewer-theme-reference/target/viewer.war" ]; then echo "using existing viewer.war"; else echo "not supposed to build, but no viewer.war found either"; exit 1; fi 
 
 # Build actual application container
-FROM tomcat:9-jre17-temurin-jammy as ASSEMBLE
+FROM tomcat:10-jre21 as ASSEMBLE
 
 ENV DB_SERVER viewer-db
 ENV DB_PORT 3306
