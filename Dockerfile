@@ -35,13 +35,20 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	rm -rf ${CATALINA_HOME}/webapps/*
 
-RUN ["/bin/bash","-c", "mkdir -p /opt/digiverso/{config/bin,indexer,logs,viewer/{abbyy,cmdi,deleted_mets,hotfolder,media,orig_lido,orig_denkxweb,ccess,ugc,alto,cms_media,error_mets,indexed_lido,mix,pdf,tei,updated_mets,cache,config/{PDFTitlePage,watermark},fulltext,indexed_mets,oai/token,ptif,themes,wc,bin}}"]
+RUN ["/bin/bash","-c", "mkdir -p /opt/digiverso/{config/bin,indexer,logs,viewer/{abbyy,cmdi,deleted_mets,hotfolder,media,orig_lido,orig_denkxweb,ccess,ugc,alto,cms_media,error_mets,indexed_lido,mix,pdf,tei,updated_mets,cache,config,fulltext,indexed_mets,oai/token,ptif,themes,wc,bin}}"]
 
 ARG CONFIG_BRANCH=develop
+ARG CONNECTOR_BRANCH=develop
+ENV CONFIGSOURCE folder
+ENV CONFIG_FOLDER /viewer-template
+ENV CONFIG_TARGET_FOLDER /opt/digiverso/viewer
 
 RUN echo "Using ${CONFIG_BRANCH} branch of goobi-viewer-core-config..."
 RUN git clone --branch=${CONFIG_BRANCH} --depth=1 https://github.com/intranda/goobi-viewer-core-config.git /goobi-viewer-core-config/ && \
-	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/install/* /opt/digiverso/viewer/config/  && \
+	git clone --branch=${CONNECTOR_BRANCH} --depth=1 https://github.com/intranda/goobi-viewer-connector.git /goobi-viewer-connector/ && \
+	mkdir /viewer-template && mkdir /viewer-template/config && mkdir /viewer-template/oai && \
+	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/install/* /viewer-template/config/  && \
+	mv /goobi-viewer-connector/goobi-viewer-connector/src/main/resources/*.xsl /viewer-template/oai/  && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/viewer.xml.template /usr/local/tomcat/conf/ && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/run.sh / && \
 	mv /goobi-viewer-core-config/goobi-viewer-core-config/src/main/resources/docker/setenv.sh /usr/local/tomcat/bin/setenv.sh && \
