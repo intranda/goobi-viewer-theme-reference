@@ -29,6 +29,12 @@
  
     <!-- PAGE HEADER -->
 	<header id="pageHeader">
+	
+	   <!-- MAINTENANCE MODE DISCLAIMER -->
+	   <ui:fragment rendered="#{adminBean.maintenanceMode.enabled}">
+	       <h:outputText>#{adminBean.maintenanceMode.getText(navigationHelper.localeString)}</h:outputText>
+	   </ui:fragment>
+	   
 		<div class="page-header #{userBean.admin ? '-adminActive':''}">
 			<div class="container page-header__wrapper">
 				<div class="page-header__inner">
