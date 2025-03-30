@@ -48,7 +48,18 @@
 			});
 		}
 	}
-
+	&__status-icon {
+		color: @black;
+		
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				color: @black;
+			});
+			.mx-dark-mode-rules ({
+				color: @white;
+			});
+		}
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
