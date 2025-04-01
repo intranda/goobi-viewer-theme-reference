@@ -35,8 +35,8 @@ pipeline {
         // build docker images
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=master --build-arg build=false .")
-            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=master --build-arg build=false .")
+            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=master --build-arg CONNECTOR_BRANCH=master --build-arg build=false .")
+            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=master --build-arg CONNECTOR_BRANCH=master --build-arg build=false .")
           }
         }
 
@@ -93,8 +93,8 @@ pipeline {
         // build docker images
         script{
           docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=develop --build-arg build=false .")
-            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=develop --build-arg build=false .")
+            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=develop --build-arg CONNECTOR_BRANCH=develop --build-arg build=false .")
+            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=develop --build-arg CONNECTOR_BRANCH=develop --build-arg build=false .")
           }
         }
 
