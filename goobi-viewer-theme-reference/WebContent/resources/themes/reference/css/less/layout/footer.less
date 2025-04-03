@@ -1,0 +1,113 @@
+/* ==============================================================
+   Layout content
+   ==============================================================*/
+
+/* FOOTER */
+.footer {
+	margin-top: auto;
+	position: sticky;
+	bottom: 0;
+	z-index: 1;
+	font-size: @fontMedium;
+	color: @white;
+	background-color: @middleblack;
+	color: @white;
+	& when (@colorModes =true) {
+		.mx-light-mode-rules ({
+			background-color: @middleblack;
+			color: @white;
+		});
+		.mx-dark-mode-rules ({
+			background-color: @bg-content-box;
+			color: @fg-content-box;
+		});
+	}
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	a,
+	button {
+		display: inline-block;
+		color: @white;
+		cursor: pointer;
+	
+		&:hover,
+		&:active,
+		&:focus {
+			color: @white;
+			text-decoration: underline;
+		}
+	
+		&:focus {
+			text-decoration: none;
+		}
+	}
+	&__links,
+	&__social {
+		display: flex;
+		align-items: center;
+		padding: 1rem 0;
+	}
+	&__links {
+		flex-wrap: wrap;
+		a,
+		span,
+		button {
+			padding: 0.6rem 1.2rem;
+		}
+	
+		span {
+			padding-right: 0;
+	
+			&+a {
+				padding-left: 0.3rem;
+			}
+		}
+	}
+	
+	&__social {
+		margin-left: auto;
+		a {
+			margin-left: 0.5rem;
+			padding: 0.5rem;
+			font-size: @fontXLarge;
+	
+			.fa-slideshare {
+				font-size: @fontLarge;
+			}
+		}
+	}
+}
+
+@{RTL} {
+    .footer {
+        &__social {
+            margin-left: unset;
+            margin-right: auto;
+        }
+        &__links a + span {
+            padding-left: 0;
+        }
+        &__links span {
+            padding-right: 1.2rem;
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOP */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+	.footer {
+	    position: relative;
+	}
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
