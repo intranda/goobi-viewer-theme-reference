@@ -228,9 +228,12 @@ $(document).ready(function() {
 	// set up observer
 	const observeContent = new ResizeObserver(debounce((entries) => {
 		const e = entries[0];
-		// log contentRect height for debugging
-		// console.log(e.contentRect.height);
-		$('.-refreshHCsticky').hcSticky('refresh', {});
+		// only trigger for desktop view
+		if ($(window).width() > 768) {
+			// log contentRect height for debugging
+			console.log(e.contentRect.height);
+			$('.-refreshHCsticky').hcSticky('refresh', {});
+		}
 	}, 100));
 
 	// listening for size changes
