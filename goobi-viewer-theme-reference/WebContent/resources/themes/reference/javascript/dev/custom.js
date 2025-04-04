@@ -100,16 +100,12 @@ $( document ).ready( function() {
 	 $(document).ready(function() {
 		  $(document).on('scroll', function() {
 			if
-			($(document).scrollTop() > 250){
-//				$(".header").addClass("-scrolled");
-				// $(".header").css("transform","translateY(0%)");
-				// $(".header__spacer").addClass("-scrolled");
+			($(document).scrollTop() > 150){
+				$(".header").addClass("-scrolled");
 			}
 			else
 			{
-//				$(".header").removeClass("-scrolled");
-				// $(".header").css("display","");
-				// $(".header__spacer").removeClass("-scrolled");
+				$(".header").removeClass("-scrolled");
 			}
 //			if
 //		    ($(document).scrollTop() > 250){

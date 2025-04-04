@@ -6,11 +6,14 @@
 .header {
 	z-index: 2019;
 	position: sticky;
-	top: 0;
+	top: -1px;
 	// width: 100vw;
 	background: @bg-general;
 	color: @fg-header;
 	&.-scrolled {
+		.header__inner {
+				padding: 1rem 0;
+		}
 		.header__logo {
 			font-size: 2.5rem;
 			img {
@@ -167,12 +170,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		padding: 3rem 0;
-		transition: padding 0.175s ease;
-
-		&.-scrolled {
-			padding: 1rem 0;
-		}
-
+		transition: 0.2s all ease;
 		&.-searchOn .header__actions>*:not(.header__actions-search-button) {
 			visibility: hidden;
 			opacity: 0;

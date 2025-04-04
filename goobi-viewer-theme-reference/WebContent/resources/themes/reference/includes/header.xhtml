@@ -1,0 +1,106 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+	xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+	xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+
+    <!-- PAGE HEADER -->
+	<header id="header" class="header #{userBean.admin ? '-adminActive':''}">
+			<div class="container header__wrapper">
+				<div class="header__inner">
+					<!-- PAGE HEADER BOTTOM LOGO -->
+					<div class="header__logo">
+					  <a href="#{request.contextPath}/"> <img
+						  src="#{adminThemesBean.getLogo(&quot;/images/template/goobi_logo.svg&quot;, 300, 150)}"
+						  alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
+						<span class="header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
+					  </a>
+					</div>
+
+					<!-- PAGE HEADER TOP ACTIONS -->
+					<div class="header__actions">
+						<!-- BOOKMARKS -->
+						<div class="header__actions-bookmark">
+							<viewerComponent:bookmarkListNavigation />
+						</div>
+						<!-- CHANGE LOCALE -->
+						<ui:fragment
+							rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
+							<div id="changeLocalWrapper"
+								class="header__actions-language">
+								<button type="button"
+									class="btn btn--clean header__actions-language-button"
+									data-toggle="local"
+									aria-label="#{msg.aria_label__switch_language}">
+									<!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
+									<!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
+
+									<!-- GENERIC ICON AND MESSAGE -->
+									<span class="fa fa-globe"></span>#{msg.language}
+								</button>
+								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
+								<viewerComponent:changeLocal toggleLanguage="false"
+									longLanguageStrings="true" />
+							</div>
+						</ui:fragment>
+						<!-- LOGIN NAVIGATION -->
+						<div class="header__actions-login">
+							<viewerComponent:loginNavigation />
+						</div>
+						<button data-open="search"
+							class="btn btn--icon header__actions-search-button"
+							aria-label="#{msg.search}">
+							<i class="fa fa-search"></i>
+							<div class="header__actions-search-close">
+								<span></span>
+							</div>
+						</button>
+
+						<div class="header__actions-color-switch">
+							<viewerComponent:colorThemeToggle/>
+						</div>
+						
+						<ui:fragment rendered="#{adminClientsBean.clientLoggedIn}">
+							<div class="header__client-status">
+								<viewerComponent:clientApplicationStatus/>
+							</div>
+						</ui:fragment>
+
+						<button type="button" data-open="menu" aria-label="#{msg.aria_label__open_navigation}"
+							class="header__mobile-burger-menu-alternative">
+							<span></span>
+						</button>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- MOBILE MENU OVERLAY/BACKGROUND -->
+			<div class="header__navigation-mobile-background"></div>
+
+			<!-- SEARCH BOX -->
+			<div data-target="search-box" class="header__search-box">
+				<div class="container">
+					<widgetComponent:widget_searchField onlySearchIcon="false"/>
+				</div>
+			</div>
+
+			<!-- DESKTOP NAVIGATION -->
+			<div id="pageNavigation"
+				class="page-navigation #{userBean.admin ? '-adminActive':''}">
+				<div class="container page-navigation__wrapper">
+					<viewerComponent:navigation id="header__nav-menu-desktop"
+						megaMenu="false" />
+				</div>
+			</div>
+	</header>
+	
+	
+</ui:composition>
