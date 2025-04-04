@@ -231,7 +231,7 @@ $(document).ready(function() {
 		// only trigger for desktop view
 		if ($(window).width() > 768) {
 			// log contentRect height for debugging
-			console.log(e.contentRect.height);
+			// console.log(e.contentRect.height);
 			$('.-refreshHCsticky').hcSticky('refresh', {});
 		}
 	}, 100));
