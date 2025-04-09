@@ -59,6 +59,9 @@
 <h:body id="viewer">
 	<f:view locale="#{navigationHelper.locale}">
 
+		<!-- MAINTENANCE INFO -->
+		<ui:include src="/resources/includes/maintenanceMode.xhtml" />
+
 		<ui:insert name="content" />
 
 	</f:view>
