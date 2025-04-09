@@ -45,6 +45,11 @@
       <ui:param name="excludeCSS" value="#{excludeCSS}" />
       <ui:param name="cacheBuster" value="-cachetimestamp=2024-10-23-17-17-26" />
     </ui:include>
+    
+    <!-- SETS HTML FONT SIZE TO 100 % - BECAUSE MIRADOR DELIVERS OWN STYLES BASED ON REM UNITS -->
+    <ui:fragment rendered="#{navigationHelper.currentPage == 'mirador'}">
+    	<style>html {font-size: 100%;}</style>
+    </ui:fragment>
 
 	<!-- JAVASCRIPT -->
 	<ui:include src="/resources/includes/templateHeads/js.xhtml">
@@ -63,6 +68,23 @@
 		<ui:include src="/resources/includes/maintenanceMode.xhtml" />
 
 		<ui:insert name="content" />
+
+		<!-- REPLACEMENT FOR customJS.xhtml AND custom.js -->
+	    <script>
+	    	var currentPage = "#{navigationHelper.currentPage}";
+	    	var currentLang = "#{navigationHelper.localeString}";
+	    	var currentPath = "#{request.contextPath}";
+	    	var currentTheme = "#{navigationHelper.theme}";
+	    	var rootURL = "#{request.contextPath}";
+	    	var restURL = "#{configurationBean.restApiUrl}";
+
+	        var viewerConfig = {
+	                currentPage: currentPage,
+	                theme: currentTheme,
+	            };
+	        	
+	        viewerJS.init( viewerConfig );
+	    </script>
 
 	</f:view>
 
