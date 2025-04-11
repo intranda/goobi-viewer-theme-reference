@@ -221,23 +221,29 @@ $(document).ready(function() {
 			timer = setTimeout(() => f.apply(this, args), delay);
 		}
 	}
+	
+	
+	// check if bodyWrapper exists (frontend)
+	if ($('#bodyWrapper').length) {
+		// element to observe 
+		const mainArea = document.querySelector('#bodyWrapper');
 
-	// element to observe
-	const mainArea = document.querySelector('#bodyWrapper');
+		// set up observer
+		const observeContent = new ResizeObserver(debounce((entries) => {
+			const e = entries[0];
+			// only trigger for desktop view
+			if ($(window).width() > 768) {
+				// log contentRect height for debugging
+				// console.log(e.contentRect.height);
+				$('.-refreshHCsticky').hcSticky('refresh', {});
+			}
+		}, 100));
 
-	// set up observer
-	const observeContent = new ResizeObserver(debounce((entries) => {
-		const e = entries[0];
-		// only trigger for desktop view
-		if ($(window).width() > 768) {
-			// log contentRect height for debugging
-			// console.log(e.contentRect.height);
-			$('.-refreshHCsticky').hcSticky('refresh', {});
-		}
-	}, 100));
+		// listening for size changes
+		observeContent.observe(mainArea);
+	}
 
-	// listening for size changes
-	observeContent.observe(mainArea);
+
 
 	// mobile view manipulations
 	if (window.matchMedia('(max-width: 768px)').matches) {
