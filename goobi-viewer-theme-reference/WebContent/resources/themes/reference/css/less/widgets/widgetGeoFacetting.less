@@ -2,90 +2,25 @@
    Widget geofacetting
    style declarations for widget_geoFacetting.xhtml
    ==============================================================*/
-
-.widget.widget-geofacetting {}
 .widget-geofacetting {
+	
 	&__topbar {
-		background-color: @ci-color1;
+		.fa {
+			font-size: 1.7rem;
+		}
 	}
+
 	&__body {
-		padding: 0rem;
+		padding: 0;
 	}
-	&__item {}
-	&__label {}
+	
 	&__actions {
 		color: @white;
+		
 		.btn {
 			color: @white;
 		}
 	}
-	h2 {
-	}
-	&__action-expand {
-		&:hover,
-		&:active,
-		&:focus {}	
-	}
-	&__action-reset {
-		&.active {}
-		&:hover,
-		&:active,
-		&:focus {}
-	}
-	&__action-toggle-markers {
-		&:hover,
-		&:active,
-		&:focus {
-		}	
-	}
-	&__overlay {
-		&__geo-map {}
-		.ajax_loader {
-			img {}
-		}
-	}
-	&__loader-wrapper {}
-	&__loader-animated-image {}
-	.geo-map {
-		.mapboxgl-popup-content {
-		}
-		.leaflet-popup-content {
-		}
-		.leaflet-control-zoom  {
-			a {
-			}
-		}
-		.leaflet-control-container {
-			.leaflet-top {
-				a {					
-				}
-			}
-			.leaflet-bottom {
-				a {
-				}
-			}
-		}
-	}
-	&__overlay-buttons-wrapper {}
-	&__overlay-reset-search {}
-	&__overlay-submit-search {}
-}
-
-.overlay__geomap {
-	.geo-map {
-		&__wrapper {}
-		&__buttons-wrapper {}
-		&__reset-search {}
-		&__submit-search {}
-	}
-
-	.geocoder {
-	}
-	.mapboxgl-ctrl-geocoder--input {
-		&:focus {
-		}
-	}
-	
 }
 
 .widget-geomap .geomap__options_wrapper {

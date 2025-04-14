@@ -50,6 +50,26 @@
 
 		}
 	}
+	
+	&__body {
+		 li {
+			.active,
+			&:focus {
+				background-color: @bg-general;
+				color: @lk-content-box;
+				
+				& when (@colorModes = true) {
+					.mx-light-mode-rules ({
+						background-color: @bg-general;
+					});
+					.mx-dark-mode-rules ({
+						background-color: @bg-active;
+						color: @fg-content-box;
+					});
+				}
+			} 
+		 }
+	}
 	/* ELEMENTS */
 	&__elements {
 		border: @border;
@@ -64,18 +84,7 @@
 		&.child {}
 		&:focus,
 		&:hover,
-		&.active {
-			background-color: @bg-general;
-			& when (@colorModes = true) {
-				.mx-light-mode-rules ({
-					background-color: @bg-general;
-				});
-				.mx-dark-mode-rules ({
-					background-color: @bg-active;
-					color: @fg-content-box;
-				});
-			}
-		}
+		&.active {}
 	}
 	&__element-expand {}
 	&__element-link {

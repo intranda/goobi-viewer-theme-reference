@@ -4,26 +4,19 @@
    ==============================================================*/
 /* WIDGET SEARCH FACETS */
 .widget-search-facets {
-	&__topbar {
-		h2 {
-			span {}
-		}
-	}
-	.widget {
+
+	&__body {
 		ul {}
+		
 		li {
 			&.active {
 				a {
 					background-color: @bg-hover;
 				}
-				.row {}
-				.col-11,
-				.col-1 {}
-				.col-1 {}
 			}
 		}
-		a {}
 	}
+	
 	/* FILTER */
 	&__filter {
 		top: 0;
@@ -40,24 +33,32 @@
 		}
 		[data-toggle="filter-input"] {}
 	}
+	
 	&__filter-input {}
+	
 	/* COLLECTION/GROUPS */
 	&__collection,
 	&__groups {
 		ul {}
 	}
+	
 	&__collection {}
+	
 	&__groups {}
+	
 	/* COLLAPSE FACETS */
     &__collapse {
         a {}
     }
+	
 	&__boolean {
 
 	}
+	
 	&__boolean-button {
 		color: @fg-general;
 		border: @border;
+		
 		& when (@colorModes = true) {
 			.mx-dark-mode-rules ({
 				background: @bg-active;
@@ -78,6 +79,7 @@
 				});
 			}
 		}
+		
 		&.-active {
 			& when (@colorModes = true) {
 				.mx-dark-mode-rules ({

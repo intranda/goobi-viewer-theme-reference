@@ -1,0 +1,48 @@
+/* ==============================================================
+   Widget geoMap
+   style declarations for widget_geoMap.xhtml
+   ==============================================================*/
+   .widget-geomap {
+	   &__expand {
+	   		color: inherit;
+	   		background: transparent;
+	   		border: none;
+			
+	   		&:hover,
+	   		&:active,
+	   		&:focus {
+	   			text-decoration: none;
+	   			color: inherit;
+	   			background: none;
+	   		}	
+	  	}
+	  
+   		.geomap {}
+    	/* CMS BACKEND WIDGET */
+	   	
+        &__input {}
+	   
+       	&__input-spacer {
+       		background-color: @middlegray;
+       	}
+	   
+       &__action {
+		   	.col-2 {
+			    border-bottom: 1px solid @middlegray;
+		   	}
+       }
+	   
+       &__overlay-check {}
+   }
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {}
