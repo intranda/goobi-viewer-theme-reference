@@ -15,40 +15,47 @@
 	<footer id="footer" class="footer">
 		<div class="container">
 			<div class="footer__wrapper">
+
 				<!-- FOOTER LINKS -->
-				<div class="footer__links">
+				<ul class="footer__links">
 
 					<ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
-						<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
+						<li class="footer__link-item">
+							<a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
+						</li>
 					</ui:fragment>
 
 					<c:if
 						test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<a
-							href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">#{msg.contact}</a>
+						<li class="footer__link-item">
+							<a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">#{msg.contact}</a>
+						</li>
 					</c:if>
 
-					<c:if
-						test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<button class="btn btn--icon" data-toggle="modal"
-							data-target="#feedbackModal">#{msg.contact}</button>
+					<c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+						<li class="footer__link-item">
+							<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>
+						</li>
 					</c:if>
 
-					<a
-						href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">#{msg.privacy}</a>
+					<li class="footer__link-item">
+						<a href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">#{msg.privacy}</a>
+					</li>
 
-					<a
-						href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">#{msg.imprint}</a>
-					<span>powered by</span> <a href="#{msg.intrandaViewer}"
-						target="_blank" rel="noopener">Goobi viewer</a>
+					<li class="footer__link-item">
+						<a href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">#{msg.imprint}</a>
+					</li>
+							
+					<li class="footer__link-item">
+						<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">powered by Goobi viewer</a>
+					</li>
 
-				</div>
+				</ul>
 
 				<!-- FOOTER SOCIAL MEDIA -->
 				<div class="footer__social">
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
-
 						<a
 							href="https://facebook.com/#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
 							title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
@@ -57,11 +64,9 @@
 							class="sr-only">#{msg.social__follow_on_facebook}</span> <i
 							class="fa fa-facebook" aria-hidden="true"></i>
 						</a>
-
 					</c:if>
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
-
 						<a
 							href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
 							title="#{msg.social__follow_on_github}" data-toggle="tooltip"
@@ -70,11 +75,9 @@
 							class="sr-only">#{msg.social__follow_on_github}</span> <i
 							class="fa fa-github" aria-hidden="true"></i>
 						</a>
-
 					</c:if>
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
-
 						<a
 							href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
 							title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
@@ -83,11 +86,9 @@
 							class="sr-only">#{msg.social__follow_on_twitter}</span> <i
 							class="fa fa-twitter" aria-hidden="true"></i>
 						</a>
-
 					</c:if>
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
-
 						<a
 							href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
 							title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
@@ -96,11 +97,9 @@
 							class="sr-only">#{msg.social__follow_on_youtube}</span> <i
 							class="fa fa-youtube" aria-hidden="true"></i>
 						</a>
-
 					</c:if>
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
-
 						<a
 							href="https://slideshare.net/#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
 							title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
@@ -109,11 +108,9 @@
 							class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
 							class="fa fa-slideshare" aria-hidden="true"></i>
 						</a>
-
 					</c:if>
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
-
 						<a
 							href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
 							title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
@@ -122,7 +119,6 @@
 							class="sr-only">#{msg.social__follow_on_instagram}</span> <i
 							class="fa fa-instagram" aria-hidden="true"></i>
 						</a>
-
 					</c:if>
 
 				</div>
