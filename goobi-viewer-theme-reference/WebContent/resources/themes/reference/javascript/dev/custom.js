@@ -91,20 +91,47 @@ $(document).ready(function() {
 	});
 
 	// open search box
-	$('body').on('click', '[data-open="search"]', function() {
-		$(this).toggleClass('-searchOn')
-		$('.header__actions-search-close').toggleClass('-searchOn')
-		$('[data-target="search-box"]').toggleClass('-searchOn');
+	$('body').on('click', '[data-open="search"], [data-close="search"]', function(e) {
+		// hide button and show close button (X)
+		$('.header__actions-search-wrapper').toggleClass('-searchOn');
+		
+		// hide other actions besides search close icon
 		$('.header__inner').toggleClass('-searchOn');
+		
+		//
+		// $('[data-close="search"]').addClass('-searchOn');
+		
+		// show search box
+		$('[data-target="search-box"]').toggleClass('-searchOn');
+		
+		// fade in overlay
 		$('[data-target="search-overlay"]').fadeToggle('fast');
-		$('.header__search-box .widget-searchfield input[type=text]').focus();
+		
+		// set focus on search input field if search field shown
+		if($(e.currentTarget).is('[data-open="search"]')) {
+			$('.header__search-box .widget-searchfield input[type=text]').focus();
+			console.log('was target');
+		}
+
 		$('[data-open="sidebar"]').toggle();
 	});
 
+	// close search box with escape on keyboard
+	$('[data-target="search-box"] input').on('keydown', function(e) {
+	    if (e.key === "Escape" || e.keyCode === 27) {
+			$('.header__actions-search-wrapper').removeClass('-searchOn');
+			$('[data-target="search-box"]').removeClass('-searchOn');
+			$('.header__inner').removeClass('-searchOn');
+			$('[data-target="search-overlay"]').fadeOut('fast');
+			$('[data-open="sidebar"]').toggle();
+			$('[data-open="search"]').focus();
+	    }
+	});
+	
+	
 	// close search overlay on click
 	$('body').on('click', '[data-target="search-overlay"]', function() {
-		$('[data-open="search"]').removeClass('-searchOn');
-		$('.header__actions-search-close').removeClass('-searchOn');
+		$('.header__actions-search-wrapper').removeClass('-searchOn');
 		$('[data-target="search-box"]').removeClass('-searchOn');
 		$('.header__inner').removeClass('-searchOn');
 		$('[data-target="search-overlay"]').fadeOut('fast');
@@ -156,13 +183,13 @@ $(document).ready(function() {
 	});
 
 	// toggle mobile sidebar
-	$('body').on('click', '[data-open="sidebar"]', function() {
+	$('body').on('click', '[data-open="sidebar"], .mobile-overlay', function() {
 		// ACCESSBILITY FOCUS JUMP
-		if (!$("#sidebar").hasClass("in")) {
-			$('#sidebar a:visible:first').focus();
-		} else {
-			$('[data-open="sidebar"]').focus();
-		}
+//		if (!$("#sidebar").hasClass("-opened")) {
+//			$('#sidebar a:visible:first').focus();
+//		} else {
+//			$('[data-open="sidebar"]').focus();
+//		}
 		// DEACTIVATE SCROLL WHEN SIDEBAR OPEN
 		$('html').toggleClass('no-overflow');
 		// ADD DARKER OVERLAY ON BACKGROUND
@@ -172,7 +199,7 @@ $(document).ready(function() {
 		// TOGGLE SIDEBAR TRIGGER ICON
 		$('[data-target="mobileSidebarTrigger"]').toggleClass('-opened');
 	});
-
+	
 	// Hide open sidebar button if sidebar is completely empty
 	if ($('#sidebar').length) {
 		if ($.trim($('#sidebar').html()) == '') {

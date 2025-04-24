@@ -27,7 +27,7 @@
 	&__actions-language,
 	//  &__actions-bookmark,
 	&__actions-login,
-	&__actions-search-button,
+	&__actions-search-wrapper,
 	&__actions-color-switch {
 		padding: 0 1.1rem;
 		position: relative;
@@ -66,11 +66,26 @@
 			padding-right: 0.5rem;
 		}
 	}
+	&__actions-search-wrapper {
+		&.-searchOn {
+			.header__actions-search-close-button {
+				display: block;
+				&:before {}
+				&::after {
+					animation: searchButtonAnim 0.2s ease forwards;
+				}
+			}
+			.header__actions-search-button {
+				display: none;
+			}
+		}
+	}
 	&__actions-search-button {
+		padding: 0;
 		color: @middleblack;
+		width: 2rem;
 		.fa {
 			font-size: 1.6rem;
-			width: 2rem;
 		}
 		&:focus,
 		&:hover,
@@ -89,12 +104,13 @@
 			}
 		}
 	}
-	&__actions-search-close {
+	&__actions-search-close-button {
 		display: none;
-		height: 1.6rem;
+		height: 2.1rem;
 		position: relative;
 		width: 2rem;
 		cursor: pointer;
+		padding: 0;
 		span,
 		&::before,
 		&::after {
@@ -171,10 +187,10 @@
 		align-items: center;
 		padding: 3rem 0;
 		transition: 0.2s all ease;
-		&.-searchOn .header__actions>*:not(.header__actions-search-button) {
-			visibility: hidden;
-			opacity: 0;
-		}
+//		&.-searchOn .header__actions>*:not(.header__actions-search-button, .header__actions-search-close-button) {
+//			visibility: hidden;
+//			opacity: 0;
+//		}
 	}
 
 	&__logo {
@@ -464,11 +480,11 @@
         &__actions-language,
         &__actions-bookmark,
         &__actions-login,
-        &__actions-search-button {
+        &__actions-search-wrapper {
             border-right: 1px solid @middleblack;
             border-left: none;
         }
-        &__actions-search-button {
+        &__actions-search-wrapper {
             &.-searchOn {
                 border-right: none;
             }
@@ -511,7 +527,7 @@
             .header__actions-language,
             .header__actions-login,
             .header__actions-bookmark,
-            .header__actions-search-button,
+            .header__actions-search-wrapper,
             .header__actions-color-switch,
             .header__client-status {
                 display: none;
@@ -544,6 +560,7 @@
         &__logo {
             font-size: 2.5rem;
             a img {
+				margin-right: 0rem;
                 max-width: 6rem;
             }
         }
@@ -551,6 +568,9 @@
             flex: 0 0 40%;
             max-width: 40%;
         }
+		&__mobile-burger-menu-alternative {
+			margin-right: 0;
+		}
         &__search-box {
             .widget-searchfield {}
         }
@@ -560,11 +580,11 @@
         &__actions-language,
         &__actions-bookmark,
         &__actions-login,
-        &__actions-search-button,
+        &__actions-search-wrapper,
         &__actions-color-switch,
         &__client-status {
             border: none;
-            padding: 0 0.7rem;
+            padding: 0 0.5rem;
         }
         &__navigation-mobile-background {
             display: block;

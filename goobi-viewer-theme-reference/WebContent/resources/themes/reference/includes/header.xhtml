@@ -54,14 +54,24 @@
 						<div class="header__actions-login">
 							<viewerComponent:loginNavigation />
 						</div>
-						<button data-open="search"
-							class="btn btn--icon header__actions-search-button"
-							aria-label="#{msg.search}">
-							<i class="fa fa-search"></i>
-							<div class="header__actions-search-close">
-								<span></span>
-							</div>
-						</button>
+						
+						<div class="header__actions-search-wrapper">
+
+							<button data-open="search"
+								class="btn btn--icon header__actions-search-button"
+								aria-label="#{msg.search}">
+								<i class="fa fa-search"></i>
+							</button>
+							
+							<button data-close="search"
+								class="btn btn--icon header__actions-search-close-button"
+								aria-label="#{msg.close}: #{msg.cms_sidebarElement_searchField}">
+								<span class="header__actions-search-close">
+									<span></span>
+								</span>
+							</button>
+
+						</div>
 
 						<div class="header__actions-color-switch">
 							<viewerComponent:colorThemeToggle/>
@@ -84,6 +94,35 @@
 
 			<!-- MOBILE MENU OVERLAY/BACKGROUND -->
 			<div class="header__navigation-mobile-background"></div>
+			
+			<!-- MOBILE ONLY NAVIGATION -->
+			<nav class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
+				<div class="container page-navigation__wrapper">
+					<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
+					<!-- CHANGE LANGUAGE -->
+					<ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
+						<div class="page-navigation__mobile-languages-wrapper">
+							<div class="page-navigation__mobile-languages-trigger" data-trigger="mobileToggleLanguages">
+								<i class="fa fa-globe" aria-hidden="true"></i>
+								<button class="btn btn--clean">#{msg.MD_LANGUAGE}</button>
+								<i class="fa fa-plus page-navigation__mobile-languages-toggle-indicator" aria-hidden="true"></i>
+							</div>
+							<h:form id="changeLocalFormMobile" prependId="false">
+				                <ul class="page-navigation__mobile-languages-selection" data-target="mobileLanguageSelection">
+				                    <ui:repeat var="lang" value="#{navigationHelper.supportedLanguages}">
+				                        <li>
+				                             <h:commandLink styleClass="#{navigationHelper.localeString == lang ?'activeLang':''}">
+				                                 <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
+				                                 <f:setPropertyActionListener target="#{navigationHelper.localeString}" value="#{lang}" />
+				                             </h:commandLink>
+				                         </li>
+				                     </ui:repeat>
+				                 </ul>
+			                 </h:form>
+			            </div>
+					</ui:fragment>
+				</div>
+			</nav>
 
 			<!-- SEARCH BOX -->
 			<div data-target="search-box" class="header__search-box">

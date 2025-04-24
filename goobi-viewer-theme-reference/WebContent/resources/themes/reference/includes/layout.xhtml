@@ -52,6 +52,8 @@
 				<!-- CONTENT -->
 				<main id="main" class="content__main" role="main">
 
+					<ui:insert name="content" />
+
 					<!-- OPEN MOBILE NAVIGATION -->
 					<div class="content__mobile-sidebar-trigger" data-target="mobileSidebarTrigger">
 						<button type="button"
@@ -62,8 +64,6 @@
 							</span>
 						</button>
 					</div>
-
-					<ui:insert name="content" />
 
 				</main>
 
@@ -84,35 +84,6 @@
 	
 	<!-- FOOTER -->
 	<ui:include src="footer.xhtml" />
-
-	<!-- MOBILE ONLY NAVIGATION -->
-	<nav class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
-		<div class="container page-navigation__wrapper">
-			<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
-			<!-- CHANGE LANGUAGE -->
-			<ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
-				<div class="page-navigation__mobile-languages-wrapper">
-					<div class="page-navigation__mobile-languages-trigger" data-trigger="mobileToggleLanguages">
-						<i class="fa fa-globe" aria-hidden="true"></i>
-						<button class="btn btn--clean">#{msg.MD_LANGUAGE}</button>
-						<i class="fa fa-plus page-navigation__mobile-languages-toggle-indicator" aria-hidden="true"></i>
-					</div>
-					<h:form id="changeLocalFormMobile" prependId="false">
-		                <ul class="page-navigation__mobile-languages-selection" data-target="mobileLanguageSelection">
-		                    <ui:repeat var="lang" value="#{navigationHelper.supportedLanguages}">
-		                        <li>
-		                             <h:commandLink styleClass="#{navigationHelper.localeString == lang ?'activeLang':''}">
-		                                 <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
-		                                 <f:setPropertyActionListener target="#{navigationHelper.localeString}" value="#{lang}" />
-		                             </h:commandLink>
-		                         </li>
-		                     </ui:repeat>
-		                 </ul>
-	                 </h:form>
-	            </div>
-			</ui:fragment>
-		</div>
-	</nav>
 
 	</div>
 
