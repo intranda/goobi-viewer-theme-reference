@@ -79,12 +79,24 @@
 		}
 	}
 	&__element {
-		&:hover {}
-		&.parent {}
+		&:hover {
+		  background-color: @lightgray;
+		}
+		&.parent {
+			
+		}
 		&.child {}
 		&:focus,
-		&:hover,
-		&.active {}
+		&.active {
+			background-color: @bg-general;
+			
+			a {
+				color: @ci-color1 !important;
+			}
+		}
+		&:hover {
+			background-color: @bg-general;
+		}
 	}
 	&__element-expand {}
 	&__element-link {
@@ -98,7 +110,9 @@
 			&.has-pagenumber {}
 		}
 		&.active {
-			a {}
+			a {
+				color: @ci-color1;
+			}
 		}
 	}
 	&__element-pagenumber {}

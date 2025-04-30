@@ -212,8 +212,6 @@ $( document ).ready( function() {
     	$('.page-header__mobile-sidebar-trigger-arrow').toggleClass('-arrow');
     	$('.page-header__mobile-sidebar-trigger-arrow').toggleClass('-cross');
     	$('.page-header__mobile-sidebar-trigger').toggleClass('-opened');
-    	
-
     } );
 
 	// Hide open sidebar button if sidebar is completely empty
