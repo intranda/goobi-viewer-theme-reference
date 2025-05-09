@@ -77,18 +77,28 @@ $(document).ready(function() {
 		}
 	});
 
-	// shrink header on scroll
-	$(document).ready(function() {
-		$(document).on('scroll', function() {
-			if
-				($(document).scrollTop() > 100) {
+	// shrink header on scroll with debounce
+	$(document).ready(function () {
+		const handleScroll = debounce(function () {
+			if ($(document).scrollTop() > 100) {
 				$(".header").addClass("-scrolled");
 			}
-			else {
+		}, 25); // Delay
+
+		$(document).on('scroll', handleScroll).trigger('scroll');
+	});
+	 
+	// expand header on scroll with debounce
+	$(document).ready(function () {
+		const handleScroll = debounce(function () {
+			if ($(document).scrollTop() < 170) {
 				$(".header").removeClass("-scrolled");
 			}
-		}).trigger('scroll');
+		}, 25); // Delay
+
+		$(document).on('scroll', handleScroll).trigger('scroll');
 	});
+	
 
 	// open search box
 	$('body').on('click', '[data-open="search"], [data-close="search"]', function(e) {
