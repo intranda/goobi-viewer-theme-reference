@@ -13,7 +13,6 @@
 
 	<div id="bodyWrapper">
 
-
 	<!-- ADMIN TOPBAR FRONTEND -->
 	<viewerComponent:frontEndAdminTopBar />
 
@@ -23,302 +22,71 @@
 		#{msg.a11y__skip_menu__jump_to_main}
 		</a>
 	</nav>
-
-
-	<div class="page-header__spacer #{userBean.admin ? '-adminActive':''}" aria-hidden="true">spacer</div>
  
-    <!-- PAGE HEADER -->
-	<header id="pageHeader">
-		<div class="page-header #{userBean.admin ? '-adminActive':''}">
-			<div class="container page-header__wrapper">
-				<div class="page-header__inner">
-					<!-- PAGE HEADER BOTTOM LOGO -->
-					<div class="page-header__logo">
-					  <a href="#{request.contextPath}/"> <img
-						  src="#{adminThemesBean.getLogo(&quot;/images/template/goobi_logo.svg&quot;, 300, 150)}"
-						  alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
-						<span class="page-header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
-					  </a>
-					</div>
+	<!-- HEADER -->
+	<ui:include src="header.xhtml" />
 
-					<!-- PAGE HEADER TOP ACTIONS -->
-					<div class="page-header__actions">
-						<!-- BOOKMARKS -->
-						<div class="page-header__actions-bookmark">
-							<viewerComponent:bookmarkListNavigation />
-						</div>
-						<!-- CHANGE LOCALE -->
-						<ui:fragment
-							rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
-							<div id="changeLocalWrapper"
-								class="page-header__actions-language">
-								<button type="button"
-									class="btn btn--clean page-header__actions-language-button"
-									data-toggle="local"
-									aria-label="#{msg.aria_label__switch_language}">
-									<!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
-									<!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
-
-									<!-- GENERIC ICON AND MESSAGE -->
-									<span class="fa fa-globe"></span>#{msg.language}
-								</button>
-								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
-								<viewerComponent:changeLocal toggleLanguage="false"
-									longLanguageStrings="true" />
-							</div>
-						</ui:fragment>
-						<!-- LOGIN NAVIGATION -->
-						<div class="page-header__actions-login">
-							<viewerComponent:loginNavigation />
-						</div>
-						<button data-open="search"
-							class="btn btn--icon page-header__actions-search-button"
-							aria-label="#{msg.search}">
-							<i class="fa fa-search"></i>
-							<div class="page-header__actions-search-close">
-								<span></span>
-							</div>
-						</button>
-
-						<div class="page-header__actions-color-switch">
-							<viewerComponent:colorThemeToggle/>
-						</div>
-						
-						<ui:fragment rendered="#{adminClientsBean.clientLoggedIn}">
-							<div class="page-header__client-status">
-								<viewerComponent:clientApplicationStatus/>
-							</div>
-						</ui:fragment>
-
-						<button type="button" data-open="menu" aria-label="#{msg.aria_label__open_navigation}"
-							class="page-header__mobile-burger-menu-alternative">
-							<span></span>
-						</button>
-
-					</div>
-				</div>
-			</div>
-
-			<!-- MOBILE MENU OVERLAY/BACKGROUND -->
-			<div class="page-header__navigation-mobile-background"></div>
-
-			<!-- SEARCH BOX -->
-			<div data-target="search-box" class="page-header__search-box">
-				<div class="container">
-					<widgetComponent:widget_searchField onlySearchIcon="false"/>
-				</div>
-			</div>
-
-			<!-- DESKTOP NAVIGATION -->
-			<div id="pageNavigation"
-				class="page-navigation #{userBean.admin ? '-adminActive':''}">
-				<div class="container page-navigation__wrapper">
-					<viewerComponent:navigation id="page-header__nav-menu-desktop"
-						megaMenu="false" />
-				</div>
-			</div>
-
+	<!-- HERO SLIDER -->
+	<ui:fragment rendered="#{cmsPage.hasTopbarComponents()}">
+		<div id="heroSlider" class="hero-slider">
+			<ui:insert name="heroSlider" />
 		</div>
-		<!-- End class="page-header" -->
-
-		<!-- HERO SLIDER -->
-		<ui:fragment rendered="#{cmsPage.hasTopbarComponents()}">
-			<div class="page-header__slider">
-				<ui:insert name="topbar" />
-			</div>
-		</ui:fragment>
-
-	</header>
-
+	</ui:fragment>
 
 	<!-- MOBILE OVERLAY -->
 	<div class="mobile-overlay"></div>
 
 	<!-- SEARCH OVERLAY -->
-	<div data-target="search-overlay" class="page-header__search-overlay"></div>
+	<div data-target="search-overlay" class="header__search-overlay"></div>
+
+	<!-- BREADCRUMBS -->
+	<div class="container">
+		<viewerComponent:breadcrumbs showIcon="false" showStartText="true" />
+	</div>
 
 	<!-- MAIN -->
-	<div id="pageContent" class="page-content">
-
+	<div id="content" class="content">
 
 		<div class="container">
-			<div class="page-content__wrapper" data-target="content-wrapper">
+			<div class="content__wrapper" data-target="content-wrapper">
 				<!-- CONTENT -->
-				<main id="main" class="page-content__main" role="main">
+				<main id="main" class="content__main" role="main">
+
+					<ui:insert name="content" />
 
 					<!-- OPEN MOBILE NAVIGATION -->
-					<div class="page-header__mobile-sidebar-trigger">
+					<div class="content__mobile-sidebar-trigger" data-target="mobileSidebarTrigger">
 						<button type="button"
-							class="btn btn--icon page-header__mobile-sidebar-trigger-arrow -arrow"
+							class="btn btn--icon content__mobile-sidebar-trigger-button"
 							data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
-							<span class="page-header__mobile-sidebar-trigger-arrow-inner">
+							<span class="content__mobile-sidebar-trigger-icon">
 								<span class="bar"></span> <span class="bar"></span>
 							</span>
 						</button>
 					</div>
 
-					<!-- BREADCRUMBS -->
-					<viewerComponent:breadcrumbs showIcon="false" showStartText="true" />
-
-					<ui:insert name="content" />
-
 				</main>
 
 				<!-- SIDEBAR -->
-				<aside id="sidebar" class="page-content__sidebar -refreshHCsticky" data-target="sticky-sidebar">
-					<!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
-					<!-- <viewerComponent:sidebarMenu /> -->
+				<aside id="sidebar" class="content__sidebar">
+					<div class="sidebar__inner  -refreshHCsticky" data-target="sticky-sidebar">
+						<!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
+						<!-- <viewerComponent:sidebarMenu /> -->
 
-					<!-- SIDEBAR WIDGETS -->
-					<ui:insert name="sidebar" />
-
+						<!-- SIDEBAR WIDGETS -->
+						<ui:insert name="sidebar" />
+					</div>
 				</aside>
 
-			</div>
+				</div>
 		</div>
 	</div>
-
+	
 	<!-- FOOTER -->
-	<footer id="pageFooter" class="page-footer">
-		<div class="container">
-			<div class="page-footer__wrapper">
-				<!-- FOOTER LINKS -->
-				<div class="page-footer__links">
-
-                    <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
-					   <a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
-					</ui:fragment>
-
-					<c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">#{msg.contact}</a>
-					</c:if>
-
-					<c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-						<button class="btn btn--icon" data-toggle="modal" data-target="#feedbackModal">#{msg.contact}</button>
-					</c:if>
-
-					<a href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">#{msg.privacy}</a>
-
-					<a href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">#{msg.imprint}</a> <span>powered by</span>
-
-					<a href="#{msg.intrandaViewer}" target="_blank" rel="noopener">Goobi viewer</a>
-
-				</div>
-
-				<!-- FOOTER SOCIAL MEDIA -->
-				<div class="page-footer__social">
-
-				<c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
-
-					<a href="https://facebook.com/#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
-						title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_facebook}"> <span
-						class="sr-only">#{msg.social__follow_on_facebook}</span> <i
-						class="fa fa-facebook" aria-hidden="true"></i>
-					</a>
-
-				</c:if>
-
-				<c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
-
-					<a href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
-						title="#{msg.social__follow_on_github}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_github}"> <span
-						class="sr-only">#{msg.social__follow_on_github}</span> <i
-						class="fa fa-github" aria-hidden="true"></i>
-					</a>
-
-				</c:if>
-
-				<c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
-
-					<a href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
-
-						title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_twitter}"> <span
-						class="sr-only">#{msg.social__follow_on_twitter}</span> <i
-						class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-
-				</c:if>
-
-				<c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
-
-					<a href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
-
-						title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_youtube}"> <span
-						class="sr-only">#{msg.social__follow_on_youtube}</span> <i
-						class="fa fa-youtube" aria-hidden="true"></i>
-					</a>
-
-				</c:if>
-
-				<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
-
-					<a href="https://slideshare.net/#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
-
-						title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_slideshare}"> <span
-						class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
-						class="fa fa-slideshare" aria-hidden="true"></i>
-					</a>
-
-				</c:if>
-
-				<c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
-
-					<a href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
-						title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
-						target="_blank" rel="noopener"
-						aria-label="#{msg.social__follow_on_instagram}"> <span
-						class="sr-only">#{msg.social__follow_on_instagram}</span> <i
-						class="fa fa-instagram" aria-hidden="true"></i>
-					</a>
-
-				</c:if>
-
-				</div>
-			</div>
-		</div>
-	</footer>
+	<ui:include src="footer.xhtml" />
 
 	</div>
 
-
-	<!-- MOBILE ONLY NAVIGATION -->
-	<nav class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
-		<div class="container page-navigation__wrapper">
-			<viewerComponent:navigation id="pageNavigationMobile" megaMenu="false" />
-			<!-- CHANGE LANGUAGE -->
-			<ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
-				<div class="page-navigation__mobile-languages-wrapper">
-					<div class="page-navigation__mobile-languages-trigger" data-trigger="mobileToggleLanguages">
-						<i class="fa fa-globe" aria-hidden="true"></i>
-						<button class="btn btn--clean">#{msg.MD_LANGUAGE}</button>
-						<i class="fa fa-plus page-navigation__mobile-languages-toggle-indicator" aria-hidden="true"></i>
-					</div>
-					<h:form id="changeLocalFormMobile" prependId="false">
-		                <ul class="page-navigation__mobile-languages-selection" data-target="mobileLanguageSelection">
-		                    <ui:repeat var="lang" value="#{navigationHelper.supportedLanguages}">
-		                        <li>
-		                             <h:commandLink styleClass="#{navigationHelper.localeString == lang ?'activeLang':''}">
-		                                 <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
-		                                 <f:setPropertyActionListener target="#{navigationHelper.localeString}" value="#{lang}" />
-		                             </h:commandLink>
-		                         </li>
-		                     </ui:repeat>
-		                 </ul>
-	                 </h:form>
-	            </div>
-			</ui:fragment>
-		</div>
-	</nav>
 
 	<!--  GENERIC OVERLAY -->
 	<ui:include src="/resources/includes/overlay.xhtml" />

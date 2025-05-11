@@ -116,13 +116,16 @@
 <h:body id="fullscreen">
 	<f:view locale="#{navigationHelper.locale}">
 
+		<!-- MAINTENANCE INFO -->
+		<ui:include src="/resources/includes/maintenanceMode.xhtml" />
+
 		<!-- CONTENT FULLSCREEN -->
 		<ui:insert name="content-fullscreen" />
 
 		<!-- CUSTOM JS -->
 		<ui:include src="includes/customJS.xhtml" />
-	</f:view>
-
+	</f:view> 
+ 
 	<!-- COOKIE BANNER -->
 	<ui:include src="/resources/includes/cookieBanner.xhtml" />
 	<!-- PIWIK -->
