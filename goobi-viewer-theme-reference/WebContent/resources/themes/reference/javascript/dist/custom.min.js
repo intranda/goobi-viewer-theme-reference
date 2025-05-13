@@ -80,7 +80,7 @@ $(document).ready(function() {
 	// shrink header on scroll with debounce
 	$(document).ready(function () {
 		const handleScroll = debounce(function () {
-			if ($(document).scrollTop() > 100) {
+			if ($(document).scrollTop() > 120) {
 				$(".header").addClass("-scrolled");
 			}
 		}, 25); // Delay
@@ -91,7 +91,7 @@ $(document).ready(function() {
 	// expand header on scroll with debounce
 	$(document).ready(function () {
 		const handleScroll = debounce(function () {
-			if ($(document).scrollTop() < 170) {
+			if ($(document).scrollTop() < 250) {
 				$(".header").removeClass("-scrolled");
 			}
 		}, 25); // Delay
