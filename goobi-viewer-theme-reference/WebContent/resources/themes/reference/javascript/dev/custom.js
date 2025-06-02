@@ -26,7 +26,7 @@ function initSliders() {
 	//}
 	// viewerJS.slideshows.set('myNewStyleName', config);
 
-
+ 
 	// SINGLE STORY SLIDER
 	var headerSliderConfig = {
 		maxSlides: 8,
