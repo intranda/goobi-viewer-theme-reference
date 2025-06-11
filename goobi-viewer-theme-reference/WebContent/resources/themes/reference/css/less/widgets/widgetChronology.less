@@ -6,9 +6,7 @@
 
 /* BLOCK */
 .widget-chronology-slider {
-	&__topbar {
-		background-color: @ci-color1;
-	}
+	color: var(--fg-content-box);
 	&__item {
 		&-input {
 			color: @fg-content-box;
@@ -50,32 +48,6 @@
 	}
 }
 
-.chronology-slider {
-	.widget-chronology-slider__slider {
-	}
-	&__input-wrapper {
-		input {
-		}
-	}
-	&__input-start,
-	&__input-end {
-	}
-	&__input-start {}
-	&__input-end {}
-	&__ok-button {
-	}
-	&__between-year-symbol {
-	}
-	&__graph {
-		&-line {  
-		}
-		&-area {
-		}
-		&-range {
-		}
-	}
-}
-
 @{RTL} .widget-chronology-slider {
 	&__item {
 		&.chronology-slider-start {
@@ -90,13 +62,10 @@
 }
 
 #chronoSlider {
-	.ui-slider-range,
-	.ui-slider-handle {
-        &:focus {}
-	}
 	.ui-slider-range {
 		background-color: @ci-color1;
 	}
+	
 	.ui-slider-handle {
 		width: 1rem;
 		height: 1rem;

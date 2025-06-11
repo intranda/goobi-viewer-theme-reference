@@ -4,34 +4,29 @@
    ==============================================================*/
 /* WIDGET SEARCH FACETS */
 .widget-search-facets {
-	&__topbar {
-		h2 {
-			span {}
-		}
-	}
-	.widget {
+
+	&__body {
 		ul {}
+		
 		li {
 			&.active {
 				a {
 					background-color: @bg-hover;
 				}
-				.row {}
-				.col-11,
-				.col-1 {}
-				.col-1 {}
 			}
 		}
-		a {}
 	}
+	
+	&__list {
+		scrollbar-color: @lk-content-box transparent;
+	}
+	
 	/* FILTER */
 	&__filter {
 		top: 0;
 		input, button {}
 		input {
 			background-color: @ci-hovercolor1;
-			border-bottom: 1px solid @bg-content-box;
-
 			&::-webkit-input-placeholder {}
 			&:-moz-placeholder {}
 			&::-moz-placeholder {}
@@ -40,24 +35,32 @@
 		}
 		[data-toggle="filter-input"] {}
 	}
+	
 	&__filter-input {}
+	
 	/* COLLECTION/GROUPS */
 	&__collection,
 	&__groups {
 		ul {}
 	}
+	
 	&__collection {}
+	
 	&__groups {}
+	
 	/* COLLAPSE FACETS */
     &__collapse {
         a {}
     }
+	
 	&__boolean {
 
 	}
+	
 	&__boolean-button {
 		color: @fg-general;
 		border: @border;
+		
 		& when (@colorModes = true) {
 			.mx-dark-mode-rules ({
 				background: @bg-active;
@@ -78,6 +81,7 @@
 				});
 			}
 		}
+		
 		&.-active {
 			& when (@colorModes = true) {
 				.mx-dark-mode-rules ({

@@ -2,7 +2,20 @@
    Widget Views
    style declarations for widget_views.xhtml
    ==============================================================*/
-#widgetViews {}
+.widget-views {
+	.widget__body {
+	   li.active {
+	     a {
+	       font-weight: 600;
+	       color: @lk-content-box;
+		   
+		   &:hover {
+				color: @lh-content-box;
+		   }
+	     }
+	   }
+	 }
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}

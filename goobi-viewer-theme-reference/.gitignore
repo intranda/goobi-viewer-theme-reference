@@ -8,3 +8,4 @@
 /target/
 /.metadata/
 /.settings/
+.classpath

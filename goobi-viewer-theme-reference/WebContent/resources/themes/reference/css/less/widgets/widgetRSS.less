@@ -3,24 +3,31 @@
    style declarations for rssFeed.xhtml
    ==============================================================*/
 .widget-rss {
-	.widget-title {}
+	
 	&__rss-link {
-		.fa {}
-	}
-	&__list {
-
-	}
-	&__entry-info {
-		line-height: 1.1;
-		margin-bottom: .5rem;
-		padding-bottom: 1rem;
-		border-bottom: @border;
-		&:last-child {
-			border-bottom: none;
-			padding-bottom: 0;
+		.fa {
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			font-size: @fontMedium;
+			text-align: center;
+			color: @white;
+			background-color: @orange;
 		}
 	}
-	&__entry-link {}
+	
+	&__entry-info {
+		line-height: 1.1;
+		border-bottom: @border;
+		
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	
+	&__entry-link {
+		font-weight: 400;
+	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

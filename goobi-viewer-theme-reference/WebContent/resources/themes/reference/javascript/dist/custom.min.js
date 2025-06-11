@@ -26,7 +26,7 @@ function initSliders() {
 	//}
 	// viewerJS.slideshows.set('myNewStyleName', config);
 
-
+ 
 	// SINGLE STORY SLIDER
 	var headerSliderConfig = {
 		maxSlides: 8,
@@ -77,26 +77,26 @@ $(document).ready(function() {
 		}
 	});
 
-	// shrink header on scroll with debounce
+	// shrink + expand header on scroll with a dead zone of 70 px to avoid jumps at the end of the page
 	$(document).ready(function () {
-		const handleScroll = debounce(function () {
-			if ($(document).scrollTop() > 100) {
-				$(".header").addClass("-scrolled");
-			}
-		}, 25); // Delay
+	    const scrollDownThreshold = 250;
+	    const scrollUpThreshold = 180;
+	    let isScrolled = false;
 
-		$(document).on('scroll', handleScroll).trigger('scroll');
-	});
-	 
-	// expand header on scroll with debounce
-	$(document).ready(function () {
-		const handleScroll = debounce(function () {
-			if ($(document).scrollTop() < 170) {
-				$(".header").removeClass("-scrolled");
-			}
-		}, 25); // Delay
+	    const handleScroll = debounce(function () {
+	        const scrollTop = $(document).scrollTop();
 
-		$(document).on('scroll', handleScroll).trigger('scroll');
+	        if (scrollTop >= scrollDownThreshold && !isScrolled) {
+	            $(".header").addClass("-scrolled");
+	            isScrolled = true;
+	        } else if (scrollTop <= scrollUpThreshold && isScrolled) {
+	            $(".header").removeClass("-scrolled");
+	            isScrolled = false;
+	        }
+	    }, 20);
+
+	    $(document).on("scroll", handleScroll);
+	    handleScroll(); // initial call
 	});
 	
 
