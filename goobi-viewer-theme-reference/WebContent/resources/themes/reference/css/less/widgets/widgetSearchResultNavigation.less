@@ -2,64 +2,61 @@
    Widget Search Result Navigation
    style declarations for widget_searchresultNavigation.xhtml
    ==============================================================*/
-#widgetSearchResultNavigation {
-    h2 {}
-    .search-result-navigation-wrapp {
-    	display: flex;
-    	align-items: center;
-		padding-bottom: 10px;
-        .search-result-navigation-left,
-        .search-result-navigation-center,
-        .search-result-navigation-right {}
-        .search-result-navigation-left,
-        .search-result-navigation-right {
-            &:hover {
-            	svg {
-	            	background-color: @lightgray;
-					& when (@colorModes = true) {
-						.mx-dark-mode-rules ({
-	            			background-color: @bg-hover;
-						});
-						.mx-light-mode-rules ({
-	            			background-color: @lightgray;
-						});
-					}
-				}
-            }
-        }
-        .search-result-navigation-left {
-            a {}
-            span {}
-            svg {}
-        }
-        .search-result-navigation-center {
-            span {}
-        }
-        .search-result-navigation-right {
-            a {}
-            span {}
-            svg {}
-        }
-    }
-    .search-result-navigation-back-to-collection {
-        font-size: @fontMedium;
-        a {
-            svg {}
-        }
-        &:hover {
-        	svg {
-	        	background-color: @lightgray;
+
+.widget-search-result-navigation {
+   	&__topbar {}
+   	&__title {}
+   	&__body {}
+   	&__wrapper {}
+   	&__left,
+   	&__center,
+   	&__right {
+   		&:hover {
+   			svg {}
+   		}
+   	}
+   	&__left,
+   	&__right {
+		&:hover {
+			svg {
+		    	background-color: @lightgray;
 				& when (@colorModes = true) {
 					.mx-dark-mode-rules ({
-	        			background-color: @bg-hover;
+		    			background-color: @bg-hover;
 					});
 					.mx-light-mode-rules ({
-	        			background-color: @lightgray;
+		    			background-color: @lightgray;
 					});
 				}
 			}
-        }
-    }
+		}
+	}
+   	&__left {
+   		svg {}
+   	}
+   	&__center {}
+   	&__right {
+   		svg {}
+   	}
+   	&__back-to-collection {
+		font-size: @fontMedium;
+   		a {
+   			svg {}
+   		}
+		&:hover {
+			svg {
+		    	background-color: @lightgray;
+				& when (@colorModes = true) {
+					.mx-dark-mode-rules ({
+		    			background-color: @bg-hover;
+					});
+					.mx-light-mode-rules ({
+		    			background-color: @lightgray;
+					});
+				}
+			} 
+		}
+   	}
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
