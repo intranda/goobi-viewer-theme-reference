@@ -47,25 +47,6 @@
 		}
 	}
 	&__citerecommendation-text-info {}
-	
-	
-	
-	// SET TO TRUE TO ALWAYS SHOW THIS WIDGET
-	@alwaysShowCitationWidget: false;
-	// SET ABOVE TO TRUE TO ALWAYS SHOW THIS WIDGET
-    & when (@alwaysShowCitationWidget = true) {
-		.detachedRuleSetTopLevel ({
-	        &__topbar {
-				pointer-events: none;
-				.fa-angle-down {
-					display: none !important;
-				}
-			}
-			.widget__body {
-				display: block !important;
-			}
-		});
-	}
 }
 
 
