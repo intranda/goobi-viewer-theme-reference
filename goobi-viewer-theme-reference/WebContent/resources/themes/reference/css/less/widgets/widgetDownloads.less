@@ -70,23 +70,6 @@
 	&__media-video-download-link {}
 	&__media-audio-download-link {}
 	&__media-model-download-link {}
-	
-	// SET TO TRUE TO ALWAYS SHOW THIS WIDGET
-	@alwaysShowDownloadWidget: false;
-	// SET ABOVE TO TRUE TO ALWAYS SHOW THIS WIDGET
-    & when (@alwaysShowDownloadWidget = true) {
-		.detachedRuleSetTopLevel ({
-	        &__topbar {
-				pointer-events: none;
-				.fa-angle-down {
-					display: none !important;
-				}
-			}
-			.widget__body {
-				display: block !important;
-			}
-		});
-	} 
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
