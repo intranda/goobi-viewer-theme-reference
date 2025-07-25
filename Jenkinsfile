@@ -30,12 +30,7 @@ pipeline {
     }
 
     stage('build and and publish docker image with corresponding config') {
-      agent {
-        docker {
-          image 'docker:24.0-cli'
-          args '--user root --privileged -v /var/run/docker.sock:/var/run/docker.sock'
-        }
-      }
+      agent any
       when {
         anyOf {
           tag "v*"
@@ -69,11 +64,6 @@ pipeline {
             echo "$GHCR_PASS" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             echo "$DOCKERHUB_PASS" | docker login docker.io -u "$DOCKERHUB_USER" --password-stdin
             echo "$NEXUS_PASS" | docker login nexus.intranda.com:4443 -u "$NEXUS_USER" --password-stdin
-
-            # Setup QEMU and Buildx
-            docker run --privileged --rm tonistiigi/binfmt --install all || true
-            docker buildx create --name multiarch-builder --use || docker buildx use multiarch-builder
-            docker buildx inspect --bootstrap
 
             CONFIG_BRANCH_NAME=develop
 
