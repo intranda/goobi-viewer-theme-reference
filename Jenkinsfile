@@ -65,6 +65,10 @@ pipeline {
             echo "$DOCKERHUB_PASS" | docker login docker.io -u "$DOCKERHUB_USER" --password-stdin
             echo "$NEXUS_PASS" | docker login nexus.intranda.com:4443 -u "$NEXUS_USER" --password-stdin
 
+            # Setup QEMU and Buildx
+            docker buildx create --name multiarch-builder --use || docker buildx use multiarch-builder
+            docker buildx inspect --bootstrap
+
             CONFIG_BRANCH_NAME=develop
 
             # Tag logic
