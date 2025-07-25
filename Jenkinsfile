@@ -6,6 +6,12 @@ pipeline {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '15', daysToKeepStr: '90', numToKeepStr: '')
   }
 
+  environment {
+    GHCR_IMAGE_BASE = 'ghcr.io/intranda/goobi-viewer-theme-reference'
+    DOCKERHUB_IMAGE_BASE = 'intranda/goobi-viewer-theme-reference'
+    NEXUS_IMAGE_BASE = 'nexus.intranda.com:4443/goobi-viewer-theme-reference'
+  }
+
   stages {
     stage('build') {
       agent {
@@ -23,117 +29,76 @@ pipeline {
       }
     }
 
-    stage('build, test and publish docker image with config from release tag in master branch') {
-      agent any
-      when {
-        tag "v*"
-      }
-      steps {
-        // get viewer.war from build stage
-        unstash 'app'
-
-        // build docker images
-        script{
-          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=master --build-arg CONNECTOR_BRANCH=master --build-arg build=false .")
-            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=master --build-arg CONNECTOR_BRANCH=master --build-arg build=false .")
-          }
-        }
-
-        // run basic tests in docker image
-        script {
-          dockerimage.inside {
-            sh 'test -d /usr/local/tomcat/webapps/viewer || ( echo "/usr/local/tomcat/webapps/viewer missing or no directory"; exit 1 )'
-            sh 'test -d /opt/digiverso/viewer || ( echo "/opt/digiverso/viewer missing or no directory"; exit 1 )'
-            sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || ( echo "/usr/local/tomcat/conf/viewer.xml.template missing"; exit 1 )'
-            sh 'test -f /usr/local/tomcat/conf/server.xml.template || ( echo "/usr/local/tomcat/conf/server.xml.template missing"; exit 1 )'
-            sh 'test -f /usr/local/tomcat/conf/context.xml.template || ( echo "/usr/local/tomcat/conf/context.xml.template missing"; exit 1 )'
-            sh 'envsubst -V'
-          }
-        }
-
-        // publish docker image to internal repository
-        script {
-          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage.push("${env.TAG_NAME}-${env.BUILD_ID}")
-            dockerimage.push("${env.TAG_NAME}")
-            dockerimage.push("latest")
-          }
-        }
-
-        // publish docker image to docker hub
-        script{
-          docker.withRegistry('','0b13af35-a2fb-41f7-8ec7-01eaddcbe99d'){
-            dockerimage_public.push("${env.TAG_NAME}")
-            dockerimage_public.push("latest")
-          }
-        }
-
-        // publish docker image to GitHub container registry
-        script{
-          docker.withRegistry('https://ghcr.io','jenkins-github-container-registry'){          
-            dockerimage_public.push("${env.TAG_NAME}")
-            dockerimage_public.push("latest")
-          }
+    stage('build and and publish docker image with corresponding config') {
+      agent {
+        docker {
+          image 'docker:24.0-cli'
+          args '--user root --privileged -v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
-    }
-
-    stage('build, test and publish docker image with config from develop branch') {
-      agent any
       when {
-        not {
-          anyOf { branch 'master'; tag "v*" }
+        anyOf {
+          tag "v*"
+          branch 'develop'
+          expression { return env.BRANCH_NAME =~ /_docker$/ }
         }
       }
       steps {
         // get viewer.war from build stage
         unstash 'app'
 
-        // build docker images
-        script{
-          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage = docker.build("goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--no-cache --build-arg CONFIG_BRANCH=develop --build-arg CONNECTOR_BRANCH=develop --build-arg build=false .")
-            dockerimage_public = docker.build("intranda/goobi-viewer-theme-reference:${BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}", "--build-arg CONFIG_BRANCH=develop --build-arg CONNECTOR_BRANCH=develop --build-arg build=false .")
-          }
-        }
+        withCredentials([
+          usernamePassword(
+            credentialsId: 'jenkins-github-container-registry',
+            usernameVariable: 'GHCR_USER',
+            passwordVariable: 'GHCR_PASS'
+          ),
+          usernamePassword(
+            credentialsId: '0b13af35-a2fb-41f7-8ec7-01eaddcbe99d',
+            usernameVariable: 'DOCKERHUB_USER',
+            passwordVariable: 'DOCKERHUB_PASS'
+          ),
+          usernamePassword(
+            credentialsId: 'jenkins-docker',
+            usernameVariable: 'NEXUS_USER',
+            passwordVariable: 'NEXUS_PASS'
+          )
+        ]) {
+          sh '''
+            # Login to registries
+            echo "$GHCR_PASS" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            echo "$DOCKERHUB_PASS" | docker login docker.io -u "$DOCKERHUB_USER" --password-stdin
+            echo "$NEXUS_PASS" | docker login nexus.intranda.com:4443 -u "$NEXUS_USER" --password-stdin
 
-        // run basic tests in docker image
-        script {
-          dockerimage.inside {
-            sh 'test -d /usr/local/tomcat/webapps/viewer || ( echo "/usr/local/tomcat/webapps/viewer missing or no directory"; exit 1 )'
-            sh 'test -d /opt/digiverso/viewer || ( echo "/opt/digiverso/viewer missing or no directory"; exit 1 )'
-            sh 'test -f /usr/local/tomcat/conf/viewer.xml.template || ( echo "/usr/local/tomcat/conf/viewer.xml.template missing"; exit 1 )'
-            sh 'test -f /usr/local/tomcat/conf/server.xml.template || ( echo "/usr/local/tomcat/conf/server.xml.template missing"; exit 1 )'
-            sh 'test -f /usr/local/tomcat/conf/context.xml.template || ( echo "/usr/local/tomcat/conf/context.xml.template missing"; exit 1 )'
-            sh 'envsubst -V'
-          }
-        }
+            # Setup QEMU and Buildx
+            docker run --privileged --rm tonistiigi/binfmt --install all || true
+            docker buildx create --name multiarch-builder --use || docker buildx use multiarch-builder
+            docker buildx inspect --bootstrap
 
-        // publish docker image to internal repository
-        script {
-          docker.withRegistry('https://nexus.intranda.com:4443','jenkins-docker'){
-            dockerimage.push("${env.BRANCH_NAME}-${env.BUILD_ID}_${env.GIT_COMMIT}")
-            dockerimage.push("${env.BRANCH_NAME}")
-          }
-        }
+            CONFIG_BRANCH_NAME=develop
 
-        // publish docker image from develop branch to docker hub
-        script{
-          if (env.BRANCH_NAME == 'develop') {
-            docker.withRegistry('','0b13af35-a2fb-41f7-8ec7-01eaddcbe99d'){
-              dockerimage_public.push("${env.BRANCH_NAME}")
-            }
-          }
-        }
+            # Tag logic
+            TAGS=""
+            if [ ! -z "$TAG_NAME" ]; then
+              CONFIG_BRANCH_NAME=master
+              TAGS="$TAGS -t $GHCR_IMAGE_BASE:$TAG_NAME -t $DOCKERHUB_IMAGE_BASE:$TAG_NAME -t $NEXUS_IMAGE_BASE:$TAG_NAME -t $GHCR_IMAGE_BASE:latest -t $DOCKERHUB_IMAGE_BASE:latest -t $NEXUS_IMAGE_BASE:latest"
+            elif [ "$GIT_BRANCH" = "origin/develop" ] || [ "$GIT_BRANCH" = "develop" ]; then
+              TAGS="$TAGS -t $GHCR_IMAGE_BASE:develop -t $DOCKERHUB_IMAGE_BASE:develop -t $NEXUS_IMAGE_BASE:develop"
+            elif echo "$GIT_BRANCH" | grep -q "_docker$"; then
+              TAG_SUFFIX=$(echo "$GIT_BRANCH" | sed 's/_docker$//' | sed 's|/|_|g')
+              TAGS="$TAGS -t $GHCR_IMAGE_BASE:$TAG_SUFFIX -t $DOCKERHUB_IMAGE_BASE:$TAG_SUFFIX -t $NEXUS_IMAGE_BASE:$TAG_SUFFIX"
+            else
+              echo "No matching tag, skipping build."
+              exit 0
+            fi
 
-        // publish docker image from develop branch to GitHub container registry
-        script{
-          if (env.BRANCH_NAME == 'develop') {
-              docker.withRegistry('https://ghcr.io','jenkins-github-container-registry'){
-                dockerimage_public.push("${env.BRANCH_NAME}")
-            }
-          }
+            # Build and push to all registries
+            docker buildx build --build-arg build=false \
+              --no-cache --build-arg CONFIG_BRANCH=$CONFIG_BRANCH_NAME \
+              --platform linux/amd64,linux/arm64/v8,linux/ppc64le,linux/riscv64,linux/s390x \
+              $TAGS \
+              --push .
+          '''
         }
       }
     }
