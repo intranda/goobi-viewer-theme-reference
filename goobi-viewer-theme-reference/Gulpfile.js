@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs');
@@ -27,10 +26,16 @@ try {
 } catch {
 }
 
-/** Active theme name used for output file names. */
-const THEME = {name: 'reference'};
+const toPosix = (p) => (p ? String(p).replace(/\\/g, '/') : p);
+const joinPosix = (...segs) => toPosix(path.join(...segs));
 
-/** Base folder for theme assets inside the webapp resources tree. */
+const repoDir = path.basename(process.cwd());
+const shortNameFromDir = repoDir.replace(/^goobi-viewer-theme-/, '') || repoDir;
+
+const THEME = {
+    name: (process.env.GV_THEME || shortNameFromDir).trim().toLowerCase()
+};
+
 const base = `WebContent/resources/themes/${THEME.name}`;
 
 /** Static paths used throughout the build. */
@@ -100,7 +105,7 @@ function elapsedMs(t0) {
  * @returns {string}
  */
 function pretty(p) {
-    return p ? String(p).replace(os.homedir(), '~') : '';
+    return p ? toPosix(String(p).replace(os.homedir(), '~')) : '';
 }
 
 /**
@@ -229,15 +234,16 @@ function resolveDirs() {
             ? 'c:/opt/digiverso/viewer/config/config_viewer.xml'
             : '/opt/digiverso/viewer/config/config_viewer.xml');
 
-    // Read user config (JSON)
     let cfg;
     try {
         cfg = JSON.parse(fs.readFileSync(gulpCfgPath, 'utf-8'));
     } catch (e) {
         throw new Error(`Cannot parse ${gulpCfgPath}: ${e.message}`);
     }
+    if (!cfg.tomcat_dir) {
+        throw new Error(`Missing "tomcat_dir" in ${gulpCfgPath}`);
+    }
 
-    // Read viewer XML config
     let viewerConfig;
     try {
         viewerConfig = XML.parse(fs.readFileSync(viewerCfgPath, 'utf-8'));
@@ -247,23 +253,19 @@ function resolveDirs() {
 
     const theme = viewerConfig?.viewer?.theme || {};
     const special = theme.specialName && String(theme.specialName);
-    const deployed = String(theme.deployedTargetFolder).toLowerCase() === 'true';
     const mainTheme = String(theme.mainTheme || 'reference');
 
     let deployDir;
     if (special && special.length) {
         deployDir = path.join(cfg.tomcat_dir, `goobi-viewer-theme-${special}`);
-    } else if (deployed) {
-        const candidate = path.join(
-            home, 'git', 'goobi-viewer',
-            'goobi-viewer-theme-reference', 'goobi-viewer-theme-reference',
-            'target', 'viewer'
-        );
-        deployDir = fs.existsSync(candidate)
-            ? candidate
-            : path.join(cfg.tomcat_dir, `goobi-viewer-theme-${mainTheme}`);
     } else {
-        deployDir = path.join(cfg.tomcat_dir, `goobi-viewer-theme-${mainTheme}`);
+        const candidates = [
+            path.join(cfg.tomcat_dir, `goobi-viewer-theme-${mainTheme}`),
+            path.join(home, 'git', 'goobi-viewer',
+                `goobi-viewer-theme-${mainTheme}`, `goobi-viewer-theme-${mainTheme}`,
+                'target', 'viewer'),
+        ];
+        deployDir = candidates.find((c) => fs.existsSync(c)) || candidates[0];
     }
 
     return {
@@ -422,14 +424,14 @@ function buildStyles(changedFilePath = null) {
 function bundleCustomJS(changedFilePath = null) {
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
-    const srcList = JS_SOURCES.map((p) => path.join(paths.jsDev, p));
+    const srcList = JS_SOURCES.map((p) => joinPosix(paths.jsDev, p));
     const outProj = path.join(paths.jsDist, 'custom.min.js');
     const outDeploy = path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', 'custom.min.js');
 
     return gulp
-        .src(srcList, {allowEmpty: true})
+        .src(srcList, { allowEmpty: true })
         .pipe(guard())
-        .pipe(concat('custom.min.js', {newLine: ';'}))
+        .pipe(concat('custom.min.js', { newLine: ';' }))
         .pipe(header(banner))
         .pipe(gulp.dest(paths.jsDist))
         .pipe(safeDest('resources/javascript/dist'))
@@ -438,7 +440,7 @@ function bundleCustomJS(changedFilePath = null) {
                 name: 'js_custom',
                 started,
                 changed: changedFilePath,
-                src: path.join(paths.jsDev, `{${JS_SOURCES.join(',')}}`),
+                src: joinPosix(paths.jsDev, `{${JS_SOURCES.join(',')}}`),
                 projOut: [outProj],
                 deployOut: [outDeploy],
             });
@@ -458,7 +460,7 @@ function compileRiotTags(changedFilePath = null) {
     const outDeploy = path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', `${THEME.name}-tags.js`);
 
     return gulp
-        .src(path.join(paths.jsDev, '*.tag'), {allowEmpty: true})
+        .src(joinPosix(paths.jsDev, '*.tag'), {allowEmpty: true})
         .pipe(guard())
         .pipe(riot({compact: true}))
         .pipe(concat(`${THEME.name}-tags.js`))
@@ -469,7 +471,7 @@ function compileRiotTags(changedFilePath = null) {
                 name: 'riotTags',
                 started,
                 changed: changedFilePath,
-                src: path.join(paths.jsDev, '*.tag'),
+                src: joinPosix(paths.jsDev, '*.tag'),
                 projOut: [outProj],
                 deployOut: [outDeploy],
             });
@@ -489,7 +491,7 @@ function syncAll() {
     let copied = 0;
 
     return gulp
-        .src(path.join(paths.staticRoot, '**/*'), {dot: true, allowEmpty: true, base: paths.staticRoot})
+        .src(joinPosix(paths.staticRoot, '**/*'), {dot: true, allowEmpty: true, base: paths.staticRoot})
         .pipe(guard())
         .pipe(collectFiles((file) => {
             if (file?.stat?.isFile()) copied++;
@@ -579,7 +581,7 @@ function cacheBump() {
         if (!arr.includes(out)) arr.push(out);
     });
 
-    const a = gulp.src(path.join(paths.templates, '*.html'), { allowEmpty: true })
+    const a = gulp.src(joinPosix(paths.templates, '*.html'), {allowEmpty: true})
         .pipe(guard())
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.templates))
@@ -587,7 +589,7 @@ function cacheBump() {
         .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))))
         .pipe(safeDest(path.relative(paths.staticRoot, paths.templates).replace(/\\/g, '/')));
 
-    const b = gulp.src(path.join(paths.includes, 'customJS.xhtml'), { allowEmpty: true })
+    const b = gulp.src(joinPosix(paths.includes, 'customJS.xhtml'), {allowEmpty: true})
         .pipe(guard())
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.includes))
@@ -617,18 +619,38 @@ function cacheBump() {
 function printTargets(cb) {
     const home = os.homedir();
     const exists = (p) => p && fs.existsSync(p);
-    const asHome = (p) => (p ? p.replace(home, '~') : '(none)');
+    const asHome = (p) => (p ? toPosix(p.replace(home, '~')) : '(none)');
     const mark = (p) => (exists(p) ? colors.green('✓') : colors.red('✗'));
     const row = (label, p) => `${colors.white(label.padEnd(14))} ${mark(p)}  ${colors.blue(asHome(p))}`;
 
     logBlock('targets', [
         `platform: ${colors.cyan(process.platform)}  node: ${colors.cyan(process.version)}`,
+        `theme:    ${colors.cyan(THEME.name)}`,
         row('DEPLOYMENT_DIR', DEPLOYMENT_DIR),
         row('THEME_DIR', THEME_DIR),
         row('VIEWER_CFG', VIEWER_CFG),
         row('USER_CFG', USER_CFG),
-        colors.gray('hint: GV_VIEWER_CFG / GV_GULP_CFG override config paths'),
+        colors.gray('hint: GV_THEME / GV_VIEWER_CFG / GV_GULP_CFG can override defaults'),
     ]);
+
+    const depPath = toPosix(DEPLOYMENT_DIR).toLowerCase();
+    const projBase = path.basename(THEME_DIR);
+    const projBaseLc = projBase.toLowerCase();
+    const projBaseStrippedLc = projBaseLc.replace(/^goobi-viewer-theme-/, '');
+
+    const contains =
+        depPath.includes(`/${projBaseLc}/`) ||
+        depPath.endsWith(`/${projBaseLc}`) ||
+        depPath.includes(`/${projBaseStrippedLc}/`) ||
+        depPath.endsWith(`/${projBaseStrippedLc}`);
+
+    if (!contains) {
+        log(colors.yellow(
+            `[warn] Possible mismatch: theme folder "${projBase}" not reflected in deployment path.\n` +
+            `           Ensure you are running gulp in the correct theme repo.`
+        ));
+    }
+
     cb();
 }
 
@@ -647,29 +669,29 @@ function watchMode() {
         ignored: ['**/*.tmp', '**/*~', '**/#*#', '**/.#*', '**/*.swp', '**/*.swo', '**/.DS_Store'],
     };
 
-    gulp.watch(path.join(paths.lessViewer, '**/*.less'), watchOpts)
+    gulp.watch(joinPosix(paths.lessViewer, '**/*.less'), watchOpts)
         .on('change', (p) => buildStyles(p));
 
-    gulp.watch(path.join(paths.jsDev, '*.js'), watchOpts)
+    gulp.watch(joinPosix(paths.jsDev, '*.js'), watchOpts)
         .on('change', (p) => bundleCustomJS(p))
-        .on('add',    (p) => bundleCustomJS(p));
+        .on('add', (p) => bundleCustomJS(p));
 
-    gulp.watch(path.join(paths.jsDev, '*.tag'), watchOpts)
+    gulp.watch(joinPosix(paths.jsDev, '*.tag'), watchOpts)
         .on('change', (p) => compileRiotTags(p))
-        .on('add',    (p) => compileRiotTags(p));
+        .on('add', (p) => compileRiotTags(p));
 
     const staticGlobs = [
-        path.join(paths.staticRoot, '*.xhtml'),
-        path.join(paths.staticRoot, '*.xml'),
-        path.join(paths.staticRoot, '*.xls'),
-        path.join(paths.themeRoot, '**/*.xhtml'),
-        path.join(paths.themeRoot, '**/*.html'),
-        path.join(paths.themeRoot, '**/*.jpg'),
-        path.join(paths.themeRoot, '**/*.jpeg'),
-        path.join(paths.themeRoot, '**/*.png'),
-        path.join(paths.themeRoot, '**/*.svg'),
-        path.join(paths.themeRoot, '**/*.gif'),
-        path.join(paths.themeRoot, '**/*.ico'),
+        joinPosix(paths.staticRoot, '*.xhtml'),
+        joinPosix(paths.staticRoot, '*.xml'),
+        joinPosix(paths.staticRoot, '*.xls'),
+        joinPosix(paths.themeRoot, '**/*.xhtml'),
+        joinPosix(paths.themeRoot, '**/*.html'),
+        joinPosix(paths.themeRoot, '**/*.jpg'),
+        joinPosix(paths.themeRoot, '**/*.jpeg'),
+        joinPosix(paths.themeRoot, '**/*.png'),
+        joinPosix(paths.themeRoot, '**/*.svg'),
+        joinPosix(paths.themeRoot, '**/*.gif'),
+        joinPosix(paths.themeRoot, '**/*.ico'),
     ];
 
     gulp.watch(staticGlobs, watchOpts)
