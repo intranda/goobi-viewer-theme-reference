@@ -707,8 +707,7 @@ function watchMode() {
 const buildAssets = gulp.series(gulp.parallel(buildStyles, bundleCustomJS, compileRiotTags));
 
 exports.build = buildAssets;
-exports.dev = gulp.series(watchMode);
-exports.devsync = gulp.series(syncAll, watchMode);
+exports.dev = gulp.series(syncAll, watchMode);
 exports['sync-all'] = syncAll;
 exports.cache = gulp.series(cacheBump);
 exports.target = printTargets;
@@ -717,7 +716,6 @@ exports.target = printTargets;
 /* ── Task exports ──────────────────────────────────────────
    - npm run build     → Build styles, JS, riot tags
    - npm run dev       → Start watchers (no full sync)
-   - npm run devsync   → Full sync, then watchers
    - npm run sync      → One-shot full static sync
    - npm run cache     → Update cache-busting timestamps
    - npm run target    → Show resolved paths

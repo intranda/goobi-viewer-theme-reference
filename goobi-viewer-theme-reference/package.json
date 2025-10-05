@@ -10,7 +10,6 @@
   "license": "GPL-2.0-or-later",
   "scripts": {
     "dev": "cross-env GV_AUTOPREFIX=0 NODE_NO_WARNINGS=1 gulp dev",
-    "devsync": "cross-env GV_AUTOPREFIX=0 NODE_NO_WARNINGS=1 gulp devsync",
     "build": "cross-env GV_AUTOPREFIX=0 NODE_NO_WARNINGS=1 gulp build",
     "sync": "cross-env GV_AUTOPREFIX=0 NODE_NO_WARNINGS=1 gulp sync-all",
     "cache": "cross-env GV_AUTOPREFIX=0 NODE_NO_WARNINGS=1 gulp cache",
