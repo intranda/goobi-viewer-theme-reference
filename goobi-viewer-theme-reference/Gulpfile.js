@@ -194,7 +194,9 @@ function logTask({
     errors = 0,
     extra = [],
 }) {
-    const lines = [];
+    const lines = [
+        `time: ${colors.gray(new Date().toLocaleTimeString('de-DE', { hour12: false }))}`,
+    ];
     if (changed) lines.push(`changed: ${colors.green(pretty(changed))}`);
     if (src) lines.push(`src: ${colors.green(src)}`);
     if (projOut.length)
