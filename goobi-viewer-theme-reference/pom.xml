@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>25.08.1</version>
+	<version>25.09-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 
@@ -43,18 +43,18 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>25.08.1</version>
+			<version>25.09-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>25.08.1</version>
+			<version>25.09-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-connector</artifactId>
-			<version>25.08</version>
+			<version>25.09-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
@@ -72,7 +72,7 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>25.08</version>
+					<version>25.09-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -94,7 +94,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.5.0</version>
+				<version>3.6.2</version>
 				<executions>
 					<execution>
 						<id>enforce-maven</id>
@@ -132,13 +132,13 @@
 			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
+				<version>3.14.1</version>
 			</plugin>
 			<!-- Maven Dependency Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.9.0</version>
 				<executions>
 					<!-- Config files -->
 					<execution>
