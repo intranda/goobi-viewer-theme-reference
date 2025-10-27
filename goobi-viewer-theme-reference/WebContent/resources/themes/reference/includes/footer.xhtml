@@ -1,4 +1,6 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition
+	xmlns:util="http://goobi.io/util" 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -61,8 +63,8 @@
 							title="#{msg.social__follow_on_facebook}" data-toggle="tooltip"
 							target="_blank" rel="noopener"
 							aria-label="#{msg.social__follow_on_facebook}"> <span
-							class="sr-only">#{msg.social__follow_on_facebook}</span> <i
-							class="fa fa-facebook" aria-hidden="true"></i>
+							class="sr-only">#{msg.social__follow_on_facebook}</span> 
+							<util:icon icon="brand-facebook" />
 						</a>
 					</c:if>
 
@@ -72,8 +74,8 @@
 							title="#{msg.social__follow_on_github}" data-toggle="tooltip"
 							target="_blank" rel="noopener"
 							aria-label="#{msg.social__follow_on_github}"> <span
-							class="sr-only">#{msg.social__follow_on_github}</span> <i
-							class="fa fa-github" aria-hidden="true"></i>
+							class="sr-only">#{msg.social__follow_on_github}</span> 
+							<util:icon icon="brand-github" />
 						</a>
 					</c:if>
 
@@ -83,8 +85,8 @@
 							title="#{msg.social__follow_on_twitter}" data-toggle="tooltip"
 							target="_blank" rel="noopener"
 							aria-label="#{msg.social__follow_on_twitter}"> <span
-							class="sr-only">#{msg.social__follow_on_twitter}</span> <i
-							class="fa fa-twitter" aria-hidden="true"></i>
+							class="sr-only">#{msg.social__follow_on_twitter}</span> 
+							<util:icon icon="brand-twitter" />
 						</a>
 					</c:if>
 
@@ -94,21 +96,21 @@
 							title="#{msg.social__follow_on_youtube}" data-toggle="tooltip"
 							target="_blank" rel="noopener"
 							aria-label="#{msg.social__follow_on_youtube}"> <span
-							class="sr-only">#{msg.social__follow_on_youtube}</span> <i
-							class="fa fa-youtube" aria-hidden="true"></i>
+							class="sr-only">#{msg.social__follow_on_youtube}</span> 
+							<util:icon icon="brand-youtube" />
 						</a>
 					</c:if>
-
-					<c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
+					<!-- TODO: Find SlideshareIcon -->
+					<!-- <c:if test="#{adminThemesBean.hasSocialMediaUrl('slideshare')}">
 						<a
 							href="https://slideshare.net/#{adminThemesBean.currentTheme.getSocialMediaLink('slideshare').linkUrl}"
 							title="#{msg.social__follow_on_slideshare}" data-toggle="tooltip"
 							target="_blank" rel="noopener"
 							aria-label="#{msg.social__follow_on_slideshare}"> <span
-							class="sr-only">#{msg.social__follow_on_slideshare}</span> <i
-							class="fa fa-slideshare" aria-hidden="true"></i>
+							class="sr-only">#{msg.social__follow_on_slideshare}</span> 
+							<util:icon icon="brand-slideshare" />
 						</a>
-					</c:if>
+					</c:if> -->
 
 					<c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
 						<a
@@ -116,8 +118,8 @@
 							title="#{msg.social__follow_on_instagram}" data-toggle="tooltip"
 							target="_blank" rel="noopener"
 							aria-label="#{msg.social__follow_on_instagram}"> <span
-							class="sr-only">#{msg.social__follow_on_instagram}</span> <i
-							class="fa fa-instagram" aria-hidden="true"></i>
+							class="sr-only">#{msg.social__follow_on_instagram}</span> 
+							<util:icon icon="brand-instagram" />
 						</a>
 					</c:if>
 

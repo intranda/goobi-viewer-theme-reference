@@ -1,4 +1,6 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:util="http://goobi.io/util"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -43,7 +45,7 @@
 									<!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
 
 									<!-- GENERIC ICON AND MESSAGE -->
-									<span class="fa fa-globe"></span>#{msg.language}
+									 <util:icon-text icon="world" text="#{msg.language}" />
 								</button>
 								<!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
 								<viewerComponent:changeLocal toggleLanguage="false"
@@ -60,7 +62,7 @@
 							<button data-open="search"
 								class="btn btn--icon header__actions-search-button"
 								aria-label="#{msg.search}">
-								<i class="fa fa-search"></i>
+								<util:icon icon="search" />
 							</button>
 							
 							<button data-close="search"
@@ -103,9 +105,22 @@
 					<ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
 						<div class="page-navigation__mobile-languages-wrapper">
 							<div class="page-navigation__mobile-languages-trigger" data-trigger="mobileToggleLanguages">
-								<i class="fa fa-globe" aria-hidden="true"></i>
-								<button class="btn btn--clean">#{msg.MD_LANGUAGE}</button>
-								<i class="fa fa-plus page-navigation__mobile-languages-toggle-indicator" aria-hidden="true"></i>
+								<button class="btn btn--clean">
+									<util:icon-text icon="world" text="#{msg.MD_LANGUAGE}" />
+								</button>
+									<span class="page-navigation__mobile-languages-toggle-indicator"
+										data-state="closed"
+										aria-hidden="true">
+										<span class="page-navigation__mobile-languages-toggle-indicator-icon"
+											data-icon-state="closed">
+											<util:icon icon="plus" />
+										</span>
+										<span class="page-navigation__mobile-languages-toggle-indicator-icon"
+											data-icon-state="open"
+											hidden="hidden">
+											<util:icon icon="minus" />
+										</span>
+									</span>
 							</div>
 							<h:form id="changeLocalFormMobile" prependId="false">
 				                <ul class="page-navigation__mobile-languages-selection" data-target="mobileLanguageSelection">
