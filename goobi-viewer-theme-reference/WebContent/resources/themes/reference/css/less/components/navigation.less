@@ -89,9 +89,7 @@
 	&__megamenu-wrapper {
 	    &.in {}
 	}
-	&__megamenu-close {
-		.fa {}
-	}
+	&__megamenu-close {}
 	&__megamenu-element {
 		&.level-1 {}
 		&.level-2 {}
@@ -103,38 +101,37 @@
 // MOBILE ADAPTIONS
 
 #pageNavigationMobile {
-	.navigation {
-		&__submenu-trigger {
-			> button > .caret {
-				border: none;
-				width: 20px;
-				height: 20px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font: normal normal normal 14px / 1 FontAwesome;
-				&:before {
-					content: "\f067";
-				}
-			}
-			&.active {
-				> button > .caret {
-					&:before {
-						content: "\f068";
-					}
-				}
-			}
-		}
-		&__submenu.in {
-			display: none;
-		}
-		&__submenu {
-			li {
-				background-color: @ci-color1;
-			}
-		}
-	}
-}
+      .navigation {
+          &__submenu-trigger {
+              > button > .caret {
+                  border: none;
+                  width: 20px;
+                  height: 20px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &:before {
+                      content: ''; 
+                      width: 16px;
+                      height: 16px;
+                      background-color: currentColor;
+                      mask: url('../../icons/outline/plus.svg')center/100% 100% no-repeat;
+                      -webkit-mask: url('../../icons/outline/plus.svg') center/100% 100% no-repeat;
+                  }
+              }
+
+              &.active {
+                  > button > .caret {
+                      &:before {
+                          mask: url('../../icons/outline/minus.svg') center/100% 100% no-repeat;
+                          -webkit-mask: url('../../icons/utline/minus.svg') center/100% 100% no-repeat;
+                      }
+                  }
+              }
+          }
+      }
+  }
 
 
 @{RTL} {
@@ -147,7 +144,7 @@
 	}
 }
 
-
+ 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
 

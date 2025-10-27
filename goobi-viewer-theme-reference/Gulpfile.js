@@ -367,12 +367,12 @@ function buildStyles(changedFilePath = null) {
     const bundles = [
         {
             entry: lessEntryMain,
-            outName: `${THEME.name}.min.css`,
+            outName: 'viewer.min.css',
             include: [paths.lessViewer, paths.lessCS],
         },
         {
             entry: lessEntryCS,
-            outName: `${THEME.name}-cs.min.css`,
+            outName: 'viewer-cs.min.css',
             include: [paths.lessViewer, paths.lessCS],
         },
         ...subthemeBundles,

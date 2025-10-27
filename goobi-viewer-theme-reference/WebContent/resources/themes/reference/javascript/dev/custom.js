@@ -188,8 +188,20 @@ $(document).ready(function() {
 
 	// toggle language selection
 	$('body').on('click', '[data-trigger="mobileToggleLanguages"]', function() {
-		$('[data-target="mobileLanguageSelection"]').slideToggle('fast');
-		$('.page-navigation__mobile-languages-toggle-indicator').toggleClass('fa-plus').toggleClass('fa-minus');
+		const $target = $('[data-target="mobileLanguageSelection"]');
+		const $indicator = $('.page-navigation__mobile-languages-toggle-indicator');
+
+		$target.slideToggle('fast');
+
+		if ($indicator.length) {
+			const isOpen = $indicator.attr('data-state') === 'open';
+			const targetState = isOpen ? 'closed' : 'open';
+
+			$indicator.attr('data-state', targetState);
+
+			$indicator.find('[data-icon-state]').attr('hidden', true);
+			$indicator.find(`[data-icon-state="${targetState}"]`).removeAttr('hidden');
+		}
 	});
 
 	// toggle mobile sidebar
