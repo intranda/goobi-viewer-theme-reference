@@ -281,12 +281,12 @@
 
 			.input-group {
 				&:before {
-					content: "\f002";
-					font-family: FontAwesome;
-					display: flex;
-					align-items: center;
-					font-size: 24px;
-					color: @ci-color1;
+            content: '';
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-color: currentColor;
+            .mx-icon-mask(search);
 				}
 			}
 
