@@ -116,18 +116,25 @@
                       width: 16px;
                       height: 16px;
                       background-color: currentColor;
-                      mask: url('../../icons/outline/plus.svg')center/100% 100% no-repeat;
-                      -webkit-mask: url('../../icons/outline/plus.svg') center/100% 100% no-repeat;
-                  }
+                      .mx-icon-mask(plus);
+                 }
               }
 
               &.active {
                   > button > .caret {
                       &:before {
-                          mask: url('../../icons/outline/minus.svg') center/100% 100% no-repeat;
-                          -webkit-mask: url('../../icons/utline/minus.svg') center/100% 100% no-repeat;
+                          .mx-icon-mask(minus);
                       }
                   }
+              }
+          }
+
+          &__submenu {
+              &.in {
+                  display: none;
+              }
+              li {
+                  background-color: @ci-color1;
               }
           }
       }

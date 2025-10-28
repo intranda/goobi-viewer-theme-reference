@@ -126,8 +126,15 @@
 				                <ul class="page-navigation__mobile-languages-selection" data-target="mobileLanguageSelection">
 				                    <ui:repeat var="lang" value="#{navigationHelper.supportedLanguages}">
 				                        <li>
-				                             <h:commandLink styleClass="#{navigationHelper.localeString == lang ?'activeLang':''}">
-				                                 <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
+				                             <h:commandLink styleClass="page-navigation__mobile-languages-selection-link #{navigationHelper.localeString == lang ? 'activeLang' : ''}">
+				                                 <span class="page-navigation__mobile-languages-selection-label">
+				                                     <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
+				                                 </span>
+				                                 <ui:fragment rendered="#{navigationHelper.localeString == lang}">
+				                                     <span class="page-navigation__mobile-languages-selection-icon" aria-hidden="true">
+				                                         <util:icon icon="check" />
+				                                     </span>
+				                                 </ui:fragment>
 				                                 <f:setPropertyActionListener target="#{navigationHelper.localeString}" value="#{lang}" />
 				                             </h:commandLink>
 				                         </li>
