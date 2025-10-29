@@ -3,7 +3,7 @@
    ==============================================================*/
 
 /* HEADER */
-.header {
+.header { 
 	z-index: 2019;
 	position: sticky;
 	background: @bg-general;
@@ -66,11 +66,13 @@
 		border-left: 1px solid @middleblack;
 		height: 21px;
 	}
-
-	#changeLocalWrapper &__actions-language-button {
-		font-weight: 700;
-		display: block;
+	
+	&__actions-language-button {
+		display: flex;
+		align-items: center;
+		font-weight: 400;
 		color: @fg-header;
+		font-size: 14px;
 	}
 
 	&__actions-search-wrapper {
@@ -95,7 +97,8 @@
 		padding: 0;
 		color: @middleblack;
 		width: 2rem;
-
+		display: flex; 
+		align-items: center;
 		&:focus,
 		&:hover,
 		&:active {
@@ -159,7 +162,6 @@
 	}
 
 	&__actions-color-switch {
-		height: 21px;
 		display: flex;
 		align-items: center;
 
