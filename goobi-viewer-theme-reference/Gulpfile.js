@@ -145,6 +145,7 @@ function noopThrough() {
  */
 function safeDest(subPath) {
     const full = path.join(DEPLOYMENT_DIR, subPath);
+    fs.mkdirSync(full, { recursive: true });
     if (!fs.existsSync(full)) {
         log(colors.yellow(`[deploy] target does not exist, skipping: ${pretty(full)}`));
         return noopThrough();
@@ -299,11 +300,19 @@ function assertDirExists(label, dir) {
     }
 }
 
+/* Resolve once on load, assert lazily for tasks that require deployment */
 const { DEPLOYMENT_DIR, THEME_DIR, VIEWER_CFG, USER_CFG } = (() => {
     const d = resolveDirs();
-    assertDirExists('DEPLOYMENT_DIR', d.DEPLOYMENT_DIR);
     return d;
 })();
+
+let deploymentDirChecked = false;
+function requireDeploymentDir() {
+    if (!deploymentDirChecked) {
+        assertDirExists('DEPLOYMENT_DIR', DEPLOYMENT_DIR);
+        deploymentDirChecked = true;
+    }
+}
 
 /* ╔══════════════════════════════════════════════════════════════════════╗
    ║ Styles: LESS → CSS (+ sourcemaps + autoprefixer)                      ║
@@ -332,6 +341,7 @@ function remapLessSource(sourcePath, entryDir) {
  * @returns {NodeJS.ReadWriteStream} Merged stream of all bundle pipelines.
  */
 function buildStyles(changedFilePath = null) {
+    requireDeploymentDir();
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
 
@@ -447,6 +457,7 @@ function buildStyles(changedFilePath = null) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function bundleCustomJS(changedFilePath = null) {
+    requireDeploymentDir();
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const srcList = JS_SOURCES.map((p) => joinPosix(paths.jsDev, p));
@@ -479,6 +490,7 @@ function bundleCustomJS(changedFilePath = null) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function compileRiotTags(changedFilePath = null) {
+    requireDeploymentDir();
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const outProj = path.join(paths.jsDist, `${THEME.name}-tags.js`);
@@ -516,6 +528,7 @@ function compileRiotTags(changedFilePath = null) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function syncAll() {
+    requireDeploymentDir();
     const started = tStart();
     let copied = 0;
 
@@ -602,6 +615,7 @@ function mirrorStatic(filePath) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function cacheBump() {
+    requireDeploymentDir();
     const started = tStart();
     const d = new Date();
     const stamp = [
@@ -721,6 +735,7 @@ function printTargets(cb) {
  * Rebuilds and mirrors changes into the deployment folder where applicable.
  */
 function watchMode() {
+    requireDeploymentDir();
     const watchOpts = {
         ignoreInitial: true,
         awaitWriteFinish: { stabilityThreshold: 700, pollInterval: 50 },
