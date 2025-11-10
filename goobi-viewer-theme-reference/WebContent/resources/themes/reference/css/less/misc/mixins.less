@@ -68,6 +68,14 @@
 	list-style: none;
 }
 
+/* SVG ICON MASK */
+.mx-icon-mask(@iconName; @iconGroup: outline; @library: resources; @basePath: '../../../../icons') {
+	@iconPath: ~"@{basePath}/@{iconGroup}/@{iconName}.svg";
+	@iconResource: ~"@{iconPath}?ln=@{library}";
+	mask: url('@{iconResource}') center/100% 100% no-repeat;
+	-webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
+}
+
 // FOCUSRING
 .mx-focus-visible {
 	outline: 2px solid @colorOutline;

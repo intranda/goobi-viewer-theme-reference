@@ -4,143 +4,147 @@
 
 /* PAGE CONTENT AREA */
 .content {
-	background: @bg-general;
-	z-index: 2;
-	&__wrapper {
-		position: relative;
-		display: grid;
-		grid-template-columns: 3fr 1fr;
-		gap: 3rem;
-		padding: 2rem 0 5rem 0;
-	}
-	&__main {
-		min-width: 0;
-	}
-	&__sidebar {
-		min-width: 200px;
-	}
-	&__mobile-sidebar-trigger {
-		display: none;
-		position: fixed;
-		bottom: 18px;
-		left: calc(~"100% - 50px");
-		background: @ci-color1;
-		z-index: 2031;
-		border-radius: 40px;
-		transition: left 0.3s ease;
-		&.-opened {
-			left: 15px;
-			.content__mobile-sidebar-trigger-button {
-				.bar:nth-child(1) {
-					transform: translateX(0) rotate(45deg) scaleX(1.4);
-					background: @white;
-				}
-				.bar:nth-child(2) {
-					transform: translateX(0) rotate(-45deg) scaleX(1.4);
-					background: @white;
-				}
-			}
-		}
-	}
-	&__mobile-sidebar-trigger-button {
-		cursor: pointer;
-		margin: 0;
-		position: relative;
-		width: 40px;
-		height: 40px;
-		.bar {
-			width: 18px;
-			height: 2px;
-			background: @white;
-			position: absolute;
-			top: 13px;
-			left: -1px;
-			transition: all 0.25s ease;
-			&:nth-child(1) {
-				border-radius: 1px;
-				transform-origin: 50%;
-				transform: translateX(-25%) rotate(45deg) scaleX(0.9);
-				left: -2px;
-			}
-			&:nth-child(2) {
-				border-radius: 1px;
-				transform-origin: 50%;
-				transform: translateX(25%) rotate(-45deg) scaleX(0.9);
-			}
-		}
-//		&.-arrow {
-//			.bar {}
-//			.bar:nth-child(1) {
-//				transform: translateX(-25%) rotate(45deg) scaleX(0.9);
-//				left: -2px;
-//			}
-//			.bar:nth-child(2) {
-//				transform: translateX(25%) rotate(-45deg) scaleX(0.9);
-//			}
-//		}
+  background: @bg-general;
+  z-index: 2;
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+    padding: 2rem 0 5rem 0;
+  }
+  &__main {
+    min-width: 0;
+    scroll-margin-top: 150px; // offset for fixed top navigation
+  }
+  &__sidebar {
+    min-width: 200px;
+    scroll-margin-top: 150px; // offset for fixed top navigation
+  }
+  &__mobile-sidebar-trigger {
+    display: none;
+    position: fixed;
+    bottom: 18px;
+    left: calc(~"100% - 50px");
+    background: @ci-color1;
+    z-index: 2031;
+    border-radius: 40px;
+    transition: left 0.3s ease;
+    &.-opened {
+      left: 15px;
+      .content__mobile-sidebar-trigger-button {
+        .bar:nth-child(1) {
+          transform: translateX(0) rotate(45deg) scaleX(1.4);
+          background: @white;
+        }
+        .bar:nth-child(2) {
+          transform: translateX(0) rotate(-45deg) scaleX(1.4);
+          background: @white;
+        }
+      }
+    }
+  }
+  &__mobile-sidebar-trigger-button {
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    .bar {
+      width: 18px;
+      height: 2px;
+      background: @white;
+      position: absolute;
+      top: 13px;
+      left: -1px;
+      transition: all 0.25s ease;
+      &:nth-child(1) {
+        border-radius: 1px;
+        transform-origin: 50%;
+        transform: translateX(-25%) rotate(45deg) scaleX(0.9);
+        left: -2px;
+      }
+      &:nth-child(2) {
+        border-radius: 1px;
+        transform-origin: 50%;
+        transform: translateX(25%) rotate(-45deg) scaleX(0.9);
+      }
+    }
+    //		&.-arrow {
+    //			.bar {}
+    //			.bar:nth-child(1) {
+    //				transform: translateX(-25%) rotate(45deg) scaleX(0.9);
+    //				left: -2px;
+    //			}
+    //			.bar:nth-child(2) {
+    //				transform: translateX(25%) rotate(-45deg) scaleX(0.9);
+    //			}
+    //		}
+  }
 
-	}
-
-	&__mobile-sidebar-trigger-icon {
-		top: 10px;
-		display: block;
-		position: relative;
-		left: 14px;
-		transform: rotate(90deg);
-		transform-origin: 50%;
-		.bar {
-			display: block;
-		}
-	}
+  &__mobile-sidebar-trigger-icon {
+    top: 10px;
+    display: block;
+    position: relative;
+    left: 14px;
+    transform: rotate(90deg);
+    transform-origin: 50%;
+    .bar {
+      display: block;
+    }
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOP */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-	.content {
-	    z-index: unset;
-	    position: unset;
-	    &__wrapper {
-			grid-template-columns: 1fr;
-		}
-	    &__main {} 
-	    &__sidebar {
-			visibility: hidden;
-	        flex: unset;
-	        position: fixed !important;
-	        top: 0;
-	        right: -60%;
-	        bottom: 0;
-	        width: 60%;
-	        max-width: unset;
-	        padding: 1.5rem;
-	        padding-top: 4rem;
-	        background-color: @bg-general;
-	        transition: right 0.3s ease;
-	        overflow-y: auto;
-	        z-index: 2031;
-	        &.-opened {
-	            right: 0;
-				visibility: visible;
-	        }
-	    }
-		&__mobile-sidebar-trigger {
-		    display: block;
-		}
-	}
+  .content {
+    z-index: unset;
+    position: unset;
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+    &__main {
+    }
+    &__sidebar {
+      visibility: hidden;
+      flex: unset;
+      position: fixed !important;
+      top: 0;
+      right: -60%;
+      bottom: 0;
+      width: 60%;
+      max-width: unset;
+      padding: 1.5rem;
+      padding-top: 4rem;
+      background-color: @bg-general;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      z-index: 2031;
+      &.-opened {
+        right: 0;
+        visibility: visible;
+      }
+    }
+    &__mobile-sidebar-trigger {
+      display: block;
+    }
+  }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-	.content {
-	    &__sidebar {
-	        right: -80%;
-	        width: 80%;
-	    }
-	}
+  .content {
+    &__sidebar {
+      right: -80%;
+      width: 80%;
+    }
+  }
 }

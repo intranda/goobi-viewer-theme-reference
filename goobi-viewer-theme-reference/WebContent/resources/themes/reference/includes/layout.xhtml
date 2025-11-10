@@ -17,11 +17,14 @@
 	<viewerComponent:frontEndAdminTopBar />
 
 	<!-- ONLY FOR KEYBOARD - SKIP TO MAIN CONTENT LINK -->
-	<nav id="skipmenu" aria-label="#{msg.a11y__skip_menu}" class="skip-menu">
+	<div id="skipmenu" class="skip-menu">
 		<a href="#main" class="skip-menu__link">
-		#{msg.a11y__skip_menu__jump_to_main}
+			#{msg.a11y__skip_menu__jump_to_main}
 		</a>
-	</nav>
+		<a id="skip-to-sidebar" href="#sidebar" class="skip-menu__link">
+		    #{msg.a11y__skip_menu__jump_to_sidebar}
+		</a> 
+	</div>
  
 	<!-- HEADER -->
 	<ui:include src="header.xhtml" />

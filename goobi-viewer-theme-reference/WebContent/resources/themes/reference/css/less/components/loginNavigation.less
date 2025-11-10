@@ -9,25 +9,23 @@
 	[data-login="false"] {
 		button[data-toggle="modal"] {
 			display: block;
-			font-weight: 700;
-			.fa {
-				display: none;
-			}
 		}
+	}
+	&__toggle-button {
+		font-size: 14px;
+		font-weight: 500; 
 	}
 	/* LOGGED IN */
 	[data-login="true"] {
 		button[data-toggle="modal"] {
-			font-weight: 700;
 			display: block;
-		}
+		} 
 //		[data-toggle="user-dropdown"] {
 //			display: block;
 //		}
 		.login-navigation {
 			/* TOGGLE USER DROPDOWN */
 			&__user-name {
-				font-weight: 700;
 				padding-right: 0;
 			}			
 			&__user-icon {
@@ -61,9 +59,7 @@
 					}
 				}
 			}
-			&__user-dropdown-item-icon {
-				.fa {}
-			}
+			&__user-dropdown-item-icon {}
 			&__user-dropdown-item-string a,
 			&__bookmarks-trigger {
 				&:hover,
@@ -80,7 +76,6 @@
 			/* BOOKMARK DROPDOWN */
 			&__bookmarks-list-wrapper {
 				.-opened {
-					.fa-caret-down {}
 				}
 			}
 			&__bookmarks-dropdown {
@@ -115,7 +110,6 @@
       }
 			&__bookmarks-overview-link {}
 			&__bookmarks-trigger {
-				.fa-caret-down {}
 			}
 		}
 	}	

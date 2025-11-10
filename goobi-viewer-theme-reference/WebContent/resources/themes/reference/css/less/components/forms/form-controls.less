@@ -7,23 +7,6 @@
 		input[type="radio"] {
 		}
     &__icon {}
-
-
-    .fa-circle-o,
-		.fa-square-o,
-    .fa-check-circle-o,
-		.fa-check-square-o {
-			color: @ci-color1;
-			& when (@colorModes = true) {
-				.mx-light-mode-rules ({
-					color: @ci-color1;
-				});
-				.mx-dark-mode-rules ({
-					color: @fg-general;
-				});
-			}
-
-		}
 }
 
 .custom-control__icon {
@@ -31,20 +14,6 @@
 }
 
 /* MODIFICATIONS */
-.custom-control--checkbox {
-	input[type="checkbox"] {
-		&:checked ~ .custom-control__icon .fa-square-o {}
-		&:checked ~ .custom-control__icon .fa-check-square-o {}
-		&.disabled ~ .custom-control__icon .fa-square-o,
-		&.disabled ~ .custom-control__icon .fa-check-square-o {}
-	}
-}
-.custom-control--radio {
-	input[type="radio"] {
-		&:checked ~ .custom-control__icon .fa-circle-o {}
-		&:checked ~ .custom-control__icon .fa-check-circle-o {}
-	}
-}
 .custom-control--select { 
 	border: @border;
 	background-color: @bg-content-box;

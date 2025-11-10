@@ -103,9 +103,6 @@
                 color: @white;
             }
         }
-        .fa {
-            margin-right: 0.8rem;
-        }
     }
     &__mobile-languages-toggle-indicator {
         margin-left: auto;
@@ -130,9 +127,8 @@
             &.activeLang {
                 font-weight: 700;
                 &:after {
-                    font: normal normal normal 14px/1 FontAwesome;
-                    content: "\f00c";
-                    margin-left: 0.7rem;
+                    content: none;
+                    display: none;
                 }
             }
         }
@@ -142,10 +138,6 @@
         top: unset;
     }
 }
-
-
-
-
 
 /* RIGHT TO LEFT LAYOUT ADAPTATIONS */
 
@@ -180,12 +172,7 @@
                 border-right: none;
             }
         }
-        &__actions-language-button {
-            .fa {
-                padding-right: 0;
-                padding-left: 0.5rem;
-            }
-        }
+        &__actions-language-button {}
     }
     .page-content {
         &__main {
