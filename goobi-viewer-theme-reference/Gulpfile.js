@@ -426,12 +426,16 @@ function buildStyles(changedFilePath = null) {
                     const outPath = path.join(paths.cssDist, path.basename(file.path));
                     projectOutputs.push(outPath);
                     deployOutputs.push(
-                        path.join(DEPLOYMENT_DIR, 'resources/css/dist', path.basename(file.path))
+                        path.join(DEPLOYMENT_DIR, 'resources/themes/' + THEME.name + '/css/dist', path.basename(file.path))
+                    );
+                    deployOutputs.push(
+                        path.join(DEPLOYMENT_DIR, 'WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist', path.basename(file.path))
                     );
                 })
             )
             .pipe(gulp.dest(paths.cssDist))
-            .pipe(safeDest('resources/css/dist'));
+            .pipe(safeDest('resources/themes/' + THEME.name + '/css/dist'))
+            .pipe(safeDest('WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist'));
     });
 
     return merge(...streams).on('finish', () => {
