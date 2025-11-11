@@ -14,10 +14,18 @@
     &__header-brand,
     &__header-controls,
     &__header-exit {
-    	a, button {
+    	a,
+    	button,
+    	span,
+    	select {
+    		color: @fg-controls;
+    		fill: @fg-controls;
+
     		&:hover,
     		&:active,
-    		&:focus {}
+    		&:focus {
+    			color: @fg-controls;
+    		}
     	}
     }
     &__header-brand {
@@ -28,7 +36,7 @@
 		&__options {
 			.btn--clean[data-show="thumbs"] {
 				svg {
-					stroke: @fg-general;
+					stroke: @fg-controls;
 				}
 		    	[data-show="thumbs"] {
 		    		&.in {}
@@ -48,10 +56,12 @@
 	/* PANEL CONTROLS */
 	&__view-sidebar-panel-controls {
 		background-color: @bg-general;
+		color: @fg-controls;
+
 		[data-close="all-tabs"],
-		[data-open="all-tabs"] {}
-		[data-close="all-tabs"] {}
-		[data-open="all-tabs"] {}
+		[data-open="all-tabs"] {
+			color: @fg-controls;
+		}
 	}
 	/* IMAGE */
     &__view-image,
@@ -82,7 +92,12 @@
 		background-color: @bg-general;
 		color: @fg-general;
 		.btn {
-			color: @fg-general;
+			color: @fg-controls;
+
+			&::before {
+				color: @fg-controls;
+			}
+
 			&:hover,
 			&:active,
 			&:focus,
@@ -110,8 +125,19 @@
 	}
 	&__view-sidebar-controls {
 		background-color: @bg-general;
-		.btn {}
-		[data-close="fs-sidebar"] {}
+		color: @fg-controls;
+
+		.btn {
+			color: @fg-controls;
+		}
+
+		[data-close="fs-sidebar"] {
+			color: @fg-controls;
+
+			&::before {
+				color: @fg-controls;
+			}
+		}
 	}
 	&__view-sidebar-share {
 		border-top: @border;
