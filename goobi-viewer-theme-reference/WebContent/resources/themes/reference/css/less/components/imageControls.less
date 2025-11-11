@@ -15,6 +15,7 @@
 	    li {}
 	}
 	&__option {
+		color: red;
 		a,
 		span,
 		button {
@@ -68,17 +69,17 @@
 			& when (@colorModes = true) {
 				.mx-dark-mode-rules ({
 					background: @bg-active;
-					color: @fg-general;
+					color: @fg-controls;
 				});
 				.mx-light-mode-rules ({
 					background-color: transparent;
+					color: @fg-controls;
 				});
 			}
 			color: @fg-controls;
 			fill: @fg-controls;
 			&:hover {
 				background: @bg-hover !important;
-				color: @fg-general;
 			}
 		}
 		a svg {
