@@ -434,7 +434,21 @@ function buildStyles(changedFilePath = null) {
                 })
             )
             .pipe(gulp.dest(paths.cssDist))
+            .pipe(through.obj(function(file, enc, cb) {
+                if (file.stat) {
+                    file.stat.mtime = new Date();
+                    file.stat.atime = new Date();
+                }
+                cb(null, file);
+            }))
             .pipe(safeDest('resources/themes/' + THEME.name + '/css/dist'))
+            .pipe(through.obj(function(file, enc, cb) {
+                if (file.stat) {
+                    file.stat.mtime = new Date();
+                    file.stat.atime = new Date();
+                }
+                cb(null, file);
+            }))
             .pipe(safeDest('WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist'));
     });
 
