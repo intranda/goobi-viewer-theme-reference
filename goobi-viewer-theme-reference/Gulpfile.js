@@ -28,11 +28,39 @@ try {
 const toPosix = (p) => (p ? String(p).replace(/\\/g, '/') : p);
 const joinPosix = (...segs) => toPosix(path.join(...segs));
 
-const repoDir = path.basename(process.cwd());
-const shortNameFromDir = repoDir.replace(/^goobi-viewer-theme-/, '') || repoDir;
+/**
+ * Auto-discovers the theme name from the WebContent/resources/themes/ directory.
+ * Falls back to directory name if discovery fails.
+ *
+ * @returns {string} The theme name
+ */
+function discoverThemeName() {
+    const themesDir = path.join(process.cwd(), 'WebContent', 'resources', 'themes');
+
+    if (fs.existsSync(themesDir)) {
+        try {
+            const entries = fs.readdirSync(themesDir, { withFileTypes: true });
+            const themes = entries
+                .filter(e => e.isDirectory())
+                .map(e => e.name);
+
+            if (themes.length > 0) {
+                return themes[0];
+            }
+        } catch (err) {
+            log(colors.yellow(`[theme] Could not scan themes directory: ${err.message}`));
+        }
+    }
+
+    // Fallback to directory name
+    const repoDir = path.basename(process.cwd());
+    const fallbackName = (repoDir.replace(/^goobi-viewer-theme-/, '') || repoDir).trim().toLowerCase();
+    log(colors.yellow(`[theme] WebContent/resources/themes/ not found, using repo name: ${fallbackName}`));
+    return fallbackName;
+}
 
 const THEME = {
-    name: (process.env.GV_THEME || shortNameFromDir).trim().toLowerCase(),
+    name: discoverThemeName(),
 };
 
 const base = `WebContent/resources/themes/${THEME.name}`;
@@ -257,12 +285,29 @@ function resolveDirs() {
     const special = theme.specialName && String(theme.specialName);
     const mainTheme = String(theme.mainTheme || 'reference');
 
+    // Use repository directory name for deployment path (not theme name from config)
+    const repoDir = path.basename(process.cwd());
+
     let deployDir;
     if (special && special.length) {
         deployDir = path.join(cfg.tomcat_dir, `goobi-viewer-theme-${special}`);
     } else {
         const candidates = [
+            // First try: Use repository directory name (e.g., goobi-viewer-theme-hub-evifa)
+            path.join(cfg.tomcat_dir, repoDir),
+            // Second try: Use theme name from config (e.g., goobi-viewer-theme-evifa)
             path.join(cfg.tomcat_dir, `goobi-viewer-theme-${mainTheme}`),
+            // Third try: Development target directory
+            path.join(
+                home,
+                'git',
+                'goobi-viewer',
+                repoDir,
+                repoDir,
+                'target',
+                'viewer'
+            ),
+            // Fourth try: Old pattern with config theme name
             path.join(
                 home,
                 'git',
@@ -718,7 +763,7 @@ function printTargets(cb) {
         row('THEME_DIR', THEME_DIR),
         row('VIEWER_CFG', VIEWER_CFG),
         row('USER_CFG', USER_CFG),
-        colors.gray('hint: GV_THEME / GV_VIEWER_CFG / GV_GULP_CFG can override defaults'),
+        colors.gray('hint: GV_VIEWER_CFG / GV_GULP_CFG can override defaults'),
     ]);
 
     const depPath = toPosix(DEPLOYMENT_DIR).toLowerCase();
