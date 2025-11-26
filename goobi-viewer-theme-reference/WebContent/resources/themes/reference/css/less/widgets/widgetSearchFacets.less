@@ -10,7 +10,17 @@
 		li {
 			&.active {
 				a {
-					color: white;
+					.icon-wrapper {
+						color: black;
+						& when (@colorModes = true) {
+							.mx-dark-mode-rules ({
+								color: white;
+							});
+							.mx-light-mode-rules ({
+								color: black;
+							});
+						}
+					}
 					background-color: @bg-hover;
 				}
 			}
