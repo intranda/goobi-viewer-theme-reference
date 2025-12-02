@@ -13,107 +13,21 @@
 	}
 	&__toggle-button {
 		font-size: 14px;
-		font-weight: 500; 
+		font-weight: 500;
 	}
 	/* LOGGED IN */
 	[data-login="true"] {
 		button[data-toggle="modal"] {
 			display: block;
-		} 
-//		[data-toggle="user-dropdown"] {
-//			display: block;
-//		}
+		}
 		.login-navigation {
 			/* TOGGLE USER DROPDOWN */
 			&__user-name {
 				padding-right: 0;
-			}			
-			&__user-icon {
-				img {}
-			}
-			/* USER DROPDOWN */
-			&__user-dropdown {
-				background: #444;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
-						background: @bg-active;
-					});
-					.mx-light-mode-rules ({
-						background: #444;
-					});
-				}
-				ul {}
-				li {}
-
-			}
-			&__user-dropdown-item {
-				&:hover {
-					background: @middleblackHover;
-					& when (@colorModes = true) {
-						.mx-dark-mode-rules ({
-							background: @bg-hover;
-						});
-						.mx-light-mode-rules ({
-							background: @middleblackHover;
-						});
-					}
-				}
-			}
-			&__user-dropdown-item-icon {}
-			&__user-dropdown-item-string a,
-			&__bookmarks-trigger {
-				&:hover,
-				&:active,
-				&:focus {}
-			}
-			&__user-dropdown-item-string i {
-				color: @white;
-			}
-			/* USER DROPDOWN ACTION */
-			&__user-dropdown-action {
-				.btn {}
-			}
-			/* BOOKMARK DROPDOWN */
-			&__bookmarks-list-wrapper {
-				.-opened {
-				}
-			}
-			&__bookmarks-dropdown {
-			}
-			&__bookmarks-small-list {
-				background: @middleblackContrast;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
-						background: @bg-content-box;
-					});
-					.mx-light-mode-rules ({
-						background: @middleblackContrast;
-					});
-				}
-			}
-			&__bookmarks-entry {}
-			&__bookmarks-name {
-				a {}
-			}
-			&__bookmarks-name a, 
-			&__bookmarks-icon-list .fa, 
-			&__bookmarks-overview-link {
-				&:hover,
-				&:active,
-				&:focus {}
-			}
-			&__bookmarks-icon-list {
-				a {}
-			}
-			&__bookmarks-counter {
-        background-color: @ci-color1;
-      }
-			&__bookmarks-overview-link {}
-			&__bookmarks-trigger {
 			}
 		}
-	}	
-}
+	}
+} 
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {} 
