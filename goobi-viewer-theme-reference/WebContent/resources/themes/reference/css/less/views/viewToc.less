@@ -50,7 +50,6 @@
 	&__list-expandable,
 	&__list-full {
 		margin: 0;
-		padding: 5px 10px;
 		border: @border;
 		background-color: @bg-content-box;
 		li {
@@ -116,10 +115,24 @@
 	&__list-full {
 			border-top: @border;
 		li {
-			border-bottom: @border;
 			&:hover {
 				background-color: @bg-hover;
 			}
+		}
+	}
+	&__list-full-item,
+	&__list-expandable-item {
+		border-bottom: @border;
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				border-bottom: @border;
+			});
+			.mx-dark-mode-rules ({ 
+				border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+			});
+		}
+		&:last-child {
+			border-bottom: none;
 		}
 	}
 	&__list-full-title {
@@ -139,9 +152,9 @@
 			&:active {}
 		}
 	}
-	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
-		color: @fg-hover;
-	}
+//	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
+//		color: @fg-hover;
+//	}
 }
 
 

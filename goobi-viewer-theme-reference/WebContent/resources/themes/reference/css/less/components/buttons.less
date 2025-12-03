@@ -53,11 +53,19 @@
 .btn--clean {}
 
 .btn--link {
-	color: @ci-color1;
+	color: @lk-general;
 	&:hover,
 	&:active,
-	&:focus {
-		color: @middleblack;
+	&:focus { 
+		color: @lh-general;
+		& when (@colorModes = true) {
+			.mx-light-mode-rules ({
+				color: @middleblack;
+			});
+			.mx-dark-mode-rules ({
+				color: @lh-general;
+			});
+		}
 	}
 }
 
