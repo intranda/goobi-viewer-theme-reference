@@ -11,18 +11,61 @@
 		.card {
 			background: @bg-content-box;
 			border: @border;
+			color: @fg-content-box;
 		}
-		.card-header {}
-		.card-title {}
-		.card-body {}
+		.card-header {
+			background: @bg-content-box;
+			border-bottom: @border;
+		}
+		.card-title {
+			color: @fg-content-box;
+		}
+		.card-body {
+			color: @fg-content-box;
+		}
 	}
 	&__status-loader {
 		img {}
 	}
-	&__status-license-text {}
+	&__status-license-text {
+		background-color: @bg-content-box;
+		color: @fg-content-box;
+	}
+	.checkbox label {
+		color: @fg-content-box;
+	}
 }
 
 #downloadBtn {}
+
+#agreeLicense {
+	accent-color: @ci-color1;
+}
+
+.card.card-success {
+	background: @bg-content-box;
+	border: @border;
+	color: @fg-content-box;
+
+	.card-header {
+		background: @bg-content-box;
+		border-bottom-color: @middlegray;
+		.card-title {
+			color: @fg-content-box;
+		}
+	}
+	.card-body {
+		color: @fg-content-box;
+		.checkbox {
+			label {
+				color: @fg-content-box;
+			}
+			input[type="checkbox"] {
+				accent-color: @ci-color1;
+			}
+		}
+	}
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {}
