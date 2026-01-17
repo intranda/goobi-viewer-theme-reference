@@ -5,36 +5,62 @@
 /* BREADCRUMBS */
 /* BLOCK */
 .breadcrumbs {
-	&__wrapper {
-		font-size: @fontSmall;
-	}
-    /* ELEMENT */
-    ul {}
-    li {}
-    a, span {}
-    a {}
-    span {}
-    &__starttext {
-        a, span {}
+  &__wrapper {
+    font-size: @fontSmall;
+  }
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    li {
+      display: flex;
+      align-items: center;
     }
-    &__starttext + li {
-        a, span {}
+  }
+  /* ELEMENT */
+  ul {
+  }
+  li {
+  }
+  a,
+  span {
+  }
+  a {
+  }
+  span {
+  }
+  &__starttext {
+    a,
+    span {
     }
-    &__crumb + li:before {}
+  }
+  &__starttext + li {
+    a,
+    span {
+    }
+  }
+  &__crumb + li:before {
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-	.breadcrumbs-wrapper {
-		display: none;
-	}
+  .breadcrumbs-wrapper {
+    display: none;
+  }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {} 
+@media screen and (max-width: @xSmallBreakpoint) {
+}
