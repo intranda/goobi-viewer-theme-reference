@@ -4,100 +4,110 @@
    ==============================================================*/
 /* WIDGET TOC */
 .widget-toc {
-	&__overlay {
-		background-color: @bg-content-box;
-		opacity: .85;
-	}
-	/* TITLE */
-	&__title {
-		background-color: @ci-color1;
-		h2 {
-			margin: 0;
-		}
-	}
-	&__title-expand {
-		a {
-			color: @white;
-			&:hover,
-			&:active,
-			&:focus {
-				color: @white;
-			}
-		}
-	}
+  &__overlay {
+    background-color: @bg-content-box;
+    opacity: 0.85;
+  }
+  /* TITLE */
+  &__title {
+    h2 {
+      margin: 0;
+    }
+  }
+  &__title-expand {
+    a {
+      color: @white;
+      &:hover,
+      &:active,
+      &:focus {
+        color: @white;
+      }
+    }
+  }
 
-	&__body {
-		
-	}
-	/* ELEMENTS */
-	&__elements {
-		border: @border;
-		border-top: 0;
-		ul {
-			border: 0;
-		}
-	}
-	&__element {
-		&:hover {
-		  background-color: @lightgray;
-		} 
-		&.parent {
-			
-		}
-		&.child {}
-		&:hover,
-		&:focus,
-		&.active {
-			& when (@colorModes = true) {
-				.mx-light-mode-rules ({
+  &__body {
+  }
+  /* ELEMENTS */
+  &__elements {
+    border: @border;
+    border-top: 0;
+    ul {
+      border: 0;
+    }
+  }
+  &__element {
+    &:hover {
+      background-color: @lightgray;
+    }
+    &.parent {
+    }
+    &.child {
+    }
+    &:hover,
+    &:focus,
+    &.active {
+      & when (@colorModes = true) {
+        .mx-light-mode-rules ({
 					background-color: @bg-general;
-				});
-				.mx-dark-mode-rules ({
+				});;
+        .mx-dark-mode-rules ({
 					background-color: @bg-active;
 					color: @fg-content-box;
-				});
-			}
-			a {
-				color: @lk-content-box !important;
-			}
-		}
-	}
-	&__element-expand {}
-	&__element-link {
-		a {
-			&:hover,
-			&:active,
-			&:focus {}
-		}
-		&.has-pagenumber {}
-		&.non-tree-view {
-			&.has-pagenumber {}
-		}
-		&.active {
-			a {
-				color: @ci-color1;
-			}
-		}
-	}
-	&__element-pagenumber {}
-	/* LOADING */
-	&__loader,
-	&__overlay {}
-	&__loader {}
-	&__overlay {}
-	.icon-wrapper {
-	  color: @lk-content-box;
-	}
+				});;
+      }
+      a {
+        color: @lk-content-box !important;
+      }
+    }
+  }
+  &__element-expand {
+  }
+  &__element-link {
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+      }
+    }
+    &.has-pagenumber {
+    }
+    &.non-tree-view {
+      &.has-pagenumber {
+      }
+    }
+    &.active {
+      a {
+        color: @ci-color1;
+      }
+    }
+  }
+  &__element-pagenumber {
+  }
+  /* LOADING */
+  &__loader,
+  &__overlay {
+  }
+  &__loader {
+  }
+  &__overlay {
+  }
+  .icon-wrapper {
+    color: @white;
+  }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}
