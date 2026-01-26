@@ -5,27 +5,13 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-	background-color: @bg-content-box;
-	border: @border;
 	border-bottom: 0;
-	color: @fg-controls;
 	/* DOCUMENT OPTIONS */
 	&__options {
 		ul {}
 	    li {}
 	}
 	&__option {
-		color: red;
-		a,
-		span,
-		button {
-			color: @fg-controls;
-			fill: @fg-controls;
-			&:hover {
-				color: @fg-controls;
-				fill: @fg-controls;
-			}
-		}
 		a, button {}
 		&.fulltext {}
 		&.add-to-bookmark {}
@@ -38,56 +24,9 @@
 	&__select-text {
 	}
     &__action {
-		border: @border;
-		&:not(.zoom-slider-wrapper) {
-			background-color: transparent;
-		}
-		& when (@colorModes = true) {
-			.mx-dark-mode-rules ({
-				&:not(.zoom-slider-wrapper) {
-					background: @bg-active;
-				}
-			});
-			.mx-light-mode-rules ({
-				&:not(.zoom-slider-wrapper) {
-					background-color: transparent;
-				}
-			});
-		}
 	    /* ELEMENT */
-			&:hover,
-			&:active,
-			&:focus {
-				background-color: @bg-hover;
-			}
-
-	    a,
-		span,
-		select,
-		button {
-			background-color: transparent;
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
-					background: @bg-active;
-					color: @fg-controls;
-				});
-				.mx-light-mode-rules ({
-					background-color: transparent;
-					color: @fg-controls;
-				});
-			}
-			color: @fg-controls;
-			fill: @fg-controls;
-			&:hover {
-				background: @bg-hover !important;
-			}
-		}
-		a svg {
-			fill: @fg-controls;
-		}
 		[class*="image-"] {}
 		&.inactive {
-			fill: @fg-controls;
 	    	a,
 	    	span,
 	    	button {
@@ -132,42 +71,12 @@
 	    &.zoom-slider-wrapper {
 	        .zoom-slider {
 	            //Firefox
-		        &::-moz-range-thumb {
-					background: #6f6f6f;
-					border: inherit;
-					& when (@colorModes = true) {
-						.mx-dark-mode-rules ({
-							background-color: @bg-active;
-							border: 1px solid #6f6f6f;
-						});
-						.mx-light-mode-rules ({
-							background: #6f6f6f;
-							border: inherit;
-						});
-					}
-		        }
-				&:focus {
-				}
-		        &::-webkit-slider-thumb {
-					background: @gray;
-					border: inherit;
-					& when (@colorModes = true) {
-						.mx-dark-mode-rules ({
-							background-color: @bg-active;
-							border: 1px solid #6f6f6f;
-						});
-						.mx-light-mode-rules ({
-							background: @gray;
-							border: inherit;
-						});
-					}
-				}
-				&::-webkit-slider-runnable-track {
-				}
+		        &::-moz-range-thumb {}
+				&:focus {}
+		        &::-webkit-slider-thumb {}
+				&::-webkit-slider-runnable-track {}
 	        }
-			.zoom-slider-handle {
-				fill: @fg-controls;
-			}
+			.zoom-slider-handle {}
 	    }
 	}
     /* MODIFICATION */

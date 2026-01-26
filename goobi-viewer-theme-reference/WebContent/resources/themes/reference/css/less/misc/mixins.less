@@ -87,7 +87,7 @@
 
 .mx-theme-light {
 	color-scheme: light;
-	// REGULAR VIEWER REFERENCE THEME COLORS
+
     --ci-color1: #015999;
     --ci-hovercolor1: #1B70B1;
     --bg-hover: #eee;
@@ -107,31 +107,48 @@
     --lk-content-box: #3365a9;
     --lh-content-box: #444;
 
-    /* LOGIN NAVIGATION */
-    --login-nav-bg: #444;
-    --login-nav-bg-hover: #5e5e5e;
-    --login-nav-fg: #fff;
-    --login-nav-fg-hover: #fff;
-    --login-nav-icon: #fff;
-    --login-nav-icon-hover: #fff;
-    --login-nav-bookmarks-bg: #3a3a3a;
-    --login-nav-bookmarks-fg: #fff;
-    --login-nav-bookmarks-fg-hover: #ffd65b;
-    --login-nav-bookmarks-counter-bg: #015999;
-    --login-nav-dropdown-border: rgba(255, 255, 255, 0.1);
+    /* WIDGET ICON COLORS */
+    // --widget-icon-color-topbar: red;
+    // --widget-icon-color-body: green;
+    // --widget-icon-color-expand: yellow;
+
+    // /* LOGIN NAVIGATION */
+    --login-nav-background: #444;
+    --login-nav-background-hover: #5e5e5e;
+    --login-nav-text-color: #fff;
+    --login-nav-text-color-hover: #fff;
+    --login-nav-icon-color: #fff;
+    --login-nav-icon-color-hover: #fff;
+    --login-nav-bookmarks-background: #3a3a3a;
+    --login-nav-bookmarks-text-color: #fff;
+    --login-nav-bookmarks-text-color-hover: #ffd65b;
+    --login-nav-bookmarks-counter-background: #015999;
+    --login-nav-dropdown-border-color: rgba(255, 255, 255, 0.1);
 
     /* SEARCH TOOLBAR */
-    --gv-search-option-bg-active: var(--ci-color1);
-    --gv-search-option-color-active: @white;
-    --gv-search-divider-color: rgba(31, 41, 55, 0.28);
-    --gv-search-option-icon-color: var(--fg-general);
-    --gv-search-option-icon-color-active: @white;
-    --gv-search-option-icon-color-hover: var(--fg-general);
+    --search-toolbar-background-active: var(--ci-color1);
+    --search-toolbar-text-color-active: @white;
+    --search-toolbar-divider-color: rgba(31, 41, 55, 0.28);
+    --search-toolbar-icon-color: var(--fg-general);
+    --search-toolbar-icon-color-active: @white;
+    --search-toolbar-icon-color-hover: var(--fg-general);
+
+    /* IMAGE CONTROLS */
+    --image-controls-background: var(--bg-content-box);
+    --image-controls-border-color: #ccc;
+    --image-controls-container-border-color: #ccc;
+    --image-controls-icon-color: #6f6f6f;
+    --image-controls-icon-color-hover: #5a5a5a;
+    --image-controls-icon-color-active: #4a4a4a;
+    --image-controls-action-background: transparent;
+    --image-controls-action-background-hover: var(--bg-hover);
+    --image-controls-slider-thumb-background: #6f6f6f;
+    --image-controls-slider-border-color: #6f6f6f;
 }
 
 .mx-theme-dark {
 	color-scheme: dark;
-	// DARK MODE COLORS
+
     --ci-color1: #015999;
     --bg-general: #000e29;
     --bg-content-box: #253044;
@@ -151,26 +168,42 @@
     --fg-header: rgba(255,255,255,0.8);
     --lh-content-box: rgba(255,255,255,0.8);
 
-    /* LOGIN NAVIGATION */
-    --login-nav-bg: #253044;
-    --login-nav-bg-hover: #3b4557;
-    --login-nav-fg: rgba(255,255,255,0.9);
-    --login-nav-fg-hover: #fff;
-    --login-nav-icon: rgba(255,255,255,0.9);
-    --login-nav-icon-hover: #fff;
-    --login-nav-bookmarks-bg: #1a2535;
-    --login-nav-bookmarks-fg: rgba(255,255,255,0.9);
-    --login-nav-bookmarks-fg-hover: #ffd65b;
-    --login-nav-bookmarks-counter-bg: #015999;
-    --login-nav-dropdown-border: rgba(255, 255, 255, 0.05);
+    /* WIDGET ICON COLORS */
+    // --widget-icon-color-topbar: red;
+    // --widget-icon-color-body: green;
+    // --widget-icon-color-expand: yellow;
+
+    // /* LOGIN NAVIGATION */
+    --login-nav-background: #253044;
+    --login-nav-background-hover: #3b4557;
+    --login-nav-text-color: rgba(255,255,255,0.9);
+    --login-nav-text-color-hover: #fff;
+    --login-nav-icon-color: rgba(255,255,255,0.9);
+    --login-nav-icon-color-hover: #fff;
+    --login-nav-bookmarks-background: #1a2535;
+    --login-nav-bookmarks-text-color: rgba(255,255,255,0.9);
+    --login-nav-bookmarks-text-color-hover: #ffd65b;
+    --login-nav-bookmarks-counter-background: #015999;
+    --login-nav-dropdown-border-color: rgba(255, 255, 255, 0.05);
 
     /* SEARCH TOOLBAR */
-    --gv-search-option-bg-active: var(--ci-color1);
-    --gv-search-option-color-active: @white;
-    --gv-search-divider-color: rgba(255, 255, 255, 0.2);
-    --gv-search-option-icon-color: rgba(243, 244, 246, 0.92);
-    --gv-search-option-icon-color-active: @white;
-    --gv-search-option-icon-color-hover: #49a5ff;
+    --search-toolbar-background-active: var(--ci-color1);
+    --search-toolbar-text-color-active: @white;
+    --search-toolbar-divider-color: rgba(255, 255, 255, 0.2);
+    --search-toolbar-icon-color: rgba(243, 244, 246, 0.92);
+    --search-toolbar-icon-color-active: @white;
+    --search-toolbar-icon-color-hover: #49a5ff;
+
+    /* IMAGE CONTROLS */
+    --image-controls-background: var(--bg-content-box);
+    --image-controls-border-color: transparent;
+    --image-controls-icon-color: rgba(255,255,255,0.8);
+    --image-controls-icon-color-hover: rgba(255,255,255,0.8);
+    --image-controls-icon-color-active: rgba(255,255,255,0.8);
+    --image-controls-action-background: var(--bg-active);
+    --image-controls-action-background-hover: var(--bg-hover);
+    --image-controls-slider-thumb-background: #6f6f6f;
+    --image-controls-slider-border-color: #6f6f6f;
 }
 
 // DETACHED RULESET FOR OVERRIDING STYLING
