@@ -2,8 +2,19 @@
    Variables
    ==============================================================*/
 /* FONTS */
-@fontFamily: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@images: "../../images";
+@fontFamily:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+@images: '../../images';
 @fontSmall: 1.2rem;
 @fontMedium: 1.4rem;
 @fontNormal: 1.6rem;
@@ -16,12 +27,12 @@
 @lightgray: #eee;
 @gray: #6f6f6f;
 @orange: #f08421;
-@placeholder: rgba(0,0,0,0.25);
-@colorOutline: #FF0038; 
+@placeholder: rgba(0, 0, 0, 0.25);
+@colorOutline: #ff0038;
 
 /* CI COLORS */
 @ci-color1: #3365a9; // blue
-@ci-hovercolor1: #4576BA; // slightly lighter blue
+@ci-hovercolor1: #4576ba; // slightly lighter blue
 
 @ci-color2: #000; // CI Color 2
 @ci-hovercolor2: #000; // CI Color 2
@@ -42,7 +53,7 @@
 //@ci-hovercolor1: #507ebf;
 @subred: #8a0e13;
 @hoversubred: #aa292f;
-@subgreen: #095D42;
+@subgreen: #095d42;
 @hoversubgreen: #1f7358;
 @labelHoverGray: #5e5e5e;
 
@@ -65,26 +76,25 @@
 @btnSuccessHoverBgc: #155724;
 @btnFullHoverBgc: #cce5ff;
 
-
 /* STATISTICS */
 @statBackgroundColor: #fffdf6;
 @statDarkgray: #999;
 
 /* NER COLORS */
-@personColor: #0174DF;
-@locationColor: #FF8000;
-@corporationColor: #298A08;
+@personColor: #0174df;
+@locationColor: #ff8000;
+@corporationColor: #298a08;
 @tagHoverColor: #eee;
-@scaleHandleColor: #8A0808;
+@scaleHandleColor: #8a0808;
 
 /* READING MODE COLORS */
 @readingModeBg: #1a1a1a;
 
 /* CROWDSOURCING COLORS */
-@progressCompletion: #95C476;
-@darkBlue: rgb(53,111,162);
-@yellowTransparent: rgba(250, 250, 0, .3);
-@ci-color1Transparent: rgba(66,139,202,.3);
+@progressCompletion: #95c476;
+@darkBlue: rgb(53, 111, 162);
+@yellowTransparent: rgba(250, 250, 0, 0.3);
+@ci-color1Transparent: rgba(66, 139, 202, 0.3);
 
 /* RIGHT TO LEFT LANGUAGES STYLING */
 @RTL: ~'html[dir=rtl]';
@@ -99,7 +109,7 @@
 THEMING
  << =================================== */
 :root {
-	.mx-theme-light;
+    .mx-theme-light;
 }
 
 // ****************************************** //
@@ -110,39 +120,47 @@ THEMING
 
 // OS OR BROWSER WANTS DARK THEME
 @media (prefers-color-scheme: dark) {
-	:root {
-		& when (@colorModes = true) {
-			.mx-theme-dark;
-		}
-	}
+    :root {
+        & when (@colorModes = true) {
+            .mx-theme-dark;
+        }
+    }
 }
 
 // DARK THEME
 @color-theme-dark: color-theme-dark;
 
 .@{color-theme-dark} {
-	& when (@colorModes = true) {
-		.mx-theme-dark;
-	}
+    & when (@colorModes = true) {
+        .mx-theme-dark;
+    }
 }
 
 .mx-dark-mode-rules(@darkmodeProps) {
-  @media (prefers-color-scheme: dark) { @darkmodeProps(); }
-  .@{color-theme-dark} &              { @darkmodeProps(); }
+    @media (prefers-color-scheme: dark) {
+        @darkmodeProps();
+    }
+    .@{color-theme-dark} & {
+        @darkmodeProps();
+    }
 }
 
 // LIGHT THEME
 @color-theme-light: color-theme-light;
 
 .@{color-theme-light} {
-	& when (@colorModes = true) {
-		.mx-theme-light;
-	}
+    & when (@colorModes = true) {
+        .mx-theme-light;
+    }
 }
 
 .mx-light-mode-rules(@lightmodeProps) {
-  @media (prefers-color-scheme: light) { @lightmodeProps(); }
-  .@{color-theme-light} &              { @lightmodeProps(); }
+    @media (prefers-color-scheme: light) {
+        @lightmodeProps();
+    }
+    .@{color-theme-light} & {
+        @lightmodeProps();
+    }
 }
 
 // Assign custom properties to allow switching themes on runtime
@@ -167,4 +185,3 @@ THEMING
 @fg-header: var(--fg-header);
 @bg-content-box: var(--bg-content-box);
 @fg-content-box: var(--fg-content-box);
-

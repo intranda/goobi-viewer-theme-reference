@@ -5,180 +5,210 @@
 /* VIEW TOC */
 /* BLOCK */
 .toc {
-	/* MULTI VOLUME TOC */
-	/* ELEMENT */
-	h3 {}
-	&__multi-volume {}
-	&__mv-group {}
-	&__mv-element {
-		background-color: @bg-content-box;
-	    padding: 10px 0;
-		border: @border;
-		border-bottom: none;
-	    transition: all 0s linear;
-	    &:hover {
-			background-color: @lightgray;
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
+    /* MULTI VOLUME TOC */
+    /* ELEMENT */
+    h3 {
+    }
+    &__multi-volume {
+    }
+    &__mv-group {
+    }
+    &__mv-element {
+        background-color: @bg-content-box;
+        padding: 10px 0;
+        border: @border;
+        border-bottom: none;
+        transition: all 0s linear;
+        &:hover {
+            background-color: @lightgray;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 					background-color: @bg-hover;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					background-color: @lightgray;
-				});
-			}
-	    }
-		&.level-0 {
-		    h3 {
-		        display: none;
-		    }
-		}
-		a {}
-		.row {}
-		&:last-child {
-			border-bottom: @border;
-		}
-	}
-	&__mv-element-title {}
-	&__mv-element-link {}
-	&__mv-element-img {
-	    text-align: right;
-	    img {
-	        display: inline-block;
-	    }
-	}
-	/* TOC TREEVIEW */
-	/* ELEMENT */
-	&__list-expandable,
-	&__list-full {
-		margin: 0;
-		border: @border;
-		background-color: @bg-content-box;
-		li {
-			&:first-child {}
-			&:last-child {
-				border: 0;
-			}
-			&:hover {
-				background-color: @bg-hover;
-				a {}
-			}
-		}
-	}
-	&__list-expandable-title,
-	&__list-full-title {
-		a {
-			color: @lk-content-box;
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	}
-	&__list-expandable-number,
-	&__list-full-number {
-		li {}
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	}
-	/* EXPAND ALL */
-	&__list-expandable-all {
-		ul {}
-		li {}
-		a {}
-	}
-	/* TOC EXPANDABLE */
-	&__list-expandable {}
-	&__list-expandable-elem {
-		&.parent {}
-		&.child {}
-	}
-	&__list-expandable-expand {
-		a {}
-	}
-	&__list-expandable-title {
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	}
-	&__list-expandable-number {
-		li {}
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	}
-	/* TOC FULL */
-	&__list-full {
-			border-top: @border;
-		li {
-			&:hover {
-				background-color: @bg-hover;
-			}
-		}
-	}
-	&__list-full-item,
-	&__list-expandable-elem {
-		border-bottom: @border;
-		& when (@colorModes = true) {
-			.mx-light-mode-rules ({
+				});;
+            }
+        }
+        &.level-0 {
+            h3 {
+                display: none;
+            }
+        }
+        a {
+        }
+        .row {
+        }
+        &:last-child {
+            border-bottom: @border;
+        }
+    }
+    &__mv-element-title {
+    }
+    &__mv-element-link {
+    }
+    &__mv-element-img {
+        text-align: right;
+        img {
+            display: inline-block;
+        }
+    }
+    /* TOC TREEVIEW */
+    /* ELEMENT */
+    &__list-expandable,
+    &__list-full {
+        margin: 0;
+        border: @border;
+        background-color: @bg-content-box;
+        li {
+            &:first-child {
+            }
+            &:last-child {
+                border: 0;
+            }
+            &:hover {
+                background-color: @bg-hover;
+                a {
+                }
+            }
+        }
+    }
+    &__list-expandable-title,
+    &__list-full-title {
+        a {
+            color: @lk-content-box;
+            &:hover,
+            &:focus,
+            &:active {
+            }
+        }
+    }
+    &__list-expandable-number,
+    &__list-full-number {
+        li {
+        }
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+            }
+        }
+    }
+    /* EXPAND ALL */
+    &__list-expandable-all {
+        ul {
+        }
+        li {
+        }
+        a {
+        }
+    }
+    /* TOC EXPANDABLE */
+    &__list-expandable {
+    }
+    &__list-expandable-elem {
+        &.parent {
+        }
+        &.child {
+        }
+    }
+    &__list-expandable-expand {
+        a {
+        }
+    }
+    &__list-expandable-title {
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+            }
+        }
+    }
+    &__list-expandable-number {
+        li {
+        }
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+            }
+        }
+    }
+    /* TOC FULL */
+    &__list-full {
+        border-top: @border;
+        li {
+            &:hover {
+                background-color: @bg-hover;
+            }
+        }
+    }
+    &__list-full-item,
+    &__list-expandable-elem {
+        border-bottom: @border;
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
 				border-bottom: @border;
-			});
-			.mx-dark-mode-rules ({ 
+			});;
+            .mx-dark-mode-rules ({ 
 				border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-			});
-		}
-		&:last-child {
-			border-bottom: none;
-		}
-	}
-	&__list-full-title {
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	}
-	&__list-full-number {
-		li {
-			border: none;
-		}
-		a {
-			&:hover,
-			&:focus,
-			&:active {}
-		}
-	}
-//	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
-//		color: @fg-hover;
-//	}
+			});;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    &__list-full-title {
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+            }
+        }
+    }
+    &__list-full-number {
+        li {
+            border: none;
+        }
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+            }
+        }
+    }
+    //	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
+    //		color: @fg-hover;
+    //	}
 }
 
-
 /* DOWNLOAD MODAL */
-#reCaptchaWrapper {}
+#reCaptchaWrapper {
+}
 
-div[id*="Modal"] {
-    p {}
+div[id*='Modal'] {
+    p {
+    }
     .email-form {
         .form-group {
-            p {}
+            p {
+            }
         }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -6,12 +6,13 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-	position: relative;
+    position: relative;
 }
 
 /* REFERENCE SLIDER STYLING */
 .slider-reference {
-    &__container {}
+    &__container {
+    }
     &__wrapper {
         height: 250px;
         position: relative;
@@ -55,7 +56,8 @@
     position: sticky;
     top: 50px;
     z-index: 2010;
-    &__wrapper {}
+    &__wrapper {
+    }
     &__mobile {
         opacity: 0;
         z-index: -1;
@@ -68,7 +70,7 @@
         height: 100%;
         transition: all 0.2s ease;
         #pageNavigationMobile {
-            height: calc(~"100% - (50px + 30px + 30px)");
+            height: calc(~'100% - (50px + 30px + 30px)');
             position: relative;
             width: 100%;
             bottom: 0;
@@ -172,7 +174,8 @@
                 border-right: none;
             }
         }
-        &__actions-language-button {}
+        &__actions-language-button {
+        }
     }
     .page-content {
         &__main {
@@ -207,7 +210,8 @@
     }
 }
 
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
@@ -267,7 +271,8 @@
         &__slider {
             height: 150px;
         }
-        &__wrapper {}
+        &__wrapper {
+        }
         &__logo {
             font-size: 2.5rem;
             a img {
@@ -279,7 +284,8 @@
             max-width: 40%;
         }
         &__search-box {
-            .widget-searchfield {}
+            .widget-searchfield {
+            }
         }
         &__mobile-burger-menu {
             display: block;
@@ -312,7 +318,8 @@
     }
 
     .slider-reference {
-        &__container {}
+        &__container {
+        }
         &__wrapper {
             height: 150px;
         }

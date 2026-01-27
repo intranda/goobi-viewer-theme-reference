@@ -4,84 +4,83 @@
    ==============================================================*/
 /* WIDGETS */
 .widget {
-	&__topbar {
-		padding: .7rem 1.5rem;
-		background-color: @ci-color1;
-	}
-	&__description-text {
+    &__topbar {
+        padding: 0.7rem 1.5rem;
+        background-color: @ci-color1;
+    }
+    &__description-text {
+    }
+    &__title {
+        font-size: @fontNormal;
+        font-weight: 400;
+        color: @white;
+    }
 
-	}
-	&__title {
-	  font-size: @fontNormal;
-	  font-weight: 400;
-	  color: @white;
-	}
-	
-	&__body {
-		border: @border;
-		border-top: 0;
-		background-color: @bg-content-box;
-		border-bottom: @border;
-		
-		a {
-			color: @lk-content-box;
-			line-height: 1.2;
-			&:hover {
-				color: @lh-content-box;
-			}
-		}
-		
-		li {
-		  &.active {
-		    a { 
-		      font-weight: 600;
-		      color: @lh-content-box;
-		    }
-		  }
-		}
-	}
+    &__body {
+        border: @border;
+        border-top: 0;
+        background-color: @bg-content-box;
+        border-bottom: @border;
 
-  &__badge-container {
-	.badge {
-		min-height: 24px;
-		font-size: 12px;
+        a {
+            color: @lk-content-box;
+            line-height: 1.2;
+            &:hover {
+                color: @lh-content-box;
+            }
+        }
 
-		&:hover,  
-		&:active,
-		&:focus {
-			color: @white; 
-			background-color: @labelHoverGray;
-		}
-	}
-	
-	.badge-dark {
-		background-color: #343a40;
-		& when (@colorModes = true) {
-			  .mx-dark-mode-rules ({
+        li {
+            &.active {
+                a {
+                    font-weight: 600;
+                    color: @lh-content-box;
+                }
+            }
+        }
+    }
+
+    &__badge-container {
+        .badge {
+            min-height: 24px;
+            font-size: 12px;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: @white;
+                background-color: @labelHoverGray;
+            }
+        }
+
+        .badge-dark {
+            background-color: #343a40;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 			   	background-color: @bg-active;
-			  });
-			  .mx-light-mode-rules ({
+			  });;
+                .mx-light-mode-rules ({
 			    background-color: #343a40;
-			  });
-		}
-		color: @white;
+			  });;
+            }
+            color: @white;
 
-		&:hover,
-		&:active,
-		&:focus {
-			color: @white;
-			background-color: #5e5e5e;
-			& when (@colorModes = true) {
-			  .mx-dark-mode-rules ({
+            &:hover,
+            &:active,
+            &:focus {
+                color: @white;
+                background-color: #5e5e5e;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 			  		background-color: @bg-hover;
-			  });
-			  .mx-light-mode-rules ({
+			  });;
+                    .mx-light-mode-rules ({
 			   		background-color: #5e5e5e;
-			  });
-			}
-		}
-	}
-  }
+			  });;
+                }
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

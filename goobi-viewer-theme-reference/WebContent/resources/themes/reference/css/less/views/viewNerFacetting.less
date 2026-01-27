@@ -3,43 +3,47 @@
    style declarations for viewNerFacetting.xhtml
    ==============================================================*/
 #nerFacetting {
-    h2 {}
+    h2 {
+    }
     .facetting-content {
         .nav-tabs {
-			border-bottom: @border;
+            border-bottom: @border;
             li {
                 a {
-					border: @border;
-					background: @bg-hover;
-					& when (@colorModes = true) {
-						.mx-dark-mode-rules ({
+                    border: @border;
+                    background: @bg-hover;
+                    & when (@colorModes = true) {
+                        .mx-dark-mode-rules ({
 							background: @bg-content-box;
-						});
-						.mx-light-mode-rules ({
+						});;
+                        .mx-light-mode-rules ({
 							background: @bg-hover;
-						});
-					}
-                    .glyphicon {}
+						});;
+                    }
+                    .glyphicon {
+                    }
                 }
-				&.active a {
-					color: @fg-general;
-					background: @white;
-					& when (@colorModes = true) {
-						.mx-dark-mode-rules ({
+                &.active a {
+                    color: @fg-general;
+                    background: @white;
+                    & when (@colorModes = true) {
+                        .mx-dark-mode-rules ({
 							background: @bg-hover;
-						});
-						.mx-light-mode-rules ({
+						});;
+                        .mx-light-mode-rules ({
 							background: @white;
-						});
-					}
-				}
+						});;
+                    }
+                }
             }
         }
         .tab-content {
-			background: @bg-content-box;
+            background: @bg-content-box;
             .tab-pane {
-                &.active {}
-                h3 {}                
+                &.active {
+                }
+                h3 {
+                }
             }
         }
     }
@@ -48,15 +52,21 @@
 /* OVERVIEW & SECTION */
 #nerFacetting #overview,
 #nerFacetting #section {
-    .tag-filter-description {}
-    .set-tag-range {}
+    .tag-filter-description {
+    }
+    .set-tag-range {
+    }
     .filter-tags {
         li {
             a {
-                &:hover {}
-                &[data-type="person"] {}
-                &[data-type="location"] {}
-                &[data-type="corporation"] {}
+                &:hover {
+                }
+                &[data-type='person'] {
+                }
+                &[data-type='location'] {
+                }
+                &[data-type='corporation'] {
+                }
             }
         }
     }
@@ -64,27 +74,29 @@
 
 // LOADER STYLES
 #nerFacettingLoader {
-	background-color: @bg-general;
+    background-color: @bg-general;
 }
 
 /* OVERVIEW */
 #nerFacetting #overview {
-	border: @border;
+    border: @border;
     .current-tags {
-		background: @bg-hover;
-        &:before {}
+        background: @bg-hover;
+        &:before {
+        }
         .page-tag {
-            &.empty {}
+            &.empty {
+            }
             &.person {
-				color: @personColor;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+                color: @personColor;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 						color: @lk-general;
-					});
-					.mx-light-mode-rules ({
+					});;
+                    .mx-light-mode-rules ({
 						color: @personColor;
-					});
-				}
+					});;
+                }
             }
             &.location {
                 color: @locationColor;
@@ -97,24 +109,30 @@
     .overview-content {
         .overview-scale {
             li {
-                div {}
+                div {
+                }
                 .page-number {
                     a {
-						color: @lk-general;
+                        color: @lk-general;
                         &:hover,
                         &:active,
-                        &:focus {}
+                        &:focus {
+                        }
                     }
                 }
                 .tag-container {
                     .page-tag {
                         &:hover {
-							background-color: @bg-hover;
-						}
-                        &.empty {}
-                        &.person {}
-                        &.location {}
-                        &.corporation {}
+                            background-color: @bg-hover;
+                        }
+                        &.empty {
+                        }
+                        &.person {
+                        }
+                        &.location {
+                        }
+                        &.corporation {
+                        }
                     }
                 }
             }
@@ -123,51 +141,70 @@
 }
 
 /* SECTION */
-#nerFacetting #section {}
+#nerFacetting #section {
+}
 
 #nerFacetting #sliderScale {
     .scale-page {
-        &.start {}
-        &.end {}
-    }
-    .slider-description {}
-    .scale-stripes {
-        li {
-            &.middle {}
-            &:last-child {}
+        &.start {
+        }
+        &.end {
         }
     }
-    .scale-section-stripe {}
+    .slider-description {
+    }
+    .scale-stripes {
+        li {
+            &.middle {
+            }
+            &:last-child {
+            }
+        }
+    }
+    .scale-section-stripe {
+    }
 }
 
 #nerFacetting #sliderVertical {
     .ui-slider-handle {
-        &:after {}
-        &:focus {}
+        &:after {
+        }
+        &:focus {
+        }
         .page-bubble {
-            &:before {}
+            &:before {
+            }
         }
     }
 }
 
 #nerFacetting #sectionTags {
     .page-tag {
-        &:hover {}
-        &.empty {}
-        &.person {}
-        &.location {}
-        &.corporation {}
+        &:hover {
+        }
+        &.empty {
+        }
+        &.person {
+        }
+        &.location {
+        }
+        &.corporation {
+        }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

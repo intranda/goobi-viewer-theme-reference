@@ -5,132 +5,155 @@
 /* USER COMMENTS */
 /* BLOCK */
 .user-comments {
-	&__table {
-		background: @bg-content-box;
-		border: @border;
-	}
-	&__table-entry {
-		&:hover {
-			background: @bg-hover;
-		}
-	}
-	/* ELEMENT */
-	&__message-login {
-		padding-top: 0;
-		text-align: left;
-		border: @border;
-		border-top: 0;
-		background-color: @bg-content-box;
-		h2 {
-			margin-left: -16px;
-			margin-right: -16px;
-			padding-bottom: 1.3125rem;
-			padding-left: 1px;
-			border-bottom: @border;
-			background-color: @bg-general;
-		}
-		.btn {
-		color: @ci-color1;
-		& when (@colorModes = true) {
-			.mx-light-mode-rules ({
+    &__table {
+        background: @bg-content-box;
+        border: @border;
+    }
+    &__table-entry {
+        &:hover {
+            background: @bg-hover;
+        }
+    }
+    /* ELEMENT */
+    &__message-login {
+        padding-top: 0;
+        text-align: left;
+        border: @border;
+        border-top: 0;
+        background-color: @bg-content-box;
+        h2 {
+            margin-left: -16px;
+            margin-right: -16px;
+            padding-bottom: 1.3125rem;
+            padding-left: 1px;
+            border-bottom: @border;
+            background-color: @bg-general;
+        }
+        .btn {
+            color: @ci-color1;
+            & when (@colorModes = true) {
+                .mx-light-mode-rules ({
 				color: @ci-color1;
-			});
-			.mx-dark-mode-rules ({
+			});;
+                .mx-dark-mode-rules ({
 				color: @fg-general;
-			});
-		}
-		}
-	}
-	&__comment {
-		border: @border;
-	}
-	&__comment-image {
-		img {
-			border: @border;
-		}
-	}
-	&__comment-metadata {
-		color: @fg-general;
-		span {}
-		&-creator {}
-		&-date {}
-	}
-	&__comment-info {
-		color: rgb(33, 37, 41);
-		& when (@colorModes = true) {
-			.mx-dark-mode-rules ({
+			});;
+            }
+        }
+    }
+    &__comment {
+        border: @border;
+    }
+    &__comment-image {
+        img {
+            border: @border;
+        }
+    }
+    &__comment-metadata {
+        color: @fg-general;
+        span {
+        }
+        &-creator {
+        }
+        &-date {
+        }
+    }
+    &__comment-info {
+        color: rgb(33, 37, 41);
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 				color: @fg-general;
-			});
-			.mx-light-mode-rules ({
+			});;
+            .mx-light-mode-rules ({
 				color: rgb(33, 37, 41);
-			});
-		}
+			});;
+        }
 
-		background: @bg-content-box;
-	}
-	&__comment-content {
-		background-color: @bg-content-box;
-		&-options {
-			background-color: @bg-content-box;
-			border-bottom: 0;
-			span {}
-			a, button {
-				&:hover,
-				&:active,
-				&:focus {}
-			}
-			&-last-change {}
-			&-cancel,
-			&-edit,
-			&-save {
-				&.in {}
-			}
-			&-cancel {}
-			&-edit {}
-			&-save {}
-			&-delete {}
-			&-text,
-			&-text-edit {}
-			&-text {
-				&.in {}
-			}
-			&-text-edit {
-				&.in {}
-				textarea {
-					&:focus {}
-				}
-			}
-		}
-	}
-	&__comment-content-loader {}
-	&__add-comment {
-		label {
-			span {
-				background-color: @ci-color1;
-			}
-		}
-		&-add {
-				border: @border;
-				background-color: @bg-content-box;
-			textarea {
-				border: @border;
-				&:focus {}
-			}
-		}
-		&-submit {
-			.btn {}
-		}
-	}
+        background: @bg-content-box;
+    }
+    &__comment-content {
+        background-color: @bg-content-box;
+        &-options {
+            background-color: @bg-content-box;
+            border-bottom: 0;
+            span {
+            }
+            a,
+            button {
+                &:hover,
+                &:active,
+                &:focus {
+                }
+            }
+            &-last-change {
+            }
+            &-cancel,
+            &-edit,
+            &-save {
+                &.in {
+                }
+            }
+            &-cancel {
+            }
+            &-edit {
+            }
+            &-save {
+            }
+            &-delete {
+            }
+            &-text,
+            &-text-edit {
+            }
+            &-text {
+                &.in {
+                }
+            }
+            &-text-edit {
+                &.in {
+                }
+                textarea {
+                    &:focus {
+                    }
+                }
+            }
+        }
+    }
+    &__comment-content-loader {
+    }
+    &__add-comment {
+        label {
+            span {
+                background-color: @ci-color1;
+            }
+        }
+        &-add {
+            border: @border;
+            background-color: @bg-content-box;
+            textarea {
+                border: @border;
+                &:focus {
+                }
+            }
+        }
+        &-submit {
+            .btn {
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

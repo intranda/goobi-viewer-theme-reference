@@ -5,61 +5,65 @@
 /* BLOCK */
 
 .inputfield-paginator {
-	ul {
-	}
-	&__navigate {
-		border: @border;
-		background-color: @bg-content-box;
-		&:hover {
-			background: @bg-hover;
-		}
-		&.inactive {
-			&:hover {
-				background-color: @bg-content-box;
-			}
-		}
-		svg {
-			fill: @black;
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
+    ul {
+    }
+    &__navigate {
+        border: @border;
+        background-color: @bg-content-box;
+        &:hover {
+            background: @bg-hover;
+        }
+        &.inactive {
+            &:hover {
+                background-color: @bg-content-box;
+            }
+        }
+        svg {
+            fill: @black;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 					fill: @white;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					fill: @black;
-	  			});
-			}
-		}
-	}
-	&__navigate-text {
-	}
-	&__page-number-label {
-	}
-	&__page-number-input {
-		input {
-			border: none;
-			outline: none;
-			background-color: transparent;
-			color: @fg-general;
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
+	  			});;
+            }
+        }
+    }
+    &__navigate-text {
+    }
+    &__page-number-label {
+    }
+    &__page-number-input {
+        input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: @fg-general;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 					color: @fg-general;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					color: @fg-general;
-	  			});
-			}
-		}
-	}
+	  			});;
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

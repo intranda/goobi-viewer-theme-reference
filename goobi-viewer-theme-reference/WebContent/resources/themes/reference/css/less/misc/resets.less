@@ -1,17 +1,17 @@
 /* ==============================================================
    Resets for CSS Libs
    ==============================================================*/
- /* BOOTSTRAP */
+/* BOOTSTRAP */
 
 .popover-header {
-	color: @fg-general;
-	background: @bg-content-box;
+    color: @fg-general;
+    background: @bg-content-box;
 }
 .popover-body {
-	.btn--full {
-		color: white;
-	}
-	.mx-dark-mode-rules ({
+    .btn--full {
+        color: white;
+    }
+    .mx-dark-mode-rules ({
 		a {
 			color: #222;
 			&:hover,
@@ -28,8 +28,8 @@
 				color: white;
 			}
 		}
-	});
-	.mx-light-mode-rules ({
+	});;
+    .mx-light-mode-rules ({
 		.btn--full {
 			color: white;
 			&:hover,
@@ -38,152 +38,173 @@
 				color: white;
 			}
 		}
-	});
+	});;
 }
-
-
 
 .tooltipp {
-	& when (@colorModes = true) {
-		.mx-dark-mode-rules ({
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
 			color: #222;
-		});
-		.mx-light-mode-rules ({
-		});
-	}
+		});;
+        .mx-light-mode-rules ({
+		});;
+    }
 }
 .admin__form-help-text {
-	color: @fg-general;
-	opacity: 0.6;
-	& when (@colorModes = true) {
-		.mx-dark-mode-rules ({
+    color: @fg-general;
+    opacity: 0.6;
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
 			color: @fg-general;
 			opacity: 0.6;
-		});
-		.mx-light-mode-rules ({
+		});;
+        .mx-light-mode-rules ({
 			color: @fg-general;
 			opacity: 0.6;
-		});
-	}
+		});;
+    }
 }
 
 /* TABS */
 .nav-tabs {
-	li {
-		a {}
-		span {}
-		&.active {
-			a {}
-		}
-	}
+    li {
+        a {
+        }
+        span {
+        }
+        &.active {
+            a {
+            }
+        }
+    }
 }
-.tab-pane {}
+.tab-pane {
+}
 /* FORMS */
 .form-control {
-	&:disabled {
-		background: #e9ecef;
-	}
-	background: @white;
-	& when (@colorModes = true) {
-		.mx-dark-mode-rules ({
+    &:disabled {
+        background: #e9ecef;
+    }
+    background: @white;
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
 			&:disabled {
 				background: #e9ecef;
 			}
 			background: @fg-general;
-		});
-		.mx-light-mode-rules ({
+		});;
+        .mx-light-mode-rules ({
 			&:disabled {
 				background: #e9ecef;
 			}
 			background: @white;
-		});
-	}
-    &:focus {}
+		});;
+    }
+    &:focus {
+    }
 }
 .form-horizontal {
     .form-group {
-        label {}
-        .form-control {}
-        .btn {}
+        label {
+        }
+        .form-control {
+        }
+        .btn {
+        }
     }
 }
 /* MODALS */
 .modal {
-	color: rgb(33, 37, 41);
-	z-index: 9999;
+    color: rgb(33, 37, 41);
+    z-index: 9999;
 
-	h1, h2, h3, h4, h5 {
-		color: rgb(33, 37, 41);
-	}
-	.custom-control--select {
-		border: 1px solid #ccc;
-		background: @white;
-	}
-	.btn.btn--clean {
-		color: rgb(33, 37, 41);
-	}
-	.btn.btn--full {
-		background: @ci-color1;
-		border-color: @ci-color1;
-	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: rgb(33, 37, 41);
+    }
+    .custom-control--select {
+        border: 1px solid #ccc;
+        background: @white;
+    }
+    .btn.btn--clean {
+        color: rgb(33, 37, 41);
+    }
+    .btn.btn--full {
+        background: @ci-color1;
+        border-color: @ci-color1;
+    }
 }
 
 #bodyWrapper {
-	transition: filter 0.2s linear;
+    transition: filter 0.2s linear;
 }
 
 .modal-open {
-	#bodyWrapper > *:not(#pageHeader),
-	.page-header {
-    	 filter: blur(3px);
-	}
+    #bodyWrapper > *:not(#pageHeader),
+    .page-header {
+        filter: blur(3px);
+    }
 }
 
-.alt-backdrop, .modal-backdrop.show {
-	opacity: 0.6;
+.alt-backdrop,
+.modal-backdrop.show {
+    opacity: 0.6;
 }
 
-.modal.fade .modal-dialog {}
+.modal.fade .modal-dialog {
+}
 
-.modal-open[style] {}
+.modal-open[style] {
+}
 
-.modal-backdrop.show {}
+.modal-backdrop.show {
+}
 
-.modal-backdrop {}
+.modal-backdrop {
+}
 
 .modal-header {
-	.fancy-close {
-		&:hover {}
-	}
+    .fancy-close {
+        &:hover {
+        }
+    }
 }
 
-.modal-body {}
+.modal-body {
+}
 
 @media screen and (min-width: 576px) {
-	.modal-dialog {}
+    .modal-dialog {
+    }
 }
 
 .data-table-paginator__button {
-	background-color: @bg-general;
-	& when (@colorModes = true) {
-		.mx-dark-mode-rules ({
+    background-color: @bg-general;
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
 			background-color: @bg-general;
-		});
-		.mx-light-mode-rules ({
+		});;
+        .mx-light-mode-rules ({
 			background-color: @bg-general;
-		});
-	}
+		});;
+    }
 }
 
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

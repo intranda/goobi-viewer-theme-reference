@@ -9,8 +9,8 @@
 
 ## Überschriebene Seiten und Komponenten
 
-Name | Grund
------------- | -------------
-myComponent | myReason
+| Name        | Grund    |
+| ----------- | -------- |
+| myComponent | myReason |
 
 ## Sonstiges

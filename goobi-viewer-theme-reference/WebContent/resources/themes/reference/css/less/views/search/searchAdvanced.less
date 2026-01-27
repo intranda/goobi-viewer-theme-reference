@@ -9,63 +9,72 @@
     &__entry-area {
         background-color: @bg-content-box;
         border: @border;
-        span.remove {}
+        span.remove {
+        }
         .remove {
             &:hover {
                 color: @black;
             }
         }
     }
-    &__loader {}
+    &__loader {
+    }
     &__input-group {
         .form-control__select,
-        input[type="text"] {}
-        input[type="text"] {
+        input[type='text'] {
+        }
+        input[type='text'] {
             &:focus {
-                & + .input-group-addon {}
+                & + .input-group-addon {
+                }
             }
         }
-	.custom-control--select {
-	    &:after {}
-	    select[disabled] {}
-	}
-	select {}
-	button {}
-	.row .col-sm-1 {}
-	}
-	
-	&__input-group-field {
-	}
-	&__input-value {
-		background: @white;
-		& when (@colorModes = true) {
-		    .mx-dark-mode-rules ({
+        .custom-control--select {
+            &:after {
+            }
+            select[disabled] {
+            }
+        }
+        select {
+        }
+        button {
+        }
+        .row .col-sm-1 {
+        }
+    }
+
+    &__input-group-field {
+    }
+    &__input-value {
+        background: @white;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 		    	background: @white;
-		     });
-		    .mx-light-mode-rules ({
+		     });;
+            .mx-light-mode-rules ({
 		    	background: @white;
-		    });
-		}
-	}
-	&__select-values {
-	}
- 
-	&__action {
-	    .btn--default {
-		background: #f7f7f7;
-		& when (@colorModes = true) {
-	        .mx-dark-mode-rules ({
+		    });;
+        }
+    }
+    &__select-values {
+    }
+
+    &__action {
+        .btn--default {
+            background: #f7f7f7;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 	            background: @fg-general;
-	        });
-		    .mx-light-mode-rules ({
+	        });;
+                .mx-light-mode-rules ({
 		        background: #f7f7f7;
-		    });
-		}
-	}
-	}
-	&__additional-wrapper {
-	    color: @fg-general;
-	}
+		    });;
+            }
+        }
+    }
+    &__additional-wrapper {
+        color: @fg-general;
+    }
     &__input-col {
         a,
         button {
@@ -73,7 +82,7 @@
             &:focus,
             &:active {
             }
-            &[disabled="disabled"] {
+            &[disabled='disabled'] {
             }
         }
         span {
@@ -87,195 +96,197 @@
     }
     &__fuzzy-search-option-wrapper {
     }
-	&__additional-options-area {
-	}
-	&__nav-helper-box {
-	    background-color: @bg-content-box;
-	    border: @border;
-	}
-	&__nav-helper-item {
-	}
-	&__nav-helper-label {}
-	&__custom-control {
-		select {
-		}
-	}
-	
-	// ENTITY TABS
-	&__entity-tabs {
-	}
-	&__entity-tab-link-wrapper {
-		&.-active {
-		}
-	}
-	&__entity-tab-link {
- 		background-color: @bg-general;
- 		// TOP BORDER FOR ENTITY TABS MIXIN
-		 .tabpseudoelementmixin1(@color) {
-			border-top: 3px solid @color;
-			padding-top: 7px;
-		}
- 		
-		&.-result-group-standard {
-			&:hover,
-			&:focus,
-			&:active {
-				.tabpseudoelementmixin1(@ci-color1);
-			}
-		} 
-		/* COLORING FOR THE ENTITY GHOUPS */
-		&.-result-group-docstructtype__work {
-			&:hover,
-			&:focus,
-			&:active {
-				.tabpseudoelementmixin1(#DC7E2E);
-			}
-		}
-		&.-result-group-docstructtype__person {
-			&:hover,
-			&:focus,
-			&:active {
-				.tabpseudoelementmixin1(#B13B29);
-			}	
-		}
-		&.-result-group-docstructtype__agent {
-			&:hover,
-			&:focus,
-			&:active {
-				.tabpseudoelementmixin1(#568FB2);
-			}
-		}
-		&.-result-group-docstructtype__award {
-			&:hover,
-			&:focus,
-			&:active {
-				.tabpseudoelementmixin1(#2E8D38);
-			}
-		}
-		&.-result-group-docstructtype__event {
-			&:hover,
-			&:focus,
-			&:active {
-				.tabpseudoelementmixin1(#8966CA);
-			}
-		}
-		&.-active {
-			padding-top: 7px;
-			background: @bg-content-box;
-			color: @fg-general;
-			&.-result-group-standard {
-				.tabpseudoelementmixin1(@ci-color1);
-			} 
-			&.-result-group-docstructtype__work {
-				.tabpseudoelementmixin1(#DC7E2E);
-			}
-			&.-result-group-docstructtype__person {
-				.tabpseudoelementmixin1(#B13B29);
-			}
-			&.-result-group-docstructtype__agent {
-				.tabpseudoelementmixin1(#568FB2);
-			}
-			&.-result-group-docstructtype__award {
-				.tabpseudoelementmixin1(#2E8D38);
-			}
-			&.-result-group-docstructtype__event {
-				.tabpseudoelementmixin1(#8966CA);
-			}
-		}
-		& when (@colorModes = true) { 
-		    .mx-dark-mode-rules ({
+    &__additional-options-area {
+    }
+    &__nav-helper-box {
+        background-color: @bg-content-box;
+        border: @border;
+    }
+    &__nav-helper-item {
+    }
+    &__nav-helper-label {
+    }
+    &__custom-control {
+        select {
+        }
+    }
+
+    // ENTITY TABS
+    &__entity-tabs {
+    }
+    &__entity-tab-link-wrapper {
+        &.-active {
+        }
+    }
+    &__entity-tab-link {
+        background-color: @bg-general;
+        // TOP BORDER FOR ENTITY TABS MIXIN
+        .tabpseudoelementmixin1(@color) {
+            border-top: 3px solid @color;
+            padding-top: 7px;
+        }
+
+        &.-result-group-standard {
+            &:hover,
+            &:focus,
+            &:active {
+                .tabpseudoelementmixin1(@ci-color1);
+            }
+        }
+        /* COLORING FOR THE ENTITY GHOUPS */
+        &.-result-group-docstructtype__work {
+            &:hover,
+            &:focus,
+            &:active {
+                .tabpseudoelementmixin1(#DC7E2E);
+            }
+        }
+        &.-result-group-docstructtype__person {
+            &:hover,
+            &:focus,
+            &:active {
+                .tabpseudoelementmixin1(#B13B29);
+            }
+        }
+        &.-result-group-docstructtype__agent {
+            &:hover,
+            &:focus,
+            &:active {
+                .tabpseudoelementmixin1(#568FB2);
+            }
+        }
+        &.-result-group-docstructtype__award {
+            &:hover,
+            &:focus,
+            &:active {
+                .tabpseudoelementmixin1(#2E8D38);
+            }
+        }
+        &.-result-group-docstructtype__event {
+            &:hover,
+            &:focus,
+            &:active {
+                .tabpseudoelementmixin1(#8966CA);
+            }
+        }
+        &.-active {
+            padding-top: 7px;
+            background: @bg-content-box;
+            color: @fg-general;
+            &.-result-group-standard {
+                .tabpseudoelementmixin1(@ci-color1);
+            }
+            &.-result-group-docstructtype__work {
+                .tabpseudoelementmixin1(#DC7E2E);
+            }
+            &.-result-group-docstructtype__person {
+                .tabpseudoelementmixin1(#B13B29);
+            }
+            &.-result-group-docstructtype__agent {
+                .tabpseudoelementmixin1(#568FB2);
+            }
+            &.-result-group-docstructtype__award {
+                .tabpseudoelementmixin1(#2E8D38);
+            }
+            &.-result-group-docstructtype__event {
+                .tabpseudoelementmixin1(#8966CA);
+            }
+        }
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 		    	border: 1px solid transparent;
        			border-bottom: none;
-		     });
-		    .mx-light-mode-rules ({
+		     });;
+            .mx-light-mode-rules ({
 		    	border: @border;
 		    	border-bottom: none;
-		    });
-		}
-		
-	}
+		    });;
+        }
+    }
     // REWORK NEEDED
     &__action-search-button {
-		// SUBMIT BUTTON COLORS MIXIN
-		.entitySearchAdvancedButtonColor(@color) {
-			border: 1px solid @color;
-			background: @color;
-		}
-		&.-result-group-docstructtype__work {
-			.entitySearchAdvancedButtonColor(#DC7E2E);
-		}
-		&.-result-group-docstructtype__person {
-			.entitySearchAdvancedButtonColor(#B13B29);
-		}
-		&.-result-group-docstructtype__agent {
-			.entitySearchAdvancedButtonColor(#568FB2);
-		}
-		&.-result-group-docstructtype__award {
-			.entitySearchAdvancedButtonColor(#2E8D38);
-		}
-		&.-result-group-docstructtype__event {
-			.entitySearchAdvancedButtonColor(#8966CA);
-		}
-	}
+        // SUBMIT BUTTON COLORS MIXIN
+        .entitySearchAdvancedButtonColor(@color) {
+            border: 1px solid @color;
+            background: @color;
+        }
+        &.-result-group-docstructtype__work {
+            .entitySearchAdvancedButtonColor(#DC7E2E);
+        }
+        &.-result-group-docstructtype__person {
+            .entitySearchAdvancedButtonColor(#B13B29);
+        }
+        &.-result-group-docstructtype__agent {
+            .entitySearchAdvancedButtonColor(#568FB2);
+        }
+        &.-result-group-docstructtype__award {
+            .entitySearchAdvancedButtonColor(#2E8D38);
+        }
+        &.-result-group-docstructtype__event {
+            .entitySearchAdvancedButtonColor(#8966CA);
+        }
+    }
 
-	// ENTITY TABS MOBILE DROPDOWN
-	&__entity-tabs-dropdown {
-		border: @border;
-		border-top: none;
- 		background-color: @bg-content-box;
-	}
-	&__entity-tabs-dropdown-button-wrapper {
-
-	}
-	&__entity-tabs-dropdown-toggle-button {
+    // ENTITY TABS MOBILE DROPDOWN
+    &__entity-tabs-dropdown {
+        border: @border;
+        border-top: none;
+        background-color: @bg-content-box;
+    }
+    &__entity-tabs-dropdown-button-wrapper {
+    }
+    &__entity-tabs-dropdown-toggle-button {
         border: @border;
         border-bottom: none;
- 		background-color: @bg-general;
- 		background: @bg-content-box;
- 		color: @fg-content-box;
- 		&:hover {
-			color: @fg-content-box;
-		}
-		// MOBILE ENTITY DROPDOWN TOGGLE BUTTON COLORS MIXIN
-		.entitySearchAdvancedDropdownToggleColor(@color) {
-			border: 1px solid @color;
-			background: @color;
-			color: white;
-		}
-		&.-result-group-docstructtype__work {
-			.entitySearchAdvancedDropdownToggleColor(#DC7E2E);
-		}
-		&.-result-group-docstructtype__person {
-			.entitySearchAdvancedDropdownToggleColor(#B13B29);
-		}
-		&.-result-group-docstructtype__agent {
-			.entitySearchAdvancedDropdownToggleColor(#568FB2);
-		}
-		&.-result-group-docstructtype__award {
-			.entitySearchAdvancedDropdownToggleColor(#2E8D38);
-		}
-		&.-result-group-docstructtype__event {
-			.entitySearchAdvancedDropdownToggleColor(#8966CA);
-		}
-	}
-	&__entity-tabs-dropdown-link {
-		color: @lk-content-box;
-	}
+        background-color: @bg-general;
+        background: @bg-content-box;
+        color: @fg-content-box;
+        &:hover {
+            color: @fg-content-box;
+        }
+        // MOBILE ENTITY DROPDOWN TOGGLE BUTTON COLORS MIXIN
+        .entitySearchAdvancedDropdownToggleColor(@color) {
+            border: 1px solid @color;
+            background: @color;
+            color: white;
+        }
+        &.-result-group-docstructtype__work {
+            .entitySearchAdvancedDropdownToggleColor(#DC7E2E);
+        }
+        &.-result-group-docstructtype__person {
+            .entitySearchAdvancedDropdownToggleColor(#B13B29);
+        }
+        &.-result-group-docstructtype__agent {
+            .entitySearchAdvancedDropdownToggleColor(#568FB2);
+        }
+        &.-result-group-docstructtype__award {
+            .entitySearchAdvancedDropdownToggleColor(#2E8D38);
+        }
+        &.-result-group-docstructtype__event {
+            .entitySearchAdvancedDropdownToggleColor(#8966CA);
+        }
+    }
+    &__entity-tabs-dropdown-link {
+        color: @lk-content-box;
+    }
 
-	 
-	// GAP SIZING VARIABLE
-	// @gap-sizer: 5px;
+    // GAP SIZING VARIABLE
+    // @gap-sizer: 5px;
 }
 /* MODIFICATION */
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

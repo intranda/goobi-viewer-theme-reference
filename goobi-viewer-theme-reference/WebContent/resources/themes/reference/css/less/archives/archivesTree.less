@@ -2,108 +2,133 @@
    View archive tree
    style declarations for archivetree.xhtml
    ==============================================================*/
-   
+
 /* EAD TREE */
 .archives-tree {
-	&__inner {}
-	&__expand-minimize-all {
-		a {
-			color: @fg-general;
-			&:last-child {}
-		}
-	}
-	&__entry { 
-		&:first-child {
-			.archives-tree__list-entry-title {}
-		}
-		&.child {
-			.archives-tree__metadata-box {}
-		}
-	}
-	&__list-entry-title {
-		&.-archives-selected {
-			.fa-stack {
-				color: green;
-				& when (@colorModes = true) {
-					.mx-light-mode-rules ({
+    &__inner {
+    }
+    &__expand-minimize-all {
+        a {
+            color: @fg-general;
+            &:last-child {
+            }
+        }
+    }
+    &__entry {
+        &:first-child {
+            .archives-tree__list-entry-title {
+            }
+        }
+        &.child {
+            .archives-tree__metadata-box {
+            }
+        }
+    }
+    &__list-entry-title {
+        &.-archives-selected {
+            .fa-stack {
+                color: green;
+                & when (@colorModes = true) {
+                    .mx-light-mode-rules ({
 						color: green;
-					});
-					.mx-dark-mode-rules ({
+					});;
+                    .mx-dark-mode-rules ({
 						color: #ff7800;
-					});
-				}
-			}
-		}
-		&.-archives-selected {
-			.fa-stack-text {
-			}
-		}
-		&.-archives-selected {
-			.fa-file-o {
-				color: green;
-				& when (@colorModes = true) {
-					.mx-light-mode-rules ({
+					});;
+                }
+            }
+        }
+        &.-archives-selected {
+            .fa-stack-text {
+            }
+        }
+        &.-archives-selected {
+            .fa-file-o {
+                color: green;
+                & when (@colorModes = true) {
+                    .mx-light-mode-rules ({
 						color: green;
-					});
-					.mx-dark-mode-rules ({
+					});;
+                    .mx-dark-mode-rules ({
 						color: #ff7800;
-					});
-				}
-			}
-		}
-		.fa-caret-up,
-		.fa-caret-down {}
-		a {}
-	}
-	&__title {}
-	&__selected {}
-	&__active-title {
-		&::after {}
-	}
-	&__inactive-title {
-		&::after {}
-	}
-	&__expandable-icon {
-		a {
-			color: @fg-general;
-			&:hover,
-			&:active,
-			&:focus {
-				color: @fg-general;
-			}
-		}
-		.fa {}
-	}
-	&__metadata-box {}
-	&__metadata-box-fields-row {}
-	&__metadata-box-field-name {}
-	&__metadata-box-field-value {}
-	&__metadata-box-links {
-		a {}
-	}
-	&__loader {}
+					});;
+                }
+            }
+        }
+        .fa-caret-up,
+        .fa-caret-down {
+        }
+        a {
+        }
+    }
+    &__title {
+    }
+    &__selected {
+    }
+    &__active-title {
+        &::after {
+        }
+    }
+    &__inactive-title {
+        &::after {
+        }
+    }
+    &__expandable-icon {
+        a {
+            color: @fg-general;
+            &:hover,
+            &:active,
+            &:focus {
+                color: @fg-general;
+            }
+        }
+        .fa {
+        }
+    }
+    &__metadata-box {
+    }
+    &__metadata-box-fields-row {
+    }
+    &__metadata-box-field-name {
+    }
+    &__metadata-box-field-value {
+    }
+    &__metadata-box-links {
+        a {
+        }
+    }
+    &__loader {
+    }
 }
 
 // ajax loading indicator for ead tree
-#AJAXLoader.archives-tree__loader {}
+#AJAXLoader.archives-tree__loader {
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-	.archives-tree {
-		&__entry {
-			&.parent {}
-			&.child {}
-		}
-		&__metadata-box-fields-row {}
-		&__metadata-box-field-name {}
-	}
+    .archives-tree {
+        &__entry {
+            &.parent {
+            }
+            &.child {
+            }
+        }
+        &__metadata-box-fields-row {
+        }
+        &__metadata-box-field-name {
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

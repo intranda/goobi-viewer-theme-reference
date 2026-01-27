@@ -5,92 +5,129 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-	border-bottom: 0;
-	/* DOCUMENT OPTIONS */
-	&__options {
-		ul {}
-	    li {}
-	}
-	&__option {
-		a, button {}
-		&.fulltext {}
-		&.add-to-bookmark {}
-	}
+    border-bottom: 0;
+    /* DOCUMENT OPTIONS */
+    &__options {
+        ul {
+        }
+        li {
+        }
+    }
+    &__option {
+        a,
+        button {
+        }
+        &.fulltext {
+        }
+        &.add-to-bookmark {
+        }
+    }
     /* ACTIONS */
     &__actions {
-    	ul {}
-	    li {}
+        ul {
+        }
+        li {
+        }
     }
-	&__select-text {
-	}
+    &__select-text {
+    }
     &__action {
-	    /* ELEMENT */
-		[class*="image-"] {}
-		&.inactive {
-	    	a,
-	    	span,
-	    	button {
-		}
-		}
-	    /* ELEMENT */
-	    &.start {}
-	    &.page-browse,
-	    &.select {}
-	    &.page-browse {
-	        a, span {}
-	    }
-	    &.back {}
-	    &.select-text {
-	    	span {}
-	    }
-	    &.select {
-	        .form-control__select {
-	            select {}
-	        }
-	    }
-	    &.forward {}
-	    &.end {}
-	    &.double-page-view,
-	    &.single-page-view,
-	    &.switch-pages {
-		    [class*="image-"] {}
-	    }
-	    &.double-page-view {}
-	    &.single-page-view {}
-	    &.switch-pages {
-			[class*="image-"] {}
-	    }
-	    &.rotate-left,
-	    &.rotate-right {
-	    	[class*="image-"] {}
-	    }
-	    &.rotate-left {}
-	    &.rotate-right {}
-	    &.reset {}
-	    &.enter-fullscreen {}
-	    &.zoom-slider-wrapper {
-	        .zoom-slider {
-	            //Firefox
-		        &::-moz-range-thumb {}
-				&:focus {}
-		        &::-webkit-slider-thumb {}
-				&::-webkit-slider-runnable-track {}
-	        }
-			.zoom-slider-handle {}
-	    }
-	}
+        /* ELEMENT */
+        [class*='image-'] {
+        }
+        &.inactive {
+            a,
+            span,
+            button {
+            }
+        }
+        /* ELEMENT */
+        &.start {
+        }
+        &.page-browse,
+        &.select {
+        }
+        &.page-browse {
+            a,
+            span {
+            }
+        }
+        &.back {
+        }
+        &.select-text {
+            span {
+            }
+        }
+        &.select {
+            .form-control__select {
+                select {
+                }
+            }
+        }
+        &.forward {
+        }
+        &.end {
+        }
+        &.double-page-view,
+        &.single-page-view,
+        &.switch-pages {
+            [class*='image-'] {
+            }
+        }
+        &.double-page-view {
+        }
+        &.single-page-view {
+        }
+        &.switch-pages {
+            [class*='image-'] {
+            }
+        }
+        &.rotate-left,
+        &.rotate-right {
+            [class*='image-'] {
+            }
+        }
+        &.rotate-left {
+        }
+        &.rotate-right {
+        }
+        &.reset {
+        }
+        &.enter-fullscreen {
+        }
+        &.zoom-slider-wrapper {
+            .zoom-slider {
+                //Firefox
+                &::-moz-range-thumb {
+                }
+                &:focus {
+                }
+                &::-webkit-slider-thumb {
+                }
+                &::-webkit-slider-runnable-track {
+                }
+            }
+            .zoom-slider-handle {
+            }
+        }
+    }
     /* MODIFICATION */
-	.labeltext {}
+    .labeltext {
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOP */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}
