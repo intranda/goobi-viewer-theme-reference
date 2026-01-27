@@ -1,3 +1,4 @@
+const path = require("path");
 const {
   SUPPORTED_EXTENSIONS,
   findProjectDir,
@@ -63,7 +64,9 @@ describe("Pre-Commit Formatter", () => {
         ]),
         existsSync: jest
           .fn()
-          .mockImplementation((p) => p.includes("my-theme/node_modules")),
+          .mockImplementation((p) =>
+            p.includes(`my-theme${path.sep}node_modules`),
+          ),
       };
 
       const result = findProjectDir("/repo/scripts/pre-commit", mockFs);
