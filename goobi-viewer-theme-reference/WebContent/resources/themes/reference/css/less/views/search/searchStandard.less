@@ -5,80 +5,86 @@
 /* SEARCH STANDARD */
 /* BLOCK */
 .search-standard {
-//	background-color: @bg-content-box;
-//  	border: @border;
+    //	background-color: @bg-content-box;
+    //  	border: @border;
     /* ELEMENT */
     &__help {
         button {
-		color: @fg-general;
-	}
+            color: @fg-general;
+        }
     }
     &__title {
         h2 {
-
-        color: @fg-content-box;
+            color: @fg-content-box;
         }
     }
-    &__input {}
-	&__input-slim {}
+    &__input {
+    }
+    &__input-slim {
+    }
     &__input-label,
-    &__filter-label {}
-    &__input-label {}
+    &__filter-label {
+    }
+    &__input-label {
+    }
     &__input-autocomplete {
         .ui-autocomplete {
             .ui-autocomplete-input {
-				background: @white;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+                background: @white;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 						background: @white; 
 						color: @black;
-					});
-					.mx-light-mode-rules ({
+					});;
+                    .mx-light-mode-rules ({
 						background: @white;
-					});
-				}
-			}
+					});;
+                }
+            }
         }
     }
-    &__filter {}
-    &__filter-label {}
-    &__filter-radio {
-    	label {
-    		font-size: @fontMedium;
-    		font-weight: 400;
-        color: @fg-content-box;
-    	}
+    &__filter {
     }
-	&__filter-select {
-		.custom-control--select {
-			& select {
-				background: #f7f7f7;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+    &__filter-label {
+    }
+    &__filter-radio {
+        label {
+            font-size: @fontMedium;
+            font-weight: 400;
+            color: @fg-content-box;
+        }
+    }
+    &__filter-select {
+        .custom-control--select {
+            & select {
+                background: #f7f7f7;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 						background: @fg-general;
-					});
-					.mx-light-mode-rules ({
+					});;
+                    .mx-light-mode-rules ({
 						background: #f7f7f7;
-					});
-				}
-			}
-		}
-	}
+					});;
+                }
+            }
+        }
+    }
     &__filter-link {
-        a {}
+        a {
+        }
     }
     &__action {
         .btn--default {
-			background: #f7f7f7;
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
+            background: #f7f7f7;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 					background: @fg-general;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					background: #f7f7f7;
-				});
-			}
-		}
+				});;
+            }
+        }
     }
     /* MODIFICATION */
 }
@@ -87,9 +93,11 @@
 .ui-autocomplete-panel {
     ul.ui-autocomplete-items {
         li.ui-autocomplete-item {
-            span.ui-autocomplete-query {}
+            span.ui-autocomplete-query {
+            }
         }
-        li.ui-state-highlight {}
+        li.ui-state-highlight {
+        }
     }
 }
 
@@ -97,29 +105,40 @@
 /* BLOCK */
 .search-help {
     /* ELEMENT */
-    .modal-dialog {}
-    .modal-content {}
-    .modal-header {}
-    .modal-title {}
-    .modal-body {}
-    .card-group {
-        .card {}
+    .modal-dialog {
     }
-    .card-header {}
+    .modal-content {
+    }
+    .modal-header {
+    }
+    .modal-title {
+    }
+    .modal-body {
+    }
+    .card-group {
+        .card {
+        }
+    }
+    .card-header {
+    }
     .card-title {
         a {
             &:hover,
             &:focus,
-            &:active {}
+            &:active {
+            }
         }
     }
     .card-body {
         p {
-            &:last-child {}
-            span {}
+            &:last-child {
+            }
+            span {
+            }
         }
     }
-    .modal-footer {}
+    .modal-footer {
+    }
     /* MODIFICATION */
 }
 
@@ -128,24 +147,32 @@
 .search-tile {
     /* ELEMENT */
     &__description {
-        h2 {}
+        h2 {
+        }
     }
-    &__icon {}
-    &__input {}
+    &__icon {
+    }
+    &__input {
+    }
     &__action {
-        .btn {}
+        .btn {
+        }
     }
     /* MODIFICATION */
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

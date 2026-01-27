@@ -40,9 +40,7 @@ function discoverThemeName() {
     if (fs.existsSync(themesDir)) {
         try {
             const entries = fs.readdirSync(themesDir, { withFileTypes: true });
-            const themes = entries
-                .filter(e => e.isDirectory())
-                .map(e => e.name);
+            const themes = entries.filter((e) => e.isDirectory()).map((e) => e.name);
 
             if (themes.length > 0) {
                 return themes[0];
@@ -223,15 +221,11 @@ function logTask({
     errors = 0,
     extra = [],
 }) {
-    const lines = [
-        `time: ${colors.gray(new Date().toLocaleTimeString('de-DE', { hour12: false }))}`,
-    ];
+    const lines = [`time: ${colors.gray(new Date().toLocaleTimeString('de-DE', { hour12: false }))}`];
     if (changed) lines.push(`changed: ${colors.green(pretty(changed))}`);
     if (src) lines.push(`src: ${colors.green(src)}`);
-    if (projOut.length)
-        lines.push('→ project:', ...projOut.map((p) => '  • ' + colors.blue(pretty(p))));
-    if (deployOut.length)
-        lines.push('→ deploy:', ...deployOut.map((p) => '  • ' + colors.blue(pretty(p))));
+    if (projOut.length) lines.push('→ project:', ...projOut.map((p) => '  • ' + colors.blue(pretty(p))));
+    if (deployOut.length) lines.push('→ deploy:', ...deployOut.map((p) => '  • ' + colors.blue(pretty(p))));
     if (extra.length) lines.push(...extra);
     const gen = typeof genCount === 'number' ? genCount : projOut.length;
     const copy = typeof copyCount === 'number' ? copyCount : deployOut.length;
@@ -256,8 +250,7 @@ function logTask({
  */
 function resolveDirs() {
     const home = os.homedir();
-    const gulpCfgPath =
-        process.env.GV_GULP_CFG || path.join(home, '.config', 'gulp_userconfig.json');
+    const gulpCfgPath = process.env.GV_GULP_CFG || path.join(home, '.config', 'gulp_userconfig.json');
     const viewerCfgPath =
         process.env.GV_VIEWER_CFG ||
         (process.platform.toLowerCase().startsWith('win')
@@ -298,15 +291,7 @@ function resolveDirs() {
             // Second try: Use theme name from config (e.g., goobi-viewer-theme-evifa)
             path.join(cfg.tomcat_dir, `goobi-viewer-theme-${mainTheme}`),
             // Third try: Development target directory
-            path.join(
-                home,
-                'git',
-                'goobi-viewer',
-                repoDir,
-                repoDir,
-                'target',
-                'viewer'
-            ),
+            path.join(home, 'git', 'goobi-viewer', repoDir, repoDir, 'target', 'viewer'),
             // Fourth try: Old pattern with config theme name
             path.join(
                 home,
@@ -471,29 +456,41 @@ function buildStyles(changedFilePath = null) {
                     const outPath = path.join(paths.cssDist, path.basename(file.path));
                     projectOutputs.push(outPath);
                     deployOutputs.push(
-                        path.join(DEPLOYMENT_DIR, 'resources/themes/' + THEME.name + '/css/dist', path.basename(file.path))
+                        path.join(
+                            DEPLOYMENT_DIR,
+                            'resources/themes/' + THEME.name + '/css/dist',
+                            path.basename(file.path)
+                        )
                     );
                     deployOutputs.push(
-                        path.join(DEPLOYMENT_DIR, 'WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist', path.basename(file.path))
+                        path.join(
+                            DEPLOYMENT_DIR,
+                            'WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist',
+                            path.basename(file.path)
+                        )
                     );
                 })
             )
             .pipe(gulp.dest(paths.cssDist))
-            .pipe(through.obj(function(file, enc, cb) {
-                if (file.stat) {
-                    file.stat.mtime = new Date();
-                    file.stat.atime = new Date();
-                }
-                cb(null, file);
-            }))
+            .pipe(
+                through.obj(function (file, enc, cb) {
+                    if (file.stat) {
+                        file.stat.mtime = new Date();
+                        file.stat.atime = new Date();
+                    }
+                    cb(null, file);
+                })
+            )
             .pipe(safeDest('resources/themes/' + THEME.name + '/css/dist'))
-            .pipe(through.obj(function(file, enc, cb) {
-                if (file.stat) {
-                    file.stat.mtime = new Date();
-                    file.stat.atime = new Date();
-                }
-                cb(null, file);
-            }))
+            .pipe(
+                through.obj(function (file, enc, cb) {
+                    if (file.stat) {
+                        file.stat.mtime = new Date();
+                        file.stat.atime = new Date();
+                    }
+                    cb(null, file);
+                })
+            )
             .pipe(safeDest('WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist'));
     });
 
@@ -557,11 +554,7 @@ function compileRiotTags(changedFilePath = null) {
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const outProj = path.join(paths.jsDist, `${THEME.name}-tags.js`);
-    const outDeploy = path.join(
-        DEPLOYMENT_DIR,
-        'resources/javascript/dist',
-        `${THEME.name}-tags.js`
-    );
+    const outDeploy = path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', `${THEME.name}-tags.js`);
 
     return gulp
         .src(joinPosix(paths.jsDev, '*.tag'), { allowEmpty: true })
@@ -681,14 +674,9 @@ function cacheBump() {
     requireDeploymentDir();
     const started = tStart();
     const d = new Date();
-    const stamp = [
-        d.getFullYear(),
-        d.getMonth() + 1,
-        d.getDate(),
-        d.getHours(),
-        d.getMinutes(),
-        d.getSeconds(),
-    ].join('-');
+    const stamp = [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()].join(
+        '-'
+    );
     const pattern = /cachetimestamp=[0-9-]+/g;
 
     const projOut = [];
@@ -707,12 +695,7 @@ function cacheBump() {
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.templates))
         .pipe(gulp.dest(paths.templates))
-        .pipe(
-            collectTo(
-                deployOut,
-                path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))
-            )
-        )
+        .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))))
         .pipe(safeDest(path.relative(paths.staticRoot, paths.templates).replace(/\\/g, '/')));
 
     const b = gulp
@@ -721,12 +704,7 @@ function cacheBump() {
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.includes))
         .pipe(gulp.dest(paths.includes))
-        .pipe(
-            collectTo(
-                deployOut,
-                path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.includes))
-            )
-        )
+        .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.includes))))
         .pipe(safeDest(path.relative(paths.staticRoot, paths.includes).replace(/\\/g, '/')));
 
     return merge(a, b).on('finish', () => {
@@ -753,8 +731,7 @@ function printTargets(cb) {
     const exists = (p) => p && fs.existsSync(p);
     const asHome = (p) => (p ? toPosix(p.replace(home, '~')) : '(none)');
     const mark = (p) => (exists(p) ? colors.green('✓') : colors.red('✗'));
-    const row = (label, p) =>
-        `${colors.white(label.padEnd(14))} ${mark(p)}  ${colors.blue(asHome(p))}`;
+    const row = (label, p) => `${colors.white(label.padEnd(14))} ${mark(p)}  ${colors.blue(asHome(p))}`;
 
     logBlock('targets', [
         `platform: ${colors.cyan(process.platform)}  node: ${colors.cyan(process.version)}`,
@@ -805,9 +782,7 @@ function watchMode() {
         ignored: ['**/*.tmp', '**/*~', '**/#*#', '**/.#*', '**/*.swp', '**/*.swo', '**/.DS_Store'],
     };
 
-    gulp.watch(joinPosix(paths.lessViewer, '**/*.less'), watchOpts).on('change', (p) =>
-        buildStyles(p)
-    );
+    gulp.watch(joinPosix(paths.lessViewer, '**/*.less'), watchOpts).on('change', (p) => buildStyles(p));
 
     gulp.watch(joinPosix(paths.jsDev, '*.js'), watchOpts)
         .on('change', (p) => bundleCustomJS(p))

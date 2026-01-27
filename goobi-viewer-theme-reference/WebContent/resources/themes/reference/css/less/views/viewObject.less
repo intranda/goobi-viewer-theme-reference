@@ -5,104 +5,121 @@
 /* VIEW OBJECT */
 /* BLOCK */
 .view-object {
-	/* ELEMENT */
-	/* IMAGE */
-	&__object-3d,
-	&__image {
-		border: @border;
-		border-top: 0;
-		background-color: @bg-content-box;
-		&.-setBorderTop {
-			border-top: @border;
-		}
-	} 
-	&__image-loader {}
-	&__image-map {
-	    span {}
-	    img {}
-	    .ugcBox {
-	        &.focus {}
-	        &.drawing {}
-	    }
-	}
-	/* IMAGE MOBILE */
-	&__image-mobile {
-		background-color: @bg-content-box;
-	}
-	/* VIDEO, AUDIO, TEXT */
-	&__video,
-	&__audio,
-	&__text {}
-	/* VIDEO */
-	&__video {}
-	/* AUDIO */
-	&__audio {}
-	/* TEXT */
-	&__text {}
-	
-	// COLORS FOR BORDERS BASED ON DOCSTRUCT TYPE
-	// MAYBE CLEANUP/RECONSTRUCTION NEEDED
-	&.docstructtype__work {
-		.image-controls, .view-object__image {
-			border-width: 1px;
-			border-color: #DC7E2E;
-		}
-		.metadata__wrapper {
-			border: 1px solid #DC7E2E;
-		}
-	}
-	&.docstructtype__person {
-		.image-controls, .view-object__image {
-			border-width: 1px;
-			border-color: #B13B29;
-		}
-		.metadata__wrapper {
-			border: 1px solid #B13B29;
-		}
-	}
-	&.docstructtype__agent {
-		.image-controls, .view-object__image {
-			border-width: 1px;
-			border-color: #568FB2;
-		}
-		.metadata__wrapper {
-			border: 1px solid #568FB2;
-		}
-	}
-	&.docstructtype__award {
-		.image-controls, .view-object__image {
-			border-width: 1px;
-			border-color: #2E8D38;
-		}
-		.metadata__wrapper {
-			border: 1px solid #2E8D38;
-		}
-	}
-	&.docstructtype__event {
-		.image-controls, .view-object__image {
-			border-width: 1px;
-			border-color: #8966CA;
-		}
-		.metadata__wrapper {
-			border: 1px solid #8966CA;
-		}
-	}
-	
+    /* ELEMENT */
+    /* IMAGE */
+    &__object-3d,
+    &__image {
+        border: @border;
+        border-top: 0;
+        background-color: @bg-content-box;
+        &.-setBorderTop {
+            border-top: @border;
+        }
+    }
+    &__image-loader {
+    }
+    &__image-map {
+        span {
+        }
+        img {
+        }
+        .ugcBox {
+            &.focus {
+            }
+            &.drawing {
+            }
+        }
+    }
+    /* IMAGE MOBILE */
+    &__image-mobile {
+        background-color: @bg-content-box;
+    }
+    /* VIDEO, AUDIO, TEXT */
+    &__video,
+    &__audio,
+    &__text {
+    }
+    /* VIDEO */
+    &__video {
+    }
+    /* AUDIO */
+    &__audio {
+    }
+    /* TEXT */
+    &__text {
+    }
+
+    // COLORS FOR BORDERS BASED ON DOCSTRUCT TYPE
+    // MAYBE CLEANUP/RECONSTRUCTION NEEDED
+    &.docstructtype__work {
+        .image-controls,
+        .view-object__image {
+            border-width: 1px;
+            border-color: #dc7e2e;
+        }
+        .metadata__wrapper {
+            border: 1px solid #dc7e2e;
+        }
+    }
+    &.docstructtype__person {
+        .image-controls,
+        .view-object__image {
+            border-width: 1px;
+            border-color: #b13b29;
+        }
+        .metadata__wrapper {
+            border: 1px solid #b13b29;
+        }
+    }
+    &.docstructtype__agent {
+        .image-controls,
+        .view-object__image {
+            border-width: 1px;
+            border-color: #568fb2;
+        }
+        .metadata__wrapper {
+            border: 1px solid #568fb2;
+        }
+    }
+    &.docstructtype__award {
+        .image-controls,
+        .view-object__image {
+            border-width: 1px;
+            border-color: #2e8d38;
+        }
+        .metadata__wrapper {
+            border: 1px solid #2e8d38;
+        }
+    }
+    &.docstructtype__event {
+        .image-controls,
+        .view-object__image {
+            border-width: 1px;
+            border-color: #8966ca;
+        }
+        .metadata__wrapper {
+            border: 1px solid #8966ca;
+        }
+    }
 }
 
 .view-object-content {
-		border: @border;
-		background-color: @bg-content-box;
+    border: @border;
+    background-color: @bg-content-box;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

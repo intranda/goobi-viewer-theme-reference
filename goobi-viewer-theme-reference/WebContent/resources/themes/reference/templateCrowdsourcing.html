@@ -1,108 +1,139 @@
-<!DOCTYPE html [
-	<!ENTITY copy "&#169;">
-	<!ENTITY times "&#215;">
-	<!ENTITY nbsp "&#160;">
+<!DOCTYPE html [ <!ENTITY copy "&#169;">
+<!ENTITY times "&#215;">
+<!ENTITY nbsp "&#160;">
 ]>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
-      xmlns:jsf="http://xmlns.jcp.org/jsf"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-      xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-      xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components"
-      lang="#{navigationHelper.localeString}"
-      dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
+    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components"
+    lang="#{navigationHelper.localeString}"
+    dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}">
+    <!-- templateName determines which CSS + JS libraries will be included -->
+    <c:set
+        var="templateName"
+        value="templateCrowdsourcing" />
 
-  <!-- templateName determines which CSS + JS libraries will be included -->
-  <c:set var="templateName" value="templateCrowdsourcing" />
+    <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
+    <c:set
+        var="excludeCSS"
+        value="#{['themeCSS']}" />
+    <c:set
+        var="excludeJS"
+        value="#{[]}" />
 
-  <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
-  <c:set var="excludeCSS" value="#{['themeCSS']}" />
-  <c:set var="excludeJS" value="#{[]}" />
+    <h:head profile="http://dublincore.org/documents/dcq-html/">
+        <ui:insert name="head" />
+        <meta temp="crowd" />
 
-  <h:head profile="http://dublincore.org/documents/dcq-html/">
-  <ui:insert name="head" />
-  <meta temp="crowd" />
+        <title>Crowdsourcing - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
 
-    <title>Crowdsourcing - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
+        <!-- META TAGS -->
+        <ui:include src="/resources/includes/templateHeads/metaTags.xhtml" />
 
-    <!-- META TAGS -->
-    <ui:include src="/resources/includes/templateHeads/metaTags.xhtml" />
+        <!-- FAVICON -->
+        <link
+            rel="shortcut icon"
+            href='#{adminThemesBean.getIcon("images/template/favicon.ico", 32, 32)}' />
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="#{adminThemesBean.getIcon(&quot;images/template/favicon.ico&quot;, 32, 32)}" />
+        <!-- RELATIVE URL TAGS -->
+        <h:outputText
+            escape="false"
+            value="#{activeDocumentBean.relativeUrlTags}" />
 
-    <!-- RELATIVE URL TAGS -->
-    <h:outputText escape="false" value="#{activeDocumentBean.relativeUrlTags}" />
+        <!-- CSS -->
+        <ui:include src="/resources/includes/templateHeads/css.xhtml">
+            <ui:param
+                name="templateName"
+                value="#{templateName}" />
+            <ui:param
+                name="excludeCSS"
+                value="#{excludeCSS}" />
+            <ui:param
+                name="cacheBuster"
+                value="-cachetimestamp=2024-10-23-17-17-26" />
+        </ui:include>
 
-    <!-- CSS -->
-    <ui:include src="/resources/includes/templateHeads/css.xhtml">
-      <ui:param name="templateName" value="#{templateName}" />
-      <ui:param name="excludeCSS" value="#{excludeCSS}" />
-      <ui:param name="cacheBuster" value="-cachetimestamp=2024-10-23-17-17-26" />
-    </ui:include>
+        <!-- CUSTOM CSS + DIST FILES -->
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
 
-	<!-- CUSTOM CSS + DIST FILES -->
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
+        <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
+        <ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.mainThemeName)}">
+            <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
+                <ui:param
+                    name="style"
+                    value="#{adminThemesBean.getStylesheet(adminThemesBean.mainThemeName)}"></ui:param>
+            </ui:include>
+        </ui:fragment>
+        <!-- QUICK CSS FROM SUBTHEMES -->
+        <ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.currentSubThemeName)}">
+            <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
+                <ui:param
+                    name="style"
+                    value="#{adminThemesBean.getStylesheet(adminThemesBean.currentSubThemeName)}"></ui:param>
+            </ui:include>
+        </ui:fragment>
 
-	 <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
-	 <ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.mainThemeName)}">
-	    <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
-	    	<ui:param name="style" value="#{adminThemesBean.getStylesheet(adminThemesBean.mainThemeName)}"></ui:param>
-	    </ui:include>				
-    </ui:fragment>
-    <!-- QUICK CSS FROM SUBTHEMES -->
-	<ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.currentSubThemeName)}">
-	    <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
-	    	<ui:param name="style" value="#{adminThemesBean.getStylesheet(adminThemesBean.currentSubThemeName)}"></ui:param>
-	    </ui:include>	
-    </ui:fragment>
+        <!-- JAVASCRIPT -->
+        <ui:include src="/resources/includes/templateHeads/js.xhtml">
+            <ui:param
+                name="templateName"
+                value="#{templateName}" />
+            <ui:param
+                name="excludeJS"
+                value="#{excludeJS}" />
+            <ui:param
+                name="cacheBuster"
+                value="-cachetimestamp=2024-10-23-17-17-26" />
+        </ui:include>
 
-    <!-- JAVASCRIPT -->
-    <ui:include src="/resources/includes/templateHeads/js.xhtml">
-      <ui:param name="templateName" value="#{templateName}" />
-      <ui:param name="excludeJS" value="#{excludeJS}" />
-      <ui:param name="cacheBuster" value="-cachetimestamp=2024-10-23-17-17-26" />
-    </ui:include>
-    
-	<!-- QUICK JS IN VIEWER BACKEND - ADDS <script> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
-    <ui:fragment rendered="#{adminThemesBean.javascriptExists(adminThemesBean.mainThemeName)}">
-	    <ui:include src="/resources/includes/templateHeads/quickjs.xhtml">
-	    	<ui:param name="script" value="#{adminThemesBean.getJavascript(adminThemesBean.mainThemeName)}"></ui:param>
-	    </ui:include>	
-    </ui:fragment>
-    <!-- QUICK JS FROM SUBTHEMES -->
-    <ui:fragment rendered="#{adminThemesBean.javascriptExists(adminThemesBean.currentSubThemeName)}">
-	    <ui:include src="/resources/includes/templateHeads/quickjs.xhtml">
-	    	<ui:param name="script" value="#{adminThemesBean.getJavascript(adminThemesBean.currentSubThemeName)}"></ui:param>
-	    </ui:include>	
-    </ui:fragment>
+        <!-- QUICK JS IN VIEWER BACKEND - ADDS <script> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
+        <ui:fragment rendered="#{adminThemesBean.javascriptExists(adminThemesBean.mainThemeName)}">
+            <ui:include src="/resources/includes/templateHeads/quickjs.xhtml">
+                <ui:param
+                    name="script"
+                    value="#{adminThemesBean.getJavascript(adminThemesBean.mainThemeName)}"></ui:param>
+            </ui:include>
+        </ui:fragment>
+        <!-- QUICK JS FROM SUBTHEMES -->
+        <ui:fragment rendered="#{adminThemesBean.javascriptExists(adminThemesBean.currentSubThemeName)}">
+            <ui:include src="/resources/includes/templateHeads/quickjs.xhtml">
+                <ui:param
+                    name="script"
+                    value="#{adminThemesBean.getJavascript(adminThemesBean.currentSubThemeName)}"></ui:param>
+            </ui:include>
+        </ui:fragment>
+    </h:head>
 
-</h:head>
+    <ui:insert name="metadata" />
 
-<ui:insert name="metadata" />
+    <h:body id="crowd">
+        <h:panelGroup id="subBody">
+            <f:view locale="#{navigationHelper.locale}">
+                <!-- LAYOUT -->
+                <ui:include src="/resources/crowdsourcing/includes/layout/crowdsourcing_layout.xhtml" />
 
-<h:body id="crowd">
-	<h:panelGroup id="subBody">
-	    <f:view locale="#{navigationHelper.locale}">
-	        <!-- LAYOUT -->
-	        <ui:include src="/resources/crowdsourcing/includes/layout/crowdsourcing_layout.xhtml" />
+                <!-- CUSTOM JAVASCRIPT -->
+                <ui:include src="includes/customJS.xhtml" />
+            </f:view>
 
-	        <!-- CUSTOM JAVASCRIPT -->
-	        <ui:include src="includes/customJS.xhtml" />
-	    </f:view>
-	    
-	    
-		<!-- COOKIE BANNER -->
-	    <ui:include src="/resources/includes/cookieBanner.xhtml" />
-	    <!-- PIWIK -->
-	    <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
-	        <viewerComponent:piwikTracking piwikBaseURL="#{configurationBean.piwikBaseURL}" piwikSiteID="#{configurationBean.piwikSiteID}" />
-	    </ui:fragment>
-	    
-    </h:panelGroup>
-</h:body>
+            <!-- COOKIE BANNER -->
+            <ui:include src="/resources/includes/cookieBanner.xhtml" />
+            <!-- PIWIK -->
+            <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
+                <viewerComponent:piwikTracking
+                    piwikBaseURL="#{configurationBean.piwikBaseURL}"
+                    piwikSiteID="#{configurationBean.piwikSiteID}" />
+            </ui:fragment>
+        </h:panelGroup>
+    </h:body>
 </html>

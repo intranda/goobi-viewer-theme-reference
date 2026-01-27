@@ -7,41 +7,53 @@
 .tpl-search-list-custom {
     /* ELEMENT */
     &__list {
-    	padding: 10px;
-    	border: @border;
-    	background-color: @bg-content-box;
-    	.row {
-    		&:last-child {
-    			.tpl-search-list-custom__list-element {
-    				padding-bottom: 0;
-    				border-bottom: 0;
-    			}
-    		}
-    	}
+        padding: 10px;
+        border: @border;
+        background-color: @bg-content-box;
+        .row {
+            &:last-child {
+                .tpl-search-list-custom__list-element {
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+            }
+        }
     }
-    &__list-element {}
-    &__list-image {}
+    &__list-element {
+    }
+    &__list-image {
+    }
     &__list-text {
         .dl-horizontal {
-            dt, dd {}
-            dt {}
-            dd {}
+            dt,
+            dd {
+            }
+            dt {
+            }
+            dd {
+            }
         }
     }
     &__list-text-person {
-        &:after {}
-        &:last-child:after {}
+        &:after {
+        }
+        &:last-child:after {
+        }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -5,51 +5,56 @@
 /* VIEW FULLTEXT */
 /* BLOCK */
 .view-fulltext {
-	/* ELEMENT */
-	&__wrapper {
-		padding: 10px;
-		border: @border;
-		border-top: 0;
-		background-color: @bg-content-box;
-	}
-	&__content {
-		color: @fg-general;
-		& when (@colorModes = true) {
-			.mx-light-mode-rules ({
+    /* ELEMENT */
+    &__wrapper {
+        padding: 10px;
+        border: @border;
+        border-top: 0;
+        background-color: @bg-content-box;
+    }
+    &__content {
+        color: @fg-general;
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
 				color: @fg-general;
-			});
-			.mx-dark-mode-rules ({
+			});;
+            .mx-dark-mode-rules ({
 				color: @bg-content-box;
-			});
-		} 
-		a {
-			& when (@colorModes = true) {
-				.mx-light-mode-rules ({
+			});;
+        }
+        a {
+            & when (@colorModes = true) {
+                .mx-light-mode-rules ({
 					color: @fg-general;
 					text-decoration: underline;
 					font-weight: 500;
-				});
-				.mx-dark-mode-rules ({
+				});;
+                .mx-dark-mode-rules ({
 					color: @bg-content-box;
 					text-decoration: underline;
 					font-weight: 500;
-				});
-			}
-		}
-	}
-	&__box {
-		pre {}
-	}
+				});;
+            }
+        }
+    }
+    &__box {
+        pre {
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

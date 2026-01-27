@@ -5,128 +5,142 @@
 /* NUMERIC PAGINATOR */
 /* BLOCK */
 .numeric-paginator {
-	/* ELEMENT */
-	ul {}
-	li {
-		border: @border;
-		&.numeric-paginator__navigate-text {
-			border: none;
-			background: none;
-		}
-	}
-	a, button {
-		font-size: @fontMedium;
-		background-color: @bg-content-box;
-	}
-	a, button {
-		color: @lk-general;
-		background: @bg-content-box;
-		&:hover,
-		&:active,
-		&:focus {
-			color: @lk-general;
-			background-color: @ci-color1;
-			& when (@colorModes = true) {
-			  .mx-dark-mode-rules ({
+    /* ELEMENT */
+    ul {
+    }
+    li {
+        border: @border;
+        &.numeric-paginator__navigate-text {
+            border: none;
+            background: none;
+        }
+    }
+    a,
+    button {
+        font-size: @fontMedium;
+        background-color: @bg-content-box;
+    }
+    a,
+    button {
+        color: @lk-general;
+        background: @bg-content-box;
+        &:hover,
+        &:active,
+        &:focus {
+            color: @lk-general;
+            background-color: @ci-color1;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 			    background-color: @bg-active;
 				color: @white;
-			  });
-			  .mx-light-mode-rules ({
+			  });;
+                .mx-light-mode-rules ({
 			    background-color: @bg-hover;
 				// color: @white; 
 				color: @fg-general;
-			  });
-			}
-		}
-	}
-	span {}
-	&__dots {
-		a, span {
-			background-color: transparent;
-			border: 0;
-		}
-	}
-	&__navigate {
-		&.-active {
-			a, span, button {
-				color: @bg-content-box;
-				background-color: @ci-color1;
-				&:hover,
-				&:active,
-				&:focus {}
-				& when (@colorModes = true) {
-				  .mx-light-mode-rules ({
+			  });;
+            }
+        }
+    }
+    span {
+    }
+    &__dots {
+        a,
+        span {
+            background-color: transparent;
+            border: 0;
+        }
+    }
+    &__navigate {
+        &.-active {
+            a,
+            span,
+            button {
+                color: @bg-content-box;
+                background-color: @ci-color1;
+                &:hover,
+                &:active,
+                &:focus {
+                }
+                & when (@colorModes = true) {
+                    .mx-light-mode-rules ({
 					 background-color: @ci-color1;
-				  }); 
-				  .mx-dark-mode-rules ({
+				  });;
+                    .mx-dark-mode-rules ({
 					color: @white;
 				    background-color: @bg-active;
-				  });
-				}
-			}
-		}
-		&.inactive {
-			a {
-				i {}
-
-			}
-		}
-	}
-	/* MODIFICATION */
-	li.numeric-paginator__dots {}
-	li.numeric-paginator__active {
-		border: @border;
-	}
-	&__page-number-label {
-		span, a, button {
-			border: none;
-			background: none;
-		}
-	}
-	&__page-number-input {
-		margin-bottom: 0px;
-		background-color: @white;
-		color: @black;
-		& when (@colorModes = true) {
-		  .mx-dark-mode-rules ({
+				  });;
+                }
+            }
+        }
+        &.inactive {
+            a {
+                i {
+                }
+            }
+        }
+    }
+    /* MODIFICATION */
+    li.numeric-paginator__dots {
+    }
+    li.numeric-paginator__active {
+        border: @border;
+    }
+    &__page-number-label {
+        span,
+        a,
+        button {
+            border: none;
+            background: none;
+        }
+    }
+    &__page-number-input {
+        margin-bottom: 0px;
+        background-color: @white;
+        color: @black;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 			margin-bottom: 2px;
-		  });
-		  .mx-light-mode-rules ({
+		  });;
+            .mx-light-mode-rules ({
 			margin-bottom: 0px;
 		    background-color: @white;
 			color: @black;
-		  });
-		}
-		input {
-		border: none;
-		outline: none;
-		padding-top: 2px;
-		background-color: @white;
-		color: @black;
-		& when (@colorModes = true) {
-		  .mx-dark-mode-rules ({
+		  });;
+        }
+        input {
+            border: none;
+            outline: none;
+            padding-top: 2px;
+            background-color: @white;
+            color: @black;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 		    background-color: @bg-active;
 			color: @white;
-		  });
-		  .mx-light-mode-rules ({
+		  });;
+                .mx-light-mode-rules ({
 			padding-top: 2px;
 		    background-color: @white;
 			color: @black;
-		  });
-		}
-		}		
-	}
+		  });;
+            }
+        }
+    }
 }
 
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -3,51 +3,70 @@
    ==============================================================*/
 /* FULLSCREEN TOC */
 .fullscreen {
-	.widget-toc {
-		/* TITLE */
-		&__title {
-			h2 {}
-		}
-		&__title-expand {
-			a {}
-		}
-		/* ELEMENTS */
-		&__elements {
-			ul {}
-		}
-		&__element {
-			&:hover {}
-			&.parent {}
-			&.child {}
-			&.active {}
-		}
-		&__element-expand {}
-		&__element-link {
-			&.has-pagenumber {}
-			&.non-tree-view {
-				&.has-pagenumber {}			
-			}
-			&.active {
-				a {}
-			}
-		}
-		&__element-pagenumber {}
-		/* LOADING */
-		&__loader,
-		&__overlay {}
-		&__loader {}
-		&__overlay {}
-	}
+    .widget-toc {
+        /* TITLE */
+        &__title {
+            h2 {
+            }
+        }
+        &__title-expand {
+            a {
+            }
+        }
+        /* ELEMENTS */
+        &__elements {
+            ul {
+            }
+        }
+        &__element {
+            &:hover {
+            }
+            &.parent {
+            }
+            &.child {
+            }
+            &.active {
+            }
+        }
+        &__element-expand {
+        }
+        &__element-link {
+            &.has-pagenumber {
+            }
+            &.non-tree-view {
+                &.has-pagenumber {
+                }
+            }
+            &.active {
+                a {
+                }
+            }
+        }
+        &__element-pagenumber {
+        }
+        /* LOADING */
+        &__loader,
+        &__overlay {
+        }
+        &__loader {
+        }
+        &__overlay {
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
- 
+@media screen and (max-width: @largeBreakpoint) {
+}
+
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

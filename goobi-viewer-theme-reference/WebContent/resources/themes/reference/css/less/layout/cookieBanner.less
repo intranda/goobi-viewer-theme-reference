@@ -9,48 +9,61 @@
 
 /* COOKIE BANNER */
 .cookie-banner {
-	&__icon-wrapper {}
-	&__icon {}
-	// Variables for animation
-	--roll-in-x1: 100px;
-	--roll-in-x2: -100px;
-	--rotate1: 90deg;
-	--rotate2: 360deg;
-	&__info-inserted-content {}
-	&__info {
-		background-color: @bg-general;
-		color: @fg-general;
-		a {
-			text-decoration: none;
-			& when (@colorModes = true) {
-				.mx-light-mode-rules ({
+    &__icon-wrapper {
+    }
+    &__icon {
+    }
+    // Variables for animation
+    --roll-in-x1: 100px;
+    --roll-in-x2: -100px;
+    --rotate1: 90deg;
+    --rotate2: 360deg;
+    &__info-inserted-content {
+    }
+    &__info {
+        background-color: @bg-general;
+        color: @fg-general;
+        a {
+            text-decoration: none;
+            & when (@colorModes = true) {
+                .mx-light-mode-rules ({
 					text-decoration: none;
-				});
-				.mx-dark-mode-rules ({
+				});;
+                .mx-dark-mode-rules ({
 					text-decoration: underline;
-				});
-			}
-		}
-		p {
-		}
-	}
-	&__info-inner {}
-	&__info-actions {}
-	&__accept-button,
-	&__decline-button {}
-	&__accept-button {}
-	&__decline-button {}
-	&__overlay {}
+				});;
+            }
+        }
+        p {
+        }
+    }
+    &__info-inner {
+    }
+    &__info-actions {
+    }
+    &__accept-button,
+    &__decline-button {
+    }
+    &__accept-button {
+    }
+    &__decline-button {
+    }
+    &__overlay {
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOP */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -5,38 +5,42 @@
 /* LOGIN NAVIGATION */
 /* BLOCK */
 .login-navigation {
-	/* NOT LOGGED IN */
-	[data-login="false"] {
-		button[data-toggle="modal"] {
-			display: block;
-		}
-	}
-	&__toggle-button {
-		font-size: 14px;
-		font-weight: 500;
-	}
-	/* LOGGED IN */
-	[data-login="true"] {
-		button[data-toggle="modal"] {
-			display: block;
-		}
-		.login-navigation {
-			/* TOGGLE USER DROPDOWN */
-			&__user-name {
-				padding-right: 0;
-			}
-		}
-	}
+    /* NOT LOGGED IN */
+    [data-login='false'] {
+        button[data-toggle='modal'] {
+            display: block;
+        }
+    }
+    &__toggle-button {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    /* LOGGED IN */
+    [data-login='true'] {
+        button[data-toggle='modal'] {
+            display: block;
+        }
+        .login-navigation {
+            /* TOGGLE USER DROPDOWN */
+            &__user-name {
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {} 
+@media screen and (max-width: @xSmallBreakpoint) {
+}

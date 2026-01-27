@@ -5,69 +5,83 @@
 .user-backend-table {
     border-top: @border;
     border-bottom: @border;
-	thead {
-		tr {
-			th {
-			    border-right: 1px solid @middlegray;
+    thead {
+        tr {
+            th {
+                border-right: 1px solid @middlegray;
                 border-left: 1px solid @middlegray;
-			}
-		}
-	}
-	tbody {
-		tr {
-			td {
-			    border-right: 1px solid @middlegray;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                border-right: 1px solid @middlegray;
                 border-left: 1px solid @middlegray;
-				a {}
-				.btn {
-				    margin-bottom: 0;
-				}
-			}
-		}
-	}
+                a {
+                }
+                .btn {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
 
 /* data table styles */
 .dataTables_paginate {
     .pagination {
         li {
-            span, a {}
-            span {}
-            a {}
-        }
-        li[id*="previous"] {
-            a {}
-        }
-        li.paginate_button {
-            a {}
-            &.active {
-                a {}
+            span,
+            a {
+            }
+            span {
+            }
+            a {
             }
         }
-        li[id*="ellipsis"] {
-            a {}
+        li[id*='previous'] {
+            a {
+            }
         }
-        li[id*="next"] {
-            a {}
+        li.paginate_button {
+            a {
+            }
+            &.active {
+                a {
+                }
+            }
         }
-        
+        li[id*='ellipsis'] {
+            a {
+            }
+        }
+        li[id*='next'] {
+            a {
+            }
+        }
     }
 }
 
 .dataTables_filter {
     label {
-        input {}
+        input {
+        }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

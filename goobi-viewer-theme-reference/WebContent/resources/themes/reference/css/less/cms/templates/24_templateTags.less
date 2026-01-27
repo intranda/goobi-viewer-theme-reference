@@ -1,95 +1,98 @@
 /* ==============================================================
    CMS Template "Tags"
    style declarations for cms_template_25_tags.xhtml
-   ==============================================================*//* ==============================================================
+   ==============================================================*/
+/* ==============================================================
    CMS Template "Tags"
    style declarations for cms_template_25_tags.xhtml
    ==============================================================*/
 /* TAGS */
+#ta {
+    h1 {
+        & + h2 {
+            margin-bottom: 0;
+            border: @border;
+            border-bottom: 0;
+            background-color: @bg-content-box;
+            color: @fg-content-box;
+        }
+    }
+}
+
+.content-component__tag-cloud > h2:first-child {
+    margin-bottom: 0;
+    border: @border;
+    border-bottom: 0;
+    background-color: @bg-content-box;
+    color: @fg-content-box;
+    border-top: @border;
+    padding: 20px 20px 10px 20px;
+}
+
+#tagcloudWrapper,
+.tag-cloud__wrapper {
+    margin: 0;
+    padding: 2rem;
+    border: @border;
+    border-top: 0;
+    border-bottom: 0;
+    background-color: @bg-content-box;
+    color: @fg-content-box;
+    &:last-child {
+        border-bottom: @border;
+    }
+    & + h2 {
+        margin-bottom: 0;
+        padding: 10px 20px;
+        border: @border;
+        border-top: 0;
+        border-bottom: 0;
+        background-color: @bg-content-box;
+        color: @fg-content-box;
+    }
+
+    .tagcloudElement[class^='tag'] a {
+        // color: @fg-content-box !important;
+    }
+}
+
 #tags {
-	h1 {
-		& + h2 {
-			margin-bottom: 0;
-			border: @border;
-			border-bottom: 0;
-			background-color: @bg-content-box;
-			color: @fg-content-box;
-		}
-	}
-}
-
-.content-component__tag-cloud > h2:first-child  {
-	margin-bottom: 0;
-	border: @border;
-	border-bottom: 0;
-	background-color: @bg-content-box;
-	color: @fg-content-box;
-	border-top: @border;
-	padding: 20px 20px 10px 20px;
-}
-
-#tagcloudWrapper, .tag-cloud__wrapper {
-	margin: 0;
-	padding: 2rem;
-	border: @border;
-	border-top: 0;
-	border-bottom: 0;
-	background-color: @bg-content-box;
-	color: @fg-content-box;
-	&:last-child { 
-		border-bottom: @border;
-	}
-	& + h2 {
-		margin-bottom: 0;
-		padding: 10px 20px;
-		border: @border;
-		border-top: 0;
-		border-bottom: 0;
-		background-color: @bg-content-box;
-		color: @fg-content-box;
-	}
-
-	.tagcloudElement[class^='tag'] a {
-		// color: @fg-content-box !important;
-	}
-}
-
-#tags {
-	h2 {
-		padding: 2rem;
-	}
+    h2 {
+        padding: 2rem;
+    }
 }
 
 .tpl-tags {
     /* ELEMENT */
     &__content {
-    	h1 {}
+        h1 {
+        }
     }
     &__text,
     #tagcloudWrapper {
-//    	padding: 10px;
-//    	border: @border;
-//    	background-color: @bg-content-box;
-    	& + h2 {
-//    		margin-bottom: 0;
-//	    	padding: 10px;
-//	    	border: @border;
-//	    	border-top: 0;
-//	    	border-bottom: 0;
-//	    	background-color: @bg-content-box;
-    	}
+        //    	padding: 10px;
+        //    	border: @border;
+        //    	background-color: @bg-content-box;
+        & + h2 {
+            //    		margin-bottom: 0;
+            //	    	padding: 10px;
+            //	    	border: @border;
+            //	    	border-top: 0;
+            //	    	border-bottom: 0;
+            //	    	background-color: @bg-content-box;
+        }
     }
     &__text {
-    	margin-bottom: 0;
-    	border-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
     }
-    #tagcloudWrapper { 
-    	margin: 0;
-    	border-top: 0;
-    	border-bottom: 0;
-    	&:last-child {
-    		border-bottom: @border;
-    	}
+    #tagcloudWrapper {
+        margin: 0;
+        border-top: 0;
+        border-bottom: 0;
+        &:last-child {
+            border-bottom: @border;
+        }
     }
 }
 
@@ -98,24 +101,28 @@ each(range(100),{
 });
 
 .tag-cloud {
-	h2 {
-		margin-bottom: 0;
-		padding: 10px;
-		border: @border;
-		border-top: 0;
-		border-bottom: 0;
-		background-color: @bg-content-box;
-	}
+    h2 {
+        margin-bottom: 0;
+        padding: 10px;
+        border: @border;
+        border-top: 0;
+        border-bottom: 0;
+        background-color: @bg-content-box;
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -5,55 +5,67 @@
 /* BROWSE */
 /* BLOCK */
 .collections {
-	a, button {
-		color: @lk-content-box;
-		&:focus,
-		&:hover,
-		&:active {
-		color: @lk-content-box;
-		}
-	}
+    a,
+    button {
+        color: @lk-content-box;
+        &:focus,
+        &:hover,
+        &:active {
+            color: @lk-content-box;
+        }
+    }
 
-	border-top: none;
-	/* ELEMENT */
-	&__wrapper {
-		background-color: @bg-content-box;
-	}
+    border-top: none;
+    /* ELEMENT */
+    &__wrapper {
+        background-color: @bg-content-box;
+    }
 }
 .collection {
-	border: @border;
-	border-top: 0;
-	/* ELEMENT */
-	.row {}
-	&__item {
-		border-top: @border;
-
-
-	}
-	&__structure,
-	&__title,
-	&__description-toggle,
-	&__rss {
-		a, button {}
-	}
-	&__structure {}
-	&__title {}
-	&__top-element {}
-	&__description-toggle,
-	&__rss {}
-	&__description {}
-	/* MODIFICATION */
-	&__item--level-0 {}
+    border: @border;
+    border-top: 0;
+    /* ELEMENT */
+    .row {
+    }
+    &__item {
+        border-top: @border;
+    }
+    &__structure,
+    &__title,
+    &__description-toggle,
+    &__rss {
+        a,
+        button {
+        }
+    }
+    &__structure {
+    }
+    &__title {
+    }
+    &__top-element {
+    }
+    &__description-toggle,
+    &__rss {
+    }
+    &__description {
+    }
+    /* MODIFICATION */
+    &__item--level-0 {
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

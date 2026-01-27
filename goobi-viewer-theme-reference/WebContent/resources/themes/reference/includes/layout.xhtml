@@ -1,124 +1,151 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
-	xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-	xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-	xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
+    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
+    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
+    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+    <div id="bodyWrapper">
+        <!-- ADMIN TOPBAR FRONTEND -->
+        <viewerComponent:frontEndAdminTopBar />
 
-	<div id="bodyWrapper">
+        <!-- ONLY FOR KEYBOARD - SKIP TO MAIN CONTENT LINK -->
+        <div
+            id="skipmenu"
+            class="skip-menu">
+            <a
+                href="#main"
+                class="skip-menu__link">
+                #{msg.a11y__skip_menu__jump_to_main}
+            </a>
+            <a
+                id="skip-to-sidebar"
+                href="#sidebar"
+                class="skip-menu__link">
+                #{msg.a11y__skip_menu__jump_to_sidebar}
+            </a>
+        </div>
 
-	<!-- ADMIN TOPBAR FRONTEND -->
-	<viewerComponent:frontEndAdminTopBar />
+        <!-- HEADER -->
+        <ui:include src="header.xhtml" />
 
-	<!-- ONLY FOR KEYBOARD - SKIP TO MAIN CONTENT LINK -->
-	<div id="skipmenu" class="skip-menu">
-		<a href="#main" class="skip-menu__link">
-			#{msg.a11y__skip_menu__jump_to_main}
-		</a>
-		<a id="skip-to-sidebar" href="#sidebar" class="skip-menu__link">
-		    #{msg.a11y__skip_menu__jump_to_sidebar}
-		</a> 
-	</div>
- 
-	<!-- HEADER -->
-	<ui:include src="header.xhtml" />
+        <!-- HERO SLIDER -->
+        <ui:fragment rendered="#{cmsPage.hasTopbarComponents()}">
+            <div
+                id="heroSlider"
+                class="hero-slider">
+                <ui:insert name="heroSlider" />
+            </div>
+        </ui:fragment>
 
-	<!-- HERO SLIDER -->
-	<ui:fragment rendered="#{cmsPage.hasTopbarComponents()}">
-		<div id="heroSlider" class="hero-slider">
-			<ui:insert name="heroSlider" />
-		</div>
-	</ui:fragment>
+        <!-- MOBILE OVERLAY -->
+        <div class="mobile-overlay"></div>
 
-	<!-- MOBILE OVERLAY -->
-	<div class="mobile-overlay"></div>
+        <!-- SEARCH OVERLAY -->
+        <div
+            data-target="search-overlay"
+            class="header__search-overlay"></div>
 
-	<!-- SEARCH OVERLAY -->
-	<div data-target="search-overlay" class="header__search-overlay"></div>
+        <!-- BREADCRUMBS -->
+        <div class="container">
+            <viewerComponent:breadcrumbs
+                showIcon="false"
+                showStartText="true" />
+        </div>
 
-	<!-- BREADCRUMBS -->
-	<div class="container">
-		<viewerComponent:breadcrumbs showIcon="false" showStartText="true" />
-	</div>
+        <!-- MAIN -->
+        <div
+            id="content"
+            class="content">
+            <div class="container">
+                <div
+                    class="content__wrapper"
+                    data-target="content-wrapper">
+                    <!-- CONTENT -->
+                    <main
+                        id="main"
+                        class="content__main"
+                        role="main">
+                        <ui:insert name="content" />
 
-	<!-- MAIN -->
-	<div id="content" class="content">
+                        <!-- OPEN MOBILE NAVIGATION -->
+                        <div
+                            class="content__mobile-sidebar-trigger"
+                            data-target="mobileSidebarTrigger">
+                            <button
+                                type="button"
+                                class="btn btn--icon content__mobile-sidebar-trigger-button"
+                                data-open="sidebar"
+                                aria-label="#{msg.aria_label__open_sidebar}">
+                                <span class="content__mobile-sidebar-trigger-icon">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </main>
 
-		<div class="container">
-			<div class="content__wrapper" data-target="content-wrapper">
-				<!-- CONTENT -->
-				<main id="main" class="content__main" role="main">
+                    <!-- SIDEBAR -->
+                    <aside
+                        id="sidebar"
+                        class="content__sidebar">
+                        <div
+                            class="sidebar__inner -refreshHCsticky"
+                            data-target="sticky-sidebar">
+                            <!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
+                            <!-- <viewerComponent:sidebarMenu /> -->
 
-					<ui:insert name="content" />
+                            <!-- SIDEBAR WIDGETS -->
+                            <ui:insert name="sidebar" />
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
 
-					<!-- OPEN MOBILE NAVIGATION -->
-					<div class="content__mobile-sidebar-trigger" data-target="mobileSidebarTrigger">
-						<button type="button"
-							class="btn btn--icon content__mobile-sidebar-trigger-button"
-							data-open="sidebar" aria-label="#{msg.aria_label__open_sidebar}">
-							<span class="content__mobile-sidebar-trigger-icon">
-								<span class="bar"></span> <span class="bar"></span>
-							</span>
-						</button>
-					</div>
+        <!-- FOOTER -->
+        <ui:include src="footer.xhtml" />
+    </div>
 
-				</main>
+    <!--  GENERIC OVERLAY -->
+    <ui:include src="/resources/includes/overlay.xhtml" />
+    <!-- FULL OVERLAY LOADING SCREEN (DISPLAYED WHILE REDIRECTING PAGES) -->
+    <ui:include src="/resources/includes/loadingOverlay.xhtml" />
 
-				<!-- SIDEBAR -->
-				<aside id="sidebar" class="content__sidebar">
-					<div class="sidebar__inner  -refreshHCsticky" data-target="sticky-sidebar">
-						<!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
-						<!-- <viewerComponent:sidebarMenu /> -->
+    <!-- USER LOGIN + TERMS + FEEDBACK -->
+    <viewerComponent:modalUserLogin id="userLoginModal" />
+    <viewerComponent:modalUserTerms id="userTermsModal" />
+    <viewerComponent:modalFeedbackForm id="feedbackModal" />
+    <ui:fragment rendered="#{configurationBean.contentUploadEnabled}">
+        <viewerComponent:modalContentUpload id="contentUploadModal" />
+    </ui:fragment>
 
-						<!-- SIDEBAR WIDGETS -->
-						<ui:insert name="sidebar" />
-					</div>
-				</aside>
-
-				</div>
-		</div>
-	</div>
-	
-	<!-- FOOTER -->
-	<ui:include src="footer.xhtml" />
-
-	</div>
-
-
-	<!--  GENERIC OVERLAY -->
-	<ui:include src="/resources/includes/overlay.xhtml" />
-	<!-- FULL OVERLAY LOADING SCREEN (DISPLAYED WHILE REDIRECTING PAGES) -->
-	<ui:include src="/resources/includes/loadingOverlay.xhtml" />
-
-	<!-- USER LOGIN + TERMS + FEEDBACK -->
-	<viewerComponent:modalUserLogin id="userLoginModal" />
-	<viewerComponent:modalUserTerms id="userTermsModal" />
-	<viewerComponent:modalFeedbackForm id="feedbackModal" />
-	<ui:fragment rendered="#{configurationBean.contentUploadEnabled}">
-		<viewerComponent:modalContentUpload id="contentUploadModal" />
-	</ui:fragment>
-	
-
-
-	<!-- IE 11 NOT SUPPORTED -->
-	<div class="support-overlay">
-		<div class="support-overlay__box">
-			<header class="support-overlay__box-header">
-				<h2>#{msg.ie11_heading}</h2>
-			</header>
-			<section class="support-overlay__box-body">
-				<h:outputText value="#{msg.ie11_text}" escape="false" />
-			</section>
-			<footer class="support-overlay__box-footer">
-				powered by <a href="#{msg.intrandaViewer}" target="_blank"
-					rel="noopener">Goobi viewer</a>
-			</footer>
-		</div>
-	</div>
+    <!-- IE 11 NOT SUPPORTED -->
+    <div class="support-overlay">
+        <div class="support-overlay__box">
+            <header class="support-overlay__box-header">
+                <h2>#{msg.ie11_heading}</h2>
+            </header>
+            <section class="support-overlay__box-body">
+                <h:outputText
+                    value="#{msg.ie11_text}"
+                    escape="false" />
+            </section>
+            <footer class="support-overlay__box-footer">
+                powered by
+                <a
+                    href="#{msg.intrandaViewer}"
+                    target="_blank"
+                    rel="noopener">
+                    Goobi viewer
+                </a>
+            </footer>
+        </div>
+    </div>
 </ui:composition>

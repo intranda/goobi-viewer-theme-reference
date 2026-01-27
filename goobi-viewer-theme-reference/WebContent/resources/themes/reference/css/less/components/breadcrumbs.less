@@ -5,45 +5,45 @@
 /* BREADCRUMBS */
 /* BLOCK */
 .breadcrumbs {
-  &__wrapper {
-    font-size: @fontSmall;
-  }
-  &__list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
+    &__wrapper {
+        font-size: @fontSmall;
+    }
+    &__list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
 
+        li {
+            display: flex;
+            align-items: center;
+        }
+    }
+    /* ELEMENT */
+    ul {
+    }
     li {
-      display: flex;
-      align-items: center;
     }
-  }
-  /* ELEMENT */
-  ul {
-  }
-  li {
-  }
-  a,
-  span {
-  }
-  a {
-  }
-  span {
-  }
-  &__starttext {
     a,
     span {
     }
-  }
-  &__starttext + li {
-    a,
+    a {
+    }
     span {
     }
-  }
-  &__crumb + li:before {
-  }
+    &__starttext {
+        a,
+        span {
+        }
+    }
+    &__starttext + li {
+        a,
+        span {
+        }
+    }
+    &__crumb + li:before {
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -56,9 +56,9 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-  .breadcrumbs-wrapper {
-    display: none;
-  }
+    .breadcrumbs-wrapper {
+        display: none;
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */

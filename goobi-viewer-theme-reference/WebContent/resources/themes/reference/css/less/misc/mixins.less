@@ -3,95 +3,95 @@
    ==============================================================*/
 /* CLEARFLOATS */
 .mx-clearfloats {
-	&:before,
+    &:before,
     &:after {
-    	content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+        content: ' ';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 /* BACKGROUND IMAGE */
 .mx-bgi(@image; @pX: center; @pY: center; @size: auto) {
-	background-image: url(@image);
-	background-repeat: no-repeat;
-	background-position: @pX @pY;
-	-webkit-background-size: @size;
-	background-size: @size;
+    background-image: url(@image);
+    background-repeat: no-repeat;
+    background-position: @pX @pY;
+    -webkit-background-size: @size;
+    background-size: @size;
 }
 /* CSS TRIANGLE */
 .mx-triangle(@top: 0; @left: 0; @bWidth: 10px; @bcTop: transparent; @bcRight: transparent; @bcBottom: #000; @bcLeft: transparent) {
-	position: relative;
-	&:after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: @top;
-		left: @left;
-		width: 0;
-		height: 0;
-		border-width: @bWidth;
-		border-style: solid;
-		border-color: @bcTop @bcRight @bcBottom @bcLeft;
-	}
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: @top;
+        left: @left;
+        width: 0;
+        height: 0;
+        border-width: @bWidth;
+        border-style: solid;
+        border-color: @bcTop @bcRight @bcBottom @bcLeft;
+    }
 }
 /* HIDDEN */
 .mx-visible {
-	display: block !important;
-	visibility: visible !important;
+    display: block !important;
+    visibility: visible !important;
 }
 /* HIDDEN */
 .mx-hidden {
-	display: none !important;
-	visibility: hidden !important;
+    display: none !important;
+    visibility: hidden !important;
 }
 /* VISUALLY HIDDEN */
 .mx-v-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
-	clip: rect(1px, 1px, 1px, 1px);
+    clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
     overflow: hidden;
 }
 /* GRID */
 .mx-grid(@width: 145px; @gap: 15px) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(@width, 1fr));
-  grid-gap: @gap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(@width, 1fr));
+    grid-gap: @gap;
 }
 /* LIST RESET */
 .mx-list-reset {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 /* SVG ICON MASK */
 .mx-icon-mask(@iconName; @iconGroup: outline; @library: resources; @basePath: '../../../../icons') {
-	@iconPath: ~"@{basePath}/@{iconGroup}/@{iconName}.svg";
-	@iconResource: ~"@{iconPath}?ln=@{library}";
-	mask: url('@{iconResource}') center/100% 100% no-repeat;
-	-webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
+    @iconPath: ~'@{basePath}/@{iconGroup}/@{iconName}.svg';
+    @iconResource: ~'@{iconPath}?ln=@{library}';
+    mask: url('@{iconResource}') center/100% 100% no-repeat;
+    -webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
 }
 
 // FOCUSRING
 .mx-focus-visible {
-	outline: 2px solid @colorOutline;
-	outline-offset: -2px;
-	z-index: 9999;
+    outline: 2px solid @colorOutline;
+    outline-offset: -2px;
+    z-index: 9999;
 }
 
 // COLOR SCHEMES
 
 .mx-theme-light {
-	color-scheme: light;
+    color-scheme: light;
 
     --ci-color1: #015999;
-    --ci-hovercolor1: #1B70B1;
+    --ci-hovercolor1: #1b70b1;
     --bg-hover: #eee;
-	--bg-active: #3b4557;
+    --bg-active: #3b4557;
     --fg-hover: #212529;
     --fg-controls: #6f6f6f;
     --fg-popover: #000;
@@ -147,7 +147,7 @@
 }
 
 .mx-theme-dark {
-	color-scheme: dark;
+    color-scheme: dark;
 
     --ci-color1: #015999;
     --bg-general: #000e29;
@@ -155,18 +155,18 @@
     --fg-content-box: #e3e4e7;
     --lk-content-box: #e3e4e7;
     --bg-hover: #5b6473;
-	--bg-active: #3b4557;
+    --bg-active: #3b4557;
     --ci-hovercolor1: #5b6473;
-    --fg-hover: rgba(255,255,255,0.8);
-    --fg-controls: rgba(255,255,255,0.8);
+    --fg-hover: rgba(255, 255, 255, 0.8);
+    --fg-controls: rgba(255, 255, 255, 0.8);
     --fg-popover: #fff;
     --bg-popover: #253044;
     --border: 0;
-    --fg-general: rgba(255,255,255,0.8);
-    --lk-general: rgba(255,255,255,0.8);
-    --lh-general: rgba(255,255,255,0.8);
-    --fg-header: rgba(255,255,255,0.8);
-    --lh-content-box: rgba(255,255,255,0.8);
+    --fg-general: rgba(255, 255, 255, 0.8);
+    --lk-general: rgba(255, 255, 255, 0.8);
+    --lh-general: rgba(255, 255, 255, 0.8);
+    --fg-header: rgba(255, 255, 255, 0.8);
+    --lh-content-box: rgba(255, 255, 255, 0.8);
 
     /* WIDGET ICON COLORS */
     // --widget-icon-color-topbar: red;
@@ -176,12 +176,12 @@
     // /* LOGIN NAVIGATION */
     --login-nav-background: #253044;
     --login-nav-background-hover: #3b4557;
-    --login-nav-text-color: rgba(255,255,255,0.9);
+    --login-nav-text-color: rgba(255, 255, 255, 0.9);
     --login-nav-text-color-hover: #fff;
-    --login-nav-icon-color: rgba(255,255,255,0.9);
+    --login-nav-icon-color: rgba(255, 255, 255, 0.9);
     --login-nav-icon-color-hover: #fff;
     --login-nav-bookmarks-background: #1a2535;
-    --login-nav-bookmarks-text-color: rgba(255,255,255,0.9);
+    --login-nav-bookmarks-text-color: rgba(255, 255, 255, 0.9);
     --login-nav-bookmarks-text-color-hover: #ffd65b;
     --login-nav-bookmarks-counter-background: #015999;
     --login-nav-dropdown-border-color: rgba(255, 255, 255, 0.05);
@@ -197,9 +197,9 @@
     /* IMAGE CONTROLS */
     --image-controls-background: var(--bg-content-box);
     --image-controls-border-color: transparent;
-    --image-controls-icon-color: rgba(255,255,255,0.8);
-    --image-controls-icon-color-hover: rgba(255,255,255,0.8);
-    --image-controls-icon-color-active: rgba(255,255,255,0.8);
+    --image-controls-icon-color: rgba(255, 255, 255, 0.8);
+    --image-controls-icon-color-hover: rgba(255, 255, 255, 0.8);
+    --image-controls-icon-color-active: rgba(255, 255, 255, 0.8);
     --image-controls-action-background: var(--bg-active);
     --image-controls-action-background-hover: var(--bg-hover);
     --image-controls-slider-thumb-background: #6f6f6f;
@@ -208,5 +208,7 @@
 
 // DETACHED RULESET FOR OVERRIDING STYLING
 .detachedRuleSetTopLevel(@generalprops) {
-  & { @generalprops(); }
+    & {
+        @generalprops();
+    }
 }
