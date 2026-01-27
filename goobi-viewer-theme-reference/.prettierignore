@@ -1,0 +1,23 @@
+# Build output
+/bin/
+/build/
+/target/
+/deploy/
+
+# Dependencies
+/node_modules/
+
+# Generated/minified files
+*.min.*
+/WebContent/resources/themes/*/css/dist/
+
+# IDE & OS files
+.DS_Store
+**/.DS_Store
+/.classpath
+/.project
+/.settings
+/.tern-project
+
+# Config files
+/package-lock.json
