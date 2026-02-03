@@ -8,15 +8,19 @@
         }
         /* DOCUMENT OPTIONS */
         &__options {
-        }
+        } 
         /* ACTIONS */
         &__actions {
             ul {
             }
-            li {
+            li { 
             }
         }
         &__action {
+			&.next,
+			&.prev {
+				background: @bg-content-box;
+			}
             /* ELEMENT */
             a,
             span,
@@ -51,7 +55,7 @@
                 span {
                 }
             }
-            &.back {
+            &.prev {
                 a,
                 span,
                 button {
@@ -73,7 +77,7 @@
                     }
                 }
             }
-            &.forward {
+            &.next {
                 a,
                 span,
                 button {
