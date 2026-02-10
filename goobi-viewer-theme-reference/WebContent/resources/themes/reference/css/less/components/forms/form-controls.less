@@ -3,47 +3,54 @@
    style declarations for form controls
    ==============================================================*/
 .custom-control {
-    input[type="checkbox"],
-		input[type="radio"] {
-		}
-    &__icon {}
+    input[type='checkbox'],
+    input[type='radio'] {
+    }
+    &__icon {
+    }
 }
 
 .custom-control__icon {
-	color: @ci-color1;
+    color: @ci-color1;
 }
 
 /* MODIFICATIONS */
-.custom-control--select { 
-	border: @border;
-	background-color: @bg-content-box;
-	& when (@colorModes = true) {
-		background: @white;
-		.mx-dark-mode-rules ({
+.custom-control--select {
+    border: @border;
+    background-color: @bg-content-box;
+    & when (@colorModes = true) {
+        background: @white;
+        .mx-dark-mode-rules ({
 			background: @fg-general;
-		});
-		.mx-light-mode-rules ({
+		});;
+        .mx-light-mode-rules ({
 			background: @white;
-		});
-	}
-	&:after {}
-	&:after {}
-	&.multiple {
-		&:after {}
-		select {}
-	}
-	select {
-		font-size: @fontMedium;
-		background: @white;
-		& when (@colorModes = true) {
-			.mx-dark-mode-rules ({
+		});;
+    }
+    &:after {
+    }
+    &:after {
+    }
+    &.multiple {
+        &:after {
+        }
+        select {
+        }
+    }
+    select {
+        font-size: @fontMedium;
+        background: @white;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 				background: @fg-general;
-			});
-			.mx-light-mode-rules ({
+			});;
+            .mx-light-mode-rules ({
 				background: @white;
-			});
-		}
-		&.disabled {}
-	}
-	select[disabled="disabled"] {}
+			});;
+        }
+        &.disabled {
+        }
+    }
+    select[disabled='disabled'] {
+    }
 }

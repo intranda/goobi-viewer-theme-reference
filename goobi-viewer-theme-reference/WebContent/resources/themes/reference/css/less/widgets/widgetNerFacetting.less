@@ -6,36 +6,39 @@
     border: @border;
     h2 {
         margin: 0;
-        padding: .7rem 1.5rem;
-    	font-size: @fontNormal;
-    	font-weight: 400;
+        padding: 0.7rem 1.5rem;
+        font-size: @fontNormal;
+        font-weight: 400;
         color: @white;
         border-bottom: 1px solid @ci-color1;
         background-color: @ci-color1;
     }
     .facetting-content {
         .nav-tabs {
-		border-bottom: @border;
+            border-bottom: @border;
             li {
                 a {
-					background: @bg-content-box;
+                    background: @bg-content-box;
                     border: none;
                     border-radius: 0;
                     border-bottom: 1px solid @middlegray;
-                    .glyphicon {}
+                    .glyphicon {
+                    }
                 }
-                	a {
-	                	&.active {
-							background: @bg-hover;
-						}
-					}
+                a {
+                    &.active {
+                        background: @bg-hover;
+                    }
+                }
             }
         }
         .tab-content {
-			background: @bg-content-box;
+            background: @bg-content-box;
             .tab-pane {
-                &.active {}
-                h3 {}                
+                &.active {
+                }
+                h3 {
+                }
             }
         }
     }
@@ -45,24 +48,28 @@
 #overview,
 #section {
     border: none;
-    .tag-filter-description {}
+    .tag-filter-description {
+    }
     .filter-tags {
         li {
             a {
-                &:hover {}
-                &[data-type="person"] {
-				color: @personColor;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+                &:hover {
+                }
+                &[data-type='person'] {
+                    color: @personColor;
+                    & when (@colorModes = true) {
+                        .mx-dark-mode-rules ({
 						color: @lk-general;
-					});
-					.mx-light-mode-rules ({
+					});;
+                        .mx-light-mode-rules ({
 						color: @personColor;
-					});
-				}
-			}
-                &[data-type="location"] {}
-                &[data-type="corporation"] {}
+					});;
+                    }
+                }
+                &[data-type='location'] {
+                }
+                &[data-type='corporation'] {
+                }
             }
         }
     }
@@ -71,20 +78,22 @@
 /* OVERVIEW */
 #overview {
     .current-tags {
-		background: @bg-hover;
-        &:before {}
+        background: @bg-hover;
+        &:before {
+        }
         .page-tag {
-            &.empty {}
+            &.empty {
+            }
             &.person {
-				color: @personColor;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+                color: @personColor;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 						color: @lk-general;
-					});
-					.mx-light-mode-rules ({
+					});;
+                    .mx-light-mode-rules ({
 						color: @personColor;
-					});
-				}
+					});;
+                }
             }
             &.location {
                 color: @locationColor;
@@ -94,41 +103,47 @@
             }
         }
     }
-    .set-tag-range {}
+    .set-tag-range {
+    }
     .overview-content {
         .overview-scale {
             li {
-                div {}
+                div {
+                }
                 .page-number {
                     a {
-						color: @lk-general;
+                        color: @lk-general;
                         &:hover,
                         &:active,
                         &:focus {
-							color: @lh-general;
-						}
+                            color: @lh-general;
+                        }
                     }
                 }
                 .tag-container {
                     .page-tag {
-                        &:hover {}
-                        &.empty {}
+                        &:hover {
+                        }
+                        &.empty {
+                        }
                         &.person {
-							color: @personColor;
-							& when (@colorModes = true) {
-								.mx-dark-mode-rules ({
+                            color: @personColor;
+                            & when (@colorModes = true) {
+                                .mx-dark-mode-rules ({
 									color: @lk-general;
-								});
-								.mx-light-mode-rules ({
+								});;
+                                .mx-light-mode-rules ({
 									color: @personColor;
-								});
-							}
-			            }
-                        &.location {}
-                        &.corporation {}
-						&:hover {
-							background: @bg-hover;
-						}
+								});;
+                            }
+                        }
+                        &.location {
+                        }
+                        &.corporation {
+                        }
+                        &:hover {
+                            background: @bg-hover;
+                        }
                     }
                 }
             }
@@ -137,51 +152,70 @@
 }
 
 /* SECTION */
-#section {}
+#section {
+}
 
 #sliderScale {
     .scale-page {
-        &.start {}
-        &.end {}
-    }
-    .slider-description {}
-    .scale-stripes {
-        li {
-            &.middle {}
-            &:last-child {}
+        &.start {
+        }
+        &.end {
         }
     }
-    .scale-section-stripe {}
+    .slider-description {
+    }
+    .scale-stripes {
+        li {
+            &.middle {
+            }
+            &:last-child {
+            }
+        }
+    }
+    .scale-section-stripe {
+    }
 }
 
 #sliderVertical {
     .ui-slider-handle {
-        &:after {}
-        &:focus {}
+        &:after {
+        }
+        &:focus {
+        }
         .page-bubble {
-            &:before {}
+            &:before {
+            }
         }
     }
 }
 
 #sectionTags {
     .page-tag {
-        &:hover {}
-        &.empty {}
-        &.person {}
-        &.location {}
-        &.corporation {}
+        &:hover {
+        }
+        &.empty {
+        }
+        &.person {
+        }
+        &.location {
+        }
+        &.corporation {
+        }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

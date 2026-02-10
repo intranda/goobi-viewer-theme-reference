@@ -5,181 +5,215 @@
 /* METADATA */
 /* BLOCK */
 .view-metadata {
-	&.docstructtype__work {
-		.metadata__wrapper {
-			border: 1px solid #DC7E2E;
-		}
-	}
-	&.docstructtype__person {
-		.metadata__wrapper {
-			border: 1px solid #B13B29;
-		}
-	}
-	&.docstructtype__agent {
-		.metadata__wrapper {
-			border: 1px solid #568FB2;
-		}
-	}
-	&.docstructtype__award {
-		.metadata__wrapper {
-			border: 1px solid #2E8D38;
-		}
-	}
-	&.docstructtype__event {
-		.metadata__wrapper {
-			border: 1px solid #8966CA;
-		}
-	}
+    &.docstructtype__work {
+        .metadata__wrapper {
+            border: 1px solid #dc7e2e;
+        }
+    }
+    &.docstructtype__person {
+        .metadata__wrapper {
+            border: 1px solid #b13b29;
+        }
+    }
+    &.docstructtype__agent {
+        .metadata__wrapper {
+            border: 1px solid #568fb2;
+        }
+    }
+    &.docstructtype__award {
+        .metadata__wrapper {
+            border: 1px solid #2e8d38;
+        }
+    }
+    &.docstructtype__event {
+        .metadata__wrapper {
+            border: 1px solid #8966ca;
+        }
+    }
 }
 .metadata {
-	&__title-wrapper {
-	}
-	&__title {
-	}
+    &__title-wrapper {
+    }
+    &__title {
+    }
     &__bookmark-button {
-    	&[data-bookmark-list-type="add"] {}
-	}
-	&__wrapper {
-		// background-color: @bg-content-box;
-		&.-isBoxed {
-			border: @border;
-			background-color: @bg-content-box;
+        &[data-bookmark-list-type='add'] {
+        }
+    }
+    &__wrapper {
+        // background-color: @bg-content-box;
+        &.-isBoxed {
+            border: @border;
+            background-color: @bg-content-box;
 
-			.metadata__ungrouped-wrapper {
-				border: none;
-			}
-			.metadata__element-wrapper-single {
-				border: none;
-			}
-		}
-		a {
-			color: @lk-content-box;
-		}
-	}
-	/* ELEMENTS / EVENTS */
-	&__elements,
-	&__events {
-		dd {
-		}
-	}
-	&__element,
-	&__event {}
-	&__element-dl,
-	&__event-dl {
-		dt {
-		}
-		dd {
-		}
-	}
-	&__element-value,
-	&__event-value {
-		&:last-child {
-		}
-	}
-	/* ELEMENT */
-	&__element {
-		&-level-0 {
-			&:hover {
-			}
-			&:first-child {
-			}
-		}
+            .metadata__ungrouped-wrapper {
+                border: none;
+            }
+            .metadata__element-wrapper-single {
+                border: none;
+            }
+        }
+        a {
+            color: @lk-content-box;
+        }
+    }
+    /* ELEMENTS / EVENTS */
+    &__elements,
+    &__events {
+        dd {
+        }
+    }
+    &__element,
+    &__event {
+    }
+    &__element-dl,
+    &__event-dl {
+        dt {
+        }
+        dd {
+        }
+    }
+    &__element-value,
+    &__event-value {
+        &:last-child {
+        }
+    }
+    /* ELEMENT */
+    &__element {
+        &-level-0 {
+            &:hover {
+            }
+            &:first-child {
+            }
+        }
         &-level-1 {
-			.metadata__element-dl {
-			}
-			dt {
-				&::before {
-				}
-			}
-		}
-        &-level-2 {}
-	}
-	&__elements {
-		&-level-0 {}
-        &-level-1 {}
-        &-level-2 {}
-	}
-	&__elements-h2 {}
-	&__element-wrapper-single {
-		border: @border;
-		dt {
-		}
-	}
-	&__element {}
-	&__element-dl {
-		dt {
-		}
-		dt {}
-		dd {}
-	}
-	&__element-value {}
-	/* EVENT */
-	&__events {}
-	&__event {}
-	&__event-dl {
-		dt {}
-		dd {}
-	}
-	&__event-value {}
-	&__grouped-wrapper {
-		background-color: @bg-content-box;
-		border: @border;
-		dt, dd {
-		}
-		.metadata__element-wrapper {
-			background-color: @bg-content-box;
-		}
-	}
-	&__ungrouped-wrapper {
-		border: @border;
-	}
-	&__element-ungrouped {
-		dt {
-		}
-	}
-	&__heading {
-		background-color: @bg-content-box;
-		&.level-1,
-		&.level-2 {
-			&:before {
-			}
-		}
-		&.level-1 {}
-		&.level-2 {}
-	}
+            .metadata__element-dl {
+            }
+            dt {
+                &::before {
+                }
+            }
+        }
+        &-level-2 {
+        }
+    }
+    &__elements {
+        &-level-0 {
+        }
+        &-level-1 {
+        }
+        &-level-2 {
+        }
+    }
+    &__elements-h2 {
+    }
+    &__element-wrapper-single {
+        border: @border;
+        dt {
+        }
+    }
+    &__element {
+    }
+    &__element-dl {
+        dt {
+        }
+        dt {
+        }
+        dd {
+        }
+    }
+    &__element-value {
+    }
+    /* EVENT */
+    &__events {
+    }
+    &__event {
+    }
+    &__event-dl {
+        dt {
+        }
+        dd {
+        }
+    }
+    &__event-value {
+    }
+    &__grouped-wrapper {
+        background-color: @bg-content-box;
+        border: @border;
+        dt,
+        dd {
+        }
+        .metadata__element-wrapper {
+            background-color: @bg-content-box;
+        }
+    }
+    &__ungrouped-wrapper {
+        border: @border;
+    }
+    &__element-ungrouped {
+        dt {
+        }
+    }
+    &__heading {
+        background-color: @bg-content-box;
+        &.level-1,
+        &.level-2 {
+            &:before {
+            }
+        }
+        &.level-1 {
+        }
+        &.level-2 {
+        }
+    }
 }
 
 /* DOWNLOADS */
 #viewMetadataDownloads {
     ul {
         li {
-            a {}
-            .btn {}
+            a {
+            }
+            .btn {
+            }
             /* BLOCK */
             &.dl-links {
                 /* ELEMENT */
-                &__mets {}
-                &__mets-all {}
-                &__marcxml {}
-                &__dc {}
-                &__ese {}
-                &__dfg {}
-                &__opac {}
-                &__pdf {}
-                &__epub {}
+                &__mets {
+                }
+                &__mets-all {
+                }
+                &__marcxml {
+                }
+                &__dc {
+                }
+                &__ese {
+                }
+                &__dfg {
+                }
+                &__opac {
+                }
+                &__pdf {
+                }
+                &__epub {
+                }
             }
         }
     }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint)  {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

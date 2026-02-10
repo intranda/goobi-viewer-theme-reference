@@ -5,63 +5,67 @@
 /* FAQ */
 /* BLOCK */
 .tpl-faq {
-	/* ELEMENT */
-	h1 {}
-	&__description,
-	&__list {
-		background-color: @bg-content-box;
-		border: @border;
-	}
-	&__description {
-	}
-	&__list {
-		.card {
-			background-color: @bg-general;
-			h2 a, a::before {
-				color: @fg-general;
-				&:focus,
-				&:hover,
-				&:active {
-					color: @fg-general;
-				}
-
-			}
-
-		}
-		.card-heading {
-			&:hover {}
-		}
-		.card-title {
-			a {
-				&:hover,
-				&:active,
-				&:focus {
-					color: @fg-general;
-				}
-			}
-		}
-		.card-body {
-			background-color: @bg-content-box;
-			.tpl-faq-single {
-				&__content {
-					background-color: @bg-content-box;
-					padding: 0;
-					border: none;
-				}
-			}
-		}
-	}
+    /* ELEMENT */
+    h1 {
+    }
+    &__description,
+    &__list {
+        background-color: @bg-content-box;
+        border: @border;
+    }
+    &__description {
+    }
+    &__list {
+        .card {
+            background-color: @bg-general;
+            h2 a,
+            a::before {
+                color: @fg-general;
+                &:focus,
+                &:hover,
+                &:active {
+                    color: @fg-general;
+                }
+            }
+        }
+        .card-heading {
+            &:hover {
+            }
+        }
+        .card-title {
+            a {
+                &:hover,
+                &:active,
+                &:focus {
+                    color: @fg-general;
+                }
+            }
+        }
+        .card-body {
+            background-color: @bg-content-box;
+            .tpl-faq-single {
+                &__content {
+                    background-color: @bg-content-box;
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
+    }
 }
 
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

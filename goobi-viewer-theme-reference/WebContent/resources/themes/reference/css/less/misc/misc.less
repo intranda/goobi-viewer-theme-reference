@@ -4,59 +4,78 @@
    ==============================================================*/
    
 .container {
-	max-width: 1240px;
-}  
- 
+    max-width: 1240px;
+}
+
 /* MOBILE OVERLAY STYLES */
 .mobile-overlay {
-	display: none;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.75);
-	z-index: 2030;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2030;
 }
-   
+
 // LOADER (AJAX) WHICH IS SOMETIMES TRIGGERED ON BUTTONS OR ACTIONS
 .small-button-loader {
-	&__wrapper {
-
-	}
-	&__icon {
-		border-right-color: @ci-color1;
-		&.-top-right {}
-	}
+    &__wrapper {
+    }
+    &__icon {
+        border-right-color: @ci-color1;
+        &.-top-right {
+        }
+    }
 }
 
 // FANCY 2 OPTIONS (YES/NO) TOGGLE
 .admin__radio-switch {
-	label {
-		color: @fg-general;
-	}
-	input ~ input:checked ~ .toggle-outside {
-		background: @ci-color1;
-	}
+    label {
+        color: @fg-general;
+    }
+    input ~ input:checked ~ .toggle-outside {
+        background: @ci-color1;
+    }
 }
 
 // TEMPORARY IMPLEMENTATION FOR SLIDER (SWIPER PAGINATION)
 .swiper-pagination-bullets {
-	text-align: center;
-	margin-top: 2rem;
+    text-align: center;
+    margin-top: 2rem;
 }
 .swiper-pagination-bullet-active {
-	background: @ci-color1;
+    background: @ci-color1;
+}
+
+// TOP DOC ANCHOR - offset anchor scroll position to prevent fixed header from overlapping
+a[name="topDocAnchor"]:target::before {
+    content: "";
+    display: block;
+    height: 98px;
+    margin-top: -98px;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+    // TOP DOC ANCHOR - offset anchor scroll position to prevent fixed header from overlapping
+a[name="topDocAnchor"]:target::before {
+    content: "";
+    display: block;
+    height: 20px;
+    margin-top: -20px;
+}
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

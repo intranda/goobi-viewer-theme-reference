@@ -2,108 +2,129 @@
    General Styling
    ==============================================================*/
 html,
-body {}
+body {
+}
 
 html {
-	font-size: 62.5%; // sets basic font-size to 10px for easier rem use
+    font-size: 62.5%; // sets basic font-size to 10px for easier rem use
 }
 
 body {
-	font-family: @fontFamily;
-	font-size: @fontMedium;
-	font-feature-settings: "kern" 1;
-	font-kerning: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: @bg-general;
-	color: @fg-general;
+    font-family: @fontFamily;
+    font-size: @fontMedium;
+    font-feature-settings: 'kern' 1;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: @bg-general;
+    color: @fg-general;
 
-	// Style focused elements when navigating with the keyboard
-	// Define rules in the mixin `.mx-focus-visible`
-	&.using-keyboard :focus-visible {
-		.mx-focus-visible !important;
-	}
+    // Style focused elements when navigating with the keyboard
+    // Define rules in the mixin `.mx-focus-visible`
+    &.using-keyboard :focus-visible {
+        .mx-focus-visible !important;
+    }
 
-	// No outline offset when an input is in focus
-	// Does not apply if inputs are styled as buttons
-	&.using-keyboard input:not(.btn):focus-visible {
-		outline-offset: 0 !important;
-	}
+    // No outline offset when an input is in focus
+    // Does not apply if inputs are styled as buttons
+    &.using-keyboard input:not(.btn):focus-visible {
+        outline-offset: 0 !important;
+    }
 }
 
 @{RTL} body {
-	// text-align: right;
+    // text-align: right;
 }
 
-h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
-line-height: 1.2;
-	margin-top: 0;
-	margin-bottom: 2rem;
-	font-weight: 600;
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 600;
 }
 
-h1, .h1 {
-	font-size: 2.8rem;
+h1,
+.h1 {
+    font-size: 2.8rem;
 }
 
-h2, .h2 {
-	font-size: 2.1rem;
+h2,
+.h2 {
+    font-size: 2.1rem;
 }
 
-h3, .h3 {
-	font-size: 1.8rem;
+h3,
+.h3 {
+    font-size: 1.8rem;
 }
 
-h4, h5,
-.h4, .h5 {
-	font-size: 1.6rem;
+h4,
+h5,
+.h4,
+.h5 {
+    font-size: 1.6rem;
 }
 
 p {
-	margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 pre {
-	margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
-ul, ol {
-	padding-left: 4rem;
-	margin-bottom: 2rem;
+ul,
+ol {
+    padding-left: 4rem;
+    margin-bottom: 2rem;
 }
 
-ul {}
+ul {
+}
 
-ol {}
+ol {
+}
 
 a {
-	color: @lk-general;
+    color: @lk-general;
     &:hover,
     &:active,
     &:focus {
-    	color: @lh-general;
+        color: @lh-general;
     }
 }
 
 small {
-	font-size: @fontSmall;
+    font-size: @fontSmall;
 }
 
 table,
 .table {
-	width: 100%;
-	margin-bottom: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

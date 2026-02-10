@@ -28,11 +28,37 @@ try {
 const toPosix = (p) => (p ? String(p).replace(/\\/g, '/') : p);
 const joinPosix = (...segs) => toPosix(path.join(...segs));
 
-const repoDir = path.basename(process.cwd());
-const shortNameFromDir = repoDir.replace(/^goobi-viewer-theme-/, '') || repoDir;
+/**
+ * Auto-discovers the theme name from the WebContent/resources/themes/ directory.
+ * Falls back to directory name if discovery fails.
+ *
+ * @returns {string} The theme name
+ */
+function discoverThemeName() {
+    const themesDir = path.join(process.cwd(), 'WebContent', 'resources', 'themes');
+
+    if (fs.existsSync(themesDir)) {
+        try {
+            const entries = fs.readdirSync(themesDir, { withFileTypes: true });
+            const themes = entries.filter((e) => e.isDirectory()).map((e) => e.name);
+
+            if (themes.length > 0) {
+                return themes[0];
+            }
+        } catch (err) {
+            log(colors.yellow(`[theme] Could not scan themes directory: ${err.message}`));
+        }
+    }
+
+    // Fallback to directory name
+    const repoDir = path.basename(process.cwd());
+    const fallbackName = (repoDir.replace(/^goobi-viewer-theme-/, '') || repoDir).trim().toLowerCase();
+    log(colors.yellow(`[theme] WebContent/resources/themes/ not found, using repo name: ${fallbackName}`));
+    return fallbackName;
+}
 
 const THEME = {
-    name: (process.env.GV_THEME || shortNameFromDir).trim().toLowerCase(),
+    name: discoverThemeName(),
 };
 
 const base = `WebContent/resources/themes/${THEME.name}`;
@@ -195,15 +221,11 @@ function logTask({
     errors = 0,
     extra = [],
 }) {
-    const lines = [
-        `time: ${colors.gray(new Date().toLocaleTimeString('de-DE', { hour12: false }))}`,
-    ];
+    const lines = [`time: ${colors.gray(new Date().toLocaleTimeString('de-DE', { hour12: false }))}`];
     if (changed) lines.push(`changed: ${colors.green(pretty(changed))}`);
     if (src) lines.push(`src: ${colors.green(src)}`);
-    if (projOut.length)
-        lines.push('→ project:', ...projOut.map((p) => '  • ' + colors.blue(pretty(p))));
-    if (deployOut.length)
-        lines.push('→ deploy:', ...deployOut.map((p) => '  • ' + colors.blue(pretty(p))));
+    if (projOut.length) lines.push('→ project:', ...projOut.map((p) => '  • ' + colors.blue(pretty(p))));
+    if (deployOut.length) lines.push('→ deploy:', ...deployOut.map((p) => '  • ' + colors.blue(pretty(p))));
     if (extra.length) lines.push(...extra);
     const gen = typeof genCount === 'number' ? genCount : projOut.length;
     const copy = typeof copyCount === 'number' ? copyCount : deployOut.length;
@@ -228,8 +250,7 @@ function logTask({
  */
 function resolveDirs() {
     const home = os.homedir();
-    const gulpCfgPath =
-        process.env.GV_GULP_CFG || path.join(home, '.config', 'gulp_userconfig.json');
+    const gulpCfgPath = process.env.GV_GULP_CFG || path.join(home, '.config', 'gulp_userconfig.json');
     const viewerCfgPath =
         process.env.GV_VIEWER_CFG ||
         (process.platform.toLowerCase().startsWith('win')
@@ -257,12 +278,21 @@ function resolveDirs() {
     const special = theme.specialName && String(theme.specialName);
     const mainTheme = String(theme.mainTheme || 'reference');
 
+    // Use repository directory name for deployment path (not theme name from config)
+    const repoDir = path.basename(process.cwd());
+
     let deployDir;
     if (special && special.length) {
         deployDir = path.join(cfg.tomcat_dir, `goobi-viewer-theme-${special}`);
     } else {
         const candidates = [
+            // First try: Use repository directory name (e.g., goobi-viewer-theme-hub-evifa)
+            path.join(cfg.tomcat_dir, repoDir),
+            // Second try: Use theme name from config (e.g., goobi-viewer-theme-evifa)
             path.join(cfg.tomcat_dir, `goobi-viewer-theme-${mainTheme}`),
+            // Third try: Development target directory
+            path.join(home, 'git', 'goobi-viewer', repoDir, repoDir, 'target', 'viewer'),
+            // Fourth try: Old pattern with config theme name
             path.join(
                 home,
                 'git',
@@ -426,12 +456,42 @@ function buildStyles(changedFilePath = null) {
                     const outPath = path.join(paths.cssDist, path.basename(file.path));
                     projectOutputs.push(outPath);
                     deployOutputs.push(
-                        path.join(DEPLOYMENT_DIR, 'resources/css/dist', path.basename(file.path))
+                        path.join(
+                            DEPLOYMENT_DIR,
+                            'resources/themes/' + THEME.name + '/css/dist',
+                            path.basename(file.path)
+                        )
+                    );
+                    deployOutputs.push(
+                        path.join(
+                            DEPLOYMENT_DIR,
+                            'WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist',
+                            path.basename(file.path)
+                        )
                     );
                 })
             )
             .pipe(gulp.dest(paths.cssDist))
-            .pipe(safeDest('resources/css/dist'));
+            .pipe(
+                through.obj(function (file, enc, cb) {
+                    if (file.stat) {
+                        file.stat.mtime = new Date();
+                        file.stat.atime = new Date();
+                    }
+                    cb(null, file);
+                })
+            )
+            .pipe(safeDest('resources/themes/' + THEME.name + '/css/dist'))
+            .pipe(
+                through.obj(function (file, enc, cb) {
+                    if (file.stat) {
+                        file.stat.mtime = new Date();
+                        file.stat.atime = new Date();
+                    }
+                    cb(null, file);
+                })
+            )
+            .pipe(safeDest('WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist'));
     });
 
     return merge(...streams).on('finish', () => {
@@ -494,11 +554,7 @@ function compileRiotTags(changedFilePath = null) {
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const outProj = path.join(paths.jsDist, `${THEME.name}-tags.js`);
-    const outDeploy = path.join(
-        DEPLOYMENT_DIR,
-        'resources/javascript/dist',
-        `${THEME.name}-tags.js`
-    );
+    const outDeploy = path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', `${THEME.name}-tags.js`);
 
     return gulp
         .src(joinPosix(paths.jsDev, '*.tag'), { allowEmpty: true })
@@ -618,14 +674,9 @@ function cacheBump() {
     requireDeploymentDir();
     const started = tStart();
     const d = new Date();
-    const stamp = [
-        d.getFullYear(),
-        d.getMonth() + 1,
-        d.getDate(),
-        d.getHours(),
-        d.getMinutes(),
-        d.getSeconds(),
-    ].join('-');
+    const stamp = [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()].join(
+        '-'
+    );
     const pattern = /cachetimestamp=[0-9-]+/g;
 
     const projOut = [];
@@ -644,12 +695,7 @@ function cacheBump() {
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.templates))
         .pipe(gulp.dest(paths.templates))
-        .pipe(
-            collectTo(
-                deployOut,
-                path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))
-            )
-        )
+        .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))))
         .pipe(safeDest(path.relative(paths.staticRoot, paths.templates).replace(/\\/g, '/')));
 
     const b = gulp
@@ -658,12 +704,7 @@ function cacheBump() {
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.includes))
         .pipe(gulp.dest(paths.includes))
-        .pipe(
-            collectTo(
-                deployOut,
-                path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.includes))
-            )
-        )
+        .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.includes))))
         .pipe(safeDest(path.relative(paths.staticRoot, paths.includes).replace(/\\/g, '/')));
 
     return merge(a, b).on('finish', () => {
@@ -690,8 +731,7 @@ function printTargets(cb) {
     const exists = (p) => p && fs.existsSync(p);
     const asHome = (p) => (p ? toPosix(p.replace(home, '~')) : '(none)');
     const mark = (p) => (exists(p) ? colors.green('✓') : colors.red('✗'));
-    const row = (label, p) =>
-        `${colors.white(label.padEnd(14))} ${mark(p)}  ${colors.blue(asHome(p))}`;
+    const row = (label, p) => `${colors.white(label.padEnd(14))} ${mark(p)}  ${colors.blue(asHome(p))}`;
 
     logBlock('targets', [
         `platform: ${colors.cyan(process.platform)}  node: ${colors.cyan(process.version)}`,
@@ -700,7 +740,7 @@ function printTargets(cb) {
         row('THEME_DIR', THEME_DIR),
         row('VIEWER_CFG', VIEWER_CFG),
         row('USER_CFG', USER_CFG),
-        colors.gray('hint: GV_THEME / GV_VIEWER_CFG / GV_GULP_CFG can override defaults'),
+        colors.gray('hint: GV_VIEWER_CFG / GV_GULP_CFG can override defaults'),
     ]);
 
     const depPath = toPosix(DEPLOYMENT_DIR).toLowerCase();
@@ -742,9 +782,7 @@ function watchMode() {
         ignored: ['**/*.tmp', '**/*~', '**/#*#', '**/.#*', '**/*.swp', '**/*.swo', '**/.DS_Store'],
     };
 
-    gulp.watch(joinPosix(paths.lessViewer, '**/*.less'), watchOpts).on('change', (p) =>
-        buildStyles(p)
-    );
+    gulp.watch(joinPosix(paths.lessViewer, '**/*.less'), watchOpts).on('change', (p) => buildStyles(p));
 
     gulp.watch(joinPosix(paths.jsDev, '*.js'), watchOpts)
         .on('change', (p) => bundleCustomJS(p))

@@ -8,39 +8,56 @@
     /* ELEMENT */
     /* HITS */
     &__hits {
-		&.grid {
-			form {}
-			.search-list__hit {
-				.row,
-				[class*="col-"] {}
-			}
-			.search-list__hit-header {
-				.row {}
-				.col-12.col-sm-10 {}
-				.col-12.col-sm-2 {}
-			}
-			.search-list__hit-thumbnail {
-				a {}
-			}
-			.search-list__hit-title h3 {}
-			.search-list__hit-thumbnail img,
-			.search-list__hit-type,
-			.search-list__hit-info,
-			.search-list__hit-content {}
-		}
-	}
-	a[data-toggle="hit-content"],
-	button[data-toggle="hit-content"] {}
+        &.grid {
+            .search-list__thumb-bookmark-wrapper {
+                right: 6px;
+                top: 6px;
+            }
+            form {
+            }
+            .search-list__hit {
+                .row,
+                [class*='col-'] {
+                }
+            }
+            .search-list__hit-header {
+                .row {
+                }
+                .col-12.col-sm-10 {
+                }
+                .col-12.col-sm-2 {
+                }
+            }
+            .search-list__hit-thumbnail {
+                a {
+                }
+            }
+            .search-list__hit-title h3 {
+            }
+            .search-list__hit-thumbnail img,
+            .search-list__hit-type,
+            .search-list__hit-info,
+            .search-list__hit-content {
+            }
+        }
+    }
+    a[data-toggle='hit-content'],
+    button[data-toggle='hit-content'] {
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

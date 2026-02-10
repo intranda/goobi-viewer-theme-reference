@@ -6,81 +6,100 @@
 
 /* MODIFICATIONS */
 .btn--default {
-	color: @btnDefault;
-	&:hover,
-	&:active,
-	&:focus,
-	&:active:focus,
-	&.active,
-	&.active.focus,
-	&.active:focus,
-	&.focus,
-	&:active.focus {
-		color: @black;
-	}
+    color: @btnDefault;
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:focus,
+    &.active,
+    &.active.focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus {
+        color: @black;
+    }
 }
 
 .btn--success {
-	color: @btnSuccess;
-	&:hover,
-	&:active,
-	&:focus {}
+    color: @btnSuccess;
+    &:hover,
+    &:active,
+    &:focus {
+    }
 }
 
 .btn--danger {
-	color: @btnDanger;
-	&:hover,
-	&:active,
-	&:focus {}
+    color: @btnDanger;
+    &:hover,
+    &:active,
+    &:focus {
+    }
 }
 
 .btn--full {
-	color: @white;
-	background-color: @ci-color1;
-	border-color: @ci-color1;
-	&:hover,
-	&:active,
-	&:focus,
-	&.active:focus,
-	&.focus,
-	&:active.focus {
-		color: @white;
-		background-color: @ci-hovercolor1;
-		border-color: @ci-hovercolor1;
-	}
+    color: @white;
+    background-color: @ci-color1;
+    border-color: @ci-color1;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus {
+        color: @white;
+        background-color: @ci-hovercolor1;
+        border-color: @ci-hovercolor1;
+    }
 }
 
-.btn--clean {}
+.btn--clean {
+}
 
 .btn--link {
-	color: @ci-color1;
-	&:hover,
-	&:active,
-	&:focus {
-		color: @middleblack;
-	}
+    color: @lk-general;
+    &:hover,
+    &:active,
+    &:focus {
+        color: @lh-general;
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
+				color: @middleblack;
+			});;
+            .mx-dark-mode-rules ({
+				color: @lh-general;
+			});;
+        }
+    }
 }
 
-.btn--hidden {}
+.btn--hidden {
+}
 
-.btn--inactive {}
+.btn--inactive {
+}
 
 .btn--icon {
-	&:hover,
-	&:active,
-	&:focus {}
+    &:hover,
+    &:active,
+    &:focus {
+    }
 }
 
-a.btn--icon {}
+a.btn--icon {
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

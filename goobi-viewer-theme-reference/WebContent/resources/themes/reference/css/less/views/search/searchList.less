@@ -8,270 +8,343 @@
 
 /* BLOCK */
 .search-list {
-    /* ELEMENT */
-    &__title {
-        h2 {}
-    }
-    &__options {
-        a, button {
-			position: relative;
-          color: @fg-general;
-        	font-size: @fontMedium;
-            &:hover {
-              color: @ci-color1;
-            }
-			&:focus,
-			&:active {
-				color: @fg-general;
-			}
-            &.active {
-			 color: @ci-color1;
+    &__thumb-bookmark-wrapper {
+        right: 6px;
+        top: 6px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50px;
+        height: 28px;
+        width: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bookmark-toggle__icon {
+            color: @ci-color1;
         }
     }
-    form {}
+    /* ELEMENT */
+    &__title {
+        h2 {
+        }
+    }
+    &__options {
+        a,
+        button {
+            position: relative;
+            color: @fg-general;
+            font-size: @fontMedium;
+            &:hover {
+                color: @ci-color1;
+            }
+            &:focus,
+            &:active {
+                color: @fg-general;
+            }
+            &.active {
+                color: @ci-color1;
+            }
+        }
+        form {
+        }
     }
     &__hitcount,
     &__rss,
     &__save-search,
-    &__excel-export {}
-    &__hitcount {}
-    &__rss {}
-    &__save-search {}
     &__excel-export {
-        a {}
+    }
+    &__hitcount {
+    }
+    &__rss {
+    }
+    &__save-search {
+    }
+    &__excel-export {
+        a {
+        }
         .excel-export-loader {
-            img {}
+            img {
+            }
         }
     }
     &__views {
-    	button {}
-    	[data-view="search-list-default"] {}
-    	[data-view="search-list-grid"] {}
-    	[data-view="search-list-list"] {}
+        button {
+        }
+        [data-view='search-list-default'] {
+        }
+        [data-view='search-list-grid'] {
+        }
+        [data-view='search-list-list'] {
+        }
     }
     /* CURRENT SEARCH */
-    &__label {}
+    &__label {
+    }
     &__current-search {
-    	margin-bottom: 1.5rem;
-        .form-group {}
+        margin-bottom: 1.5rem;
+        .form-group {
+        }
         .input-group-addon {
             a {
                 &:hover,
                 &:focus,
-                &:active {}
+                &:active {
+                }
             }
             &.reset,
             &.search {
-                a, button {
-                	line-height: unset;
+                a,
+                button {
+                    line-height: unset;
                 }
             }
             &.reset {
-            	&.focus {}
+                &.focus {
+                }
             }
             &.search {
-                a {}
+                a {
+                }
             }
-            input[type="submit"] {
-            	padding: 10px 20px;
+            input[type='submit'] {
+                padding: 10px 20px;
             }
         }
         .form-control {
-        	&:focus {}
+            &:focus {
+            }
         }
         & + hr {
-        	display: none;
+            display: none;
         }
     }
     /* LINKS */
     &__links {
-        button {}
-        form {}
+        button {
+        }
+        form {
+        }
         a {
-        	font-size: @fontMedium;
+            font-size: @fontMedium;
             &:hover,
             &:focus,
-            &:active {}
+            &:active {
+            }
         }
     }
     /* SORTING */
     &__sorting {
-        .custom-control {}
-        select {}
+        .custom-control {
+        }
+        select {
+        }
     }
     /* ADVANCED SEARCH INFO */
     &__adv-search-info {
-		background: @bg-content-box;
-		color: @fg-content-box;
-		border: @border;
-	}
-    &__adv-search-info-back {}
-    /* HITS */
-    &__hits {}
-    &__hit {
-    	background-color: @bg-content-box;
-      color: @fg-content-box;
-      border: @border;
-		/* COLORING FOR THE ENTITY GHOUPS */
-		&.docstructtype__work {
-				border: 1px solid #DC7E2E;
-		}
-		&.docstructtype__person {
-				border: 1px solid #B13B29;
-		}
-		&.docstructtype__agent {
-				border: 1px solid #568FB2;
-		}
-		&.docstructtype__award {
-				border: 1px solid #2E8D38;
-		}
-		&.docstructtype__event {
-				border: 1px solid #8966CA;
-		}
+        background: @bg-content-box;
+        color: @fg-content-box;
+        border: @border;
     }
-    &__hit-header {}
-	&__hit-number-wrapper {
-		background: @ci-color1;
-	}
-	&__hit-number {}
+    &__adv-search-info-back {
+    }
+    /* HITS */
+    &__hits {
+    }
+    &__hit {
+        background-color: @bg-content-box;
+        color: @fg-content-box;
+        border: @border;
+        /* COLORING FOR THE ENTITY GHOUPS */
+        &.docstructtype__work {
+            border: 1px solid #dc7e2e;
+        }
+        &.docstructtype__person {
+            border: 1px solid #b13b29;
+        }
+        &.docstructtype__agent {
+            border: 1px solid #568fb2;
+        }
+        &.docstructtype__award {
+            border: 1px solid #2e8d38;
+        }
+        &.docstructtype__event {
+            border: 1px solid #8966ca;
+        }
+    }
+    &__hit-header {
+    }
+    &__hit-number-wrapper {
+        background: @ci-color1;
+    }
+    &__hit-number {
+    }
     &__hit-title,
     &__hit-type,
-    &__hit-info {}
+    &__hit-info {
+    }
     &__hit-title {
         h3 {
-			  font-size: @fontNormal;
-        a {
-            color: @lk-content-box
+            font-size: @fontNormal;
+            a {
+                color: @lk-content-box;
+            }
         }
+        &.-noThumbnail {
         }
-    	&.-noThumbnail {}
     }
     &__no-thumb-bookmark {
-    	&[data-bookmark-list-type="add"] {
-    			color: @ci-color1;
-		}
+        &[data-bookmark-list-type='add'] {
+            color: @ci-color1;
+        }
     }
     &__hit-thumbnail {
         img {
-			border: 2px solid #fff;
-			& when (@colorModes = true) {
-				.mx-light-mode-rules ({
+            border: 2px solid #fff;
+            & when (@colorModes = true) {
+                .mx-light-mode-rules ({
 					border: 2px solid #fff;
-				});
-				.mx-dark-mode-rules ({
+				});;
+                .mx-dark-mode-rules ({
 					border: none;
-				});
-			}
-		}
-        [data-bookmark-list-type="add"] {
-        	color: @ci-color1;
-		}
+				});;
+            }
+        }
+        [data-bookmark-list-type='add'] {
+            color: @ci-color1;
+        }
     }
-    &__hit-type {}
+    &__hit-type {
+    }
     &__hit-docstruct {
-    	font-size: @fontSmall;
-        ul {}
-        li {}
-        li + li:before {}
-        a {}
+        font-size: @fontSmall;
+        ul {
+        }
+        li {
+        }
+        li + li:before {
+        }
+        a {
+        }
     }
     &__hit-text {
-    	font-size: @fontMedium;
+        font-size: @fontMedium;
     }
     &__hit-text-label,
-    &__hit-text-value {}
-    &__hit-text-label {}
-    &__hit-text-value {}
-    &__hit-info {}
-    &__toggle-thumbs {
-    	.-active {
-    		color: @ci-color1;
-    	}
+    &__hit-text-value {
     }
-    a[data-toggle="hit-content"],
-    button[data-toggle="hit-content"] {
-    	font-size: @fontMedium;
-		color: @fg-general;
+    &__hit-text-label {
+    }
+    &__hit-text-value {
+    }
+    &__hit-info {
+    }
+    &__toggle-thumbs {
+        .-active {
+            color: @ci-color1;
+        }
+    }
+    a[data-toggle='hit-content'],
+    button[data-toggle='hit-content'] {
+        font-size: @fontMedium;
+        color: @fg-general;
         &:hover,
         &:focus,
         &:active {
-			color: @fg-general;
-		}
+            color: @fg-general;
+        }
         &:hover,
         &:focus,
-        &:active {}
-        .search-list__loader {}
-        &.active {}
+        &:active {
+        }
+        .search-list__loader {
+        }
+        &.active {
+        }
     }
     &__hit-content {
         dl {
-        	margin-bottom: 0;
-        	font-size: @fontMedium;
+            margin-bottom: 0;
+            font-size: @fontMedium;
         }
-        dt {}
-        dd {}
+        dt {
+        }
+        dd {
+        }
     }
     &__hit-content-set {
-    	padding-bottom: 1rem;
-		&:hover {
-			background-color: @bg-hover;
-			a {
-				color: @fg-general;
-			}
-		}
+        padding-bottom: 1rem;
+        &:hover {
+            background-color: @bg-hover;
+            a {
+                color: @fg-general;
+            }
+        }
     }
     &__hit-content-more {
         .btn {
-	    	font-size: @fontMedium;
+            font-size: @fontMedium;
         }
     }
     &__struct-title,
-    &__struct-chapter {}
+    &__struct-chapter {
+    }
     &__struct-title {
-    	margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         h4 {
-        	line-height: 2.1rem;
+            line-height: 2.1rem;
         }
     }
     &__metadata-info {
-    	td {
-    		&:first-child {}
-    	}
+        td {
+            &:first-child {
+            }
+        }
     }
     &__struct-child-hits {
-        a {}
+        a {
+        }
     }
-    &__struct-chapter {}
-    &__struct-chapter + .search-list__struct-title  {}
+    &__struct-chapter {
+    }
+    &__struct-chapter + .search-list__struct-title {
+    }
     /* FACETS HEADING */
-    &__facets-heading {}
-	// SEARCH GROUP STYLES
-	&__hit-result-group-heading {
-
-	}
-	&__expand-group-link {
-		
-	}
+    &__facets-heading {
+    }
+    // SEARCH GROUP STYLES
+    &__hit-result-group-heading {
+    }
+    &__expand-group-link {
+    }
 }
 /* MODIFICATION */
-.search-list--highlight {}
+.search-list--highlight {
+}
 
 /* STACKED MV THUMBNAIL */
-.stacked-thumbnail {}
+.stacked-thumbnail {
+}
 .stacked-thumbnail-before,
-.stacked-thumbnail-after {}
-.stacked-thumbnail-after {}
-.stacked-thumbnail a img {}
-.search-list__current-search .input-group-addon.search {}
+.stacked-thumbnail-after {
+}
+.stacked-thumbnail-after {
+}
+.stacked-thumbnail a img {
+}
+.search-list__current-search .input-group-addon.search {
+}
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

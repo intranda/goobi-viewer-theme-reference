@@ -4,127 +4,132 @@
    ==============================================================*/
 /* WIDGET SEARCH FACETS */
 .widget-search-facets {
-	&__body {
-		ul {}
-		
-		li {
-			&.active {
-				a {
-					.icon-wrapper {
-						color: black;
-						& when (@colorModes = true) {
-							.mx-dark-mode-rules ({
-								color: white;
-							});
-							.mx-light-mode-rules ({
-								color: black;
-							});
-						}
-					}
-					background-color: @bg-hover;
-				}
-			}
-		}
-	}
-	
-	&__list {
-		scrollbar-color: @lk-content-box transparent;
-	}
-	
-	/* FILTER */
-	&__filter {
-		top: 0;
-		input, button {}
-		input {
-			background-color: @ci-hovercolor1;
-			&::-webkit-input-placeholder {}
-			&:-moz-placeholder {}
-			&::-moz-placeholder {}
-			&:-ms-input-placeholder {}
-			&.in {}
-		}
-		[data-toggle="filter-input"] {}
-	}
-	
-	&__filter-input {}
-	
-	/* COLLECTION/GROUPS */
-	&__collection,
-	&__groups {
-		ul {}
-	}
-	
-	&__collection {}
-	
-	&__groups {}
-	
-	/* COLLAPSE FACETS */
-    &__collapse {
-        a {}
-    }
-	
-	&__boolean {
+    &__body {
+        ul {
+        }
 
-	}
-	
-	&__boolean-button {
-		color: @fg-general;
-		border: @border;
-		
-		& when (@colorModes = true) {
-			.mx-dark-mode-rules ({
+        li {
+            &.active {
+                a {
+                    background-color: @bg-hover;
+                }
+            }
+        }
+    }
+
+    &__list {
+        scrollbar-color: @lk-content-box transparent;
+    }
+
+    /* FILTER */
+    &__filter {
+        top: 0;
+        input,
+        button {
+        }
+        input {
+            background-color: @ci-hovercolor1;
+            &::-webkit-input-placeholder {
+            }
+            &:-moz-placeholder {
+            }
+            &::-moz-placeholder {
+            }
+            &:-ms-input-placeholder {
+            }
+            &.in {
+            }
+        }
+        [data-toggle='filter-input'] {
+        }
+    }
+
+    &__filter-input {
+    }
+
+    /* COLLECTION/GROUPS */
+    &__collection,
+    &__groups {
+        ul {
+        }
+    }
+
+    &__collection {
+    }
+
+    &__groups {
+    }
+
+    /* COLLAPSE FACETS */
+    &__collapse {
+        a {
+        }
+    }
+
+    &__boolean {
+    }
+
+    &__boolean-button {
+        color: @fg-general;
+        border: @border;
+
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 				background: @bg-active;
-			});
-			.mx-light-mode-rules ({
+			});;
+            .mx-light-mode-rules ({
 				background: transparent;
-			});
-		}
-		&:hover {
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
+			});;
+        }
+        &:hover {
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 					color: @fg-general;
 					background: @bg-hover;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					color: @fg-general;
 					background: @bg-hover;
-				});
-			}
-		}
-		
-		&.-active {
-			& when (@colorModes = true) {
-				.mx-dark-mode-rules ({
+				});;
+            }
+        }
+
+        &.-active {
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 					// color: white;
 					background-color: @bg-hover;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					background-color: @bg-hover;
-				});
-			}
-			&:hover {
-				.mx-dark-mode-rules ({
+				});;
+            }
+            &:hover {
+                .mx-dark-mode-rules ({
 					color: @fg-general;
 					background-color: @bg-hover;
-				});
-				.mx-light-mode-rules ({
+				});;
+                .mx-light-mode-rules ({
 					color: @fg-general;
 					background-color: @bg-hover;
-				});
-			}
-		}
-	}
+				});;
+            }
+        }
+    }
 }
 
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

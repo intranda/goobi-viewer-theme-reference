@@ -3,73 +3,77 @@
    style declarations for widget_copyrightInfo.xhtml
    ==============================================================*/
 .widget-copyright {
-	border-top: @border;
-	background: white;
-	.rs-svg-path {
-		fill: #000;
-	}
-	.paragraph-svg-path {
-		fill: #000;
-	}
-	& when (@colorModes = true) {
-		.mx-light-mode-rules ({
+    border-top: @border;
+    background: white;
+    .rs-svg-path {
+        fill: #000;
+    }
+    .paragraph-svg-path {
+        fill: #000;
+    }
+    & when (@colorModes = true) {
+        .mx-light-mode-rules ({
 			.rs-svg-path {
 				fill: #000;
 			}
 			.paragraph-svg-path {
 				fill: #000;
 			}
-		});
-		.mx-dark-mode-rules ({
+		});;
+        .mx-dark-mode-rules ({
 			.rs-svg-path {
 				fill: #fff;
 			}
 			.paragraph-svg-path {
 				fill: #fff;
 			}
-		});
-	}
-	& when (@colorModes = true) {
-		.mx-light-mode-rules ({
+		});;
+    }
+    & when (@colorModes = true) {
+        .mx-light-mode-rules ({
 			background: white;
-		});
-		.mx-dark-mode-rules ({
+		});;
+        .mx-dark-mode-rules ({
 			background: @bg-content-box;
-		});
-	}
+		});;
+    }
     &__dot {
-		color: #000;
-		& when (@colorModes = true) {
-			.mx-light-mode-rules ({
+        color: #000;
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
 				color: #000;
-			});
-			.mx-dark-mode-rules ({
+			});;
+            .mx-dark-mode-rules ({
 				color: white;
-			});
-		}
-	}
-	&__status-icon {
-		color: @black;
-		
-		& when (@colorModes = true) {
-			.mx-light-mode-rules ({
+			});;
+        }
+    }
+    &__status-icon {
+        color: @black;
+
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
 				color: @black;
-			});
-			.mx-dark-mode-rules ({
+			});;
+            .mx-dark-mode-rules ({
 				color: @white;
-			});
-		}
-	}
+			});;
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

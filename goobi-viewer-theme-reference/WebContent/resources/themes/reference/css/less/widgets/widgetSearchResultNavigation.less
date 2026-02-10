@@ -4,69 +4,82 @@
    ==============================================================*/
 
 .widget-search-result-navigation {
-   	&__topbar {}
-   	&__title {}
-   	&__body {}
-   	&__wrapper {}
-   	&__left,
-   	&__center,
-   	&__right {
-   		&:hover {
-   			svg {}
-   		}
-   	}
-   	&__left,
-   	&__right {
-		&:hover {
-			svg {
-		    	background-color: @lightgray;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+    &__topbar {
+    }
+    &__title {
+    }
+    &__body {
+    }
+    &__wrapper {
+    }
+    &__left,
+    &__center,
+    &__right {
+        &:hover {
+            svg {
+            }
+        }
+    }
+    &__left,
+    &__right {
+        &:hover {
+            svg {
+                background-color: @lightgray;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 		    			background-color: @bg-hover;
-					});
-					.mx-light-mode-rules ({
+					});;
+                    .mx-light-mode-rules ({
 		    			background-color: @lightgray;
-					});
-				}
-			}
-		}
-	}
-   	&__left {
-   		svg {}
-   	}
-   	&__center {}
-   	&__right {
-   		svg {}
-   	}
-   	&__back-to-collection {
-		font-size: @fontMedium;
-   		a {
-   			svg {}
-   		}
-		&:hover {
-			svg {
-		    	background-color: @lightgray;
-				& when (@colorModes = true) {
-					.mx-dark-mode-rules ({
+					});;
+                }
+            }
+        }
+    }
+    &__left {
+        svg {
+        }
+    }
+    &__center {
+    }
+    &__right {
+        svg {
+        }
+    }
+    &__back-to-collection {
+        font-size: @fontMedium;
+        a {
+            svg {
+            }
+        }
+        &:hover {
+            svg {
+                background-color: @lightgray;
+                & when (@colorModes = true) {
+                    .mx-dark-mode-rules ({
 		    			background-color: @bg-hover;
-					});
-					.mx-light-mode-rules ({
+					});;
+                    .mx-light-mode-rules ({
 		    			background-color: @lightgray;
-					});
-				}
-			} 
-		}
-   	}
+					});;
+                }
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {}
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

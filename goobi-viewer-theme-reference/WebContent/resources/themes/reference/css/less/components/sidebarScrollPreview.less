@@ -6,72 +6,80 @@
 /* THUMBNAIL PAGINATOR */
 
 .sidebar-scroll-preview {
-	&__inner {} 
-	&__grid {
-		.simplebar-track {
-		}
-		.simplebar-scrollbar {
-			&:before {
-				& when (@colorModes = true) {
-					.mx-light-mode-rules ({
+    &__inner {
+    }
+    &__grid {
+        .simplebar-track {
+        }
+        .simplebar-scrollbar {
+            &:before {
+                & when (@colorModes = true) {
+                    .mx-light-mode-rules ({
 						background-color: #000;
-					});
-					.mx-dark-mode-rules ({
+					});;
+                    .mx-dark-mode-rules ({
 						background-color: #fff;
-					});
-				}
-			}
-		}
-	}
-	&__item {}
-	&__button,
-	&__link {
-		color: @fg-general;
-		&:hover,
-		&:active,
-		&:focus {
-			color: @fg-general;
-		}
-		&.-highlighted {
-			background-color: @ci-color1;
-			color: white;
-			outline: none;
-		}
-	} 
-	&__button-text {}
-	&__image { 
-		&.-loaded {}
-	}
+					});;
+                }
+            }
+        }
+    }
+    &__item {
+    }
+    &__button,
+    &__link {
+        color: @fg-general;
+        &:hover,
+        &:active,
+        &:focus {
+            color: @fg-general;
+        }
+        &.-highlighted {
+            background-color: @ci-color1;
+            color: white;
+            outline: none;
+        }
+    }
+    &__button-text {
+    }
+    &__image {
+        &.-loaded {
+        }
+    }
 }
 
 @{RTL} {
-	.sidebar-scroll-preview {
-		&__grid {
-			.simplebar-track {}
-		}
-	}
+    .sidebar-scroll-preview {
+        &__grid {
+            .simplebar-track {
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-	.thumbnail-paginator {
-		&__item {
-			&.-activePage {
-				.thumbnail-paginator__image {
-				}
-			}
-		}
-		&__image {
-			height: 160px;
-		}
-	}
+    .thumbnail-paginator {
+        &__item {
+            &.-activePage {
+                .thumbnail-paginator__image {
+                }
+            }
+        }
+        &__image {
+            height: 160px;
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}

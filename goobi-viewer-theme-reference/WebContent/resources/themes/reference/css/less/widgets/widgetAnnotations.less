@@ -3,61 +3,72 @@
    style declarations for widget_annotations.xhtml
    ==============================================================*/
 #widgetAnnotations {
-    h2 {}
+    h2 {
+    }
     ul {
         li {
             .dl-horizontal {
-                dt {}
-                dd {}
+                dt {
+                }
+                dd {
+                }
             }
         }
     }
     #user_generated_content_nav .ugc-highlight {
-		& when (@colorModes = true) {
-			.mx-dark-mode-rules ({
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 				background-color: @bg-hover;
-			});
-			.mx-light-mode-rules ({
-			});
-		}
+			});;
+            .mx-light-mode-rules ({
+			});;
+        }
     }
 }
 
 .widget-annotations {
-	.widget__body {
-		&.-scrollable {}
-	}
-	&__entry {
-		button {}
-		&.-onpage {
-			border-left-color: @ci-color1;
-		}
-	}
-	&__type {}
-	&__text {
-	}
-	&__link {}
-	&__button {
-	    &:hover {
-	    }
-	    &.disabled {}
-	}
-	&__page {
-		span {
-			background: @ci-color1;
-		}
-	}
+    .widget__body {
+        &.-scrollable {
+        }
+    }
+    &__entry {
+        button {
+        }
+        &.-onpage {
+            border-left-color: @ci-color1;
+        }
+    }
+    &__type {
+    }
+    &__text {
+    }
+    &__link {
+    }
+    &__button {
+        &:hover {
+        }
+        &.disabled {
+        }
+    }
+    &__page {
+        span {
+            background: @ci-color1;
+        }
+    }
 }
 
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
-@media screen and (max-width: @largeBreakpoint) {} 
+@media screen and (max-width: @largeBreakpoint) {
+}
 
 /* BREAKPOINT FOR DESKTOPS */
-@media screen and (max-width: @mediumBreakpoint) {}
+@media screen and (max-width: @mediumBreakpoint) {
+}
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {}
+@media screen and (max-width: @xSmallBreakpoint) {
+}
