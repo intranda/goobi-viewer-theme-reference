@@ -196,7 +196,7 @@ function taskFooter(generated, copied, errors, started) {
 }
 
 /**
- * Compact task logger to avoid boilerplate across tasks.
+ * Compact task logger to avoid reference across tasks.
  * @param {Object} o
  * @param {string} o.name
  * @param {bigint} o.started
@@ -589,7 +589,10 @@ function syncAll() {
     let copied = 0;
 
     return gulp
-        .src(joinPosix(paths.staticRoot, '**/*'), {
+		    .src([ 
+		        joinPosix(paths.staticRoot, '**/*'),
+				'!' + joinPosix(paths.staticRoot, 'resources/themes/*.xml'),
+		    ], {
             dot: true,
             allowEmpty: true,
             base: paths.staticRoot,
@@ -605,7 +608,7 @@ function syncAll() {
             logTask({
                 name: 'sync-all',
                 started,
-                src: `${path.resolve(paths.staticRoot)}/**/*`,
+                src: toPosix(path.resolve(paths.staticRoot)) + '/**/*',
                 projOut: [],
                 deployOut: [],
                 genCount: 0,
