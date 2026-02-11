@@ -1,60 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.goobi.viewer</groupId>
+		<artifactId>viewer</artifactId>
+		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
-	<version>26.05-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-
 	<name>Goobi viewer - Theme Reference</name>
-	<url>https://github.com/intranda/goobi-viewer-theme-reference</url>
-
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>21</maven.compiler.release>
-
-		<!-- Manifest information -->
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
 		<buildDate>${maven.build.timestamp}</buildDate>
 	</properties>
 
 
-	<repositories>
-		<repository>
-			<id>intranda-public</id>
-			<url>https://nexus.intranda.com/repository/maven-public</url>
-		</repository>
-	</repositories>
-
-
-	<scm>
-		<url>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</url>
-		<connection>scm:git:https://github.com/intranda/goobi-viewer-theme-reference/</connection>
-	</scm>
-
-
 	<dependencies>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>26.05-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core-config</artifactId>
-			<version>26.05-SNAPSHOT</version>
+			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-connector</artifactId>
-			<version>26.05-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -72,15 +57,15 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>26.05-SNAPSHOT</version>
+					<version>${revision}</version>
 				</dependency>
 			</dependencies>
 		</profile>
 	</profiles>
 
 
-    <build>
-        <finalName>viewer</finalName>
+	<build>
+		<finalName>viewer</finalName>
 		<resources>
 			<resource>
 				<directory>WebContent</directory>
@@ -91,44 +76,23 @@
 			</resource>
 		</resources>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.6.2</version>
-				<executions>
-					<execution>
-						<id>enforce-maven</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<requireMavenVersion>
-									<version>3.6.3</version>
-								</requireMavenVersion>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
 			<!-- Maven Resource Plugin - important: nonfilteredfileextensions to prevent file corruption -->
 			<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-resources-plugin</artifactId>
-               <version>3.3.1</version>
-		        <configuration>
-				<nonFilteredFileExtensions>
-					<nonFilteredFileExtension>ico</nonFilteredFileExtension>
-					<nonFilteredFileExtension>eot</nonFilteredFileExtension>
-					<nonFilteredFileExtension>svg</nonFilteredFileExtension>
-					<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
-					<nonFilteredFileExtension>woff</nonFilteredFileExtension>
-					<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
-					<nonFilteredFileExtension>svg</nonFilteredFileExtension>
-				</nonFilteredFileExtensions>
-		        </configuration>
-		     </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+						<nonFilteredFileExtension>eot</nonFilteredFileExtension>
+						<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+						<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
 
 			<!-- Maven Compiler Plugin -->
 			<plugin>
@@ -233,6 +197,7 @@
 					</execution>
 				</executions>
 				<configuration>
+					<scmDirectory>${project.basedir}/..</scmDirectory>
 					<shortRevisionLength>7</shortRevisionLength>
 					<doCheck>false</doCheck>
 				</configuration>
