@@ -22,6 +22,15 @@
     &__input-group {
         .form-control__select,
         input[type='text'] {
+            background: @white;
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
+                    background: @fg-general;
+                });;
+                .mx-light-mode-rules ({
+                    background: @white;
+                });;
+            }
         }
         input[type='text'] {
             &:focus {
