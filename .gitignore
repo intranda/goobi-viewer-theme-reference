@@ -8,3 +8,5 @@
 /target/
 /.metadata/
 /.src/rebel.xml
+/.settings/
+.classpath
