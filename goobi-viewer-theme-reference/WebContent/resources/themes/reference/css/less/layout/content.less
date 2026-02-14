@@ -21,6 +21,14 @@
         min-width: 200px;
         scroll-margin-top: 150px; // offset for fixed top navigation
     }
+
+    &__wrapper:not(:has(.content__sidebar .widget, .content__sidebar .widget-admin, .content__sidebar .admin-widget)) {
+        grid-template-columns: 1fr;
+
+        .content__sidebar {
+            display: none;
+        }
+    }
     &__mobile-sidebar-trigger {
         display: none;
         position: fixed;
