@@ -91,7 +91,7 @@
 			&:disabled {
 				background: #e9ecef;
 			}
-			background: @fg-general;
+			background: @fg-controls;
 		});;
         .mx-light-mode-rules ({
 			&:disabled {
@@ -115,8 +115,16 @@
 }
 /* MODALS */
 .modal {
-    color: rgb(33, 37, 41);
     z-index: 9999;
+    color: rgb(33, 37, 41);
+    & when (@colorModes = true) {
+        .mx-light-mode-rules ({
+            color: rgb(33, 37, 41);
+        });;
+        .mx-dark-mode-rules ({
+            color: @fg-content-box;
+        });;
+    }
 
     h1,
     h2,
@@ -124,6 +132,14 @@
     h4,
     h5 {
         color: rgb(33, 37, 41);
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
+				color: rgb(33, 37, 41);
+			});;
+            .mx-dark-mode-rules ({
+				color: @fg-content-box;
+			});;
+        }
     }
     .custom-control--select {
         border: 1px solid #ccc;
@@ -131,10 +147,28 @@
     }
     .btn.btn--clean {
         color: rgb(33, 37, 41);
+
+        & when (@colorModes = true) {
+            .mx-light-mode-rules ({
+				color: rgb(33, 37, 41);
+			});;
+            .mx-dark-mode-rules ({
+                color: @fg-general;
+			});;
+        }
     }
     .btn.btn--full {
         background: @ci-color1;
         border-color: @ci-color1;
+    }
+
+    .modal-content {
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
+                background-color: @bg-content-box;
+                color: @fg-content-box;
+            });;
+        }
     }
 }
 
@@ -168,7 +202,16 @@
 
 .modal-header {
     .fancy-close {
-        &:hover {
+        &::before,
+        &::after {
+            & when (@colorModes = true) {
+                .mx-light-mode-rules ({
+                    background-color: @black;
+                });;
+                .mx-dark-mode-rules ({
+                    background-color: @fg-content-box;
+                });;
+            }
         }
     }
 }

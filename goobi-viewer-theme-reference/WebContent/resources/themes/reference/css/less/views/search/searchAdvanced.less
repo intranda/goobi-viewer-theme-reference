@@ -25,7 +25,7 @@
             background: @white;
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
-                    background: @fg-general;
+                    background: @fg-controls;
                 });;
                 .mx-light-mode-rules ({
                     background: @white;
@@ -73,7 +73,9 @@
             background: #f7f7f7;
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
-	            background: @fg-general;
+	            background: @bg-active;
+                color: @fg-general;
+                border-color: @bg-active;
 	        });;
                 .mx-light-mode-rules ({
 		        background: #f7f7f7;

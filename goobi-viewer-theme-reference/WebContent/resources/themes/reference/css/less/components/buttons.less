@@ -18,6 +18,19 @@
     &:active.focus {
         color: @black;
     }
+
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
+            background: @bg-active;
+            color: @fg-general;
+            border-color: @bg-active;
+
+            &:hover {
+                background: @ci-hovercolor1;
+                border-color: @ci-hovercolor1;
+            }
+        });;
+    }
 }
 
 .btn--success {
@@ -66,7 +79,14 @@
 				color: @middleblack;
 			});;
             .mx-dark-mode-rules ({
-				color: @lh-general;
+				background: @bg-active;
+                color: @fg-general;
+                border-color: @bg-active;
+
+                &:hover {
+                    background: @ci-hovercolor1;
+                    border-color: @ci-hovercolor1;
+                }
 			});;
         }
     }
