@@ -5568,26 +5568,9 @@ html[dir='rtl'] .widget-chronology-slider__item.chronology-slider-end {
 #archivesWrapper {
     background-color: var(--bg-general);
 }
-.archives__top-wrapper,
 .archives__wrapper {
     background-color: var(--bg-general);
     color: var(--fg-general);
-}
-.archives__top-wrapper a {
-    color: var(--fg-general);
-}
-.archives__top-wrapper a:hover,
-.archives__top-wrapper a:focus,
-.archives__top-wrapper a:active {
-    color: var(--lh-general);
-}
-.archives__header {
-    background: var(--bg-content-box);
-    border-bottom: var(--border);
-    color: var(--fg-general);
-}
-.archives__header-exit a svg {
-    stroke: var(--fg-controls);
 }
 .archives__object-info-heading {
     background-color: #095d42;
