@@ -17,10 +17,8 @@
 	<name>Goobi viewer - Theme Reference</name>
 
 	<properties>
-		<maven.compiler.release>21</maven.compiler.release>
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
-		<buildDate>${maven.build.timestamp}</buildDate>
 	</properties>
 
 
@@ -57,7 +55,7 @@
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>${revision}</version>
+					<version>26.02-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
