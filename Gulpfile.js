@@ -170,14 +170,9 @@ function noopThrough() {
  * @returns {NodeJS.ReadWriteStream}
  */
 function safeDest(subPath) {
-    if (!DEPLOYMENT_DIR) return noopThrough();
+    if (!HAS_DEPLOYMENT) return noopThrough();
     const full = path.join(DEPLOYMENT_DIR, subPath);
-    try {
-        fs.mkdirSync(full, { recursive: true });
-    } catch (e) {
-        log(colors.yellow(`[deploy] Cannot create target dir, skipping: ${pretty(full)}`));
-        return noopThrough();
-    }
+    fs.mkdirSync(full, { recursive: true });
     if (!fs.existsSync(full)) {
         log(colors.yellow(`[deploy] target does not exist, skipping: ${pretty(full)}`));
         return noopThrough();
@@ -239,20 +234,34 @@ function logTask({
     logBlock(name, lines);
 }
 
+// ── CLI flags ─────────────────────────────────────────────────────────────
+// Supports:
+//   gulp dev --docker
+//   gulp dev docker
+//   npm run dev -- --docker
+//   npm run dev -- docker
+//   GV_DOCKER=1 npm run dev
+const ARGV = process.argv.slice(2).map((a) => String(a).toLowerCase());
+const FORCE_DOCKER =
+    ARGV.includes('docker') ||
+    ARGV.includes('--docker') ||
+    ARGV.includes('-d') ||
+    process.env.GV_DOCKER === '1';
+
 /* ╔══════════════════════════════════════════════════════════════════════╗
    ║ Resolve deployment/theme directories                                  ║
    ╚══════════════════════════════════════════════════════════════════════╝ */
 
 /**
  * Determines deployment target and relevant config file locations.
- * Honors environment overrides and validates that the deployment dir exists.
+ * Returns null for DEPLOYMENT_DIR if config files are not available
+ * (e.g. when using Docker bind mounts instead of local Tomcat).
  *
  * Env overrides (optional):
  * - GV_GULP_CFG: absolute path to ~/.config/gulp_userconfig.json
  * - GV_VIEWER_CFG: absolute path to config_viewer.xml
  *
- * @returns {{DEPLOYMENT_DIR:string, THEME_DIR:string, VIEWER_CFG:string, USER_CFG:string}}
- * @throws {Error} If required configs cannot be read/parsed.
+ * @returns {{DEPLOYMENT_DIR:string|null, THEME_DIR:string, VIEWER_CFG:string, USER_CFG:string}}
  */
 function resolveDirs() {
     const home = os.homedir();
@@ -263,24 +272,49 @@ function resolveDirs() {
             ? 'c:/opt/digiverso/viewer/config/config_viewer.xml'
             : '/opt/digiverso/viewer/config/config_viewer.xml');
 
+    if (FORCE_DOCKER) {
+        log(colors.yellow('[config] Docker mode forced via CLI/env – deployment sync disabled'));
+        return {
+            DEPLOYMENT_DIR: null,
+            THEME_DIR: path.resolve(process.cwd()),
+            VIEWER_CFG: viewerCfgPath,
+            USER_CFG: gulpCfgPath,
+        };
+    }
+
     let cfg;
     try {
         cfg = JSON.parse(fs.readFileSync(gulpCfgPath, 'utf-8'));
     } catch (e) {
-        log(colors.yellow(`[deploy] Cannot parse ${gulpCfgPath}: ${e.message} — deployment sync disabled`));
-        return { DEPLOYMENT_DIR: null, THEME_DIR: path.resolve(process.cwd()), VIEWER_CFG: viewerCfgPath, USER_CFG: gulpCfgPath };
+        log(colors.yellow(`[config] No gulp config found at ${gulpCfgPath} – deployment sync disabled (Docker mode)`));
+        return {
+            DEPLOYMENT_DIR: null,
+            THEME_DIR: path.resolve(process.cwd()),
+            VIEWER_CFG: viewerCfgPath,
+            USER_CFG: gulpCfgPath,
+        };
     }
     if (!cfg.tomcat_dir) {
-        log(colors.yellow(`[deploy] Missing "tomcat_dir" in ${gulpCfgPath} — deployment sync disabled`));
-        return { DEPLOYMENT_DIR: null, THEME_DIR: path.resolve(process.cwd()), VIEWER_CFG: viewerCfgPath, USER_CFG: gulpCfgPath };
+        log(colors.yellow(`[config] Missing "tomcat_dir" in ${gulpCfgPath} – deployment sync disabled`));
+        return {
+            DEPLOYMENT_DIR: null,
+            THEME_DIR: path.resolve(process.cwd()),
+            VIEWER_CFG: viewerCfgPath,
+            USER_CFG: gulpCfgPath,
+        };
     }
 
     let viewerConfig;
     try {
         viewerConfig = XML.parse(fs.readFileSync(viewerCfgPath, 'utf-8'));
     } catch (e) {
-        log(colors.yellow(`[deploy] Cannot parse ${viewerCfgPath}: ${e.message} — deployment sync disabled`));
-        return { DEPLOYMENT_DIR: null, THEME_DIR: path.resolve(process.cwd()), VIEWER_CFG: viewerCfgPath, USER_CFG: gulpCfgPath };
+        log(colors.yellow(`[config] Cannot parse ${viewerCfgPath} – deployment sync disabled`));
+        return {
+            DEPLOYMENT_DIR: null,
+            THEME_DIR: path.resolve(process.cwd()),
+            VIEWER_CFG: viewerCfgPath,
+            USER_CFG: gulpCfgPath,
+        };
     }
 
     const theme = viewerConfig?.viewer?.theme || {};
@@ -323,43 +357,19 @@ function resolveDirs() {
     };
 }
 
-/**
- * Ensures a given path exists and is a directory.
- * @param {string} label
- * @param {string} dir
- * @throws {Error}
- */
-function assertDirExists(label, dir) {
-    if (!dir) throw new Error(`${label} not resolved`);
+/* Resolve once on load */
+const { DEPLOYMENT_DIR, THEME_DIR, VIEWER_CFG, USER_CFG } = resolveDirs();
+
+/** Whether deployment sync is available. */
+const HAS_DEPLOYMENT = (() => {
+    if (!DEPLOYMENT_DIR) return false;
     try {
-        const st = fs.statSync(dir);
-        if (!st.isDirectory()) throw new Error(`${label} is not a directory: ${dir}`);
+        const st = fs.statSync(DEPLOYMENT_DIR);
+        return st.isDirectory();
     } catch {
-        throw new Error(`${label} does not exist: ${dir}`);
+        return false;
     }
-}
-
-/* Resolve once on load, assert lazily for tasks that require deployment */
-const { DEPLOYMENT_DIR, THEME_DIR, VIEWER_CFG, USER_CFG } = (() => {
-    const d = resolveDirs();
-    return d;
 })();
-
-let deploymentDirChecked = false;
-function requireDeploymentDir() {
-    if (!deploymentDirChecked) {
-        deploymentDirChecked = true;
-        if (!DEPLOYMENT_DIR) {
-            log(colors.yellow('[deploy] No deployment directory configured — skipping sync'));
-            return;
-        }
-        try {
-            assertDirExists('DEPLOYMENT_DIR', DEPLOYMENT_DIR);
-        } catch (e) {
-            log(colors.yellow(`[deploy] ${e.message} — skipping sync`));
-        }
-    }
-}
 
 /* ╔══════════════════════════════════════════════════════════════════════╗
    ║ Styles: LESS → CSS (+ sourcemaps + autoprefixer)                      ║
@@ -388,7 +398,7 @@ function remapLessSource(sourcePath, entryDir) {
  * @returns {NodeJS.ReadWriteStream} Merged stream of all bundle pipelines.
  */
 function buildStyles(changedFilePath = null) {
-    requireDeploymentDir();
+
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
 
@@ -472,20 +482,22 @@ function buildStyles(changedFilePath = null) {
                 collectFiles((file) => {
                     const outPath = path.join(paths.cssDist, path.basename(file.path));
                     projectOutputs.push(outPath);
-                    deployOutputs.push(
-                        path.join(
-                            DEPLOYMENT_DIR,
-                            'resources/themes/' + THEME.name + '/css/dist',
-                            path.basename(file.path)
-                        )
-                    );
-                    deployOutputs.push(
-                        path.join(
-                            DEPLOYMENT_DIR,
-                            'WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist',
-                            path.basename(file.path)
-                        )
-                    );
+                    if (HAS_DEPLOYMENT) {
+                        deployOutputs.push(
+                            path.join(
+                                DEPLOYMENT_DIR,
+                                'resources/themes/' + THEME.name + '/css/dist',
+                                path.basename(file.path)
+                            )
+                        );
+                        deployOutputs.push(
+                            path.join(
+                                DEPLOYMENT_DIR,
+                                'WEB-INF/classes/resources/themes/' + THEME.name + '/css/dist',
+                                path.basename(file.path)
+                            )
+                        );
+                    }
                 })
             )
             .pipe(gulp.dest(paths.cssDist))
@@ -534,12 +546,12 @@ function buildStyles(changedFilePath = null) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function bundleCustomJS(changedFilePath = null) {
-    requireDeploymentDir();
+
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const srcList = JS_SOURCES.map((p) => joinPosix(paths.jsDev, p));
     const outProj = path.join(paths.jsDist, 'custom.min.js');
-    const outDeploy = path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', 'custom.min.js');
+    const outDeploy = HAS_DEPLOYMENT ? path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', 'custom.min.js') : null;
 
     return gulp
         .src(srcList, { allowEmpty: true })
@@ -555,7 +567,7 @@ function bundleCustomJS(changedFilePath = null) {
                 changed: changedFilePath,
                 src: joinPosix(paths.jsDev, `{${JS_SOURCES.join(',')}}`),
                 projOut: [outProj],
-                deployOut: [outDeploy],
+                deployOut: outDeploy ? [outDeploy] : [],
             });
         });
 }
@@ -567,11 +579,11 @@ function bundleCustomJS(changedFilePath = null) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function compileRiotTags(changedFilePath = null) {
-    requireDeploymentDir();
+
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const outProj = path.join(paths.jsDist, `${THEME.name}-tags.js`);
-    const outDeploy = path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', `${THEME.name}-tags.js`);
+    const outDeploy = HAS_DEPLOYMENT ? path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', `${THEME.name}-tags.js`) : null;
 
     return gulp
         .src(joinPosix(paths.jsDev, '*.tag'), { allowEmpty: true })
@@ -587,7 +599,7 @@ function compileRiotTags(changedFilePath = null) {
                 changed: changedFilePath,
                 src: joinPosix(paths.jsDev, '*.tag'),
                 projOut: [outProj],
-                deployOut: [outDeploy],
+                deployOut: outDeploy ? [outDeploy] : [],
             });
         });
 }
@@ -600,8 +612,11 @@ function compileRiotTags(changedFilePath = null) {
  * One-shot mirror of the entire static tree into the deployment directory.
  * @returns {NodeJS.ReadWriteStream}
  */
-function syncAll() {
-    requireDeploymentDir();
+function syncAll(cb) {
+    if (!HAS_DEPLOYMENT) {
+        log(colors.yellow('[sync-all] No deployment dir configured – skipping (Docker mode)'));
+        return cb();
+    }
     const started = tStart();
     let copied = 0;
 
@@ -642,6 +657,7 @@ function syncAll() {
  * @returns {Promise<void>}
  */
 async function removeFromDeploy(filePath) {
+    if (!HAS_DEPLOYMENT) return;
     const rel = path.relative(paths.staticRoot, filePath).replace(/\\/g, '/');
     const dst = path.join(DEPLOYMENT_DIR, rel);
     try {
@@ -659,6 +675,7 @@ async function removeFromDeploy(filePath) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function mirrorStatic(filePath) {
+    if (!HAS_DEPLOYMENT) return;
     const started = tStart();
     const rel = path.relative(paths.staticRoot, filePath).replace(/\\/g, '/');
     const dst = path.join(DEPLOYMENT_DIR, rel);
@@ -691,7 +708,7 @@ function mirrorStatic(filePath) {
  * @returns {NodeJS.ReadWriteStream}
  */
 function cacheBump() {
-    requireDeploymentDir();
+
     const started = tStart();
     const d = new Date();
     const stamp = [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()].join(
@@ -715,7 +732,7 @@ function cacheBump() {
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.templates))
         .pipe(gulp.dest(paths.templates))
-        .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))))
+        .pipe(HAS_DEPLOYMENT ? collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.templates))) : noopThrough())
         .pipe(safeDest(path.relative(paths.staticRoot, paths.templates).replace(/\\/g, '/')));
 
     const b = gulp
@@ -724,7 +741,7 @@ function cacheBump() {
         .pipe(replace(pattern, `cachetimestamp=${stamp}`))
         .pipe(collectTo(projOut, paths.includes))
         .pipe(gulp.dest(paths.includes))
-        .pipe(collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.includes))))
+        .pipe(HAS_DEPLOYMENT ? collectTo(deployOut, path.join(DEPLOYMENT_DIR, path.relative(paths.staticRoot, paths.includes))) : noopThrough())
         .pipe(safeDest(path.relative(paths.staticRoot, paths.includes).replace(/\\/g, '/')));
 
     return merge(a, b).on('finish', () => {
@@ -763,24 +780,28 @@ function printTargets(cb) {
         colors.gray('hint: GV_VIEWER_CFG / GV_GULP_CFG can override defaults'),
     ]);
 
-    const depPath = toPosix(DEPLOYMENT_DIR).toLowerCase();
-    const projBase = path.basename(THEME_DIR);
-    const projBaseLc = projBase.toLowerCase();
-    const projBaseStrippedLc = projBaseLc.replace(/^goobi-viewer-theme-/, '');
+    if (HAS_DEPLOYMENT) {
+        const depPath = toPosix(DEPLOYMENT_DIR).toLowerCase();
+        const projBase = path.basename(THEME_DIR);
+        const projBaseLc = projBase.toLowerCase();
+        const projBaseStrippedLc = projBaseLc.replace(/^goobi-viewer-theme-/, '');
 
-    const contains =
-        depPath.includes(`/${projBaseLc}/`) ||
-        depPath.endsWith(`/${projBaseLc}`) ||
-        depPath.includes(`/${projBaseStrippedLc}/`) ||
-        depPath.endsWith(`/${projBaseStrippedLc}`);
+        const contains =
+            depPath.includes(`/${projBaseLc}/`) ||
+            depPath.endsWith(`/${projBaseLc}`) ||
+            depPath.includes(`/${projBaseStrippedLc}/`) ||
+            depPath.endsWith(`/${projBaseStrippedLc}`);
 
-    if (!contains) {
-        log(
-            colors.yellow(
-                `[warn] Possible mismatch: theme folder "${projBase}" not reflected in deployment path.\n` +
+        if (!contains) {
+            log(
+                colors.yellow(
+                    `[warn] Possible mismatch: theme folder "${projBase}" not reflected in deployment path.\n` +
                     `           Ensure you are running gulp in the correct theme repo.`
-            )
-        );
+                )
+            );
+        }
+    } else {
+        log(colors.cyan('[info] No deployment dir – running in Docker/bind-mount mode'));
     }
 
     cb();
@@ -795,7 +816,7 @@ function printTargets(cb) {
  * Rebuilds and mirrors changes into the deployment folder where applicable.
  */
 function watchMode() {
-    requireDeploymentDir();
+
     const watchOpts = {
         ignoreInitial: true,
         awaitWriteFinish: { stabilityThreshold: 700, pollInterval: 50 },
@@ -840,16 +861,18 @@ const buildAssets = gulp.series(gulp.parallel(buildStyles, bundleCustomJS, compi
 
 exports.build = buildAssets;
 exports.dev = gulp.series(syncAll, watchMode);
+exports.docker = (cb) => cb(); // consumed as FORCE_DOCKER flag; no task logic needed
 exports['sync-all'] = syncAll;
 exports.cache = gulp.series(cacheBump);
 exports.target = printTargets;
 
 /* ── Task exports ──────────────────────────────────────────
-   - npm run build     → Build styles, JS, riot tags
-   - npm run dev       → Start watchers (no full sync)
-   - npm run sync      → One-shot full static sync
-   - npm run cache     → Update cache-busting timestamps
-   - npm run target    → Show resolved paths
+   - npm run build         → Build styles, JS, riot tags
+   - npm run dev           → Start watchers (no full sync)
+   - npm run dev -- docker → Start watchers no deployment necessary
+   - npm run sync          → One-shot full static sync
+   - npm run cache         → Update cache-busting timestamps
+   - npm run target        → Show resolved paths
 
    Env flags:
    - GV_AUTOPREFIX=0 → disable autoprefixer entirely
