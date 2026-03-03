@@ -34,8 +34,10 @@
         <meta name="templateBlank" />
 
         <title>
-            <h:outputText value="#{activeDocumentBean.titleBarLabel} - " rendered="#{activeDocumentBean.titleBarLabel !=
-            null}" />#{adminThemesBean.getThemeLabel(configurationBean.name)}
+            <ui:fragment rendered="#{not empty pageTitle}">#{pageTitle}</ui:fragment> <ui:fragment rendered="#{empty
+            pageTitle}"> <h:outputText value="#{activeDocumentBean.titleBarLabel} - "
+            rendered="#{activeDocumentBean.titleBarLabel != null}"
+            />#{adminThemesBean.getThemeLabel(configurationBean.name)} </ui:fragment>
         </title>
 
         <!-- META TAGS -->

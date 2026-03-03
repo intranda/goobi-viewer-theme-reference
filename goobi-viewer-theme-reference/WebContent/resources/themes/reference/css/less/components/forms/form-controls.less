@@ -21,7 +21,7 @@
     & when (@colorModes = true) {
         background: @white;
         .mx-dark-mode-rules ({
-			background: @fg-general;
+			background: @fg-controls;
 		});;
         .mx-light-mode-rules ({
 			background: @white;
@@ -42,7 +42,7 @@
         background: @white;
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
-				background: @fg-general;
+				background: @fg-controls;
 			});;
             .mx-light-mode-rules ({
 				background: @white;
@@ -52,5 +52,17 @@
         }
     }
     select[disabled='disabled'] {
+    }
+}
+
+.cms-module__option-dropdown-trigger {
+    background: @white;
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
+            background: @fg-controls;
+        });;
+        .mx-light-mode-rules ({
+            background: @white;
+        });;
     }
 }

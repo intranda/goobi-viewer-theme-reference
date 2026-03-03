@@ -19,6 +19,14 @@
 
     &__list {
         scrollbar-color: @lk-content-box transparent;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
+                scrollbar-color: @bg-active transparent;
+            });;
+            .mx-light-mode-rules ({
+                scrollbar-color: @lk-content-box transparent;
+            });;
+        }
     }
 
     /* FILTER */
