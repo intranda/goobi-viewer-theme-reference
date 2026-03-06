@@ -24,6 +24,17 @@
     --fg-content-box: #212529;
     --lk-content-box: #3365a9;
     --lh-content-box: #444;
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color: var(--ci-color1);
+    --widget-toc-toggle-icon-color-hover: var(--ci-hovercolor1);
+    --widget-toc-link-color-hover: var(--lk-content-box);
+    --widget-toc-active-color: var(--ci-color1);
+    --toc-page-hover-bg: var(--bg-general);
+    --toc-page-toggle-icon-color: var(--ci-color1);
+    --toc-page-toggle-icon-color-hover: var(--fg-hover);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: inherit;
+    --toc-page-border-color: #ccc;
     --login-nav-background: #444;
     --login-nav-background-hover: #5e5e5e;
     --login-nav-text-color: #fff;
@@ -61,6 +72,11 @@
     --archives-placeholder-bg: var(--bg-general);
     --archives-placeholder-icon-color: var(--fg-controls);
 }
+:root .fullscreen {
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+    --widget-toc-link-color-hover: inherit;
+}
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: dark;
@@ -82,6 +98,17 @@
         --lh-general: rgba(255, 255, 255, 0.8);
         --fg-header: rgba(255, 255, 255, 0.8);
         --lh-content-box: rgba(255, 255, 255, 0.8);
+        --widget-toc-hover-bg: var(--bg-active);
+        --widget-toc-toggle-icon-color: var(--fg-content-box);
+        --widget-toc-toggle-icon-color-hover: var(--fg-content-box);
+        --widget-toc-link-color-hover: var(--fg-content-box);
+        --widget-toc-active-color: var(--ci-color1);
+        --toc-page-hover-bg: var(--bg-active);
+        --toc-page-toggle-icon-color: var(--fg-content-box);
+        --toc-page-toggle-icon-color-hover: var(--fg-content-box);
+        --toc-page-link-color: var(--lk-content-box);
+        --toc-page-link-color-hover: var(--fg-content-box);
+        --toc-page-border-color: rgba(255, 255, 255, 0.17);
         --login-nav-background: #253044;
         --login-nav-background-hover: #3b4557;
         --login-nav-text-color: rgba(255, 255, 255, 0.9);
@@ -119,6 +146,11 @@
         --archives-placeholder-bg: var(--bg-content-box);
         --archives-placeholder-icon-color: var(--fg-controls);
     }
+    :root .fullscreen {
+        --widget-toc-hover-bg: transparent;
+        --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+        --widget-toc-link-color-hover: inherit;
+    }
 }
 .color-theme-dark {
     color-scheme: dark;
@@ -140,6 +172,17 @@
     --lh-general: rgba(255, 255, 255, 0.8);
     --fg-header: rgba(255, 255, 255, 0.8);
     --lh-content-box: rgba(255, 255, 255, 0.8);
+    --widget-toc-hover-bg: var(--bg-active);
+    --widget-toc-toggle-icon-color: var(--fg-content-box);
+    --widget-toc-toggle-icon-color-hover: var(--fg-content-box);
+    --widget-toc-link-color-hover: var(--fg-content-box);
+    --widget-toc-active-color: var(--ci-color1);
+    --toc-page-hover-bg: var(--bg-active);
+    --toc-page-toggle-icon-color: var(--fg-content-box);
+    --toc-page-toggle-icon-color-hover: var(--fg-content-box);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: var(--fg-content-box);
+    --toc-page-border-color: rgba(255, 255, 255, 0.17);
     --login-nav-background: #253044;
     --login-nav-background-hover: #3b4557;
     --login-nav-text-color: rgba(255, 255, 255, 0.9);
@@ -177,6 +220,11 @@
     --archives-placeholder-bg: var(--bg-content-box);
     --archives-placeholder-icon-color: var(--fg-controls);
 }
+.color-theme-dark .fullscreen {
+    --widget-toc-hover-bg: transparent;
+    --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+    --widget-toc-link-color-hover: inherit;
+}
 .color-theme-light {
     color-scheme: light;
     --ci-color1: #015999;
@@ -197,6 +245,17 @@
     --fg-content-box: #212529;
     --lk-content-box: #3365a9;
     --lh-content-box: #444;
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color: var(--ci-color1);
+    --widget-toc-toggle-icon-color-hover: var(--ci-hovercolor1);
+    --widget-toc-link-color-hover: var(--lk-content-box);
+    --widget-toc-active-color: var(--ci-color1);
+    --toc-page-hover-bg: var(--bg-general);
+    --toc-page-toggle-icon-color: var(--ci-color1);
+    --toc-page-toggle-icon-color-hover: var(--fg-hover);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: inherit;
+    --toc-page-border-color: #ccc;
     --login-nav-background: #444;
     --login-nav-background-hover: #5e5e5e;
     --login-nav-text-color: #fff;
@@ -233,6 +292,11 @@
     --archives-overlay-text: #fff;
     --archives-placeholder-bg: var(--bg-general);
     --archives-placeholder-icon-color: var(--fg-controls);
+}
+.color-theme-light .fullscreen {
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+    --widget-toc-link-color-hover: inherit;
 }
 .mx-clearfloats:before,
 .mx-clearfloats:after {
@@ -288,6 +352,17 @@
     --fg-content-box: #212529;
     --lk-content-box: #3365a9;
     --lh-content-box: #444;
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color: var(--ci-color1);
+    --widget-toc-toggle-icon-color-hover: var(--ci-hovercolor1);
+    --widget-toc-link-color-hover: var(--lk-content-box);
+    --widget-toc-active-color: var(--ci-color1);
+    --toc-page-hover-bg: var(--bg-general);
+    --toc-page-toggle-icon-color: var(--ci-color1);
+    --toc-page-toggle-icon-color-hover: var(--fg-hover);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: inherit;
+    --toc-page-border-color: #ccc;
     --login-nav-background: #444;
     --login-nav-background-hover: #5e5e5e;
     --login-nav-text-color: #fff;
@@ -325,6 +400,11 @@
     --archives-placeholder-bg: var(--bg-general);
     --archives-placeholder-icon-color: var(--fg-controls);
 }
+.mx-theme-light .fullscreen {
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+    --widget-toc-link-color-hover: inherit;
+}
 .mx-theme-dark {
     color-scheme: dark;
     --ci-color1: #015999;
@@ -345,6 +425,17 @@
     --lh-general: rgba(255, 255, 255, 0.8);
     --fg-header: rgba(255, 255, 255, 0.8);
     --lh-content-box: rgba(255, 255, 255, 0.8);
+    --widget-toc-hover-bg: var(--bg-active);
+    --widget-toc-toggle-icon-color: var(--fg-content-box);
+    --widget-toc-toggle-icon-color-hover: var(--fg-content-box);
+    --widget-toc-link-color-hover: var(--fg-content-box);
+    --widget-toc-active-color: var(--ci-color1);
+    --toc-page-hover-bg: var(--bg-active);
+    --toc-page-toggle-icon-color: var(--fg-content-box);
+    --toc-page-toggle-icon-color-hover: var(--fg-content-box);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: var(--fg-content-box);
+    --toc-page-border-color: rgba(255, 255, 255, 0.17);
     --login-nav-background: #253044;
     --login-nav-background-hover: #3b4557;
     --login-nav-text-color: rgba(255, 255, 255, 0.9);
@@ -381,6 +472,11 @@
     --archives-overlay-text: #e3e4e7;
     --archives-placeholder-bg: var(--bg-content-box);
     --archives-placeholder-icon-color: var(--fg-controls);
+}
+.mx-theme-dark .fullscreen {
+    --widget-toc-hover-bg: transparent;
+    --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+    --widget-toc-link-color-hover: inherit;
 }
 @media print {
     a,
@@ -3947,55 +4043,12 @@ html[dir='rtl'] .widget-chronology-slider__item.chronology-slider-end {
 .widget-toc__title-expand a:focus {
     color: #fff;
 }
-.widget-toc__body .icon-wrapper svg {
-    color: var(--ci-color1);
-}
 .widget-toc__elements {
     border: var(--border);
     border-top: 0;
 }
 .widget-toc__elements ul {
     border: 0;
-}
-.widget-toc__element:hover {
-    background-color: #eee;
-}
-@media (prefers-color-scheme: light) {
-    .widget-toc__element:hover,
-    .widget-toc__element:focus,
-    .widget-toc__element.active {
-        background-color: var(--bg-general);
-    }
-}
-.color-theme-light .widget-toc__element:hover,
-.color-theme-light .widget-toc__element:focus,
-.color-theme-light .widget-toc__element.active {
-    background-color: var(--bg-general);
-}
-@media (prefers-color-scheme: dark) {
-    .widget-toc__element:hover,
-    .widget-toc__element:focus,
-    .widget-toc__element.active {
-        background-color: var(--bg-active);
-        color: var(--fg-content-box);
-    }
-}
-.color-theme-dark .widget-toc__element:hover,
-.color-theme-dark .widget-toc__element:focus,
-.color-theme-dark .widget-toc__element.active {
-    background-color: var(--bg-active);
-    color: var(--fg-content-box);
-}
-.widget-toc__element:hover a,
-.widget-toc__element:focus a,
-.widget-toc__element.active a {
-    color: var(--lk-content-box) !important;
-}
-.widget-toc__element-link.active a {
-    color: var(--ci-color1);
-}
-.widget-toc .icon-wrapper {
-    color: #fff;
 }
 #widgetUserInteractions ul {
     padding: 0;
@@ -5551,47 +5604,8 @@ html[dir='rtl'] .widget-chronology-slider__item.chronology-slider-end {
 .toc__list-full li:last-child {
     border: 0;
 }
-.toc__list-expandable li:hover,
-.toc__list-full li:hover {
-    background-color: var(--bg-hover);
-}
-.toc__list-expandable-title a,
-.toc__list-full-title a {
-    color: var(--lk-content-box);
-}
 .toc__list-full {
     border-top: var(--border);
-}
-.toc__list-full li:hover {
-    background-color: var(--bg-hover);
-}
-.toc__list-full-item,
-.toc__list-expandable-elem {
-    border-bottom: var(--border);
-}
-@media (prefers-color-scheme: light) {
-    .toc__list-full-item,
-    .toc__list-expandable-elem {
-        border-bottom: var(--border);
-    }
-}
-.color-theme-light .toc__list-full-item,
-.color-theme-light .toc__list-expandable-elem {
-    border-bottom: var(--border);
-}
-@media (prefers-color-scheme: dark) {
-    .toc__list-full-item,
-    .toc__list-expandable-elem {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-    }
-}
-.color-theme-dark .toc__list-full-item,
-.color-theme-dark .toc__list-expandable-elem {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-}
-.toc__list-full-item:last-child,
-.toc__list-expandable-elem:last-child {
-    border-bottom: none;
 }
 .toc__list-full-number li {
     border: none;
@@ -6379,5 +6393,5 @@ html[dir='rtl'] .widget-chronology-slider__item.chronology-slider-end {
 .content-component__search-box .input-group-addon {
     border-color: var(--ci-color1);
     background-color: var(--ci-color1);
-}
+} /*# sourceMappingURL=constructor.css.map */
 /*# sourceMappingURL=reference.min.css.map */
