@@ -66,17 +66,11 @@
             &:last-child {
                 border: 0;
             }
-            &:hover {
-                background-color: @bg-hover;
-                a {
-                }
-            }
         }
     }
     &__list-expandable-title,
     &__list-full-title {
         a {
-            color: @lk-content-box;
             &:hover,
             &:focus,
             &:active {
@@ -96,12 +90,6 @@
     }
     /* EXPAND ALL */
     &__list-expandable-all {
-        ul {
-        }
-        li {
-        }
-        a {
-        }
     }
     /* TOC EXPANDABLE */
     &__list-expandable {
@@ -115,6 +103,8 @@
     &__list-expandable-expand {
         a {
         }
+    }
+    &__list-expandable-toggle {
     }
     &__list-expandable-title {
         a {
@@ -137,26 +127,6 @@
     /* TOC FULL */
     &__list-full {
         border-top: @border;
-        li {
-            &:hover {
-                background-color: @bg-hover;
-            }
-        }
-    }
-    &__list-full-item,
-    &__list-expandable-elem {
-        border-bottom: @border;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				border-bottom: @border;
-			});;
-            .mx-dark-mode-rules ({ 
-				border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-			});;
-        }
-        &:last-child {
-            border-bottom: none;
-        }
     }
     &__list-full-title {
         a {
@@ -180,17 +150,23 @@
     //	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
     //		color: @fg-hover;
     //	}
-	// TILE/GRID VIEW OF TOC ENTRIES
-	&__mv-tile-grid-heading {}
-	&__mv-tile-grid {
-		background: @bg-content-box;
-		border: @border;
-	}
-	&__mv-tile {}
-	&__mv-tile-image {} 
-	&__mv-tile-image-wrapper {}
-	&__mv-tile-title-wrapper {}
-	&__mv-tile-title {}
+    // TILE/GRID VIEW OF TOC ENTRIES
+    &__mv-tile-grid-heading {
+    }
+    &__mv-tile-grid {
+        background: @bg-content-box;
+        border: @border;
+    }
+    &__mv-tile {
+    }
+    &__mv-tile-image {
+    }
+    &__mv-tile-image-wrapper {
+    }
+    &__mv-tile-title-wrapper {
+    }
+    &__mv-tile-title {
+    }
 }
 
 /* DOWNLOAD MODAL */
