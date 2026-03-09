@@ -19,7 +19,7 @@
 			.paragraph-svg-path {
 				fill: #000;
 			}
-		});;
+		});
         .mx-dark-mode-rules ({
 			.rs-svg-path {
 				fill: #fff;
@@ -27,25 +27,25 @@
 			.paragraph-svg-path {
 				fill: #fff;
 			}
-		});;
+		});
     }
     & when (@colorModes = true) {
         .mx-light-mode-rules ({
 			background: white;
-		});;
+		});
         .mx-dark-mode-rules ({
 			background: @bg-content-box;
-		});;
+		});
     }
     &__dot {
         color: #000;
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
 				color: #000;
-			});;
+			});
             .mx-dark-mode-rules ({
 				color: white;
-			});;
+			});
         }
     }
     &__status-icon {
@@ -54,10 +54,10 @@
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
 				color: @black;
-			});;
+			});
             .mx-dark-mode-rules ({
 				color: @white;
-			});;
+			});
         }
     }
 }

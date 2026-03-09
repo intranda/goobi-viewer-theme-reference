@@ -28,7 +28,7 @@
 				color: white;
 			}
 		}
-	});;
+	});
     .mx-light-mode-rules ({
 		.btn--full {
 			color: white;
@@ -38,16 +38,16 @@
 				color: white;
 			}
 		}
-	});;
+	});
 }
 
 .tooltipp {
     & when (@colorModes = true) {
         .mx-dark-mode-rules ({
 			color: #222;
-		});;
+		});
         .mx-light-mode-rules ({
-		});;
+		});
     }
 }
 .admin__form-help-text {
@@ -57,11 +57,11 @@
         .mx-dark-mode-rules ({
 			color: @fg-general;
 			opacity: 0.6;
-		});;
+		});
         .mx-light-mode-rules ({
 			color: @fg-general;
 			opacity: 0.6;
-		});;
+		});
     }
 }
 
@@ -92,13 +92,13 @@
 				background: #e9ecef;
 			}
 			background: @fg-controls;
-		});;
+		});
         .mx-light-mode-rules ({
 			&:disabled {
 				background: #e9ecef;
 			}
 			background: @white;
-		});;
+		});
     }
     &:focus {
     }
@@ -120,10 +120,10 @@
     & when (@colorModes = true) {
         .mx-light-mode-rules ({
             color: rgb(33, 37, 41);
-        });;
+        });
         .mx-dark-mode-rules ({
             color: @fg-content-box;
-        });;
+        });
     }
 
     h1,
@@ -135,10 +135,10 @@
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
 				color: rgb(33, 37, 41);
-			});;
+			});
             .mx-dark-mode-rules ({
 				color: @fg-content-box;
-			});;
+			});
         }
     }
     .custom-control--select {
@@ -151,10 +151,10 @@
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
 				color: rgb(33, 37, 41);
-			});;
+			});
             .mx-dark-mode-rules ({
                 color: @fg-general;
-			});;
+			});
         }
     }
     .btn.btn--full {
@@ -167,7 +167,7 @@
             .mx-dark-mode-rules ({
                 background-color: @bg-content-box;
                 color: @fg-content-box;
-            });;
+            });
         }
     }
 }
@@ -207,10 +207,10 @@
             & when (@colorModes = true) {
                 .mx-light-mode-rules ({
                     background-color: @black;
-                });;
+                });
                 .mx-dark-mode-rules ({
                     background-color: @fg-content-box;
-                });;
+                });
             }
         }
     }
@@ -229,10 +229,10 @@
     & when (@colorModes = true) {
         .mx-dark-mode-rules ({
 			background-color: @bg-general;
-		});;
+		});
         .mx-light-mode-rules ({
 			background-color: @bg-general;
-		});;
+		});
     }
 }
 

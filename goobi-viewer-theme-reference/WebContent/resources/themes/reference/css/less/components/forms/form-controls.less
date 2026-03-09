@@ -22,10 +22,10 @@
         background: @white;
         .mx-dark-mode-rules ({
 			background: @fg-controls;
-		});;
+		});
         .mx-light-mode-rules ({
 			background: @white;
-		});;
+		});
     }
     &:after {
     }
@@ -43,10 +43,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 				background: @fg-controls;
-			});;
+			});
             .mx-light-mode-rules ({
 				background: @white;
-			});;
+			});
         }
         &.disabled {
         }
@@ -60,9 +60,9 @@
     & when (@colorModes = true) {
         .mx-dark-mode-rules ({
             background: @fg-controls;
-        });;
+        });
         .mx-light-mode-rules ({
             background: @white;
-        });;
+        });
     }
 }

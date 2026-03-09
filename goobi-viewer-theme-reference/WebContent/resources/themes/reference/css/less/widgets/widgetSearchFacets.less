@@ -22,10 +22,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
                 scrollbar-color: @bg-active transparent;
-            });;
+            });
             .mx-light-mode-rules ({
                 scrollbar-color: @lk-content-box transparent;
-            });;
+            });
         }
     }
 
@@ -84,21 +84,21 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 				background: @bg-active;
-			});;
+			});
             .mx-light-mode-rules ({
 				background: transparent;
-			});;
+			});
         }
         &:hover {
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 					color: @fg-general;
 					background: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					color: @fg-general;
 					background: @bg-hover;
-				});;
+				});
             }
         }
 
@@ -107,20 +107,20 @@
                 .mx-dark-mode-rules ({
 					// color: white;
 					background-color: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					background-color: @bg-hover;
-				});;
+				});
             }
             &:hover {
                 .mx-dark-mode-rules ({
 					color: @fg-general;
 					background-color: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					color: @fg-general;
 					background-color: @bg-hover;
-				});;
+				});
             }
         }
     }
