@@ -80,7 +80,7 @@ $(document).ready(function () {
 	    const scrollUpDistance = 60; // user must scroll up at least 60px after shrink
 	    let isScrolled = false;
 	    let scrolledAtShrink = 0;
-
+ 
 	    const handleScroll = debounce(function () {
 	        const scrollTop = $(document).scrollTop();
 
