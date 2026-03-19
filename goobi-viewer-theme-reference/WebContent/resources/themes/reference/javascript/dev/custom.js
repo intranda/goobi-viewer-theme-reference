@@ -74,27 +74,33 @@ $(document).ready(function () {
         }
     });
 
-    // shrink + expand header on scroll with a dead zone of 70 px to avoid jumps at the end of the page
-    $(document).ready(function () {
-        const scrollDownThreshold = 250;
-        const scrollUpThreshold = 180;
-        let isScrolled = false;
+	// shrink + expand header on scroll
+	$(document).ready(function () {
+	    const scrollDownThreshold = 80;
+	    const scrollUpDistance = 60; // user must scroll up at least 60px after shrink
+	    let isScrolled = false;
+	    let scrolledAtShrink = 0;
 
-        const handleScroll = debounce(function () {
-            const scrollTop = $(document).scrollTop();
+	    const handleScroll = debounce(function () {
+	        const scrollTop = $(document).scrollTop();
 
-            if (scrollTop >= scrollDownThreshold && !isScrolled) {
-                $('.header').addClass('-scrolled');
-                isScrolled = true;
-            } else if (scrollTop <= scrollUpThreshold && isScrolled) {
-                $('.header').removeClass('-scrolled');
-                isScrolled = false;
-            }
-        }, 20);
+	        if (scrollTop >= scrollDownThreshold && !isScrolled) {
+	            $('.header').addClass('-scrolled');
+	            isScrolled = true;
+	            // Capture scrollTop after reflow so browser's automatic
+	            // position adjustment is not counted as user scrolling up
+	            requestAnimationFrame(() => {
+	                scrolledAtShrink = $(document).scrollTop();
+	            });
+	        } else if (isScrolled && scrollTop < scrolledAtShrink - scrollUpDistance) {
+	            $('.header').removeClass('-scrolled');
+	            isScrolled = false;
+	        }
+	    }, 20);
 
-        $(document).on('scroll', handleScroll);
-        handleScroll(); // initial call
-    });
+	    $(document).on('scroll', handleScroll);
+	    handleScroll(); // initial call
+	});
 
     // open search box
     $('body').on('click', '[data-open="search"], [data-close="search"]', function (e) {
@@ -263,7 +269,7 @@ $(document).ready(function () {
                 }
             }, 100)
         );
-
+ 
         // listening for size changes
         observeContent.observe(mainArea);
     }
