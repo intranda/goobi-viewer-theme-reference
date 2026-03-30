@@ -290,12 +290,12 @@
 }
 
 // SET STYLES FOR ALL STATES OF AN ELEMENT
-.allstates(@pseudostatesvalues) {
+.allstates(@allstatesvalues) {
     &,
     &:hover,
     &:active,
     &:focus {
-        @statevalues();
+        @allstatesvalues();
     }
 }
 
@@ -304,12 +304,12 @@
 		text-decoration: none;
 	});
 */
-
+ 
 // SET STYLES FOR PSEUDO STATES OF AN ELEMENT
-.pseudostates(@pseudostatesvalues) {
+.pseudostates(@pseudostatevalues) {
     &:hover,
     &:active,
     &:focus {
-        @statevalues();
+        @pseudostatevalues();
     }
 }

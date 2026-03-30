@@ -5,6 +5,17 @@
 /* VIEW TOC */
 /* BLOCK */
 .toc {
+    /* TOC METADATA */
+    &__metadata {
+		border: @border;
+		background-color: @bg-content-box;
+    }
+    &__metadata-thumbnail {
+    }
+    &__metadata-thumbnail-placeholder {
+    }
+    &__metadata-content {
+    }
     /* MULTI VOLUME TOC */
     /* ELEMENT */
     h3 {
@@ -53,6 +64,8 @@
             display: inline-block;
         }
     }
+    &__list-outer-list {
+    }
     /* TOC TREEVIEW */
     /* ELEMENT */
     &__list-expandable,
@@ -88,17 +101,28 @@
             }
         }
     }
+    &__list-expandable-download-button,
+    &__list-full-download-button {
+    }
     /* EXPAND ALL */
     &__list-expandable-all {
     }
     /* TOC EXPANDABLE */
     &__list-expandable {
     }
-    &__list-expandable-elem {
+    &__list-expandable-elem,
+    &__list-full-item {
         &.parent {
         }
         &.child {
         }
+    }
+    &__list-expandable-title-wrapper,
+    &__list-full-title-wrapper {
+    }
+    &__list-expandable-elem--hidden {
+    }
+    &__list-expandable-elem--expanded {
     }
     &__list-expandable-expand {
         a {
