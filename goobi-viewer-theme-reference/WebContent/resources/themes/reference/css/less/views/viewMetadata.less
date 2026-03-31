@@ -96,6 +96,10 @@
         }
         &-level-2 {
         }
+        &-level-3 {
+        }
+        &-level-4 {
+        }
     }
     &__elements {
         &-level-0 {
@@ -106,6 +110,10 @@
         }
     }
     &__elements-h2 {
+    }
+    &__element-wrapper {
+    }
+    &__locked-value-icon {
     }
     &__element-wrapper-single {
         border: @border;
@@ -137,6 +145,8 @@
     }
     &__event-value {
     }
+    &__event-inside-wrapper {
+    }
     &__grouped-wrapper {
         background-color: @bg-content-box;
         border: @border;
@@ -149,6 +159,8 @@
     }
     &__ungrouped-wrapper {
         border: @border;
+        &:last-child {
+        }
     }
     &__element-ungrouped {
         dt {
@@ -166,6 +178,31 @@
         &.level-2 {
         }
     }
+    &__key-value-pairs-list {
+        dd {
+            &:last-child {
+            }
+        }
+    }
+    &__element-wrapper-single-custom-wrapper {
+    }
+    &__fold-wrapper {
+        &.-visibleByDefault {
+        }
+        &.-hidden {
+        }
+    }
+    &__fold-button {
+        &.-hidden {
+        }
+        svg {
+        }
+    }
+    &__fold-button-inner {
+    }
+}
+
+.hierarchy-separator {
 }
 
 /* DOWNLOADS */
@@ -211,8 +248,7 @@
 }
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {
-}
+@media screen and (max-width: @smallBreakpoint) {}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
