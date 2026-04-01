@@ -169,7 +169,28 @@
                 color: @fg-content-box;
             });
         }
+		
     }
+	.card {
+		& when (@colorModes = true) {
+		    .mx-light-mode-rules ({
+				border: 1px solid rgba(0,0,0,0.125);
+			});
+		    .mx-dark-mode-rules ({
+		        border: none;
+			});
+		}
+	}
+	.card-body {
+		& when (@colorModes = true) {
+		    .mx-light-mode-rules ({
+				background: transparent;
+			});
+		    .mx-dark-mode-rules ({
+		        background: @bg-content-box;
+			});
+		} 
+	}
 }
 
 #bodyWrapper {

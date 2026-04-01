@@ -16,9 +16,7 @@
 
         li {
             &.active {
-                a {
-                    background-color: @bg-hover;
-                }
+
             }
         }
     }
@@ -27,12 +25,12 @@
     }
 
     &__list-item-link {
+		&.-active {
+			background-color: @bg-hover;
+		}
     }
 
     &__list-item-link-inner {
-    }
-
-    &__list-item-link-active {
     }
 
     &__list-item-link-icon {

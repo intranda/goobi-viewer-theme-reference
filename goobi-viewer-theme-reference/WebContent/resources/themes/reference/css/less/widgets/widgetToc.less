@@ -37,11 +37,20 @@
         }
     }
     &__element {
+		&:hover,
+		&:active,
+		&:focus {
+			background: @bg-hover;
+		}
         &.parent {
         }
         &.child {
         }
     }
+	&__collapse-svg,
+	&__expand-svg {
+		color: @fg-general;
+	}
     &__element-expand {
     }
     &__element-link {
