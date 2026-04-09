@@ -8,10 +8,12 @@
         content: ' ';
         display: table;
     }
+
     &:after {
         clear: both;
     }
 }
+
 /* BACKGROUND IMAGE */
 .mx-bgi(@image; @pX: center; @pY: center; @size: auto) {
     background-image: url(@image);
@@ -20,9 +22,11 @@
     -webkit-background-size: @size;
     background-size: @size;
 }
+
 /* CSS TRIANGLE */
 .mx-triangle(@top: 0; @left: 0; @bWidth: 10px; @bcTop: transparent; @bcRight: transparent; @bcBottom: #000; @bcLeft: transparent) {
     position: relative;
+
     &:after {
         content: '';
         display: block;
@@ -36,16 +40,19 @@
         border-color: @bcTop @bcRight @bcBottom @bcLeft;
     }
 }
+
 /* HIDDEN */
 .mx-visible {
     display: block !important;
     visibility: visible !important;
 }
+
 /* HIDDEN */
 .mx-hidden {
     display: none !important;
     visibility: hidden !important;
 }
+
 /* VISUALLY HIDDEN */
 .mx-v-hidden {
     position: absolute;
@@ -55,12 +62,14 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
 /* GRID */
 .mx-grid(@width: 145px; @gap: 15px) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(@width, 1fr));
     grid-gap: @gap;
 }
+
 /* LIST RESET */
 .mx-list-reset {
     margin: 0;
@@ -111,6 +120,28 @@
     // --widget-icon-color-topbar: red;
     // --widget-icon-color-body: green;
     // --widget-icon-color-expand: yellow;
+
+    /* WIDGET TOC */
+    --widget-toc-hover-bg: var(--bg-general);
+    --widget-toc-toggle-icon-color: var(--ci-color1);
+    --widget-toc-toggle-icon-color-hover: var(--ci-hovercolor1);
+    --widget-toc-link-color-hover: var(--lk-content-box);
+    --widget-toc-active-color: var(--ci-color1);
+
+    /* TOC PAGE */
+    --toc-page-hover-bg: var(--bg-general);
+    --toc-page-toggle-icon-color: var(--ci-color1);
+    --toc-page-toggle-icon-color-hover: var(--fg-hover);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: inherit;
+    --toc-page-border-color: #ccc;
+
+    /* FULLSCREEN TOC */
+    .fullscreen {
+        --widget-toc-hover-bg: var(--bg-general);
+        --widget-toc-toggle-icon-color-hover: var(--widget-toc-toggle-icon-color);
+        --widget-toc-link-color-hover: inherit;
+    }
 
     // /* LOGIN NAVIGATION */
     --login-nav-background: #444;
@@ -184,6 +215,14 @@
     // --widget-icon-color-body: green;
     // --widget-icon-color-expand: yellow;
 
+    /* TOC PAGE */
+    --toc-page-hover-bg: var(--bg-active);
+    --toc-page-toggle-icon-color: var(--fg-content-box);
+    --toc-page-toggle-icon-color-hover: var(--fg-content-box);
+    --toc-page-link-color: var(--lk-content-box);
+    --toc-page-link-color-hover: var(--fg-content-box);
+    --toc-page-border-color: rgba(255, 255, 255, 0.17);
+
     // /* LOGIN NAVIGATION */
     --login-nav-background: #253044;
     --login-nav-background-hover: #3b4557;
@@ -233,5 +272,30 @@
 .detachedRuleSetTopLevel(@generalprops) {
     & {
         @generalprops();
+    }
+}
+
+// SET STYLES FOR ALL STATES OF AN ELEMENT
+.allstates(@allstatesvalues) {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        @allstatesvalues();
+    }
+}
+
+/* USAGE EXAMPLE
+	.allstates ({
+		text-decoration: none;
+	});
+*/
+ 
+// SET STYLES FOR PSEUDO STATES OF AN ELEMENT
+.pseudostates(@pseudostatevalues) {
+    &:hover,
+    &:active,
+    &:focus {
+        @pseudostatevalues();
     }
 }

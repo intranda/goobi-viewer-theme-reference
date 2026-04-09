@@ -19,18 +19,29 @@
         color: @black;
     }
 
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-            background: @bg-active;
-            color: @fg-general;
-            border-color: @bg-active;
-
-            &:hover {
-                background: @ci-hovercolor1;
-                border-color: @ci-hovercolor1;
-            }
-        });;
-    }
+// INCORRECTLY INSERTED AT THIS POSITION?
+//    & when (@colorModes = true) {
+//        .mx-light-mode-rules ({
+//			background: #f7f7f7;
+//			color: @btnDefault;
+//			&:hover,
+//			&:focus {
+//			    background: @ci-hovercolor1;
+//			    border-color: @ci-hovercolor1;
+//			}
+//		}); 
+//        .mx-dark-mode-rules ({
+//            background: @bg-active;
+//            color: @fg-general;
+//            border-color: @bg-active;
+//
+//            &:hover,
+//			&:focus {
+//                background: @ci-hovercolor1;
+//                border-color: @ci-hovercolor1;
+//            }
+//        });
+//    }
 }
 
 .btn--success {
@@ -66,6 +77,15 @@
 }
 
 .btn--clean {
+    color: @lk-general;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus {
+        color: @lh-general;
+    }
 }
 
 .btn--link {
@@ -77,17 +97,22 @@
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
 				color: @middleblack;
-			});;
+				&:hover, 
+				&:focus {
+					color: @lh-general;
+				}
+			});
             .mx-dark-mode-rules ({
 				background: @bg-active;
                 color: @fg-general;
                 border-color: @bg-active;
 
-                &:hover {
+                &:hover, 
+				&:focus {
                     background: @ci-hovercolor1;
                     border-color: @ci-hovercolor1;
                 }
-			});;
+			});
         }
     }
 }

@@ -17,10 +17,10 @@
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
 				color: @fg-general;
-			});;
+			});
             .mx-dark-mode-rules ({
 				color: @bg-content-box;
-			});;
+			});
         }
         a {
             & when (@colorModes = true) {
@@ -28,12 +28,12 @@
 					color: @fg-general;
 					text-decoration: underline;
 					font-weight: 500;
-				});;
+				});
                 .mx-dark-mode-rules ({
 					color: @bg-content-box;
 					text-decoration: underline;
 					font-weight: 500;
-				});;
+				});
             }
         }
     }

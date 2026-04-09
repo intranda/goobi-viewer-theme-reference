@@ -5,6 +5,17 @@
 /* VIEW TOC */
 /* BLOCK */
 .toc {
+    /* TOC METADATA */
+    &__metadata {
+		border: @border;
+		background-color: @bg-content-box;
+    }
+    &__metadata-thumbnail {
+    }
+    &__metadata-thumbnail-placeholder {
+    }
+    &__metadata-content {
+    }
     /* MULTI VOLUME TOC */
     /* ELEMENT */
     h3 {
@@ -24,10 +35,10 @@
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 					background-color: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					background-color: @lightgray;
-				});;
+				});
             }
         }
         &.level-0 {
@@ -53,6 +64,8 @@
             display: inline-block;
         }
     }
+    &__list-outer-list {
+    }
     /* TOC TREEVIEW */
     /* ELEMENT */
     &__list-expandable,
@@ -66,17 +79,11 @@
             &:last-child {
                 border: 0;
             }
-            &:hover {
-                background-color: @bg-hover;
-                a {
-                }
-            }
         }
     }
     &__list-expandable-title,
     &__list-full-title {
         a {
-            color: @lk-content-box;
             &:hover,
             &:focus,
             &:active {
@@ -94,27 +101,34 @@
             }
         }
     }
+    &__list-expandable-download-button,
+    &__list-full-download-button {
+    }
     /* EXPAND ALL */
     &__list-expandable-all {
-        ul {
-        }
-        li {
-        }
-        a {
-        }
     }
     /* TOC EXPANDABLE */
     &__list-expandable {
     }
-    &__list-expandable-elem {
+    &__list-expandable-elem,
+    &__list-full-item {
         &.parent {
         }
         &.child {
         }
     }
+    &__list-expandable-title-wrapper,
+    &__list-full-title-wrapper {
+    }
+    &__list-expandable-elem--hidden {
+    }
+    &__list-expandable-elem--expanded {
+    }
     &__list-expandable-expand {
         a {
         }
+    }
+    &__list-expandable-toggle {
     }
     &__list-expandable-title {
         a {
@@ -123,6 +137,8 @@
             &:active {
             }
         }
+    }
+    &__list-expandable-expand-button {
     }
     &__list-expandable-number {
         li {
@@ -137,26 +153,6 @@
     /* TOC FULL */
     &__list-full {
         border-top: @border;
-        li {
-            &:hover {
-                background-color: @bg-hover;
-            }
-        }
-    }
-    &__list-full-item,
-    &__list-expandable-elem {
-        border-bottom: @border;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				border-bottom: @border;
-			});;
-            .mx-dark-mode-rules ({ 
-				border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-			});;
-        }
-        &:last-child {
-            border-bottom: none;
-        }
     }
     &__list-full-title {
         a {
@@ -180,17 +176,23 @@
     //	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
     //		color: @fg-hover;
     //	}
-	// TILE/GRID VIEW OF TOC ENTRIES
-	&__mv-tile-grid-heading {}
-	&__mv-tile-grid {
-		background: @bg-content-box;
-		border: @border;
-	}
-	&__mv-tile {}
-	&__mv-tile-image {} 
-	&__mv-tile-image-wrapper {}
-	&__mv-tile-title-wrapper {}
-	&__mv-tile-title {}
+    // TILE/GRID VIEW OF TOC ENTRIES
+    &__mv-tile-grid-heading {
+    }
+    &__mv-tile-grid {
+        background: @bg-content-box;
+        border: @border;
+    }
+    &__mv-tile {
+    }
+    &__mv-tile-image {
+    }
+    &__mv-tile-image-wrapper {
+    }
+    &__mv-tile-title-wrapper {
+    }
+    &__mv-tile-title {
+    }
 }
 
 /* DOWNLOAD MODAL */

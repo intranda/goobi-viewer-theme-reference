@@ -8,8 +8,19 @@
         padding: 0.7rem 1.5rem;
         background-color: @ci-color1;
     }
+
+    &__topbar-icons-container {
+    }
+
+    &__topbar-icon-collapsible {
+    }
+
+    &__topbar-icon-svg {
+    }
+
     &__description-text {
     }
+
     &__title {
         font-size: @fontNormal;
         font-weight: 400;
@@ -33,11 +44,14 @@
         li {
             &.active {
                 a {
-                    font-weight: 600;
-                    color: @lh-content-box;
+//                    font-weight: 600;
+//                    color: @lh-content-box;
                 }
             }
         }
+    }
+
+    &__body-icon-svg {
     }
 
     &__badge-container {
@@ -58,10 +72,10 @@
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 			   	background-color: @bg-active;
-			  });;
+			  });
                 .mx-light-mode-rules ({
 			    background-color: #343a40;
-			  });;
+			  });
             }
             color: @white;
 
@@ -73,13 +87,31 @@
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 			  		background-color: @bg-hover;
-			  });;
+			  });
                     .mx-light-mode-rules ({
 			   		background-color: #5e5e5e;
-			  });;
+			  });
                 }
             }
         }
+    }
+    &__badge-container-heading {
+    }
+
+    .widget-usage__page-download-pdf,
+    .widget-downloads__page-download-pdf,
+    .widget-downloads__work-download-pdf {
+    }
+}
+
+.widget-admin {
+    &__topbar {
+    }
+
+    &__title {
+    }
+
+    &__body {
     }
 }
 

@@ -4,17 +4,36 @@
    ==============================================================*/
 /* WIDGET SEARCH FACETS */
 .widget-search-facets {
+    &__topbar {
+    }
+
+    &__title {
+    }
+
     &__body {
         ul {
         }
 
         li {
             &.active {
-                a {
-                    background-color: @bg-hover;
-                }
+
             }
         }
+    }
+
+    &__list-item {
+    }
+
+    &__list-item-link {
+		&.-active {
+			background-color: @bg-hover;
+		}
+    }
+
+    &__list-item-link-inner {
+    }
+
+    &__list-item-link-icon {
     }
 
     &__list {
@@ -22,10 +41,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
                 scrollbar-color: @bg-active transparent;
-            });;
+            });
             .mx-light-mode-rules ({
                 scrollbar-color: @lk-content-box transparent;
-            });;
+            });
         }
     }
 
@@ -52,6 +71,9 @@
         }
     }
 
+    &__filter-button {
+    }
+
     &__filter-input {
     }
 
@@ -64,17 +86,29 @@
 
     &__collection {
     }
-
+ 
     &__groups {
     }
 
     /* COLLAPSE FACETS */
     &__collapse {
-        a {
-        }
     }
 
+	&__collapse-button {
+		color: var(--widget-icon-color-expand);
+		&.-expand,
+		&.-collapse {
+
+		}
+	}
+
+	&__collapse-button-icon-svg {
+	}
+
     &__boolean {
+    }
+
+    &__boolean-button-wrapper {
     }
 
     &__boolean-button {
@@ -84,21 +118,21 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 				background: @bg-active;
-			});;
+			});
             .mx-light-mode-rules ({
 				background: transparent;
-			});;
+			});
         }
         &:hover {
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 					color: @fg-general;
 					background: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					color: @fg-general;
 					background: @bg-hover;
-				});;
+				});
             }
         }
 
@@ -107,20 +141,20 @@
                 .mx-dark-mode-rules ({
 					// color: white;
 					background-color: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					background-color: @bg-hover;
-				});;
+				});
             }
             &:hover {
                 .mx-dark-mode-rules ({
 					color: @fg-general;
 					background-color: @bg-hover;
-				});;
+				});
                 .mx-light-mode-rules ({
 					color: @fg-general;
 					background-color: @bg-hover;
-				});;
+				});
             }
         }
     }

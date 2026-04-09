@@ -26,10 +26,10 @@
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
                     background: @fg-controls;
-                });;
+                });
                 .mx-light-mode-rules ({
                     background: @white;
-                });;
+                });
             }
         }
         input[type='text'] {
@@ -59,10 +59,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 		    	background: @white;
-		     });;
+		     });
             .mx-light-mode-rules ({
 		    	background: @white;
-		    });;
+		    });
         }
     }
     &__select-values {
@@ -76,10 +76,10 @@
 	            background: @bg-active;
                 color: @fg-general;
                 border-color: @bg-active;
-	        });;
+	        });
                 .mx-light-mode-rules ({
 		        background: #f7f7f7;
-		    });;
+		    });
             }
         }
     }
@@ -207,11 +207,11 @@
             .mx-dark-mode-rules ({
 		    	border: 1px solid transparent;
        			border-bottom: none;
-		     });;
+		     });
             .mx-light-mode-rules ({
 		    	border: @border;
 		    	border-bottom: none;
-		    });;
+		    });
         }
     }
     // REWORK NEEDED

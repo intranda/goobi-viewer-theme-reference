@@ -38,10 +38,10 @@
 							background-color: @bg-hover;
 						}
 				}
-			});;
+			});
             .mx-light-mode-rules ({
 		
-			});;
+			});
         }
         &:hover {
             .user-comments__table-entry-action-link {
@@ -61,10 +61,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 			border: none;
-		});;
+		});
             .mx-light-mode-rules ({
 			border: 1px solid #ccc;
-		});;
+		});
         }
         &:hover,
         &:active,
@@ -74,10 +74,10 @@
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 			color: @fg-general;
-		});;
+		});
                     .mx-light-mode-rules ({
 			border: @fg-general;
-		});;
+		});
                 }
             }
         }

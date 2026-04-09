@@ -11,6 +11,17 @@
         h1 {
         }
     }
+    &__century-outer {
+    }
+    &__century-grid {
+    }
+    &__century-year {
+    }
+    &__century-year-link,
+    &__century-year-text {
+    }
+    &__century-separator-heading {
+    }
     &__toggle {
         &.btn {
         }
@@ -44,6 +55,24 @@
         .btn {
         }
     }
+	&__day-popover {
+		a {
+			& when (@colorModes = true) {
+			.mx-dark-mode-rules ({
+				color: @fg-general; 
+				.pseudostates ({
+					color: @fg-hover;
+				});
+			});
+			  .mx-light-mode-rules ({
+				color: @fg-general;
+				.pseudostates ({
+					color: @fg-hover;
+				});
+			});
+			}
+		}
+	}
     &__months {
     }
     &__month {
@@ -71,49 +100,76 @@
     }
     &__month-week {
     }
-    &__month-day {
-        a {
-            background-color: @middlegray;
-            color: @fg-general;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-		    background-color: @bg-active;
-			
-		  });;
-                .mx-light-mode-rules ({
-		    background-color: @middlegray;
-			color: @fg-general;
-		  });;
-            }
-            &:focus,
-            &:hover,
-            &:active {
-                .mx-dark-mode-rules ({
-			    background-color: @bg-hover;
-				color: @fg-general;
-			  });;
-                .mx-light-mode-rules ({
-				color: @white;
-			    background-color: @bg-active;
-			  });;
-            }
-        }
-        a,
-        span {
-            color: var(--fg-general);
-            &:focus,
-            &:hover,
-            &:active {
-            }
-        }
-    }
+    &__month-day {}
     &__month-day-empty {
+    }
+    &__month-day-link,
+    &__month-day-button {
+		  background-color: @middlegray;
+		  color: @fg-general; 
+		  & when (@colorModes = true) {
+		      .mx-dark-mode-rules ({
+		  background-color: @bg-active;
+
+		});
+		      .mx-light-mode-rules ({
+		  background-color: @middlegray;
+		color: @fg-general;
+		});
+		}
+		& when (@colorModes = true) {
+		  &:focus,
+		  &:hover,
+		  &:active {
+		      .mx-dark-mode-rules ({
+		    background-color: @bg-hover;
+			color: @fg-general;
+		  });
+		      .mx-light-mode-rules ({
+			color: @white;
+		    background-color: @bg-active;
+		  });
+		  }
+		}
     }
     &__action {
     }
     &__incomplete {
         .label {
         }
+    }
+    /* NEWSPAPER SEARCH */
+    &__newspaper-search {
+    }
+    &__newspaper-search-body {
+		background: @bg-content-box;
+		border: @border;
+    }
+    &__newspaper-search-title,
+    &__issues-title {
+    }
+    &__issues-header {
+    }
+    &__year-select {
+    }
+    &__search-field {
+    }
+    &__newspaper-search-date {
+    }
+    &__newspaper-search-date-label {
+    }
+    &__newspaper-search-date-fields {
+    }
+    &__newspaper-search-date-sep {
+    }
+    &__newspaper-search-btn {
+    }
+    /* YEAR GRID */
+    &__year-grid {
+    }
+    &__decade-header {
+    }
+    &__year-chip {
     }
     /* MODIFICATION */
     &__month-day {
