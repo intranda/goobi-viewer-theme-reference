@@ -17,6 +17,7 @@
 	<name>Goobi viewer - Theme Reference</name>
 
 	<properties>
+		<revision>dev-SNAPSHOT</revision>
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
 	</properties>
@@ -30,7 +31,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
-			<artifactId>viewer-core-config</artifactId>
+			<artifactId>viewer-config</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
@@ -45,17 +46,11 @@
 	<profiles>
 		<profile>
 			<id>crowdsourcing</id>
-			<repositories>
-				<repository>
-					<id>intranda-internal</id>
-					<url>https://nexus.intranda.com/repository/maven-internal</url>
-				</repository>
-			</repositories>
 			<dependencies>
 				<dependency>
 					<groupId>io.goobi.viewer.module</groupId>
 					<artifactId>module-crowdsourcing</artifactId>
-					<version>26.02-SNAPSHOT</version>
+					<version>${project.version}</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -78,7 +73,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.3.1</version>
 				<configuration>
 					<nonFilteredFileExtensions>
 						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
@@ -95,13 +89,11 @@
 			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.14.1</version>
 			</plugin>
 			<!-- Maven Dependency Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.9.0</version>
 				<executions>
 					<!-- Config files -->
 					<execution>
@@ -114,7 +106,7 @@
 							<outputDirectory>${project.build.directory}/config/WEB-INF/classes/</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
 							<excludeArtifactIds>viewer-core,viewer-connector</excludeArtifactIds>
-							<includeArtifactIds>viewer-core-config</includeArtifactIds>
+							<includeArtifactIds>viewer-config</includeArtifactIds>
 							<excludes>MANIFEST.MF,**/pom.*,install/,docker/,**/*.class,web-fragment.xml</excludes>
 							<excludeTransitive>true</excludeTransitive>
 						</configuration>
@@ -129,7 +121,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/templates</outputDirectory>
 							<excludeGroupIds>io.goobi.viewer.module</excludeGroupIds>
-							<excludeArtifactIds>viewer-core-config,viewer-connector</excludeArtifactIds>
+							<excludeArtifactIds>viewer-config,viewer-connector</excludeArtifactIds>
 							<includeArtifactIds>viewer-core</includeArtifactIds>
 							<includes>META-INF/resources/resources/cms/templates/**/*</includes>
 							<excludeTransitive>true</excludeTransitive>
@@ -140,7 +132,6 @@
 			<!-- Maven WAR Plugin -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>3.4.0</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<packagingExcludes>**/rebel.xml</packagingExcludes>
@@ -167,7 +158,6 @@
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
-				<version>4.9.10</version>
 				<executions>
 					<execution>
 						<goals>
@@ -185,7 +175,6 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>3.2.1</version>
 				<executions>
 					<execution>
 						<phase>validate</phase>

@@ -2,6 +2,8 @@
 /build/
 /deploy/
 /node_modules/
+/node/
+/.idea/
 .DS_Store
 **/.DS_Store
 /package-lock.json
