@@ -170,8 +170,14 @@ function noopThrough() {
  * @returns {NodeJS.ReadWriteStream}
  */
 function safeDest(subPath) {
+    if (!DEPLOYMENT_DIR) return noopThrough();
     const full = path.join(DEPLOYMENT_DIR, subPath);
-    fs.mkdirSync(full, { recursive: true });
+    try {
+        fs.mkdirSync(full, { recursive: true });
+    } catch (e) {
+        log(colors.yellow(`[deploy] Cannot create target dir, skipping: ${pretty(full)}`));
+        return noopThrough();
+    }
     if (!fs.existsSync(full)) {
         log(colors.yellow(`[deploy] target does not exist, skipping: ${pretty(full)}`));
         return noopThrough();
@@ -261,17 +267,20 @@ function resolveDirs() {
     try {
         cfg = JSON.parse(fs.readFileSync(gulpCfgPath, 'utf-8'));
     } catch (e) {
-        throw new Error(`Cannot parse ${gulpCfgPath}: ${e.message}`);
+        log(colors.yellow(`[deploy] Cannot parse ${gulpCfgPath}: ${e.message} — deployment sync disabled`));
+        return { DEPLOYMENT_DIR: null, THEME_DIR: path.resolve(process.cwd()), VIEWER_CFG: viewerCfgPath, USER_CFG: gulpCfgPath };
     }
     if (!cfg.tomcat_dir) {
-        throw new Error(`Missing "tomcat_dir" in ${gulpCfgPath}`);
+        log(colors.yellow(`[deploy] Missing "tomcat_dir" in ${gulpCfgPath} — deployment sync disabled`));
+        return { DEPLOYMENT_DIR: null, THEME_DIR: path.resolve(process.cwd()), VIEWER_CFG: viewerCfgPath, USER_CFG: gulpCfgPath };
     }
 
     let viewerConfig;
     try {
         viewerConfig = XML.parse(fs.readFileSync(viewerCfgPath, 'utf-8'));
     } catch (e) {
-        throw new Error(`Cannot parse ${viewerCfgPath}: ${e.message}`);
+        log(colors.yellow(`[deploy] Cannot parse ${viewerCfgPath}: ${e.message} — deployment sync disabled`));
+        return { DEPLOYMENT_DIR: null, THEME_DIR: path.resolve(process.cwd()), VIEWER_CFG: viewerCfgPath, USER_CFG: gulpCfgPath };
     }
 
     const theme = viewerConfig?.viewer?.theme || {};
@@ -339,8 +348,16 @@ const { DEPLOYMENT_DIR, THEME_DIR, VIEWER_CFG, USER_CFG } = (() => {
 let deploymentDirChecked = false;
 function requireDeploymentDir() {
     if (!deploymentDirChecked) {
-        assertDirExists('DEPLOYMENT_DIR', DEPLOYMENT_DIR);
         deploymentDirChecked = true;
+        if (!DEPLOYMENT_DIR) {
+            log(colors.yellow('[deploy] No deployment directory configured — skipping sync'));
+            return;
+        }
+        try {
+            assertDirExists('DEPLOYMENT_DIR', DEPLOYMENT_DIR);
+        } catch (e) {
+            log(colors.yellow(`[deploy] ${e.message} — skipping sync`));
+        }
     }
 }
 

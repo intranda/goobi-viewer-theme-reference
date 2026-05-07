@@ -23,28 +23,32 @@
         }
     }
     /* ELEMENT */
+    &__options-container {
+    }
+    &__options-container-heading {
+    }
     &__title {
         h2 {
         }
     }
     &__options {
-        a,
-        button {
-            position: relative;
-            color: @fg-general;
-            font-size: @fontMedium;
-            &:hover {
-                color: @ci-color1;
-            }
-            &:focus,
-            &:active {
-                color: @fg-general;
-            }
-            &.active {
-                color: @ci-color1;
-            }
-        }
         form {
+        }
+    }
+    /* ICON BUTTON STRIP */
+    &__option-button {
+        position: relative;
+        color: @fg-general;
+        font-size: @fontMedium;
+        &:hover {
+            color: @ci-color1;
+        }
+        &:focus,
+        &:active {
+            color: @fg-general;
+        }
+        &.active {
+            color: @ci-color1;
         }
     }
     &__hitcount,
@@ -76,8 +80,32 @@
         [data-view='search-list-list'] {
         }
     }
-    /* ICON BUTTON STRIP */
-    &__option-button {
+    &__ris-export {
+    }
+    &__help {
+    }
+    /* EXPORT DROPDOWN */
+    &__export-dropdown-wrapper {
+    }
+    &__export-dropdown {
+    }
+    &__export-dropdown-toggle {
+    }
+    &__export-dropdown-heading {
+    }
+    &__export-dropdown-link {
+    }
+    &__hit-export-dropdown-wrapper {
+    }
+    &__hit-export-dropdown {
+    }
+    &__hit-export-dropdown-toggle {
+    }
+    &__hit-export-dropdown-heading {
+    }
+    &__hit-export-dropdown-link {
+    }
+    &__options-wrapper {
     }
     /* CURRENT SEARCH */
     &__label {
@@ -150,7 +178,15 @@
     &__adv-search-info-back {
     }
     /* HITS */
+    &__hits-geo-map-results-container {
+    }
+    &__geomap {
+    }
     &__hits {
+    }
+    &__nav-helper {
+    }
+    &__hits-list {
     }
     &__hit {
         background-color: @bg-content-box;
@@ -175,6 +211,8 @@
     }
     &__hit-header {
     }
+    &__hit-header-inner {
+    }
     &__hit-number-wrapper {
         background: @ci-color1;
     }
@@ -194,9 +232,26 @@
         &.-noThumbnail {
         }
     }
+    &__hit-title-link {
+    }
     &__no-thumb-bookmark {
         &[data-bookmark-list-type='add'] {
             color: @ci-color1;
+            .fa-bookmark-o,
+            .fa-bookmark {
+                color: @ci-color1;
+            }
+            .fa-bookmark-o {
+            }
+            .fa-bookmark {
+            }
+            &.added,
+            &:hover {
+                .fa-bookmark-o {
+                }
+                .fa-bookmark {
+                }
+            }
         }
     }
     &__hit-thumbnail {
@@ -213,6 +268,21 @@
         }
         [data-bookmark-list-type='add'] {
             color: @ci-color1;
+            .fa-bookmark-o,
+            .fa-bookmark {
+                color: @ci-color1;
+            }
+            .fa-bookmark-o {
+            }
+            .fa-bookmark {
+            }
+            &.added,
+            &:hover {
+                .fa-bookmark-o {
+                }
+                .fa-bookmark {
+                }
+            }
         }
     }
     &__hit-type {
@@ -238,6 +308,8 @@
     }
     &__hit-text-value {
     }
+    &__hit-text-area {
+    }
     &__hit-info {
     }
     &__toggle-thumbs {
@@ -257,6 +329,16 @@
         &:hover,
         &:focus,
         &:active {
+        }
+        .fa-caret-right {
+        }
+        .fa-caret-down {
+        }
+        &.in {
+            .fa-caret-right {
+            }
+            .fa-caret-down {
+            }
         }
         .search-list__loader {
         }
@@ -287,8 +369,41 @@
             font-size: @fontMedium;
         }
     }
+    &__subhit-thumbnail {
+    }
+    &__loader {
+    }
+    /* BROWSE ELEMENT */
+    &__hit-inner-structure {
+    }
+    &__hit-thumb-wrapper {
+    }
+    &__hit-info-wrapper {
+    }
+    &__hit-top-wrapper {
+    }
+    &__hit-options-wrapper {
+    }
+    &__hit-options-button {
+    }
+    &__hit-options-button-bookmark {
+    }
+    &__hit-options-button-download {
+    }
+    &__hit-options-button-clipboard {
+    }
+    &__hit-options-button-citation {
+    }
+    &__thumb-bookmark {
+    }
+    &__hit-metadata-list {
+    }
+    &__hit-metadata-second {
+    }
     &__struct-title,
     &__struct-chapter {
+        .fa {
+        }
     }
     &__struct-title {
         margin-bottom: 0.5rem;
@@ -300,6 +415,8 @@
         td {
             &:first-child {
             }
+        }
+        .fa {
         }
     }
     &__struct-child-hits {
@@ -334,6 +451,8 @@
 .stacked-thumbnail a img {
 }
 .search-list__current-search .input-group-addon.search {
+}
+.search-list__current-search .input-group-append.search {
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
