@@ -22,7 +22,7 @@
         scroll-margin-top: 150px; // offset for fixed top navigation
     }
 
-    &__wrapper:not(:has(.content__sidebar .widget, .content__sidebar .widget-admin, .content__sidebar .admin-widget)) {
+    &__wrapper:not(:has(.sidebar__inner > *)) {
         grid-template-columns: 1fr;
 
         .content__sidebar {
