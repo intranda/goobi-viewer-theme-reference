@@ -186,6 +186,21 @@
     --archives-overlay-text: #fff;
     --archives-placeholder-bg: var(--bg-general);
     --archives-placeholder-icon-color: var(--fg-controls);
+
+    /* QUICK FILTERS */
+    --quick-filter-bg: #fff;
+    --quick-filter-fields-bg: #f2f3f4;
+    --quick-filter-label-color: #6f6f6f;
+    --quick-filter-text-color: #212529;
+    --quick-filter-field-separator: #ccc;
+    --quick-filter-dropdown-bg: #fff;
+    --quick-filter-dropdown-hover-bg: #f2f3f4;
+    --quick-filter-toggle-bg: #f2f3f4;
+    --quick-filter-invalid-color: #c0392b;
+    --quick-filter-radius: 0;
+    --quick-filter-radius-sm: 0;
+    --quick-filter-dropdown-shadow: none;
+    --quick-filter-input-shadow: none;
 }
 
 .mx-theme-dark {
@@ -266,6 +281,21 @@
     --archives-overlay-text: #e3e4e7;
     --archives-placeholder-bg: var(--bg-content-box);
     --archives-placeholder-icon-color: var(--fg-controls);
+
+    /* QUICK FILTERS */
+    --quick-filter-bg: var(--bg-content-box);
+    --quick-filter-fields-bg: var(--bg-active);
+    --quick-filter-label-color: var(--fg-controls);
+    --quick-filter-text-color: var(--fg-content-box);
+    --quick-filter-field-separator: rgba(255, 255, 255, 0.12);
+    --quick-filter-dropdown-bg: var(--bg-content-box);
+    --quick-filter-dropdown-hover-bg: var(--bg-active);
+    --quick-filter-toggle-bg: var(--bg-active);
+    --quick-filter-invalid-color: #e74c3c;
+    --quick-filter-radius: 0;
+    --quick-filter-radius-sm: 0;
+    --quick-filter-dropdown-shadow: none;
+    --quick-filter-input-shadow: none;
 }
 
 // DETACHED RULESET FOR OVERRIDING STYLING
@@ -290,7 +320,7 @@
 		text-decoration: none;
 	});
 */
- 
+
 // SET STYLES FOR PSEUDO STATES OF AN ELEMENT
 .pseudostates(@pseudostatevalues) {
     &:hover,
