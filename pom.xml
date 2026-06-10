@@ -8,10 +8,10 @@
 		<groupId>io.goobi.viewer</groupId>
 		<artifactId>viewer</artifactId>
 		<version>${revision}${changelist}</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>io.goobi.viewer.theme</groupId>
 	<artifactId>theme-reference</artifactId>
+	<version>${revision}${changelist}</version>
 	<packaging>war</packaging>
 
 	<name>Goobi viewer - Theme Reference</name>
@@ -28,18 +28,18 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>${project.version}</version>
+			<version>${parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-config</artifactId>
-			<version>${project.version}</version>
+			<version>${parent.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-connector</artifactId>
-			<version>${project.version}</version>
+			<version>${parent.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -185,7 +185,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<scmDirectory>${project.basedir}/..</scmDirectory>
+					<scmDirectory>${project.basedir}</scmDirectory>
 					<shortRevisionLength>7</shortRevisionLength>
 					<doCheck>false</doCheck>
 				</configuration>
