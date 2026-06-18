@@ -13,3 +13,5 @@
 /.settings/
 .classpath
 .flattened-pom.xml
+**/hotswap-agent.properties
+/.project
