@@ -10,17 +10,18 @@
     z-index: 1;
     font-size: @fontMedium;
     color: @white;
-    background-color: @middleblack;
+    background-color: @ci-color3;
     color: @white;
+    height: 350px;
     & when (@colorModes =true) {
         .mx-light-mode-rules ({
-			background-color: @middleblack;
+			background-color: @ci-color3;
 			color: @white;
-		});
+		});;
         .mx-dark-mode-rules ({
 			background-color: @bg-content-box;
 			color: @fg-content-box;
-		});
+		});;
     }
     &__wrapper {
         display: flex;

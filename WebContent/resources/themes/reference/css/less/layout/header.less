@@ -10,6 +10,10 @@
     color: @fg-header;
     top: 0;
 
+    &__span {
+        color: @ci-color1;
+    }
+
     &.-scrolled {
         .header__inner {
             padding: 1rem 0;
@@ -52,10 +56,6 @@
     &__actions-bookmark {
         border-left: none;
         border-right: 1px solid @middleblack;
-
-        .bookmark-navigation__counter {
-            color: @white;
-        }
     }
 
     &__client-status {
@@ -302,17 +302,18 @@
                 color: @fg-general;
                 font-size: 1.8rem;
                 height: 30px;
+                border-radius: @container-small-border-radius;
 
                 & when (@colorModes =true) {
                     .mx-dark-mode-rules ({
 						border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 						color: @fg-general;
-					});
+					});;
 
                     .mx-light-mode-rules ({
 						border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 						color: @fg-general;
-					});
+					});;
                 }
             }
 

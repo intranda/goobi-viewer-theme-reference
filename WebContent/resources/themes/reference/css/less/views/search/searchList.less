@@ -40,6 +40,8 @@
         position: relative;
         color: @fg-general;
         font-size: @fontMedium;
+        border-radius: 5px;
+
         &:hover {
             color: @ci-color1;
         }
@@ -192,6 +194,7 @@
         background-color: @bg-content-box;
         color: @fg-content-box;
         border: @border;
+        border-radius: @container-border-radius;
         /* COLORING FOR THE ENTITY GHOUPS */
         &.docstructtype__work {
             border: 1px solid #dc7e2e;
@@ -226,7 +229,7 @@
         h3 {
             font-size: @fontNormal;
             a {
-                color: @lk-content-box;
+                color: @fg-header;
             }
         }
         &.-noThumbnail {
@@ -248,10 +251,10 @@
             & when (@colorModes = true) {
                 .mx-light-mode-rules ({
 					border: 2px solid #fff;
-				});
+				});;
                 .mx-dark-mode-rules ({
 					border: none;
-				});
+				});;
             }
         }
         [data-bookmark-list-type='add'] {
@@ -272,6 +275,13 @@
         li + li:before {
         }
         a {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-radius: @container-small-border-radius;
+            background-color: #3365a926;
+            color: @lk-general;
+            padding: 0 0.6rem;
         }
     }
     &__hit-text {
@@ -349,20 +359,32 @@
     &__hit-info-wrapper {
     }
     &__hit-top-wrapper {
+        padding-bottom: 0.3rem;
+        margin-bottom: 1.2rem;
+        border-bottom: 1px solid #e9e9e9;
     }
     &__hit-options-wrapper {
     }
     &__hit-options-button {
+        border-radius: @container-small-border-radius;
     }
     &__hit-options-button-bookmark {
+        color: @accent-color-1;
+        background-color: rgba(@accent-color-1, 0.2);
     }
     &__hit-options-button-download {
+        color: @accent-color-3;
+        background-color: rgba(@accent-color-3, 0.2);
     }
     &__hit-options-button-clipboard {
     }
     &__hit-options-button-citation {
+        color: @accent-color-2;
+        background-color: rgba(@accent-color-2, 0.2);
     }
-    &__thumb-bookmark {
+    &__hit-export-dropdown-toggle {
+        color: @accent-color-4;
+        background-color: rgba(@accent-color-4, 0.2);
     }
     &__hit-metadata-list {
     }

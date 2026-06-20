@@ -36,13 +36,21 @@
     }
     &__title {
     }
+    .bookmark-toggle__icon {
+        background-color: @white;
+        border-radius: @container-small-border-radius;
+    }
     &__bookmark-button {
         &[data-bookmark-list-type='add'] {
+            color: @accent-color-1 !important;
+            background-color: rgba(@accent-color-1, 0.2) !important;
+            border-radius: @container-small-border-radius;
         }
     }
     &__wrapper {
-        // background-color: @bg-content-box;
         &.-isBoxed {
+            border-radius: @container-border-radius;
+            background-color: @bg-content-box;
             border: @border;
             background-color: @bg-content-box;
 
@@ -248,7 +256,8 @@
 }
 
 /* BREAKPOINT FOR TABLETS */
-@media screen and (max-width: @smallBreakpoint) {}
+@media screen and (max-width: @smallBreakpoint) {
+}
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {

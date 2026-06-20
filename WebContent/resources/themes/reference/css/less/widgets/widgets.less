@@ -4,9 +4,16 @@
    ==============================================================*/
 /* WIDGETS */
 .widget {
+    border-radius: @container-border-radius;
+    background-color: @bg-content-box;
+    border: @border;
+    box-shadow: @container-box-shadow;
+
     &__topbar {
-        padding: 0.7rem 1.5rem;
-        background-color: @ci-color1;
+        margin: 1.5rem 1.5rem 1rem 1.5rem;
+        border-radius: @container-border-radius;
+        background-color: #1665c00f;
+        padding: 0.5rem 1.2rem;
     }
 
     &__topbar-icons-container {
@@ -23,15 +30,14 @@
 
     &__title {
         font-size: @fontNormal;
-        font-weight: 400;
-        color: @white;
+        font-weight: 600;
+        color: @ci-color1;
+        border-radius: 9px;
     }
 
     &__body {
-        border: @border;
-        border-top: 0;
-        background-color: @bg-content-box;
-        border-bottom: @border;
+        border-radius: @container-border-radius;
+        padding: 1.5rem;
 
         a {
             color: @lk-content-box;
@@ -44,8 +50,8 @@
         li {
             &.active {
                 a {
-//                    font-weight: 600;
-//                    color: @lh-content-box;
+                    //                    font-weight: 600;
+                    //                    color: @lh-content-box;
                 }
             }
         }
@@ -72,10 +78,10 @@
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 			   	background-color: @bg-active;
-			  });
+			  });;
                 .mx-light-mode-rules ({
 			    background-color: #343a40;
-			  });
+			  });;
             }
             color: @white;
 
@@ -87,10 +93,10 @@
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 			  		background-color: @bg-hover;
-			  });
+			  });;
                     .mx-light-mode-rules ({
 			   		background-color: #5e5e5e;
-			  });
+			  });;
                 }
             }
         }

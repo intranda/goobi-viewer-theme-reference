@@ -7,15 +7,36 @@
 .widget-searchfield {
     /* ELEMENT */
     .form-group {
+        border-radius: @container-border-radius;
+
+        input {
+            border-radius: @container-border-radius !important;
+            margin-right: 0.5rem;
+            box-shadow: @container-box-shadow;
+        }
+    }
+    .form-control {
+        border: @border;
+        padding: 2rem 1.2rem;
     }
     .input-group {
+        background-color: @bg-general;
         input {
         }
     }
     .input-group-addon {
-        border-color: @ci-color1;
+        display: flex;
+        justify-content: center;
+        box-shadow: @container-box-shadow;
         background-color: @ci-color1;
+        border-radius: @container-small-border-radius;
+        width: 41px;
+        border: none;
+
         input {
+        }
+        button {
+            color: @white;
         }
     }
 }

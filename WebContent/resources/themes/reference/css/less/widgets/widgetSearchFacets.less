@@ -18,7 +18,6 @@
 
         li {
             &.active {
-
             }
         }
     }
@@ -27,6 +26,9 @@
     }
 
     &__list-item-link {
+        &.-active {
+            background-color: @bg-hover;
+        }
     }
 
     &__list-item-label {
@@ -50,6 +52,15 @@
     }
 
     &__list {
+        scrollbar-color: @middlegray transparent;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
+                scrollbar-color: @bg-active transparent;
+            });;
+            .mx-light-mode-rules ({
+                scrollbar-color: @middlegray transparent;
+            });;
+        }
     }
 
     /* FILTER */
@@ -106,7 +117,6 @@
         color: var(--widget-icon-color-expand);
         &.-expand,
         &.-collapse {
-
         }
     }
 
@@ -129,6 +139,9 @@
     }
 
     &__section-toggle-icon-svg {
+    }
+
+    &__collapse-button-icon-svg {
     }
 
     &__boolean {
