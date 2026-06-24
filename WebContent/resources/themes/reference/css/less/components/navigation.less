@@ -5,37 +5,40 @@
 /* NAVIGATION */
 /* BLOCK */
 .navigation {
-    background-color: @ci-color1;
     li {
         &.active > a,
         &.active > button {
-            background-color: @ci-hovercolor1;
+            background-color: @ci-color-1-transparent;
+            color: @ci-color1;
+            border-bottom: 2px solid @ci-color1;
         }
     }
-    .btn {
-        &:active:focus,
-        &.active,
-        &.active.focus,
-        &.active:focus,
-        &.focus,
-        &:active.focus {
-            color: @white;
-        }
+    &__list {
+        padding: 1.2rem 0.5rem;
     }
     a,
     button {
+        font-weight: 500;
         padding: 0.6rem 1.2rem;
         font-size: @fontNormal;
-        color: @white;
+        color: @fg-header;
+        border-radius: @button-border-radius;
+        transition:
+            background-color 0.2ms ease,
+            color 0.2ms ease;
         &:hover,
         &:focus,
         &:active {
-            color: @white;
-            background-color: @ci-hovercolor1;
+            color: @ci-color1;
+            background-color: @ci-color-1-transparent;
+
+            .caret {
+                color: @ci-color1;
+            }
         }
     }
     .caret {
-        color: @white;
+        color: @fg-header;
     }
     /* STANDARD MENU */
     &__submenu-trigger {
@@ -44,12 +47,14 @@
         }
     }
     &__submenu {
-        border: none;
         top: calc(~'100%');
-        border-color: transparent;
         background-color: transparent;
+        background-color: @white;
+        border-radius: @container-border-radius;
+        box-shadow: @container-box-shadow;
+        border: 1px solid @border-color;
+
         li {
-            background-color: @ci-hovercolor1;
             &:last-child {
                 border-bottom: 0;
             }
@@ -62,7 +67,7 @@
                         &:hover,
                         &:focus,
                         &:active {
-                            background-color: @ci-color1;
+                            background-color: @white;
                         }
                     }
                 }
@@ -74,7 +79,8 @@
             &:hover,
             &:focus,
             &:active {
-                background-color: @ci-color1;
+                background-color: @ci-color-1-transparent;
+                color: @ci-color1;
             }
         }
         .caret {
@@ -144,9 +150,6 @@
         &__submenu {
             &.in {
                 display: none;
-            }
-            li {
-                background-color: @ci-color1;
             }
         }
     }

@@ -4,18 +4,21 @@
 
 /* FOOTER */
 .footer {
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
     margin-top: auto;
     position: sticky;
     bottom: 0;
     z-index: 1;
     font-size: @fontMedium;
     color: @white;
-    background-color: @ci-color3;
+    background-color: #0e2543;
     color: @white;
     height: 350px;
     & when (@colorModes =true) {
         .mx-light-mode-rules ({
-			background-color: @ci-color3;
+			background-color: #0e2543;
 			color: @white;
 		});;
         .mx-dark-mode-rules ({

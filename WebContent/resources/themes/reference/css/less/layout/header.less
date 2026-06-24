@@ -6,9 +6,10 @@
 .header {
     z-index: 2019;
     position: sticky;
-    background: @bg-general;
+    background: @white;
     color: @fg-header;
     top: 0;
+    box-shadow: @container-box-shadow;
 
     &__span {
         color: @ci-color1;
@@ -207,7 +208,8 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        padding: 3rem 0;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid @border-color;
         transition: 0.2s all ease;
     }
 
@@ -237,12 +239,13 @@
                 transition: 0.2s all ease;
                 display: inline-block;
                 max-height: 5.2rem;
-                max-width: 300px;
-                margin-right: 2rem;
+                max-width: 6rem;
+                margin-right: 1rem;
                 vertical-align: middle;
             }
 
             span {
+                font-size: 2.8rem;
             }
         }
     }
