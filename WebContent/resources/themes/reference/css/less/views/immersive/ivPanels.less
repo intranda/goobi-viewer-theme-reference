@@ -1,0 +1,33 @@
+/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivPanels.less */
+
+.immersive {
+    &__panel {
+        &--left {
+            &.is-open {
+            }
+        }
+    }
+
+    &__panel-resize-handle {
+        &::after {
+        }
+
+        &:hover::after {
+        }
+    }
+
+    &--panel-open &__panel-resize-handle {
+    }
+
+    &--resizing {
+        .immersive__panel-resize-handle::after {
+        }
+    }
+
+    &__viewer:fullscreen:not(.is-double-page) {
+    }
+
+    &__viewer:-webkit-full-screen:not(.is-double-page) {
+    }
+
+}

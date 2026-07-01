@@ -1,0 +1,104 @@
+/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivPopovers.less */
+
+.popover:has(.widget-citation),
+.popover:has(.widget-social-media),
+.popover:has(imageFilters) {
+    & :focus-visible {
+    }
+
+    &.bs-popover-top .arrow::before,
+    &.bs-popover-top .arrow::after {
+    }
+    &.bs-popover-right .arrow::before,
+    &.bs-popover-right .arrow::after {
+    }
+    &.bs-popover-bottom .arrow::before,
+    &.bs-popover-bottom .arrow::after {
+    }
+    &.bs-popover-left .arrow::before,
+    &.bs-popover-left .arrow::after {
+    }
+
+    .popover-body {
+    }
+
+    .popover-header {
+    }
+
+    .widget {
+    }
+}
+
+.popover:has(.widget-citation) {
+    .widget-citation__topbar {
+    }
+    .widget-citation__body {
+    }
+
+    .widget-citation__license-text,
+    .widget-citation__citerecommendation-text-info {
+    }
+
+    .widget-citation__subtitle,
+    .widget__badge-container-heading {
+    }
+
+    .widget__badge-container .badge,
+    .widget__badge-container .badge-dark {
+        &:hover,
+        &:active,
+        &:focus {
+        }
+    }
+
+    .custom-control--select {
+        &::after {
+        }
+
+        select {
+        }
+    }
+
+    .widget-citation__citerecommendation-text-wrapper .fa-quote-right {
+    }
+    .widget-citation__citerecommendation-copy-text {
+        &:hover,
+        &:active,
+        &:focus {
+        }
+    }
+}
+
+.popover:has(.widget-social-media) {
+    .widget-social-media__body {
+    }
+
+    .widget-social-media__link {
+        &:hover {
+        }
+    }
+
+    .widget-social-media__link img[src$='x_logo.svg'] {
+    }
+}
+
+.popover:has(imageFilters) {
+    input[type='range'],
+    input[type='checkbox'] {
+    }
+
+    .imagefilters__filter-list {
+    }
+
+    .imagefilters__label {
+    }
+
+    .imagefilters__options {
+        .btn--full {
+            &:hover,
+            &:active,
+            &:focus {
+            }
+        }
+    }
+}

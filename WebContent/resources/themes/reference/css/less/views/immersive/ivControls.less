@@ -1,0 +1,40 @@
+/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivControls.less */
+
+.immersive {
+    &__toolbar {
+        &--left {
+            .immersive__tool-btn--active {
+                &::before {
+                }
+            }
+        }
+
+        &--right {
+        }
+    }
+
+    &__toolbar-group {
+        & + & {
+        }
+    }
+
+    &__tool-btn {
+    }
+
+    &__tool-btn--active,
+    &__tool-btn[aria-pressed='true'],
+    &__bar-btn--active,
+    &__bar-btn[aria-pressed='true'] {
+        &:hover {
+        }
+    }
+
+    &__tool-btn--disabled {
+        &:hover {
+        }
+    }
+
+    &__tool-icon {
+    }
+
+}

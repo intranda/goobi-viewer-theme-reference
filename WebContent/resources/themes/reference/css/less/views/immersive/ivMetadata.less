@@ -1,0 +1,95 @@
+/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivMetadata.less */
+
+.immersive {
+    &__panel--metadata .metadata {
+        .metadata__elements,
+        .metadata__events,
+        .metadata__wrapper,
+        .metadata__wrapper.-isBoxed,
+        .metadata__ungrouped-wrapper,
+        .metadata__grouped-wrapper,
+        .metadata__element-wrapper,
+        .metadata__element-wrapper-single,
+        .metadata__event-inside-wrapper {
+        }
+
+        .metadata__elements-h2,
+        .metadata__elements-h3,
+        .metadata__heading {
+            &::before {
+            }
+        }
+
+        .metadata__elements-h2:first-child,
+        .metadata__elements-h3:first-child,
+        .metadata__heading:first-child {
+        }
+
+        .metadata__element-dl,
+        .metadata__event-dl,
+        .metadata__element-ungrouped {
+            dt {
+            }
+
+            dd {
+                & + dd {
+                }
+
+                a {
+                    &:hover {
+                    }
+                }
+
+                button {
+                }
+
+                .icon,
+                .icon-svg {
+                }
+
+                a:hover .icon,
+                a:hover .icon-svg,
+                button:hover .icon,
+                button:hover .icon-svg {
+                }
+            }
+        }
+
+        .metadata__fold-button {
+            &:hover {
+            }
+
+            &.-hidden {
+            }
+
+            .metadata__fold-button-inner {
+            }
+
+            .icon,
+            .icon-svg,
+            svg {
+            }
+        }
+    }
+
+    &__metadata-toggle {
+        &::before {
+        }
+
+        &[aria-expanded='true']::before {
+        }
+
+        &:hover {
+        }
+    }
+
+    &__metadata-toggle-less {
+    }
+
+    .immersive__metadata-toggle[aria-expanded='true'] &__metadata-toggle-more {
+    }
+
+    .immersive__metadata-toggle[aria-expanded='true'] &__metadata-toggle-less {
+    }
+
+}
