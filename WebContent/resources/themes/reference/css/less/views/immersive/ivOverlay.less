@@ -1,4 +1,7 @@
-/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivOverlay.less */
+/* ==============================================================
+   Immersive View: Overlay — theme overrides (skeleton)
+   core: css/less/views/immersive/ivOverlay.less
+   ==============================================================*/
 
 .immersive {
     &__overlay-top {
@@ -70,9 +73,6 @@
     &__page-dropdown-input {
         &:focus {
         }
-
-        &:focus-visible {
-        }
     }
 
     &__page-dropdown-list {
@@ -80,16 +80,27 @@
 
     &__page-dropdown-item {
         &:hover,
-        &.is-active {
+        &--active {
         }
     }
 
-    &__page-dropdown-num {
-        .immersive__page-dropdown-item.is-active & {
+    &__page-dropdown-number {
+        .immersive__page-dropdown-item--active & {
         }
     }
 
-    &__page-dropdown-itemlabel {
+    &__page-dropdown-item-label {
     }
+}
 
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }

@@ -1,4 +1,7 @@
-/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivPanels.less */
+/* ==============================================================
+   Immersive View: Panels — theme overrides (skeleton)
+   core: css/less/views/immersive/ivPanels.less
+   ==============================================================*/
 
 .immersive {
     &__panel {
@@ -6,6 +9,12 @@
             &.is-open {
             }
         }
+    }
+
+    &__panel-header {
+    }
+
+    &__panel-title {
     }
 
     &__panel-resize-handle {
@@ -29,5 +38,18 @@
 
     &__viewer:-webkit-full-screen:not(.is-double-page) {
     }
+}
 
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+    .immersive__viewer {
+    }
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }

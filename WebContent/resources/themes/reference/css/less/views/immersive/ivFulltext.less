@@ -1,4 +1,7 @@
-/* Immersive view — theme overrides (skeleton). Core: css/less/views/immersive/ivFulltext.less */
+/* ==============================================================
+   Immersive View: Fulltext — theme overrides (skeleton)
+   core: css/less/views/immersive/ivFulltext.less
+   ==============================================================*/
 
 .immersive {
     &__panel--fulltext {
@@ -15,10 +18,10 @@
         }
     }
 
-    &__hl {
+    &__highlight {
     }
 
-    &__hl--active {
+    &__highlight--active {
     }
 
     &__fulltext-line {
@@ -40,11 +43,23 @@
     }
 
     &__fulltext-granularity-btn {
-        &.is-active,
+        &--active,
         &[aria-pressed='true'] {
         }
 
         &[disabled] {
         }
     }
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }
