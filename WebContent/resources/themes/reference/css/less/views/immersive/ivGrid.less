@@ -5,6 +5,12 @@
 
 .immersive {
     &__grid {
+        &[data-thumb-size='0'] {
+        }
+
+        &[data-thumb-size='2'] {
+        }
+
         .thumbnails-image-wrapper {
         }
 
@@ -37,6 +43,47 @@
 
     &__grid-close {
         &:hover {
+        }
+    }
+
+    &__grid-top {
+        &[hidden] {
+        }
+    }
+
+    &__grid-top-icon {
+    }
+
+    &__grid-size {
+    }
+
+    &__grid-size-icon {
+        &--small {
+        }
+
+        &--large {
+        }
+    }
+
+    &__grid-size-slider {
+        &::-webkit-slider-runnable-track {
+        }
+
+        &::-moz-range-track {
+        }
+
+        &::-webkit-slider-thumb {
+        }
+
+        &::-moz-range-thumb {
+        }
+
+        &:hover::-webkit-slider-thumb,
+        &:focus-visible::-webkit-slider-thumb {
+        }
+
+        &:hover::-moz-range-thumb,
+        &:focus-visible::-moz-range-thumb {
         }
     }
 
