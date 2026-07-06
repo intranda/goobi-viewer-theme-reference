@@ -6,6 +6,10 @@
 .immersive {
     &__toolbar {
         &--left {
+            .immersive__toolbar-group {
+                & + .immersive__toolbar-group {
+                }
+            }
         }
 
         &--right {
@@ -14,6 +18,14 @@
 
     &__toolbar-group {
         & + & {
+        }
+    }
+
+    &__toolbar-group--grow {
+    }
+
+    &__back {
+        &:hover {
         }
     }
 
