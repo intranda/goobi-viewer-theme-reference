@@ -24,6 +24,14 @@
     &__highlight--active {
     }
 
+    &__fulltext-block {
+        &:last-child {
+        }
+
+        &.is-linked-active {
+        }
+    }
+
     &__fulltext-line {
         &.is-linked-active {
         }
@@ -39,20 +47,36 @@
         }
     }
 
-    &__fulltext-granularity {
+    &__text-region--block {
+        &.is-linked-active {
+        }
     }
 
-    &__fulltext-granularity-btn {
-        &:hover,
-        &:active {
+    &__text-region--line {
+        &.is-linked-active {
         }
+    }
 
-        &--active,
-        &[aria-pressed='true'] {
+    &__text-region--word {
+        &.is-linked-active {
         }
+    }
 
-        &[disabled] {
+    &__fulltext-legend {
+    }
+
+    &__fulltext-legend-item {
+        &::before {
         }
+    }
+
+    &__fulltext-legend-item--block::before {
+    }
+
+    &__fulltext-legend-item--line::before {
+    }
+
+    &__fulltext-legend-item--word::before {
     }
 }
 
