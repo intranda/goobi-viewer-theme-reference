@@ -16,127 +16,217 @@
     <footer
         id="footer"
         class="footer">
-        <div class="container">
-            <div class="footer__wrapper">
-                <!-- FOOTER LINKS -->
-                <ul class="footer__links">
-                    <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
-                        <li class="footer__link-item">
-                            <a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
-                        </li>
-                    </ui:fragment>
 
-                    <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-                        <li class="footer__link-item">
-                            <a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">
+        <!-- OBERER BEREICH: 3 Spalten -->
+        <div class="footer__topSection">
+            <div class="container">
+                <div class="footer__topSection__columns">
+
+                    <!-- Spalte 1: Über uns -->
+                    <div class="footer__topSection__column">
+                        <h3 class="footer__topSection__heading">Über uns</h3>
+                        <p class="footer__topSection__text">
+                            Der Goobi viewer ist ein Open-Source-Präsentationssystem
+                            für digitale Kulturgüter und historische Dokumente.
+                        </p>
+                        <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                            <a
+                                href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}"
+                                class="footer__topSection__btn">
                                 #{msg.contact}
                             </a>
-                        </li>
-                    </c:if>
-
-                    <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-                        <li class="footer__link-item">
+                        </c:if>
+                        <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
                             <button
-                                class="btn btn--icon"
+                                class="footer__topSection__btn"
                                 data-toggle="modal"
                                 data-target="#feedbackModal">
                                 #{msg.contact}
                             </button>
-                        </li>
-                    </c:if>
+                        </c:if>
+                    </div>
 
-                    <li class="footer__link-item">
-                        <a
-                            href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">
-                            #{msg.privacy}
-                        </a>
-                    </li>
+                    <!-- Spalte 2: Kontakt -->
+                    <div class="footer__topSection__column">
+                        <h3 class="footer__topSection__heading">#{msg.contact}</h3>
+                        <address class="footer__topSection__address">
+                            <span>intranda GmbH</span>
+                            <span>Bertha-von-Suttner-Str. 9</span>
+                            <span>37085 Göttingen, Deutschland</span>
+                        </address>
+                    </div>
 
-                    <li class="footer__link-item">
-                        <a
-                            href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">
-                            #{msg.imprint}
-                        </a>
-                    </li>
+                    <!-- Spalte 3: Social Media -->
+                    <div class="footer__topSection__column">
+                        <h3 class="footer__topSection__heading">Folgen Sie uns</h3>
+                        <div class="footer__social">
+                            <c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
+                                <a
+                                    href="https://facebook.com/#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
+                                    title="#{msg.social__follow_on_facebook}"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="#{msg.social__follow_on_facebook}">
+                                    <span class="sr-only">#{msg.social__follow_on_facebook}</span>
+                                    <util:icon icon="brand-facebook" />
+                                </a>
+                            </c:if>
 
-                    <li class="footer__link-item">
-                        <a
-                            href="#{msg.intrandaViewer}"
-                            target="_blank"
-                            rel="noopener">
-                            powered by Goobi viewer
-                        </a>
-                    </li>
-                </ul>
+                            <c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
+                                <a
+                                    href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
+                                    title="#{msg.social__follow_on_github}"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="#{msg.social__follow_on_github}">
+                                    <span class="sr-only">#{msg.social__follow_on_github}</span>
+                                    <util:icon icon="brand-github" />
+                                </a>
+                            </c:if>
 
-                <!-- FOOTER SOCIAL MEDIA -->
-                <div class="footer__social">
-                    <c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
-                        <a
-                            href="https://facebook.com/#{adminThemesBean.currentTheme.getSocialMediaLink('facebook').linkUrl}"
-                            title="#{msg.social__follow_on_facebook}"
-                            data-toggle="tooltip"
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="#{msg.social__follow_on_facebook}">
-                            <span class="sr-only">#{msg.social__follow_on_facebook}</span>
-                            <util:icon icon="brand-facebook" />
-                        </a>
-                    </c:if>
+                            <c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
+                                <a
+                                    href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
+                                    title="#{msg.social__follow_on_twitter}"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="#{msg.social__follow_on_twitter}">
+                                    <span class="sr-only">#{msg.social__follow_on_twitter}</span>
+                                    <util:icon icon="brand-x" />
+                                </a>
+                            </c:if>
 
-                    <c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
-                        <a
-                            href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
-                            title="#{msg.social__follow_on_github}"
-                            data-toggle="tooltip"
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="#{msg.social__follow_on_github}">
-                            <span class="sr-only">#{msg.social__follow_on_github}</span>
-                            <util:icon icon="brand-github" />
-                        </a>
-                    </c:if>
+                            <c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
+                                <a
+                                    href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
+                                    title="#{msg.social__follow_on_youtube}"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="#{msg.social__follow_on_youtube}">
+                                    <span class="sr-only">#{msg.social__follow_on_youtube}</span>
+                                    <util:icon icon="brand-youtube" />
+                                </a>
+                            </c:if>
 
-                    <c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
-                        <a
-                            href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
-                            title="#{msg.social__follow_on_twitter}"
-                            data-toggle="tooltip"
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="#{msg.social__follow_on_twitter}">
-                            <span class="sr-only">#{msg.social__follow_on_twitter}</span>
-                            <util:icon icon="brand-x" />
-                        </a>
-                    </c:if>
+                            <c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
+                                <a
+                                    href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
+                                    title="#{msg.social__follow_on_instagram}"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="#{msg.social__follow_on_instagram}">
+                                    <span class="sr-only">#{msg.social__follow_on_instagram}</span>
+                                    <util:icon icon="brand-instagram" />
+                                </a>
+                            </c:if>
+                        </div>
+                    </div>
 
-                    <c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
-                        <a
-                            href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
-                            title="#{msg.social__follow_on_youtube}"
-                            data-toggle="tooltip"
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="#{msg.social__follow_on_youtube}">
-                            <span class="sr-only">#{msg.social__follow_on_youtube}</span>
-                            <util:icon icon="brand-youtube" />
-                        </a>
-                    </c:if>
-
-                    <c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
-                        <a
-                            href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
-                            title="#{msg.social__follow_on_instagram}"
-                            data-toggle="tooltip"
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="#{msg.social__follow_on_instagram}">
-                            <span class="sr-only">#{msg.social__follow_on_instagram}</span>
-                            <util:icon icon="brand-instagram" />
-                        </a>
-                    </c:if>
                 </div>
             </div>
         </div>
+
+        <!-- UNTERER BEREICH -->
+        <div class="footer__bottomSection">
+            <div class="container">
+
+                <!-- Navigation (CMS) + Scroll-to-top nebeneinander -->
+                <div class="footer__bottomSection__nav-row">
+                    <nav
+                        class="footer__bottomSection__nav"
+                        aria-label="Footer-Navigation">
+                        <ul class="footer__bottomSection__nav__list">
+                            <ui:repeat
+                                var="navItem"
+                                value="#{cmsBean.navigationMenuItems}">
+                                <h:panelGroup
+                                    rendered="#{navItem.valid and navItem.shouldDisplay}"
+                                    layout="none">
+                                    <li>
+                                        <ui:fragment rendered="#{navItem.openInNewWindow}">
+                                            <a
+                                                href="#{navItem.navigationUrl}"
+                                                target="_blank"
+                                                rel="noopener">
+                                                #{msg[navItem.itemLabel]}
+                                            </a>
+                                        </ui:fragment>
+                                        <ui:fragment rendered="#{!navItem.openInNewWindow}">
+                                            <a href="#{navItem.navigationUrl}">#{msg[navItem.itemLabel]}</a>
+                                        </ui:fragment>
+                                    </li>
+                                </h:panelGroup>
+                            </ui:repeat>
+                        </ul>
+                    </nav>
+
+                    <button
+                        class="footer__scroll-top"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                        aria-label="Nach oben scrollen">
+                        <util:icon icon="chevron-up" />
+                    </button>
+                </div>
+
+                <!-- Copyright + Legal Links -->
+                <div class="footer__bottomSection__bar">
+                    <span class="footer__bottomSection__copyright">
+                        &#169; intranda GmbH
+                    </span>
+
+                    <ul class="footer__bottomSection__links">
+                        <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
+                            <li class="footer__link-item">
+                                <a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
+                            </li>
+                        </ui:fragment>
+
+                        <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                            <li class="footer__link-item">
+                                <a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">
+                                    #{msg.contact}
+                                </a>
+                            </li>
+                        </c:if>
+
+                        <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                            <li class="footer__link-item">
+                                <button
+                                    class="btn btn--icon"
+                                    data-toggle="modal"
+                                    data-target="#feedbackModal">
+                                    #{msg.contact}
+                                </button>
+                            </li>
+                        </c:if>
+
+                        <li class="footer__link-item">
+                            <a
+                                href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">
+                                #{msg.privacy}
+                            </a>
+                        </li>
+
+                        <li class="footer__link-item">
+                            <a
+                                href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">
+                                #{msg.imprint}
+                            </a>
+                        </li>
+
+                        <li class="footer__link-item">
+                            <a
+                                href="#{msg.intrandaViewer}"
+                                target="_blank"
+                                rel="noopener">
+                                powered by Goobi viewer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
     </footer>
 </ui:composition>
