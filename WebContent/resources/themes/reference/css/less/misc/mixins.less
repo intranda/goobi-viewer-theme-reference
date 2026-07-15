@@ -117,26 +117,36 @@
     --lh-content-box: #444;
 
     /* COMBINED FACETS */
-    --combined-facets-background: #e8edf3;
+    --combined-facets-background: #fff;
     --combined-facets-color: #2f3136;
     --combined-facets-accent: var(--ci-color1);
     --combined-facets-accent-contrast: #fff;
     --combined-facets-divider: #ccd7e3;
     --combined-facets-muted: #5f6572;
-    --combined-facets-box: #fff;
+    --combined-facets-box: #e8edf3;
+    --combined-facets-scrollbar: var(--lk-content-box);
+    --combined-facets-badge-background: var(--ci-color1);
+    --combined-facets-badge-background-hover: var(--ci-hovercolor1);
+    --combined-facets-badge-color: #fff;
+    --combined-facets-badge-muted: rgba(255, 255, 255, 0.85);
+    --combined-facets-badge-contrast: var(--ci-color1);
 
     /* ACTIVE FACETS BADGES */
-    --active-facets-badge-background: color-mix(in srgb, var(--ci-color1) 8%, transparent);
-    --active-facets-badge-color: var(--ci-color1);
-    --active-facets-badge-border: color-mix(in srgb, var(--ci-color1) 35%, transparent);
-    --active-facets-badge-muted: #6f6f6f;
-    --active-facets-badge-contrast: #fff;
+    --active-facets-badge-background: var(--ci-color1);
+    --active-facets-badge-background-hover: var(--ci-hovercolor1);
+    --active-facets-badge-color: #fff;
+    --active-facets-badge-border: transparent;
+    --active-facets-badge-muted: rgba(255, 255, 255, 0.85);
+    --active-facets-badge-radius: 0;
+    --active-facets-badge-contrast: var(--ci-color1);
+    --active-facets-badge-more-color: var(--ci-color1);
 
     /* FACET INCLUDE/EXCLUDE CONTROLS */
     --facet-control-border: #ccc;
     --facet-control-color: #6f6f6f;
     --facet-control-active: var(--ci-color1);
     --facet-control-active-fg: #fff;
+    --facet-boolean-background: transparent;
 
     /* WIDGET ICON COLORS */
     // --widget-icon-color-topbar: red;
@@ -290,19 +300,29 @@
     --combined-facets-divider: rgba(255, 255, 255, 0.17);
     --combined-facets-muted: #9aa3b5;
     --combined-facets-box: #1a2333;
+    --combined-facets-scrollbar: var(--bg-active);
+    --combined-facets-badge-background: var(--ci-color1);
+    --combined-facets-badge-background-hover: var(--ci-hovercolor1);
+    --combined-facets-badge-color: #fff;
+    --combined-facets-badge-muted: rgba(255, 255, 255, 0.85);
+    --combined-facets-badge-contrast: var(--ci-color1);
 
     /* ACTIVE FACETS BADGES */
-    --active-facets-badge-background: color-mix(in srgb, #e3e4e7 10%, transparent);
-    --active-facets-badge-color: #e3e4e7;
-    --active-facets-badge-border: color-mix(in srgb, #e3e4e7 30%, transparent);
-    --active-facets-badge-muted: rgba(255, 255, 255, 0.6);
-    --active-facets-badge-contrast: #253044;
+    --active-facets-badge-background: var(--ci-color1);
+    --active-facets-badge-background-hover: var(--ci-hovercolor1);
+    --active-facets-badge-color: #fff;
+    --active-facets-badge-border: transparent;
+    --active-facets-badge-muted: rgba(255, 255, 255, 0.85);
+    --active-facets-badge-radius: 0;
+    --active-facets-badge-contrast: var(--ci-color1);
+    --active-facets-badge-more-color: var(--lk-content-box);
 
     /* FACET INCLUDE/EXCLUDE CONTROLS */
     --facet-control-border: rgba(255, 255, 255, 0.3);
     --facet-control-color: rgba(255, 255, 255, 0.6);
     --facet-control-active: #e3e4e7;
     --facet-control-active-fg: #253044;
+    --facet-boolean-background: var(--bg-active);
 
     /* WIDGET ICON COLORS */
     // --widget-icon-color-topbar: red;

@@ -6,15 +6,42 @@
 
 /* BLOCK */
 .combined-facets {
+    --combined-facets-radius: 0;
+
     /* ELEMENTS */
     &__head {
     }
     &__title {
     }
     &__reset {
+        font-size: @fontSmall;
     }
     &__reset-icon-svg {
     }
     &__reset-label {
+    }
+
+    .active-facets-badges__list .active-facets-badges__badge {
+        font-weight: normal;
+    }
+
+    .widget-search-facets__collapse-button {
+        font-size: @fontSmall;
+    }
+
+    .widget-search-facets__filter .widget-search-facets__filter-button {
+        border-radius: 0;
+    }
+
+    .widget-chronology-slider__slider {
+        border-radius: 0;
+
+        .ui-slider-handle {
+            width: 1rem;
+            height: 1rem;
+            border: 1px solid @middleblack;
+            background-color: @middlegray;
+            border-radius: 0;
+        }
     }
 }

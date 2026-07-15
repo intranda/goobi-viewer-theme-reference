@@ -9,15 +9,33 @@
     /* ELEMENTS */
     &__list {
     }
-    &__badge {
+    &__list &__badge {
+        height: 24px;
+        padding: 0 4px 0 7px;
+        gap: 4px;
+        font-size: @fontSmall;
+        font-weight: normal;
+
+        &:hover,
+        &:focus {
+            border-color: transparent;
+            box-shadow: none;
+        }
     }
     &__badge-label {
     }
     &__badge-field {
     }
     &__badge-remove {
+        width: 16px;
+        height: 16px;
+        color: var(--active-facets-badge-contrast);
+        background: var(--active-facets-badge-color);
+        border-radius: 0;
     }
     &__badge-remove-icon-svg {
+        width: 10px;
+        height: 10px;
     }
     &__more {
     }
