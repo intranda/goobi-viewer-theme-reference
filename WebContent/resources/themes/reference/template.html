@@ -21,14 +21,6 @@
         var="templateName"
         value="template" />
 
-    <!-- facetsDisplayMode: global switch for the search facets display mode.
-         "widgets" (default) renders individual widget boxes, "combined" renders one connected
-         filter container (see widget_searchFacets.xhtml). -->
-    <c:set
-        var="facetsDisplayMode"
-        value="widgets"
-        scope="request" />
-
     <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files, all available strings are listed when passing 'showCSS' resp. 'showJS') -->
     <c:set
         var="excludeCSS"
