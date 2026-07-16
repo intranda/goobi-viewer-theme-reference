@@ -6,6 +6,8 @@
 
 /* BLOCK */
 .active-facets-badges {
+    --active-facets-badge-shadow-hover: none;
+
     /* ELEMENTS */
     &__list {
     }
@@ -15,7 +17,8 @@
     }
     &__list &__badge {
         height: 24px;
-        padding: 0 4px 0 7px;
+        padding-block: 0;
+        padding-inline: 7px 4px;
         gap: 4px;
         font-size: @fontSmall;
         font-weight: normal;
@@ -23,7 +26,6 @@
         &:hover,
         &:focus {
             border-color: transparent;
-            box-shadow: none;
         }
     }
     &__badge-label {
@@ -55,4 +57,20 @@
     }
     &__reset-label {
     }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }
