@@ -21,6 +21,7 @@
     &__input {
     }
     &__input-slim {
+        gap: 0.75rem;
     }
     &__input-label,
     &__filter-label {
@@ -31,6 +32,13 @@
         .ui-autocomplete {
             .ui-autocomplete-input {
                 background: @white;
+                border: @border;
+                border-radius: @container-border-radius;
+                box-shadow: @container-box-shadow;
+                transition: box-shadow 0.15s ease;
+                &:focus {
+                    box-shadow: @container-box-shadow, 0 0 0 3px @ci-color-1-transparent;
+                }
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 						background: @fg-controls;
@@ -86,7 +94,52 @@
             }
         }
     }
+    &__submit-button.btn {
+        box-shadow: @container-box-shadow;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        transition: box-shadow 0.15s ease;
+        &:hover,
+        &:focus {
+            box-shadow: @container-box-shadow, 0 0 0 3px @ci-color-1-transparent;
+        }
+    }
     /* MODIFICATION */
+}
+
+/* AUTOCOMPLETE DROPDOWN (jQuery UI menu, appended to body) */
+.ui-autocomplete.ui-menu {
+    border: none;
+    border-radius: @container-border-radius;
+    box-shadow: @container-box-shadow;
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+    background-color: @white;
+    & when (@colorModes = true) {
+        .mx-dark-mode-rules ({
+			background-color: @fg-controls;
+		});
+        .mx-light-mode-rules ({
+			background-color: @white;
+		});
+    }
+
+    .ui-menu-item {
+        border-radius: @container-small-border-radius;
+
+        .ui-menu-item-wrapper {
+            padding: 0.6rem 1rem;
+            border-radius: @container-small-border-radius;
+            color: @fg-content-box;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+        .ui-state-active {
+            background-color: @ci-color1;
+            color: @white;
+            border: none;
+            margin: 0;
+        }
+    }
 }
 
 /* AUTOCOMPLETE PANEL */

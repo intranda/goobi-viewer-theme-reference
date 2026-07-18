@@ -10,13 +10,29 @@
     &__item {
         &-input {
             color: @fg-content-box;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            background-color: transparent;
+            border: 1px solid @border-color;
+            border-radius: @container-small-border-radius;
+            padding: 0.4rem 0.6rem;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+            &:hover,
+            &:focus {
+                outline: none;
+                border-color: @ci-color3;
+                box-shadow: 0 0 0 3px fade(@ci-color3, 15%);
+            }
         }
         &.chronology-slider-label,
         &.chronology-slider-actions {
-            color: @white;
+            color: @fg-content-box;
         }
         &.chronology-slider-label {
-            font-weight: 400;
+            font-weight: 600;
             font-size: @fontNormal;
         }
         &.chronology-slider-actions {
@@ -27,7 +43,11 @@
             img {
             }
             [data-reset='chrono-slider'] {
-                color: @white;
+                color: @fg-content-box;
+                transition: color 0.2s ease;
+                &:hover {
+                    color: @ci-color3;
+                }
             }
         }
         &.chronology-slider-action-loader,
@@ -42,25 +62,51 @@
         &.chronology-slider-start,
         &.chronology-slider-end {
             font-size: @fontMedium;
-            background-color: @bg-content-box;
+            background-color: transparent;
         }
         &.chronology-slider-start {
         }
         &.chronology-slider-end {
         }
         &.chronology-slider {
-            background-color: @bg-content-box;
+            background-color: transparent;
+            padding: 1rem 0.5rem 1.6rem;
         }
     }
-	.ui-slider-range {
-	    background-color: @ci-color1;
-	}
 
-	.ui-slider-handle {
-	    width: 1rem;
-	    height: 1rem;
-	    border: 1px solid @middleblack;
-	}
+    .ui-slider {
+        height: 0.6rem;
+        border: none;
+        border-radius: 999px;
+        background-color: @bg-hover;
+    }
+
+    .ui-slider-range {
+        background-color: @ci-color3;
+        border-radius: 999px;
+    }
+
+    .ui-slider-handle {
+        top: -0.6rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: @white;
+        border: 2px solid @ci-color3;
+        border-radius: 50%;
+        box-shadow: @container-box-shadow;
+        cursor: pointer;
+        outline: none;
+        transition:
+            box-shadow 0.2s ease,
+            background-color 0.2s ease;
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 0 5px fade(@ci-color3, 18%);
+        }
+        &.ui-state-active {
+            background-color: @ci-color3;
+        }
+    }
 }
 
 @{RTL} .widget-chronology-slider {
