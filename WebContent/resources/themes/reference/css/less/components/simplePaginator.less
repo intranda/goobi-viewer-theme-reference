@@ -5,50 +5,52 @@
 /* NUMERIC PAGINATOR */
 /* BLOCK */
 .numeric-paginator {
+    margin: 20px 0;
     /* ELEMENT */
     ul {
+        gap: 6px;
     }
     li {
-        border: @border;
+        border: none;
         &.numeric-paginator__navigate-text {
             border: none;
             background: none;
         }
     }
     a,
-    button {
-        font-size: @fontMedium;
-        background-color: @bg-content-box;
+    button,
+    span {
+        border-radius: @button-border-radius;
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
     }
     a,
     button {
-        color: @lk-general;
-        background: @bg-content-box;
+        font-size: @fontMedium;
+        font-weight: 500;
+        color: @fg-general;
+        background-color: transparent;
         &:hover,
         &:active,
         &:focus {
-            color: @lk-general;
-            background-color: @ci-color1;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-			    background-color: @bg-active;
-				color: @white;
-			  });
-                .mx-light-mode-rules ({
-			    background-color: @bg-hover;
-				// color: @white; 
-				color: @fg-general;
-			  });
-            }
+            color: @fg-general;
+            // 20% of the current CI color; color-mix reads the live
+            // --ci-color1 custom property, so this stays correct across
+            // light/dark mode and subthemes without separate branches
+            background-color: color-mix(in srgb, @ci-color1 20%, transparent);
         }
-    }
-    span {
+        &:focus-visible {
+            outline: 2px solid @ci-color1;
+            outline-offset: 1px;
+        }
     }
     &__dots {
         a,
         span {
             background-color: transparent;
             border: 0;
+            color: @gray;
         }
     }
     &__navigate {
@@ -58,6 +60,7 @@
             button {
                 color: @bg-content-box;
                 background-color: @ci-color1;
+                font-weight: 700;
                 &:hover,
                 &:active,
                 &:focus {
@@ -84,7 +87,7 @@
     li.numeric-paginator__dots {
     }
     li.numeric-paginator__active {
-        border: @border;
+        border: none;
     }
     &__page-number-label {
         span,
@@ -98,6 +101,7 @@
         margin-bottom: 0px;
         background-color: @white;
         color: @black;
+        border-radius: @button-border-radius;
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 			margin-bottom: 2px;
@@ -114,6 +118,7 @@
             padding-top: 2px;
             background-color: @white;
             color: @black;
+            border-radius: @button-border-radius;
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 		    background-color: @bg-active;

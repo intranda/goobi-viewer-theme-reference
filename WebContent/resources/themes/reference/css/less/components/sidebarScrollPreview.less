@@ -16,10 +16,10 @@
                 & when (@colorModes = true) {
                     .mx-light-mode-rules ({
 						background-color: #000;
-					});
+					});;
                     .mx-dark-mode-rules ({
 						background-color: #fff;
-					});
+					});;
                 }
             }
         }
@@ -28,6 +28,7 @@
     }
     &__button,
     &__link {
+        border-radius: @container-small-border-radius;
         color: @fg-general;
         &:hover,
         &:active,

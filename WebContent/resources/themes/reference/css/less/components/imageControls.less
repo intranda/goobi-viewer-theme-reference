@@ -5,6 +5,8 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
+    border: @border;
+    border-radius: @container-border-radius @container-border-radius 0 0;
     border-bottom: 0;
     /* DOCUMENT OPTIONS */
     &__options {
@@ -20,6 +22,21 @@
         &.fulltext {
         }
         &.add-to-bookmark {
+            background-color: rgba(@ci-color2, 0.2);
+            border-radius: @container-small-border-radius;
+            .icon-wrapper svg {
+                stroke: @ci-color1;
+                color: @ci-color2;
+            }
+            .icon-bookmark-filled {
+                color: @ci-color2;
+            }
+        }
+        &.image-filter,
+        &.share-image-region {
+            &:hover {
+                color: @ci-color1;
+            }
         }
     }
     /* ACTIONS */
@@ -32,6 +49,8 @@
     &__select-text {
     }
     &__action {
+        border-radius: @container-small-border-radius;
+        background-color: @lightgray;
         /* ELEMENT */
         [class*='image-'] {
         }
@@ -39,6 +58,13 @@
             a,
             span,
             button {
+            }
+        }
+        &:hover {
+            &.select {
+                .custom-control--select select {
+                    color: @white;
+                }
             }
         }
         /* ELEMENT */
@@ -97,6 +123,8 @@
         }
         &.zoom-slider-wrapper {
             .zoom-slider {
+                border-radius: @container-small-border-radius;
+                background: @lightgray;
                 //Firefox
                 &::-moz-range-thumb {
                 }

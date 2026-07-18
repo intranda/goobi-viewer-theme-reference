@@ -16,18 +16,16 @@
     <footer
         id="footer"
         class="footer">
-
         <!-- OBERER BEREICH: 3 Spalten -->
         <div class="footer__topSection">
             <div class="container">
                 <div class="footer__topSection__columns">
-
                     <!-- Spalte 1: Über uns -->
                     <div class="footer__topSection__column">
                         <h3 class="footer__topSection__heading">Über uns</h3>
                         <p class="footer__topSection__text">
-                            Der Goobi viewer ist ein Open-Source-Präsentationssystem
-                            für digitale Kulturgüter und historische Dokumente.
+                            Der Goobi viewer ist ein Open-Source-Präsentationssystem für digitale Kulturgüter und
+                            historische Dokumente.
                         </p>
                         <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
                             <a
@@ -121,7 +119,6 @@
                             </c:if>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -129,7 +126,6 @@
         <!-- UNTERER BEREICH -->
         <div class="footer__bottomSection">
             <div class="container">
-
                 <!-- Navigation (CMS) + Scroll-to-top nebeneinander -->
                 <div class="footer__bottomSection__nav-row">
                     <nav
@@ -162,7 +158,7 @@
 
                     <button
                         class="footer__scroll-top"
-                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
                         aria-label="Nach oben scrollen">
                         <util:icon icon="chevron-up" />
                     </button>
@@ -170,10 +166,6 @@
 
                 <!-- Copyright + Legal Links -->
                 <div class="footer__bottomSection__bar">
-                    <span class="footer__bottomSection__copyright">
-                        &#169; intranda GmbH
-                    </span>
-
                     <ul class="footer__bottomSection__links">
                         <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
                             <li class="footer__link-item">
@@ -213,20 +205,17 @@
                                 #{msg.imprint}
                             </a>
                         </li>
-
-                        <li class="footer__link-item">
-                            <a
-                                href="#{msg.intrandaViewer}"
-                                target="_blank"
-                                rel="noopener">
-                                powered by Goobi viewer
-                            </a>
-                        </li>
                     </ul>
-                </div>
 
+                    <a
+                        class="footer__link-item"
+                        href="#{msg.intrandaViewer}"
+                        target="_blank"
+                        rel="noopener">
+                        powered by Goobi viewer
+                    </a>
+                </div>
             </div>
         </div>
-
     </footer>
 </ui:composition>

@@ -4,16 +4,15 @@
    ==============================================================*/
 /* WIDGET TOC */
 .widget-toc {
+    &::-webkit-scrollbar-track {
+        background: none;
+    }
     &__overlay {
         background-color: @bg-content-box;
         opacity: 0.85;
     }
     /* TITLE */
     &__title {
-        background-color: @ci-color1;
-        h2 {
-            margin: 0;
-        }
     }
     &__title-expand {
         a {
@@ -27,30 +26,42 @@
     }
 
     &__body {
+        li {
+            border-radius: @container-small-border-radius;
+        }
     }
     /* ELEMENTS */
     &__elements {
         border: @border;
         border-top: 0;
+        scrollbar-color: @middlegray transparent;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
+                scrollbar-color: @bg-active transparent;
+            });;
+            .mx-light-mode-rules ({
+                scrollbar-color: @middlegray transparent;
+            });;
+        }
         ul {
             border: 0;
         }
     }
     &__element {
-		&:hover,
-		&:active,
-		&:focus {
-			background: @bg-hover;
-		}
+        &:hover,
+        &:active,
+        &:focus {
+            background: @bg-hover;
+        }
         &.parent {
         }
         &.child {
         }
     }
-	&__collapse-svg,
-	&__expand-svg {
-		color: @fg-general;
-	}
+    &__collapse-svg,
+    &__expand-svg {
+        color: @fg-general;
+    }
     &__element-expand {
     }
     &__element-link {
@@ -68,6 +79,7 @@
         }
         &.active {
             a {
+                color: @white;
             }
         }
     }

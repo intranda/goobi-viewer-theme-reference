@@ -22,6 +22,11 @@
         }
     }
 
+    &__body:has(.widget-search-facets__boolean) {
+        padding: 0;
+        background-color: transparent;
+    }
+
     &__list-item {
     }
 
@@ -64,13 +69,25 @@
     }
 
     /* FILTER */
+    // overridden to slide the filter input in/out like the header search field,
+    // instead of core's abrupt display:none/block toggle
     &__filter {
-        top: 0;
+        top: 8px;
         input,
         button {
         }
         input {
-            background-color: @ci-hovercolor1;
+            display: block;
+            width: 0;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            background-color: @white;
+            border-radius: @container-small-border-radius;
+            box-shadow: @container-box-shadow;
+            transition:
+                width 0.3s ease,
+                opacity 0.2s ease;
             &::-webkit-input-placeholder {
             }
             &:-moz-placeholder {
@@ -80,11 +97,16 @@
             &:-ms-input-placeholder {
             }
             &.in {
+                width: calc(~'100% - 36px');
+                opacity: 1;
+                pointer-events: all;
             }
         }
     }
 
     &__filter-button {
+        position: relative;
+        z-index: 1;
     }
 
     &__filter-icon {
@@ -151,21 +173,23 @@
     }
 
     &__boolean-button {
-        color: @fg-general;
-        border: @border;
-        background: var(--facet-boolean-background);
+        border-radius: @button-border-radius;
+        border: none;
+        color: @ci-color1;
+        background-color: @white;
 
         &:hover {
-            color: @fg-general;
-            background: @bg-hover;
+            color: @white !important;
+            background-color: @ci-hovercolor1 !important;
         }
 
         &.-active {
-            background-color: @bg-hover;
+            color: @white;
+            background-color: @ci-color1;
 
             &:hover {
-                color: @fg-general;
-                background-color: @bg-hover;
+                color: @white;
+                background-color: @ci-hovercolor1;
             }
         }
     }

@@ -98,8 +98,8 @@
     color-scheme: light;
 
     --ci-color1: #1565c0;
-    --ci-hovercolor1: #1b70b1;
-    --bg-hover: #eee;
+    --ci-hovercolor1: #0079d5;
+    --bg-hover: #f5f5f5;
     --bg-active: #3b4557;
     --fg-hover: #212529;
     --fg-controls: #6f6f6f;
@@ -196,17 +196,17 @@
     --search-toolbar-icon-color-active: @white;
     --search-toolbar-icon-color-hover: var(--fg-general);
 
-    /* IMAGE CONTROLS */
-    --image-controls-background: var(--bg-content-box);
-    --image-controls-border-color: #ccc;
-    --image-controls-container-border-color: #ccc;
-    --image-controls-icon-color: #6f6f6f;
-    --image-controls-icon-color-hover: #5a5a5a;
-    --image-controls-icon-color-active: #4a4a4a;
-    --image-controls-action-background: transparent;
-    --image-controls-action-background-hover: var(--bg-hover);
-    --image-controls-slider-thumb-background: #6f6f6f;
-    --image-controls-slider-border-color: #6f6f6f;
+    /* IMAGE CONTROLS VARIABLES */
+    --image-controls-background: @white;
+    --image-controls-border-color: transparent;
+    --image-controls-container-border-color: transparent;
+    --image-controls-icon-color: @fg-general;
+    --image-controls-icon-color-hover: @white;
+    --image-controls-icon-color-active: @white;
+    --image-controls-action-background: rgba(@ci-color1, 0.2);
+    --image-controls-action-background-hover: @ci-color1;
+    --image-controls-slider-thumb-background: @fg-general;
+    --image-controls-slider-border-color: @fg-general;
 
     /* ARCHIVES LIST */
     --archives-card-bg: var(--bg-content-box);

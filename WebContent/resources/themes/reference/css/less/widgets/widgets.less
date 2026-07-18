@@ -5,27 +5,14 @@
 /* WIDGETS */
 .widget {
     border-radius: @container-border-radius;
-    background-color: @bg-content-box;
-    border: @border;
+    background-color: rgba(@ci-color1, 0.2);
+    background-color: #1665c00f;
     box-shadow: @container-box-shadow;
+    padding-bottom: 1.5rem;
 
     &__topbar {
-        margin: 1.5rem 1.5rem 1rem 1.5rem;
         border-radius: @container-border-radius;
-        background-color: #1665c00f;
-        padding: 0.5rem 1.2rem;
-    }
-
-    &__topbar-icons-container {
-    }
-
-    &__topbar-icon-collapsible {
-    }
-
-    &__topbar-icon-svg {
-    }
-
-    &__description-text {
+        padding: 1.5rem;
     }
 
     &__title {
@@ -36,23 +23,37 @@
     }
 
     &__body {
+        margin: 0rem 1.2rem;
+        background-color: @white;
         border-radius: @container-border-radius;
-        padding: 1.5rem;
-        padding-top: 0.5rem;
+        padding: 1rem 1.2rem;
 
         a {
             color: @lk-content-box;
             line-height: 1.2;
+            padding: 0.5rem;
+            border-radius: @container-small-border-radius;
+
             &:hover {
                 color: @lh-content-box;
+                background-color: @bg-hover;
+                text-decoration: none;
             }
+        }
+
+        ul {
+            gap: 2px;
         }
 
         li {
             &.active {
-                a {
-                    //                    font-weight: 600;
-                    //                    color: @lh-content-box;
+                border-radius: @container-small-border-radius;
+                background-color: @ci-color1;
+                color: @white;
+
+                &:hover {
+                    background-color: inherit;
+                    color: inherit;
                 }
             }
         }

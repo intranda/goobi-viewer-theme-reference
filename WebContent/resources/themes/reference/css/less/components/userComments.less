@@ -16,28 +16,23 @@
     }
     /* ELEMENT */
     &__message-login {
+        border-radius: @container-border-radius;
         padding-top: 0;
         text-align: left;
         border: @border;
-        border-top: 0;
         background-color: @bg-content-box;
         h2 {
-            margin-left: -16px;
-            margin-right: -16px;
-            padding-bottom: 1.3125rem;
-            padding-left: 1px;
-            border-bottom: @border;
-            background-color: @bg-general;
+            padding: 1.5rem 0;
         }
         .btn {
             color: @ci-color1;
             & when (@colorModes = true) {
                 .mx-light-mode-rules ({
 				color: @ci-color1;
-			});
+			});;
                 .mx-dark-mode-rules ({
 				color: @fg-general;
-			});
+			});;
             }
         }
     }
@@ -63,10 +58,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 				color: @fg-general;
-			});
+			});;
             .mx-light-mode-rules ({
 				color: rgb(33, 37, 41);
-			});
+			});;
         }
 
         background: @bg-content-box;

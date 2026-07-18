@@ -2,9 +2,18 @@
    Widget RelatedGroups
    style declarations for widget_RelatedGroups.xhtml
    ==============================================================*/
-.widget-related-groups {
-    .related-groups-section {
-        &__grid {
+.related-groups-section {
+    &__grid {
+        border: @border;
+        border-radius: @container-border-radius;
+    }
+    &__view-all {
+        border-radius: @container-border-radius;
+    }
+    &__card-image {
+        border-radius: @container-border-radius;
+        img {
+            border-radius: @container-border-radius;
         }
     }
 }

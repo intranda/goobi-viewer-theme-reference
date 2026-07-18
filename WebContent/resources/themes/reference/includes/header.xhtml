@@ -72,6 +72,12 @@
                             <util:icon icon="search" />
                         </button>
 
+                        <div
+                            data-target="search-box"
+                            class="header__search-box">
+                            <widgetComponent:widget_searchField onlySearchIcon="true" />
+                        </div>
+
                         <button
                             data-close="search"
                             class="btn btn--icon header__actions-search-close-button"
@@ -174,15 +180,6 @@
                 </ui:fragment>
             </div>
         </nav>
-
-        <!-- SEARCH BOX -->
-        <div
-            data-target="search-box"
-            class="header__search-box">
-            <div class="container">
-                <widgetComponent:widget_searchField onlySearchIcon="false" />
-            </div>
-        </div>
 
         <!-- DESKTOP NAVIGATION -->
         <div
