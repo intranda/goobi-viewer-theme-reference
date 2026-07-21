@@ -41,6 +41,59 @@
         pre {
         }
     }
+
+    &__alto {
+    }
+}
+
+/* ALTO layout-tag markup (core: views/viewFulltext.less) */
+.alto-fulltext {
+    &__page {
+        & + & {
+        }
+    }
+
+    &__main {
+    }
+
+    &__margin {
+    }
+}
+
+.alto-block {
+    &:last-child {
+    }
+}
+
+.alto-tag {
+    &--underline {
+    }
+
+    &--strikethrough {
+    }
+
+    &--underline&--strikethrough {
+    }
+}
+
+.alto-annotation {
+    &--jacob-grimm {
+    }
+
+    &--wilhelm-grimm {
+    }
+
+    &--jacob-oder-wilhelm-grimm {
+    }
+
+    &--andere-handschrift {
+    }
+
+    &--einweisungszeichen {
+    }
+
+    &--korrekturzeichen {
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -53,6 +106,10 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    .alto-fulltext__page {
+    }
+    .alto-fulltext__margin {
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
