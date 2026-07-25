@@ -104,7 +104,10 @@
 @accent-color-2: #ae3ec9;
 @accent-color-3: #17a2b8;
 @accent-color-4: #0ca678;
-@ci-color-1-transparent: #1665c00f;
+// Derived at runtime via CSS relative color syntax so it always tracks the
+// current --ci-color1 (light/dark mode, subtheme overrides, etc.) instead of
+// baking in a fixed hex+alpha snapshot.
+@ci-color-1-transparent: rgb(from @ci-color1 r g b / 12%);
 @footer-topnav-bg: #112b4e;
 
 // NOT USED

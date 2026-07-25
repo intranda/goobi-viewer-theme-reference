@@ -72,16 +72,25 @@
     // overridden to slide the filter input in/out like the header search field,
     // instead of core's abrupt display:none/block toggle
     &__filter {
-        top: 8px;
+        top: 0;
+        right: 1rem;
+        left: 1rem;
+        height: auto;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+
         input,
         button {
         }
         input {
             display: block;
             width: 0;
+            height: 34px;
             overflow: hidden;
             opacity: 0;
             pointer-events: none;
+            color: @fg-content-box;
             background-color: @white;
             border-radius: @container-small-border-radius;
             box-shadow: @container-box-shadow;
@@ -89,17 +98,35 @@
                 width 0.3s ease,
                 opacity 0.2s ease;
             &::-webkit-input-placeholder {
+                color: @placeholder;
+                opacity: 1;
             }
             &:-moz-placeholder {
+                color: @placeholder;
+                opacity: 1;
             }
             &::-moz-placeholder {
+                color: @placeholder;
+                opacity: 1;
             }
             &:-ms-input-placeholder {
+                color: @placeholder;
+                opacity: 1;
             }
             &.in {
                 width: calc(~'100% - 36px');
                 opacity: 1;
                 pointer-events: all;
+            }
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
+                    background-color: @fg-controls;
+                    color: @fg-content-box;
+				});
+                .mx-light-mode-rules ({
+					background-color: @white;
+					color: @fg-content-box;
+				});
             }
         }
     }

@@ -37,16 +37,18 @@
                 box-shadow: @container-box-shadow;
                 transition: box-shadow 0.15s ease;
                 &:focus {
-                    box-shadow: @container-box-shadow, 0 0 0 3px @ci-color-1-transparent;
+                    box-shadow:
+                        @container-box-shadow,
+                        0 0 0 3px @ci-color-1-transparent;
                 }
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 						background: @fg-controls;
 						color: @black;
-					});
+					});;
                     .mx-light-mode-rules ({
 						background: @white;
-					});
+					});;
                 }
             }
         }
@@ -63,17 +65,42 @@
         }
     }
     &__filter-select {
-        .custom-control--select {
+        .custom-control--selec,
+        select {
+            border: @border;
+            border-radius: @container-small-border-radius !important;
+            box-shadow: @container-box-shadow;
+            transition:
+                border-color 0.15s ease,
+                box-shadow 0.15s ease;
+
+            &:hover {
+                border-color: @ci-color1;
+            }
+
+            &:focus-within {
+                border-color: @ci-color1;
+                box-shadow:
+                    @container-box-shadow,
+                    0 0 0 3px @ci-color-1-transparent;
+            }
+
+            &:after {
+                border-top-color: @fg-general;
+            }
+
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
+                    background-color: @fg-controls;
+				});;
+                .mx-light-mode-rules ({
+					background-color: @fg-controls;
+				});;
+            }
+
             & select {
-                background: #f7f7f7;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-                        background: @fg-controls;
-					});
-                    .mx-light-mode-rules ({
-						background: #f7f7f7;
-					});
-                }
+                background: transparent;
+                padding-left: 1rem;
             }
         }
     }
@@ -87,10 +114,10 @@
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 					background: @fg-general;
-				});
+				});;
                 .mx-light-mode-rules ({
 					background: #f7f7f7;
-				});
+				});;
             }
         }
     }
@@ -101,7 +128,9 @@
         transition: box-shadow 0.15s ease;
         &:hover,
         &:focus {
-            box-shadow: @container-box-shadow, 0 0 0 3px @ci-color-1-transparent;
+            box-shadow:
+                @container-box-shadow,
+                0 0 0 3px @ci-color-1-transparent;
         }
     }
     /* MODIFICATION */
@@ -118,10 +147,10 @@
     & when (@colorModes = true) {
         .mx-dark-mode-rules ({
 			background-color: @fg-controls;
-		});
+		});;
         .mx-light-mode-rules ({
 			background-color: @white;
-		});
+		});;
     }
 
     .ui-menu-item {
@@ -131,7 +160,9 @@
             padding: 0.6rem 1rem;
             border-radius: @container-small-border-radius;
             color: @fg-content-box;
-            transition: background-color 0.15s ease, color 0.15s ease;
+            transition:
+                background-color 0.15s ease,
+                color 0.15s ease;
         }
         .ui-state-active {
             background-color: @ci-color1;

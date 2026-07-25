@@ -23,8 +23,8 @@
             &:hover,
             &:focus {
                 outline: none;
-                border-color: @ci-color3;
-                box-shadow: 0 0 0 3px fade(@ci-color3, 15%);
+                border-color: @ci-color1;
+                box-shadow: 0 0 0 3px @ci-color-1-transparent;
             }
         }
         &.chronology-slider-label,
@@ -46,7 +46,7 @@
                 color: @fg-content-box;
                 transition: color 0.2s ease;
                 &:hover {
-                    color: @ci-color3;
+                    color: @ci-color1;
                 }
             }
         }
@@ -71,6 +71,7 @@
         &.chronology-slider {
             background-color: transparent;
             padding: 1rem 0.5rem 1.6rem;
+            margin-top: 15px;
         }
     }
 
@@ -82,16 +83,16 @@
     }
 
     .ui-slider-range {
-        background-color: @ci-color3;
+        background-color: @ci-color1;
         border-radius: 999px;
     }
 
     .ui-slider-handle {
-        top: -0.6rem;
-        width: 1.8rem;
-        height: 1.8rem;
+        top: -0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
         background-color: @white;
-        border: 2px solid @ci-color3;
+        border: 2px solid @ci-color1;
         border-radius: 50%;
         box-shadow: @container-box-shadow;
         cursor: pointer;
@@ -101,10 +102,10 @@
             background-color 0.2s ease;
         &:hover,
         &:focus {
-            box-shadow: 0 0 0 5px fade(@ci-color3, 18%);
+            box-shadow: 0 0 0 5px @ci-color-1-transparent;
         }
         &.ui-state-active {
-            background-color: @ci-color3;
+            background-color: @ci-color1;
         }
     }
 }

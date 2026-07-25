@@ -18,14 +18,16 @@
 .custom-control--select {
     border: @border;
     background-color: @bg-content-box;
+    border-radius: @container-small-border-radius;
+
     & when (@colorModes = true) {
         background: @white;
         .mx-dark-mode-rules ({
 			background: @fg-controls;
-		});
+		});;
         .mx-light-mode-rules ({
-			background: @white;
-		});
+			background: @fg-controls;
+		});;
     }
     &:after {
     }
@@ -43,10 +45,10 @@
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({
 				background: @fg-controls;
-			});
+			});;
             .mx-light-mode-rules ({
 				background: @white;
-			});
+			});;
         }
         &.disabled {
         }
@@ -60,9 +62,9 @@
     & when (@colorModes = true) {
         .mx-dark-mode-rules ({
             background: @fg-controls;
-        });
+        });;
         .mx-light-mode-rules ({
             background: @white;
-        });
+        });;
     }
 }

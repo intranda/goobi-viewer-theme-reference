@@ -9,6 +9,11 @@
     &__title {
     }
     &__body {
+        a {
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
     &__wrapper {
     }
@@ -28,10 +33,10 @@
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 		    			background-color: @bg-hover;
-					});
+					});;
                     .mx-light-mode-rules ({
 		    			background-color: @lightgray;
-					});
+					});;
                 }
             }
         }
@@ -58,10 +63,10 @@
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 		    			background-color: @bg-hover;
-					});
+					});;
                     .mx-light-mode-rules ({
 		    			background-color: @lightgray;
-					});
+					});;
                 }
             }
         }
