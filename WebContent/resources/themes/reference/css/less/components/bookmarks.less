@@ -43,41 +43,32 @@
     /* DROPDOWN */
     &__dropdown {
         z-index: 2020;
-        top: calc(~'100% + 4px');
-        border: none;
+        top: calc(~'100% + 8px');
         right: -4px;
+        border: 1px solid @border-color;
+        border-radius: @container-border-radius;
+        background-color: @bg-content-box;
+        box-shadow: @container-box-shadow;
     }
     /* DROPDOWN LIST */
     &__dropdown-list {
-        background-color: @middleblack;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background: @bg-active;
-			});;
-            .mx-light-mode-rules ({
-				background-color: @middleblack;
-			});;
-        }
+        background-color: transparent;
+
         li {
             border-bottom: none;
-            color: @white;
+            color: @fg-content-box;
+
             &:hover {
-                background-color: @middleblackHover;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						background: @bg-hover;
-					});;
-                    .mx-light-mode-rules ({
-						background-color: @middleblackHover;
-					});;
-                }
+                background-color: @bg-hover;
             }
             &:last-child {
             }
             .empty {
+                color: @fg-general;
             }
         }
         h3 {
+            color: @fg-content-box;
         }
     }
     &__dropdown-list-counter {
@@ -97,25 +88,23 @@
     }
     &__dropdown-list-remove {
         font-size: @fontMedium;
-        color: @black;
+        color: @fg-general;
         &:hover,
         &:active,
         &:focus {
-            color: @black;
+            color: @ci-color1;
+
+            // keep the icon itself in the regular (non-hover) color; only
+            // the text should pick up the ci-color accent
+            svg {
+                color: @fg-general;
+            }
         }
     }
     /* DROPDOWN ACTIONS */
     &__dropdown-list-actions {
-        border-top: none;
-        background-color: @middleblack;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background: @bg-active;
-			});;
-            .mx-light-mode-rules ({
-				background-color: @middleblack;
-			});;
-        }
+        border-top: 1px solid @border-color;
+        background-color: transparent;
     }
     &__dropdown-list-single-entry {
     }
@@ -129,15 +118,7 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: @middleblackHover;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					background: @bg-hover;
-				});;
-                .mx-light-mode-rules ({
-					background-color: @middleblackHover;
-				});;
-            }
+            background-color: @bg-hover;
         }
     }
     /* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
@@ -152,11 +133,17 @@
         a,
         span,
         h3 {
-            color: @white;
+            color: @fg-content-box;
             &:hover,
             &:focus,
             &:active {
-                color: @white;
+                color: @ci-color1;
+
+                // keep icons in the regular (non-hover) color; only the
+                // text should pick up the ci-color accent
+                svg {
+                    color: @fg-content-box;
+                }
             }
         }
     }
@@ -178,72 +165,171 @@
 /* POPUPS */
 /* BLOCK */
 .bookmark-popup {
+    // override core's fixed 280x350 box + absolutely positioned/magic-number
+    // sections with a proper flex column: sizes to content up to a max
+    // height, with only the list scrolling
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: calc(100vw - 2rem);
+    height: auto;
+    max-height: 420px;
+    border: none;
+    border-radius: @container-border-radius;
+    background-color: @bg-content-box;
+    box-shadow: 0 12px 32px rgba(15, 21, 42, 0.18);
+    overflow: hidden;
+
     &.top {
     }
     &.right {
     }
-    button {
-        color: #222 !important;
-    }
-
-    label {
-        color: #222;
-    }
-    &__radio-buttons {
-        background: white;
+    &.left {
     }
     &.bottom {
         &:before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            margin-left: -6px;
+            background-color: @bg-content-box;
+            box-shadow: -2px -2px 4px rgba(15, 21, 42, 0.06);
+            transform: rotate(45deg);
         }
     }
-    &.left {
+
+    button {
+        color: @fg-content-box !important;
     }
+
+    label {
+        color: @fg-content-box;
+    }
+
     /* ELEMENT */
     &__header,
+    &__radio-buttons,
     &__body,
     &__footer {
+        position: static;
+        height: auto;
     }
+
+    &__radio-buttons {
+        background: transparent;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid @border-color;
+
+        label {
+            gap: 0.4rem;
+            font-size: @fontMedium;
+        }
+        input {
+            margin: 0 0.4rem 0 0;
+        }
+    }
+
     &__header {
-        color: #222 !important;
+        padding: 0.85rem 1rem;
+        font-weight: 600;
+        font-size: @fontMedium;
+        color: @fg-content-box !important;
+        border-bottom: 1px solid @border-color;
     }
+
     &__body {
+        flex: 1 1 auto;
+        min-height: 0;
+        max-height: none;
+        overflow-y: auto;
+        padding: 0.4rem;
     }
+
     &__body-loader {
+        background-color: @bg-content-box;
     }
+
     &__body-list {
         li {
+            border-bottom: none;
+            border-radius: @container-small-border-radius;
+            margin-bottom: 2px;
+
             &:hover,
             &:active,
             &:focus {
-                background-color: @lightgray;
+                background-color: @bg-hover;
             }
             button {
+                border-radius: @container-small-border-radius;
                 &.btn {
                     &:hover,
                     &:active,
                     &:focus {
-                        color: @black;
+                        color: @ci-color1;
                     }
                 }
                 span {
                     background-color: @ci-color1;
+                    border-radius: 999px;
+                    padding: 0.1rem 0.55rem;
+                    font-weight: 600;
                 }
             }
             .empty {
+                color: @fg-general;
+                font-style: italic;
             }
         }
         &:hover {
-            color: @black;
+            color: @fg-content-box;
         }
         span {
         }
     }
+
     &__footer {
+        padding: 0.6rem 0.75rem;
+        border-top: 1px solid @border-color;
+
         input {
+            background-color: @bg-general;
+            border: 1px solid @border-color;
+            border-radius: @container-small-border-radius;
+            color: @fg-content-box;
+            padding: 0 0.75rem;
         }
         &.added {
         }
     }
+
+    &__add-button {
+        border-radius: @container-small-border-radius;
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: @bg-hover;
+        }
+
+        // nested here (rather than a bare .bookmark-popup__add-icon rule) so
+        // this beats core's more specific ".bookmark-popup__footer button svg"
+        .bookmark-popup__add-icon {
+            stroke: @ci-color1;
+        }
+    }
+
+    &__body-list {
+        // nested here for the same reason: core targets
+        // ".bookmark-popup__body-list .bookmark-popup__check-icon"
+        .bookmark-popup__check-icon {
+            color: @ci-color1 !important;
+            stroke: @ci-color1 !important;
+        }
+    }
+
     &__list {
     }
 }

@@ -76,25 +76,30 @@ $(document).ready(function () {
 
 	// shrink + expand header on scroll
 	$(document).ready(function () {
-	    const scrollDownThreshold = 80;
-	    const scrollUpDistance = 60; // user must scroll up at least 60px after shrink
+	    const scrollDownThreshold = 140;
+	    const scrollUpThreshold = 20; // wide gap vs. scrollDownThreshold: toggling the header changes
+	    // its own height (nav row collapsing in/out), which nudges scrollTop via the browser's scroll
+	    // anchoring. The gap must comfortably exceed that self-inflicted nudge or repeated up/down
+	    // scrolling can bounce the class back and forth (or get stuck) right at the boundary.
+	    const toggleCooldown = 300; // ms to ignore scroll noise from that same reflow right after a toggle
 	    let isScrolled = false;
-	    let scrolledAtShrink = 0;
- 
+	    let cooldownUntil = 0;
+
 	    const handleScroll = debounce(function () {
+	        if (Date.now() < cooldownUntil) {
+	            return;
+	        }
+
 	        const scrollTop = $(document).scrollTop();
 
-	        if (scrollTop >= scrollDownThreshold && !isScrolled) {
+	        if (!isScrolled && scrollTop >= scrollDownThreshold) {
 	            $('.header').addClass('-scrolled');
 	            isScrolled = true;
-	            // Capture scrollTop after reflow so browser's automatic
-	            // position adjustment is not counted as user scrolling up
-	            requestAnimationFrame(() => {
-	                scrolledAtShrink = $(document).scrollTop();
-	            });
-	        } else if (isScrolled && scrollTop < scrolledAtShrink - scrollUpDistance) {
+	            cooldownUntil = Date.now() + toggleCooldown;
+	        } else if (isScrolled && scrollTop <= scrollUpThreshold) {
 	            $('.header').removeClass('-scrolled');
 	            isScrolled = false;
+	            cooldownUntil = Date.now() + toggleCooldown;
 	        }
 	    }, 20);
 

@@ -5,6 +5,7 @@
 /* SEARCH STANDARD */
 /* BLOCK */
 .search-standard {
+    margin-bottom: 1rem;
     //	background-color: @bg-content-box;
     //  	border: @border;
     /* ELEMENT */
@@ -65,7 +66,7 @@
         }
     }
     &__filter-select {
-        .custom-control--selec,
+        .custom-control--select,
         select {
             border: @border;
             border-radius: @container-small-border-radius !important;
@@ -109,17 +110,6 @@
         }
     }
     &__action {
-        .btn--default {
-            background: #f7f7f7;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					background: @fg-general;
-				});;
-                .mx-light-mode-rules ({
-					background: #f7f7f7;
-				});;
-            }
-        }
     }
     &__submit-button.btn {
         box-shadow: @container-box-shadow;

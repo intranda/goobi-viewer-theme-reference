@@ -15,6 +15,7 @@
         background-color: @ci-color1;
         border: 1px solid @middlegray;
         border: @border;
+        border-radius: @container-border-radius @container-border-radius 0 0;
         border-bottom: none;
         color: @white;
     }
@@ -30,30 +31,36 @@
         border: @border;
         border-bottom: none;
         color: @white;
+        border-radius: @container-border-radius @container-border-radius 0 0;
     }
     &__graphic-tree {
         border: 1px solid @middlegray;
         border-top: none;
         background-color: @bg-content-box;
         border: @border;
+        border-radius: 0 0 @container-border-radius @container-border-radius;
     }
     &__text-tree {
         border: 1px solid @middlegray;
         background-color: @bg-content-box;
         border: @border;
+        border-radius: @container-border-radius;
     }
     &__object-info {
         border: 1px solid @middlegray;
         border-top: none;
         background-color: @bg-content-box;
         border: @border;
+        border-radius: 0 0 @container-border-radius @container-border-radius;
     }
     &__select-database-dropdown-wrapper {
         background-color: @bg-general;
+        border-radius: @container-small-border-radius;
     }
     &__select-database-dropdown-element-select {
         background-color: @bg-content-box;
         border: @border;
+        border-radius: @container-small-border-radius;
     }
     &__error {
         background-color: @bg-content-box;

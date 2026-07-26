@@ -25,7 +25,7 @@
 
     /* OBERER BEREICH */
     &__topSection {
-        padding: 3rem;
+        padding: 4rem 0;
         width: 100%;
 
         &__columns {
@@ -53,6 +53,7 @@
             margin: 0 0 1.6rem;
             color: @white;
             line-height: 1.7;
+            max-width: 400px;
         }
 
         &__btn {
@@ -146,7 +147,7 @@
         position: relative;
         background-color: darken(@footer-topnav-bg, 5%);
         width: 100%;
-        padding: 2rem 0;
+        padding: 4rem 0;
 
         &__nav-row {
             display: flex;
@@ -251,13 +252,9 @@
 
             transition:
                 border-color 0.2s ease,
-                background-color 0.2s ease,
-                opacity 0.2s ease;
-
-            opacity: 1;
+                background-color 0.2s ease;
 
             &:hover {
-                opacity: 1;
                 border-color: @ci-hovercolor1;
                 background-color: rgba(255, 255, 255, 0.08);
             }
@@ -283,12 +280,14 @@
         cursor: pointer;
         background-color: transparent;
 
-        transition: border-color 0.2s ease;
+        transition:
+            border-color 0.2s ease,
+            background-color 0.2s ease;
 
         &:hover {
             border-color: @ci-hovercolor1;
-            color: white;
-            scale: 1.05;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: @white;
         }
 
         svg {

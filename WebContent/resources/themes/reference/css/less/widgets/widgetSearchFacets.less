@@ -122,11 +122,11 @@
                 .mx-dark-mode-rules ({
                     background-color: @fg-controls;
                     color: @fg-content-box;
-				});
+				});;
                 .mx-light-mode-rules ({
 					background-color: @white;
 					color: @fg-content-box;
-				});
+				});;
             }
         }
     }
@@ -164,6 +164,11 @@
 
     &__collapse-button {
         color: var(--widget-icon-color-expand);
+        .icon-svg {
+            width: 22px;
+            height: 22px;
+            margin-top: 0.5rem;
+        }
         &.-expand,
         &.-collapse {
         }

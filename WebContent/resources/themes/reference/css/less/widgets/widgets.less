@@ -5,8 +5,7 @@
 /* WIDGETS */
 .widget {
     border-radius: @container-border-radius;
-    background-color: rgba(@ci-color1, 0.2);
-    background-color: #1665c00f;
+    background-color: @ci-color-1-transparent;
     box-shadow: @container-box-shadow;
     padding-bottom: 1.5rem;
 
@@ -50,10 +49,20 @@
                 border-radius: @container-small-border-radius;
                 background-color: @ci-color1;
                 color: @white;
+                font-weight: 600;
+
+                a {
+                    color: @white;
+                }
 
                 &:hover {
-                    background-color: inherit;
-                    color: inherit;
+                    background-color: @ci-hovercolor1;
+                    color: @white;
+
+                    a {
+                        color: @white;
+                        background-color: @ci-hovercolor1 !important;
+                    }
                 }
             }
         }

@@ -57,7 +57,7 @@
 @red: #c7254e;
 
 /* BUTTON COLORS */
-@btnDefault: #555;
+@btnDefault: #565656;
 @btnDanger: #721c24;
 @btnDangerBorder: #721c24;
 @btnDangerBgc: #f8d7da;
@@ -86,7 +86,6 @@
 @progressCompletion: #95c476;
 @darkBlue: rgb(53, 111, 162);
 @yellowTransparent: rgba(250, 250, 0, 0.3);
-@ci-color1Transparent: rgba(66, 139, 202, 0.3);
 
 // USED
 
@@ -107,7 +106,7 @@
 // Derived at runtime via CSS relative color syntax so it always tracks the
 // current --ci-color1 (light/dark mode, subtheme overrides, etc.) instead of
 // baking in a fixed hex+alpha snapshot.
-@ci-color-1-transparent: rgb(from @ci-color1 r g b / 12%);
+@ci-color-1-transparent: rgb(from @ci-color1 r g b / 9%);
 @footer-topnav-bg: #112b4e;
 
 // NOT USED
@@ -187,6 +186,7 @@ THEMING
 @fg-hover: var(--fg-hover);
 
 @fg-controls: var(--fg-controls);
+@border-controls: var(--border-controls);
 @border: var(--border);
 
 @bg-general: var(--bg-general);

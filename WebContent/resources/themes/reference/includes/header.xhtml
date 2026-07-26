@@ -17,6 +17,7 @@
         id="header"
         class="header #{userBean.admin ? '-adminActive':''}">
         <div class="header__topbar"></div>
+        <div class="header__secondaryTopbar"></div>
         <div class="container header__wrapper">
             <div class="header__inner">
                 <!-- PAGE HEADER BOTTOM LOGO -->
@@ -27,6 +28,41 @@
                             alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
                         <span class="header__span">#{adminThemesBean.getThemeLabel(configurationBean.name)}</span>
                     </a>
+                </div>
+
+                <!-- DESKTOP NAVIGATION -->
+                <div
+                    id="pageNavigation"
+                    class="page-navigation #{userBean.admin ? '-adminActive':''}">
+                    <div class="container page-navigation__wrapper">
+                        <viewerComponent:navigation
+                            id="header__nav-menu-desktop"
+                            megaMenu="false" />
+
+                        <div class="header__actions-search-wrapper">
+                            <button
+                                data-open="search"
+                                class="btn btn--icon header__actions-search-button"
+                                aria-label="#{msg.search}">
+                                <util:icon icon="search" />
+                            </button>
+
+                            <div
+                                data-target="search-box"
+                                class="header__search-box">
+                                <widgetComponent:widget_searchField onlySearchIcon="true" />
+                            </div>
+
+                            <button
+                                data-close="search"
+                                class="btn btn--icon header__actions-search-close-button"
+                                aria-label="#{msg.close}: #{msg.cms_sidebarElement_searchField}">
+                                <span class="header__actions-search-close">
+                                    <span></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- PAGE HEADER TOP ACTIONS -->
@@ -62,30 +98,6 @@
                     <!-- LOGIN NAVIGATION -->
                     <div class="header__actions-login">
                         <viewerComponent:loginNavigation />
-                    </div>
-
-                    <div class="header__actions-search-wrapper">
-                        <button
-                            data-open="search"
-                            class="btn btn--icon header__actions-search-button"
-                            aria-label="#{msg.search}">
-                            <util:icon icon="search" />
-                        </button>
-
-                        <div
-                            data-target="search-box"
-                            class="header__search-box">
-                            <widgetComponent:widget_searchField onlySearchIcon="true" />
-                        </div>
-
-                        <button
-                            data-close="search"
-                            class="btn btn--icon header__actions-search-close-button"
-                            aria-label="#{msg.close}: #{msg.cms_sidebarElement_searchField}">
-                            <span class="header__actions-search-close">
-                                <span></span>
-                            </span>
-                        </button>
                     </div>
 
                     <div class="header__actions-color-switch">
@@ -180,16 +192,5 @@
                 </ui:fragment>
             </div>
         </nav>
-
-        <!-- DESKTOP NAVIGATION -->
-        <div
-            id="pageNavigation"
-            class="page-navigation #{userBean.admin ? '-adminActive':''}">
-            <div class="container page-navigation__wrapper">
-                <viewerComponent:navigation
-                    id="header__nav-menu-desktop"
-                    megaMenu="false" />
-            </div>
-        </div>
     </header>
 </ui:composition>

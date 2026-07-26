@@ -59,9 +59,20 @@ a[name='topDocAnchor']:target::before {
 
 // CMS Page
 .cms-page {
-    &__title {
-        position: absolute;
+    #templateSearch {
+        &__title {
+            position: absolute; // title is on one line with controls
+        }
     }
+
+    &__content {
+        min-height: 50vh;
+    }
+}
+
+// Geomap View
+.geo-map {
+    border-radius: @container-border-radius;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

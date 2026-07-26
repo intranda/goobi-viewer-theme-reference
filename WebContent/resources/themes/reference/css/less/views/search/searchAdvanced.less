@@ -74,19 +74,6 @@
     }
 
     &__action {
-        .btn--default {
-            background: #f7f7f7;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-	            background: @bg-active;
-                color: @fg-general;
-                border-color: @bg-active;
-	        });;
-                .mx-light-mode-rules ({
-		        background: #f7f7f7;
-		    });;
-            }
-        }
     }
     &__additional-wrapper {
         color: @fg-general;
@@ -117,6 +104,7 @@
     &__nav-helper-box {
         background-color: @bg-content-box;
         border: @border;
+        border-radius: @container-border-radius;
     }
     &__nav-helper-item {
     }

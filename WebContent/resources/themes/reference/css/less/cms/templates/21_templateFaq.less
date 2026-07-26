@@ -12,12 +12,15 @@
     &__list {
         background-color: @bg-content-box;
         border: @border;
+        border-radius: @container-border-radius;
     }
     &__description {
+        border-radius: @container-border-radius;
     }
     &__list {
         .card {
             background-color: @bg-general;
+            border-radius: @container-small-border-radius !important;
             h2 a,
             a::before {
                 color: @fg-general;
@@ -28,7 +31,8 @@
                 }
             }
         }
-        .card-heading {
+        .card-header {
+            border-radius: @container-small-border-radius !important;
             &:hover {
             }
         }

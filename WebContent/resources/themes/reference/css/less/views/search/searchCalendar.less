@@ -19,6 +19,15 @@
     }
     &__century-year-link,
     &__century-year-text {
+        border-radius: @container-small-border-radius;
+        border: @border-controls;
+    }
+    &__century-year-link {
+        a {
+            border-radius: @container-small-border-radius;
+            background-color: @ci-color-1-transparent;
+            border: none;
+        }
     }
     &__century-separator-heading {
     }
@@ -55,24 +64,24 @@
         .btn {
         }
     }
-	&__day-popover {
-		a {
-			& when (@colorModes = true) {
-			.mx-dark-mode-rules ({
+    &__day-popover {
+        a {
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
 				color: @fg-general; 
 				.pseudostates ({
 					color: @fg-hover;
 				});
-			});
-			  .mx-light-mode-rules ({
+			});;
+                .mx-light-mode-rules ({
 				color: @fg-general;
 				.pseudostates ({
 					color: @fg-hover;
 				});
-			});
-			}
-		}
-	}
+			});;
+            }
+        }
+    }
     &__months {
     }
     &__month {
@@ -100,37 +109,38 @@
     }
     &__month-week {
     }
-    &__month-day {}
+    &__month-day {
+    }
     &__month-day-empty {
     }
     &__month-day-link,
     &__month-day-button {
-		  background-color: @middlegray;
-		  color: @fg-general; 
-		  & when (@colorModes = true) {
-		      .mx-dark-mode-rules ({
+        background-color: @middlegray;
+        color: @fg-general;
+        & when (@colorModes = true) {
+            .mx-dark-mode-rules ({
 		  background-color: @bg-active;
 
-		});
-		      .mx-light-mode-rules ({
+		});;
+            .mx-light-mode-rules ({
 		  background-color: @middlegray;
 		color: @fg-general;
-		});
-		}
-		& when (@colorModes = true) {
-		  &:focus,
-		  &:hover,
-		  &:active {
-		      .mx-dark-mode-rules ({
+		});;
+        }
+        & when (@colorModes = true) {
+            &:focus,
+            &:hover,
+            &:active {
+                .mx-dark-mode-rules ({
 		    background-color: @bg-hover;
 			color: @fg-general;
-		  });
-		      .mx-light-mode-rules ({
+		  });;
+                .mx-light-mode-rules ({
 			color: @white;
 		    background-color: @bg-active;
-		  });
-		  }
-		}
+		  });;
+            }
+        }
     }
     &__action {
     }
@@ -142,8 +152,8 @@
     &__newspaper-search {
     }
     &__newspaper-search-body {
-		background: @bg-content-box;
-		border: @border;
+        background: @bg-content-box;
+        border: @border;
     }
     &__newspaper-search-title,
     &__issues-title {

@@ -106,6 +106,7 @@
     --fg-popover: #000;
     --bg-popover: #fff;
     --border: 1px solid #c3c6d72e;
+    --border-controls: 1px solid #ced4da;
     --bg-general: #f5f8fd;
     --fg-general: #212529;
     --lk-general: #3365a9;
@@ -149,9 +150,9 @@
     --facet-boolean-background: transparent;
 
     /* WIDGET ICON COLORS */
-    --widget-icon-color-topbar: @ci-color1;
-    // --widget-icon-color-body: green;
-    // --widget-icon-color-expand: yellow;
+    --widget-icon-color-topbar: var(--ci-color1);
+    --widget-icon-color-body: var(--fg-general);
+    --widget-icon-color-expand: var(--ci-color1);
 
     /* WIDGET TOC */
     --widget-toc-hover-bg: var(--bg-general);
@@ -213,11 +214,11 @@
     --archives-card-border: var(--border);
     --archives-card-shadow-hover: rgba(0, 0, 0, 0.16);
     --archives-title-color: var(--fg-content-box);
-    --archives-description-color: var(--fg-controls);
+    --archives-description-color: var(--fg-general);
     --archives-overlay-bg: rgba(0, 0, 0, 0.65);
     --archives-overlay-text: #fff;
     --archives-placeholder-bg: var(--bg-general);
-    --archives-placeholder-icon-color: var(--fg-controls);
+    --archives-placeholder-icon-color: var(--fg-general);
 
     /* QUICK FILTERS */
     --quick-filter-bg: #fff;
@@ -286,6 +287,7 @@
     --fg-popover: #fff;
     --bg-popover: #253044;
     --border: 0;
+    --border-controls: 1px solid #1b2333;
     --fg-general: rgba(255, 255, 255, 0.8);
     --lk-general: rgba(255, 255, 255, 0.8);
     --lh-general: rgba(255, 255, 255, 0.8);

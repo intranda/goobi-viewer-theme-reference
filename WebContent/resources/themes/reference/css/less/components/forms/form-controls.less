@@ -16,7 +16,7 @@
 
 /* MODIFICATIONS */
 .custom-control--select {
-    border: @border;
+    border: @border-controls;
     background-color: @bg-content-box;
     border-radius: @container-small-border-radius;
 
@@ -57,14 +57,12 @@
     }
 }
 
-.cms-module__option-dropdown-trigger {
-    background: @white;
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-            background: @fg-controls;
-        });;
-        .mx-light-mode-rules ({
-            background: @white;
-        });;
+.cms-module__option-dropdown {
+    border: @border-controls;
+    border-radius: @container-small-border-radius;
+
+    &-trigger {
+        background: @fg-controls;
+        border-radius: @container-small-border-radius;
     }
 }

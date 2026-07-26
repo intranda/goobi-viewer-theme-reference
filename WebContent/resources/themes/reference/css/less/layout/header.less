@@ -23,9 +23,27 @@
         height: 5px;
     }
 
+    &__secondaryTopBar {
+        background-color: @ci-color-1-transparent;
+        padding: 1rem;
+        width: 100%;
+    }
+
     &__span {
         color: @ci-color1;
         display: block;
+    }
+
+    .container {
+        .page-navigation {
+            &__wrapper {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
     }
 
     &.-scrolled {
@@ -34,10 +52,55 @@
         }
 
         .header__logo {
-            font-size: 2.5rem;
+            .header__span {
+                display: none;
+            }
+        }
 
-            img {
-                max-width: 5rem;
+        // collapse the nav from its own wrapped row into the same row as
+        // the logo/actions, sitting between them
+        .page-navigation {
+            order: 2;
+            flex: 0 1 auto;
+            margin-top: 0;
+
+            // only the top-level list; submenus (-level-1 and deeper) must
+            // stay stacked vertically as dropdown panels
+            .navigation__list.-level-0 {
+                flex-direction: row;
+                width: auto;
+                padding: 0;
+                gap: 0.1rem;
+            }
+
+            .container.page-navigation__wrapper {
+                width: auto;
+                max-width: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .header__actions {
+            order: 3;
+        }
+
+        // drop everything but search + a reduced login button from the
+        // condensed single-row bar
+        .header__actions-bookmark,
+        .header__actions-language,
+        .header__actions-color-switch,
+        .header__client-status {
+            display: none;
+        }
+
+        .header__actions-login {
+            .login-navigation__user-name {
+                display: none;
+            }
+
+            .login-navigation__toggle-button .icon-text span:not(.icon-wrapper) {
+                display: none;
             }
         }
     }
@@ -47,10 +110,8 @@
     }
 
     &__actions-language,
-	//  &__actions-bookmark,
-	&__actions-login,
-	&__actions-search-wrapper,
-	&__actions-color-switch {
+    &__actions-login,
+    &__actions-color-switch {
         padding: 0 1.1rem;
         position: relative;
         border-left: 1px solid @middleblack;
@@ -84,16 +145,31 @@
     &__actions-language-button {
         display: flex;
         align-items: center;
-        font-weight: 400;
+        gap: 0.5rem;
         color: @fg-header;
         font-size: 14px;
         font-weight: 500;
+        padding: 0.5rem 0.9rem;
+        border-radius: @button-border-radius;
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: @ci-color1;
+            background-color: @ci-color-1-transparent;
+        }
     }
 
     &__actions-search-wrapper {
-        &.-searchOn {
-            z-index: 10;
+        // not a positioning context for .header__search-box: that overlay is
+        // positioned relative to .header__inner instead, so it can span the
+        // full row (see .header__search-box above)
+        position: static;
 
+        &.-searchOn {
             .header__actions-search-close-button {
                 display: block;
 
@@ -187,12 +263,13 @@
         align-items: center;
         padding: 1.5rem 0;
         border-bottom: 1px solid @border-color;
-        transition: 0.2s all ease;
+        transition: padding 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &__logo {
+        position: relative;
+        z-index: 6;
         padding-right: 0.75rem;
-        transition: 0.2s all ease;
         display: flex;
         align-items: center;
         margin: 0;
@@ -213,7 +290,6 @@
             }
 
             img {
-                transition: 0.2s all ease;
                 display: inline-block;
                 max-height: 5.2rem;
                 max-width: 6rem;
@@ -229,6 +305,7 @@
 
     &__actions {
         display: flex;
+        order: 2;
         margin-left: auto;
         align-items: center;
     }
@@ -237,40 +314,52 @@
         display: flex;
     }
 
-    // inline expanding search field, slides out within the header actions bar
-    // instead of opening a separate overlay
+    // .page-navigation is rendered inside .header__inner (between logo and
+    // actions in the markup) but forced onto its own wrapped line by default;
+    // -scrolled below collapses it back into the same row as logo/actions.
+    .page-navigation {
+        order: 3;
+        flex: 0 0 100%;
+        position: static;
+        margin-top: 1rem;
+        transition: margin-top 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    // expanding search field: positioned relative to .header__inner (not the
+    // small actions-search-wrapper, see position:static override below) so it
+    // can span the full row width edge-to-edge; .header__logo sits on top via
+    // z-index so it stays visible/clickable while everything else is covered
     &__search-box {
         position: absolute;
-        top: 50%;
+        // stretch the full height of .header__inner (rather than a fixed
+        // height centered via transform) so it fully covers whatever sits
+        // behind it, including the taller merged row in -scrolled where the
+        // nav joins the same line
+        top: 0;
+        bottom: 0;
+        left: 100%;
         right: 0;
         display: flex;
         align-items: center;
-        width: 0;
-        max-width: 0;
-        height: 2.6rem;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-50%);
         background: @bg-content-box;
         border-radius: @container-small-border-radius;
-        box-shadow: @container-box-shadow;
         transition:
-            max-width 0.3s ease,
-            width 0.3s ease,
+            left 0.3s ease,
             opacity 0.2s ease,
             visibility 0s linear 0.3s;
         pointer-events: none;
 
         &.-searchOn {
-            width: 22rem;
-            max-width: calc(100vw - 4rem);
+            left: 0;
+            z-index: 5;
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
             transition:
-                max-width 0.3s ease,
-                width 0.3s ease,
+                left 0.3s ease,
                 opacity 0.2s ease,
                 visibility 0s linear 0s;
         }
@@ -293,14 +382,14 @@
                 background: transparent;
                 color: @fg-content-box;
                 font-size: 1.5rem;
-                height: 2.4rem;
+                height: 3.4rem;
                 padding: 0 1rem;
                 border-radius: 0;
             }
 
             .input-group-addon {
-                width: 2.4rem;
-                margin: 0 0.2rem 0 0;
+                width: 3.4rem;
+                margin-left: 1rem;
             }
         }
     }
@@ -425,7 +514,8 @@
     li {
         &.active > a,
         &.active > button {
-            background-color: @ci-color-1-transparent;
+            background-color: @white;
+            background-image: linear-gradient(@ci-color-1-transparent, @ci-color-1-transparent);
             color: @ci-color1;
         }
     }
@@ -443,7 +533,7 @@
     a,
     button {
         font-weight: 500;
-        padding: 0.4rem 1.1rem;
+        padding: 0.65rem 1.1rem;
         font-size: @fontNormal;
         color: @fg-header;
         border-radius: @button-border-radius;
@@ -454,7 +544,8 @@
         &:focus,
         &:active {
             color: @ci-color1;
-            background-color: @ci-color-1-transparent;
+            background-color: @white;
+            background-image: linear-gradient(@ci-color-1-transparent, @ci-color-1-transparent);
 
             .caret {
                 color: @ci-color1;
@@ -634,12 +725,6 @@
 @media screen and (max-width: @mediumBreakpoint) {
     .header {
         transition: all 0.2s ease;
-
-        &__search-box {
-            &.-searchOn {
-                width: 18rem;
-            }
-        }
     }
 }
 
@@ -696,13 +781,6 @@
             a img {
                 margin-right: 0rem;
                 max-width: 6rem;
-            }
-        }
-
-        &__search-box {
-            &.-searchOn {
-                width: 14rem;
-                max-width: calc(100vw - 6rem);
             }
         }
 
