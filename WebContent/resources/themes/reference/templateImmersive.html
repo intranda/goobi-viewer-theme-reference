@@ -151,7 +151,7 @@
             layout="block">
             <f:view locale="#{navigationHelper.locale}">
                 <!-- TOP ANCHOR FOR SCROLLING TO TOP -->
-                <span id="top"></span>
+                <span id="top" tabindex="-1"></span>
 
                 <!-- COinS -->
                 <span
@@ -202,7 +202,8 @@
                     <main
                         id="main"
                         class="content__main"
-                        role="main">
+                        role="main"
+                        tabindex="-1">
                         <ui:insert name="content-immersive" />
                     </main>
 
