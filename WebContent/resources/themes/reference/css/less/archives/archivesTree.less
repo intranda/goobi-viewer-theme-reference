@@ -25,39 +25,6 @@
         }
     }
     &__list-entry-title {
-        &.-archives-selected {
-            .fa-stack {
-                color: green;
-                & when (@colorModes = true) {
-                    .mx-light-mode-rules ({
-						color: green;
-					});
-                    .mx-dark-mode-rules ({
-						color: #ff7800;
-					});
-                }
-            }
-        }
-        &.-archives-selected {
-            .fa-stack-text {
-            }
-        }
-        &.-archives-selected {
-            .fa-file-o {
-                color: green;
-                & when (@colorModes = true) {
-                    .mx-light-mode-rules ({
-						color: green;
-					});
-                    .mx-dark-mode-rules ({
-						color: #ff7800;
-					});
-                }
-            }
-        }
-        .fa-caret-up,
-        .fa-caret-down {
-        }
         a {
         }
     }
@@ -81,8 +48,6 @@
             &:focus {
                 color: @fg-general;
             }
-        }
-        .fa {
         }
     }
     &__metadata-box {
