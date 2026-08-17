@@ -93,29 +93,41 @@
     &:hover,
     &:active,
     &:focus {
-        color: @lh-general;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
+		color: @lh-general;
+		& when (@colorModes = true) {
+		    .mx-light-mode-rules ({
 				color: @middleblack;
-				&:hover, 
-				&:focus {
-					color: @lh-general;
-				}
 			});
-            .mx-dark-mode-rules ({
-				background: @bg-active;
-                color: @fg-general;
-                border-color: @bg-active;
+		    .mx-dark-mode-rules ({
+				color: @lh-general;
+			});
+		}
 
-                &:hover, 
-				&:focus {
-                    background: @ci-hovercolor1;
-                    border-color: @ci-hovercolor1;
-                }
-			});
-        }
+		// REMOVED FOR NOW - NOT SURE WHY THIS WAS STYLED THIS WAY...
+//        & when (@colorModes = true) {
+//            .mx-light-mode-rules ({
+//				color: @middleblack;
+//				&:hover, 
+//				&:focus {
+//					color: @lh-general;
+//				}
+//			});
+//            .mx-dark-mode-rules ({
+//				background: @bg-active;
+//                color: @fg-general;
+//                border-color: @bg-active;
+//
+//                &:hover, 
+//				&:focus {
+//                    background: @ci-hovercolor1;
+//                    border-color: @ci-hovercolor1;
+//                }
+//			});
+//        }
     }
 }
+
+
 
 .btn--hidden {
 }
