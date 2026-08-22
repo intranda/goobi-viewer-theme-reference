@@ -17,6 +17,15 @@
     top: 0;
     box-shadow: 0 1px 6px rgb(11 15 29 / 21%);
 
+    & when (@colorModes = true) {
+        .mx-light-mode-rules({
+            background: @white;
+        });
+        .mx-dark-mode-rules({
+            background: @bg-content-box;
+        });
+    }
+
     &__topbar {
         background-color: @footer-topnav-bg;
         width: 100%;
@@ -186,7 +195,7 @@
 
     &__actions-search-button {
         padding: 0;
-        color: @middleblack;
+        color: @fg-header;
         width: 2rem;
         display: flex;
         align-items: center;
@@ -262,7 +271,6 @@
         flex-wrap: wrap;
         align-items: center;
         padding: 1.5rem 0;
-        border-bottom: 1px solid @border-color;
         transition: padding 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -514,7 +522,7 @@
     li {
         &.active > a,
         &.active > button {
-            background-color: @white;
+            background-color: @fg-controls;
             background-image: linear-gradient(@ci-color-1-transparent, @ci-color-1-transparent);
             color: @ci-color1;
         }
@@ -544,7 +552,7 @@
         &:focus,
         &:active {
             color: @ci-color1;
-            background-color: @white;
+            background-color: @fg-controls;
             background-image: linear-gradient(@ci-color-1-transparent, @ci-color-1-transparent);
 
             .caret {
@@ -563,7 +571,7 @@
     }
     &__submenu {
         top: calc(~'100%');
-        background-color: @white;
+        background-color: @fg-controls;
         border-radius: @container-border-radius;
         box-shadow: @container-box-shadow;
         border: 1px solid @border-color;
@@ -579,7 +587,7 @@
                         &:hover,
                         &:focus,
                         &:active {
-                            background-color: @white;
+                            background-color: @fg-controls;
                         }
                     }
                 }
