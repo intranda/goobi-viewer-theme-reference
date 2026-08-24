@@ -29,7 +29,15 @@
     &__topbar {
         background-color: @footer-topnav-bg;
         width: 100%;
-        height: 5px;
+        height: 3px;
+    }
+
+    &__control-bar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-top: 1rem;
     }
 
     &__secondaryTopBar {
@@ -51,65 +59,31 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 0;
             }
         }
     }
 
     &.-scrolled {
-        .header__inner {
-            padding: 1rem 0;
-        }
-
-        .header__logo {
-            .header__span {
-                display: none;
-            }
-        }
-
-        // collapse the nav from its own wrapped row into the same row as
-        // the logo/actions, sitting between them
-        .page-navigation {
-            order: 2;
-            flex: 0 1 auto;
-            margin-top: 0;
-
-            // only the top-level list; submenus (-level-1 and deeper) must
-            // stay stacked vertically as dropdown panels
-            .navigation__list.-level-0 {
-                flex-direction: row;
-                width: auto;
-                padding: 0;
-                gap: 0.1rem;
+        .header {
+            &__inner {
+                padding: 0.5rem 0;
             }
 
-            .container.page-navigation__wrapper {
-                width: auto;
-                max-width: none;
-                padding: 0;
-                margin: 0;
+            &__logo {
+                img {
+                    max-height: 4.5rem;
+                }
             }
-        }
 
-        .header__actions {
-            order: 3;
-        }
-
-        // drop everything but search + a reduced login button from the
-        // condensed single-row bar
-        .header__actions-bookmark,
-        .header__actions-language,
-        .header__actions-color-switch,
-        .header__client-status {
-            display: none;
-        }
-
-        .header__actions-login {
-            .login-navigation__user-name {
+            &__control-bar {
                 display: none;
             }
 
-            .login-navigation__toggle-button .icon-text span:not(.icon-wrapper) {
-                display: none;
+            &__actions-login {
+                &::before {
+                    display: none;
+                }
             }
         }
     }
@@ -121,11 +95,21 @@
     &__actions-language,
     &__actions-login,
     &__actions-color-switch {
-        padding: 0 1.1rem;
+        padding: 0 0.5rem;
         position: relative;
-        border-left: 1px solid @middleblack;
         transition: opacity 0.2s ease;
         opacity: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background-color: @middleblack;
+        }
 
         span,
         i {
@@ -133,8 +117,14 @@
         }
     }
 
+    &__actions-color-switch {
+        padding-right: 0;
+    }
+
     &__actions-language {
-        border-left: none;
+        &::before {
+            display: none;
+        }
     }
 
     &__actions-bookmark {
@@ -151,7 +141,9 @@
         height: 21px;
     }
 
-    &__actions-language-button {
+    &__actions-language-button,
+    &__actions-login .login-navigation__toggle-button,
+    &__actions-color-switch .color-theme-switch {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -177,6 +169,10 @@
         // positioned relative to .header__inner instead, so it can span the
         // full row (see .header__search-box above)
         position: static;
+        // .header__search-box itself is taken out of flow (position: absolute),
+        // so this reserves the flex space its docked 200px resting width
+        // needs, keeping nav items from rendering underneath it
+        min-width: 200px;
 
         &.-searchOn {
             .header__actions-search-close-button {
@@ -185,25 +181,6 @@
                 &::after {
                     animation: searchButtonAnim 0.2s ease forwards;
                 }
-            }
-
-            .header__actions-search-button {
-                display: none;
-            }
-        }
-    }
-
-    &__actions-search-button {
-        padding: 0;
-        color: @fg-header;
-        width: 2rem;
-        display: flex;
-        align-items: center;
-        &:focus,
-        &:hover,
-        &:active {
-            .-searchOn {
-                color: @fg-header !important;
             }
         }
     }
@@ -251,26 +228,21 @@
 
         button {
             font-size: 1.6rem;
-
-            &:hover {
-                color: @fg-header !important;
-            }
         }
     }
 
     &__wrapper {
         position: relative;
         z-index: 2030;
+        padding: 0 !important;
     }
 
     &__inner {
-        // min-height to avoid half pixels when scrolling, which renders a small space between header and page top border
         min-height: 58px;
         position: relative;
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
-        padding: 1.5rem 0;
+        padding-bottom: 1rem;
         transition: padding 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -299,8 +271,9 @@
 
             img {
                 display: inline-block;
-                max-height: 5.2rem;
-                max-width: 6rem;
+                max-width: 12rem;
+                width: 100%;
+                height: auto;
                 margin-right: 1rem;
                 vertical-align: middle;
             }
@@ -313,8 +286,9 @@
 
     &__actions {
         display: flex;
-        order: 2;
-        margin-left: auto;
+        padding: 0;
+        width: 100%;
+        justify-content: flex-end;
         align-items: center;
     }
 
@@ -326,50 +300,58 @@
     // actions in the markup) but forced onto its own wrapped line by default;
     // -scrolled below collapses it back into the same row as logo/actions.
     .page-navigation {
-        order: 3;
-        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         position: static;
-        margin-top: 1rem;
-        transition: margin-top 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    // expanding search field: positioned relative to .header__inner (not the
-    // small actions-search-wrapper, see position:static override below) so it
-    // can span the full row width edge-to-edge; .header__logo sits on top via
-    // z-index so it stays visible/clickable while everything else is covered
+    .widget-searchfield {
+        & when (@colorModes = true) {
+            .mx-light-mode-rules({
+                background: @white !important;
+            });
+            .mx-dark-mode-rules({
+                background: @bg-content-box !important;
+            });
+        }
+
+        .form-control {
+            box-shadow: @container-border-radius;
+
+            & when (@colorModes = true) {
+                .mx-light-mode-rules({
+                    background: @ci-color-1-transparent;
+                });
+                .mx-dark-mode-rules({
+                    background: @ci-color-1-transparent-darker;
+                });
+            }
+        }
+    }
+
+    // always-visible small search field, growing into a full-width overlay
     &__search-box {
         position: absolute;
-        // stretch the full height of .header__inner (rather than a fixed
-        // height centered via transform) so it fully covers whatever sits
-        // behind it, including the taller merged row in -scrolled where the
-        // nav joins the same line
         top: 0;
         bottom: 0;
-        left: 100%;
+        left: calc(~'100% - 200px');
         right: 0;
         display: flex;
         align-items: center;
         overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        background: @bg-content-box;
-        border-radius: @container-small-border-radius;
-        transition:
-            left 0.3s ease,
-            opacity 0.2s ease,
-            visibility 0s linear 0.3s;
-        pointer-events: none;
+        transition: left 0.3s ease;
 
         &.-searchOn {
-            left: 0;
-            z-index: 5;
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transition:
-                left 0.3s ease,
-                opacity 0.2s ease,
-                visibility 0s linear 0s;
+            // stop at the logo's reserved width (img max-width 12rem + its margin-right 1rem
+            // + .header__logo's padding-right 0.75rem) instead of 0, so the overlay never covers it
+            left: 13.75rem;
+            z-index: 7;
+            background: @bg-content-box;
+            border: none;
+            border-radius: @button-border-radius;
+            box-shadow: none;
         }
 
         .widget-searchfield {
@@ -387,17 +369,28 @@
             .form-control {
                 border: none;
                 box-shadow: none;
-                background: transparent;
-                color: @fg-content-box;
-                font-size: 1.5rem;
-                height: 3.4rem;
+                color: @fg-general;
+                font-size: 1.4rem;
+                height: 3.2rem;
                 padding: 0 1rem;
                 border-radius: 0;
             }
 
             .input-group-addon {
-                width: 3.4rem;
+                width: 3.2rem;
+            }
+        }
+
+        &.-searchOn .widget-searchfield {
+            .form-control {
+                color: @fg-content-box;
+                font-size: 1.5rem;
+                height: 3.4rem;
                 margin-left: 1rem;
+            }
+
+            .input-group-addon {
+                width: 3.4rem;
             }
         }
     }
@@ -528,7 +521,6 @@
         }
     }
     &__list {
-        padding: 0.5rem;
         width: 100%;
         flex-direction: column;
         align-items: center;

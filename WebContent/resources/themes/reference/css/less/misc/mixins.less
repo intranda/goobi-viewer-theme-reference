@@ -85,10 +85,24 @@
     -webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
 }
 
+// ACCESSIBLE FOCUS RING (WCAG 2.2 SC 2.4.7 "Focus Visible")
+// Real `outline` rather than `box-shadow`, so the indicator still renders
+// under forced-colors / Windows High Contrast Mode, where box-shadow is
+// stripped. @colorOutline is a saturated red chosen to keep >=3:1 contrast
+// against both the light and dark theme surfaces. Parametrized so a
+// component can widen the ring or flip the offset outward when its own
+// layout needs it; call with no arguments for the standard site-wide ring.
+.mx-focus-ring(@color: @colorOutline; @width: 2px; @offset: -2px) {
+    outline: @width solid @color;
+    outline-offset: @offset;
+}
+
 // FOCUSRING
+// Applied globally to every `:focus-visible` element once keyboard use is
+// detected (see body.using-keyboard in layout/general.less) — this is what
+// makes the ring show up on Tab navigation but not on mouse clicks.
 .mx-focus-visible {
-    outline: 2px solid @colorOutline;
-    outline-offset: -2px;
+    .mx-focus-ring();
     z-index: 9999;
 }
 
@@ -205,7 +219,7 @@
     --image-controls-icon-color: @fg-general;
     --image-controls-icon-color-hover: @white;
     --image-controls-icon-color-active: @white;
-    --image-controls-action-background: rgba(@ci-color1, 0.2);
+    --image-controls-action-background: rgb(from @ci-color1 r g b / 20%);
     --image-controls-action-background-hover: @ci-color1;
     --image-controls-slider-thumb-background: @fg-general;
     --image-controls-slider-border-color: @fg-general;

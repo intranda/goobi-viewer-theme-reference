@@ -163,13 +163,14 @@
     }
 
     .modal-content {
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-                background-color: @bg-content-box;
-                color: @fg-content-box;
-            });
-        }
-		
+        // @bg-content-box / @fg-content-box already resolve to theme-reactive
+        // CSS custom properties, so no light/dark split is needed here. The
+        // bundled bootstrap.custom.css strips background/border/shadow from
+        // .modal-content entirely, so this is the only place providing them.
+        background-color: @bg-content-box;
+        color: @fg-content-box;
+        border-radius: @container-border-radius;
+        box-shadow: @container-box-shadow;
     }
 	.card {
 		& when (@colorModes = true) {

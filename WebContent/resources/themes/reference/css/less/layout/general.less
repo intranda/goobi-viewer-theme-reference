@@ -32,6 +32,29 @@ body {
     }
 }
 
+// Baseline focus ring for the elements that most commonly receive keyboard
+// focus, applied directly via `:focus-visible` rather than through
+// body.using-keyboard above. This keeps buttons, links and form controls
+// accessible even before that class is toggled (e.g. an autofocused field
+// right after page load), independently of the keyboard-detection script.
+button,
+.btn,
+input,
+select,
+textarea,
+a,
+[tabindex] {
+    &:focus-visible {
+        .mx-focus-ring();
+    }
+}
+
+input:not(.btn):focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    .mx-focus-ring(@offset: 0);
+}
+
 @{RTL} body {
     // text-align: right;
 }

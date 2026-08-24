@@ -6,9 +6,43 @@
     &-heading {
         margin-bottom: 10px;
     }
+
+    .input-group {
+        gap: 0.75rem;
+    }
+
+    .form-control {
+        border: @border;
+        border-radius: @container-border-radius !important;
+        box-shadow: @container-box-shadow;
+        transition: box-shadow 0.15s ease;
+
+        &:focus {
+            box-shadow:
+                @container-box-shadow,
+                0 0 0 3px @ci-color-1-transparent;
+        }
+    }
+
     .input-group-addon {
-        border-color: @ci-color1;
-        background-color: @ci-color1;
+        border: none;
+        border-radius: @container-border-radius !important;
+        background-color: transparent;
+        padding: 0;
+
+        .btn {
+            height: 100%;
+            border-radius: @container-border-radius;
+            box-shadow: @container-box-shadow;
+            transition: box-shadow 0.15s ease;
+
+            &:hover,
+            &:focus {
+                box-shadow:
+                    @container-box-shadow,
+                    0 0 0 3px @ci-color-1-transparent;
+            }
+        }
     }
 }
 

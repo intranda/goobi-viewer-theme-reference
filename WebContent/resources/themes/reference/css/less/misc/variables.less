@@ -1,124 +1,137 @@
 /* ==============================================================
    Variables
+
+   Every variable below is backed by a CSS custom property (defined in the
+   :root block further down, or in mixins.less for the light/dark-dependent
+   ones), so any value here can be overridden live from devtools without a
+   rebuild — handy during client demos. The only exceptions are the few
+   flagged below that are resolved entirely at LESS compile time (selector
+   fragments, @media conditions, a `when()` guard flag) and therefore have
+   no runtime CSS representation to override.
    ==============================================================*/
 /* FONTS */
-@fontFamily:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol';
-@images: '../../images';
-@fontSmall: 1.3rem;
-@fontMedium: 1.4rem;
-@fontNormal: 1.6rem;
-@fontLarge: 1.8rem;
-@fontXLarge: 2.1rem;
+@fontFamily: var(--font-family);
+@fontSmall: var(--font-size-small);
+@fontMedium: var(--font-size-medium);
+@fontNormal: var(--font-size-normal);
 
 /* BASIC COLORS */
-@white: #fff;
-@black: #1a1a1a;
-@lightgray: #eee;
-@gray: #6f6f6f;
-@placeholder: rgba(0, 0, 0, 0.25);
-@colorOutline: #ff0038;
+@white: var(--white);
+@black: var(--black);
+@lightgray: var(--lightgray);
+@gray: var(--gray);
+@placeholder: var(--placeholder);
+@colorOutline: var(--color-outline);
 
 /* CI COLORS */
-@ci-color1: #1565c0; // blue
-@ci-hovercolor1: #0079d5; // slightly lighter blue
+@ci-color2: var(--ci-color2); // CI Color 2
+@ci-color3: var(--ci-color3); // CI Color 3
 
-@ci-color2: #f59f00; // CI Color 2
-@ci-hovercolor2: #ffc14e; // CI Color 2
-
-@ci-color3: #17a2b8; // CI Color 3
-@ci-hovercolor3: #0fbbd6; // CI Color 3
-
-@lowerblack: #222;
-@middleblackContrast: #343434;
-@middleblack: #444;
-@middleblackHover: #565656;
-@middlegray: #d5d5d5;
-@neutralgray: #f2f3f4;
-//@blue: #3365a9;
-//@ci-hovercolor1: #507ebf;
-@subred: #8a0e13;
-@hoversubred: #aa292f;
-@subgreen: #095d42;
-@hoversubgreen: #1f7358;
-@labelHoverGray: #5e5e5e;
+@lowerblack: var(--lowerblack);
+@middleblack: var(--middleblack);
+@middlegray: var(--middlegray);
+@neutralgray: var(--neutralgray);
+@labelHoverGray: var(--label-hover-gray);
 
 /* MESSAGE COLORS */
-@red: #c7254e;
+@red: var(--red);
 
 /* BUTTON COLORS */
-@btnDefault: #565656;
-@btnDanger: #721c24;
-@btnDangerBorder: #721c24;
-@btnDangerBgc: #f8d7da;
-@btnDangerHoverBgc: #721c24;
-@btnSuccess: #155724;
-@btnSuccessBorder: #155724;
-@btnSuccessBgc: #d4edda;
-@btnSuccessHoverBgc: #155724;
-@btnFullHoverBgc: #cce5ff;
-
-/* STATISTICS */
-@statBackgroundColor: #fffdf6;
-@statDarkgray: #999;
+@btnDefault: var(--btn-default);
+@btnDanger: var(--btn-danger);
+@btnSuccess: var(--btn-success);
 
 /* NER COLORS */
-@personColor: #0174df;
-@locationColor: #ff8000;
-@corporationColor: #298a08;
-@tagHoverColor: #eee;
-@scaleHandleColor: #8a0808;
-
-/* READING MODE COLORS */
-@readingModeBg: #1a1a1a;
-
-/* CROWDSOURCING COLORS */
-@progressCompletion: #95c476;
-@darkBlue: rgb(53, 111, 162);
-@yellowTransparent: rgba(250, 250, 0, 0.3);
-
-// USED
+@personColor: var(--person-color);
+@locationColor: var(--location-color);
+@corporationColor: var(--corporation-color);
 
 /* BORDERS */
-@container-border-radius: 8px;
-@container-small-border-radius: 4px;
-@button-border-radius: 6px;
+@container-border-radius: var(--container-border-radius);
+@container-small-border-radius: var(--container-small-border-radius);
+@button-border-radius: var(--button-border-radius);
 @border-color: var(--border-color);
 
 /* Box Shadows */
-@container-box-shadow: 0 1px 6px rgb(15 21 42 / 4%);
+@container-box-shadow: var(--container-box-shadow);
 
-/* TEST COLORS */
-@accent-color-1: #f59f00;
-@accent-color-2: #ae3ec9;
-@accent-color-3: #17a2b8;
-@accent-color-4: #0ca678;
+/* ACCENT COLOR */
+@accent-color-1: var(--accent-color-1);
+
 // Derived at runtime via CSS relative color syntax so it always tracks the
 // current --ci-color1 (light/dark mode, subtheme overrides, etc.) instead of
-// baking in a fixed hex+alpha snapshot.
+// baking in a fixed hex+alpha snapshot. Deliberately has no --ci-color-1-transparent
+// custom property of its own: overriding --ci-color1 from devtools already
+// updates this too, so a second property would just be a way to disagree
+// with the first.
 @ci-color-1-transparent: rgb(from @ci-color1 r g b / 9%);
-@footer-topnav-bg: #112b4e;
+// Same idea, but with its own --ci-color-1-transparent-darker custom
+// property (defaulting to a 15% mix of --ci-color1) so its opacity can be
+// tuned independently of the plain transparent variant above.
+@ci-color-1-transparent-darker: var(--ci-color-1-transparent-darker);
+@footer-topnav-bg: var(--footer-topnav-bg);
 
-// NOT USED
-
+// COMPILE-TIME ONLY — a selector fragment, not a style value, so it can't be
+// expressed as a CSS custom property.
 /* RIGHT TO LEFT LANGUAGES STYLING */
 @RTL: ~'html[dir=rtl]';
 
+// COMPILE-TIME ONLY — used inside @media conditions, which are evaluated
+// before custom properties exist and can't read them.
 /* MEDIA QUERY BREAK POINTS */
 @xSmallBreakpoint: 480px;
 @smallBreakpoint: 768px;
 @mediumBreakpoint: 992px;
 @largeBreakpoint: 1200px;
+
+/* Non-theme-dependent custom properties: same value in light & dark mode,
+   just exposed as CSS variables so they stay overridable at runtime. */
+:root {
+    --font-family:
+        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-size-small: 1.3rem;
+    --font-size-medium: 1.4rem;
+    --font-size-normal: 1.6rem;
+
+    --white: #fff;
+    --black: #1a1a1a;
+    --lightgray: #eee;
+    --gray: #6f6f6f;
+    --placeholder: rgba(0, 0, 0, 0.25);
+    --color-outline: #ff0038;
+
+    --ci-color2: #f59f00;
+    --ci-color3: #1565c0;
+
+    --lowerblack: #222;
+    --middleblack: #444;
+    --middlegray: #d5d5d5;
+    --neutralgray: #f2f3f4;
+    --label-hover-gray: #5e5e5e;
+
+    --red: #c7254e;
+
+    --btn-default: #565656;
+    --btn-danger: #721c24;
+    --btn-success: #155724;
+
+    --person-color: #0174df;
+    --location-color: #ff8000;
+    --corporation-color: #298a08;
+
+    --container-border-radius: 8px;
+    --container-small-border-radius: 4px;
+    --button-border-radius: 6px;
+
+    --container-box-shadow: 0 1px 6px rgb(15 21 42 / 4%);
+
+    --accent-color-1: #f59f00;
+
+    --footer-topnav-bg: #112b4e;
+
+    --ci-color-1-transparent-darker: rgb(from var(--ci-color1) r g b / 15%);
+}
 
 /* ==================================== >>
 THEMING
@@ -129,6 +142,7 @@ THEMING
 
 // ****************************************** //
 // **** EN-DISABLE COLOR MODE PROPERTIES **** //
+// COMPILE-TIME ONLY — a LESS `when()` guard flag, not a style value.
 @colorModes: true;
 // ****************************************** //
 // ****************************************** //
@@ -143,6 +157,7 @@ THEMING
 }
 
 // DARK THEME
+// COMPILE-TIME ONLY — a selector/class name, not a style value.
 @color-theme-dark: color-theme-dark;
 
 .@{color-theme-dark} {
@@ -161,6 +176,7 @@ THEMING
 }
 
 // LIGHT THEME
+// COMPILE-TIME ONLY — a selector/class name, not a style value.
 @color-theme-light: color-theme-light;
 
 .@{color-theme-light} {

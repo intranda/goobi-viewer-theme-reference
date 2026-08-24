@@ -12,15 +12,22 @@
         .simplebar-track {
         }
         .simplebar-scrollbar {
+            // match the muted, solid-color scrollbar used elsewhere via the
+            // native `scrollbar-color` property (see widgetToc.less,
+            // widgetSearchFacets.less), instead of the library's default
+            // black/white at 50% opacity
             &:before {
                 & when (@colorModes = true) {
                     .mx-light-mode-rules ({
-						background-color: #000;
+						background-color: @middlegray;
 					});;
                     .mx-dark-mode-rules ({
-						background-color: #fff;
+						background-color: @bg-active;
 					});;
                 }
+            }
+            &.simplebar-visible:before {
+                opacity: 1;
             }
         }
     }

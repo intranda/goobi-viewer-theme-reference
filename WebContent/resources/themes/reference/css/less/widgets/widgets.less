@@ -9,6 +9,15 @@
     box-shadow: @container-box-shadow;
     padding-bottom: 1.5rem;
 
+    & when (@colorModes = true) {
+        .mx-light-mode-rules({
+            background-color: @ci-color-1-transparent;
+        });
+        .mx-dark-mode-rules({
+            background-color: @ci-color-1-transparent-darker;
+        });
+    }
+
     &__topbar {
         border-radius: @container-border-radius;
         padding: 1.5rem;
@@ -120,6 +129,10 @@
     .widget-usage__page-download-pdf,
     .widget-downloads__page-download-pdf,
     .widget-downloads__work-download-pdf {
+        .icon-wrapper {
+            width: 15px;
+            height: 15px;
+        }
     }
 }
 
