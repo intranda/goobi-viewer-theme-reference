@@ -163,13 +163,18 @@
     }
 
     .modal-content {
+        background-color: @white;
+        color: rgb(33, 37, 41);
         & when (@colorModes = true) {
+            .mx-light-mode-rules ({
+                background-color: @white;
+                color: rgb(33, 37, 41);
+            });
             .mx-dark-mode-rules ({
                 background-color: @bg-content-box;
                 color: @fg-content-box;
             });
         }
-		
     }
 	.card {
 		& when (@colorModes = true) {
