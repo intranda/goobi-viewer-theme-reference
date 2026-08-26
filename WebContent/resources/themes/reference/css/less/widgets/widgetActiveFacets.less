@@ -1,0 +1,76 @@
+/* ==============================================================
+   Widget Active Facets
+   style declarations for searchFacets/activeFacetsBadges.xhtml
+   ==============================================================*/
+/* WIDGET ACTIVE FACETS */
+
+/* BLOCK */
+.active-facets-badges {
+    --active-facets-badge-shadow-hover: none;
+
+    /* ELEMENTS */
+    &__list {
+    }
+    &.widget-active-facets &__list {
+    }
+    &__list-item {
+    }
+    &__list &__badge {
+        height: 24px;
+        padding-block: 0;
+        padding-inline: 7px 4px;
+        gap: 4px;
+        font-size: @fontSmall;
+        font-weight: normal;
+
+        &:hover,
+        &:focus {
+            border-color: transparent;
+        }
+    }
+    &__badge-label {
+    }
+    &__badge-field {
+    }
+    &__badge-remove {
+        width: 16px;
+        height: 16px;
+        color: var(--active-facets-badge-contrast);
+        background: var(--active-facets-badge-color);
+        border-radius: 0;
+    }
+    &__badge-remove-icon-svg {
+        width: 10px;
+        height: 10px;
+    }
+    &__more {
+    }
+}
+
+/* WIDGET EMBEDDING */
+.widget-active-facets {
+    &__topbar {
+    }
+    &__reset {
+    }
+    &__reset-icon-svg {
+    }
+    &__reset-label {
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+}
