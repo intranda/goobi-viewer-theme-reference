@@ -113,7 +113,7 @@
 
     --ci-color1: #1565c0;
     --ci-hovercolor1: #0079d5;
-    --bg-hover: #f5f5f5;
+    --bg-hover: rgb(from @ci-color1 r g b / 8%);
     --bg-active: #3b4557;
     --fg-hover: #212529;
     --fg-controls: #fff;
@@ -214,13 +214,13 @@
 
     /* IMAGE CONTROLS VARIABLES */
     --image-controls-background: @white;
-    --image-controls-border-color: transparent;
+    --image-controls-border-color: @border-color;
     --image-controls-container-border-color: transparent;
     --image-controls-icon-color: @fg-general;
     --image-controls-icon-color-hover: @white;
     --image-controls-icon-color-active: @white;
-    --image-controls-action-background: rgb(from @ci-color1 r g b / 20%);
-    --image-controls-action-background-hover: @ci-color1;
+    --image-controls-action-background: @bg-general;
+    --image-controls-action-background-hover: @ci-hovercolor1;
     --image-controls-slider-thumb-background: @fg-general;
     --image-controls-slider-border-color: @fg-general;
 

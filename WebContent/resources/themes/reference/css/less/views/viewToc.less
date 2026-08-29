@@ -7,8 +7,8 @@
 .toc {
     /* TOC METADATA */
     &__metadata {
-		border: @border;
-		background-color: @bg-content-box;
+        border: @border;
+        background-color: @bg-content-box;
     }
     &__metadata-thumbnail {
     }
@@ -35,10 +35,10 @@
             & when (@colorModes = true) {
                 .mx-dark-mode-rules ({
 					background-color: @bg-hover;
-				});
+				});;
                 .mx-light-mode-rules ({
 					background-color: @lightgray;
-				});
+				});;
             }
         }
         &.level-0 {
@@ -73,6 +73,7 @@
         margin: 0;
         border: @border;
         background-color: @bg-content-box;
+        border-radius: @container-border-radius;
         li {
             &:first-child {
             }
@@ -112,6 +113,7 @@
     }
     &__list-expandable-elem,
     &__list-full-item {
+        border-radius: @container-small-border-radius;
         &.parent {
         }
         &.child {

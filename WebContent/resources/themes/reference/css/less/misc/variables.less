@@ -58,16 +58,7 @@
 /* ACCENT COLOR */
 @accent-color-1: var(--accent-color-1);
 
-// Derived at runtime via CSS relative color syntax so it always tracks the
-// current --ci-color1 (light/dark mode, subtheme overrides, etc.) instead of
-// baking in a fixed hex+alpha snapshot. Deliberately has no --ci-color-1-transparent
-// custom property of its own: overriding --ci-color1 from devtools already
-// updates this too, so a second property would just be a way to disagree
-// with the first.
-@ci-color-1-transparent: rgb(from @ci-color1 r g b / 9%);
-// Same idea, but with its own --ci-color-1-transparent-darker custom
-// property (defaulting to a 15% mix of --ci-color1) so its opacity can be
-// tuned independently of the plain transparent variant above.
+@ci-color-1-transparent: rgb(from @ci-color1 r g b / 8%);
 @ci-color-1-transparent-darker: var(--ci-color-1-transparent-darker);
 @footer-topnav-bg: var(--footer-topnav-bg);
 

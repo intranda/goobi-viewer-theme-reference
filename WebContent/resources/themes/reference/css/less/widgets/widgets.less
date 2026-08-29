@@ -8,6 +8,7 @@
     background-color: @ci-color-1-transparent;
     box-shadow: @container-box-shadow;
     padding-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 
     & when (@colorModes = true) {
         .mx-light-mode-rules({
@@ -24,22 +25,18 @@
     }
 
     &__title {
-        font-size: @fontNormal;
         font-weight: 600;
-        color: @ci-color1;
-        border-radius: 9px;
+        font-size: @fontNormal;
     }
 
     &__body {
-        margin: 0rem 1.2rem;
-        background-color: @bg-content-box;
         border-radius: @container-border-radius;
         padding: 1rem 1.2rem;
 
         a {
-            color: @lk-content-box;
             line-height: 1.2;
             padding: 0.5rem;
+            font-weight: 500;
             border-radius: @container-small-border-radius;
 
             &:hover {
@@ -47,6 +44,10 @@
                 background-color: @bg-hover;
                 text-decoration: none;
             }
+        }
+
+        h3 {
+            font-size: @fontNormal;
         }
 
         ul {
@@ -124,6 +125,7 @@
         }
     }
     &__badge-container-heading {
+        font-size: @fontNormal;
     }
 
     .widget-usage__page-download-pdf,

@@ -28,6 +28,9 @@
             border-color: transparent;
         }
     }
+    &__badge {
+        border-radius: @button-border-radius !important;
+    }
     &__badge-label {
     }
     &__badge-field {
@@ -37,7 +40,7 @@
         height: 16px;
         color: var(--active-facets-badge-contrast);
         background: var(--active-facets-badge-color);
-        border-radius: 0;
+        border-radius: @button-border-radius;
     }
     &__badge-remove-icon-svg {
         width: 10px;

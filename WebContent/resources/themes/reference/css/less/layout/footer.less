@@ -376,30 +376,25 @@
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
     .footer {
-        &__topSection__columns {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-
-        &__bottomSection__nav__list {
-            grid-template-rows: none;
-            grid-auto-flow: row;
-            grid-auto-columns: auto;
-
-            a {
-                padding: 0.5rem 0;
+        &__topSection {
+            &__columns {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
-            li:first-child a {
-                padding-left: 0;
+            &__btn {
+                width: 100%;
+                max-width: 100%;
             }
         }
 
-        &__bottomSection__links {
-            a,
-            span,
-            button {
-                padding: 0.3rem 0.6rem;
+        &__bottomSection {
+            &__links {
+                a,
+                span,
+                button {
+                    padding: 0.3rem 0.6rem;
+                }
             }
         }
 

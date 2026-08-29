@@ -112,8 +112,8 @@
 }
 
 .user-login-modal {
-    &__body-login-type,
-    &__left {
+    &__inner {
+        border: none;
     }
 
     &__form-control {
@@ -121,10 +121,10 @@
         & when (@colorModes = true) {
             .mx-light-mode-rules ({
                     background: white;
-                });
+                });;
             .mx-dark-mode-rules ({
                     background: white !important;
-                });
+                });;
         }
     }
 }

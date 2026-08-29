@@ -250,6 +250,9 @@
         &.-noThumbnail {
         }
     }
+    &__hit-title-heading {
+        font-size: 1.8rem;
+    }
     &__hit-title-link {
     }
     &__no-thumb-bookmark {
@@ -382,14 +385,20 @@
         border-bottom: 1px solid @border-color;
     }
     &__hit-options-wrapper {
+        margin-left: 0.5rem;
     }
     &__hit-options-button {
         border-radius: @container-small-border-radius;
-        color: @ci-color3;
-        background-color: rgb(from @ci-color3 r g b / 20%);
+        color: @ci-color1;
+        background-color: transparent;
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: rgb(from @ci-color3 r g b / 20%);
+        }
 
         .icon-wrapper {
-            color: @ci-color3;
+            color: @ci-color1;
         }
     }
     &__hit-options-button-bookmark {

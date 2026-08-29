@@ -10,13 +10,24 @@
     }
     &__grid {
         .simplebar-track {
+            &.simplebar-vertical {
+                width: 8px;
+            }
         }
         .simplebar-scrollbar {
             // match the muted, solid-color scrollbar used elsewhere via the
             // native `scrollbar-color` property (see widgetToc.less,
-            // widgetSearchFacets.less), instead of the library's default
-            // black/white at 50% opacity
+            // widgetSearchFacets.less): an always-visible rounded pill
+            // instead of the library's default fading, 50%-opacity one
+            width: 8px;
             &:before {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-radius: 4px;
+                opacity: 1;
+                transition: none;
                 & when (@colorModes = true) {
                     .mx-light-mode-rules ({
 						background-color: @middlegray;
@@ -25,9 +36,6 @@
 						background-color: @bg-active;
 					});;
                 }
-            }
-            &.simplebar-visible:before {
-                opacity: 1;
             }
         }
     }

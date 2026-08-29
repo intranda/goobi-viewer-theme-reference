@@ -161,27 +161,20 @@ $(document).ready(function () {
 
     // toggle mobile menu
     $('body').on('click', '[data-open="menu"]', function () {
-        // ACCESSBILITY FOCUS JUMP
-        if (!$('page-navigation__mobile').hasClass('in')) {
-            $('#sidebar a:visible:first').focus();
-        } else {
-            $('[data-open="sidebar"]').focus();
-        }
+        const wasOpen = $('.page-navigation__mobile').hasClass('-mobileMenuOpen');
+
         $('html').toggleClass('no-overflow');
         $('.page-navigation__mobile').toggleClass('-mobileMenuOpen');
         $('.header').toggleClass('-mobileMenuOpen');
         $('.header__navigation-mobile-background').toggleClass('-mobileMenuOpen');
-        $('[data-open="sidebar"]').toggle();
-        $('#pageNavigationMobile a:visible:first').focus();
         $(this).toggleClass('in');
-    });
 
-    // mobile submenu animation
-    $('#pageNavigationMobile .navigation__submenu-trigger').click(function () {
-        // $('.navigation__submenu').removeAttr('style');
-        $(this).find('.navigation__submenu:first').slideToggle('fast');
-        event.stopPropagation();
-        $('#pageNavigationMobile .navigation__submenu').not('.navigation__submenu.in').slideUp('fast');
+        // ACCESSIBILITY FOCUS JUMP
+        if (wasOpen) {
+            $(this).focus();
+        } else {
+            $('#pageNavigationMobile a:visible:first').focus();
+        }
     });
 
     // toggle language selection

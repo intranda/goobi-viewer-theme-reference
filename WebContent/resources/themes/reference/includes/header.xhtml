@@ -20,6 +20,14 @@
         <div class="header__secondaryTopbar"></div>
         <!-- CONTROLS -->
         <div class="header__control-bar">
+            <!-- PAGE HEADER MOBILE LOGO -->
+            <div class="header__logo-mobile">
+                <a href="#{request.contextPath}/">
+                    <img
+                        src='#{adminThemesBean.getLogo("/images/template/goobi_logo.svg", 300, 150)}'
+                        alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
+                </a>
+            </div>
             <!-- PAGE HEADER TOP ACTIONS -->
             <div class="container header__actions">
                 <!-- BOOKMARKS -->
@@ -81,7 +89,7 @@
                     id="pageNavigation"
                     class="page-navigation #{userBean.admin ? '-adminActive':''}">
                     <div class="container page-navigation__wrapper">
-                        <!-- PAGE HEADER BOTTOM LOGO -->
+                        <!-- PAGE HEADER LOGO -->
                         <div class="header__logo">
                             <a href="#{request.contextPath}/">
                                 <img
