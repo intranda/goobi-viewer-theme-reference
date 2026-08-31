@@ -1,0 +1,82 @@
+/* ==============================================================
+   Annotation Tags
+   ==============================================================*/
+
+@anno-author-jacob-grimm: #8f5000;
+@anno-author-wilhelm-grimm: #1b5e20;
+@anno-author-jacob-oder-wilhelm-grimm: #7b1fa2;
+@anno-author-andere-handschrift: #01579b;
+@anno-author-einweisungszeichen: #ad1457;
+@anno-author-korrekturzeichen: #455a64;
+
+.mx-theme-light() {
+    --anno-author-jacob-grimm: @anno-author-jacob-grimm;
+    --anno-author-wilhelm-grimm: @anno-author-wilhelm-grimm;
+    --anno-author-jacob-oder-wilhelm-grimm: @anno-author-jacob-oder-wilhelm-grimm;
+    --anno-author-andere-handschrift: @anno-author-andere-handschrift;
+    --anno-author-einweisungszeichen: @anno-author-einweisungszeichen;
+    --anno-author-korrekturzeichen: @anno-author-korrekturzeichen;
+}
+
+.mx-theme-dark() {
+    --anno-author-jacob-grimm: #e6a23c;
+    --anno-author-wilhelm-grimm: #67c23a;
+    --anno-author-jacob-oder-wilhelm-grimm: #c586d9;
+    --anno-author-andere-handschrift: #56b4e9;
+    --anno-author-einweisungszeichen: #f28ba8;
+    --anno-author-korrekturzeichen: #aab4c4;
+}
+
+/* CLASSIC FULLTEXT VIEW: author text colors */
+.alto-annotation {
+    &--jacob-grimm {
+        color: @anno-author-jacob-grimm;
+    }
+
+    &--wilhelm-grimm {
+        color: @anno-author-wilhelm-grimm;
+    }
+
+    &--jacob-oder-wilhelm-grimm {
+        color: @anno-author-jacob-oder-wilhelm-grimm;
+    }
+
+    &--andere-handschrift {
+        color: @anno-author-andere-handschrift;
+    }
+
+    &--einweisungszeichen {
+        color: @anno-author-einweisungszeichen;
+    }
+
+    &--korrekturzeichen {
+        color: @anno-author-korrekturzeichen;
+    }
+}
+
+/* IMMERSIVE VIEW: author accent on the annotation cards */
+.immersive__anno-note {
+    &.alto-annotation--jacob-grimm {
+        border-left-color: var(--anno-author-jacob-grimm);
+    }
+
+    &.alto-annotation--wilhelm-grimm {
+        border-left-color: var(--anno-author-wilhelm-grimm);
+    }
+
+    &.alto-annotation--jacob-oder-wilhelm-grimm {
+        border-left-color: var(--anno-author-jacob-oder-wilhelm-grimm);
+    }
+
+    &.alto-annotation--andere-handschrift {
+        border-left-color: var(--anno-author-andere-handschrift);
+    }
+
+    &.alto-annotation--einweisungszeichen {
+        border-left-color: var(--anno-author-einweisungszeichen);
+    }
+
+    &.alto-annotation--korrekturzeichen {
+        border-left-color: var(--anno-author-korrekturzeichen);
+    }
+}
