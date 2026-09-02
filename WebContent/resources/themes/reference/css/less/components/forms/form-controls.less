@@ -17,11 +17,10 @@
 /* MODIFICATIONS */
 .custom-control--select {
     border: @border-controls;
-    background-color: @bg-content-box;
+    background: @fg-controls;
     border-radius: @container-small-border-radius;
 
     & when (@colorModes = true) {
-        background: @white;
         .mx-dark-mode-rules ({
 			background: @fg-controls;
 		});;
@@ -41,13 +40,17 @@
     }
     select {
         font-size: @fontMedium;
-        background: @white;
+        background: @fg-controls;
+        color: @fg-general;
+
         & when (@colorModes = true) {
+            .mx-light-mode-rules ({
+				background: @fg-controls;
+                color: @fg-general;
+			});;
             .mx-dark-mode-rules ({
 				background: @fg-controls;
-			});;
-            .mx-light-mode-rules ({
-				background: @white;
+                color: @fg-general;
 			});;
         }
         &.disabled {

@@ -113,6 +113,7 @@
 
     --ci-color1: #1565c0;
     --ci-hovercolor1: #0079d5;
+    --footer-topnav-bg: color-mix(in srgb, @ci-color1 60%, black);
     --bg-hover: rgb(from @ci-color1 r g b / 8%);
     --bg-active: #3b4557;
     --fg-hover: #212529;
@@ -127,25 +128,28 @@
     --lk-general: #3365a9;
     --lh-general: #444;
     --fg-header: #3b4557;
+    --bg-header: #fff;
     --bg-content-box: #fff;
     --fg-content-box: #212529;
     --lk-content-box: #3365a9;
     --lh-content-box: #444;
+    --placeholder: rgba(0, 0, 0, 0.25);
 
-    /* COMBINED FACETS */
-    --combined-facets-background: #fff;
-    --combined-facets-color: #2f3136;
+    /* COMBINED FACETS — mirrors .widget's own colors (widgets.less) so the
+       combined box and its badges look like any other sidebar widget */
+    --combined-facets-background: rgb(from var(--ci-color1) r g b / 8%);
+    --combined-facets-color: var(--fg-general);
     --combined-facets-accent: var(--ci-color1);
     --combined-facets-accent-contrast: #fff;
-    --combined-facets-divider: #ccd7e3;
-    --combined-facets-muted: #5f6572;
-    --combined-facets-box: #e8edf3;
-    --combined-facets-scrollbar: var(--lk-content-box);
-    --combined-facets-badge-background: var(--ci-color1);
-    --combined-facets-badge-background-hover: var(--ci-hovercolor1);
-    --combined-facets-badge-color: #fff;
-    --combined-facets-badge-muted: rgba(255, 255, 255, 0.85);
-    --combined-facets-badge-contrast: var(--ci-color1);
+    --combined-facets-divider: var(--border-color);
+    --combined-facets-muted: var(--gray);
+    --combined-facets-box: var(--bg-general);
+    --combined-facets-scrollbar: var(--middlegray);
+    --combined-facets-badge-background: var(--active-facets-badge-background);
+    --combined-facets-badge-background-hover: var(--active-facets-badge-background-hover);
+    --combined-facets-badge-color: var(--active-facets-badge-color);
+    --combined-facets-badge-muted: var(--active-facets-badge-muted);
+    --combined-facets-badge-contrast: var(--active-facets-badge-contrast);
 
     /* ACTIVE FACETS BADGES */
     --active-facets-badge-background: var(--ci-color1);
@@ -232,7 +236,7 @@
     --archives-description-color: var(--fg-general);
     --archives-overlay-bg: rgba(0, 0, 0, 0.65);
     --archives-overlay-text: #fff;
-    --archives-placeholder-bg: var(--bg-general);
+    --archives-placeholder-bg: var(--bg-content-box);
     --archives-placeholder-icon-color: var(--fg-general);
 
     /* QUICK FILTERS */
@@ -289,14 +293,15 @@
 .mx-theme-dark {
     color-scheme: dark;
 
-    --ci-color1: #015999;
-    --bg-general: #000e29;
-    --bg-content-box: #253044;
+    --ci-color1: #1565c0;
+    --footer-topnav-bg: @ci-color1;
+    --bg-general: #0a1124; // todo ci-color1
+    --bg-content-box: #111a2f; // todo ci-color1 related
     --fg-content-box: #e3e4e7;
     --lk-content-box: #e3e4e7;
     --bg-hover: #5b6473;
     --bg-active: #3b4557;
-    --ci-hovercolor1: #5b6473;
+    --ci-hovercolor1: #0079d5;
     --fg-hover: #d8d9dd;
     --fg-controls: #253044;
     --fg-popover: #fff;
@@ -308,22 +313,25 @@
     --lk-general: rgba(255, 255, 255, 0.8);
     --lh-general: rgba(255, 255, 255, 0.8);
     --fg-header: rgba(255, 255, 255, 0.8);
+    --bg-header: #070b17; // todo ci-color1 related
     --lh-content-box: rgba(255, 255, 255, 0.8);
+    --placeholder: rgba(255, 255, 255, 0.5);
 
-    /* COMBINED FACETS */
-    --combined-facets-background: #253044;
-    --combined-facets-color: #e3e4e7;
-    --combined-facets-accent: #d3d6da;
-    --combined-facets-accent-contrast: #253044;
-    --combined-facets-divider: rgba(255, 255, 255, 0.17);
-    --combined-facets-muted: #9aa3b5;
-    --combined-facets-box: #1a2333;
+    /* COMBINED FACETS — mirrors .widget's own colors (widgets.less) so the
+       combined box and its badges look like any other sidebar widget */
+    --combined-facets-background: var(--ci-color-1-transparent-darker);
+    --combined-facets-color: var(--fg-general);
+    --combined-facets-accent: var(--ci-color1);
+    --combined-facets-accent-contrast: #fff;
+    --combined-facets-divider: var(--border-color);
+    --combined-facets-muted: var(--gray);
+    --combined-facets-box: var(--bg-general);
     --combined-facets-scrollbar: var(--bg-active);
-    --combined-facets-badge-background: var(--ci-color1);
-    --combined-facets-badge-background-hover: var(--ci-hovercolor1);
-    --combined-facets-badge-color: #fff;
-    --combined-facets-badge-muted: rgba(255, 255, 255, 0.85);
-    --combined-facets-badge-contrast: var(--ci-color1);
+    --combined-facets-badge-background: var(--active-facets-badge-background);
+    --combined-facets-badge-background-hover: var(--active-facets-badge-background-hover);
+    --combined-facets-badge-color: var(--active-facets-badge-color);
+    --combined-facets-badge-muted: var(--active-facets-badge-muted);
+    --combined-facets-badge-contrast: var(--active-facets-badge-contrast);
 
     /* ACTIVE FACETS BADGES */
     --active-facets-badge-background: var(--ci-color1);
@@ -393,11 +401,11 @@
     --archives-card-border: 1px solid transparent;
     --archives-card-shadow-hover: rgba(0, 0, 0, 0.4);
     --archives-title-color: var(--fg-content-box);
-    --archives-description-color: var(--fg-controls);
+    --archives-description-color: var(--fg-general);
     --archives-overlay-bg: rgba(0, 0, 0, 0.75);
     --archives-overlay-text: #e3e4e7;
     --archives-placeholder-bg: var(--bg-content-box);
-    --archives-placeholder-icon-color: var(--fg-controls);
+    --archives-placeholder-icon-color: var(--fg-general);
 
     /* QUICK FILTERS */
     --quick-filter-bg: var(--bg-content-box);

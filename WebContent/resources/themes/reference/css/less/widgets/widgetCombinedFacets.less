@@ -5,14 +5,28 @@
 /* WIDGET COMBINED FACETS */
 
 /* BLOCK */
-.combined-facets { 
-	border: @border;
-    --combined-facets-radius: 0;
+.combined-facets {
+    // --combined-facets-* (mixins.less) mirror .widget's own colors
+    // (widgets.less) 1:1, so no separate light/dark handling is needed here —
+    // the custom properties already carry the right value per theme
+    border-radius: @container-border-radius;
+    background-color: var(--combined-facets-background);
+    box-shadow: @container-box-shadow;
+    color: var(--combined-facets-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 
     /* ELEMENTS */
     &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: @container-border-radius;
+        padding: 1.5rem;
     }
     &__title {
+        font-weight: 600;
+        font-size: @fontNormal;
     }
     &__reset {
         font-size: @fontSmall;
@@ -28,10 +42,45 @@
 
     .widget-search-facets__collapse-button {
         font-size: @fontSmall;
+
+        .icon-svg {
+            margin-top: 0;
+        }
     }
 
     .widget-search-facets__filter .widget-search-facets__filter-button {
         border-radius: 0;
+    }
+
+    // individual facet fields/chronology slider are their own .widget boxes
+    // outside combined mode; flatten them here so they merge into the shared
+    // box above instead of stacking as nested widget cards with their own
+    // background/shadow/radius, separated by a hairline divider instead.
+    // @border collapses to 0 in dark mode (widgets rely on background
+    // contrast there instead), so the divider needs its own always-visible color.
+    .widget-search-facets__collection,
+    .widget-chronology-slider {
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-top: 1px solid var(--combined-facets-divider);
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    .widget-search-facets__list {
+        scrollbar-color: var(--combined-facets-scrollbar) transparent;
+    }
+
+    // core's widgetCombinedFacets.less sets this to currentColor (so topbar
+    // icons pick up the local accent color); this theme keeps the same
+    // topbar icon color normal widgets use, for visual consistency
+    .widget__topbar .widget__topbar-icon-svg {
+        color: var(--widget-icon-color-topbar);
     }
 
     .widget-chronology-slider__slider {

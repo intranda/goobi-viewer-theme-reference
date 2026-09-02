@@ -3,30 +3,31 @@
    style declarations for 
    ==============================================================*/
 
+.color-theme-switch.color-theme-switch-light {
+    display: none;
+}
+.color-theme-switch.color-theme-switch-dark {
+    display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+    .color-theme-switch.color-theme-switch-dark {
+        display: none;
+    }
+    .color-theme-switch.color-theme-switch-light {
+        display: flex;
+    }
+}
+
+// same (0,0,2,0) specificity as the rules above — kept last so an explicit
+// active/hide (set by the toggle's own click handler, or on page load once
+// sessionBean.colorTheme is known) always wins the cascade tie, regardless
+// of OS color-scheme preference
 .color-theme-switch {
     &.active {
         display: flex;
     }
     &.hide {
         display: none;
-    }
-}
-
-.color-theme-switch-light {
-    display: none;
-}
-.color-theme-switch-dark {
-    display: flex;
-}
-
-@media (prefers-color-scheme: dark) {
-    .color-theme-switch-dark {
-        display: none;
-    }
-    .color-theme-switch-light {
-        display: flex;
-    }
-    .color-theme-switch-dark.hide {
-        display: hide;
     }
 }

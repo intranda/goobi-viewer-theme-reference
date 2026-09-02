@@ -32,11 +32,12 @@
     &__input-autocomplete {
         .ui-autocomplete {
             .ui-autocomplete-input {
-                background: @white;
+                background: @fg-controls;
                 border: @border;
                 border-radius: @container-border-radius;
                 box-shadow: @container-box-shadow;
                 transition: box-shadow 0.15s ease;
+
                 &:focus {
                     box-shadow:
                         @container-box-shadow,
@@ -45,10 +46,10 @@
                 & when (@colorModes = true) {
                     .mx-dark-mode-rules ({
 						background: @fg-controls;
-						color: @black;
+						color: @fg-general;
 					});;
                     .mx-light-mode-rules ({
-						background: @white;
+						background: @fg-controls;
 					});;
                 }
             }
@@ -133,13 +134,14 @@
     box-shadow: @container-box-shadow;
     padding: 0.4rem;
     margin-top: 0.5rem;
-    background-color: @white;
+    background-color: @fg-controls;
+
     & when (@colorModes = true) {
         .mx-dark-mode-rules ({
 			background-color: @fg-controls;
 		});;
         .mx-light-mode-rules ({
-			background-color: @white;
+			background-color: @fg-controls;
 		});;
     }
 

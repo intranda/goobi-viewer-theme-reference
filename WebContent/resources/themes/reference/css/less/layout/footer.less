@@ -18,7 +18,7 @@
             color: @white;
         });
         .mx-dark-mode-rules({
-            background-color: @bg-content-box;
+            background-color: color-mix(in srgb, @footer-topnav-bg 30%, black);
             color: @fg-content-box;
         });
     }
@@ -148,6 +148,15 @@
         background-color: color-mix(in srgb, @footer-topnav-bg 70%, black);
         width: 100%;
         padding: 4rem 0;
+
+        & when (@colorModes = true) {
+            .mx-light-mode-rules({
+                background-color: color-mix(in srgb, @footer-topnav-bg 70%, black);
+            });
+            .mx-dark-mode-rules({
+                background-color: color-mix(in srgb, @footer-topnav-bg 26%, black);
+            });
+        }
 
         &__nav-row {
             display: flex;

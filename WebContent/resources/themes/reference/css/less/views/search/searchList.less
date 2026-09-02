@@ -302,6 +302,15 @@
             background-color: @ci-color-1-transparent;
             color: @lk-general;
             padding: 0 0.6rem;
+
+            & when (@colorModes = true) {
+                .mx-dark-mode-rules ({
+                    background-color: @ci-color1;
+                });;
+                .mx-light-mode-rules ({
+                    background-color: @ci-color-1-transparent;
+                });;
+            }
         }
     }
     &__hit-text {

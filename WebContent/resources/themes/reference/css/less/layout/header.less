@@ -12,17 +12,17 @@
 .header {
     z-index: 2019;
     position: sticky;
-    background: @white;
+    background: @bg-header;
     color: @fg-header;
     top: 0;
     box-shadow: 0 1px 6px rgb(11 15 29 / 21%);
 
     & when (@colorModes = true) {
         .mx-light-mode-rules({
-            background: @white;
+            background: @bg-header;
         });
         .mx-dark-mode-rules({
-            background: @bg-content-box;
+            background: @bg-header;
         });
     }
 
@@ -349,7 +349,7 @@
             // + .header__logo's padding-right 0.75rem) instead of 0, so the overlay never covers it
             left: 13.75rem;
             z-index: 7;
-            background: @bg-content-box;
+            // background: @bg-content-box;
             border: none;
             border-radius: @button-border-radius;
             box-shadow: none;
@@ -902,11 +902,11 @@
 
         & when (@colorModes = true) {
             .mx-light-mode-rules({
-                background: @white;
+                background: @bg-header;
             });
 
             .mx-dark-mode-rules({
-                background: @bg-content-box;
+                background: @bg-header;
             });
         }
 
