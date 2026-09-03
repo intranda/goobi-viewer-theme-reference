@@ -8,6 +8,7 @@
     alto-annotation--wilhelm-grimm: #1b5e20 #67c23a;
     alto-annotation--jacob-oder-wilhelm-grimm: #7b1fa2 #c586d9;
     alto-annotation--andere-handschrift: #01579b #56b4e9;
+    alto-annotation--unleserliche-handschrift: #00695c #4db6ac;
     alto-annotation--einweisungszeichen: #ad1457 #f28ba8;
     alto-annotation--korrekturzeichen: #455a64 #aab4c4;
 };
@@ -26,6 +27,20 @@ each(@anno-authors, {
             });
             .mx-dark-mode-rules({
                 border-left-color: extract(@value, 2);
+            });
+        }
+    }
+
+    /* layout-tag panel dots, active hits and image highlights read this token */
+    .immersive .@{key} {
+        --immersive-tag-color: extract(@value, 1);
+
+        & when (@colorModes = true) {
+            .mx-light-mode-rules({
+                --immersive-tag-color: extract(@value, 1);
+            });
+            .mx-dark-mode-rules({
+                --immersive-tag-color: extract(@value, 2);
             });
         }
     }
