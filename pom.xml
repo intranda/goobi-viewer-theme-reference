@@ -17,7 +17,7 @@
 	<name>Goobi viewer - Theme Reference</name>
 
 	<properties>
-		<revision>26.07</revision>
+		<revision>26.08</revision>
 		<changelist>-SNAPSHOT</changelist>
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
