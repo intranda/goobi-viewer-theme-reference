@@ -8,19 +8,17 @@
         }
         /* DOCUMENT OPTIONS */
         &__options {
-        } 
+        }
         /* ACTIONS */
         &__actions {
             ul {
             }
-            li { 
+            li {
             }
         }
         &__action {
-			&.next,
-			&.prev {
-				background: @bg-content-box;
-			}
+            background-color: @bg-general;
+            border: @border;
             /* ELEMENT */
             a,
             span,
@@ -35,9 +33,15 @@
             [class*='image-'] {
             }
             &.inactive {
+                &:hover {
+                    background-color: @bg-general;
+                }
                 a,
                 span,
                 button {
+                    &:hover {
+                        color: @fg-general;
+                    }
                 }
             }
             /* ELEMENT */

@@ -403,7 +403,7 @@
         transition: background-color 0.15s ease;
 
         &:hover {
-            background-color: rgb(from @ci-color3 r g b / 20%);
+            background-color: rgb(from @ci-color1 r g b / 20%);
         }
 
         .icon-wrapper {
@@ -411,11 +411,15 @@
         }
     }
     &__hit-options-button-bookmark {
-        color: @ci-color2;
-        background-color: rgb(from @ci-color2 r g b / 20%);
+        color: @accent-color;
+        background-color: rgb(from @accent-color r g b / 20%);
+
+        &:hover {
+            background-color: rgb(from @accent-color r g b / 20%);
+        }
 
         .icon-wrapper {
-            color: @ci-color2;
+            color: @accent-color;
         }
     }
     &__hit-options-button-download {

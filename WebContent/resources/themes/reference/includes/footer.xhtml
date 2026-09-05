@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- Spalte 3: Social Media -->
-                    <div class="footer__topSection__column">
+                    <div class="footer__topSection__column footer__topSection__column__social">
                         <h3 class="footer__topSection__heading">Folgen Sie uns</h3>
                         <div class="footer__social">
                             <c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
@@ -212,7 +212,7 @@
                         href="#{msg.intrandaViewer}"
                         target="_blank"
                         rel="noopener">
-                        powered by Goobi viewer
+                        &#169;#{navigationHelper.currentDate.year} powered by Goobi viewer
                     </a>
                 </div>
             </div>

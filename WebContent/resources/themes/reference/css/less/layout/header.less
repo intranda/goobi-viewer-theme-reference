@@ -89,7 +89,7 @@
     }
 
     &.-adminActive {
-        position: relative;
+        top: @admin-topbar-frontend-height;
     }
 
     &__actions-language,
@@ -762,13 +762,20 @@
             padding: 0 1.5rem;
         }
 
+        // .header__control-bar is the only visible header row on mobile
+        // (mobile logo, actions, burger button) since .page-navigation is
+        // hidden above; -scrolled hides it for the desktop-only row-collapse
+        // effect, which would otherwise take the mobile menu trigger with it
+        &.-scrolled &__control-bar {
+            display: flex;
+        }
+
         &__actions {
             padding: 0;
         }
 
         &.-adminActive {
-            position: relative;
-            top: unset;
+            top: @admin-topbar-frontend-height;
         }
 
         &__mobile-burger-menu-alternative {

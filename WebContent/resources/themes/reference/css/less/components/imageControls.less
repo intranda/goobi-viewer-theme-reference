@@ -8,6 +8,15 @@
     border: @border;
     border-radius: @container-border-radius @container-border-radius 0 0;
     border-bottom: 0;
+
+    &__crowd-link,
+    &__campaign-link,
+    &__share-image-link {
+        &:hover {
+            color: @ci-color1;
+        }
+    }
+
     /* DOCUMENT OPTIONS */
     &__options {
         ul {
@@ -22,14 +31,14 @@
         &.fulltext {
         }
         &.add-to-bookmark {
-            background-color: rgb(from @ci-color2 r g b / 20%);
+            background-color: rgb(from @accent-color r g b / 20%);
             border-radius: @container-small-border-radius;
             .icon-wrapper svg {
                 stroke: @ci-color1;
-                color: @ci-color2;
+                color: @accent-color;
             }
             .icon-bookmark-filled {
-                color: @ci-color2;
+                color: @accent-color;
             }
         }
         &.image-filter,
@@ -55,9 +64,13 @@
         [class*='image-'] {
         }
         &.inactive {
+            opacity: 0.4;
+            cursor: default;
+            color: inherit;
             a,
             span,
             button {
+                cursor: default;
             }
         }
         /* ELEMENT */

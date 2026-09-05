@@ -29,11 +29,12 @@
         li {
             border-radius: @container-small-border-radius;
         }
+        a:hover {
+            background-color: transparent;
+        }
     }
     /* ELEMENTS */
     &__elements {
-        border: @border;
-        border-top: 0;
         scrollbar-color: @middlegray transparent;
         & when (@colorModes = true) {
             .mx-dark-mode-rules ({

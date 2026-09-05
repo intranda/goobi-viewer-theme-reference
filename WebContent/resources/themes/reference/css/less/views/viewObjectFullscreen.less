@@ -20,13 +20,13 @@
         button,
         span,
         select {
-            color: @fg-controls;
-            fill: @fg-controls;
+            color: @fg-general;
+            fill: @fg-general;
 
             &:hover,
             &:active,
             &:focus {
-                color: @fg-controls;
+                color: inherit;
             }
         }
     }
@@ -40,7 +40,7 @@
         &__options {
             .btn--clean[data-show='thumbs'] {
                 svg {
-                    stroke: @fg-controls;
+                    stroke: @fg-general;
                 }
                 [data-show='thumbs'] {
                     &.in {
@@ -52,7 +52,7 @@
     &__header-exit {
         a {
             svg {
-                stroke: @fg-controls;
+                stroke: @fg-general;
             }
         }
     }
@@ -62,11 +62,11 @@
     /* PANEL CONTROLS */
     &__view-sidebar-panel-controls {
         background-color: @bg-general;
-        color: @fg-controls;
+        color: @fg-general;
 
         [data-close='all-tabs'],
         [data-open='all-tabs'] {
-            color: @fg-controls;
+            color: @fg-general;
         }
     }
     /* IMAGE */
@@ -108,10 +108,10 @@
         background-color: @bg-general;
         color: @fg-general;
         .btn {
-            color: @fg-controls;
+            color: @fg-general;
 
             &::before {
-                color: @fg-controls;
+                color: @fg-general;
             }
 
             &:hover,
@@ -146,17 +146,17 @@
     }
     &__view-sidebar-controls {
         background-color: @bg-general;
-        color: @fg-controls;
+        color: @fg-general;
 
         .btn {
-            color: @fg-controls;
+            color: @fg-general;
         }
 
         [data-close='fs-sidebar'] {
-            color: @fg-controls;
+            color: @fg-general;
 
             &::before {
-                color: @fg-controls;
+                color: @fg-general;
             }
         }
     }
@@ -171,6 +171,11 @@
         }
         .widget-copyright {
             border-top: none;
+            padding-top: 0;
+            margin-top: 1.5rem;
+            &__body {
+                padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+            }
             &__inner {
                 border: none;
                 padding: 0;
@@ -218,6 +223,8 @@
     }
     /* MODIFICATION */
     .widget {
+        background-color: transparent;
+        box-shadow: none;
     }
 }
 
