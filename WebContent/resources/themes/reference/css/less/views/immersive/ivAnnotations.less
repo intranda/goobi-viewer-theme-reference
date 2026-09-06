@@ -23,6 +23,9 @@
     &.-annotations-on &__anno-word-strike {
     }
 
+    &__panel-fulltext {
+    }
+
     &.-annotations-on &__panel-fulltext {
     }
 
@@ -54,6 +57,41 @@
     }
 
     &.-annotations-on &__anno-margin {
+    }
+
+    &__anno-resize-handle {
+        &::before {
+        }
+
+        &::after {
+        }
+
+        &:hover,
+        &:focus-visible {
+            &::before {
+            }
+
+            &::after {
+            }
+        }
+
+        &:focus-visible {
+        }
+    }
+
+    &.-annotations-on &__anno-resize-handle {
+    }
+
+    &.-anno-resizing {
+        .immersive__anno-resize-handle::before {
+        }
+
+        .immersive__anno-resize-handle::after {
+        }
+    }
+
+    &.-resizing &__anno-note,
+    &.-anno-resizing &__anno-note {
     }
 
     &__anno-note {
@@ -135,4 +173,9 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+}
+
+@media (hover: none) {
+    .immersive.-annotations-on .immersive__anno-resize-handle {
+    }
 }
