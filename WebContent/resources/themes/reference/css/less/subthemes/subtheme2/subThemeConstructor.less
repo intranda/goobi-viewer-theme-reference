@@ -8,5 +8,13 @@
 @ci-color1: #095d42;
 @ci-hovercolor1: #1f7358;
 
+/* Keep the runtime core palette in sync with the static subtheme colors.
+   The dark brand is intentionally lighter for text on dark surfaces. */
+:root {
+    --ci-color1: @ci-color1;
+    --ci-hovercolor1: @ci-hovercolor1;
+    --ci-color1-dark: #6bc9a5;
+}
+
 /* OVERWRITES */
 @import 'layout.less';

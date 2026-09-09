@@ -128,7 +128,7 @@ THEMING
  << =================================== */
 :root {
     .mx-theme-palette();
-    .mx-theme-light;
+    .mx-theme-light();
 }
 
 // ****************************************** //
@@ -142,7 +142,7 @@ THEMING
 @media (prefers-color-scheme: dark) {
     :root {
         & when (@colorModes = true) {
-            .mx-theme-dark;
+            .mx-theme-dark();
         }
     }
 }
@@ -153,7 +153,7 @@ THEMING
 
 .@{color-theme-dark} {
     & when (@colorModes = true) {
-        .mx-theme-dark;
+        .mx-theme-dark();
     }
 }
 
@@ -172,7 +172,7 @@ THEMING
 
 .@{color-theme-light} {
     & when (@colorModes = true) {
-        .mx-theme-light;
+        .mx-theme-light();
     }
 }
 
