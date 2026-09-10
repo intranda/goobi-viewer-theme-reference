@@ -8,12 +8,12 @@
     padding: 0;
     /* ELEMENT */
     .form-group {
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
 
         input {
-            border-radius: @container-border-radius !important;
+            border-radius: var(--container-border-radius) !important;
             margin-right: 0.5rem;
-            box-shadow: @container-box-shadow;
+            box-shadow: var(--container-box-shadow);
         }
     }
     .form-control {
@@ -28,9 +28,9 @@
     .input-group-addon {
         display: flex;
         justify-content: center;
-        box-shadow: @container-box-shadow;
+        box-shadow: var(--container-box-shadow);
         background-color: var(--ci-color1);
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
         width: 41px;
         border: none;
 

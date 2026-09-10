@@ -13,33 +13,33 @@
 
     .form-control {
         border: var(--border);
-        border-radius: @container-border-radius !important;
-        box-shadow: @container-box-shadow;
+        border-radius: var(--container-border-radius) !important;
+        box-shadow: var(--container-box-shadow);
         transition: box-shadow 0.15s ease;
 
         &:focus {
             box-shadow:
-                @container-box-shadow,
+                var(--container-box-shadow),
                 0 0 0 3px var(--brand-tint-bg);
         }
     }
 
     .input-group-addon {
         border: none;
-        border-radius: @container-border-radius !important;
+        border-radius: var(--container-border-radius) !important;
         background-color: transparent;
         padding: 0;
 
         .btn {
             height: 100%;
-            border-radius: @container-border-radius;
-            box-shadow: @container-box-shadow;
+            border-radius: var(--container-border-radius);
+            box-shadow: var(--container-box-shadow);
             transition: box-shadow 0.15s ease;
 
             &:hover,
             &:focus {
                 box-shadow:
-                    @container-box-shadow,
+                    var(--container-box-shadow),
                     0 0 0 3px var(--brand-tint-bg);
             }
         }

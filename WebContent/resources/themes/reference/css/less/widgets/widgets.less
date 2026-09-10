@@ -4,26 +4,26 @@
    ==============================================================*/
 /* WIDGETS */
 .widget {
-    border-radius: @container-border-radius;
+    border-radius: var(--container-border-radius);
 
-    box-shadow: @container-box-shadow;
+    box-shadow: var(--container-box-shadow);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 
     background-color: var(--brand-tint-bg);
 
     &__topbar {
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
         padding: 1.5rem;
     }
 
     &__title {
         font-weight: 600;
-        font-size: @fontNormal;
+        font-size: var(--font-size-normal);
     }
 
     &__body {
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
         padding: 1rem 1.2rem;
         padding-top: 0;
 
@@ -31,7 +31,7 @@
             line-height: 1.2;
             padding: 0.5rem;
             font-weight: 500;
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
 
             &:hover {
                 color: var(--lh-content-box);
@@ -45,7 +45,7 @@
         }
 
         h3 {
-            font-size: @fontNormal;
+            font-size: var(--font-size-normal);
         }
 
         ul {
@@ -54,7 +54,7 @@
 
         li {
             &.active {
-                border-radius: @container-small-border-radius;
+                border-radius: var(--container-small-border-radius);
                 background-color: var(--ci-color1);
                 color: var(--fg-inverse);
                 font-weight: 600;
@@ -84,7 +84,7 @@
             min-height: 23px;
             height: 23px;
             font-size: 12px;
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
 
             &:hover,
             &:active,
@@ -108,7 +108,7 @@
         }
     }
     &__badge-container-heading {
-        font-size: @fontNormal;
+        font-size: var(--font-size-normal);
     }
 
     .widget-usage__page-download-pdf,

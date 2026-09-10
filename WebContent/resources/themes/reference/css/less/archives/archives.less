@@ -18,7 +18,7 @@
         background-color: var(--ci-color1);
 
         border: var(--border);
-        border-radius: @container-border-radius @container-border-radius 0 0;
+        border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
         border-bottom: none;
         color: var(--fg-inverse);
     }
@@ -34,33 +34,33 @@
         border: var(--border);
         border-bottom: none;
         color: var(--fg-inverse);
-        border-radius: @container-border-radius @container-border-radius 0 0;
+        border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
     }
     &__graphic-tree {
         border-top: none;
         background-color: var(--bg-content-box);
         border: var(--border);
-        border-radius: 0 0 @container-border-radius @container-border-radius;
+        border-radius: 0 0 var(--container-border-radius) var(--container-border-radius);
     }
     &__text-tree {
         background-color: var(--bg-content-box);
         border: var(--border);
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
     }
     &__object-info {
         border-top: none;
         background-color: var(--bg-content-box);
         border: var(--border);
-        border-radius: 0 0 @container-border-radius @container-border-radius;
+        border-radius: 0 0 var(--container-border-radius) var(--container-border-radius);
     }
     &__select-database-dropdown-wrapper {
         background-color: var(--bg-general);
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
     }
     &__select-database-dropdown-element-select {
         background-color: var(--bg-content-box);
         border: var(--border);
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
     }
     &__error {
         background-color: var(--bg-content-box);

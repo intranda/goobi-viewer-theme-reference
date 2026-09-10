@@ -142,7 +142,7 @@
         font-size: 14px;
         font-weight: 500;
         padding: 0.5rem 0.9rem;
-        border-radius: @button-border-radius;
+        border-radius: var(--button-border-radius);
         transition:
             background-color 0.15s ease,
             color 0.15s ease;
@@ -303,7 +303,7 @@
         background: var(--bg-content-box) !important;
 
         .form-control {
-            box-shadow: @container-border-radius;
+            box-shadow: var(--container-border-radius);
 
             background: var(--brand-tint-bg);
         }
@@ -328,7 +328,7 @@
             z-index: 7;
             // background: @bg-content-box;
             border: none;
-            border-radius: @button-border-radius;
+            border-radius: var(--button-border-radius);
             box-shadow: none;
         }
 
@@ -520,9 +520,9 @@
     button {
         font-weight: 500;
         padding: 0.65rem 1.1rem;
-        font-size: @fontNormal;
+        font-size: var(--font-size-normal);
         color: var(--fg-header);
-        border-radius: @button-border-radius;
+        border-radius: var(--button-border-radius);
         transition:
             background-color 0.2ms ease,
             color 0.2ms ease;
@@ -550,8 +550,8 @@
     &__submenu {
         top: calc(~'100%');
         background-color: var(--bg-popover);
-        border-radius: @container-border-radius;
-        box-shadow: @container-box-shadow;
+        border-radius: var(--container-border-radius);
+        box-shadow: var(--container-box-shadow);
         border: 1px solid var(--border-color);
 
         li {
@@ -573,7 +573,7 @@
         }
         a,
         button {
-            font-size: @fontMedium;
+            font-size: var(--font-size-medium);
             &:hover,
             &:focus,
             &:active {
@@ -969,14 +969,14 @@
 
                 background: transparent;
                 border: 0;
-                border-radius: @container-border-radius;
+                border-radius: var(--container-border-radius);
 
                 transition:
                     background-color 0.18s ease,
                     color 0.18s ease;
 
                 &[data-toggle='submenu'] {
-                    border-radius: @container-border-radius @container-border-radius 0 0;
+                    border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
                 }
 
                 &:hover,
@@ -1053,7 +1053,7 @@
                 padding: 0.25rem 0.75 0.25rem 0.75rem;
                 background: var(--bg-general);
                 border: 0;
-                border-radius: 0 0 @container-border-radius @container-border-radius;
+                border-radius: 0 0 var(--container-border-radius) var(--container-border-radius);
                 margin-top: 3px;
 
                 display: block;
@@ -1087,7 +1087,7 @@
                     padding: 0.7rem 1rem;
                     font-weight: 500;
                     font-size: 1.3rem;
-                    border-radius: @button-border-radius;
+                    border-radius: var(--button-border-radius);
                 }
 
                 .caret {
@@ -1117,7 +1117,7 @@
             padding: 0.35rem;
 
             border: 1px solid var(--border-color);
-            border-radius: @container-border-radius;
+            border-radius: var(--container-border-radius);
 
             box-shadow: 0 4px 16px rgb(from var(--shadow-color) r g b / 5%);
 
@@ -1133,7 +1133,7 @@
 
             color: var(--fg-header);
 
-            border-radius: @button-border-radius;
+            border-radius: var(--button-border-radius);
 
             transition: background-color 0.18s ease;
 
@@ -1199,7 +1199,7 @@
 
             background: var(--brand-tint-bg);
             border: 0 !important;
-            border-radius: @button-border-radius;
+            border-radius: var(--button-border-radius);
 
             display: none;
 
@@ -1225,7 +1225,7 @@
                 font-size: 1.35rem;
                 font-weight: 400;
 
-                border-radius: @button-border-radius;
+                border-radius: var(--button-border-radius);
 
                 &:hover,
                 &:focus,

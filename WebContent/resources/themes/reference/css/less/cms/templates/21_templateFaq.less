@@ -12,15 +12,15 @@
     &__list {
         background-color: var(--bg-content-box);
         border: var(--border);
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
     }
     &__description {
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
     }
     &__list {
         .card {
             background-color: var(--bg-general);
-            border-radius: @container-small-border-radius !important;
+            border-radius: var(--container-small-border-radius) !important;
             h2 a,
             a::before {
                 color: var(--fg-general);
@@ -32,7 +32,7 @@
             }
         }
         .card-header {
-            border-radius: @container-small-border-radius !important;
+            border-radius: var(--container-small-border-radius) !important;
             &:hover {
             }
         }

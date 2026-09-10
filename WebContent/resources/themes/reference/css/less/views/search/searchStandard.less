@@ -33,13 +33,13 @@
         .ui-autocomplete {
             .ui-autocomplete-input {
                 border: var(--border);
-                border-radius: @container-border-radius;
-                box-shadow: @container-box-shadow;
+                border-radius: var(--container-border-radius);
+                box-shadow: var(--container-box-shadow);
                 transition: box-shadow 0.15s ease;
 
                 &:focus {
                     box-shadow:
-                        @container-box-shadow,
+                        var(--container-box-shadow),
                         0 0 0 3px var(--brand-tint-bg);
                 }
                 background: var(--bg-popover);
@@ -53,7 +53,7 @@
     }
     &__filter-radio {
         label {
-            font-size: @fontMedium;
+            font-size: var(--font-size-medium);
             font-weight: 400;
             color: var(--fg-content-box);
         }
@@ -62,8 +62,8 @@
         .custom-control--select,
         select {
             border: var(--border);
-            border-radius: @container-small-border-radius !important;
-            box-shadow: @container-box-shadow;
+            border-radius: var(--container-small-border-radius) !important;
+            box-shadow: var(--container-box-shadow);
             transition:
                 border-color 0.15s ease,
                 box-shadow 0.15s ease;
@@ -75,7 +75,7 @@
             &:focus-within {
                 border-color: var(--ci-color1);
                 box-shadow:
-                    @container-box-shadow,
+                    var(--container-box-shadow),
                     0 0 0 3px var(--brand-tint-bg);
             }
 
@@ -98,14 +98,14 @@
     &__action {
     }
     &__submit-button.btn {
-        box-shadow: @container-box-shadow;
+        box-shadow: var(--container-box-shadow);
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         transition: box-shadow 0.15s ease;
         &:hover,
         &:focus {
             box-shadow:
-                @container-box-shadow,
+                var(--container-box-shadow),
                 0 0 0 3px var(--brand-tint-bg);
         }
     }
@@ -115,19 +115,19 @@
 /* AUTOCOMPLETE DROPDOWN (jQuery UI menu, appended to body) */
 .ui-autocomplete.ui-menu {
     border: none;
-    border-radius: @container-border-radius;
-    box-shadow: @container-box-shadow;
+    border-radius: var(--container-border-radius);
+    box-shadow: var(--container-box-shadow);
     padding: 0.4rem;
     margin-top: 0.5rem;
 
     background-color: var(--bg-popover);
 
     .ui-menu-item {
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
 
         .ui-menu-item-wrapper {
             padding: 0.6rem 1rem;
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
             color: var(--fg-content-box);
             transition:
                 background-color 0.15s ease,

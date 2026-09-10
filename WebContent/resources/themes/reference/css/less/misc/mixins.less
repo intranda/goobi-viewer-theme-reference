@@ -100,6 +100,24 @@
     z-index: 9999;
 }
 
+/* MODE-INDEPENDENT THEME OVERRIDES */
+.mx-theme-base() {
+    --font-family:
+        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-size-small: 1.3rem;
+    --font-size-body: var(--font-size-medium);
+
+    --container-border-radius: 8px;
+    --container-small-border-radius: 4px;
+    --button-border-radius: 6px;
+    --combined-facets-radius: var(--button-border-radius);
+    --facet-control-radius: var(--container-small-border-radius);
+
+    --container-box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 4%);
+    --active-facets-badge-shadow-hover: none;
+}
+
 /* THEME PALETTE */
 .mx-theme-palette() {
     --ci-color1: #1565c0;

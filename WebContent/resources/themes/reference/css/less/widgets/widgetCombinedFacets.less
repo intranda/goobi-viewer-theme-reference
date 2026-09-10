@@ -9,9 +9,9 @@
     // --combined-facets-* (mixins.less) mirror .widget's own colors
     // (widgets.less) 1:1, so no separate light/dark handling is needed here —
     // the custom properties already carry the right value per theme
-    border-radius: @container-border-radius;
+    border-radius: var(--container-border-radius);
     background-color: var(--combined-facets-background);
-    box-shadow: @container-box-shadow;
+    box-shadow: var(--container-box-shadow);
     color: var(--combined-facets-color);
     padding-bottom: 1.5rem;
     margin-bottom: 1.2rem;
@@ -21,15 +21,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
         padding: 1.5rem;
     }
     &__title {
         font-weight: 600;
-        font-size: @fontNormal;
+        font-size: var(--font-size-normal);
     }
     &__reset {
-        font-size: @fontSmall;
+        font-size: var(--font-size-small);
     }
     &__reset-icon-svg {
     }
@@ -41,7 +41,7 @@
     }
 
     .widget-search-facets__collapse-button {
-        font-size: @fontSmall;
+        font-size: var(--font-size-small);
 
         .icon-svg {
             margin-top: 0;

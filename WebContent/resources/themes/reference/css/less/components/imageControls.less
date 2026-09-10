@@ -6,7 +6,7 @@
 /* BLOCK */
 .image-controls {
     border: var(--border);
-    border-radius: @container-border-radius @container-border-radius 0 0;
+    border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
     border-bottom: 0;
 
     &__crowd-link,
@@ -32,7 +32,7 @@
         }
         &.add-to-bookmark {
             background-color: rgb(from var(--accent-color) r g b / 20%);
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
             .icon-wrapper svg {
                 stroke: var(--brand);
                 color: var(--fg-accent);
@@ -58,7 +58,7 @@
     &__select-text {
     }
     &__action {
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
         background-color: var(--image-controls-action-background);
         /* ELEMENT */
         [class*='image-'] {
@@ -132,7 +132,7 @@
         }
         &.zoom-slider-wrapper {
             .zoom-slider {
-                border-radius: @container-small-border-radius;
+                border-radius: var(--container-small-border-radius);
                 background: var(--image-controls-action-background);
                 //Firefox
                 &::-moz-range-thumb {

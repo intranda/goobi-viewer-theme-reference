@@ -42,7 +42,7 @@
     &__option-button {
         position: relative;
         color: var(--fg-general);
-        font-size: @fontMedium;
+        font-size: var(--font-size-medium);
         border-radius: var(--search-toolbar-button-radius);
 
         &:hover {
@@ -161,7 +161,7 @@
         form {
         }
         a {
-            font-size: @fontMedium;
+            font-size: var(--font-size-medium);
             &:hover,
             &:focus,
             &:active {
@@ -177,7 +177,7 @@
     }
     .custom-control--select {
         border: none;
-        box-shadow: @container-box-shadow;
+        box-shadow: var(--container-box-shadow);
     }
     /* ADVANCED SEARCH INFO */
     &__adv-search-info {
@@ -208,7 +208,7 @@
         background-color: var(--bg-content-box);
         color: var(--fg-content-box);
         border: var(--border);
-        border-radius: @container-border-radius;
+        border-radius: var(--container-border-radius);
         /* COLORING FOR THE ENTITY GHOUPS */
         &.docstructtype__work {
             border: 1px solid var(--entity-work-color);
@@ -241,7 +241,7 @@
     }
     &__hit-title {
         h3 {
-            font-size: @fontNormal;
+            font-size: var(--font-size-normal);
             a {
                 color: var(--fg-header);
             }
@@ -264,7 +264,7 @@
     }
     &__hit-thumbnail {
         img {
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
             border: var(--search-thumbnail-border);
         }
         [data-bookmark-list-type='add'] {
@@ -277,7 +277,7 @@
     &__hit-type {
     }
     &__hit-docstruct {
-        font-size: @fontSmall;
+        font-size: var(--font-size-small);
         ul {
         }
         li {
@@ -289,7 +289,7 @@
             font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
 
             padding: 0 0.6rem;
 
@@ -298,7 +298,7 @@
         }
     }
     &__hit-text {
-        font-size: @fontMedium;
+        font-size: var(--font-size-medium);
     }
     &__hit-text-label,
     &__hit-text-value {
@@ -318,7 +318,7 @@
     }
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
-        font-size: @fontMedium;
+        font-size: var(--font-size-medium);
         color: var(--fg-general);
         border-top: 1px solid var(--border-color);
         &:hover,
@@ -340,7 +340,7 @@
     &__hit-content {
         dl {
             margin-bottom: 0;
-            font-size: @fontMedium;
+            font-size: var(--font-size-medium);
         }
         dt {
         }
@@ -358,7 +358,7 @@
     }
     &__hit-content-more {
         .btn {
-            font-size: @fontMedium;
+            font-size: var(--font-size-medium);
         }
     }
     &__subhit-thumbnail {
@@ -381,7 +381,7 @@
         margin-left: 0.5rem;
     }
     &__hit-options-button {
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
         color: var(--brand);
         background-color: transparent;
         transition: background-color 0.15s ease;

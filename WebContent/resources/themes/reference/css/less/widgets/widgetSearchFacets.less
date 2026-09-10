@@ -6,7 +6,7 @@
 .widget-search-facets {
     &__available-title {
         font-weight: 400;
-        font-size: @fontNormal;
+        font-size: var(--font-size-normal);
         margin-bottom: 2rem;
     }
 
@@ -87,8 +87,8 @@
             opacity: 0;
             pointer-events: none;
 
-            border-radius: @container-small-border-radius;
-            box-shadow: @container-box-shadow;
+            border-radius: var(--container-small-border-radius);
+            box-shadow: var(--container-box-shadow);
             transition:
                 width 0.3s ease,
                 opacity 0.2s ease;
@@ -192,7 +192,7 @@
     }
 
     &__boolean-button {
-        border-radius: @button-border-radius;
+        border-radius: var(--button-border-radius);
         border: none;
         color: var(--brand);
         background-color: var(--bg-popover);

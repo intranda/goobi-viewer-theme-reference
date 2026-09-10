@@ -20,14 +20,14 @@
     a,
     button,
     span {
-        border-radius: @button-border-radius;
+        border-radius: var(--button-border-radius);
         transition:
             background-color 0.15s ease,
             color 0.15s ease;
     }
     a,
     button {
-        font-size: @fontMedium;
+        font-size: var(--font-size-medium);
         font-weight: 500;
         color: var(--fg-general);
         background-color: transparent;
@@ -91,14 +91,14 @@
     &__page-number-input {
         background-color: var(--bg-content-box);
         color: var(--fg-general);
-        border-radius: @button-border-radius;
+        border-radius: var(--button-border-radius);
         margin-bottom: 0;
         input {
             border: none;
             outline: none;
             padding-top: 2px;
 
-            border-radius: @button-border-radius;
+            border-radius: var(--button-border-radius);
             background-color: var(--numeric-paginator-input-bg);
             color: var(--fg-content-box);
         }

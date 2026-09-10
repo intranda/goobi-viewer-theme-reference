@@ -1,28 +1,4 @@
-/* ==============================================================
-   Variables
-
-   Every variable below is backed by a CSS custom property (defined in the
-   :root block further down, or in mixins.less for the light/dark-dependent
-   ones), so any value here can be overridden live from devtools without a
-   rebuild — handy during client demos. The only exceptions are the few
-   flagged below that are resolved entirely at LESS compile time (selector
-   fragments and @media conditions) and therefore have
-   no runtime CSS representation to override.
-   ==============================================================*/
-/* FONTS */
-@fontFamily: var(--font-family);
-@fontSmall: var(--font-size-small);
-@fontMedium: var(--font-size-medium);
-@fontNormal: var(--font-size-normal);
-
-/* BORDERS */
-@container-border-radius: var(--container-border-radius);
-@container-small-border-radius: var(--container-small-border-radius);
-@button-border-radius: var(--button-border-radius);
-
-/* Box Shadows */
-@container-box-shadow: var(--container-box-shadow);
-
+/* Theme wiring and compile-time constants */
 // COMPILE-TIME ONLY — a selector fragment, not a style value, so it can't be
 // expressed as a CSS custom property.
 /* RIGHT TO LEFT LANGUAGES STYLING */
@@ -36,32 +12,11 @@
 @mediumBreakpoint: 992px;
 @largeBreakpoint: 1200px;
 
-/* Non-theme-dependent custom properties: same value in light & dark mode,
-   just exposed as CSS variables so they stay overridable at runtime. */
-:root {
-    --font-family:
-        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    --font-size-small: 1.3rem;
-    --font-size-medium: 1.4rem;
-    --font-size-normal: 1.6rem;
-
-    --container-border-radius: 8px;
-    --container-small-border-radius: 4px;
-    --button-border-radius: 6px;
-    --search-toolbar-button-radius: var(--button-border-radius);
-    --active-facets-badge-radius: var(--button-border-radius);
-    --combined-facets-radius: var(--button-border-radius);
-    --facet-control-radius: var(--container-small-border-radius);
-
-    --container-box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 4%);
-    --active-facets-badge-shadow-hover: none;
-}
-
 /* ==================================== >>
 THEMING
  << =================================== */
 :root {
+    .mx-theme-base();
     .mx-theme-palette();
     .mx-theme-light();
 }

@@ -12,8 +12,8 @@
     padding: 0.5rem;
     background-color: var(--bg-content-box);
     border: 1px solid var(--border-color);
-    border-radius: @container-border-radius;
-    box-shadow: @container-box-shadow;
+    border-radius: var(--container-border-radius);
+    box-shadow: var(--container-box-shadow);
     z-index: 2030;
     //	&:before {
     //		content: "";
@@ -40,9 +40,9 @@
     }
     button {
         color: var(--fg-content-box);
-        font-size: @fontMedium;
+        font-size: var(--font-size-medium);
         padding: 0.55rem 1rem;
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
         text-align: left;
         transition:
             background-color 0.15s ease,

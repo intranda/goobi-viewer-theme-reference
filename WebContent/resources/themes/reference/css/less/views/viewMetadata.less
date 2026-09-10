@@ -37,18 +37,18 @@
     &__title {
     }
     .bookmark-toggle__icon {
-        border-radius: @container-small-border-radius;
+        border-radius: var(--container-small-border-radius);
     }
     &__bookmark-button {
         &[data-bookmark-list-type='add'] {
             color: var(--fg-accent) !important;
             background-color: rgb(from var(--accent-color) r g b / 20%) !important;
-            border-radius: @container-small-border-radius;
+            border-radius: var(--container-small-border-radius);
         }
     }
     &__wrapper {
         &.-isBoxed {
-            border-radius: @container-border-radius;
+            border-radius: var(--container-border-radius);
 
             border: var(--border);
             background-color: var(--bg-content-box);
