@@ -4,8 +4,8 @@
 
 .user-content-upload {
     &__table {
-        background: @bg-content-box;
-        border: @border;
+        background: var(--bg-content-box);
+        border: var(--border);
         margin-bottom: 2rem;
     }
     &__table-title {
@@ -17,13 +17,13 @@
     &__table-title-status {
     }
     &__table-finished-job-link {
-        color: @fg-general;
+        color: var(--fg-general);
         &:hover {
         }
     }
     &__table-entry {
         &:hover {
-            background-color: @bg-hover;
+            background-color: var(--bg-hover);
         }
         &-status {
         }
@@ -44,17 +44,6 @@
 @media screen and (max-width: @smallBreakpoint) {
     .user-content-upload {
         &__table-entry {
-            .mx-dark-mode-rules ({
-			&:nth-child(2n+1) {
-				background: @bg-hover;
-				&:hover {
-					background-color: @bg-hover;
-				}
-			}
-			});
-            .mx-light-mode-rules ({
-		
-			});
         }
     }
 }

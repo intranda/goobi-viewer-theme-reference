@@ -28,14 +28,7 @@
                 border-radius: 4px;
                 opacity: 1;
                 transition: none;
-                & when (@colorModes = true) {
-                    .mx-light-mode-rules ({
-						background-color: @middlegray;
-					});;
-                    .mx-dark-mode-rules ({
-						background-color: @bg-active;
-					});;
-                }
+                background-color: var(--border-strong);
             }
         }
     }
@@ -44,15 +37,15 @@
     &__button,
     &__link {
         border-radius: @container-small-border-radius;
-        color: @fg-general;
+        color: var(--fg-general);
         &:hover,
         &:active,
         &:focus {
-            color: @fg-general;
+            color: var(--fg-general);
         }
         &.-highlighted {
-            background-color: @ci-color1;
-            color: white;
+            background-color: var(--ci-color1);
+            color: var(--fg-inverse);
             outline: none;
         }
     }

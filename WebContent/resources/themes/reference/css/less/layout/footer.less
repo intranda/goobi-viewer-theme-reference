@@ -8,20 +8,11 @@
     flex-direction: column;
     align-items: center;
     font-size: @fontMedium;
-    color: @white;
-    background-color: @footer-topnav-bg;
+
     position: relative;
 
-    & when (@colorModes = true) {
-        .mx-light-mode-rules({
-            background-color: @footer-topnav-bg;
-            color: @white;
-        });
-        .mx-dark-mode-rules({
-            background-color: color-mix(in srgb, @footer-topnav-bg 30%, black);
-            color: @fg-content-box;
-        });
-    }
+    background-color: var(--footer-main-bg);
+    color: var(--fg-inverse);
 
     /* OBERER BEREICH */
     &__topSection {
@@ -47,7 +38,7 @@
         &__heading {
             font-size: @fontNormal;
             font-weight: 700;
-            color: @white;
+            color: var(--fg-inverse);
             margin: 0 0 1.8rem;
             padding-bottom: 1rem;
             letter-spacing: 0.3px;
@@ -55,7 +46,7 @@
 
         &__text {
             margin: 0 0 1.6rem;
-            color: @white;
+            color: var(--fg-inverse);
             line-height: 1.7;
             max-width: 400px;
         }
@@ -68,15 +59,15 @@
             border-radius: @button-border-radius;
             font-size: @fontNormal;
             font-weight: 500;
-            color: @white;
-            background-color: @ci-color1;
+            color: var(--fg-inverse);
+            background-color: var(--ci-color1);
             cursor: pointer;
             transition: background-color 0.2s ease;
 
             &:hover {
                 text-decoration: none;
-                background-color: @ci-hovercolor1;
-                color: white;
+                background-color: var(--ci-hovercolor1);
+                color: var(--fg-inverse);
             }
         }
 
@@ -96,7 +87,7 @@
                 display: flex;
                 align-items: center;
                 gap: 0.6rem;
-                color: white;
+                color: var(--fg-inverse);
                 padding: 0.3rem 0;
                 transition:
                     color 0.2s ease,
@@ -116,7 +107,7 @@
                 }
 
                 &:hover {
-                    color: @white;
+                    color: var(--fg-inverse);
                     opacity: 1;
                     gap: 0.9rem;
 
@@ -137,7 +128,7 @@
             a {
                 display: block;
                 padding: 0;
-                color: @white;
+                color: var(--fg-inverse);
             }
 
             a:hover {
@@ -149,25 +140,18 @@
     /* UNTERER BEREICH */
     &__bottomSection {
         position: relative;
-        background-color: color-mix(in srgb, @footer-topnav-bg 70%, black);
+
         width: 100%;
         padding: 4rem 0;
 
-        & when (@colorModes = true) {
-            .mx-light-mode-rules({
-                background-color: color-mix(in srgb, @footer-topnav-bg 70%, black);
-            });
-            .mx-dark-mode-rules({
-                background-color: color-mix(in srgb, @footer-topnav-bg 26%, black);
-            });
-        }
+        background-color: var(--footer-bottom-bg);
 
         &__nav-row {
             display: flex;
             align-items: flex-start;
             gap: 2rem;
             padding: 1.8rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgb(from var(--fg-inverse) r g b / 8%);
         }
 
         &__nav {
@@ -188,7 +172,7 @@
                     padding: 0.5rem 1rem 0.5rem 0;
                     font-size: @fontMedium;
                     font-weight: 600;
-                    color: @white;
+                    color: var(--fg-inverse);
 
                     &:hover {
                         text-decoration: underline;
@@ -210,10 +194,10 @@
             button {
                 padding: 0.3rem 0.8rem;
                 font-size: @fontSmall;
-                color: rgba(255, 255, 255, 0.8);
+                color: rgb(from var(--fg-inverse) r g b / 80%);
 
                 &:hover {
-                    color: @white;
+                    color: var(--fg-inverse);
                     opacity: 1;
                     text-decoration: underline;
                 }
@@ -235,10 +219,10 @@
             button {
                 padding: 0.3rem 0.8rem;
                 font-size: @fontSmall;
-                color: rgba(255, 255, 255, 0.8);
+                color: rgb(from var(--fg-inverse) r g b / 80%);
 
                 &:hover {
-                    color: @white;
+                    color: var(--fg-inverse);
                     opacity: 1;
                     text-decoration: underline;
                 }
@@ -260,16 +244,16 @@
             width: 6rem;
             height: 4rem;
             border-radius: @container-border-radius;
-            border: 2px solid @ci-color1;
-            color: white;
+            border: 2px solid var(--ci-color1);
+            color: var(--fg-inverse);
 
             transition:
                 border-color 0.2s ease,
                 background-color 0.2s ease;
 
             &:hover {
-                border-color: @ci-hovercolor1;
-                background-color: rgba(255, 255, 255, 0.08);
+                border-color: var(--ci-hovercolor1);
+                background-color: rgb(from var(--fg-inverse) r g b / 8%);
             }
 
             svg {
@@ -288,8 +272,8 @@
         width: 4.2rem;
         height: 4.2rem;
         border-radius: @container-border-radius;
-        border: 2px solid @ci-color1;
-        color: white;
+        border: 2px solid var(--ci-color1);
+        color: var(--fg-inverse);
         cursor: pointer;
         background-color: transparent;
 
@@ -298,9 +282,9 @@
             background-color 0.2s ease;
 
         &:hover {
-            border-color: @ci-hovercolor1;
-            background-color: rgba(255, 255, 255, 0.08);
-            color: @white;
+            border-color: var(--ci-hovercolor1);
+            background-color: rgb(from var(--fg-inverse) r g b / 8%);
+            color: var(--fg-inverse);
         }
 
         svg {

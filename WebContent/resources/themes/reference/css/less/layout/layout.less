@@ -32,9 +32,9 @@
         position: absolute;
         left: 15%;
         top: 50%;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgb(from var(--shadow-color) r g b / 30%);
         padding: 1.2rem 2rem;
-        color: @white;
+        color: var(--fg-inverse);
         font-size: 3.5rem;
         z-index: 100;
         font-weight: 300;
@@ -70,7 +70,7 @@
         &__actions-bookmark,
         &__actions-login,
         &__actions-search-button {
-            border-right: 1px solid @middleblack;
+            border-right: 1px solid var(--fg-secondary);
             border-left: none;
         }
         &__actions-search-button {
@@ -160,7 +160,7 @@
             max-width: unset;
             padding: 1.5rem;
             padding-top: 4rem;
-            background-color: @bg-general;
+            background-color: var(--bg-general);
             transition: right 0.3s ease;
             overflow-y: auto;
             z-index: 2031;

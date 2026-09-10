@@ -7,19 +7,19 @@
 .collections {
     a,
     button {
-        color: @lk-content-box;
+        color: var(--lk-content-box);
         &:focus,
         &:hover,
         &:active {
-            color: @lk-content-box;
+            color: var(--lk-content-box);
         }
     }
 
     border-top: none;
     /* ELEMENT */
     &__wrapper {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: @container-border-radius;
     }
 }
@@ -28,7 +28,7 @@
     .row {
     }
     &__item {
-        border-top: @border;
+        border-top: var(--border);
     }
     &__structure,
     &__title,

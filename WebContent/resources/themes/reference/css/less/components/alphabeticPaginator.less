@@ -9,23 +9,23 @@
     ul {
     }
     li {
-        border: @border;
+        border: var(--border);
         &.active {
             a {
-                color: white;
-                background-color: @ci-color1;
+                color: var(--fg-inverse);
+                background-color: var(--ci-color1);
                 text-decoration: none;
             }
         }
     }
     a {
-        background-color: @bg-content-box;
-        color: @lk-content-box;
+        background-color: var(--bg-content-box);
+        color: var(--lk-content-box);
         &:hover,
         &:active,
         &:focus {
-            background-color: @bg-hover;
-            color: @fg-general;
+            background-color: var(--bg-hover);
+            color: var(--fg-general);
         }
     }
 }

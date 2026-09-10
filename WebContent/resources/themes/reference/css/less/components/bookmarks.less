@@ -8,14 +8,14 @@
     margin-right: -5px;
     /* ELEMENT */
     &__dropdown-wrapper {
-        background-color: @fg-controls;
+        background-color: var(--bg-popover);
         border-radius: @container-small-border-radius;
 
         & > .btn {
             border-radius: @container-small-border-radius;
             font-size: @fontMedium;
             padding: 0.4rem 0.6rem;
-            background-color: rgb(from @accent-color-1 r g b / 20%);
+            background-color: rgb(from var(--accent-color) r g b / 20%);
         }
     }
     /* TOOGLE DROPDOWN */
@@ -24,8 +24,8 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
-        color: @white;
-        background-color: @accent-color-1;
+        color: var(--fg-on-bright);
+        background-color: var(--accent-color);
         position: relative;
         right: 0;
         top: 0;
@@ -35,7 +35,7 @@
     }
     &__string {
         font-weight: 700;
-        color: @accent-color-1;
+        color: var(--fg-accent);
         font-size: 1.2rem;
     }
     &__icon {
@@ -45,9 +45,9 @@
         z-index: 2020;
         top: calc(~'100% + 8px');
         right: -4px;
-        border: 1px solid @border-color;
+        border: 1px solid var(--border-color);
         border-radius: @container-border-radius;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         box-shadow: @container-box-shadow;
     }
     /* DROPDOWN LIST */
@@ -56,23 +56,23 @@
 
         li {
             border-bottom: none;
-            color: @fg-content-box;
+            color: var(--fg-content-box);
 
             &:hover {
-                background-color: @bg-hover;
+                background-color: var(--bg-hover);
             }
             &:last-child {
             }
             .empty {
-                color: @fg-general;
+                color: var(--fg-general);
             }
         }
         h3 {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
         }
     }
     &__dropdown-list-counter {
-        background-color: @ci-color1;
+        background-color: var(--ci-color1);
     }
     &__dropdown-title {
         line-height: 1.3;
@@ -88,22 +88,22 @@
     }
     &__dropdown-list-remove {
         font-size: @fontMedium;
-        color: @fg-general;
+        color: var(--fg-general);
         &:hover,
         &:active,
         &:focus {
-            color: @ci-color1;
+            color: var(--lk-general-hover);
 
             // keep the icon itself in the regular (non-hover) color; only
             // the text should pick up the ci-color accent
             svg {
-                color: @fg-general;
+                color: var(--fg-general);
             }
         }
     }
     /* DROPDOWN ACTIONS */
     &__dropdown-list-actions {
-        border-top: 1px solid @border-color;
+        border-top: 1px solid var(--border-color);
         background-color: transparent;
     }
     &__dropdown-list-single-entry {
@@ -118,7 +118,7 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: @bg-hover;
+            background-color: var(--bg-hover);
         }
     }
     /* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
@@ -133,16 +133,16 @@
         a,
         span,
         h3 {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
             &:hover,
             &:focus,
             &:active {
-                color: @ci-color1;
+                color: var(--lk-general-hover);
 
                 // keep icons in the regular (non-hover) color; only the
                 // text should pick up the ci-color accent
                 svg {
-                    color: @fg-content-box;
+                    color: var(--fg-content-box);
                 }
             }
         }
@@ -176,8 +176,8 @@
     max-height: 420px;
     border: none;
     border-radius: @container-border-radius;
-    background-color: @bg-content-box;
-    box-shadow: 0 12px 32px rgba(15, 21, 42, 0.18);
+    background-color: var(--bg-content-box);
+    box-shadow: 0 12px 32px rgb(from var(--shadow-color) r g b / 18%);
     overflow: hidden;
 
     &.top {
@@ -195,18 +195,18 @@
             width: 12px;
             height: 12px;
             margin-left: -6px;
-            background-color: @bg-content-box;
-            box-shadow: -2px -2px 4px rgba(15, 21, 42, 0.06);
+            background-color: var(--bg-content-box);
+            box-shadow: -2px -2px 4px rgb(from var(--shadow-color) r g b / 6%);
             transform: rotate(45deg);
         }
     }
 
     button {
-        color: @fg-content-box !important;
+        color: var(--fg-content-box) !important;
     }
 
     label {
-        color: @fg-content-box;
+        color: var(--fg-content-box);
     }
 
     /* ELEMENT */
@@ -221,7 +221,7 @@
     &__radio-buttons {
         background: transparent;
         padding: 0.85rem 1rem;
-        border-bottom: 1px solid @border-color;
+        border-bottom: 1px solid var(--border-color);
 
         label {
             gap: 0.4rem;
@@ -236,8 +236,8 @@
         padding: 0.85rem 1rem;
         font-weight: 600;
         font-size: @fontMedium;
-        color: @fg-content-box !important;
-        border-bottom: 1px solid @border-color;
+        color: var(--fg-content-box) !important;
+        border-bottom: 1px solid var(--border-color);
     }
 
     &__body {
@@ -249,7 +249,7 @@
     }
 
     &__body-loader {
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
     }
 
     &__body-list {
@@ -261,7 +261,7 @@
             &:hover,
             &:active,
             &:focus {
-                background-color: @bg-hover;
+                background-color: var(--bg-hover);
             }
             button {
                 border-radius: @container-small-border-radius;
@@ -269,23 +269,23 @@
                     &:hover,
                     &:active,
                     &:focus {
-                        color: @ci-color1;
+                        color: var(--lk-general-hover);
                     }
                 }
                 span {
-                    background-color: @ci-color1;
+                    background-color: var(--ci-color1);
                     border-radius: 999px;
                     padding: 0.1rem 0.55rem;
                     font-weight: 600;
                 }
             }
             .empty {
-                color: @fg-general;
+                color: var(--fg-general);
                 font-style: italic;
             }
         }
         &:hover {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
         }
         span {
         }
@@ -293,13 +293,13 @@
 
     &__footer {
         padding: 0.6rem 0.75rem;
-        border-top: 1px solid @border-color;
+        border-top: 1px solid var(--border-color);
 
         input {
-            background-color: @bg-general;
-            border: 1px solid @border-color;
+            background-color: var(--bg-general);
+            border: 1px solid var(--border-color);
             border-radius: @container-small-border-radius;
-            color: @fg-content-box;
+            color: var(--fg-content-box);
             padding: 0 0.75rem;
         }
         &.added {
@@ -311,13 +311,13 @@
         transition: background-color 0.15s ease;
 
         &:hover {
-            background-color: @bg-hover;
+            background-color: var(--bg-hover);
         }
 
         // nested here (rather than a bare .bookmark-popup__add-icon rule) so
         // this beats core's more specific ".bookmark-popup__footer button svg"
         .bookmark-popup__add-icon {
-            stroke: @ci-color1;
+            stroke: var(--brand);
         }
     }
 
@@ -325,8 +325,8 @@
         // nested here for the same reason: core targets
         // ".bookmark-popup__body-list .bookmark-popup__check-icon"
         .bookmark-popup__check-icon {
-            color: @ci-color1 !important;
-            stroke: @ci-color1 !important;
+            color: var(--brand) !important;
+            stroke: var(--brand) !important;
         }
     }
 

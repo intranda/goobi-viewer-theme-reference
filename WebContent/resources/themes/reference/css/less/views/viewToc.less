@@ -7,8 +7,8 @@
 .toc {
     /* TOC METADATA */
     &__metadata {
-        border: @border;
-        background-color: @bg-content-box;
+        border: var(--border);
+        background-color: var(--bg-content-box);
     }
     &__metadata-thumbnail {
     }
@@ -25,21 +25,13 @@
     &__mv-group {
     }
     &__mv-element {
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         padding: 10px 0;
-        border: @border;
+        border: var(--border);
         border-bottom: none;
         transition: all 0s linear;
         &:hover {
-            background-color: @lightgray;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					background-color: @bg-hover;
-				});;
-                .mx-light-mode-rules ({
-					background-color: @lightgray;
-				});;
-            }
+            background-color: var(--bg-subtle);
         }
         &.level-0 {
             h3 {
@@ -51,7 +43,7 @@
         .row {
         }
         &:last-child {
-            border-bottom: @border;
+            border-bottom: var(--border);
         }
     }
     &__mv-element-title {
@@ -71,8 +63,8 @@
     &__list-expandable,
     &__list-full {
         margin: 0;
-        border: @border;
-        background-color: @bg-content-box;
+        border: var(--border);
+        background-color: var(--bg-content-box);
         border-radius: @container-border-radius;
         li {
             &:first-child {
@@ -154,7 +146,7 @@
     }
     /* TOC FULL */
     &__list-full {
-        border-top: @border;
+        border-top: var(--border);
     }
     &__list-full-title {
         a {
@@ -182,8 +174,8 @@
     &__mv-tile-grid-heading {
     }
     &__mv-tile-grid {
-        background: @bg-content-box;
-        border: @border;
+        background: var(--bg-content-box);
+        border: var(--border);
     }
     &__mv-tile {
     }

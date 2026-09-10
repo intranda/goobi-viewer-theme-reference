@@ -9,12 +9,12 @@
     color: var(--fg-content-box);
     &__item {
         &-input {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
             width: 100%;
             text-align: center;
             font-weight: 600;
-            background-color: @bg-content-box;
-            border: 1px solid @border-color;
+            background-color: var(--bg-content-box);
+            border: 1px solid var(--border-color);
             border-radius: @container-small-border-radius;
             padding: 0.4rem 0.6rem;
             transition:
@@ -23,13 +23,13 @@
             &:hover,
             &:focus {
                 outline: none;
-                border-color: @ci-color1;
-                box-shadow: 0 0 0 3px @ci-color-1-transparent;
+                border-color: var(--ci-color1);
+                box-shadow: 0 0 0 3px var(--brand-tint-bg);
             }
         }
         &.chronology-slider-label,
         &.chronology-slider-actions {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
         }
         &.chronology-slider-label {
             font-weight: 600;
@@ -43,10 +43,10 @@
             img {
             }
             [data-reset='chrono-slider'] {
-                color: @fg-content-box;
+                color: var(--fg-content-box);
                 transition: color 0.2s ease;
                 &:hover {
-                    color: @ci-color1;
+                    color: var(--lk-general-hover);
                 }
             }
         }
@@ -79,11 +79,11 @@
         height: 0.6rem;
         border: none;
         border-radius: 999px;
-        background-color: @bg-hover;
+        background-color: var(--bg-hover);
     }
 
     .ui-slider-range {
-        background-color: @ci-color1;
+        background-color: var(--ci-color1);
         border-radius: 999px;
     }
 
@@ -91,8 +91,8 @@
         top: -0.5rem;
         width: 1.5rem;
         height: 1.5rem;
-        background-color: @white;
-        border: 2px solid @ci-color1;
+        background-color: var(--bg-content-box);
+        border: 2px solid var(--ci-color1);
         border-radius: 50%;
         box-shadow: @container-box-shadow;
         cursor: pointer;
@@ -102,10 +102,10 @@
             background-color 0.2s ease;
         &:hover,
         &:focus {
-            box-shadow: 0 0 0 5px @ci-color-1-transparent;
+            box-shadow: 0 0 0 5px var(--brand-tint-bg);
         }
         &.ui-state-active {
-            background-color: @ci-color1;
+            background-color: var(--ci-color1);
         }
     }
 }

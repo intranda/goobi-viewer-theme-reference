@@ -5,14 +5,14 @@
 /* MY SEARCHES */
 /* BLOCK */
 .my-searches {
-    background: @bg-content-box;
-    border: @border;
+    background: var(--bg-content-box);
+    border: var(--border);
     /* ELEMENT */
     h1 {
     }
     &__table {
         margin-bottom: 0;
-        color: @fg-general;
+        color: var(--fg-general);
         thead {
             tr {
                 th {
@@ -28,7 +28,7 @@
         tbody {
             tr {
                 &:hover {
-                    background: @bg-hover;
+                    background: var(--bg-hover);
                 }
                 td {
                     &:nth-child(1) {
@@ -43,21 +43,21 @@
     }
     &__action,
     &__delete-button {
-        color: @lk-general;
+        color: var(--lk-general);
         &:hover,
         &:active,
         &:focus {
-            color: @lk-general;
+            color: var(--lk-general);
         }
     }
     &__action {
     }
     &__delete-button {
-        color: @red;
+        color: var(--fg-danger);
         &:hover,
         &:active,
         &:focus {
-            color: @red;
+            color: var(--fg-danger);
         }
     }
     &__delete-modal {

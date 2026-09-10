@@ -5,22 +5,15 @@
 
 .copyright-indicator {
     .svg-fill {
-        fill: #000;
+        fill: var(--fg-general);
     }
     .svg-stroke {
-        stroke: #000;
+        stroke: var(--fg-general);
     }
     &__label-style {
-        border: @border;
-        background: white;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				background: white;
-			});
-            .mx-dark-mode-rules ({
-				background: @bg-content-box;
-			});
-        }
+        border: var(--border);
+
+        background: var(--bg-content-box);
         &.-green {
             .copyright-indicator__status-icon {
                 &:before {
@@ -49,15 +42,7 @@
     &__dot-wrapper {
     }
     &__dot {
-        color: #000;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: #000;
-			});
-            .mx-dark-mode-rules ({
-				color: white;
-			});
-        }
+        color: var(--fg-content-box);
     }
     &__icon-wrapper {
         img,
@@ -69,17 +54,7 @@
         &-circle-wrapper {
         }
         &-circle {
-            box-shadow:
-                inset 0 0 2px rgba(0, 0, 0, 0.3),
-                inset 0 2px 2px rgba(0, 0, 0, 0.25);
-            & when (@colorModes = true) {
-                .mx-light-mode-rules ({
-					box-shadow: inset 0 0 2px rgba(0,0,0,0.3),inset 0 2px 2px rgba(0,0,0,0.25);
-				});
-                .mx-dark-mode-rules ({
-					box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3),inset 0 2px 2px rgba(255, 255, 255, 0.25);
-				});
-            }
+            box-shadow: var(--copyright-indicator-inset-shadow);
         }
         &-icon-wrapper {
             img,

@@ -17,11 +17,11 @@
         }
     }
     .form-control {
-        border: @border;
+        border: var(--border);
         padding: 2rem 1.2rem;
     }
     .input-group {
-        background-color: @bg-general;
+        background-color: var(--bg-general);
         input {
         }
     }
@@ -29,7 +29,7 @@
         display: flex;
         justify-content: center;
         box-shadow: @container-box-shadow;
-        background-color: @ci-color1;
+        background-color: var(--ci-color1);
         border-radius: @container-small-border-radius;
         width: 41px;
         border: none;
@@ -37,11 +37,11 @@
         input {
         }
         button {
-            color: @white;
+            color: var(--fg-inverse);
         }
 
         &:hover {
-            background-color: @ci-hovercolor1;
+            background-color: var(--ci-hovercolor1);
             box-shadow:
                 var(--container-box-shadow),
                 0 0 0 3px rgb(from var(--ci-color1) r g b / 8%);

@@ -11,23 +11,17 @@
 }
 
 .custom-control__icon {
-    color: @ci-color1;
+    color: var(--brand);
 }
 
 /* MODIFICATIONS */
 .custom-control--select {
-    border: @border-controls;
-    background: @fg-controls;
+    border: var(--border-controls);
+
     border-radius: @container-small-border-radius;
 
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-			background: @fg-controls;
-		});;
-        .mx-light-mode-rules ({
-			background: @fg-controls;
-		});;
-    }
+    background: var(--bg-popover);
+    color: var(--fg-popover);
     &:after {
     }
     &:after {
@@ -40,19 +34,9 @@
     }
     select {
         font-size: @fontMedium;
-        background: @fg-controls;
-        color: @fg-general;
 
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				background: @fg-controls;
-                color: @fg-general;
-			});;
-            .mx-dark-mode-rules ({
-				background: @fg-controls;
-                color: @fg-general;
-			});;
-        }
+        background: var(--bg-popover);
+        color: var(--fg-popover);
         &.disabled {
         }
     }
@@ -61,11 +45,11 @@
 }
 
 .cms-module__option-dropdown {
-    border: @border-controls;
+    border: var(--border-controls);
     border-radius: @container-small-border-radius;
 
     &-trigger {
-        background: @fg-controls;
+        background: var(--bg-popover);
         border-radius: @container-small-border-radius;
     }
 }

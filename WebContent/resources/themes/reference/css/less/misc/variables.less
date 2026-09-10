@@ -6,7 +6,7 @@
    ones), so any value here can be overridden live from devtools without a
    rebuild — handy during client demos. The only exceptions are the few
    flagged below that are resolved entirely at LESS compile time (selector
-   fragments, @media conditions, a `when()` guard flag) and therefore have
+   fragments and @media conditions) and therefore have
    no runtime CSS representation to override.
    ==============================================================*/
 /* FONTS */
@@ -15,54 +15,13 @@
 @fontMedium: var(--font-size-medium);
 @fontNormal: var(--font-size-normal);
 
-/* BASIC COLORS */
-@white: var(--white);
-@black: var(--black);
-@lightgray: var(--lightgray);
-@gray: var(--gray);
-@placeholder: var(--placeholder);
-@colorOutline: var(--color-outline);
-
-/* CI COLORS */
-@ci-color2: var(--ci-color2); // CI Color 2
-@ci-color3: var(--ci-color3); // CI Color 3
-
-@accent-color: var(--accent-color);
-
-@lowerblack: var(--lowerblack);
-@middleblack: var(--middleblack);
-@middlegray: var(--middlegray);
-@neutralgray: var(--neutralgray);
-@labelHoverGray: var(--label-hover-gray);
-
-/* MESSAGE COLORS */
-@red: var(--red);
-
-/* BUTTON COLORS */
-@btnDefault: var(--btn-default);
-@btnDanger: var(--btn-danger);
-@btnSuccess: var(--btn-success);
-
-/* NER COLORS */
-@personColor: var(--person-color);
-@locationColor: var(--location-color);
-@corporationColor: var(--corporation-color);
-
 /* BORDERS */
 @container-border-radius: var(--container-border-radius);
 @container-small-border-radius: var(--container-small-border-radius);
 @button-border-radius: var(--button-border-radius);
-@border-color: var(--border-color);
 
 /* Box Shadows */
 @container-box-shadow: var(--container-box-shadow);
-
-/* ACCENT COLOR */
-@accent-color-1: var(--accent-color-1);
-
-@ci-color-1-transparent: rgb(from @ci-color1 r g b / 8%);
-@ci-color-1-transparent-darker: var(--ci-color-1-transparent-darker);
-@footer-topnav-bg: var(--footer-topnav-bg);
 
 // COMPILE-TIME ONLY — a selector fragment, not a style value, so it can't be
 // expressed as a CSS custom property.
@@ -87,40 +46,16 @@
     --font-size-medium: 1.4rem;
     --font-size-normal: 1.6rem;
 
-    --white: #fff;
-    --black: #1a1a1a;
-    --lightgray: #eee;
-    --gray: #6f6f6f;
-    --color-outline: #ff0038;
-
-    --ci-color2: #1565c0;
-    --ci-color3: #1565c0;
-
-    --lowerblack: #222;
-    --middleblack: #444;
-    --middlegray: #d5d5d5;
-    --neutralgray: #f2f3f4;
-    --label-hover-gray: #5e5e5e;
-
-    --red: #c7254e;
-
-    --btn-default: #565656;
-    --btn-danger: #721c24;
-    --btn-success: #155724;
-
-    --person-color: #0174df;
-    --location-color: #ff8000;
-    --corporation-color: #298a08;
-
     --container-border-radius: 8px;
     --container-small-border-radius: 4px;
     --button-border-radius: 6px;
+    --search-toolbar-button-radius: var(--button-border-radius);
+    --active-facets-badge-radius: var(--button-border-radius);
+    --combined-facets-radius: var(--button-border-radius);
+    --facet-control-radius: var(--container-small-border-radius);
 
-    --container-box-shadow: 0 1px 6px rgb(15 21 42 / 4%);
-
-    --accent-color-1: #f59f00;
-
-    --ci-color-1-transparent-darker: rgb(from var(--ci-color1) r g b / 15%);
+    --container-box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 4%);
+    --active-facets-badge-shadow-hover: none;
 }
 
 /* ==================================== >>
@@ -131,84 +66,20 @@ THEMING
     .mx-theme-light();
 }
 
-// ****************************************** //
-// **** EN-DISABLE COLOR MODE PROPERTIES **** //
-// COMPILE-TIME ONLY — a LESS `when()` guard flag, not a style value.
-@colorModes: true;
-// ****************************************** //
-// ****************************************** //
-
-// OS OR BROWSER WANTS DARK THEME
+/* MODE WIRING — SAME ORDER AND SPECIFICITY AS CORE */
 @media (prefers-color-scheme: dark) {
     :root {
-        & when (@colorModes = true) {
-            .mx-theme-dark();
-        }
-    }
-}
-
-// DARK THEME
-// COMPILE-TIME ONLY — a selector/class name, not a style value.
-@color-theme-dark: color-theme-dark;
-
-.@{color-theme-dark} {
-    & when (@colorModes = true) {
         .mx-theme-dark();
     }
 }
 
-.mx-dark-mode-rules(@darkmodeProps) {
-    @media (prefers-color-scheme: dark) {
-        @darkmodeProps();
-    }
-    .@{color-theme-dark} & {
-        @darkmodeProps();
-    }
+.color-theme-dark {
+    .mx-theme-dark();
 }
 
-// LIGHT THEME
-// COMPILE-TIME ONLY — a selector/class name, not a style value.
-@color-theme-light: color-theme-light;
-
-.@{color-theme-light} {
-    & when (@colorModes = true) {
-        .mx-theme-light();
-    }
+.color-theme-light {
+    .mx-theme-light();
 }
 
-.mx-light-mode-rules(@lightmodeProps) {
-    @media (prefers-color-scheme: light) {
-        @lightmodeProps();
-    }
-    .@{color-theme-light} & {
-        @lightmodeProps();
-    }
-}
-
-// Assign custom properties to allow switching themes on runtime
-@ci-color1: var(--ci-color1);
-@ci-hovercolor1: var(--ci-hovercolor1);
-@bg-hover: var(--bg-hover);
-@bg-active: var(--bg-active);
-@fg-hover: var(--fg-hover);
-
-@fg-controls: var(--fg-controls);
-@border-controls: var(--border-controls);
-@border: var(--border);
-
-@bg-general: var(--bg-general);
-@fg-general: var(--fg-general);
-// Link colors outside of content boxes
-@lk-general: var(--lk-general);
-@lh-general: var(--lh-general); // hover
-// Link colors in content boxes
-@lk-content-box: var(--lk-content-box);
-@lh-content-box: var(--lh-content-box); // hover
-// Header text color
-@fg-header: var(--fg-header);
-@bg-header: var(--bg-header);
-// Height of the sticky admin__topbar-frontend bar (see admin.less), used to offset the sticky header below it
+/* STICKY ADMIN BAR HEIGHT */
 @admin-topbar-frontend-height: 3.5rem;
-// Content box color
-@bg-content-box: var(--bg-content-box);
-@fg-content-box: var(--fg-content-box);

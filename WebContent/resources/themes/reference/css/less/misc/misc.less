@@ -15,7 +15,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgb(from var(--shadow-color) r g b / 75%);
     z-index: 2030;
 }
 
@@ -24,7 +24,7 @@
     &__wrapper {
     }
     &__icon {
-        border-right-color: @ci-color1;
+        border-right-color: var(--ci-color1);
         &.-top-right {
         }
     }
@@ -33,10 +33,10 @@
 // FANCY 2 OPTIONS (YES/NO) TOGGLE
 .admin__radio-switch {
     label {
-        color: @fg-general;
+        color: var(--fg-general);
     }
     input ~ input:checked ~ .toggle-outside {
-        background: @ci-color1;
+        background: var(--ci-color1);
     }
 }
 
@@ -46,7 +46,7 @@
     margin-top: 2rem;
 }
 .swiper-pagination-bullet-active {
-    background: @ci-color1;
+    background: var(--ci-color1);
 }
 
 // TOP DOC ANCHOR - offset anchor scroll position to prevent fixed header from overlapping

@@ -10,8 +10,8 @@
     }
     &__description,
     &__list {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: @container-border-radius;
     }
     &__description {
@@ -19,15 +19,15 @@
     }
     &__list {
         .card {
-            background-color: @bg-general;
+            background-color: var(--bg-general);
             border-radius: @container-small-border-radius !important;
             h2 a,
             a::before {
-                color: @fg-general;
+                color: var(--fg-general);
                 &:focus,
                 &:hover,
                 &:active {
-                    color: @fg-general;
+                    color: var(--fg-general);
                 }
             }
         }
@@ -41,15 +41,15 @@
                 &:hover,
                 &:active,
                 &:focus {
-                    color: @fg-general;
+                    color: var(--fg-general);
                 }
             }
         }
         .card-body {
-            background-color: @bg-content-box;
+            background-color: var(--bg-content-box);
             .tpl-faq-single {
                 &__content {
-                    background-color: @bg-content-box;
+                    background-color: var(--bg-content-box);
                     padding: 0;
                     border: none;
                 }

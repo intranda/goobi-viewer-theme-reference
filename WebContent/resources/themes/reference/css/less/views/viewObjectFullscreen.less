@@ -8,8 +8,8 @@
 .fullscreen {
     /* HEADER */
     &__header {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         &.fullscreen {
         }
     }
@@ -20,8 +20,8 @@
         button,
         span,
         select {
-            color: @fg-general;
-            fill: @fg-general;
+            color: var(--fg-general);
+            fill: var(--fg-general);
 
             &:hover,
             &:active,
@@ -40,7 +40,7 @@
         &__options {
             .btn--clean[data-show='thumbs'] {
                 svg {
-                    stroke: @fg-general;
+                    stroke: var(--fg-general);
                 }
                 [data-show='thumbs'] {
                     &.in {
@@ -52,7 +52,7 @@
     &__header-exit {
         a {
             svg {
-                stroke: @fg-general;
+                stroke: var(--fg-general);
             }
         }
     }
@@ -61,12 +61,12 @@
     }
     /* PANEL CONTROLS */
     &__view-sidebar-panel-controls {
-        background-color: @bg-general;
-        color: @fg-general;
+        background-color: var(--bg-general);
+        color: var(--fg-general);
 
         [data-close='all-tabs'],
         [data-open='all-tabs'] {
-            color: @fg-general;
+            color: var(--fg-general);
         }
     }
     /* IMAGE */
@@ -105,13 +105,13 @@
     }
     /* SIDEBAR */
     &__view-sidebar-open {
-        background-color: @bg-general;
-        color: @fg-general;
+        background-color: var(--bg-general);
+        color: var(--fg-general);
         .btn {
-            color: @fg-general;
+            color: var(--fg-general);
 
             &::before {
-                color: @fg-general;
+                color: var(--fg-general);
             }
 
             &:hover,
@@ -127,9 +127,9 @@
         }
     }
     &__view-sidebar {
-        background-color: @bg-general;
+        background-color: var(--bg-general);
         .ui-resizable-handle {
-            border: @border;
+            border: var(--border);
             &:before,
             &:after {
             }
@@ -142,31 +142,31 @@
         }
     }
     &__view-sidebar-inner {
-        background-color: @bg-general;
+        background-color: var(--bg-general);
     }
     &__view-sidebar-controls {
-        background-color: @bg-general;
-        color: @fg-general;
+        background-color: var(--bg-general);
+        color: var(--fg-general);
 
         .btn {
-            color: @fg-general;
+            color: var(--fg-general);
         }
 
         [data-close='fs-sidebar'] {
-            color: @fg-general;
+            color: var(--fg-general);
 
             &::before {
-                color: @fg-general;
+                color: var(--fg-general);
             }
         }
     }
     &__view-sidebar-share {
-        border-top: @border;
-        border-bottom: @border;
+        border-top: var(--border);
+        border-bottom: var(--border);
     }
     /* SIDEBAR WORK TITLE */
     &__view-sidebar-work-title {
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         h1 {
         }
         .widget-copyright {
@@ -184,7 +184,7 @@
     }
     /* SIDEBAR ACCORDEON */
     &__view-sidebar-accordeon {
-        background-color: @bg-general;
+        background-color: var(--bg-general);
     }
     &__view-sidebar-accordeon-panel {
         &.fs-metadata {
@@ -206,18 +206,18 @@
         }
     }
     &__view-sidebar-accordeon-panel-title {
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         &:hover {
-            background-color: @bg-hover;
+            background-color: var(--bg-hover);
         }
         span {
         }
         &.in {
-            background-color: @bg-content-box;
+            background-color: var(--bg-content-box);
         }
     }
     &__view-sidebar-accordeon-panel-body {
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         & > h1 {
         }
     }

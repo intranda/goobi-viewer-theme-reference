@@ -7,8 +7,8 @@
 .search-advanced {
     /* ELEMENT */
     &__entry-area {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         gap: 12px;
         border-radius: @container-border-radius;
 
@@ -16,7 +16,7 @@
         }
         .remove {
             &:hover {
-                color: @black;
+                color: var(--fg-general);
             }
         }
     }
@@ -26,16 +26,9 @@
         gap: 12px;
         .form-control__select,
         input[type='text'] {
-            background: @white;
             border-radius: @container-small-border-radius;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-                    background: @fg-controls;
-                });;
-                .mx-light-mode-rules ({
-                    background: @white;
-                });;
-            }
+            background: var(--bg-popover);
+            color: var(--fg-popover);
         }
         input[type='text'] {
             &:focus {
@@ -60,15 +53,7 @@
     &__input-group-field {
     }
     &__input-value {
-        background: @white;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-		    	background: @white;
-		     });;
-            .mx-light-mode-rules ({
-		    	background: @white;
-		    });;
-        }
+        background: var(--bg-content-box);
     }
     &__select-values {
     }
@@ -76,7 +61,7 @@
     &__action {
     }
     &__additional-wrapper {
-        color: @fg-general;
+        color: var(--fg-general);
     }
     &__input-col {
         a,
@@ -102,8 +87,8 @@
     &__additional-options-area {
     }
     &__nav-helper-box {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: @container-border-radius;
     }
     &__nav-helper-item {
@@ -123,7 +108,7 @@
         }
     }
     &__entity-tab-link {
-        background-color: @bg-general;
+        background-color: var(--bg-general);
         // TOP BORDER FOR ENTITY TABS MIXIN
         .tabpseudoelementmixin1(@color) {
             border-top: 3px solid @color;
@@ -134,7 +119,7 @@
             &:hover,
             &:focus,
             &:active {
-                .tabpseudoelementmixin1(@ci-color1);
+                .tabpseudoelementmixin1(var(--ci-color1));
             }
         }
         /* COLORING FOR THE ENTITY GHOUPS */
@@ -142,136 +127,143 @@
             &:hover,
             &:focus,
             &:active {
-                .tabpseudoelementmixin1(#DC7E2E);
+                .tabpseudoelementmixin1(var(--entity-work-color));
             }
         }
         &.-result-group-docstructtype__person {
             &:hover,
             &:focus,
             &:active {
-                .tabpseudoelementmixin1(#B13B29);
+                .tabpseudoelementmixin1(var(--entity-person-color));
             }
         }
         &.-result-group-docstructtype__agent {
             &:hover,
             &:focus,
             &:active {
-                .tabpseudoelementmixin1(#568FB2);
+                .tabpseudoelementmixin1(var(--entity-agent-color));
             }
         }
         &.-result-group-docstructtype__award {
             &:hover,
             &:focus,
             &:active {
-                .tabpseudoelementmixin1(#2E8D38);
+                .tabpseudoelementmixin1(var(--entity-award-color));
             }
         }
         &.-result-group-docstructtype__event {
             &:hover,
             &:focus,
             &:active {
-                .tabpseudoelementmixin1(#8966CA);
+                .tabpseudoelementmixin1(var(--entity-event-color));
             }
         }
         &.-active {
             padding-top: 7px;
-            background: @bg-content-box;
-            color: @fg-general;
+            background: var(--bg-content-box);
+            color: var(--fg-general);
             &.-result-group-standard {
-                .tabpseudoelementmixin1(@ci-color1);
+                .tabpseudoelementmixin1(var(--ci-color1));
             }
             &.-result-group-docstructtype__work {
-                .tabpseudoelementmixin1(#DC7E2E);
+                .tabpseudoelementmixin1(var(--entity-work-color));
             }
             &.-result-group-docstructtype__person {
-                .tabpseudoelementmixin1(#B13B29);
+                .tabpseudoelementmixin1(var(--entity-person-color));
             }
             &.-result-group-docstructtype__agent {
-                .tabpseudoelementmixin1(#568FB2);
+                .tabpseudoelementmixin1(var(--entity-agent-color));
             }
             &.-result-group-docstructtype__award {
-                .tabpseudoelementmixin1(#2E8D38);
+                .tabpseudoelementmixin1(var(--entity-award-color));
             }
             &.-result-group-docstructtype__event {
-                .tabpseudoelementmixin1(#8966CA);
+                .tabpseudoelementmixin1(var(--entity-event-color));
             }
         }
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-		    	border: 1px solid transparent;
-       			border-bottom: none;
-		     });;
-            .mx-light-mode-rules ({
-		    	border: @border;
-		    	border-bottom: none;
-		    });;
-        }
+        border: var(--border);
+        border-bottom: none;
     }
     // REWORK NEEDED
     &__action-search-button {
         // SUBMIT BUTTON COLORS MIXIN
-        .entitySearchAdvancedButtonColor(@color) {
+        .entitySearchAdvancedButtonColor(@color; @foreground) {
             border: 1px solid @color;
             background: @color;
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                color: @foreground;
+                background: @color;
+                border-color: @color;
+            }
         }
         &.-result-group-docstructtype__work {
-            .entitySearchAdvancedButtonColor(#DC7E2E);
+            .entitySearchAdvancedButtonColor(var(--entity-work-color); var(--fg-on-entity-work));
         }
         &.-result-group-docstructtype__person {
-            .entitySearchAdvancedButtonColor(#B13B29);
+            .entitySearchAdvancedButtonColor(var(--entity-person-color); var(--fg-on-entity-person));
         }
         &.-result-group-docstructtype__agent {
-            .entitySearchAdvancedButtonColor(#568FB2);
+            .entitySearchAdvancedButtonColor(var(--entity-agent-color); var(--fg-on-entity-agent));
         }
         &.-result-group-docstructtype__award {
-            .entitySearchAdvancedButtonColor(#2E8D38);
+            .entitySearchAdvancedButtonColor(var(--entity-award-color); var(--fg-on-entity-award));
         }
         &.-result-group-docstructtype__event {
-            .entitySearchAdvancedButtonColor(#8966CA);
+            .entitySearchAdvancedButtonColor(var(--entity-event-color); var(--fg-on-entity-event));
         }
     }
 
     // ENTITY TABS MOBILE DROPDOWN
     &__entity-tabs-dropdown {
-        border: @border;
+        border: var(--border);
         border-top: none;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
     }
     &__entity-tabs-dropdown-button-wrapper {
     }
     &__entity-tabs-dropdown-toggle-button {
-        border: @border;
+        border: var(--border);
         border-bottom: none;
-        background-color: @bg-general;
-        background: @bg-content-box;
-        color: @fg-content-box;
+        background-color: var(--bg-general);
+        background: var(--bg-content-box);
+        color: var(--fg-content-box);
         &:hover {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
         }
         // MOBILE ENTITY DROPDOWN TOGGLE BUTTON COLORS MIXIN
-        .entitySearchAdvancedDropdownToggleColor(@color) {
+        .entitySearchAdvancedDropdownToggleColor(@color; @foreground) {
             border: 1px solid @color;
             background: @color;
-            color: white;
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                color: @foreground;
+                background: @color;
+                border-color: @color;
+            }
         }
         &.-result-group-docstructtype__work {
-            .entitySearchAdvancedDropdownToggleColor(#DC7E2E);
+            .entitySearchAdvancedDropdownToggleColor(var(--entity-work-color); var(--fg-on-entity-work));
         }
         &.-result-group-docstructtype__person {
-            .entitySearchAdvancedDropdownToggleColor(#B13B29);
+            .entitySearchAdvancedDropdownToggleColor(var(--entity-person-color); var(--fg-on-entity-person));
         }
         &.-result-group-docstructtype__agent {
-            .entitySearchAdvancedDropdownToggleColor(#568FB2);
+            .entitySearchAdvancedDropdownToggleColor(var(--entity-agent-color); var(--fg-on-entity-agent));
         }
         &.-result-group-docstructtype__award {
-            .entitySearchAdvancedDropdownToggleColor(#2E8D38);
+            .entitySearchAdvancedDropdownToggleColor(var(--entity-award-color); var(--fg-on-entity-award));
         }
         &.-result-group-docstructtype__event {
-            .entitySearchAdvancedDropdownToggleColor(#8966CA);
+            .entitySearchAdvancedDropdownToggleColor(var(--entity-event-color); var(--fg-on-entity-event));
         }
     }
     &__entity-tabs-dropdown-link {
-        color: @lk-content-box;
+        color: var(--lk-content-box);
     }
 
     // GAP SIZING VARIABLE

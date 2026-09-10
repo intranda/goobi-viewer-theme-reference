@@ -29,19 +29,19 @@
     button {
         font-size: @fontMedium;
         font-weight: 500;
-        color: @fg-general;
+        color: var(--fg-general);
         background-color: transparent;
         &:hover,
         &:active,
         &:focus {
-            color: @fg-general;
+            color: var(--fg-general);
             // 20% of the current CI color; color-mix reads the live
             // --ci-color1 custom property, so this stays correct across
             // light/dark mode and subthemes without separate branches
-            background-color: color-mix(in srgb, @ci-color1 20%, transparent);
+            background-color: color-mix(in srgb, var(--ci-color1) 20%, transparent);
         }
         &:focus-visible {
-            outline: 2px solid @ci-color1;
+            outline: 2px solid var(--focus-ring);
             outline-offset: 1px;
         }
     }
@@ -50,7 +50,7 @@
         span {
             background-color: transparent;
             border: 0;
-            color: @gray;
+            color: var(--fg-muted);
         }
     }
     &__navigate {
@@ -58,22 +58,13 @@
             a,
             span,
             button {
-                color: @bg-content-box;
-                background-color: @ci-color1;
                 font-weight: 700;
                 &:hover,
                 &:active,
                 &:focus {
                 }
-                & when (@colorModes = true) {
-                    .mx-light-mode-rules ({
-					 background-color: @ci-color1;
-				  });
-                    .mx-dark-mode-rules ({
-					color: @white;
-				    background-color: @bg-active;
-				  });
-                }
+                color: var(--fg-inverse);
+                background-color: var(--numeric-paginator-active-bg);
             }
         }
         &.inactive {
@@ -98,38 +89,18 @@
         }
     }
     &__page-number-input {
-        margin-bottom: 0px;
-        background-color: @white;
-        color: @black;
+        background-color: var(--bg-content-box);
+        color: var(--fg-general);
         border-radius: @button-border-radius;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-			margin-bottom: 2px;
-		  });
-            .mx-light-mode-rules ({
-			margin-bottom: 0px;
-		    background-color: @white;
-			color: @black;
-		  });
-        }
+        margin-bottom: 0;
         input {
             border: none;
             outline: none;
             padding-top: 2px;
-            background-color: @white;
-            color: @black;
+
             border-radius: @button-border-radius;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-		    background-color: @bg-active;
-			color: @white;
-		  });
-                .mx-light-mode-rules ({
-			padding-top: 2px;
-		    background-color: @white;
-			color: @black;
-		  });
-            }
+            background-color: var(--numeric-paginator-input-bg);
+            color: var(--fg-content-box);
         }
     }
 }

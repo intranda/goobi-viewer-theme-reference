@@ -12,7 +12,7 @@
     }
 
     .form-control {
-        border: @border;
+        border: var(--border);
         border-radius: @container-border-radius !important;
         box-shadow: @container-box-shadow;
         transition: box-shadow 0.15s ease;
@@ -20,7 +20,7 @@
         &:focus {
             box-shadow:
                 @container-box-shadow,
-                0 0 0 3px @ci-color-1-transparent;
+                0 0 0 3px var(--brand-tint-bg);
         }
     }
 
@@ -40,7 +40,7 @@
             &:focus {
                 box-shadow:
                     @container-box-shadow,
-                    0 0 0 3px @ci-color-1-transparent;
+                    0 0 0 3px var(--brand-tint-bg);
             }
         }
     }

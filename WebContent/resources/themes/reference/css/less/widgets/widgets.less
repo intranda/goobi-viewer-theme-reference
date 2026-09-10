@@ -5,19 +5,12 @@
 /* WIDGETS */
 .widget {
     border-radius: @container-border-radius;
-    background-color: @ci-color-1-transparent;
+
     box-shadow: @container-box-shadow;
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 
-    & when (@colorModes = true) {
-        .mx-light-mode-rules({
-            background-color: @ci-color-1-transparent;
-        });
-        .mx-dark-mode-rules({
-            background-color: @ci-color-1-transparent-darker;
-        });
-    }
+    background-color: var(--brand-tint-bg);
 
     &__topbar {
         border-radius: @container-border-radius;
@@ -41,8 +34,8 @@
             border-radius: @container-small-border-radius;
 
             &:hover {
-                color: @lh-content-box;
-                background-color: @bg-hover;
+                color: var(--lh-content-box);
+                background-color: var(--bg-hover);
                 text-decoration: none;
             }
         }
@@ -62,21 +55,21 @@
         li {
             &.active {
                 border-radius: @container-small-border-radius;
-                background-color: @ci-color1;
-                color: @white;
+                background-color: var(--ci-color1);
+                color: var(--fg-inverse);
                 font-weight: 600;
 
                 a {
-                    color: @white;
+                    color: var(--fg-inverse);
                 }
 
                 &:hover {
-                    background-color: @ci-hovercolor1;
-                    color: @white;
+                    background-color: var(--ci-hovercolor1);
+                    color: var(--fg-inverse);
 
                     a {
-                        color: @white;
-                        background-color: @ci-hovercolor1 !important;
+                        color: var(--fg-inverse);
+                        background-color: var(--ci-hovercolor1) !important;
                     }
                 }
             }
@@ -96,36 +89,21 @@
             &:hover,
             &:active,
             &:focus {
-                color: @white;
-                background-color: @labelHoverGray;
+                color: var(--fg-inverse);
+                background-color: var(--bg-inverse-hover);
             }
         }
 
         .badge-dark {
-            background-color: #343a40;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-			   	background-color: @bg-active;
-			  });;
-                .mx-light-mode-rules ({
-			    background-color: #343a40;
-			  });;
-            }
-            color: @white;
+            background-color: var(--bg-inverse);
+            color: var(--fg-inverse);
 
             &:hover,
             &:active,
             &:focus {
-                color: @white;
-                background-color: #5e5e5e;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-			  		background-color: @bg-hover;
-			  });;
-                    .mx-light-mode-rules ({
-			   		background-color: #5e5e5e;
-			  });;
-                }
+                color: var(--fg-inverse);
+
+                background-color: var(--bg-inverse-hover);
             }
         }
     }

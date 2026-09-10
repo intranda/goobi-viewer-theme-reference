@@ -12,7 +12,7 @@
     .flatpickr-days {
     }
     .dayContainer {
-        background: @bg-content-box;
+        background: var(--bg-content-box);
     }
     .flatpickr-prev-month.-disabled-,
     .flatpickr-next-month.-disabled- {
@@ -35,36 +35,15 @@
     .flatpickr-day {
         background: transparent;
         &.-has-data- {
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-                color: @fg-general;
-                background: @bg-active;
-                .pseudostates ({
-                    color: @fg-hover;
-                    background: @bg-hover;
-                });
-            });;
-                .mx-light-mode-rules ({
-                background: #d5d5d5;
-                .pseudostates ({
-                    color: @fg-hover;
-                    background: @bg-hover;
-                });
-            });;
-            }
+            color: var(--fg-content-box);
+            background: var(--calendar-day-bg);
+            .pseudostates({color: var(--fg-content-box); background: var(--bg-hover);});
         }
         &.-current-issue- {
-            color: white;
             font-weight: 700;
-            background: @bg-active;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-                background: @bg-hover;
-            });;
-                .mx-light-mode-rules ({
-                background: @bg-active;
-            });;
-            }
+
+            background: var(--calendar-day-hover-bg);
+            color: var(--calendar-day-hover-fg);
         }
     }
     .flatpickr-day.-has-data- {
@@ -77,7 +56,7 @@
     }
     .flatpickr-months,
     .flatpickr-weekdays {
-        background: @ci-color1;
+        background: var(--ci-color1);
     }
     &__popover {
     }

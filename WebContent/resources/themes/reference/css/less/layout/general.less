@@ -16,8 +16,8 @@ body {
     font-kerning: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: @bg-general;
-    color: @fg-general;
+    background-color: var(--bg-general);
+    color: var(--fg-general);
 
     // Style focused elements when navigating with the keyboard
     // Define rules in the mixin `.mx-focus-visible`
@@ -118,11 +118,11 @@ ol {
 }
 
 a {
-    color: @lk-general;
+    color: var(--lk-general);
     &:hover,
     &:active,
     &:focus {
-        color: @lh-general;
+        color: var(--lh-general);
     }
 }
 

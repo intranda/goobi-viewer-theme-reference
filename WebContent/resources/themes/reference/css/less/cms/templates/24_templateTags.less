@@ -11,21 +11,21 @@
     h1 {
         & + h2 {
             margin-bottom: 0;
-            border: @border;
+            border: var(--border);
             border-bottom: 0;
-            background-color: @bg-content-box;
-            color: @fg-content-box;
+            background-color: var(--bg-content-box);
+            color: var(--fg-content-box);
         }
     }
 }
 
 .content-component__tag-cloud > h2:first-child {
     margin-bottom: 0;
-    border: @border;
+    border: var(--border);
     border-bottom: 0;
-    background-color: @bg-content-box;
-    color: @fg-content-box;
-    border-top: @border;
+    background-color: var(--bg-content-box);
+    color: var(--fg-content-box);
+    border-top: var(--border);
     padding: 20px 20px 10px 20px;
 }
 
@@ -33,22 +33,22 @@
 .tag-cloud__wrapper {
     margin: 0;
     padding: 2rem;
-    border: @border;
+    border: var(--border);
     border-top: 0;
     border-bottom: 0;
-    background-color: @bg-content-box;
-    color: @fg-content-box;
+    background-color: var(--bg-content-box);
+    color: var(--fg-content-box);
     &:last-child {
-        border-bottom: @border;
+        border-bottom: var(--border);
     }
     & + h2 {
         margin-bottom: 0;
         padding: 10px 20px;
-        border: @border;
+        border: var(--border);
         border-top: 0;
         border-bottom: 0;
-        background-color: @bg-content-box;
-        color: @fg-content-box;
+        background-color: var(--bg-content-box);
+        color: var(--fg-content-box);
     }
 
     .tagcloudElement[class^='tag'] a {
@@ -91,23 +91,23 @@
         border-top: 0;
         border-bottom: 0;
         &:last-child {
-            border-bottom: @border;
+            border-bottom: var(--border);
         }
     }
 }
 
 each(range(100),{
-    .tag@{value} a { color: @lk-content-box !important; }
+    .tag@{value} a { color: var(--lk-content-box) !important; }
 });
 
 .tag-cloud {
     h2 {
         margin-bottom: 0;
         padding: 10px;
-        border: @border;
+        border: var(--border);
         border-top: 0;
         border-bottom: 0;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
     }
 }
 

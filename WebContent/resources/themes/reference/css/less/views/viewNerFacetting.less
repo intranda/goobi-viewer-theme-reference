@@ -7,38 +7,24 @@
     }
     .facetting-content {
         .nav-tabs {
-            border-bottom: @border;
+            border-bottom: var(--border);
             li {
                 a {
-                    border: @border;
-                    background: @bg-hover;
-                    & when (@colorModes = true) {
-                        .mx-dark-mode-rules ({
-							background: @bg-content-box;
-						});
-                        .mx-light-mode-rules ({
-							background: @bg-hover;
-						});
-                    }
+                    border: var(--border);
+
+                    background: var(--ner-navigation-bg);
                     .glyphicon {
                     }
                 }
                 &.active a {
-                    color: @fg-general;
-                    background: @white;
-                    & when (@colorModes = true) {
-                        .mx-dark-mode-rules ({
-							background: @bg-hover;
-						});
-                        .mx-light-mode-rules ({
-							background: @white;
-						});
-                    }
+                    color: var(--fg-general);
+
+                    background: var(--ner-navigation-hover-bg);
                 }
             }
         }
         .tab-content {
-            background: @bg-content-box;
+            background: var(--bg-content-box);
             .tab-pane {
                 &.active {
                 }
@@ -74,35 +60,27 @@
 
 // LOADER STYLES
 #nerFacettingLoader {
-    background-color: @bg-general;
+    background-color: var(--bg-general);
 }
 
 /* OVERVIEW */
 #nerFacetting #overview {
-    border: @border;
+    border: var(--border);
     .current-tags {
-        background: @bg-hover;
+        background: var(--bg-hover);
         &:before {
         }
         .page-tag {
             &.empty {
             }
             &.person {
-                color: @personColor;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						color: @lk-general;
-					});
-                    .mx-light-mode-rules ({
-						color: @personColor;
-					});
-                }
+                color: var(--ner-person-color);
             }
             &.location {
-                color: @locationColor;
+                color: var(--ner-location-color);
             }
             &.corporation {
-                color: @corporationColor;
+                color: var(--ner-institution-color);
             }
         }
     }
@@ -113,7 +91,7 @@
                 }
                 .page-number {
                     a {
-                        color: @lk-general;
+                        color: var(--lk-general);
                         &:hover,
                         &:active,
                         &:focus {
@@ -123,7 +101,7 @@
                 .tag-container {
                     .page-tag {
                         &:hover {
-                            background-color: @bg-hover;
+                            background-color: var(--bg-hover);
                         }
                         &.empty {
                         }

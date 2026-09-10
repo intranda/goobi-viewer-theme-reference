@@ -3,29 +3,14 @@
    ==============================================================*/
 #userAnnotations {
     .admin__search-action {
-        background: @bg-content-box;
-        border: 1px solid #ccc;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				border: none;
-			});
-            .mx-light-mode-rules ({
-				border: 1px solid #ccc;
-			});
-        }
+        background: var(--bg-content-box);
+
+        border: var(--user-search-action-border);
         &:hover,
         &:active,
         &:focus {
             .btn--icon {
-                border: @fg-general;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						color: @fg-general;
-					});
-                    .mx-light-mode-rules ({
-						border: @fg-general;
-					});
-                }
+                color: var(--fg-general);
             }
         }
     }
@@ -33,7 +18,7 @@
         &:hover,
         &:active,
         &:focus {
-            color: @fg-general;
+            color: var(--fg-general);
         }
     }
 }
@@ -44,8 +29,8 @@
 
 .user-annotations {
     &__table {
-        border: @border;
-        background: @bg-content-box;
+        border: var(--border);
+        background: var(--bg-content-box);
     }
     &__table-title {
     }
@@ -58,7 +43,7 @@
     &__table-title-date,
     &__table-title-review-state {
         button {
-            color: @lk-general;
+            color: var(--lk-general);
         }
         &:hover {
             .admin__table-sorting-arrow-hidden {
@@ -67,7 +52,7 @@
     }
     &__table-entry {
         &:hover {
-            background: @bg-hover;
+            background: var(--bg-hover);
             .user-annotations__table-entry-action-link {
             }
         }
@@ -81,19 +66,19 @@
 // NEEDS TO BE REWORKED
 #campaignAnnotations {
     .admin__search-action {
-        background: @bg-content-box;
-        border: @border;
+        background: var(--bg-content-box);
+        border: var(--border);
     }
     .admin__table-content {
-        border: @border;
-        background: @bg-content-box;
+        border: var(--border);
+        background: var(--bg-content-box);
     }
     .admin__table-title {
-        background: @bg-content-box;
+        background: var(--bg-content-box);
     }
     .admin__table-entry {
         &:hover {
-            background: @bg-hover;
+            background: var(--bg-hover);
         }
     }
 }

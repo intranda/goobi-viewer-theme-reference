@@ -7,8 +7,8 @@
     }
     nav {
         padding: 10px;
-        border: 1px solid @middlegray;
-        background-color: @white;
+        border: 1px solid var(--border-strong);
+        background-color: var(--bg-content-box);
     }
     ul {
         li {
@@ -24,21 +24,9 @@
         }
     }
     #user_generated_content_nav .ugc-highlight {
-        background-color: @neutralgray;
-        color: @lowerblack;
-        border-bottom-color: @neutralgray;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background-color: @bg-hover;
-	        	color: @lowerblack;
-				border-bottom-color: @neutralgray;
-			});
-            .mx-light-mode-rules ({
-				background-color: @neutralgray;
-	        	color: @lowerblack;
-				border-bottom-color: @neutralgray;
-			});
-        }
+        background-color: var(--bg-subtle);
+        color: var(--fg-content-box);
+        border-bottom-color: var(--border-color);
     }
 }
 

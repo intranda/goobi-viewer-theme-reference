@@ -8,7 +8,7 @@
 .user-comments {
     .admin__table-sorting {
         &__heading {
-            color: @fg-general;
+            color: var(--fg-general);
         }
     }
 
@@ -30,55 +30,27 @@
         }
     }
     &__table-entry {
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				&:nth-child(2n+1) {
-						background: @bg-content-box;
-						&:hover {
-							background-color: @bg-hover;
-						}
-				}
-			});
-            .mx-light-mode-rules ({
-		
-			});
-        }
         &:hover {
             .user-comments__table-entry-action-link {
             }
         }
     }
     &__table-entry-label {
-        color: @fg-general;
+        color: var(--fg-general);
     }
     &__table-entry-label-record {
     }
     &__table-entry-action-link {
     }
     .admin__search-action {
-        background: @bg-content-box;
-        border: 1px solid #ccc;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-			border: none;
-		});
-            .mx-light-mode-rules ({
-			border: 1px solid #ccc;
-		});
-        }
+        background: var(--bg-content-box);
+
+        border: var(--user-search-action-border);
         &:hover,
         &:active,
         &:focus {
             .btn--icon {
-                border: @fg-general;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-			color: @fg-general;
-		});
-                    .mx-light-mode-rules ({
-			border: @fg-general;
-		});
-                }
+                color: var(--fg-general);
             }
         }
     }
@@ -86,13 +58,13 @@
         &:hover,
         &:active,
         &:focus {
-            color: @fg-general;
+            color: var(--fg-general);
         }
     }
     &__edit-comment-button {
-        color: @lk-general;
+        color: var(--lk-general);
         &:hover {
-            color: @lk-general;
+            color: var(--lk-general);
         }
     }
 }

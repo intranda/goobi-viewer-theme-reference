@@ -4,70 +4,67 @@
    ==============================================================*/
 
 #archivesWrapper {
-    background-color: @bg-general;
+    background-color: var(--bg-general);
 }
 .archives {
     &__wrapper {
-        background-color: @bg-general;
-        color: @fg-general;
+        background-color: var(--bg-general);
+        color: var(--fg-general);
     }
     &__left-side {
         background: transparent;
     }
     &__object-info-heading {
-        background-color: @ci-color1;
-        border: 1px solid @middlegray;
-        border: @border;
+        background-color: var(--ci-color1);
+
+        border: var(--border);
         border-radius: @container-border-radius @container-border-radius 0 0;
         border-bottom: none;
-        color: @white;
+        color: var(--fg-inverse);
     }
     &-tree {
         &__entry {
             a {
-                color: @fg-general;
+                color: var(--fg-general);
             }
         }
     }
     &__tree-heading {
-        background-color: @ci-color1;
-        border: @border;
+        background-color: var(--ci-color1);
+        border: var(--border);
         border-bottom: none;
-        color: @white;
+        color: var(--fg-inverse);
         border-radius: @container-border-radius @container-border-radius 0 0;
     }
     &__graphic-tree {
-        border: 1px solid @middlegray;
         border-top: none;
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: 0 0 @container-border-radius @container-border-radius;
     }
     &__text-tree {
-        border: 1px solid @middlegray;
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: @container-border-radius;
     }
     &__object-info {
-        border: 1px solid @middlegray;
         border-top: none;
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: 0 0 @container-border-radius @container-border-radius;
     }
     &__select-database-dropdown-wrapper {
-        background-color: @bg-general;
+        background-color: var(--bg-general);
         border-radius: @container-small-border-radius;
     }
     &__select-database-dropdown-element-select {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         border-radius: @container-small-border-radius;
     }
     &__error {
-        background-color: @bg-content-box;
-        color: @fg-general;
+        background-color: var(--bg-content-box);
+        color: var(--fg-general);
     }
 }
 

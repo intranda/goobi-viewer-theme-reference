@@ -8,33 +8,16 @@
     /* ELEMENT */
     &__wrapper {
         padding: 10px;
-        border: @border;
+        border: var(--border);
         border-top: 0;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
     }
     &__content {
-        color: @fg-general;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: @fg-general;
-			});
-            .mx-dark-mode-rules ({
-				color: @bg-content-box;
-			});
-        }
+        color: var(--fg-content-box);
         a {
-            & when (@colorModes = true) {
-                .mx-light-mode-rules ({
-					color: @fg-general;
-					text-decoration: underline;
-					font-weight: 500;
-				});
-                .mx-dark-mode-rules ({
-					color: @bg-content-box;
-					text-decoration: underline;
-					font-weight: 500;
-				});
-            }
+            color: var(--lk-content-box);
+            text-decoration: underline;
+            font-weight: 500;
         }
     }
     &__box {

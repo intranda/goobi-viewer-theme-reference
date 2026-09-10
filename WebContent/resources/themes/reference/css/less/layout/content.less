@@ -4,7 +4,7 @@
 
 /* PAGE CONTENT AREA */
 .content {
-    background: @bg-general;
+    background: var(--bg-general);
     z-index: 2;
 
     &__wrapper {
@@ -35,7 +35,7 @@
         position: fixed;
         bottom: 18px;
         left: calc(~'100% - 50px');
-        background: @ci-color1;
+        background: var(--ci-color1);
         z-index: 2031;
         border-radius: @button-border-radius;
         transition: left 0.3s ease;
@@ -44,11 +44,11 @@
             .content__mobile-sidebar-trigger-button {
                 .bar:nth-child(1) {
                     transform: translateX(0) rotate(45deg) scaleX(1.4);
-                    background: @white;
+                    background: var(--fg-inverse);
                 }
                 .bar:nth-child(2) {
                     transform: translateX(0) rotate(-45deg) scaleX(1.4);
-                    background: @white;
+                    background: var(--fg-inverse);
                 }
             }
         }
@@ -62,7 +62,7 @@
         .bar {
             width: 18px;
             height: 2px;
-            background: @white;
+            background: var(--fg-inverse);
             position: absolute;
             top: 13px;
             left: -1px;
@@ -133,7 +133,7 @@
             max-width: unset;
             padding: 1.5rem;
             padding-top: 4rem;
-            background-color: @bg-general;
+            background-color: var(--bg-general);
             transition: right 0.3s ease;
             overflow-y: auto;
             z-index: 2031;

@@ -5,7 +5,7 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-    border: @border;
+    border: var(--border);
     border-radius: @container-border-radius @container-border-radius 0 0;
     border-bottom: 0;
 
@@ -13,7 +13,7 @@
     &__campaign-link,
     &__share-image-link {
         &:hover {
-            color: @ci-color1;
+            color: var(--lk-general-hover);
         }
     }
 
@@ -31,20 +31,20 @@
         &.fulltext {
         }
         &.add-to-bookmark {
-            background-color: rgb(from @accent-color r g b / 20%);
+            background-color: rgb(from var(--accent-color) r g b / 20%);
             border-radius: @container-small-border-radius;
             .icon-wrapper svg {
-                stroke: @ci-color1;
-                color: @accent-color;
+                stroke: var(--brand);
+                color: var(--fg-accent);
             }
             .icon-bookmark-filled {
-                color: @accent-color;
+                color: var(--fg-accent);
             }
         }
         &.image-filter,
         &.share-image-region {
             &:hover {
-                color: @ci-color1;
+                color: var(--lk-general-hover);
             }
         }
     }

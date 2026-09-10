@@ -7,27 +7,27 @@
 .view-metadata {
     &.docstructtype__work {
         .metadata__wrapper {
-            border: 1px solid #dc7e2e;
+            border: 1px solid var(--entity-work-color);
         }
     }
     &.docstructtype__person {
         .metadata__wrapper {
-            border: 1px solid #b13b29;
+            border: 1px solid var(--entity-person-color);
         }
     }
     &.docstructtype__agent {
         .metadata__wrapper {
-            border: 1px solid #568fb2;
+            border: 1px solid var(--entity-agent-color);
         }
     }
     &.docstructtype__award {
         .metadata__wrapper {
-            border: 1px solid #2e8d38;
+            border: 1px solid var(--entity-award-color);
         }
     }
     &.docstructtype__event {
         .metadata__wrapper {
-            border: 1px solid #8966ca;
+            border: 1px solid var(--entity-event-color);
         }
     }
 }
@@ -41,17 +41,17 @@
     }
     &__bookmark-button {
         &[data-bookmark-list-type='add'] {
-            color: @accent-color-1 !important;
-            background-color: rgb(from @accent-color-1 r g b / 20%) !important;
+            color: var(--fg-accent) !important;
+            background-color: rgb(from var(--accent-color) r g b / 20%) !important;
             border-radius: @container-small-border-radius;
         }
     }
     &__wrapper {
         &.-isBoxed {
             border-radius: @container-border-radius;
-            background-color: @bg-content-box;
-            border: @border;
-            background-color: @bg-content-box;
+
+            border: var(--border);
+            background-color: var(--bg-content-box);
 
             .metadata__ungrouped-wrapper {
                 border: none;
@@ -61,7 +61,7 @@
             }
         }
         a {
-            color: @lk-content-box;
+            color: var(--lk-content-box);
         }
     }
     /* ELEMENTS / EVENTS */
@@ -123,7 +123,7 @@
     &__locked-value-icon {
     }
     &__element-wrapper-single {
-        border: @border;
+        border: var(--border);
         dt {
         }
     }
@@ -155,17 +155,17 @@
     &__event-inside-wrapper {
     }
     &__grouped-wrapper {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         dt,
         dd {
         }
         .metadata__element-wrapper {
-            background-color: @bg-content-box;
+            background-color: var(--bg-content-box);
         }
     }
     &__ungrouped-wrapper {
-        border: @border;
+        border: var(--border);
         &:last-child {
         }
     }
@@ -174,7 +174,7 @@
         }
     }
     &__heading {
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         &.level-1,
         &.level-2 {
             &:before {

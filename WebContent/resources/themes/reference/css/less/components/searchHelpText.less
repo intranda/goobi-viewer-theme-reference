@@ -22,18 +22,10 @@
     }
     .card-body {
         p {
-			
             &:last-child {
             }
             span {
-				& when (@colorModes = true) {
-				    .mx-light-mode-rules ({
-						background: @bg-hover;
-					});
-				    .mx-dark-mode-rules ({
-				        background: @bg-hover;
-					});
-				} 
+                background: var(--bg-hover);
             }
         }
     }

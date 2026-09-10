@@ -117,15 +117,8 @@
     }
 
     &__form-control {
-        background: white !important;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-                    background: white;
-                });;
-            .mx-dark-mode-rules ({
-                    background: white !important;
-                });;
-        }
+        background: var(--bg-popover);
+        color: var(--fg-popover);
     }
 }
 

@@ -11,12 +11,12 @@
     /* ELEMENT */
     &__help {
         button {
-            color: @fg-general;
+            color: var(--fg-general);
         }
     }
     &__title {
         h2 {
-            color: @fg-content-box;
+            color: var(--fg-content-box);
         }
     }
     &__input {
@@ -32,8 +32,7 @@
     &__input-autocomplete {
         .ui-autocomplete {
             .ui-autocomplete-input {
-                background: @fg-controls;
-                border: @border;
+                border: var(--border);
                 border-radius: @container-border-radius;
                 box-shadow: @container-box-shadow;
                 transition: box-shadow 0.15s ease;
@@ -41,17 +40,10 @@
                 &:focus {
                     box-shadow:
                         @container-box-shadow,
-                        0 0 0 3px @ci-color-1-transparent;
+                        0 0 0 3px var(--brand-tint-bg);
                 }
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						background: @fg-controls;
-						color: @fg-general;
-					});;
-                    .mx-light-mode-rules ({
-						background: @fg-controls;
-					});;
-                }
+                background: var(--bg-popover);
+                color: var(--fg-popover);
             }
         }
     }
@@ -63,13 +55,13 @@
         label {
             font-size: @fontMedium;
             font-weight: 400;
-            color: @fg-content-box;
+            color: var(--fg-content-box);
         }
     }
     &__filter-select {
         .custom-control--select,
         select {
-            border: @border;
+            border: var(--border);
             border-radius: @container-small-border-radius !important;
             box-shadow: @container-box-shadow;
             transition:
@@ -77,28 +69,21 @@
                 box-shadow 0.15s ease;
 
             &:hover {
-                border-color: @ci-color1;
+                border-color: var(--ci-color1);
             }
 
             &:focus-within {
-                border-color: @ci-color1;
+                border-color: var(--ci-color1);
                 box-shadow:
                     @container-box-shadow,
-                    0 0 0 3px @ci-color-1-transparent;
+                    0 0 0 3px var(--brand-tint-bg);
             }
 
             &:after {
-                border-top-color: @fg-general;
+                border-top-color: var(--fg-general);
             }
 
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-                    background-color: @fg-controls;
-				});;
-                .mx-light-mode-rules ({
-					background-color: @fg-controls;
-				});;
-            }
+            background-color: var(--bg-popover);
 
             & select {
                 background: transparent;
@@ -121,7 +106,7 @@
         &:focus {
             box-shadow:
                 @container-box-shadow,
-                0 0 0 3px @ci-color-1-transparent;
+                0 0 0 3px var(--brand-tint-bg);
         }
     }
     /* MODIFICATION */
@@ -134,16 +119,8 @@
     box-shadow: @container-box-shadow;
     padding: 0.4rem;
     margin-top: 0.5rem;
-    background-color: @fg-controls;
 
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-			background-color: @fg-controls;
-		});;
-        .mx-light-mode-rules ({
-			background-color: @fg-controls;
-		});;
-    }
+    background-color: var(--bg-popover);
 
     .ui-menu-item {
         border-radius: @container-small-border-radius;
@@ -151,14 +128,14 @@
         .ui-menu-item-wrapper {
             padding: 0.6rem 1rem;
             border-radius: @container-small-border-radius;
-            color: @fg-content-box;
+            color: var(--fg-content-box);
             transition:
                 background-color 0.15s ease,
                 color 0.15s ease;
         }
         .ui-state-active {
-            background-color: @ci-color1;
-            color: @white;
+            background-color: var(--ci-color1);
+            color: var(--fg-inverse);
             border: none;
             margin: 0;
         }

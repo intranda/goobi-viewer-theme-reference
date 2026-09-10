@@ -36,7 +36,7 @@
 
     &__list-item-link {
         &.-active {
-            background-color: @bg-hover;
+            background-color: var(--bg-hover);
         }
     }
 
@@ -61,15 +61,7 @@
     }
 
     &__list {
-        scrollbar-color: @middlegray transparent;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-                scrollbar-color: @bg-active transparent;
-            });;
-            .mx-light-mode-rules ({
-                scrollbar-color: @middlegray transparent;
-            });;
-        }
+        scrollbar-color: var(--border-strong) transparent;
     }
 
     /* FILTER */
@@ -94,27 +86,26 @@
             overflow: hidden;
             opacity: 0;
             pointer-events: none;
-            color: @fg-content-box;
-            background-color: @white;
+
             border-radius: @container-small-border-radius;
             box-shadow: @container-box-shadow;
             transition:
                 width 0.3s ease,
                 opacity 0.2s ease;
             &::-webkit-input-placeholder {
-                color: @placeholder;
+                color: var(--placeholder);
                 opacity: 1;
             }
             &:-moz-placeholder {
-                color: @placeholder;
+                color: var(--placeholder);
                 opacity: 1;
             }
             &::-moz-placeholder {
-                color: @placeholder;
+                color: var(--placeholder);
                 opacity: 1;
             }
             &:-ms-input-placeholder {
-                color: @placeholder;
+                color: var(--placeholder);
                 opacity: 1;
             }
             &.in {
@@ -122,16 +113,8 @@
                 opacity: 1;
                 pointer-events: all;
             }
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-                    background-color: @fg-controls;
-                    color: @fg-content-box;
-				});;
-                .mx-light-mode-rules ({
-					background-color: @white;
-					color: @fg-content-box;
-				});;
-            }
+            background-color: var(--bg-popover);
+            color: var(--fg-popover);
         }
     }
 
@@ -211,21 +194,21 @@
     &__boolean-button {
         border-radius: @button-border-radius;
         border: none;
-        color: @ci-color1;
-        background-color: @fg-controls;
+        color: var(--brand);
+        background-color: var(--bg-popover);
 
         &:hover {
-            color: @white !important;
-            background-color: @ci-hovercolor1 !important;
+            color: var(--fg-inverse) !important;
+            background-color: var(--ci-hovercolor1) !important;
         }
 
         &.-active {
-            color: @white;
-            background-color: @ci-color1;
+            color: var(--fg-inverse);
+            background-color: var(--ci-color1);
 
             &:hover {
-                color: @white;
-                background-color: @ci-hovercolor1;
+                color: var(--fg-inverse);
+                background-color: var(--ci-hovercolor1);
             }
         }
     }

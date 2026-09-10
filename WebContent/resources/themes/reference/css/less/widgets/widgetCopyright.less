@@ -6,7 +6,7 @@
     padding: 0;
 
     &__body {
-        background-color: rgb(from @ci-color1 r g b / 20%);
+        background-color: rgb(from var(--ci-color1) r g b / 20%);
         margin: 0;
     }
 
@@ -14,51 +14,20 @@
         padding-top: 0.8rem;
     }
     .rs-svg-path {
-        fill: #000;
+        fill: var(--fg-general);
     }
     .paragraph-svg-path {
-        fill: #000;
+        fill: var(--fg-general);
     }
-    & when (@colorModes = true) {
-        .mx-light-mode-rules ({
-			.rs-svg-path {
-				fill: #000;
-			}
-			.paragraph-svg-path {
-				fill: #000;
-			}
-		});;
-        .mx-dark-mode-rules ({
-			.rs-svg-path {
-				fill: #fff;
-			}
-			.paragraph-svg-path {
-				fill: #fff;
-			}
-		});;
+    .rs-svg-path,
+    .paragraph-svg-path {
+        fill: var(--fg-content-box);
     }
     &__dot {
-        color: #000;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: #000;
-			});;
-            .mx-dark-mode-rules ({
-				color: white;
-			});;
-        }
+        color: var(--fg-content-box);
     }
     &__status-icon {
-        color: @black;
-
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: @black;
-			});;
-            .mx-dark-mode-rules ({
-				color: @white;
-			});;
-        }
+        color: var(--fg-content-box);
     }
 }
 

@@ -16,13 +16,7 @@
         }
     }
     #user_generated_content_nav .ugc-highlight {
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background-color: @bg-hover;
-			});;
-            .mx-light-mode-rules ({
-			});;
-        }
+        background-color: var(--bg-hover);
     }
 }
 
@@ -36,7 +30,7 @@
         button {
         }
         &.-onpage {
-            border-left-color: @ci-color1;
+            border-left-color: var(--ci-color1);
         }
     }
     &__type {
@@ -53,7 +47,7 @@
     }
     &__page {
         span {
-            background: @ci-color1;
+            background: var(--ci-color1);
             border-radius: @container-small-border-radius;
         }
     }

@@ -5,7 +5,7 @@
 .sidebar-menu {
     button,
     a {
-        color: white;
+        color: var(--fg-inverse);
         display: block;
         width: 100%;
         text-align: left;
@@ -14,7 +14,7 @@
         &:hover,
         &:focus,
         &:active {
-            color: white;
+            color: var(--fg-inverse);
         }
     }
     button {
@@ -24,10 +24,10 @@
     ul {
     }
     li {
-        background: @ci-color1;
+        background: var(--ci-color1);
     }
     span {
-        border-bottom: 1px dotted rgba(218, 218, 218, 0.4);
+        border-bottom: 1px dotted rgb(from var(--fg-inverse) r g b / 40%);
         display: block;
         padding-bottom: 1.4rem;
         padding-left: 1.4rem;
@@ -43,16 +43,16 @@
         ul {
         }
         li {
-            background: #eee;
+            background: var(--bg-subtle);
             padding-bottom: 0;
-            color: black;
+            color: var(--fg-general);
             &:hover,
             &:focus,
             &:active {
-                background: @ci-color1;
-                color: white;
+                background: var(--ci-color1);
+                color: var(--fg-inverse);
                 a {
-                    color: white;
+                    color: var(--fg-inverse);
                 }
             }
             &:last-of-type {
@@ -64,16 +64,16 @@
         a {
             padding: 10px 20px 14px;
             padding-bottom: 0;
-            color: black;
+            color: var(--fg-general);
             &:hover,
             &:focus,
             &:active {
-                color: white;
+                color: var(--fg-inverse);
                 background: transparent;
             }
         }
         span {
-            border-bottom: 1px dotted #666;
+            border-bottom: 1px dotted var(--fg-muted);
             padding-left: 2.6rem;
             padding-bottom: 1rem;
             font-size: 1.4rem;

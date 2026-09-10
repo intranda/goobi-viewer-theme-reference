@@ -20,12 +20,12 @@
     &__century-year-link,
     &__century-year-text {
         border-radius: @container-small-border-radius;
-        border: @border-controls;
+        border: var(--border-controls);
     }
     &__century-year-link {
         a {
             border-radius: @container-small-border-radius;
-            background-color: @ci-color-1-transparent;
+            background-color: var(--brand-tint-bg);
             border: none;
         }
     }
@@ -39,8 +39,8 @@
         }
     }
     &__input {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-content-box);
+        border: var(--border);
         input {
         }
         .form-horizontal {
@@ -66,20 +66,8 @@
     }
     &__day-popover {
         a {
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-				color: @fg-general; 
-				.pseudostates ({
-					color: @fg-hover;
-				});
-			});;
-                .mx-light-mode-rules ({
-				color: @fg-general;
-				.pseudostates ({
-					color: @fg-hover;
-				});
-			});;
-            }
+            color: var(--fg-popover);
+            .pseudostates({color: var(--fg-popover);});
         }
     }
     &__months {
@@ -88,16 +76,16 @@
     }
     &__month-title {
         padding: 5px 10px;
-        border: @border;
+        border: var(--border);
         border-bottom: 0;
-        background-color: @fg-content-box;
-        background-color: @bg-content-box;
+
+        background-color: var(--bg-content-box);
     }
     &__month-days,
     &__month-week {
-        border: @border;
+        border: var(--border);
         border-top: 0;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
     }
     &__month-days span,
     &__month-day,
@@ -115,31 +103,13 @@
     }
     &__month-day-link,
     &__month-day-button {
-        background-color: @middlegray;
-        color: @fg-general;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-		  background-color: @bg-active;
-
-		});;
-            .mx-light-mode-rules ({
-		  background-color: @middlegray;
-		color: @fg-general;
-		});;
-        }
-        & when (@colorModes = true) {
-            &:focus,
-            &:hover,
-            &:active {
-                .mx-dark-mode-rules ({
-		    background-color: @bg-hover;
-			color: @fg-general;
-		  });;
-                .mx-light-mode-rules ({
-			color: @white;
-		    background-color: @bg-active;
-		  });;
-            }
+        background-color: var(--calendar-day-bg);
+        color: var(--fg-content-box);
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: var(--calendar-day-hover-bg);
+            color: var(--calendar-day-hover-fg);
         }
     }
     &__action {
@@ -152,8 +122,8 @@
     &__newspaper-search {
     }
     &__newspaper-search-body {
-        background: @bg-content-box;
-        border: @border;
+        background: var(--bg-content-box);
+        border: var(--border);
     }
     &__newspaper-search-title,
     &__issues-title {
@@ -185,7 +155,7 @@
     &__month-day {
         &.active {
             a {
-                color: @bg-content-box;
+                color: var(--fg-inverse);
             }
         }
     }

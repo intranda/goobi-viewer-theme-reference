@@ -10,18 +10,18 @@
     &-list-entry {
     }
     &-link {
-        border: @border;
-        background-color: @bg-content-box;
-        color: @lk-content-box;
+        border: var(--border);
+        background-color: var(--bg-content-box);
+        color: var(--lk-content-box);
         &:hover,
         &:active,
         &:focus {
-            background-color: @bg-hover;
-            color: @fg-general;
+            background-color: var(--bg-hover);
+            color: var(--fg-general);
         }
         &.-active {
-            color: @fg-content-box;
-            background-color: @bg-content-box;
+            color: var(--fg-content-box);
+            background-color: var(--bg-content-box);
             font-weight: 700;
         }
     }

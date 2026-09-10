@@ -29,15 +29,7 @@
     &__right {
         &:hover {
             svg {
-                background-color: @lightgray;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-		    			background-color: @bg-hover;
-					});;
-                    .mx-light-mode-rules ({
-		    			background-color: @lightgray;
-					});;
-                }
+                background-color: var(--bg-subtle);
             }
         }
     }
@@ -59,15 +51,7 @@
         }
         &:hover {
             svg {
-                background-color: @lightgray;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-		    			background-color: @bg-hover;
-					});;
-                    .mx-light-mode-rules ({
-		    			background-color: @lightgray;
-					});;
-                }
+                background-color: var(--bg-subtle);
             }
         }
     }

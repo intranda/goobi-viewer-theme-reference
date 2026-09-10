@@ -3,37 +3,37 @@
    style declarations for widget_nerFacetting.xhtml
    ==============================================================*/
 #widgetNerFacetting {
-    border: @border;
+    border: var(--border);
     h2 {
         margin: 0;
         padding: 0.7rem 1.5rem;
         font-size: @fontNormal;
         font-weight: 400;
-        color: @white;
-        border-bottom: 1px solid @ci-color1;
-        background-color: @ci-color1;
+        color: var(--fg-inverse);
+        border-bottom: 1px solid var(--ci-color1);
+        background-color: var(--ci-color1);
     }
     .facetting-content {
         .nav-tabs {
-            border-bottom: @border;
+            border-bottom: var(--border);
             li {
                 a {
-                    background: @bg-content-box;
+                    background: var(--bg-content-box);
                     border: none;
                     border-radius: 0;
-                    border-bottom: 1px solid @middlegray;
+                    border-bottom: 1px solid var(--border-strong);
                     .glyphicon {
                     }
                 }
                 a {
                     &.active {
-                        background: @bg-hover;
+                        background: var(--bg-hover);
                     }
                 }
             }
         }
         .tab-content {
-            background: @bg-content-box;
+            background: var(--bg-content-box);
             .tab-pane {
                 &.active {
                 }
@@ -56,15 +56,7 @@
                 &:hover {
                 }
                 &.active[data-type='person'] {
-                    color: @personColor;
-                    & when (@colorModes = true) {
-                        .mx-dark-mode-rules ({
-						color: @lk-general;
-					});
-                        .mx-light-mode-rules ({
-						color: @personColor;
-					});
-                    }
+                    color: var(--ner-person-color);
                 }
                 &[data-type='location'] {
                 }
@@ -78,28 +70,20 @@
 /* OVERVIEW */
 #overview {
     .current-tags {
-        background: @bg-hover;
+        background: var(--bg-hover);
         &:before {
         }
         .page-tag {
             &.empty {
             }
             &.person {
-                color: @personColor;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						color: @lk-general;
-					});
-                    .mx-light-mode-rules ({
-						color: @personColor;
-					});
-                }
+                color: var(--ner-person-color);
             }
             &.location {
-                color: @locationColor;
+                color: var(--ner-location-color);
             }
             &.corporation {
-                color: @corporationColor;
+                color: var(--ner-institution-color);
             }
         }
     }
@@ -112,11 +96,11 @@
                 }
                 .page-number {
                     a {
-                        color: @lk-general;
+                        color: var(--lk-general);
                         &:hover,
                         &:active,
                         &:focus {
-                            color: @lh-general;
+                            color: var(--lh-general);
                         }
                     }
                 }
@@ -127,22 +111,14 @@
                         &.empty {
                         }
                         &.person {
-                            color: @personColor;
-                            & when (@colorModes = true) {
-                                .mx-dark-mode-rules ({
-									color: @lk-general;
-								});
-                                .mx-light-mode-rules ({
-									color: @personColor;
-								});
-                            }
+                            color: var(--ner-person-color);
                         }
                         &.location {
                         }
                         &.corporation {
                         }
                         &:hover {
-                            background: @bg-hover;
+                            background: var(--bg-hover);
                         }
                     }
                 }

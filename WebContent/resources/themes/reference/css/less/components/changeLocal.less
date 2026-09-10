@@ -10,8 +10,8 @@
     left: 1.2rem;
     min-width: 160px;
     padding: 0.5rem;
-    background-color: @bg-content-box;
-    border: 1px solid @border-color;
+    background-color: var(--bg-content-box);
+    border: 1px solid var(--border-color);
     border-radius: @container-border-radius;
     box-shadow: @container-box-shadow;
     z-index: 2030;
@@ -26,7 +26,7 @@
     //		margin-left: -.6rem;
     //		border-width: .6rem;
     //		border-style: solid;
-    //		border-color: transparent transparent @middleblack transparent;
+    //		border-color: transparent transparent var(--fg-secondary) transparent;
     //	}
     ul {
     }
@@ -39,7 +39,7 @@
         }
     }
     button {
-        color: @fg-content-box;
+        color: var(--fg-content-box);
         font-size: @fontMedium;
         padding: 0.55rem 1rem;
         border-radius: @container-small-border-radius;
@@ -50,13 +50,13 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: @ci-color-1-transparent;
-            color: @ci-color1;
+            background-color: var(--brand-tint-bg);
+            color: var(--lk-general-hover);
             text-decoration: none;
         }
         &.activeLang {
-            background-color: @ci-color-1-transparent;
-            color: @ci-color1;
+            background-color: var(--brand-tint-bg);
+            color: var(--brand);
             font-weight: 600;
         }
     }

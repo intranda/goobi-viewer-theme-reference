@@ -9,26 +9,18 @@
     }
     &__navigate {
         border-radius: @container-small-border-radius;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
         box-shadow: @container-box-shadow;
         &:hover {
-            background: @bg-hover;
+            background: var(--bg-hover);
         }
         &.inactive {
             &:hover {
-                background-color: @bg-content-box;
+                background-color: var(--bg-content-box);
             }
         }
         svg {
-            fill: @black;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					fill: @white;
-				});;
-                .mx-light-mode-rules ({
-					fill: @black;
-	  			});;
-            }
+            fill: var(--fg-general);
         }
     }
     &__navigate-text {
@@ -40,15 +32,7 @@
             border: none;
             outline: none;
             background-color: transparent;
-            color: @fg-general;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					color: @fg-general;
-				});;
-                .mx-light-mode-rules ({
-					color: @fg-general;
-	  			});;
-            }
+            color: var(--fg-general);
         }
     }
 }

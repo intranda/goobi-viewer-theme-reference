@@ -7,9 +7,9 @@
 .born-digital {
     /* ELEMENT */
     &__no-access-box {
-        border: @border;
+        border: var(--border);
         border-radius: @container-border-radius;
-        background-color: @bg-content-box;
+        background-color: var(--bg-content-box);
     }
     h2 {
     }
@@ -17,12 +17,12 @@
     }
     &__items-wrapper {
         &:hover {
-            background: @bg-hover;
+            background: var(--bg-hover);
         }
     }
     &__box {
-        border: @border;
-        background-color: @bg-content-box;
+        border: var(--border);
+        background-color: var(--bg-content-box);
     }
     &__head {
     }
@@ -41,7 +41,7 @@
     }
     &__item {
         &:hover {
-            background: @bg-hover;
+            background: var(--bg-hover);
         }
     }
     &__error_wrapper {
@@ -85,7 +85,7 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
     .born-digital__items-wrapper:nth-child(odd) {
-        background: @bg-hover;
+        background: var(--bg-hover);
     }
     .download-external-resource__item:nth-child(odd) {
         // background: @bg-hover;
