@@ -345,11 +345,8 @@
         transition: left 0.3s ease;
 
         &.-searchOn {
-            // stop at the logo's reserved width (img max-width 12rem + its margin-right 1rem
-            // + .header__logo's padding-right 0.75rem) instead of 0, so the overlay never covers it
             left: 13.75rem;
             z-index: 7;
-            // background: @bg-content-box;
             border: none;
             border-radius: @button-border-radius;
             box-shadow: none;
@@ -972,6 +969,33 @@
 
                 &:last-child {
                     border-bottom: 0;
+                }
+            }
+
+            /* --------------------------------------------------
+               SUBLEVEL INDENTATION
+               -------------------------------------------------- */
+
+            &__list {
+                &.-level-1 li > a,
+                &.-level-1 li > button {
+                    margin-left: 1rem;
+                }
+                &.-level-2 li > a,
+                &.-level-2 li > button {
+                    margin-left: 2rem;
+                }
+                &.-level-3 li > a,
+                &.-level-3 li > button {
+                    margin-left: 3rem;
+                }
+                &.-level-4 li > a,
+                &.-level-4 li > button {
+                    margin-left: 4rem;
+                }
+                &.-level-5 li > a,
+                &.-level-5 li > button {
+                    margin-left: 5rem;
                 }
             }
 

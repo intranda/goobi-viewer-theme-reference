@@ -106,6 +106,12 @@
     z-index: 9999;
 }
 
+// ACCENT RING FOR ACTIVE STATE
+.mx-accent-ring(@color: @ci-color1; @width: 3px; @opacity: 25%) {
+    outline: 2px solid @ci-color1;
+    box-shadow: 0 0 0 @width color-mix(in srgb, @color @opacity, transparent);
+}
+
 // COLOR SCHEMES
 
 .mx-theme-light {
@@ -124,7 +130,7 @@
     --border: 1px solid #c3c6d72e;
     --border-controls: 1px solid #ced4da;
     --border-color: #e9e9e9;
-    --bg-general: #f5f8fd;
+    --bg-general: color-mix(in oklch, var(--ci-color1) 3%, #fafbfc);
     --fg-general: #212529;
     --lk-general: #3365a9;
     --lh-general: #444;
@@ -297,8 +303,8 @@
     --ci-color1: #1565c0;
     --accent-color: #feae1a;
     --footer-topnav-bg: @ci-color1;
-    --bg-general: #0a1124; // todo ci-color1
-    --bg-content-box: #1c263d; // todo ci-color1 related
+    --bg-general: color-mix(in oklch, var(--ci-color1) 6%, #0b0c0f);
+    --bg-content-box: color-mix(in oklch, var(--ci-color1) 8%, #1b1b1e);
     --fg-content-box: #e3e4e7;
     --lk-content-box: #e3e4e7;
     --bg-hover: #5b6473;
@@ -315,7 +321,7 @@
     --lk-general: rgba(255, 255, 255, 0.8);
     --lh-general: rgba(255, 255, 255, 0.8);
     --fg-header: rgba(255, 255, 255, 0.8);
-    --bg-header: #070b17; // todo ci-color1 related
+    --bg-header: color-mix(in oklch, #05090d 96%, var(--ci-color1));
     --lh-content-box: rgba(255, 255, 255, 0.8);
     --placeholder: rgba(255, 255, 255, 0.5);
 

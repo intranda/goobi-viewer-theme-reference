@@ -27,21 +27,20 @@ body {
 
     // No outline offset when an input is in focus
     // Does not apply if inputs are styled as buttons
-    &.using-keyboard input:not(.btn):focus-visible {
+    &.using-keyboard input:not(.btn):focus-visible,
+    &.using-keyboard select:focus-visible,
+    &.using-keyboard textarea:focus-visible {
         outline-offset: 0 !important;
     }
 }
 
-// Baseline focus ring for the elements that most commonly receive keyboard
-// focus, applied directly via `:focus-visible` rather than through
-// body.using-keyboard above. This keeps buttons, links and form controls
-// accessible even before that class is toggled (e.g. an autofocused field
-// right after page load), independently of the keyboard-detection script.
+// Baseline focus ring for buttons, links and similar controls: a mouse click
+// never triggers their native `:focus-visible`, so this rule only ever fires
+// for real keyboard focus. Applied directly rather than through
+// body.using-keyboard so it also works before that class is toggled (e.g. an
+// autofocused element right after page load).
 button,
 .btn,
-input,
-select,
-textarea,
 a,
 [tabindex] {
     &:focus-visible {
@@ -49,10 +48,30 @@ a,
     }
 }
 
-input:not(.btn):focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    .mx-focus-ring(@offset: 0);
+// Text-like fields are reported as `:focus-visible` by the browser even on a
+// mouse click, since a visible indicator is needed the moment you can type.
+// To keep the red ring reserved for actual keyboard navigation, these only
+// get it through body.using-keyboard above; a plain mouse-focused field
+// gets the softer CI accent ring instead.
+body:not(.using-keyboard) {
+    input:not(.btn):focus,
+    select:focus,
+    textarea:focus {
+        .mx-accent-ring();
+    }
+}
+
+// Softer CI-colored ring for active/pressed state, kept separate from the
+// red keyboard-focus ring above so focus stays visually distinct.
+button,
+.btn,
+input,
+select,
+textarea,
+a {
+    &:active {
+        .mx-accent-ring();
+    }
 }
 
 @{RTL} body {
