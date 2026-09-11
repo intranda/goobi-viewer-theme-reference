@@ -100,6 +100,12 @@
     z-index: 9999;
 }
 
+// ACCENT RING FOR MOUSE FOCUS AND ACTIVE STATE
+.mx-accent-ring(@color: var(--brand); @width: 3px; @opacity: 25%) {
+    outline: 2px solid @color;
+    box-shadow: 0 0 0 @width color-mix(in srgb, @color @opacity, transparent);
+}
+
 /* MODE-INDEPENDENT THEME OVERRIDES */
 .mx-theme-base() {
     --font-family:
@@ -131,10 +137,19 @@
     --color-accent-dark: #feae1a;
     --color-accent-text-light: #875100;
     --color-accent-text-dark: #ffd073;
+    --color-paper: #fafbfc;
+    --color-night: #0b0c0f;
+    --color-night-raised: #1b1b1e;
+    --color-night-header: #05090d;
 }
 
 /* THEME ROLES AND FEATURES — LIGHT */
 .mx-theme-light() {
+    /* SURFACES — brand-tinted page */
+    --bg-general: color-mix(in srgb, var(--color-brand) 3%, var(--color-paper));
+    --bg-content-box: var(--color-gray-0);
+    --bg-header: var(--color-gray-0);
+
     /* BRAND TINT */
     --brand-tint-bg: rgb(from var(--brand) r g b / 8%);
 
@@ -193,12 +208,17 @@
 
 /* THEME ROLES AND FEATURES — DARK */
 .mx-theme-dark() {
+    /* SURFACES — brand-tinted night */
+    --bg-general: color-mix(in srgb, var(--color-brand) 6%, var(--color-night));
+    --bg-content-box: color-mix(in srgb, var(--color-brand) 8%, var(--color-night-raised));
+    --bg-header: color-mix(in srgb, var(--color-night-header) 96%, var(--color-brand));
+
     /* BRAND TINT */
     --brand-tint-bg: rgb(from var(--brand) r g b / 15%);
 
     /* FOOTER */
     --footer-main-bg: color-mix(in srgb, var(--footer-topnav-bg) 30%, var(--bg-scrim));
-    --footer-bottom-bg: color-mix(in srgb, var(--footer-topnav-bg) 26%, var(--bg-scrim));
+    --footer-bottom-bg: color-mix(in srgb, var(--footer-topnav-bg) 22%, var(--bg-scrim));
 
     /* COOKIE BANNER */
     --cookie-banner-link-decoration: underline;

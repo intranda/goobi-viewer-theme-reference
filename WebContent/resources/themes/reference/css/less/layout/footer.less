@@ -351,29 +351,6 @@
         position: relative;
 
         &__topSection {
-            padding: 4rem 0 3rem;
-        }
-
-        &__topSection__columns {
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem 2rem;
-        }
-
-        &__bottomSection__nav-row {
-            flex-wrap: wrap;
-        }
-
-        &__scroll-top {
-            flex: 0 0 100%;
-            align-self: auto;
-        }
-    }
-}
-
-/* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {
-    .footer {
-        &__topSection {
             &__columns {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
@@ -382,6 +359,12 @@
             &__btn {
                 width: 100%;
                 max-width: 100%;
+            }
+
+            &__column {
+                &__social {
+                    align-items: flex-start;
+                }
             }
         }
 
@@ -393,10 +376,27 @@
                     padding: 0.3rem 0.6rem;
                 }
             }
+
+            &__nav {
+                flex: 1;
+
+                &__list {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    column-gap: 1.5rem;
+                }
+            }
         }
 
         &__scroll-top {
             right: 1rem;
         }
     }
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }

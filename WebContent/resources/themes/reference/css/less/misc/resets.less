@@ -43,6 +43,16 @@
         background: var(--bg-subtle);
         color: var(--fg-secondary);
     }
+    &:focus {
+        background: var(--bg-popover);
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--fg-popover);
+        -webkit-box-shadow: 0 0 0 1000px var(--bg-popover) inset;
+        transition: background-color 9999s ease-in-out 0s;
+    }
 }
 .form-horizontal {
     .form-group {
