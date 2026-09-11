@@ -10,8 +10,8 @@
     &__wrapper {
         position: relative;
         display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 8rem;
+        grid-template-columns: minmax(0, 1fr) minmax(24rem, var(--sidebar-width));
+        gap: var(--content-gap);
         padding: 3rem 0 5rem 0;
     }
     &__main {
@@ -23,10 +23,12 @@
         scroll-margin-top: 150px; // offset for fixed top navigation
     }
 
+    &__wrapper.-without-sidebar,
     &__wrapper:not(:has(.sidebar__inner > *)) {
         grid-template-columns: 1fr;
 
-        .content__sidebar {
+        .content__sidebar,
+        .content__mobile-sidebar-trigger {
             display: none;
         }
     }

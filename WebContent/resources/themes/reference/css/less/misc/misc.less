@@ -3,8 +3,12 @@
    style declarations for everything else
    ==============================================================*/
 
-.container {
-    max-width: 1440px;
+// The frontend shares the header's fluid outer margins at every screen size.
+// Scope this to its layout so admin dialogs and editor containers keep their sizing.
+#bodyWrapper .container {
+    width: 100%;
+    max-width: none;
+    padding-inline: var(--page-gutter);
 }
 
 /* MOBILE OVERLAY STYLES */

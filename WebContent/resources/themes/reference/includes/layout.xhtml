@@ -11,6 +11,11 @@
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+    <!-- Evaluate the CMS configuration, not its always-present sidebarGroup wrapper.
+         Record pages and non-CMS views keep their own sidebar rendering rules. -->
+    <ui:param
+        name="referenceHasSidebar"
+        value="#{not facesContext.viewRoot.viewId.endsWith('/cmsPage.xhtml') or cmsBean.cmsWorkPageContext or (cmsBean.currentPage.useDefaultSidebar ? termBrowseBean.browsingMenuEnabled : not empty cmsBean.currentPage.sidebarElements)}" />
     <div id="bodyWrapper">
         <!-- ADMIN TOPBAR FRONTEND -->
         <viewerComponent:frontEndAdminTopBar />
@@ -24,12 +29,14 @@
                 class="skip-menu__link">
                 #{msg.a11y__skip_menu__jump_to_main}
             </a>
-            <a
-                id="skip-to-sidebar"
-                href="#sidebar"
-                class="skip-menu__link">
-                #{msg.a11y__skip_menu__jump_to_sidebar}
-            </a>
+            <ui:fragment rendered="#{referenceHasSidebar}">
+                <a
+                    id="skip-to-sidebar"
+                    href="#sidebar"
+                    class="skip-menu__link">
+                    #{msg.a11y__skip_menu__jump_to_sidebar}
+                </a>
+            </ui:fragment>
         </div>
 
         <!-- HEADER -->
@@ -60,7 +67,7 @@
             class="content">
             <div class="container">
                 <div
-                    class="content__wrapper"
+                    class="content__wrapper #{referenceHasSidebar ? '' : '-without-sidebar'}"
                     data-target="content-wrapper">
                     <!-- CONTENT -->
                     <main
@@ -71,36 +78,40 @@
                         <ui:insert name="content" />
 
                         <!-- OPEN MOBILE NAVIGATION -->
-                        <div
-                            class="content__mobile-sidebar-trigger"
-                            data-target="mobileSidebarTrigger">
-                            <button
-                                type="button"
-                                class="btn btn--icon content__mobile-sidebar-trigger-button"
-                                data-open="sidebar"
-                                aria-label="#{msg.aria_label__open_sidebar}">
-                                <span class="content__mobile-sidebar-trigger-icon">
-                                    <span class="bar"></span>
-                                    <span class="bar"></span>
-                                </span>
-                            </button>
-                        </div>
+                        <ui:fragment rendered="#{referenceHasSidebar}">
+                            <div
+                                class="content__mobile-sidebar-trigger"
+                                data-target="mobileSidebarTrigger">
+                                <button
+                                    type="button"
+                                    class="btn btn--icon content__mobile-sidebar-trigger-button"
+                                    data-open="sidebar"
+                                    aria-label="#{msg.aria_label__open_sidebar}">
+                                    <span class="content__mobile-sidebar-trigger-icon">
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </ui:fragment>
                     </main>
 
                     <!-- SIDEBAR -->
-                    <aside
-                        id="sidebar"
-                        class="content__sidebar">
-                        <div
-                            class="sidebar__inner -refreshHCsticky"
-                            data-target="sticky-sidebar">
-                            <!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
-                            <!-- <viewerComponent:sidebarMenu /> -->
+                    <ui:fragment rendered="#{referenceHasSidebar}">
+                        <aside
+                            id="sidebar"
+                            class="content__sidebar">
+                            <div
+                                class="sidebar__inner -refreshHCsticky"
+                                data-target="sticky-sidebar">
+                                <!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
+                                <!-- <viewerComponent:sidebarMenu /> -->
 
-                            <!-- SIDEBAR WIDGETS -->
-                            <ui:insert name="sidebar" />
-                        </div>
-                    </aside>
+                                <!-- SIDEBAR WIDGETS -->
+                                <ui:insert name="sidebar" />
+                            </div>
+                        </aside>
+                    </ui:fragment>
                 </div>
             </div>
         </div>

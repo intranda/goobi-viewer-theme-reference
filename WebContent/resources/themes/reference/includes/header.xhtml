@@ -12,187 +12,104 @@
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
-    <!-- PAGE HEADER -->
     <header
         id="header"
-        class="header #{userBean.admin ? '-adminActive':''}">
-        <div class="header__topbar"></div>
-        <div class="header__secondaryTopbar"></div>
-        <!-- CONTROLS -->
-        <div class="header__control-bar">
-            <!-- PAGE HEADER MOBILE LOGO -->
-            <div class="header__logo-mobile">
-                <a href="#{request.contextPath}/">
-                    <img
-                        src='#{adminThemesBean.getLogo("/images/template/goobi_logo.svg", 300, 150)}'
-                        alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
-                </a>
+        class="header #{userBean.admin ? '-adminActive' : ''}">
+        <div class="header__bar">
+            <a
+                class="header__logo"
+                href="#{request.contextPath}/">
+                <img
+                    src='#{adminThemesBean.getLogo("/images/template/goobi_logo.svg", 300, 150)}'
+                    alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
+            </a>
+
+            <div class="header__search-box">
+                <widgetComponent:widget_searchField
+                    id="headerSearch"
+                    htmlId="headerSearchField"
+                    onlySearchIcon="true" />
+                <kbd
+                    class="header__search-shortcut"
+                    aria-hidden="true">
+                    ⌘ K
+                </kbd>
             </div>
-            <!-- PAGE HEADER TOP ACTIONS -->
-            <div class="container header__actions">
-                <!-- BOOKMARKS -->
-                <div class="header__actions-bookmark">
-                    <viewerComponent:bookmarkListNavigation />
+
+            <!-- Only the first three configured entries are shown in this row.
+                 The drawer below always renders the complete CMS navigation. -->
+            <div
+                id="pageNavigation"
+                class="header__primary-navigation">
+                <viewerComponent:navigation
+                    id="header__nav-menu-desktop"
+                    megaMenu="false" />
+            </div>
+
+            <div class="header__actions">
+                <div class="header__actions-color-switch">
+                    <viewerComponent:colorThemeToggle />
                 </div>
-                <!-- CHANGE LOCALE -->
                 <ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
                     <div
                         id="changeLocalWrapper"
                         class="header__actions-language">
                         <button
                             type="button"
-                            class="btn btn--clean header__actions-language-button"
+                            class="btn btn--clean header__icon-button"
                             data-toggle="local"
+                            aria-controls="changeLocal"
+                            aria-expanded="false"
                             aria-label="#{msg.aria_label__switch_language}">
-                            <!--  CHANGE THIS MESSAGE KEY FOR LONG/SHORT LANGUAGE STRINGS -->
-                            <!-- #{msg['changeLocal_long_' += navigationHelper.localeString]}</button> -->
-
-                            <!-- GENERIC ICON AND MESSAGE -->
-                            <util:icon-text
-                                icon="world"
-                                text="#{msg.language}" />
+                            <util:icon icon="world" />
                         </button>
-                        <!--  STYLE CSS FOR LANGUAGE TOGGLE FUNCTIONALITY -->
                         <viewerComponent:changeLocal
                             toggleLanguage="true"
                             longLanguageStrings="true" />
                     </div>
                 </ui:fragment>
-                <!-- LOGIN NAVIGATION -->
-                <div class="header__actions-login">
-                    <viewerComponent:loginNavigation />
-                </div>
-
-                <div class="header__actions-color-switch">
-                    <viewerComponent:colorThemeToggle />
-                </div>
-
-                <ui:fragment rendered="#{adminClientsBean.clientLoggedIn}">
-                    <div class="header__client-status">
-                        <viewerComponent:clientApplicationStatus />
-                    </div>
-                </ui:fragment>
-
                 <button
                     type="button"
                     data-open="menu"
+                    aria-controls="headerMenu"
+                    aria-expanded="false"
                     aria-label="#{msg.aria_label__open_navigation}"
-                    class="header__mobile-burger-menu-alternative">
-                    <span></span>
+                    data-label-open="#{msg.aria_label__open_navigation}"
+                    data-label-close="#{msg.close}"
+                    class="header__icon-button header__menu-toggle">
+                    <util:icon icon="menu-2" />
                 </button>
             </div>
         </div>
-        <div class="container header__wrapper">
-            <div class="header__inner">
-                <!-- DESKTOP NAVIGATION -->
-                <div
-                    id="pageNavigation"
-                    class="page-navigation #{userBean.admin ? '-adminActive':''}">
-                    <div class="container page-navigation__wrapper">
-                        <!-- PAGE HEADER LOGO -->
-                        <div class="header__logo">
-                            <a href="#{request.contextPath}/">
-                                <img
-                                    src='#{adminThemesBean.getLogo("/images/template/goobi_logo.svg", 300, 150)}'
-                                    alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
-                            </a>
-                        </div>
 
-                        <viewerComponent:navigation
-                            id="header__nav-menu-desktop"
-                            megaMenu="false" />
-
-                        <div class="header__actions-search-wrapper">
-                            <div
-                                data-target="search-box"
-                                class="header__search-box">
-                                <widgetComponent:widget_searchField onlySearchIcon="true" />
-                            </div>
-
-                            <button
-                                data-close="search"
-                                class="btn btn--icon header__actions-search-close-button"
-                                aria-label="#{msg.close}: #{msg.cms_sidebarElement_searchField}">
-                                <span class="header__actions-search-close">
-                                    <span></span>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <div
+            class="header__navigation-mobile-background"
+            aria-hidden="true"></div>
+        <div
+            id="headerMenu"
+            class="page-navigation__mobile"
+            inert="inert"
+            aria-hidden="true">
+            <div class="header__menu-heading">
+                <span>#{msg.aria_label__nav_main}</span>
+                <button
+                    type="button"
+                    class="btn btn--clean header__icon-button"
+                    data-close="menu"
+                    aria-label="#{msg.close}">
+                    <util:icon icon="x" />
+                </button>
             </div>
-        </div>
-
-        <!-- MOBILE MENU OVERLAY/BACKGROUND -->
-        <div class="header__navigation-mobile-background"></div>
-
-        <!-- MOBILE ONLY NAVIGATION -->
-        <nav class="page-navigation__mobile #{userBean.admin ? '-adminActive':''}">
-            <div class="container page-navigation__wrapper">
-                <viewerComponent:navigation
-                    id="pageNavigationMobile"
-                    megaMenu="false" />
-                <!-- CHANGE LANGUAGE -->
-                <ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
-                    <div class="page-navigation__mobile-languages-wrapper">
-                        <div
-                            class="page-navigation__mobile-languages-trigger"
-                            data-trigger="mobileToggleLanguages">
-                            <button class="btn btn--clean">
-                                <util:icon-text
-                                    icon="world"
-                                    text="#{msg.MD_LANGUAGE}" />
-                            </button>
-                            <span
-                                class="page-navigation__mobile-languages-toggle-indicator"
-                                data-state="closed"
-                                aria-hidden="true">
-                                <span
-                                    class="page-navigation__mobile-languages-toggle-indicator-icon"
-                                    data-icon-state="closed">
-                                    <util:icon icon="plus" />
-                                </span>
-                                <span
-                                    class="page-navigation__mobile-languages-toggle-indicator-icon"
-                                    data-icon-state="open"
-                                    hidden="hidden">
-                                    <util:icon icon="minus" />
-                                </span>
-                            </span>
-                        </div>
-                        <h:form
-                            id="changeLocalFormMobile"
-                            prependId="false">
-                            <ul
-                                class="page-navigation__mobile-languages-selection"
-                                data-target="mobileLanguageSelection">
-                                <ui:repeat
-                                    var="lang"
-                                    value="#{navigationHelper.supportedLanguages}">
-                                    <li>
-                                        <h:commandLink
-                                            styleClass="page-navigation__mobile-languages-selection-link #{navigationHelper.localeString == lang ? 'activeLang' : ''}">
-                                            <span class="page-navigation__mobile-languages-selection-label">
-                                                <h:outputText value="#{msg['changeLocal_long_' += lang]}" />
-                                            </span>
-                                            <ui:fragment rendered="#{navigationHelper.localeString == lang}">
-                                                <span
-                                                    class="page-navigation__mobile-languages-selection-icon"
-                                                    aria-hidden="true">
-                                                    <util:icon icon="check" />
-                                                </span>
-                                            </ui:fragment>
-                                            <f:setPropertyActionListener
-                                                target="#{navigationHelper.localeString}"
-                                                value="#{lang}" />
-                                        </h:commandLink>
-                                    </li>
-                                </ui:repeat>
-                            </ul>
-                        </h:form>
-                    </div>
+            <viewerComponent:navigation
+                id="pageNavigationMobile"
+                megaMenu="false" />
+            <div class="header__menu-account">
+                <div class="header__actions-bookmark"><viewerComponent:bookmarkListNavigation /></div>
+                <div class="header__actions-login"><viewerComponent:loginNavigation /></div>
+                <ui:fragment rendered="#{adminClientsBean.clientLoggedIn}">
+                    <div class="header__client-status"><viewerComponent:clientApplicationStatus /></div>
                 </ui:fragment>
             </div>
-        </nav>
+        </div>
     </header>
 </ui:composition>
