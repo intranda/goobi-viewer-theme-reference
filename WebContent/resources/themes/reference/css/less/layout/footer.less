@@ -56,18 +56,18 @@
             max-width: 150px;
             border: none;
             padding: 0.5rem 1.6rem;
-            border-radius: var(--button-border-radius);
+            border-radius: var(--radius-button);
             font-size: var(--font-size-normal);
             font-weight: 500;
-            color: var(--fg-inverse);
-            background-color: var(--ci-color1);
+            color: var(--fg-on-brand);
+            background-color: var(--bg-brand);
             cursor: pointer;
             transition: background-color 0.2s ease;
 
             &:hover {
                 text-decoration: none;
-                background-color: var(--ci-hovercolor1);
-                color: var(--fg-inverse);
+                background-color: var(--bg-brand-hover);
+                color: var(--fg-on-brand);
             }
         }
 
@@ -243,8 +243,8 @@
             justify-content: center;
             width: 6rem;
             height: 4rem;
-            border-radius: var(--container-border-radius);
-            border: 2px solid var(--ci-color1);
+            border-radius: var(--radius-container);
+            border: 2px solid var(--brand);
             color: var(--fg-inverse);
 
             transition:
@@ -252,7 +252,7 @@
                 background-color 0.2s ease;
 
             &:hover {
-                border-color: var(--ci-hovercolor1);
+                border-color: var(--brand-hover);
                 background-color: rgb(from var(--fg-inverse) r g b / 8%);
             }
 
@@ -271,8 +271,8 @@
         margin-left: auto;
         width: 4.2rem;
         height: 4.2rem;
-        border-radius: var(--container-border-radius);
-        border: 2px solid var(--ci-color1);
+        border-radius: var(--radius-container);
+        border: 2px solid var(--brand);
         color: var(--fg-inverse);
         cursor: pointer;
         background-color: transparent;
@@ -282,7 +282,7 @@
             background-color 0.2s ease;
 
         &:hover {
-            border-color: var(--ci-hovercolor1);
+            border-color: var(--brand-hover);
             background-color: rgb(from var(--fg-inverse) r g b / 8%);
             color: var(--fg-inverse);
         }

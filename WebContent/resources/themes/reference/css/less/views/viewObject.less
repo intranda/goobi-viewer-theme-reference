@@ -9,12 +9,12 @@
     /* IMAGE */
     &__object-3d,
     &__image {
-        border: var(--border);
-        border-radius: 0 0 var(--container-border-radius) var(--container-border-radius);
+        border: 1px solid var(--border-faint);
+        border-radius: 0 0 var(--radius-container) var(--radius-container);
         border-top: 0;
         background-color: var(--bg-content-box);
         &.-setBorderTop {
-            border-top: var(--border);
+            border-top: 1px solid var(--border-faint);
         }
     }
     &__image-loader {
@@ -70,56 +70,56 @@
         .image-controls,
         .view-object__image {
             border-width: 1px;
-            border-color: var(--entity-work-color);
+            border-color: var(--entity-work-bg);
         }
         .metadata__wrapper {
-            border: 1px solid var(--entity-work-color);
+            border: 1px solid var(--entity-work-bg);
         }
     }
     &.docstructtype__person {
         .image-controls,
         .view-object__image {
             border-width: 1px;
-            border-color: var(--entity-person-color);
+            border-color: var(--entity-person-bg);
         }
         .metadata__wrapper {
-            border: 1px solid var(--entity-person-color);
+            border: 1px solid var(--entity-person-bg);
         }
     }
     &.docstructtype__agent {
         .image-controls,
         .view-object__image {
             border-width: 1px;
-            border-color: var(--entity-agent-color);
+            border-color: var(--entity-agent-bg);
         }
         .metadata__wrapper {
-            border: 1px solid var(--entity-agent-color);
+            border: 1px solid var(--entity-agent-bg);
         }
     }
     &.docstructtype__award {
         .image-controls,
         .view-object__image {
             border-width: 1px;
-            border-color: var(--entity-award-color);
+            border-color: var(--entity-award-bg);
         }
         .metadata__wrapper {
-            border: 1px solid var(--entity-award-color);
+            border: 1px solid var(--entity-award-bg);
         }
     }
     &.docstructtype__event {
         .image-controls,
         .view-object__image {
             border-width: 1px;
-            border-color: var(--entity-event-color);
+            border-color: var(--entity-event-bg);
         }
         .metadata__wrapper {
-            border: 1px solid var(--entity-event-color);
+            border: 1px solid var(--entity-event-bg);
         }
     }
 }
 
 .view-object-content {
-    border: var(--border);
+    border: 1px solid var(--border-faint);
     background-color: var(--bg-content-box);
 }
 

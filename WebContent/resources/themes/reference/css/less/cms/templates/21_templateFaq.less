@@ -11,16 +11,16 @@
     &__description,
     &__list {
         background-color: var(--bg-content-box);
-        border: var(--border);
-        border-radius: var(--container-border-radius);
+        border: 1px solid var(--border-faint);
+        border-radius: var(--radius-container);
     }
     &__description {
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
     }
     &__list {
         .card {
             background-color: var(--bg-general);
-            border-radius: var(--container-small-border-radius) !important;
+            border-radius: var(--radius-container-small) !important;
             h2 a,
             a::before {
                 color: var(--fg-general);
@@ -32,7 +32,7 @@
             }
         }
         .card-header {
-            border-radius: var(--container-small-border-radius) !important;
+            border-radius: var(--radius-container-small) !important;
             &:hover {
             }
         }

@@ -32,14 +32,14 @@
     &__input-autocomplete {
         .ui-autocomplete {
             .ui-autocomplete-input {
-                border: var(--border);
-                border-radius: var(--container-border-radius);
-                box-shadow: var(--container-box-shadow);
+                border: 1px solid var(--border-faint);
+                border-radius: var(--radius-container);
+                box-shadow: var(--shadow-container);
                 transition: box-shadow 0.15s ease;
 
                 &:focus {
                     box-shadow:
-                        var(--container-box-shadow),
+                        var(--shadow-container),
                         0 0 0 3px var(--brand-tint-bg);
                 }
                 background: var(--bg-popover);
@@ -61,21 +61,21 @@
     &__filter-select {
         .custom-control--select,
         select {
-            border: var(--border);
-            border-radius: var(--container-small-border-radius) !important;
-            box-shadow: var(--container-box-shadow);
+            border: 1px solid var(--border-faint);
+            border-radius: var(--radius-container-small) !important;
+            box-shadow: var(--shadow-container);
             transition:
                 border-color 0.15s ease,
                 box-shadow 0.15s ease;
 
             &:hover {
-                border-color: var(--ci-color1);
+                border-color: var(--brand);
             }
 
             &:focus-within {
-                border-color: var(--ci-color1);
+                border-color: var(--brand);
                 box-shadow:
-                    var(--container-box-shadow),
+                    var(--shadow-container),
                     0 0 0 3px var(--brand-tint-bg);
             }
 
@@ -98,14 +98,14 @@
     &__action {
     }
     &__submit-button.btn {
-        box-shadow: var(--container-box-shadow);
+        box-shadow: var(--shadow-container);
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         transition: box-shadow 0.15s ease;
         &:hover,
         &:focus {
             box-shadow:
-                var(--container-box-shadow),
+                var(--shadow-container),
                 0 0 0 3px var(--brand-tint-bg);
         }
     }
@@ -115,27 +115,27 @@
 /* AUTOCOMPLETE DROPDOWN (jQuery UI menu, appended to body) */
 .ui-autocomplete.ui-menu {
     border: none;
-    border-radius: var(--container-border-radius);
-    box-shadow: var(--container-box-shadow);
+    border-radius: var(--radius-container);
+    box-shadow: var(--shadow-container);
     padding: 0.4rem;
     margin-top: 0.5rem;
 
     background-color: var(--bg-popover);
 
     .ui-menu-item {
-        border-radius: var(--container-small-border-radius);
+        border-radius: var(--radius-container-small);
 
         .ui-menu-item-wrapper {
             padding: 0.6rem 1rem;
-            border-radius: var(--container-small-border-radius);
+            border-radius: var(--radius-container-small);
             color: var(--fg-content-box);
             transition:
                 background-color 0.15s ease,
                 color 0.15s ease;
         }
         .ui-state-active {
-            background-color: var(--ci-color1);
-            color: var(--fg-inverse);
+            background-color: var(--bg-brand);
+            color: var(--fg-on-brand);
             border: none;
             margin: 0;
         }

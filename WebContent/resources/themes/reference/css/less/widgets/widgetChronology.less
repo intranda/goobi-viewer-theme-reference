@@ -14,8 +14,8 @@
             text-align: center;
             font-weight: 600;
             background-color: var(--bg-content-box);
-            border: 1px solid var(--border-color);
-            border-radius: var(--container-small-border-radius);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-container-small);
             padding: 0.4rem 0.6rem;
             transition:
                 border-color 0.2s ease,
@@ -23,7 +23,7 @@
             &:hover,
             &:focus {
                 outline: none;
-                border-color: var(--ci-color1);
+                border-color: var(--brand);
                 box-shadow: 0 0 0 3px var(--brand-tint-bg);
             }
         }
@@ -46,7 +46,7 @@
                 color: var(--fg-content-box);
                 transition: color 0.2s ease;
                 &:hover {
-                    color: var(--lk-general-hover);
+                    color: var(--fg-link-hover);
                 }
             }
         }
@@ -83,7 +83,7 @@
     }
 
     .ui-slider-range {
-        background-color: var(--ci-color1);
+        background-color: var(--brand);
         border-radius: 999px;
     }
 
@@ -92,9 +92,9 @@
         width: 1.5rem;
         height: 1.5rem;
         background-color: var(--bg-content-box);
-        border: 2px solid var(--ci-color1);
+        border: 2px solid var(--brand);
         border-radius: 50%;
-        box-shadow: var(--container-box-shadow);
+        box-shadow: var(--shadow-container);
         cursor: pointer;
         outline: none;
         transition:
@@ -105,7 +105,7 @@
             box-shadow: 0 0 0 5px var(--brand-tint-bg);
         }
         &.ui-state-active {
-            background-color: var(--ci-color1);
+            background-color: var(--brand);
         }
     }
 }

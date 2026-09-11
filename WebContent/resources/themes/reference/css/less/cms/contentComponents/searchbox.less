@@ -12,34 +12,34 @@
     }
 
     .form-control {
-        border: var(--border);
-        border-radius: var(--container-border-radius) !important;
-        box-shadow: var(--container-box-shadow);
+        border: 1px solid var(--border-faint);
+        border-radius: var(--radius-container) !important;
+        box-shadow: var(--shadow-container);
         transition: box-shadow 0.15s ease;
 
         &:focus {
             box-shadow:
-                var(--container-box-shadow),
+                var(--shadow-container),
                 0 0 0 3px var(--brand-tint-bg);
         }
     }
 
     .input-group-addon {
         border: none;
-        border-radius: var(--container-border-radius) !important;
+        border-radius: var(--radius-container) !important;
         background-color: transparent;
         padding: 0;
 
         .btn {
             height: 100%;
-            border-radius: var(--container-border-radius);
-            box-shadow: var(--container-box-shadow);
+            border-radius: var(--radius-container);
+            box-shadow: var(--shadow-container);
             transition: box-shadow 0.15s ease;
 
             &:hover,
             &:focus {
                 box-shadow:
-                    var(--container-box-shadow),
+                    var(--shadow-container),
                     0 0 0 3px var(--brand-tint-bg);
             }
         }

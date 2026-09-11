@@ -11,9 +11,9 @@
     min-width: 160px;
     padding: 0.5rem;
     background-color: var(--bg-content-box);
-    border: 1px solid var(--border-color);
-    border-radius: var(--container-border-radius);
-    box-shadow: var(--container-box-shadow);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-container);
+    box-shadow: var(--shadow-container);
     z-index: 2030;
     //	&:before {
     //		content: "";
@@ -42,7 +42,7 @@
         color: var(--fg-content-box);
         font-size: var(--font-size-medium);
         padding: 0.55rem 1rem;
-        border-radius: var(--container-small-border-radius);
+        border-radius: var(--radius-container-small);
         text-align: left;
         transition:
             background-color 0.15s ease,
@@ -51,7 +51,7 @@
         &:active,
         &:focus {
             background-color: var(--brand-tint-bg);
-            color: var(--lk-general-hover);
+            color: var(--fg-link-hover);
             text-decoration: none;
         }
         &.activeLang {

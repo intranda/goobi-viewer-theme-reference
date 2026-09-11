@@ -7,11 +7,11 @@
 .collections {
     a,
     button {
-        color: var(--lk-content-box);
+        color: var(--fg-link-content-box);
         &:focus,
         &:hover,
         &:active {
-            color: var(--lk-content-box);
+            color: var(--fg-link-content-box);
         }
     }
 
@@ -19,8 +19,8 @@
     /* ELEMENT */
     &__wrapper {
         background-color: var(--bg-content-box);
-        border: var(--border);
-        border-radius: var(--container-border-radius);
+        border: 1px solid var(--border-faint);
+        border-radius: var(--radius-container);
     }
 }
 .collection {
@@ -28,7 +28,7 @@
     .row {
     }
     &__item {
-        border-top: var(--border);
+        border-top: 1px solid var(--border-faint);
     }
     &__structure,
     &__title,

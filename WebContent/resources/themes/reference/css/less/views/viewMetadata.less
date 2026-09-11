@@ -7,27 +7,27 @@
 .view-metadata {
     &.docstructtype__work {
         .metadata__wrapper {
-            border: 1px solid var(--entity-work-color);
+            border: 1px solid var(--entity-work-bg);
         }
     }
     &.docstructtype__person {
         .metadata__wrapper {
-            border: 1px solid var(--entity-person-color);
+            border: 1px solid var(--entity-person-bg);
         }
     }
     &.docstructtype__agent {
         .metadata__wrapper {
-            border: 1px solid var(--entity-agent-color);
+            border: 1px solid var(--entity-agent-bg);
         }
     }
     &.docstructtype__award {
         .metadata__wrapper {
-            border: 1px solid var(--entity-award-color);
+            border: 1px solid var(--entity-award-bg);
         }
     }
     &.docstructtype__event {
         .metadata__wrapper {
-            border: 1px solid var(--entity-event-color);
+            border: 1px solid var(--entity-event-bg);
         }
     }
 }
@@ -37,20 +37,20 @@
     &__title {
     }
     .bookmark-toggle__icon {
-        border-radius: var(--container-small-border-radius);
+        border-radius: var(--radius-container-small);
     }
     &__bookmark-button {
         &[data-bookmark-list-type='add'] {
             color: var(--fg-accent) !important;
-            background-color: rgb(from var(--accent-color) r g b / 20%) !important;
-            border-radius: var(--container-small-border-radius);
+            background-color: rgb(from var(--accent) r g b / 20%) !important;
+            border-radius: var(--radius-container-small);
         }
     }
     &__wrapper {
         &.-isBoxed {
-            border-radius: var(--container-border-radius);
+            border-radius: var(--radius-container);
 
-            border: var(--border);
+            border: 1px solid var(--border-faint);
             background-color: var(--bg-content-box);
 
             .metadata__ungrouped-wrapper {
@@ -61,7 +61,7 @@
             }
         }
         a {
-            color: var(--lk-content-box);
+            color: var(--fg-link-content-box);
         }
     }
     /* ELEMENTS / EVENTS */
@@ -123,7 +123,7 @@
     &__locked-value-icon {
     }
     &__element-wrapper-single {
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         dt {
         }
     }
@@ -156,7 +156,7 @@
     }
     &__grouped-wrapper {
         background-color: var(--bg-content-box);
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         dt,
         dd {
         }
@@ -165,7 +165,7 @@
         }
     }
     &__ungrouped-wrapper {
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         &:last-child {
         }
     }

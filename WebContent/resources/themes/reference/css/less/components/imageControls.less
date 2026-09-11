@@ -5,15 +5,15 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-    border: var(--border);
-    border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
+    border: 1px solid var(--border-faint);
+    border-radius: var(--radius-container) var(--radius-container) 0 0;
     border-bottom: 0;
 
     &__crowd-link,
     &__campaign-link,
     &__share-image-link {
         &:hover {
-            color: var(--lk-general-hover);
+            color: var(--fg-link-hover);
         }
     }
 
@@ -31,8 +31,8 @@
         &.fulltext {
         }
         &.add-to-bookmark {
-            background-color: rgb(from var(--accent-color) r g b / 20%);
-            border-radius: var(--container-small-border-radius);
+            background-color: rgb(from var(--accent) r g b / 20%);
+            border-radius: var(--radius-container-small);
             .icon-wrapper svg {
                 stroke: var(--brand);
                 color: var(--fg-accent);
@@ -44,7 +44,7 @@
         &.image-filter,
         &.share-image-region {
             &:hover {
-                color: var(--lk-general-hover);
+                color: var(--fg-link-hover);
             }
         }
     }
@@ -58,8 +58,8 @@
     &__select-text {
     }
     &__action {
-        border-radius: var(--container-small-border-radius);
-        background-color: var(--image-controls-action-background);
+        border-radius: var(--radius-container-small);
+        background-color: var(--image-controls-action-bg);
         /* ELEMENT */
         [class*='image-'] {
         }
@@ -132,8 +132,8 @@
         }
         &.zoom-slider-wrapper {
             .zoom-slider {
-                border-radius: var(--container-small-border-radius);
-                background: var(--image-controls-action-background);
+                border-radius: var(--radius-container-small);
+                background: var(--image-controls-action-bg);
                 //Firefox
                 &::-moz-range-thumb {
                 }

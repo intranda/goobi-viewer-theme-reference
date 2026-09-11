@@ -9,10 +9,10 @@
     // --combined-facets-* (mixins.less) mirror .widget's own colors
     // (widgets.less) 1:1, so no separate light/dark handling is needed here —
     // the custom properties already carry the right value per theme
-    border-radius: var(--container-border-radius);
-    background-color: var(--combined-facets-background);
-    box-shadow: var(--container-box-shadow);
-    color: var(--combined-facets-color);
+    border-radius: var(--radius-container);
+    background-color: var(--combined-facets-bg);
+    box-shadow: var(--shadow-container);
+    color: var(--combined-facets-fg);
     padding-bottom: 1.5rem;
     margin-bottom: 1.2rem;
 
@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
         padding: 1.5rem;
     }
     &__title {
@@ -79,7 +79,7 @@
     // icons pick up the local accent color); this theme keeps the same
     // topbar icon color normal widgets use, for visual consistency
     .widget__topbar .widget__topbar-icon-svg {
-        color: var(--widget-icon-color-topbar);
+        color: var(--widget-topbar-icon);
     }
 
     .widget-chronology-slider__slider {

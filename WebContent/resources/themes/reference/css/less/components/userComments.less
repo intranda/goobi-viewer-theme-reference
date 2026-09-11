@@ -7,7 +7,7 @@
 .user-comments {
     &__table {
         background: var(--bg-content-box);
-        border: var(--border);
+        border: 1px solid var(--border-faint);
     }
     &__table-entry {
         &:hover {
@@ -16,10 +16,10 @@
     }
     /* ELEMENT */
     &__message-login {
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
         padding-top: 0;
         text-align: left;
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         background-color: var(--bg-content-box);
         h2 {
             padding: 1.5rem 0;
@@ -29,11 +29,11 @@
         }
     }
     &__comment {
-        border: var(--border);
+        border: 1px solid var(--border-faint);
     }
     &__comment-image {
         img {
-            border: var(--border);
+            border: 1px solid var(--border-faint);
         }
     }
     &__comment-metadata {
@@ -102,17 +102,17 @@
     &__add-comment {
         label {
             span {
-                background-color: var(--ci-color1);
+                background-color: var(--bg-brand);
                 font-weight: 600;
                 border: none;
                 padding: 0.3rem 1.2rem;
             }
         }
         &-add {
-            border: var(--border);
+            border: 1px solid var(--border-faint);
             background-color: var(--bg-content-box);
             textarea {
-                border: var(--border);
+                border: 1px solid var(--border-faint);
                 &:focus {
                 }
             }

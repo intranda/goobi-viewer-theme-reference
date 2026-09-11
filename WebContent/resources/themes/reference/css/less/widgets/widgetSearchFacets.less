@@ -87,25 +87,25 @@
             opacity: 0;
             pointer-events: none;
 
-            border-radius: var(--container-small-border-radius);
-            box-shadow: var(--container-box-shadow);
+            border-radius: var(--radius-container-small);
+            box-shadow: var(--shadow-container);
             transition:
                 width 0.3s ease,
                 opacity 0.2s ease;
             &::-webkit-input-placeholder {
-                color: var(--placeholder);
+                color: var(--fg-placeholder);
                 opacity: 1;
             }
             &:-moz-placeholder {
-                color: var(--placeholder);
+                color: var(--fg-placeholder);
                 opacity: 1;
             }
             &::-moz-placeholder {
-                color: var(--placeholder);
+                color: var(--fg-placeholder);
                 opacity: 1;
             }
             &:-ms-input-placeholder {
-                color: var(--placeholder);
+                color: var(--fg-placeholder);
                 opacity: 1;
             }
             &.in {
@@ -150,7 +150,7 @@
     }
 
     &__collapse-button {
-        color: var(--widget-icon-color-expand);
+        color: var(--widget-expand-icon);
         .icon-svg {
             width: 22px;
             height: 22px;
@@ -192,23 +192,23 @@
     }
 
     &__boolean-button {
-        border-radius: var(--button-border-radius);
+        border-radius: var(--radius-button);
         border: none;
         color: var(--brand);
         background-color: var(--bg-popover);
 
         &:hover {
-            color: var(--fg-inverse) !important;
-            background-color: var(--ci-hovercolor1) !important;
+            color: var(--fg-on-brand) !important;
+            background-color: var(--bg-brand-hover) !important;
         }
 
         &.-active {
-            color: var(--fg-inverse);
-            background-color: var(--ci-color1);
+            color: var(--fg-on-brand);
+            background-color: var(--bg-brand);
 
             &:hover {
-                color: var(--fg-inverse);
-                background-color: var(--ci-hovercolor1);
+                color: var(--fg-on-brand);
+                background-color: var(--bg-brand-hover);
             }
         }
     }

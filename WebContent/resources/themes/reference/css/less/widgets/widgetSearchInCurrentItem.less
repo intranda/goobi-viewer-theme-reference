@@ -8,16 +8,16 @@
     padding: 0;
     /* ELEMENT */
     .form-group {
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
 
         input {
-            border-radius: var(--container-border-radius) !important;
+            border-radius: var(--radius-container) !important;
             margin-right: 0.5rem;
-            box-shadow: var(--container-box-shadow);
+            box-shadow: var(--shadow-container);
         }
     }
     .form-control {
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         padding: 2rem 1.2rem;
     }
     .input-group {
@@ -28,23 +28,23 @@
     .input-group-addon {
         display: flex;
         justify-content: center;
-        box-shadow: var(--container-box-shadow);
-        background-color: var(--ci-color1);
-        border-radius: var(--container-small-border-radius);
+        box-shadow: var(--shadow-container);
+        background-color: var(--bg-brand);
+        border-radius: var(--radius-container-small);
         width: 41px;
         border: none;
 
         input {
         }
         button {
-            color: var(--fg-inverse);
+            color: var(--fg-on-brand);
         }
 
         &:hover {
-            background-color: var(--ci-hovercolor1);
+            background-color: var(--bg-brand-hover);
             box-shadow:
-                var(--container-box-shadow),
-                0 0 0 3px rgb(from var(--ci-color1) r g b / 8%);
+                var(--shadow-container),
+                0 0 0 3px rgb(from var(--brand) r g b / 8%);
         }
     }
 }

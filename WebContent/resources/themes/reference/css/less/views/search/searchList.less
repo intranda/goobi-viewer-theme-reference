@@ -46,7 +46,7 @@
         border-radius: var(--search-toolbar-button-radius);
 
         &:hover {
-            color: var(--lk-general-hover);
+            color: var(--fg-link-hover);
         }
         &:focus,
         &:active {
@@ -177,13 +177,13 @@
     }
     .custom-control--select {
         border: none;
-        box-shadow: var(--container-box-shadow);
+        box-shadow: var(--shadow-container);
     }
     /* ADVANCED SEARCH INFO */
     &__adv-search-info {
         background: var(--bg-content-box);
         color: var(--fg-content-box);
-        border: var(--border);
+        border: 1px solid var(--border-faint);
     }
     &__adv-search-info-back {
     }
@@ -199,7 +199,7 @@
     &__nav-helper-wrapper {
         margin-bottom: 4rem;
         padding-bottom: 2rem;
-        border-bottom: var(--border);
+        border-bottom: 1px solid var(--border-faint);
     }
     &__hits-list {
         gap: 1.2rem;
@@ -207,23 +207,23 @@
     &__hit {
         background-color: var(--bg-content-box);
         color: var(--fg-content-box);
-        border: var(--border);
-        border-radius: var(--container-border-radius);
+        border: 1px solid var(--border-faint);
+        border-radius: var(--radius-container);
         /* COLORING FOR THE ENTITY GHOUPS */
         &.docstructtype__work {
-            border: 1px solid var(--entity-work-color);
+            border: 1px solid var(--entity-work-bg);
         }
         &.docstructtype__person {
-            border: 1px solid var(--entity-person-color);
+            border: 1px solid var(--entity-person-bg);
         }
         &.docstructtype__agent {
-            border: 1px solid var(--entity-agent-color);
+            border: 1px solid var(--entity-agent-bg);
         }
         &.docstructtype__award {
-            border: 1px solid var(--entity-award-color);
+            border: 1px solid var(--entity-award-bg);
         }
         &.docstructtype__event {
-            border: 1px solid var(--entity-event-color);
+            border: 1px solid var(--entity-event-bg);
         }
     }
     &__hit-header {
@@ -231,7 +231,7 @@
     &__hit-header-inner {
     }
     &__hit-number-wrapper {
-        background: var(--ci-color1);
+        background: var(--bg-brand);
     }
     &__hit-number {
     }
@@ -264,8 +264,8 @@
     }
     &__hit-thumbnail {
         img {
-            border-radius: var(--container-small-border-radius);
-            border: var(--search-thumbnail-border);
+            border-radius: var(--radius-container-small);
+            border: 2px solid var(--search-thumbnail-border);
         }
         [data-bookmark-list-type='add'] {
             color: var(--brand);
@@ -289,7 +289,7 @@
             font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            border-radius: var(--container-small-border-radius);
+            border-radius: var(--radius-container-small);
 
             padding: 0 0.6rem;
 
@@ -320,7 +320,7 @@
     button[data-toggle='hit-content'] {
         font-size: var(--font-size-medium);
         color: var(--fg-general);
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid var(--border-default);
         &:hover,
         &:focus,
         &:active {
@@ -375,19 +375,19 @@
     &__hit-top-wrapper {
         padding-bottom: 0.3rem;
         margin-bottom: 1.2rem;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-default);
     }
     &__hit-options-wrapper {
         margin-left: 0.5rem;
     }
     &__hit-options-button {
-        border-radius: var(--container-small-border-radius);
+        border-radius: var(--radius-container-small);
         color: var(--brand);
         background-color: transparent;
         transition: background-color 0.15s ease;
 
         &:hover {
-            background-color: rgb(from var(--ci-color1) r g b / 20%);
+            background-color: rgb(from var(--brand) r g b / 20%);
         }
 
         .icon-wrapper {
@@ -396,10 +396,10 @@
     }
     &__hit-options-button-bookmark {
         color: var(--fg-accent);
-        background-color: rgb(from var(--accent-color) r g b / 20%);
+        background-color: rgb(from var(--accent) r g b / 20%);
 
         &:hover {
-            background-color: rgb(from var(--accent-color) r g b / 20%);
+            background-color: rgb(from var(--accent) r g b / 20%);
         }
 
         .icon-wrapper {

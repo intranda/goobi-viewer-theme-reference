@@ -142,7 +142,7 @@
         font-size: 14px;
         font-weight: 500;
         padding: 0.5rem 0.9rem;
-        border-radius: var(--button-border-radius);
+        border-radius: var(--radius-button);
         transition:
             background-color 0.15s ease,
             color 0.15s ease;
@@ -150,7 +150,7 @@
         &:hover,
         &:focus,
         &:active {
-            color: var(--lk-general-hover);
+            color: var(--fg-link-hover);
             background-color: var(--brand-tint-bg);
         }
     }
@@ -303,7 +303,7 @@
         background: var(--bg-content-box) !important;
 
         .form-control {
-            box-shadow: var(--container-border-radius);
+            box-shadow: var(--radius-container);
 
             background: var(--brand-tint-bg);
         }
@@ -328,7 +328,7 @@
             z-index: 7;
             // background: @bg-content-box;
             border: none;
-            border-radius: var(--button-border-radius);
+            border-radius: var(--radius-button);
             box-shadow: none;
         }
 
@@ -429,7 +429,7 @@
 
     &__navigation-mobile-background {
         opacity: 0;
-        background: var(--ci-color1);
+        background: var(--bg-brand);
         height: 100%;
         width: 100%;
         position: absolute;
@@ -522,19 +522,19 @@
         padding: 0.65rem 1.1rem;
         font-size: var(--font-size-normal);
         color: var(--fg-header);
-        border-radius: var(--button-border-radius);
+        border-radius: var(--radius-button);
         transition:
             background-color 0.2ms ease,
             color 0.2ms ease;
         &:hover,
         &:focus,
         &:active {
-            color: var(--lk-general-hover);
+            color: var(--fg-link-hover);
             background-color: var(--bg-popover);
             background-image: linear-gradient(var(--brand-tint-bg), var(--brand-tint-bg));
 
             .caret {
-                color: var(--lk-general-hover);
+                color: var(--fg-link-hover);
             }
         }
     }
@@ -550,9 +550,9 @@
     &__submenu {
         top: calc(~'100%');
         background-color: var(--bg-popover);
-        border-radius: var(--container-border-radius);
-        box-shadow: var(--container-box-shadow);
-        border: 1px solid var(--border-color);
+        border-radius: var(--radius-container);
+        box-shadow: var(--shadow-container);
+        border: 1px solid var(--border-default);
 
         li {
             &:last-child {
@@ -578,7 +578,7 @@
             &:focus,
             &:active {
                 background-color: var(--brand-tint-bg);
-                color: var(--lk-general-hover);
+                color: var(--fg-link-hover);
             }
         }
         .caret {
@@ -969,20 +969,20 @@
 
                 background: transparent;
                 border: 0;
-                border-radius: var(--container-border-radius);
+                border-radius: var(--radius-container);
 
                 transition:
                     background-color 0.18s ease,
                     color 0.18s ease;
 
                 &[data-toggle='submenu'] {
-                    border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
+                    border-radius: var(--radius-container) var(--radius-container) 0 0;
                 }
 
                 &:hover,
                 &:focus,
                 &:active {
-                    color: var(--lk-general-hover);
+                    color: var(--fg-link-hover);
                     background-color: var(--brand-tint-bg);
                     background-image: none;
                     text-decoration: none;
@@ -1053,7 +1053,7 @@
                 padding: 0.25rem 0.75 0.25rem 0.75rem;
                 background: var(--bg-general);
                 border: 0;
-                border-radius: 0 0 var(--container-border-radius) var(--container-border-radius);
+                border-radius: 0 0 var(--radius-container) var(--radius-container);
                 margin-top: 3px;
 
                 display: block;
@@ -1087,7 +1087,7 @@
                     padding: 0.7rem 1rem;
                     font-weight: 500;
                     font-size: 1.3rem;
-                    border-radius: var(--button-border-radius);
+                    border-radius: var(--radius-button);
                 }
 
                 .caret {
@@ -1116,8 +1116,8 @@
             margin: 1.25rem 0 0;
             padding: 0.35rem;
 
-            border: 1px solid var(--border-color);
-            border-radius: var(--container-border-radius);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-container);
 
             box-shadow: 0 4px 16px rgb(from var(--shadow-color) r g b / 5%);
 
@@ -1133,7 +1133,7 @@
 
             color: var(--fg-header);
 
-            border-radius: var(--button-border-radius);
+            border-radius: var(--radius-button);
 
             transition: background-color 0.18s ease;
 
@@ -1161,7 +1161,7 @@
                 &:hover,
                 &:focus,
                 &:active {
-                    color: var(--lk-general-hover);
+                    color: var(--fg-link-hover);
                     background: transparent;
                 }
             }
@@ -1199,7 +1199,7 @@
 
             background: var(--brand-tint-bg);
             border: 0 !important;
-            border-radius: var(--button-border-radius);
+            border-radius: var(--radius-button);
 
             display: none;
 
@@ -1225,12 +1225,12 @@
                 font-size: 1.35rem;
                 font-weight: 400;
 
-                border-radius: var(--button-border-radius);
+                border-radius: var(--radius-button);
 
                 &:hover,
                 &:focus,
                 &:active {
-                    color: var(--lk-general-hover);
+                    color: var(--fg-link-hover);
                     background: var(--bg-content-box);
                     text-decoration: none;
                 }

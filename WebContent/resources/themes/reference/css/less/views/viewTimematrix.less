@@ -23,16 +23,16 @@
     }
     &__selection {
         background-color: var(--bg-content-box);
-        border: var(--border);
-        border-radius: var(--container-border-radius);
+        border: 1px solid var(--border-faint);
+        border-radius: var(--radius-container);
         #locateTimematrix {
         }
         #slider-range {
             .ui-slider-range {
             }
             .ui-slider-handle {
-                border: 1px solid var(--ci-color1);
-                background-color: var(--ci-color1);
+                border: 1px solid var(--bg-brand);
+                background-color: var(--bg-brand);
                 &.top {
                 }
                 &:focus {
@@ -91,10 +91,10 @@
     }
 
     &__content {
-        border: var(--border);
+        border: 1px solid var(--border-faint);
     }
     &__img {
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
         img {
         }
         img[onError] {

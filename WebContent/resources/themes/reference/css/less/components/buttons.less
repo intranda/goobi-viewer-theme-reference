@@ -7,43 +7,43 @@
 /* MODIFICATIONS */
 .btn {
     font-weight: 500;
-    border-radius: var(--button-border-radius);
+    border-radius: var(--radius-button);
 }
 
 .btn--full {
-    color: var(--fg-inverse);
-    background-color: var(--ci-color1);
-    border-color: var(--ci-color1);
+    color: var(--fg-on-brand);
+    background-color: var(--bg-brand);
+    border-color: var(--bg-brand);
     &:hover,
     &:active,
     &:focus,
     &.active:focus,
     &.focus,
     &:active.focus {
-        color: var(--fg-inverse);
-        background-color: var(--ci-hovercolor1);
-        border-color: var(--ci-hovercolor1);
+        color: var(--fg-on-brand);
+        background-color: var(--bg-brand-hover);
+        border-color: var(--bg-brand-hover);
     }
 }
 
 .btn--clean {
-    color: var(--lk-general);
+    color: var(--fg-link);
     &:hover,
     &:active,
     &:focus,
     &.active:focus,
     &.focus,
     &:active.focus {
-        color: var(--lh-general);
+        color: var(--fg-heading);
     }
 }
 
 .btn--link {
-    color: var(--lk-general);
+    color: var(--fg-link);
     &:hover,
     &:active,
     &:focus {
-        color: var(--lh-general);
+        color: var(--fg-heading);
     }
 }
 

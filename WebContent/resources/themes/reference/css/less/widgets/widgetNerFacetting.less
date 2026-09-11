@@ -3,19 +3,19 @@
    style declarations for widget_nerFacetting.xhtml
    ==============================================================*/
 #widgetNerFacetting {
-    border: var(--border);
+    border: 1px solid var(--border-faint);
     h2 {
         margin: 0;
         padding: 0.7rem 1.5rem;
         font-size: var(--font-size-normal);
         font-weight: 400;
-        color: var(--fg-inverse);
-        border-bottom: 1px solid var(--ci-color1);
-        background-color: var(--ci-color1);
+        color: var(--fg-on-brand);
+        border-bottom: 1px solid var(--bg-brand);
+        background-color: var(--bg-brand);
     }
     .facetting-content {
         .nav-tabs {
-            border-bottom: var(--border);
+            border-bottom: 1px solid var(--border-faint);
             li {
                 a {
                     background: var(--bg-content-box);
@@ -56,7 +56,7 @@
                 &:hover {
                 }
                 &.active[data-type='person'] {
-                    color: var(--ner-person-color);
+                    color: var(--ner-person-fg);
                 }
                 &[data-type='location'] {
                 }
@@ -77,13 +77,13 @@
             &.empty {
             }
             &.person {
-                color: var(--ner-person-color);
+                color: var(--ner-person-fg);
             }
             &.location {
-                color: var(--ner-location-color);
+                color: var(--ner-location-fg);
             }
             &.corporation {
-                color: var(--ner-institution-color);
+                color: var(--ner-institution-fg);
             }
         }
     }
@@ -96,11 +96,11 @@
                 }
                 .page-number {
                     a {
-                        color: var(--lk-general);
+                        color: var(--fg-link);
                         &:hover,
                         &:active,
                         &:focus {
-                            color: var(--lh-general);
+                            color: var(--fg-heading);
                         }
                     }
                 }
@@ -111,7 +111,7 @@
                         &.empty {
                         }
                         &.person {
-                            color: var(--ner-person-color);
+                            color: var(--ner-person-fg);
                         }
                         &.location {
                         }

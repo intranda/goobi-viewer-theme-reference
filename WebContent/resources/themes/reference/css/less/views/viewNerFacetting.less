@@ -7,10 +7,10 @@
     }
     .facetting-content {
         .nav-tabs {
-            border-bottom: var(--border);
+            border-bottom: 1px solid var(--border-faint);
             li {
                 a {
-                    border: var(--border);
+                    border: 1px solid var(--border-faint);
 
                     background: var(--ner-navigation-bg);
                     .glyphicon {
@@ -19,7 +19,7 @@
                 &.active a {
                     color: var(--fg-general);
 
-                    background: var(--ner-navigation-hover-bg);
+                    background: var(--ner-navigation-bg-hover);
                 }
             }
         }
@@ -65,7 +65,7 @@
 
 /* OVERVIEW */
 #nerFacetting #overview {
-    border: var(--border);
+    border: 1px solid var(--border-faint);
     .current-tags {
         background: var(--bg-hover);
         &:before {
@@ -74,13 +74,13 @@
             &.empty {
             }
             &.person {
-                color: var(--ner-person-color);
+                color: var(--ner-person-fg);
             }
             &.location {
-                color: var(--ner-location-color);
+                color: var(--ner-location-fg);
             }
             &.corporation {
-                color: var(--ner-institution-color);
+                color: var(--ner-institution-fg);
             }
         }
     }
@@ -91,7 +91,7 @@
                 }
                 .page-number {
                     a {
-                        color: var(--lk-general);
+                        color: var(--fg-link);
                         &:hover,
                         &:active,
                         &:focus {

@@ -86,7 +86,7 @@
 }
 
 /* KEYBOARD FOCUS */
-.mx-focus-ring(@color: var(--focus-ring); @width: 2px; @offset: -2px) {
+.mx-focus-ring(@color: var(--outline-focus); @width: 2px; @offset: -2px) {
     outline: @width solid @color;
     outline-offset: @offset;
 }
@@ -108,20 +108,20 @@
     --font-size-small: 1.3rem;
     --font-size-body: var(--font-size-medium);
 
-    --container-border-radius: 8px;
-    --container-small-border-radius: 4px;
-    --button-border-radius: 6px;
-    --combined-facets-radius: var(--button-border-radius);
-    --facet-control-radius: var(--container-small-border-radius);
+    --radius-container: 8px;
+    --radius-container-small: 4px;
+    --radius-button: 6px;
+    --combined-facets-radius: var(--radius-button);
+    --facet-control-radius: var(--radius-container-small);
 
-    --container-box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 4%);
+    --shadow-container: 0 1px 6px rgb(from var(--shadow-color) r g b / 4%);
     --active-facets-badge-shadow-hover: none;
 }
 
 /* THEME PALETTE */
 .mx-theme-palette() {
-    --ci-color1: #1565c0;
-    --ci-hovercolor1: #0078d4;
+    --color-brand: #1565c0;
+    --color-brand-hover: #0078d4;
     --color-entity-group-work: #dc7e2e;
     --color-entity-group-person: #b13b29;
     --color-entity-group-agent: #568fb2;
@@ -136,7 +136,7 @@
 /* THEME ROLES AND FEATURES — LIGHT */
 .mx-theme-light() {
     /* BRAND TINT */
-    --brand-tint-bg: rgb(from var(--ci-color1) r g b / 8%);
+    --brand-tint-bg: rgb(from var(--brand) r g b / 8%);
 
     /* FOOTER */
     --footer-main-bg: var(--footer-topnav-bg);
@@ -146,13 +146,13 @@
     --cookie-banner-link-decoration: none;
 
     /* NUMERIC PAGINATOR */
-    --numeric-paginator-active-bg: var(--ci-color1);
+    --numeric-paginator-bg-active: var(--bg-brand);
     --numeric-paginator-input-bg: var(--bg-content-box);
 
     /* CALENDAR */
     --calendar-day-bg: var(--bg-selected);
-    --calendar-day-hover-bg: var(--bg-active);
-    --calendar-day-hover-fg: var(--fg-inverse);
+    --calendar-day-bg-hover: var(--bg-control-active);
+    --calendar-day-fg-hover: var(--fg-inverse);
 
     /* COPYRIGHT INDICATOR */
     --copyright-indicator-inset-shadow:
@@ -160,41 +160,41 @@
         inset 0 2px 2px rgb(from var(--fg-on-bright) r g b / 25%);
 
     /* SEARCH RESULTS */
-    --search-thumbnail-border: 2px solid var(--bg-content-box);
+    --search-thumbnail-border: var(--bg-content-box);
     --search-docstruct-bg: var(--brand-tint-bg);
-    --search-docstruct-fg: var(--lk-content-box);
+    --search-docstruct-fg: var(--fg-link-content-box);
 
     /* NER NAVIGATION */
     --ner-navigation-bg: var(--bg-hover);
-    --ner-navigation-hover-bg: var(--bg-content-box);
+    --ner-navigation-bg-hover: var(--bg-content-box);
 
     /* MODAL AND USER SEARCH */
-    --modal-card-border: 1px solid rgb(from var(--fg-on-bright) r g b / 12.5%);
-    --user-search-action-border: 1px solid var(--border-strong);
+    --modal-card-border: rgb(from var(--fg-on-bright) r g b / 12.5%);
+    --user-search-action-border: var(--border-strong);
 
     /* ACCENT TEXT */
     --fg-accent: var(--color-accent-text-light);
 
     /* ENTITY GROUPS */
-    --entity-work-color: var(--color-entity-group-work);
+    --entity-work-bg: var(--color-entity-group-work);
     --fg-on-entity-work: var(--fg-on-bright);
-    --entity-person-color: var(--color-entity-group-person);
+    --entity-person-bg: var(--color-entity-group-person);
     --fg-on-entity-person: var(--fg-inverse);
-    --entity-agent-color: var(--color-entity-group-agent);
+    --entity-agent-bg: var(--color-entity-group-agent);
     --fg-on-entity-agent: var(--fg-on-bright);
-    --entity-award-color: var(--color-entity-group-award);
+    --entity-award-bg: var(--color-entity-group-award);
     --fg-on-entity-award: var(--fg-on-bright);
-    --entity-event-color: var(--color-entity-group-event);
+    --entity-event-bg: var(--color-entity-group-event);
     --fg-on-entity-event: var(--fg-on-bright);
 
     /* ACCENT */
-    --accent-color: var(--color-accent-light);
+    --accent: var(--color-accent-light);
 }
 
 /* THEME ROLES AND FEATURES — DARK */
 .mx-theme-dark() {
     /* BRAND TINT */
-    --brand-tint-bg: rgb(from var(--ci-color1) r g b / 15%);
+    --brand-tint-bg: rgb(from var(--brand) r g b / 15%);
 
     /* FOOTER */
     --footer-main-bg: color-mix(in srgb, var(--footer-topnav-bg) 30%, var(--bg-scrim));
@@ -204,48 +204,48 @@
     --cookie-banner-link-decoration: underline;
 
     /* NUMERIC PAGINATOR */
-    --numeric-paginator-active-bg: var(--bg-active);
-    --numeric-paginator-input-bg: var(--bg-active);
+    --numeric-paginator-bg-active: var(--bg-control-active);
+    --numeric-paginator-input-bg: var(--bg-control-active);
 
     /* CALENDAR */
-    --calendar-day-bg: var(--bg-active);
-    --calendar-day-hover-bg: var(--bg-hover);
-    --calendar-day-hover-fg: var(--fg-content-box);
+    --calendar-day-bg: var(--bg-control-active);
+    --calendar-day-bg-hover: var(--bg-hover);
+    --calendar-day-fg-hover: var(--fg-content-box);
 
     /* COPYRIGHT INDICATOR */
     --copyright-indicator-inset-shadow:
         inset 0 0 2px rgb(from var(--fg-inverse) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-inverse) r g b / 25%);
 
     /* SEARCH RESULTS */
-    --search-thumbnail-border: none;
-    --search-docstruct-bg: var(--ci-color1);
-    --search-docstruct-fg: var(--fg-inverse);
+    --search-thumbnail-border: transparent;
+    --search-docstruct-bg: var(--bg-brand);
+    --search-docstruct-fg: var(--fg-on-brand);
 
     /* NER NAVIGATION */
     --ner-navigation-bg: var(--bg-content-box);
-    --ner-navigation-hover-bg: var(--bg-hover);
+    --ner-navigation-bg-hover: var(--bg-hover);
 
     /* MODAL AND USER SEARCH */
-    --modal-card-border: none;
-    --user-search-action-border: none;
+    --modal-card-border: transparent;
+    --user-search-action-border: transparent;
 
     /* ACCENT TEXT */
     --fg-accent: var(--color-accent-text-dark);
 
     /* ENTITY GROUPS */
-    --entity-work-color: var(--color-entity-group-work);
+    --entity-work-bg: var(--color-entity-group-work);
     --fg-on-entity-work: var(--fg-on-bright);
-    --entity-person-color: var(--color-entity-group-person);
+    --entity-person-bg: var(--color-entity-group-person);
     --fg-on-entity-person: var(--fg-inverse);
-    --entity-agent-color: var(--color-entity-group-agent);
+    --entity-agent-bg: var(--color-entity-group-agent);
     --fg-on-entity-agent: var(--fg-on-bright);
-    --entity-award-color: var(--color-entity-group-award);
+    --entity-award-bg: var(--color-entity-group-award);
     --fg-on-entity-award: var(--fg-on-bright);
-    --entity-event-color: var(--color-entity-group-event);
+    --entity-event-bg: var(--color-entity-group-event);
     --fg-on-entity-event: var(--fg-on-bright);
 
     /* ACCENT */
-    --accent-color: var(--color-accent-dark);
+    --accent: var(--color-accent-dark);
 }
 
 // DETACHED RULESET FOR OVERRIDING STYLING

@@ -4,16 +4,16 @@
    ==============================================================*/
 /* WIDGETS */
 .widget {
-    border-radius: var(--container-border-radius);
+    border-radius: var(--radius-container);
 
-    box-shadow: var(--container-box-shadow);
+    box-shadow: var(--shadow-container);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 
     background-color: var(--brand-tint-bg);
 
     &__topbar {
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
         padding: 1.5rem;
     }
 
@@ -23,7 +23,7 @@
     }
 
     &__body {
-        border-radius: var(--container-border-radius);
+        border-radius: var(--radius-container);
         padding: 1rem 1.2rem;
         padding-top: 0;
 
@@ -31,10 +31,10 @@
             line-height: 1.2;
             padding: 0.5rem;
             font-weight: 500;
-            border-radius: var(--container-small-border-radius);
+            border-radius: var(--radius-container-small);
 
             &:hover {
-                color: var(--lh-content-box);
+                color: var(--fg-heading-content-box);
                 background-color: var(--bg-hover);
                 text-decoration: none;
             }
@@ -54,22 +54,22 @@
 
         li {
             &.active {
-                border-radius: var(--container-small-border-radius);
-                background-color: var(--ci-color1);
-                color: var(--fg-inverse);
+                border-radius: var(--radius-container-small);
+                background-color: var(--bg-brand);
+                color: var(--fg-on-brand);
                 font-weight: 600;
 
                 a {
-                    color: var(--fg-inverse);
+                    color: var(--fg-on-brand);
                 }
 
                 &:hover {
-                    background-color: var(--ci-hovercolor1);
-                    color: var(--fg-inverse);
+                    background-color: var(--bg-brand-hover);
+                    color: var(--fg-on-brand);
 
                     a {
-                        color: var(--fg-inverse);
-                        background-color: var(--ci-hovercolor1) !important;
+                        color: var(--fg-on-brand);
+                        background-color: var(--bg-brand-hover) !important;
                     }
                 }
             }
@@ -84,7 +84,7 @@
             min-height: 23px;
             height: 23px;
             font-size: 12px;
-            border-radius: var(--container-small-border-radius);
+            border-radius: var(--radius-container-small);
 
             &:hover,
             &:active,

@@ -19,12 +19,12 @@
     }
     &__century-year-link,
     &__century-year-text {
-        border-radius: var(--container-small-border-radius);
-        border: var(--border-controls);
+        border-radius: var(--radius-container-small);
+        border: 1px solid var(--border-input);
     }
     &__century-year-link {
         a {
-            border-radius: var(--container-small-border-radius);
+            border-radius: var(--radius-container-small);
             background-color: var(--brand-tint-bg);
             border: none;
         }
@@ -40,7 +40,7 @@
     }
     &__input {
         background-color: var(--bg-content-box);
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         input {
         }
         .form-horizontal {
@@ -76,14 +76,14 @@
     }
     &__month-title {
         padding: 5px 10px;
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         border-bottom: 0;
 
         background-color: var(--bg-content-box);
     }
     &__month-days,
     &__month-week {
-        border: var(--border);
+        border: 1px solid var(--border-faint);
         border-top: 0;
         background-color: var(--bg-content-box);
     }
@@ -108,8 +108,8 @@
         &:focus,
         &:hover,
         &:active {
-            background-color: var(--calendar-day-hover-bg);
-            color: var(--calendar-day-hover-fg);
+            background-color: var(--calendar-day-bg-hover);
+            color: var(--calendar-day-fg-hover);
         }
     }
     &__action {
@@ -123,7 +123,7 @@
     }
     &__newspaper-search-body {
         background: var(--bg-content-box);
-        border: var(--border);
+        border: 1px solid var(--border-faint);
     }
     &__newspaper-search-title,
     &__issues-title {
