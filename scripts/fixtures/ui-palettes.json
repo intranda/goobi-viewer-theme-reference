@@ -1,0 +1,15 @@
+{
+  "bright-yellow": {
+    "--color-brand": "#facc15",
+    "--color-brand-dark": "#fde047",
+    "--color-brand-text": "#854d0e",
+    "--color-on-brand": "#141416"
+  },
+  "near-black": {
+    "--color-brand": "#111827",
+    "--color-brand-dark": "#e5e7eb",
+    "--color-brand-text": "#374151",
+    "--color-brand-text-dark": "#d1d5db",
+    "--color-on-brand-dark": "#111827"
+  }
+}
