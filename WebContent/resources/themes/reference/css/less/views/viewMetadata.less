@@ -7,27 +7,27 @@
 .view-metadata {
     &.docstructtype__work {
         .metadata__wrapper {
-            border: 1px solid var(--entity-work-bg);
+            border: 1px solid var(--bg-entity-work);
         }
     }
     &.docstructtype__person {
         .metadata__wrapper {
-            border: 1px solid var(--entity-person-bg);
+            border: 1px solid var(--bg-entity-person);
         }
     }
     &.docstructtype__agent {
         .metadata__wrapper {
-            border: 1px solid var(--entity-agent-bg);
+            border: 1px solid var(--bg-entity-agent);
         }
     }
     &.docstructtype__award {
         .metadata__wrapper {
-            border: 1px solid var(--entity-award-bg);
+            border: 1px solid var(--bg-entity-award);
         }
     }
     &.docstructtype__event {
         .metadata__wrapper {
-            border: 1px solid var(--entity-event-bg);
+            border: 1px solid var(--bg-entity-event);
         }
     }
 }
@@ -41,8 +41,8 @@
     }
     &__bookmark-button {
         &[data-bookmark-list-type='add'] {
-            color: var(--fg-accent) !important;
-            background-color: rgb(from var(--accent) r g b / 20%) !important;
+            color: var(--bookmark-added-fg);
+            background-color: var(--bookmark-added-bg);
             border-radius: var(--radius-container-small);
         }
     }

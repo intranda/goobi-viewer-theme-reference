@@ -1,0 +1,78 @@
+/* ==============================================================
+   CMS content component slider
+   style declarations for the reference slider style
+   ==============================================================*/
+/* REFERENCE SLIDER STYLE */
+.slider-reference {
+    &__container {
+    }
+    &__wrapper {
+        height: 250px;
+        position: relative;
+        pointer-events: none;
+        cursor: default;
+    }
+    &__image {
+        height: 250px;
+        object-position: center 25%;
+    }
+    &__link {
+        pointer-events: none;
+        cursor: default;
+        display: block;
+    }
+    &__header {
+        position: absolute;
+        left: 15%;
+        top: 50%;
+        background: rgb(from var(--bg-scrim) r g b / 30%);
+        padding: 1.2rem 2rem;
+        color: var(--fg-inverse);
+        font-size: var(--font-size-heading-large);
+        z-index: 100;
+        font-weight: 300;
+        transform: translatey(-50%);
+    }
+    &__description {
+        display: none;
+    }
+}
+
+/* SWIPER PAGINATION */
+.swiper-pagination-bullets {
+    text-align: center;
+    margin-top: 2rem;
+}
+.swiper-pagination-bullet-active {
+    background: var(--brand);
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+    .slider-reference {
+        &__wrapper {
+            height: 150px;
+        }
+        &__header {
+            font-size: var(--font-size-heading-small);
+            padding: 1.5rem 2rem;
+        }
+        &__image {
+            background-size: cover;
+            background-position: center center;
+            height: 150px;
+        }
+    }
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+}

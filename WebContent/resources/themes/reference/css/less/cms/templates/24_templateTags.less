@@ -50,10 +50,6 @@
         background-color: var(--bg-content-box);
         color: var(--fg-content-box);
     }
-
-    .tagcloudElement[class^='tag'] a {
-        // color: @fg-content-box !important;
-    }
 }
 
 #tags {
@@ -97,7 +93,7 @@
 }
 
 each(range(100),{
-    .tag@{value} a { color: var(--fg-link-content-box) !important; }
+    .tag@{value} a { color: var(--fg-link-content-box); }
 });
 
 .tag-cloud {

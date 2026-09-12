@@ -1,0 +1,349 @@
+/* ==============================================================
+   Token layer 2 + 3: semantic roles (per mode) and feature tokens
+   Mirrors the core file of the same name. A core role is redefined
+   here when the theme means it differently or when its core value
+   is no theme color; every other role keeps the core default.
+   Roles read the palette only, feature tokens read roles only.
+   Every role of a mode block is present in the other mode block,
+   otherwise a value sticks when the mode class overrides the system.
+   ==============================================================*/
+
+/* MODE-INDEPENDENT — typography, layout, shape, categorical colors */
+.mx-theme-base() {
+    --font-family:
+        'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-scale: 1;
+
+    --page-max-width: 192rem;
+    --page-gutter: clamp(1.6rem, 2.5vw, 4.8rem);
+    --sidebar-width: clamp(30rem, 24vw, 38rem);
+    --content-gap: clamp(2.4rem, 2.5vw, 4.8rem);
+
+    --radius-container: 8px;
+    --radius-container-small: 6px;
+    --radius-button: 6px;
+
+    /* ENTITY GROUPS */
+    --bg-entity-work: var(--color-entity-group-work);
+    --bg-entity-person: var(--color-entity-group-person);
+    --bg-entity-agent: var(--color-entity-group-agent);
+    --bg-entity-award: var(--color-entity-group-award);
+    --bg-entity-event: var(--color-entity-group-event);
+}
+
+/* LAYER 2 — SEMANTIC ROLES, LIGHT */
+.mx-theme-semantic-light() {
+    /* PAGE */
+    --bg-general: var(--color-page);
+    --fg-general: var(--color-neutral-900);
+
+    /* CONTENT BOX */
+    --bg-content-box: var(--color-neutral-0);
+    --fg-content-box: var(--color-neutral-900);
+
+    /* POPOVER */
+    --bg-popover: var(--color-neutral-0);
+    --fg-popover: var(--color-neutral-900);
+
+    /* HEADER */
+    --bg-header: var(--color-header);
+    --fg-header: var(--color-neutral-700);
+
+    /* NEUTRAL SURFACES */
+    --bg-canvas: var(--color-neutral-200);
+    --bg-subtle: var(--color-neutral-100);
+    --bg-input: var(--color-neutral-0);
+
+    /* TEXT EMPHASIS */
+    --fg-secondary: var(--color-neutral-600);
+    --fg-muted: var(--color-neutral-550);
+    --fg-placeholder: var(--color-neutral-550);
+
+    /* LINKS */
+    --fg-link: var(--color-link);
+    --fg-link-hover: var(--color-link-hover);
+    --fg-link-active: var(--color-link-active);
+    --fg-link-content-box: var(--color-neutral-900);
+
+    /* HEADINGS */
+    --fg-heading: var(--color-neutral-950);
+    --fg-heading-content-box: var(--color-neutral-950);
+
+    /* HOVER AND PRESSED */
+    --bg-hover: var(--color-neutral-100);
+    --fg-hover: var(--color-neutral-900);
+    --bg-pressed: var(--color-neutral-200);
+
+    /* SELECTION — brand-tinted rows */
+    --bg-selected: color-mix(in srgb, var(--color-brand) 8%, var(--color-neutral-0));
+    --bg-selected-hover: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-0));
+    --bg-selected-pressed: color-mix(in srgb, var(--color-brand) 18%, var(--color-neutral-0));
+    --fg-selected: var(--color-neutral-900);
+
+    /* DISABLED */
+    --bg-disabled: var(--color-neutral-50);
+    --fg-disabled: var(--color-neutral-500);
+    --border-disabled: var(--color-neutral-200);
+
+    /* INVERSE SURFACES */
+    --bg-inverse: var(--color-neutral-800);
+    --bg-inverse-hover: var(--color-neutral-700);
+
+    /* LEGACY CONTROL ROLES — core consumers only */
+    --bg-control-active: var(--color-neutral-700);
+    --fg-on-control: var(--color-neutral-0);
+
+    /* BORDERS */
+    --border-faint: rgb(from var(--color-neutral-500) r g b / 20%);
+    --border-container: var(--color-neutral-200);
+    --border-default: var(--color-neutral-200);
+    --border-strong: var(--color-neutral-300);
+    --border-input: var(--color-neutral-500);
+    --border-emphasis: var(--color-neutral-600);
+
+    /* BRAND — fills carry --fg-on-brand */
+    --brand: var(--color-brand-text);
+    --brand-hover: color-mix(in srgb, var(--color-brand-text) 80%, var(--color-neutral-1000));
+    --brand-strong: color-mix(in srgb, var(--color-brand) 50%, var(--color-neutral-1000));
+    --bg-brand: var(--color-brand);
+    --bg-brand-hover: var(--color-brand-hover);
+    --bg-brand-pressed: var(--color-brand-pressed);
+    --bg-brand-tint: rgb(from var(--color-brand) r g b / 8%);
+    --fg-on-brand: var(--color-on-brand);
+    --accent: var(--color-accent);
+    --fg-accent: var(--color-accent-text);
+    --fg-danger: var(--color-danger);
+
+    /* FOCUS */
+    --outline-focus: var(--color-focus-ring);
+
+    /* SHADOWS, CANVAS, PRINT */
+    --shadow-color: var(--color-neutral-1000);
+    --bg-viewer-canvas: var(--color-neutral-900);
+    --bg-viewer-canvas-stripe: var(--color-neutral-800);
+    --fg-on-warning: color-mix(in srgb, var(--color-warning-text) 80%, var(--color-neutral-1000));
+    --fg-on-warning-hover: color-mix(in srgb, var(--color-warning-text) 65%, var(--color-neutral-1000));
+    --fg-print-link: var(--color-neutral-700);
+    --border-print: var(--color-neutral-400);
+}
+
+/* LAYER 2 — SEMANTIC ROLES, DARK */
+.mx-theme-semantic-dark() {
+    /* PAGE */
+    --bg-general: var(--color-page-dark);
+    --fg-general: var(--color-neutral-100);
+
+    /* CONTENT BOX */
+    --bg-content-box: var(--color-neutral-900);
+    --fg-content-box: var(--color-neutral-100);
+
+    /* POPOVER */
+    --bg-popover: var(--color-neutral-800);
+    --fg-popover: var(--color-neutral-100);
+
+    /* HEADER */
+    --bg-header: var(--color-header-dark);
+    --fg-header: var(--color-neutral-200);
+
+    /* NEUTRAL SURFACES */
+    --bg-canvas: var(--color-neutral-950);
+    --bg-subtle: var(--color-neutral-800);
+    --bg-input: var(--color-neutral-950);
+
+    /* TEXT EMPHASIS */
+    --fg-secondary: var(--color-neutral-400);
+    --fg-muted: var(--color-neutral-400);
+    --fg-placeholder: var(--color-neutral-400);
+
+    /* LINKS */
+    --fg-link: var(--color-link-dark);
+    --fg-link-hover: var(--color-link-dark-hover);
+    --fg-link-active: var(--color-link-dark-active);
+    --fg-link-content-box: var(--color-neutral-100);
+
+    /* HEADINGS */
+    --fg-heading: var(--color-neutral-50);
+    --fg-heading-content-box: var(--color-neutral-50);
+
+    /* HOVER AND PRESSED */
+    --bg-hover: var(--color-neutral-800);
+    --fg-hover: var(--color-neutral-100);
+    --bg-pressed: var(--color-neutral-700);
+
+    /* SELECTION — brand-tinted rows */
+    --bg-selected: color-mix(in srgb, var(--color-brand-dark) 12%, var(--color-neutral-900));
+    --bg-selected-hover: color-mix(in srgb, var(--color-brand-dark) 18%, var(--color-neutral-900));
+    --bg-selected-pressed: color-mix(in srgb, var(--color-brand-dark) 24%, var(--color-neutral-900));
+    --fg-selected: var(--color-neutral-100);
+
+    /* DISABLED */
+    --bg-disabled: var(--color-neutral-800);
+    --fg-disabled: var(--color-neutral-400);
+    --border-disabled: var(--color-neutral-700);
+
+    /* INVERSE SURFACES */
+    --bg-inverse: var(--color-neutral-800);
+    --bg-inverse-hover: var(--color-neutral-700);
+
+    /* LEGACY CONTROL ROLES — core consumers only */
+    --bg-control-active: var(--color-neutral-700);
+    --fg-on-control: var(--color-neutral-900);
+
+    /* BORDERS */
+    --border-faint: transparent;
+    --border-container: var(--color-neutral-800);
+    --border-default: var(--color-neutral-700);
+    --border-strong: var(--color-neutral-600);
+    --border-input: var(--color-neutral-500);
+    --border-emphasis: var(--color-neutral-400);
+
+    /* BRAND — the dark fill is the light brand variant with dark text */
+    --brand: var(--color-brand-text-dark);
+    --brand-hover: color-mix(in srgb, var(--color-brand-text-dark) 80%, var(--color-neutral-0));
+    --brand-strong: color-mix(in srgb, var(--color-brand) 55%, var(--color-neutral-950));
+    --bg-brand: var(--color-brand-dark);
+    --bg-brand-hover: var(--color-brand-dark-hover);
+    --bg-brand-pressed: var(--color-brand-dark-pressed);
+    --bg-brand-tint: rgb(from var(--color-brand-dark) r g b / 15%);
+    --fg-on-brand: var(--color-on-brand-dark);
+    --accent: var(--color-accent-dark);
+    --fg-accent: var(--color-accent-text-dark);
+    --fg-danger: var(--color-danger-text-dark);
+
+    /* FOCUS */
+    --outline-focus: var(--color-focus-ring-dark);
+
+    /* SHADOWS, CANVAS, PRINT */
+    --shadow-color: var(--color-neutral-1000);
+    --bg-viewer-canvas: var(--color-neutral-900);
+    --bg-viewer-canvas-stripe: var(--color-neutral-800);
+    --fg-on-warning: var(--color-warning-text-dark);
+    --fg-on-warning-hover: color-mix(in srgb, var(--color-warning-text-dark) 80%, var(--color-neutral-0));
+    --fg-print-link: var(--color-neutral-700);
+    --border-print: var(--color-neutral-400);
+}
+
+/* LAYER 3 — FEATURE TOKENS, MODE-FREE (read layer 2 only) */
+.mx-theme-features() {
+    --shadow-container: 0 1px 2px rgb(from var(--shadow-color) r g b / 4%);
+    --shadow-floating:
+        0 12px 32px rgb(from var(--shadow-color) r g b / 12%), 0 2px 6px rgb(from var(--shadow-color) r g b / 6%);
+
+    /* COMBINED FACETS */
+    --combined-facets-bg: var(--bg-content-box);
+    --combined-facets-scrollbar: var(--border-input);
+    --combined-facets-radius: var(--radius-button);
+    --active-facets-badge-shadow-hover: none;
+
+    /* FACET INCLUDE/EXCLUDE CONTROL */
+    --facet-control-fg: var(--fg-secondary);
+    --facet-control-border: var(--border-input);
+    --facet-control-bg-active: var(--bg-brand);
+    --facet-control-fg-active: var(--fg-on-brand);
+    --facet-control-radius: var(--radius-container-small);
+
+    /* BOOKMARKS */
+    --bookmark-added-bg: rgb(from var(--accent) r g b / 20%);
+    --bookmark-added-fg: var(--fg-accent);
+}
+
+/* LAYER 3 — FEATURE TOKENS WITH A MODE-SPECIFIC VALUE, LIGHT */
+.mx-theme-features-light() {
+    /* THEME LOGO — image for the active mode */
+    --theme-logo-light-display: block;
+    --theme-logo-dark-display: none;
+
+    /* SEARCH TOOLBAR */
+    --search-toolbar-icon: var(--fg-content-box);
+    --search-toolbar-icon-hover: var(--fg-content-box);
+
+    /* FOOTER */
+    --footer-main-bg: var(--footer-topnav-bg);
+    --footer-bottom-bg: color-mix(in srgb, var(--footer-topnav-bg) 70%, var(--bg-scrim));
+
+    /* COOKIE BANNER */
+    --cookie-banner-link-decoration: none;
+
+    /* COPYRIGHT INDICATOR */
+    --copyright-indicator-inset-shadow:
+        inset 0 0 2px rgb(from var(--fg-on-bright) r g b / 30%),
+        inset 0 2px 2px rgb(from var(--fg-on-bright) r g b / 25%);
+
+    /* NER NAVIGATION */
+    --ner-navigation-bg: var(--bg-hover);
+    --ner-navigation-bg-hover: var(--bg-content-box);
+
+    /* MODAL AND USER SEARCH */
+    --modal-card-border: rgb(from var(--fg-on-bright) r g b / 12.5%);
+    --user-search-action-border: var(--border-strong);
+}
+
+/* LAYER 3 — FEATURE TOKENS WITH A MODE-SPECIFIC VALUE, DARK */
+.mx-theme-features-dark() {
+    /* THEME LOGO — image for the active mode */
+    --theme-logo-light-display: none;
+    --theme-logo-dark-display: block;
+
+    /* SEARCH TOOLBAR */
+    --search-toolbar-icon: var(--fg-content-box);
+    --search-toolbar-icon-hover: var(--fg-content-box);
+
+    /* FOOTER */
+    --footer-main-bg: color-mix(in srgb, var(--footer-topnav-bg) 30%, var(--bg-scrim));
+    --footer-bottom-bg: color-mix(in srgb, var(--footer-topnav-bg) 22%, var(--bg-scrim));
+
+    /* COOKIE BANNER */
+    --cookie-banner-link-decoration: underline;
+
+    /* COPYRIGHT INDICATOR */
+    --copyright-indicator-inset-shadow:
+        inset 0 0 2px rgb(from var(--fg-inverse) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-inverse) r g b / 25%);
+
+    /* NER NAVIGATION */
+    --ner-navigation-bg: var(--bg-content-box);
+    --ner-navigation-bg-hover: var(--bg-hover);
+
+    /* MODAL AND USER SEARCH */
+    --modal-card-border: transparent;
+    --user-search-action-border: transparent;
+}
+
+/* WIRING — same selectors and order as the core, loaded after it */
+:root {
+    .mx-theme-palette();
+    .mx-theme-base();
+    .mx-theme-semantic-light();
+    .mx-theme-features();
+    .mx-theme-features-light();
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        .mx-theme-semantic-dark();
+        .mx-theme-features-dark();
+    }
+}
+
+.color-theme-dark {
+    .mx-theme-semantic-dark();
+    .mx-theme-features-dark();
+}
+
+.color-theme-light {
+    .mx-theme-semantic-light();
+    .mx-theme-features-light();
+}
+
+/* Responsive */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
+}

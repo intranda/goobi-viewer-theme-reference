@@ -9,6 +9,8 @@
 
 /* CORE VARIABLES AND MIXINS */
 @import 'misc/variables.less';
+@import 'misc/palette.less';
+@import 'misc/tokens.less';
 @import 'misc/fonts.less';
 @import 'misc/mixins.less';
 @import 'misc/print.less';
@@ -34,6 +36,7 @@
 @import 'components/buttons.less';
 @import 'components/changeLocal.less';
 @import 'components/colorThemeToggle.less';
+@import 'components/themeLogo.less';
 @import 'components/copyrightIndicator.less';
 @import 'components/dataTablePaginator.less';
 @import 'components/downloadModal.less';
@@ -171,6 +174,7 @@
 @import 'archives/archivesTree.less';
 
 /* CMS TEMPLATES */
+@import 'cms/templates/cmsPage.less';
 @import 'cms/templates/01_templateGeneric.less';
 @import 'cms/templates/02_templateNewsOverview.less';
 @import 'cms/templates/03_templateNewsDetail.less';
@@ -204,10 +208,24 @@
 @import 'cms/templates/32_templateGalleryText.less';
 @import 'cms/templates/33_templateSlider.less';
 
-// SINGLE CMS CONTENT COMPONENT FRONTEND LAYOUT FILE
+/* CMS content components */
 @import 'cms/contentComponents/highlightedObject.less';
 @import 'cms/contentComponents/searchFacets.less';
+@import 'cms/contentComponents/slider.less';
 @import 'cms/contentComponents/splitText.less';
 @import 'cms/contentComponents/dividerLine.less';
 @import 'cms/contentComponents/searchbox.less';
 @import 'cms/contentComponents/sectionHeader.less';
+
+/* Responsive */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
+}

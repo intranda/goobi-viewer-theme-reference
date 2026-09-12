@@ -11,22 +11,22 @@
         gap: 0.75rem;
     }
 
-    .form-control {
+    .input-group .form-control {
         border: 1px solid var(--border-faint);
-        border-radius: var(--radius-container) !important;
+        border-radius: var(--radius-container);
         box-shadow: var(--shadow-container);
         transition: box-shadow 0.15s ease;
 
         &:focus {
             box-shadow:
                 var(--shadow-container),
-                0 0 0 3px var(--brand-tint-bg);
+                0 0 0 3px var(--bg-brand-tint);
         }
     }
 
-    .input-group-addon {
+    .input-group .input-group-addon {
         border: none;
-        border-radius: var(--radius-container) !important;
+        border-radius: var(--radius-container);
         background-color: transparent;
         padding: 0;
 
@@ -40,7 +40,7 @@
             &:focus {
                 box-shadow:
                     var(--shadow-container),
-                    0 0 0 3px var(--brand-tint-bg);
+                    0 0 0 3px var(--bg-brand-tint);
             }
         }
     }

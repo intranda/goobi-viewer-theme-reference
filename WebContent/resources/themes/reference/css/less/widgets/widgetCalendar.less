@@ -36,14 +36,19 @@
         background: transparent;
         &.-has-data- {
             color: var(--fg-content-box);
-            background: var(--calendar-day-bg);
-            .pseudostates({color: var(--fg-content-box); background: var(--bg-hover);});
+            background: var(--bg-selected);
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--fg-content-box);
+                background: var(--bg-hover);
+            }
         }
         &.-current-issue- {
             font-weight: 700;
 
-            background: var(--calendar-day-bg-hover);
-            color: var(--calendar-day-fg-hover);
+            background: var(--bg-brand);
+            color: var(--fg-on-brand);
         }
     }
     .flatpickr-day.-has-data- {

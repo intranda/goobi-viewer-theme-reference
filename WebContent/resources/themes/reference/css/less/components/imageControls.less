@@ -31,14 +31,14 @@
         &.fulltext {
         }
         &.add-to-bookmark {
-            background-color: rgb(from var(--accent) r g b / 20%);
+            background-color: var(--bookmark-added-bg);
             border-radius: var(--radius-container-small);
             .icon-wrapper svg {
                 stroke: var(--brand);
-                color: var(--fg-accent);
+                color: var(--bookmark-added-fg);
             }
             .icon-bookmark-filled {
-                color: var(--fg-accent);
+                color: var(--bookmark-added-fg);
             }
         }
         &.image-filter,
@@ -79,7 +79,7 @@
         &.page-browse,
         &.select {
             .custom-control--select {
-                background: transparent !important;
+                background: transparent;
             }
         }
         &.page-browse {

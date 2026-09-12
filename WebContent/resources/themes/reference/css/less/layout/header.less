@@ -23,8 +23,10 @@ html.header-menu-open {
         display: flex;
         align-items: center;
         gap: 2.4rem;
+        max-width: var(--page-max-width);
         min-height: var(--_header-height);
-        padding: 1rem clamp(1.6rem, 2.7vw, 4rem);
+        margin-inline: auto;
+        padding: 1rem var(--page-gutter);
         background: var(--bg-header);
     }
 
@@ -32,7 +34,6 @@ html.header-menu-open {
         display: flex;
         align-items: center;
         flex: 0 0 auto;
-        width: 12rem;
 
         img {
             display: block;
@@ -51,6 +52,7 @@ html.header-menu-open {
             width: 100%;
             margin: 0;
             padding: 0;
+            border: 0;
             background: transparent;
             box-shadow: none;
         }
@@ -66,7 +68,7 @@ html.header-menu-open {
             align-items: center;
             width: 100%;
             overflow: hidden;
-            border: 1px solid color-mix(in srgb, var(--fg-header) 25%, transparent);
+            border: 1px solid rgb(from var(--fg-header) r g b / 25%);
             border-radius: 999px;
             background: var(--bg-header);
             transition:
@@ -75,7 +77,7 @@ html.header-menu-open {
 
             &:focus-within {
                 border-color: var(--brand);
-                box-shadow: 0 0 0 3px var(--brand-tint-bg);
+                box-shadow: 0 0 0 3px var(--bg-brand-tint);
             }
         }
 
@@ -86,7 +88,7 @@ html.header-menu-open {
             height: 4.4rem;
             padding: 0 6rem 0 0;
             border: 0;
-            border-radius: 0 !important;
+            border-radius: 0;
             margin: 0;
             background: transparent;
             color: var(--fg-content-box);
@@ -165,6 +167,8 @@ html.header-menu-open {
         align-items: center;
         gap: 0.4rem;
         flex: 0 0 auto;
+        /* icon ink ends on the page edge: (4.4rem button - 1.8rem visible glyph) / 2 */
+        margin-inline-end: -1.3rem;
     }
 
     &__icon-button,
@@ -183,7 +187,7 @@ html.header-menu-open {
 
         &:hover,
         &[aria-expanded='true'] {
-            background: var(--brand-tint-bg);
+            background: var(--bg-brand-tint);
             color: var(--fg-link-hover);
         }
 
@@ -208,7 +212,7 @@ html.header-menu-open {
         inset: var(--_header-bottom, 76px) 0 0;
         visibility: hidden;
         opacity: 0;
-        background: rgb(from var(--shadow-color) r g b / 25%);
+        background: rgb(from var(--bg-scrim) r g b / 25%);
         backdrop-filter: blur(2px);
         transition:
             opacity 0.2s ease,
@@ -265,7 +269,7 @@ html.header-menu-open {
             border-radius: 6px;
             &:hover,
             &:focus-visible {
-                background: var(--brand-tint-bg);
+                background: var(--bg-brand-tint);
                 color: var(--fg-link-hover);
             }
         }
@@ -302,7 +306,7 @@ html.header-menu-open {
     transform: translateY(-8px);
     background: var(--bg-header);
     border-inline-start: 1px solid var(--border-default);
-    box-shadow: -12px 12px 32px rgb(from var(--shadow-color) r g b / 8%);
+    box-shadow: var(--shadow-floating);
     transition:
         opacity 0.2s ease,
         transform 0.2s ease,
@@ -331,7 +335,7 @@ html.header-menu-open {
         &__submenu {
             position: static;
             min-width: 0;
-            width: auto !important;
+            width: auto;
             margin-inline-start: 1rem;
             padding: 0 0 0 0.6rem;
             border: 0;
@@ -421,56 +425,18 @@ html.header-menu-open {
         transition: none;
     }
 }
-/* REFERENCE SLIDER STYLING */
-.slider-reference {
-    &__container {
-    }
-
-    &__wrapper {
-        height: 250px;
-        position: relative;
-        pointer-events: none;
-        cursor: default;
-    }
-
-    &__image {
-        height: 250px;
-        object-position: center 25%;
-    }
-
-    &__link {
-        pointer-events: none;
-        cursor: default;
-        display: block;
-    }
-
-    &__header {
-        position: absolute;
-        left: 15%;
-        top: 50%;
-        background: rgb(from var(--shadow-color) r g b / 30%);
-        padding: 1.2rem 2rem;
-        color: var(--fg-inverse);
-        font-size: var(--font-size-heading-large);
-        z-index: 100;
-        font-weight: 300;
-        transform: translatey(-50%);
-    }
-
-    &__description {
-        display: none;
-    }
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
 }
 
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .slider-reference {
-        &__wrapper,
-        &__image {
-            height: 150px;
-        }
-        &__header {
-            font-size: var(--font-size-heading-small);
-            padding: 1.5rem 2rem;
-        }
-    }
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }

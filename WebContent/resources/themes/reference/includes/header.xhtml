@@ -19,8 +19,11 @@
             <a
                 class="header__logo"
                 href="#{request.contextPath}/">
-                <img
-                    src='#{adminThemesBean.getLogo("/images/template/goobi_logo.svg", 300, 150)}'
+                <viewerComponent:themeLogo
+                    defaultUrl="/images/template/goobi_logo.png"
+                    darkDefaultUrl="/images/template/goobi_logo_dark.png"
+                    width="300"
+                    height="150"
                     alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
             </a>
 

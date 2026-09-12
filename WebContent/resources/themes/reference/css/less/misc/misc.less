@@ -3,82 +3,6 @@
    style declarations for everything else
    ==============================================================*/
 
-// The frontend shares the header's fluid outer margins at every screen size.
-// Scope this to its layout so admin dialogs and editor containers keep their sizing.
-#bodyWrapper .container {
-    width: 100%;
-    max-width: none;
-    padding-inline: var(--page-gutter);
-}
-
-/* MOBILE OVERLAY STYLES */
-.mobile-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(from var(--shadow-color) r g b / 75%);
-    z-index: 2030;
-}
-
-// LOADER (AJAX) WHICH IS SOMETIMES TRIGGERED ON BUTTONS OR ACTIONS
-.small-button-loader {
-    &__wrapper {
-    }
-    &__icon {
-        border-right-color: var(--brand);
-        &.-top-right {
-        }
-    }
-}
-
-// FANCY 2 OPTIONS (YES/NO) TOGGLE
-.admin__radio-switch {
-    label {
-        color: var(--fg-general);
-    }
-    input ~ input:checked ~ .toggle-outside {
-        background: var(--brand);
-    }
-}
-
-// TEMPORARY IMPLEMENTATION FOR SLIDER (SWIPER PAGINATION)
-.swiper-pagination-bullets {
-    text-align: center;
-    margin-top: 2rem;
-}
-.swiper-pagination-bullet-active {
-    background: var(--brand);
-}
-
-// TOP DOC ANCHOR - offset anchor scroll position to prevent fixed header from overlapping
-a[name='topDocAnchor']:target::before {
-    content: '';
-    display: block;
-    height: 98px;
-    margin-top: -98px;
-}
-
-// CMS Page
-.cms-page {
-    #templateSearch {
-        &__title {
-            position: absolute; // title is on one line with controls
-        }
-    }
-
-    &__content {
-        min-height: 50vh;
-    }
-}
-
-// Geomap View
-.geo-map {
-    border-radius: var(--radius-container);
-}
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
@@ -89,13 +13,6 @@ a[name='topDocAnchor']:target::before {
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    // TOP DOC ANCHOR - offset anchor scroll position to prevent fixed header from overlapping
-    a[name='topDocAnchor']:target::before {
-        content: '';
-        display: block;
-        height: 20px;
-        margin-top: -20px;
-    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */

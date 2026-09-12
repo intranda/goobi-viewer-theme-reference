@@ -9,6 +9,21 @@
     /* HITS */
     &__hits {
         &.grid {
+            .search-list__hits-list-items {
+                grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+                gap: 2rem;
+                align-items: start;
+            }
+
+            .search-list__hit-info-wrapper {
+                padding: 1.6rem;
+            }
+
+            .search-list__hit-title-heading {
+                font-size: var(--font-size-body-large);
+                line-height: 1.5;
+            }
+
             .search-list__thumb-bookmark-wrapper {
                 right: 6px;
                 top: 6px;
@@ -16,6 +31,7 @@
             form {
             }
             .search-list__hit {
+                padding: 0;
                 .row,
                 [class*='col-'] {
                 }
@@ -33,6 +49,7 @@
             }
             .search-list__hit-top-wrapper {
                 border: none;
+                margin-bottom: 0;
             }
             .search-list__hit-title h3 {
             }

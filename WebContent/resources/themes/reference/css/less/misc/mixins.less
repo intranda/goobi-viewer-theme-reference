@@ -1,5 +1,8 @@
 /* ==============================================================
    LESS Mixins
+   Technical helpers, then the theme control helpers. Control
+   helpers read semantic roles only; components decide which
+   state applies to which selector.
    ==============================================================*/
 /* CLEARFLOATS */
 .mx-clearfloats {
@@ -41,7 +44,7 @@
     }
 }
 
-/* HIDDEN */
+/* VISIBLE */
 .mx-visible {
     display: block !important;
     visibility: visible !important;
@@ -85,220 +88,173 @@
     -webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
 }
 
-/* KEYBOARD FOCUS */
-.mx-focus-ring(@color: var(--outline-focus); @width: 2px; @offset: -2px) {
-    outline: @width solid @color;
-    outline-offset: @offset;
+/* FOCUS RING — one ring for every control; !important beats the core keyboard rule */
+.mx-theme-focus-ring() {
+    outline: 2px solid var(--outline-focus) !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
 }
 
-// FOCUSRING
-// Applied globally to every `:focus-visible` element once keyboard use is
-// detected (see body.using-keyboard in layout/general.less) — this is what
-// makes the ring show up on Tab navigation but not on mouse clicks.
-.mx-focus-visible {
-    .mx-focus-ring();
-    z-index: 9999;
-}
-
-// ACCENT RING FOR MOUSE FOCUS AND ACTIVE STATE
-.mx-accent-ring(@color: var(--brand); @width: 3px; @opacity: 25%) {
-    outline: 2px solid @color;
-    box-shadow: 0 0 0 @width color-mix(in srgb, @color @opacity, transparent);
-}
-
-/* MODE-INDEPENDENT THEME OVERRIDES */
-.mx-theme-base() {
-    --font-family:
-        'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    // Typography defaults come from core. Change this factor to resize all text roles.
-    --font-scale: 1;
-    --page-gutter: clamp(1.6rem, 2.7vw, 4rem);
-    --sidebar-width: 30rem;
-    --content-gap: clamp(2.4rem, 3vw, 4.8rem);
-
-    --radius-container: 8px;
-    --radius-container-small: 4px;
-    --radius-button: 6px;
-    --combined-facets-radius: var(--radius-button);
-    --facet-control-radius: var(--radius-container-small);
-
-    --shadow-container: 0 1px 6px rgb(from var(--shadow-color) r g b / 4%);
-    --active-facets-badge-shadow-hover: none;
-}
-
-/* THEME PALETTE */
-.mx-theme-palette() {
-    --color-brand: #1565c0;
-    --color-brand-hover: #0078d4;
-    --color-entity-group-work: #dc7e2e;
-    --color-entity-group-person: #b13b29;
-    --color-entity-group-agent: #568fb2;
-    --color-entity-group-award: #2e8d38;
-    --color-entity-group-event: #8966ca;
-    --color-accent-light: #f59f00;
-    --color-accent-dark: #feae1a;
-    --color-accent-text-light: #875100;
-    --color-accent-text-dark: #ffd073;
-    --color-paper: #fafbfc;
-    --color-night: #0b0c0f;
-    --color-night-raised: #1b1b1e;
-    --color-night-header: #05090d;
-}
-
-/* THEME ROLES AND FEATURES — LIGHT */
-.mx-theme-light() {
-    /* SURFACES — brand-tinted page */
-    --bg-general: color-mix(in srgb, var(--color-brand) 3%, var(--color-paper));
-    --bg-content-box: var(--color-gray-0);
-    --bg-header: var(--color-gray-0);
-
-    /* BRAND TINT */
-    --brand-tint-bg: rgb(from var(--brand) r g b / 8%);
-
-    /* FOOTER */
-    --footer-main-bg: var(--footer-topnav-bg);
-    --footer-bottom-bg: color-mix(in srgb, var(--footer-topnav-bg) 70%, var(--bg-scrim));
-
-    /* COOKIE BANNER */
-    --cookie-banner-link-decoration: none;
-
-    /* NUMERIC PAGINATOR */
-    --numeric-paginator-bg-active: var(--bg-brand);
-    --numeric-paginator-input-bg: var(--bg-content-box);
-
-    /* CALENDAR */
-    --calendar-day-bg: var(--bg-selected);
-    --calendar-day-bg-hover: var(--bg-control-active);
-    --calendar-day-fg-hover: var(--fg-inverse);
-
-    /* COPYRIGHT INDICATOR */
-    --copyright-indicator-inset-shadow:
-        inset 0 0 2px rgb(from var(--fg-on-bright) r g b / 30%),
-        inset 0 2px 2px rgb(from var(--fg-on-bright) r g b / 25%);
-
-    /* SEARCH RESULTS */
-    --search-thumbnail-border: var(--bg-content-box);
-    --search-docstruct-bg: var(--brand-tint-bg);
-    --search-docstruct-fg: var(--fg-link-content-box);
-
-    /* NER NAVIGATION */
-    --ner-navigation-bg: var(--bg-hover);
-    --ner-navigation-bg-hover: var(--bg-content-box);
-
-    /* MODAL AND USER SEARCH */
-    --modal-card-border: rgb(from var(--fg-on-bright) r g b / 12.5%);
-    --user-search-action-border: var(--border-strong);
-
-    /* ACCENT TEXT */
-    --fg-accent: var(--color-accent-text-light);
-
-    /* ENTITY GROUPS */
-    --entity-work-bg: var(--color-entity-group-work);
-    --fg-on-entity-work: var(--fg-on-bright);
-    --entity-person-bg: var(--color-entity-group-person);
-    --fg-on-entity-person: var(--fg-inverse);
-    --entity-agent-bg: var(--color-entity-group-agent);
-    --fg-on-entity-agent: var(--fg-on-bright);
-    --entity-award-bg: var(--color-entity-group-award);
-    --fg-on-entity-award: var(--fg-on-bright);
-    --entity-event-bg: var(--color-entity-group-event);
-    --fg-on-entity-event: var(--fg-on-bright);
-
-    /* ACCENT */
-    --accent: var(--color-accent-light);
-}
-
-/* THEME ROLES AND FEATURES — DARK */
-.mx-theme-dark() {
-    /* SURFACES — brand-tinted night */
-    --bg-general: color-mix(in srgb, var(--color-brand) 6%, var(--color-night));
-    --bg-content-box: color-mix(in srgb, var(--color-brand) 8%, var(--color-night-raised));
-    --bg-header: color-mix(in srgb, var(--color-night-header) 96%, var(--color-brand));
-
-    /* BRAND TINT */
-    --brand-tint-bg: rgb(from var(--brand) r g b / 15%);
-
-    /* FOOTER */
-    --footer-main-bg: color-mix(in srgb, var(--footer-topnav-bg) 30%, var(--bg-scrim));
-    --footer-bottom-bg: color-mix(in srgb, var(--footer-topnav-bg) 22%, var(--bg-scrim));
-
-    /* COOKIE BANNER */
-    --cookie-banner-link-decoration: underline;
-
-    /* NUMERIC PAGINATOR */
-    --numeric-paginator-bg-active: var(--bg-control-active);
-    --numeric-paginator-input-bg: var(--bg-control-active);
-
-    /* CALENDAR */
-    --calendar-day-bg: var(--bg-control-active);
-    --calendar-day-bg-hover: var(--bg-hover);
-    --calendar-day-fg-hover: var(--fg-content-box);
-
-    /* COPYRIGHT INDICATOR */
-    --copyright-indicator-inset-shadow:
-        inset 0 0 2px rgb(from var(--fg-inverse) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-inverse) r g b / 25%);
-
-    /* SEARCH RESULTS */
-    --search-thumbnail-border: transparent;
-    --search-docstruct-bg: var(--bg-brand);
-    --search-docstruct-fg: var(--fg-on-brand);
-
-    /* NER NAVIGATION */
-    --ner-navigation-bg: var(--bg-content-box);
-    --ner-navigation-bg-hover: var(--bg-hover);
-
-    /* MODAL AND USER SEARCH */
-    --modal-card-border: transparent;
-    --user-search-action-border: transparent;
-
-    /* ACCENT TEXT */
-    --fg-accent: var(--color-accent-text-dark);
-
-    /* ENTITY GROUPS */
-    --entity-work-bg: var(--color-entity-group-work);
-    --fg-on-entity-work: var(--fg-on-bright);
-    --entity-person-bg: var(--color-entity-group-person);
-    --fg-on-entity-person: var(--fg-inverse);
-    --entity-agent-bg: var(--color-entity-group-agent);
-    --fg-on-entity-agent: var(--fg-on-bright);
-    --entity-award-bg: var(--color-entity-group-award);
-    --fg-on-entity-award: var(--fg-on-bright);
-    --entity-event-bg: var(--color-entity-group-event);
-    --fg-on-entity-event: var(--fg-on-bright);
-
-    /* ACCENT */
-    --accent: var(--color-accent-dark);
-}
-
-// DETACHED RULESET FOR OVERRIDING STYLING
-.detachedRuleSetTopLevel(@generalprops) {
-    & {
-        @generalprops();
-    }
-}
-
-// SET STYLES FOR ALL STATES OF AN ELEMENT
-.allstates(@allstatesvalues) {
+.mx-theme-focus() {
     &,
-    &:hover,
-    &:active,
-    &:focus {
-        @allstatesvalues();
+    body.using-keyboard & {
+        .mx-theme-focus-ring();
     }
 }
 
-/* USAGE EXAMPLE
-	.allstates ({
-		text-decoration: none;
-	});
-*/
+/* NEUTRAL CONTROL — colors and states of a plain action; the caller sets border and radius */
+.mx-theme-control() {
+    color: var(--fg-content-box);
+    background-color: var(--bg-content-box);
+    border-color: transparent;
+    box-shadow: none;
 
-// SET STYLES FOR PSEUDO STATES OF AN ELEMENT
-.pseudostates(@pseudostatevalues) {
-    &:hover,
-    &:active,
-    &:focus {
-        @pseudostatevalues();
+    &:hover {
+        color: var(--fg-content-box);
+        background-color: var(--bg-hover);
     }
+
+    &:active {
+        color: var(--fg-content-box);
+        background-color: var(--bg-pressed);
+    }
+
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+}
+
+/* SELECTED CONTROL — compact active switch, current page: brand fill */
+.mx-theme-control-selected() {
+    color: var(--fg-on-brand);
+    background-color: var(--bg-brand);
+    border-color: var(--bg-brand);
+
+    &:hover {
+        color: var(--fg-on-brand);
+        background-color: var(--bg-brand-hover);
+        border-color: var(--bg-brand-hover);
+    }
+
+    &:active {
+        color: var(--fg-on-brand);
+        background-color: var(--bg-brand-pressed);
+        border-color: var(--bg-brand-pressed);
+    }
+}
+
+/* DISABLED CONTROL */
+.mx-theme-control-disabled() {
+    color: var(--fg-disabled);
+    background-color: var(--bg-disabled);
+    border-color: var(--border-disabled);
+    opacity: 1;
+}
+
+/* PRIMARY CONTROL — main button with all states */
+.mx-theme-control-primary() {
+    &,
+    &:focus,
+    &.focus {
+        color: var(--fg-on-brand);
+        background-color: var(--bg-brand);
+        border-color: var(--bg-brand);
+        box-shadow: none;
+    }
+
+    &:hover {
+        color: var(--fg-on-brand);
+        background-color: var(--bg-brand-hover);
+        border-color: var(--bg-brand-hover);
+    }
+
+    &:active,
+    &.active {
+        color: var(--fg-on-brand);
+        background-color: var(--bg-brand-pressed);
+        border-color: var(--bg-brand-pressed);
+    }
+
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+
+    &:disabled,
+    &[aria-disabled='true'],
+    &.disabled,
+    &.btn--inactive {
+        &,
+        &:hover,
+        &:active,
+        &:focus,
+        &.active,
+        &.focus {
+            .mx-theme-control-disabled();
+            box-shadow: none;
+        }
+    }
+
+    .icon-wrapper,
+    .icon-svg,
+    .fa {
+        color: currentColor;
+    }
+}
+
+/* FIELD — text input, select, textarea */
+.mx-theme-field() {
+    color: var(--fg-content-box);
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
+    caret-color: var(--fg-content-box);
+    box-shadow: none;
+    transition: border-color 0.12s ease;
+
+    &::placeholder {
+        color: var(--fg-placeholder);
+        opacity: 1;
+    }
+
+    &:hover:not(:disabled):not([readonly]):not([aria-disabled='true']):not([aria-invalid='true']):not(.ui-state-error) {
+        border-color: var(--brand);
+    }
+
+    &:focus {
+        .mx-theme-focus();
+    }
+
+    &[aria-invalid='true'],
+    &.ui-state-error {
+        border-color: var(--fg-danger);
+    }
+
+    &[readonly] {
+        background-color: var(--bg-subtle);
+    }
+
+    &:-webkit-autofill {
+        -webkit-text-fill-color: var(--fg-content-box);
+        -webkit-box-shadow: 0 0 0 1000px var(--bg-input) inset;
+        caret-color: var(--fg-content-box);
+    }
+
+    &:disabled,
+    &[aria-disabled='true'] {
+        .mx-theme-control-disabled();
+        -webkit-text-fill-color: var(--fg-disabled);
+        box-shadow: none;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
 }

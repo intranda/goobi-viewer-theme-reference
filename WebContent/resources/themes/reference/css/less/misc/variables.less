@@ -1,40 +1,23 @@
-/* Theme wiring and compile-time constants */
-// COMPILE-TIME ONLY — a selector fragment, not a style value, so it can't be
-// expressed as a CSS custom property.
-/* RIGHT TO LEFT LANGUAGES STYLING */
+/* Compile-time constants */
 @RTL: ~'html[dir=rtl]';
 
-// COMPILE-TIME ONLY — used inside @media conditions, which are evaluated
-// before custom properties exist and can't read them.
-/* MEDIA QUERY BREAK POINTS */
 @xSmallBreakpoint: 480px;
 @smallBreakpoint: 768px;
 @mediumBreakpoint: 992px;
 @largeBreakpoint: 1200px;
 
-/* ==================================== >>
-THEMING
- << =================================== */
-:root {
-    .mx-theme-base();
-    .mx-theme-palette();
-    .mx-theme-light();
-}
-
-/* MODE WIRING — SAME ORDER AND SPECIFICITY AS CORE */
-@media (prefers-color-scheme: dark) {
-    :root {
-        .mx-theme-dark();
-    }
-}
-
-.color-theme-dark {
-    .mx-theme-dark();
-}
-
-.color-theme-light {
-    .mx-theme-light();
-}
-
-/* STICKY ADMIN BAR HEIGHT */
+/* Frontend admin topbar */
 @admin-topbar-frontend-height: 3.5rem;
+
+/* Responsive */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
+}

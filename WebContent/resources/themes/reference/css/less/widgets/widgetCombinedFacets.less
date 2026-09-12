@@ -1,43 +1,71 @@
-/* ==============================================================
-   Widget Combined Facets
-   style declarations for the "combined" mode of widget_searchFacets.xhtml
-   ==============================================================*/
-/* WIDGET COMBINED FACETS */
-
-/* BLOCK */
+/* Combined search filters */
 .combined-facets {
-    // --combined-facets-* (mixins.less) mirror .widget's own colors
-    // (widgets.less) 1:1, so no separate light/dark handling is needed here —
-    // the custom properties already carry the right value per theme
+    border: 1px solid var(--border-container);
     border-radius: var(--radius-container);
     background-color: var(--combined-facets-bg);
-    box-shadow: var(--shadow-container);
     color: var(--combined-facets-fg);
-    padding-bottom: 1.5rem;
+    box-shadow: none;
+    padding: clamp(1.6rem, 2vw, 2.4rem);
     margin-bottom: 1.2rem;
 
-    /* ELEMENTS */
     &__head {
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-radius: var(--radius-container);
-        padding: 1.5rem;
+        padding: 0;
     }
+
     &__title {
         font-weight: 600;
         font-size: var(--font-size-body);
     }
+
     &__reset {
         font-size: var(--font-size-caption);
     }
-    &__reset-icon-svg {
-    }
-    &__reset-label {
+
+    &__reset,
+    .widget-search-facets__section-toggle,
+    .widget-search-facets__filter-button,
+    .widget-search-facets__collapse-button,
+    .widget-chronology-slider__action-reset-button {
+        color: var(--fg-content-box);
+        background-color: transparent;
+        border-radius: var(--radius-container-small);
+
+        &:hover {
+            color: var(--fg-content-box);
+            background-color: var(--bg-hover);
+        }
+
+        &:active {
+            color: var(--fg-content-box);
+            background-color: var(--bg-pressed);
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+
+        .icon-svg {
+            color: currentColor;
+        }
+
+        &:disabled,
+        &[aria-disabled='true'] {
+            color: var(--fg-disabled);
+            background-color: var(--bg-disabled);
+        }
     }
 
-    .active-facets-badges__badge {
-        font-weight: normal;
+    /* ICONS DER EINGEBUNDENEN WIDGETS */
+    .widget__topbar-icon-svg,
+    .widget-search-facets__collapse-chevron-svg,
+    .widget-active-facets__reset,
+    .widget-active-facets__reset:hover,
+    .widget-active-facets__reset:focus {
+        color: var(--fg-content-box);
     }
 
     .widget-search-facets__collapse-button {
@@ -48,17 +76,9 @@
         }
     }
 
-    .widget-search-facets__filter .widget-search-facets__filter-button {
-    }
-
-    // individual facet fields/chronology slider are their own .widget boxes
-    // outside combined mode; flatten them here so they merge into the shared
-    // box above instead of stacking as nested widget cards with their own
-    // background/shadow/radius, separated by a hairline divider instead.
-    // @border collapses to 0 in dark mode (widgets rely on background
-    // contrast there instead), so the divider needs its own always-visible color.
     .widget-search-facets__collection,
     .widget-chronology-slider {
+        color: var(--fg-content-box);
         background: transparent;
         box-shadow: none;
         border-radius: 0;
@@ -75,22 +95,137 @@
         scrollbar-color: var(--combined-facets-scrollbar) transparent;
     }
 
-    // core's widgetCombinedFacets.less sets this to currentColor (so topbar
-    // icons pick up the local accent color); this theme keeps the same
-    // topbar icon color normal widgets use, for visual consistency
-    .widget__topbar .widget__topbar-icon-svg {
-        color: var(--widget-topbar-icon);
+    .widget__topbar {
+        overflow: visible;
+    }
+
+    .widget-search-facets__list-item {
+        border-radius: var(--radius-container-small);
+        border-inline-start: 3px solid transparent;
+
+        .widget-search-facets__list-item-link,
+        .widget-search-facets__list-item-control-link {
+            color: var(--fg-content-box);
+            background: transparent;
+            border-radius: var(--radius-container-small);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--fg-content-box);
+                background-color: var(--bg-hover);
+            }
+
+            &:active {
+                background-color: var(--bg-pressed);
+            }
+
+            &:focus-visible {
+                .mx-theme-focus();
+            }
+        }
+
+        &.-active,
+        &.-excluded {
+            background-color: var(--bg-selected);
+            border-inline-start-color: var(--brand);
+
+            .widget-search-facets__list-item-link:hover,
+            .widget-search-facets__list-item-control-link:hover {
+                background-color: var(--bg-selected-hover);
+            }
+
+            .widget-search-facets__list-item-link:active,
+            .widget-search-facets__list-item-control-link:active {
+                background-color: var(--bg-selected-pressed);
+            }
+
+            .widget-search-facets__list-item-count {
+                color: var(--fg-content-box);
+            }
+        }
+    }
+
+    .widget-search-facets__list-item-control {
+        width: 16px;
+        border-width: 1px;
+        opacity: 1;
+
+        &.-include {
+            margin-inline-end: 8px;
+        }
+    }
+
+    .widget-search-facets__list-item-count {
+        color: var(--fg-secondary);
+    }
+
+    .active-facets-badges__list .active-facets-badges__badge {
+        height: auto;
+        min-height: 28px;
+        padding-block: 0.3rem;
+        font-weight: normal;
+        color: var(--fg-content-box);
+        background-color: var(--bg-selected);
+        border: 1px solid var(--border-input);
+
+        &:hover {
+            color: var(--fg-content-box);
+            background-color: var(--bg-selected-hover);
+            border-color: var(--brand);
+        }
+
+        &:active {
+            background-color: var(--bg-selected-pressed);
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+    }
+
+    .active-facets-badges__badge-field,
+    .active-facets-badges__badge-remove {
+        color: currentColor;
+    }
+
+    .active-facets-badges__badge-remove {
+        background: transparent;
+    }
+
+    .widget-search-facets__filter input,
+    .widget-chronology-slider__item-input {
+        .mx-theme-field();
     }
 
     .widget-chronology-slider__slider {
-        border-radius: 0;
+        border-radius: var(--radius-container-small);
+        background-color: var(--border-default);
+
+        .ui-slider-range {
+            background-color: var(--brand);
+        }
 
         .ui-slider-handle {
-            width: 1rem;
-            height: 1rem;
-            border: 1px solid var(--fg-secondary);
-            background-color: var(--border-strong);
-            border-radius: 0;
+            top: -0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid var(--brand);
+            background-color: var(--bg-input);
+            border-radius: 50%;
+            box-shadow: none;
+
+            &:hover {
+                background-color: var(--bg-selected-hover);
+            }
+
+            &:active,
+            &.ui-state-active {
+                background-color: var(--brand);
+            }
+
+            &:focus-visible {
+                .mx-theme-focus();
+            }
         }
     }
 }

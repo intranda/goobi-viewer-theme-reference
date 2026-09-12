@@ -1,115 +1,64 @@
-/* ==============================================================
-   Search Standard
-   style declarations for searchOptions.xhtml
-   ==============================================================*/
-/* SEARCH STANDARD */
-/* BLOCK */
+/* Search form */
 .search-standard {
     margin-bottom: 1rem;
-    //	background-color: @bg-content-box;
-    //  	border: @border;
-    /* ELEMENT */
-    &__help {
-        button {
-            color: var(--fg-general);
-        }
+
+    &__help button {
+        color: var(--fg-general);
     }
-    &__title {
-        h2 {
-            color: var(--fg-content-box);
-        }
+
+    &__title h2 {
+        color: var(--fg-content-box);
     }
-    &__input {
-    }
+
     &__input-slim {
         gap: 0.75rem;
     }
-    &__input-label,
-    &__filter-label {
-    }
-    &__input-label {
-    }
-    &__input-autocomplete {
-        .ui-autocomplete {
-            .ui-autocomplete-input {
-                border: 1px solid var(--border-faint);
-                border-radius: var(--radius-container);
-                box-shadow: var(--shadow-container);
-                transition: box-shadow 0.15s ease;
 
-                &:focus {
-                    box-shadow:
-                        var(--shadow-container),
-                        0 0 0 3px var(--brand-tint-bg);
-                }
-                background: var(--bg-popover);
-                color: var(--fg-popover);
-            }
-        }
+    &__form {
+        color: var(--fg-content-box);
     }
-    &__filter {
+
+    &__form &__input-autocomplete .ui-autocomplete-input,
+    &__form &__filter-select select,
+    &__form &__submit-button.btn {
+        min-height: 4.4rem;
+        font-size: var(--font-size-body);
     }
-    &__filter-label {
+
+    &__form &__input-autocomplete .ui-autocomplete-input {
+        .mx-theme-field();
+        border-radius: var(--radius-container-small);
     }
-    &__filter-radio {
-        label {
-            font-size: var(--font-size-body-small);
-            font-weight: 400;
+
+    &__form &__filter-select {
+        .custom-control--select {
+            border: 0;
+            background: transparent;
+            box-shadow: none;
             color: var(--fg-content-box);
+
+            &::after {
+                color: currentColor;
+                border-top-color: currentColor;
+            }
         }
-    }
-    &__filter-select {
-        .custom-control--select,
+
         select {
-            border: 1px solid var(--border-faint);
-            border-radius: var(--radius-container-small) !important;
-            box-shadow: var(--shadow-container);
-            transition:
-                border-color 0.15s ease,
-                box-shadow 0.15s ease;
-
-            &:hover {
-                border-color: var(--brand);
-            }
-
-            &:focus-within {
-                border-color: var(--brand);
-                box-shadow:
-                    var(--shadow-container),
-                    0 0 0 3px var(--brand-tint-bg);
-            }
-
-            &:after {
-                border-top-color: var(--fg-general);
-            }
-
-            background-color: var(--bg-popover);
-
-            & select {
-                background: transparent;
-                padding-left: 1rem;
-            }
+            .mx-theme-field();
+            border-radius: var(--radius-container-small);
         }
     }
-    &__filter-link {
-        a {
-        }
+
+    &__filter-radio label {
+        font-size: var(--font-size-body-small);
+        font-weight: 400;
+        color: var(--fg-content-box);
     }
-    &__action {
+
+    &__form &__submit-button.btn {
+        .mx-theme-control-primary();
+        padding-inline: 1.5rem;
     }
-    &__submit-button.btn {
-        box-shadow: var(--shadow-container);
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        transition: box-shadow 0.15s ease;
-        &:hover,
-        &:focus {
-            box-shadow:
-                var(--shadow-container),
-                0 0 0 3px var(--brand-tint-bg);
-        }
-    }
-    /* MODIFICATION */
 }
 
 /* AUTOCOMPLETE DROPDOWN (jQuery UI menu, appended to body) */
@@ -212,6 +161,24 @@
         }
     }
     /* MODIFICATION */
+}
+
+/* Search autocomplete integration */
+body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.ui-menu {
+    color: var(--fg-content-box);
+    background-color: var(--bg-content-box);
+    border: 1px solid var(--border-input);
+
+    .ui-menu-item .ui-menu-item-wrapper {
+        color: var(--fg-content-box);
+        border-inline-start: 3px solid transparent;
+    }
+
+    .ui-menu-item .ui-state-active {
+        color: var(--fg-content-box);
+        background-color: var(--bg-selected);
+        border-inline-start: 3px solid var(--brand);
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

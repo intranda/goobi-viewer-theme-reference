@@ -25,7 +25,7 @@
     &__century-year-link {
         a {
             border-radius: var(--radius-container-small);
-            background-color: var(--brand-tint-bg);
+            background-color: var(--bg-brand-tint);
             border: none;
         }
     }
@@ -67,7 +67,11 @@
     &__day-popover {
         a {
             color: var(--fg-popover);
-            .pseudostates({color: var(--fg-popover);});
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--fg-popover);
+            }
         }
     }
     &__months {
@@ -103,13 +107,13 @@
     }
     &__month-day-link,
     &__month-day-button {
-        background-color: var(--calendar-day-bg);
+        background-color: var(--bg-selected);
         color: var(--fg-content-box);
         &:focus,
         &:hover,
         &:active {
-            background-color: var(--calendar-day-bg-hover);
-            color: var(--calendar-day-fg-hover);
+            background-color: var(--bg-brand);
+            color: var(--fg-on-brand);
         }
     }
     &__action {

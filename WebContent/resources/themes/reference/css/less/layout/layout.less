@@ -9,40 +9,29 @@
     position: relative;
 }
 
-/* REFERENCE SLIDER STYLING */
-.slider-reference {
-    &__container {
-    }
-    &__wrapper {
-        height: 250px;
-        position: relative;
-        pointer-events: none;
-        cursor: default;
-    }
-    &__image {
-        height: 250px;
-        object-position: center 25%;
-    }
-    &__link {
-        pointer-events: none;
-        cursor: default;
-        display: block;
-    }
-    &__header {
-        position: absolute;
-        left: 15%;
-        top: 50%;
-        background: rgb(from var(--shadow-color) r g b / 30%);
-        padding: 1.2rem 2rem;
-        color: var(--fg-inverse);
-        font-size: var(--font-size-heading-large);
-        z-index: 100;
-        font-weight: 300;
-        transform: translatey(-50%);
-    }
-    &__description {
-        display: none;
-    }
+/* FLUID OUTER MARGINS — scoped to the frontend frame so admin dialogs keep their sizing */
+#bodyWrapper .container {
+    width: 100%;
+    max-width: var(--page-max-width);
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
+}
+
+/* MOBILE OVERLAY */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgb(from var(--bg-scrim) r g b / 75%);
+    z-index: 2030;
+}
+
+/* ANCHOR OFFSET — keeps the fixed header from covering the anchor target */
+a[name='topDocAnchor']:target::before {
+    content: '';
+    display: block;
+    height: 98px;
+    margin-top: -98px;
 }
 
 /* RIGHT TO LEFT LAYOUT ADAPTATIONS */
@@ -105,15 +94,6 @@
     }
 }
 
-@keyframes searchButtonAnim {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-45deg);
-    }
-}
-
 @media screen and (max-width: @largeBreakpoint) {
 }
 
@@ -123,21 +103,9 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .slider-reference {
-        &__container {
-        }
-        &__wrapper {
-            height: 150px;
-        }
-        &__header {
-            font-size: var(--font-size-heading-small);
-            padding: 1.5rem 2rem;
-        }
-        &__image {
-            background-size: cover;
-            background-position: center center;
-            height: 150px;
-        }
+    a[name='topDocAnchor']:target::before {
+        height: 20px;
+        margin-top: -20px;
     }
     .page-content {
         z-index: unset;

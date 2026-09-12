@@ -3,10 +3,11 @@
    style declarations for breadcrumbs.xhtml
    ==============================================================*/
 /* BREADCRUMBS */
-/* BLOCK */
 .breadcrumbs {
     &__wrapper {
-        font-size: var(--font-size-caption);
+        margin-block: 1.6rem 0;
+        font-size: var(--font-size-body-small);
+        color: var(--fg-secondary);
     }
     &__list {
         display: flex;
@@ -14,36 +15,78 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        border-bottom: 1px solid var(--border-faint);
 
         li {
             display: flex;
-            align-items: center;
+            align-items: baseline;
+            min-width: 0;
+        }
+
+        /* first chip starts on the content edge */
+        > .breadcrumbs__crumb:first-child {
+            margin-inline-start: -0.5rem;
         }
     }
     /* ELEMENT */
-    ul {
-    }
-    li {
-    }
     a,
     span {
+        padding: 0.3rem 0.5rem;
+        max-width: 24rem;
     }
     a {
-    }
-    span {
+        color: var(--fg-secondary);
+        border-radius: var(--radius-container-small);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--fg-content-box);
+            background-color: var(--bg-hover);
+        }
+        &:active {
+            background-color: var(--bg-pressed);
+        }
+        &:focus-visible {
+            .mx-theme-focus();
+        }
     }
     &__starttext {
-        a,
         span {
+            padding-inline-start: 0;
+            color: var(--fg-muted);
         }
     }
-    &__starttext + li {
-        a,
-        span {
-        }
+    /* separator: text glyph on the shared baseline, same distance to both labels */
+    &__crumb {
+        align-items: baseline;
     }
     &__crumb + li:before {
+        content: '\203A';
+        flex: none;
+        width: auto;
+        height: auto;
+        margin: 0 0.2rem;
+        font-size: 1em;
+        font-weight: 600;
+        line-height: inherit;
+        color: var(--fg-secondary);
+        background: none;
+        mask: none;
+        -webkit-mask: none;
+    }
+    &__crumb.-actualPage span {
+        color: var(--fg-content-box);
+        font-weight: 500;
+        max-width: min(48ch, 100%);
+    }
+}
+
+@{RTL} .breadcrumbs__crumb + li {
+    &:before {
+        content: '\2039';
+        display: inline-block;
+    }
+    &:after {
+        display: none;
     }
 }
 
@@ -55,10 +98,44 @@
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
-/* BREAKPOINT FOR TABLETS */
+/* BREAKPOINT FOR TABLETS — only the parent as a back link */
 @media screen and (max-width: @smallBreakpoint) {
-    .breadcrumbs-wrapper {
-        display: none;
+    .breadcrumbs {
+        &__wrapper {
+            margin-block: 1.2rem 0;
+        }
+        &__list &__starttext,
+        &__list &__crumb {
+            display: none;
+        }
+        &__list &__crumb:nth-last-child(2),
+        &__list &__crumb:only-child {
+            display: inline-flex;
+        }
+        &__list &__crumb:nth-last-child(2) {
+            &:before {
+                display: none;
+            }
+            a::before {
+                content: '';
+                display: inline-block;
+                flex: none;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-inline-end: 0.2rem;
+                vertical-align: -0.2rem;
+                background-color: currentColor;
+                .mx-icon-mask(chevron-left);
+            }
+        }
+    }
+    @{RTL} .breadcrumbs__crumb:nth-last-child(2) {
+        &:after {
+            display: none;
+        }
+        a::before {
+            .mx-icon-mask(chevron-right);
+        }
     }
 }
 

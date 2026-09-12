@@ -15,7 +15,7 @@
             border-radius: var(--radius-container-small);
             font-size: var(--font-size-body-small);
             padding: 0.4rem 0.6rem;
-            background-color: rgb(from var(--accent) r g b / 20%);
+            background-color: var(--bookmark-added-bg);
         }
     }
     /* TOOGLE DROPDOWN */
@@ -175,8 +175,8 @@
     max-height: 420px;
     border: none;
     border-radius: var(--radius-container);
-    background-color: var(--bg-content-box);
-    box-shadow: 0 12px 32px rgb(from var(--shadow-color) r g b / 18%);
+    background-color: var(--bg-popover);
+    box-shadow: var(--shadow-floating);
     overflow: hidden;
 
     &.top {
@@ -194,14 +194,10 @@
             width: 12px;
             height: 12px;
             margin-left: -6px;
-            background-color: var(--bg-content-box);
+            background-color: var(--bg-popover);
             box-shadow: -2px -2px 4px rgb(from var(--shadow-color) r g b / 6%);
             transform: rotate(45deg);
         }
-    }
-
-    button {
-        color: var(--fg-content-box) !important;
     }
 
     label {
@@ -235,7 +231,7 @@
         padding: 0.85rem 1rem;
         font-weight: 600;
         font-size: var(--font-size-body-small);
-        color: var(--fg-content-box) !important;
+        color: var(--fg-popover);
         border-bottom: 1px solid var(--border-default);
     }
 
@@ -324,8 +320,8 @@
         // nested here for the same reason: core targets
         // ".bookmark-popup__body-list .bookmark-popup__check-icon"
         .bookmark-popup__check-icon {
-            color: var(--brand) !important;
-            stroke: var(--brand) !important;
+            color: var(--brand);
+            stroke: var(--brand);
         }
     }
 

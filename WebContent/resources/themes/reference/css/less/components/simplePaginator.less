@@ -1,106 +1,90 @@
-/* ==============================================================
-   Simple (Numeric) Paginator
-   style declarations for simplePaginator.xhtml
-   ==============================================================*/
-/* NUMERIC PAGINATOR */
-/* BLOCK */
+/* Numeric paginator */
 .numeric-paginator {
+    color: var(--fg-content-box);
     margin: 20px 0;
-    /* ELEMENT */
+
     ul {
         gap: 6px;
     }
+
     li {
         border: none;
-        &.numeric-paginator__navigate-text {
-            border: none;
-            background: none;
-        }
     }
-    a,
-    button,
-    span {
-        border-radius: var(--radius-button);
-        transition:
-            background-color 0.15s ease,
-            color 0.15s ease;
-    }
+
     a,
     button {
+        .mx-theme-control();
+        border: 1px solid transparent;
+        border-radius: var(--radius-container-small);
         font-size: var(--font-size-body-small);
         font-weight: 500;
-        color: var(--fg-general);
-        background-color: transparent;
-        &:hover,
-        &:active,
-        &:focus {
-            color: var(--fg-general);
-            // 20% of the current CI color; color-mix reads the live
-            // --color-brand custom property, so this stays correct across
-            // light/dark mode and subthemes without separate branches
-            background-color: color-mix(in srgb, var(--brand) 20%, transparent);
+        text-decoration: none;
+    }
+
+    &__navigate {
+        &.-active,
+        &[aria-current='page'] {
+            > a,
+            > span,
+            > button {
+                border: 1px solid var(--brand);
+                border-radius: var(--radius-container-small);
+                font-weight: 700;
+                .mx-theme-control-selected();
+            }
         }
-        &:focus-visible {
-            outline: 2px solid var(--outline-focus);
-            outline-offset: 1px;
+
+        &.inactive a,
+        &.inactive button,
+        a[aria-disabled='true'],
+        button:disabled {
+            &,
+            &:hover,
+            &:active {
+                .mx-theme-control-disabled();
+            }
+        }
+
+        &.inactive a i,
+        &.inactive button i {
+            color: inherit;
         }
     }
+
+    .icon-wrapper,
+    svg,
+    i {
+        color: currentColor;
+        fill: currentColor;
+        opacity: 1;
+    }
+
     &__dots {
         a,
         span {
-            background-color: transparent;
-            border: 0;
-            color: var(--fg-muted);
-        }
-    }
-    &__navigate {
-        &.-active {
-            a,
-            span,
-            button {
-                font-weight: 700;
-                &:hover,
-                &:active,
-                &:focus {
-                }
-                color: var(--fg-inverse);
-                background-color: var(--numeric-paginator-bg-active);
-            }
-        }
-        &.inactive {
-            a {
-                i {
-                }
-            }
-        }
-    }
-    /* MODIFICATION */
-    li.numeric-paginator__dots {
-    }
-    li.numeric-paginator__active {
-        border: none;
-    }
-    &__page-number-label {
-        span,
-        a,
-        button {
+            background: transparent;
             border: none;
-            background: none;
+            color: var(--fg-secondary);
         }
     }
-    &__page-number-input {
-        background-color: var(--bg-content-box);
-        color: var(--fg-general);
-        border-radius: var(--radius-button);
-        margin-bottom: 0;
-        input {
-            border: none;
-            outline: none;
-            padding-top: 2px;
 
-            border-radius: var(--radius-button);
-            background-color: var(--numeric-paginator-input-bg);
-            color: var(--fg-content-box);
+    &__page-number-label {
+        .mx-theme-control();
+        border: 1px solid transparent;
+        border-radius: var(--radius-container-small);
+
+        span {
+            color: inherit;
+            background: transparent;
+        }
+    }
+
+    &__page-number-input {
+        margin-bottom: 0;
+
+        input {
+            .mx-theme-field();
+            border-radius: var(--radius-container-small);
         }
     }
 }

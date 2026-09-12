@@ -10,20 +10,8 @@
     border-radius: var(--radius-button);
 }
 
-.btn--full {
-    color: var(--fg-on-brand);
-    background-color: var(--bg-brand);
-    border-color: var(--bg-brand);
-    &:hover,
-    &:active,
-    &:focus,
-    &.active:focus,
-    &.focus,
-    &:active.focus {
-        color: var(--fg-on-brand);
-        background-color: var(--bg-brand-hover);
-        border-color: var(--bg-brand-hover);
-    }
+.btn.btn--full {
+    .mx-theme-control-primary();
 }
 
 .btn--clean {
@@ -61,6 +49,13 @@
 }
 
 a.btn--icon {
+}
+
+/* SMALL AJAX LOADER ON BUTTONS */
+.small-button-loader {
+    &__icon {
+        border-right-color: var(--brand);
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

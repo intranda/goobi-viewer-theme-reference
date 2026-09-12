@@ -8,8 +8,8 @@
     background: var(--bg-content-box);
 }
 .popover-body {
-    .btn--full {
-        color: var(--fg-inverse);
+    .btn.btn--full {
+        .mx-theme-control-primary();
     }
 }
 
@@ -84,8 +84,7 @@
         color: var(--fg-content-box);
     }
     .btn.btn--full {
-        background: var(--bg-brand);
-        border-color: var(--bg-brand);
+        .mx-theme-control-primary();
     }
 
     .modal-content {
@@ -96,7 +95,7 @@
         background-color: var(--bg-content-box);
         color: var(--fg-content-box);
         border-radius: var(--radius-container);
-        box-shadow: var(--shadow-container);
+        box-shadow: var(--shadow-floating);
     }
     .card {
         border: 1px solid var(--modal-card-border);

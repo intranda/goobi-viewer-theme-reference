@@ -19,58 +19,19 @@ body {
     background-color: var(--bg-general);
     color: var(--fg-general);
 
-    // Style focused elements when navigating with the keyboard
-    // Define rules in the mixin `.mx-focus-visible`
+    // Keyboard focus: one ring for every control, replaces the core ring
     &.using-keyboard :focus-visible {
-        .mx-focus-visible !important;
-    }
-
-    // No outline offset when an input is in focus
-    // Does not apply if inputs are styled as buttons
-    &.using-keyboard input:not(.btn):focus-visible,
-    &.using-keyboard select:focus-visible,
-    &.using-keyboard textarea:focus-visible {
-        outline-offset: 0 !important;
+        .mx-theme-focus-ring();
     }
 }
 
-// Baseline focus ring for buttons, links and similar controls: a mouse click
-// never triggers their native `:focus-visible`, so this rule only ever fires
-// for real keyboard focus. Applied directly rather than through
-// body.using-keyboard so it also works before that class is toggled (e.g. an
-// autofocused element right after page load).
+// Controls report :focus-visible for keyboard focus only; works before body.using-keyboard is set
 button,
 .btn,
 a,
 [tabindex] {
     &:focus-visible {
-        .mx-focus-ring();
-    }
-}
-
-// Text-like fields are reported as `:focus-visible` by the browser even on a
-// mouse click, since a visible indicator is needed the moment you can type.
-// To keep the red ring reserved for actual keyboard navigation, these only
-// get it through body.using-keyboard above; a plain mouse-focused field
-// gets the softer CI accent ring instead.
-body:not(.using-keyboard) {
-    input:not(.btn):focus,
-    select:focus,
-    textarea:focus {
-        .mx-accent-ring();
-    }
-}
-
-// Softer CI-colored ring for active/pressed state, kept separate from the
-// red keyboard-focus ring above so focus stays visually distinct.
-button,
-.btn,
-input,
-select,
-textarea,
-a {
-    &:active {
-        .mx-accent-ring();
+        .mx-theme-focus-ring();
     }
 }
 

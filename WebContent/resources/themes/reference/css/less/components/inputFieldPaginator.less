@@ -1,38 +1,72 @@
-/* ==============================================================
-   Input field paginator
-   style declarations for component inputFieldPaginator.xhtml
-   ==============================================================*/
-/* BLOCK */
-
+/* Input field paginator */
 .inputfield-paginator {
+    color: var(--fg-content-box);
+
     ul {
+        width: fit-content;
+        max-width: 100%;
+        padding: 3px;
+        border: 0;
+        background-color: transparent;
     }
+
     &__navigate {
+        background: transparent;
         border-radius: var(--radius-container-small);
-        background-color: var(--bg-content-box);
-        box-shadow: var(--shadow-container);
-        &:hover {
-            background: var(--bg-hover);
+        box-shadow: none;
+        padding-block: 0;
+
+        a {
+            .mx-theme-control();
+            border: 1px solid transparent;
+            border-radius: var(--radius-container-small);
+            background-color: transparent;
+            min-height: 35px;
+            text-decoration: none;
         }
-        &.inactive {
-            &:hover {
-                background-color: var(--bg-content-box);
+
+        &.inactive a,
+        a[aria-disabled='true'] {
+            &,
+            &:hover,
+            &:active {
+                .mx-theme-control-disabled();
+                background-color: transparent;
+                border-color: transparent;
             }
         }
+
+        &.inactive svg {
+            opacity: 1;
+        }
+
+        .icon-wrapper,
         svg {
-            fill: var(--fg-general);
+            color: currentColor;
+            fill: currentColor;
+            opacity: 1;
         }
     }
+
     &__navigate-text {
+        padding: 0;
     }
+
     &__page-number-label {
+        .mx-theme-control();
+        border: 1px solid transparent;
+        border-radius: var(--radius-container-small);
+        background-color: transparent;
+        min-height: 35px;
+        padding-inline: 0.6rem;
     }
+
     &__page-number-input {
         input {
-            border: none;
-            outline: none;
-            background-color: transparent;
-            color: var(--fg-general);
+            .mx-theme-field();
+            min-height: 35px;
+            border-radius: var(--radius-container-small);
+            text-align: center;
         }
     }
 }
