@@ -1,7 +1,8 @@
 /* ==============================================================
-   Tokens — semantic roles per mode and feature tokens; mirrors
-   the core file. A role is redefined here only when the theme
-   means it differently. Both mode blocks declare the same names.
+   Tokens — the theme's binding of the core token names.
+   Base and the two semantic blocks redefine core roles the theme
+   means differently; the feature blocks hold tokens of the theme's
+   own components. Both mode blocks declare the same names.
    ==============================================================*/
 
 .mx-theme-base() {
@@ -9,7 +10,6 @@
     --font-family:
         'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    --font-scale: 1;
 
     /* LAYOUT */
     --page-max-width: 192rem;
@@ -21,13 +21,6 @@
     --radius-container: 8px;
     --radius-container-small: 6px;
     --radius-button: 6px;
-
-    /* ENTITY GROUPS */
-    --bg-entity-work: var(--color-entity-group-work);
-    --bg-entity-person: var(--color-entity-group-person);
-    --bg-entity-agent: var(--color-entity-group-agent);
-    --bg-entity-award: var(--color-entity-group-award);
-    --bg-entity-event: var(--color-entity-group-event);
 }
 
 .mx-theme-semantic-light() {
@@ -119,6 +112,13 @@
     /* ACCENT */
     --accent: var(--color-accent);
     --fg-accent: var(--color-accent-text);
+
+    /* ENTITY GROUPS */
+    --bg-entity-work: var(--color-entity-group-work);
+    --bg-entity-person: var(--color-entity-group-person);
+    --bg-entity-agent: var(--color-entity-group-agent);
+    --bg-entity-award: var(--color-entity-group-award);
+    --bg-entity-event: var(--color-entity-group-event);
 
     /* STATUS */
     --fg-danger: var(--color-danger);
@@ -232,6 +232,13 @@
     /* ACCENT */
     --accent: var(--color-accent-dark);
     --fg-accent: var(--color-accent-text-dark);
+
+    /* ENTITY GROUPS */
+    --bg-entity-work: var(--color-entity-group-work);
+    --bg-entity-person: var(--color-entity-group-person);
+    --bg-entity-agent: var(--color-entity-group-agent);
+    --bg-entity-award: var(--color-entity-group-award);
+    --bg-entity-event: var(--color-entity-group-event);
 
     /* STATUS */
     --fg-danger: var(--color-danger-text-dark);
