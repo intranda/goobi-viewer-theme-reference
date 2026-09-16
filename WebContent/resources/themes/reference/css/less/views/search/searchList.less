@@ -597,7 +597,7 @@
 
 /* HIT ROW — an open result strip: the scan leads, the text breathes, the tools stay out of the way */
 .search-list__hits:not(.grid):not(.list-view) {
-    --_hit-thumb-width: 13rem;
+    --_hit-thumb-width: 19rem;
     --_hit-thumb-ratio: 4 / 5;
     --_hit-column-gap: 2.8rem;
 
@@ -671,7 +671,7 @@
         margin-bottom: 0;
     }
     .search-list__hit-title-heading {
-        font-size: var(--font-size-heading-medium);
+        font-size: var(--font-size-heading-small);
         line-height: 1.25;
     }
 
@@ -785,7 +785,6 @@ body:has(.header.-adminActive) @{searchSheet} {
         margin: 0;
         padding: 0.8rem var(--search-sheet-gutter);
         border-block: 1px solid var(--search-band-border);
-        background-color: var(--search-band-bg);
     }
     .search-list__band-start,
     .search-list__band-end {
@@ -1047,7 +1046,6 @@ body:has(.header.-adminActive) @{searchSheet} {
     .numeric-paginator.-bottom {
         margin: 0;
         padding: 1.2rem var(--search-sheet-gutter);
-        border-block-start: 1px solid var(--search-band-border);
         border-end-start-radius: var(--radius-container);
         border-end-end-radius: var(--radius-container);
         background-color: var(--search-band-bg);

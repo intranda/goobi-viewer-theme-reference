@@ -242,10 +242,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 6rem;
-            height: 4rem;
-            border-radius: var(--radius-container);
-            border: 2px solid var(--brand);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgb(from var(--color-neutral-0) r g b / 16%);
             color: var(--fg-inverse);
 
             transition:
@@ -253,8 +253,11 @@
                 background-color 0.2s ease;
 
             &:hover {
-                border-color: var(--brand-hover);
+                border-color: rgb(from var(--color-neutral-0) r g b / 40%);
                 background-color: rgb(from var(--fg-inverse) r g b / 8%);
+            }
+            &:focus-visible {
+                .mx-theme-focus();
             }
 
             svg {
@@ -270,10 +273,10 @@
         align-items: center;
         justify-content: center;
         margin-left: auto;
-        width: 4.2rem;
-        height: 4.2rem;
-        border-radius: var(--radius-container);
-        border: 2px solid var(--brand);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid rgb(from var(--color-neutral-0) r g b / 16%);
         color: var(--fg-inverse);
         cursor: pointer;
         background-color: transparent;
@@ -283,9 +286,12 @@
             background-color 0.2s ease;
 
         &:hover {
-            border-color: var(--brand-hover);
+            border-color: rgb(from var(--color-neutral-0) r g b / 40%);
             background-color: rgb(from var(--fg-inverse) r g b / 8%);
             color: var(--fg-inverse);
+        }
+        &:focus-visible {
+            .mx-theme-focus();
         }
 
         svg {
