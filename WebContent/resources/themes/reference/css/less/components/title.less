@@ -37,6 +37,38 @@
     }
 }
 
+/* DOCUMENT IDENTITY WITHIN THE MAIN SURFACE */
+.content__wrapper > .content__main .title {
+    &__header {
+        margin-block-end: 1.6rem;
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        padding-block-end: 2rem;
+        padding-inline: var(--_content-inset, 2.4rem);
+        border-block-end: 1px solid var(--content-divider);
+
+        > h1 {
+            flex-wrap: wrap;
+            row-gap: 0.8rem;
+        }
+
+        .copyright-indicator {
+            margin-block-end: 0;
+        }
+    }
+
+    &__header-label {
+        flex: 1 1 20rem;
+        min-width: 0;
+        margin-block-end: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* RECORD VIEW — the stage band starts right at the header rule, no gap in between */
+.content__wrapper > .content__main .view-object .title__header {
+    margin-block-end: 0;
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

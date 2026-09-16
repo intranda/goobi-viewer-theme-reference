@@ -46,7 +46,7 @@
         border: 2px solid transparent;
         box-shadow: none;
         font-size: var(--font-size-body-small);
-        border-radius: var(--search-toolbar-button-radius);
+        border-radius: var(--radius-button);
 
         &:hover {
             color: var(--fg-content-box);
@@ -354,33 +354,35 @@
     }
     &__hit-type {
     }
+    /* DOCUMENT TYPE — a spoken line above the title, not a filled chip */
     &__hit-docstruct {
         font-size: var(--font-size-caption);
+        color: var(--fg-muted);
         ul {
+            column-gap: 0.2rem;
         }
         li {
         }
         li + li:before {
+            color: var(--fg-muted);
         }
         a {
             font-weight: 600;
             font-size: var(--font-size-caption);
             text-transform: uppercase;
-            letter-spacing: 0.3px;
-            border-radius: var(--radius-container-small);
-
-            padding: 0 0.6rem;
-
-            background-color: var(--bg-subtle);
-            color: var(--fg-content-box);
+            letter-spacing: 0.08em;
+            padding: 0;
+            background-color: transparent;
+            color: var(--fg-muted);
 
             &:hover {
-                background-color: var(--bg-selected-hover);
+                background-color: transparent;
                 color: var(--fg-content-box);
                 text-decoration: underline;
+                text-underline-offset: 0.3em;
             }
             &:active {
-                background-color: var(--bg-selected-pressed);
+                background-color: transparent;
                 color: var(--fg-content-box);
             }
             &:focus-visible {
@@ -471,10 +473,19 @@
     &__hit-options-wrapper {
         margin-left: 0.5rem;
     }
+    /* the icon keeps an edge: on a hovered row the plain surface alone would not read as a control,
+       and the border width is what lets the selected and disabled helpers show their colour at all */
     &__hit-options-button.btn {
         .mx-theme-control();
+        border: 1px solid var(--border-strong);
         border-radius: var(--radius-container-small);
-        transition: background-color 0.15s ease;
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
+
+        &:hover {
+            border-color: var(--border-input);
+        }
 
         &.added,
         &[aria-checked='true'],
@@ -584,6 +595,469 @@
 .search-list__current-search .input-group-append.search {
 }
 
+/* HIT ROW — an open result strip: the scan leads, the text breathes, the tools stay out of the way */
+.search-list__hits:not(.grid):not(.list-view) {
+    --_hit-thumb-width: 13rem;
+    --_hit-thumb-ratio: 4 / 5;
+    --_hit-column-gap: 2.8rem;
+
+    .search-list__hit-inner-structure {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas: 'info actions';
+        align-items: start;
+        gap: 0 var(--_hit-column-gap);
+
+        &:has(.search-list__hit-thumbnail) {
+            grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr) auto;
+            grid-template-areas: 'thumb info actions';
+        }
+    }
+
+    /* the wrapper only groups preview and actions in the markup; the row places them itself */
+    .search-list__hit-thumb-wrapper {
+        display: contents;
+    }
+
+    /* PREVIEW — the scan itself, no frame around it; one proportion for every row */
+    .search-list__hit-thumbnail {
+        grid-area: thumb;
+        width: 100%;
+        aspect-ratio: var(--_hit-thumb-ratio);
+
+        a {
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            max-height: none;
+            object-fit: cover;
+            object-position: center top;
+            border: 0;
+            border-radius: var(--radius-container-small);
+            box-shadow: 0 0.2rem 0.8rem rgb(from var(--shadow-color) r g b / 14%);
+            transition:
+                transform 0.18s ease,
+                box-shadow 0.18s ease;
+        }
+        /* multivolume keeps its stacked cards inside the same slot */
+        a.stackedThumbEffect {
+            margin: 0;
+
+            .stackedThumbEffect-inner {
+                width: 100%;
+                height: 100%;
+            }
+            img {
+                border-radius: 0;
+            }
+        }
+    }
+
+    .search-list__hit-info-wrapper {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    /* the document type reads as a kicker above the title */
+    .search-list__hit-docstruct {
+        order: -1;
+        margin-bottom: 0;
+    }
+    .search-list__hit-top-wrapper {
+        margin-bottom: 0;
+    }
+    .search-list__hit-title-heading {
+        font-size: var(--font-size-heading-medium);
+        line-height: 1.25;
+    }
+
+    /* FACTS — a running line of label and value, not a two column table */
+    .search-list__hit-metadata-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.6rem;
+        margin: 0.4rem 0 0;
+        font-size: var(--font-size-body);
+    }
+    .search-list__hit-text-label {
+        color: var(--fg-muted);
+
+        &:not(:first-of-type) {
+            margin-inline-start: 2.4rem;
+        }
+    }
+    .search-list__hit-text-value {
+        grid-column: auto;
+    }
+
+    /* TOOLS — present on touch, called up by pointer or keyboard on the desktop */
+    .search-list__hit-options-wrapper {
+        grid-area: actions;
+        flex-direction: row;
+        gap: 0.4rem;
+        margin: 0;
+    }
+
+    /* the sub-hit toggle and its list continue the text axis instead of the full width */
+    a[data-toggle='hit-content'],
+    button[data-toggle='hit-content'] {
+        width: auto;
+        margin-top: 1.6rem;
+        padding-top: 0;
+        border-top: 0;
+        color: var(--fg-muted);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--fg-content-box);
+        }
+    }
+    .search-list__hit:has(.search-list__hit-thumbnail) {
+        .search-list__child-hits-button-wrapper,
+        .search-list__hit-archive-link,
+        .search-list__hit-content {
+            padding-inline-start: calc(var(--_hit-thumb-width) + var(--_hit-column-gap));
+        }
+    }
+}
+
+/* POINTER DEVICES — the row answers as a whole: the scan lifts, the tools appear.
+   Touch keeps them permanently, like the facet actions. */
+@media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
+    .search-list__hits:not(.grid):not(.list-view) {
+        .search-list__hit-options-wrapper > * {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+        .search-list__hit:hover .search-list__hit-options-wrapper > *,
+        .search-list__hit:focus-within .search-list__hit-options-wrapper > * {
+            opacity: 1;
+        }
+        /* a record already on the list keeps its mark visible */
+        .search-list__hit-options-button-bookmark.added,
+        .search-list__hit-options-button-bookmark[aria-checked='true'] {
+            opacity: 1;
+        }
+    }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .search-list__hits:not(.grid):not(.list-view) .search-list__hit:hover .search-list__hit-thumbnail img {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.8rem 2rem rgb(from var(--shadow-color) r g b / 18%);
+    }
+}
+
+/* SEARCH PAGE CONTROL BAND — the header row of the result list */
+body:has(.header.-adminActive) @{searchSheet} {
+    --_search-band-offset: @admin-topbar-frontend-height;
+}
+
+@{searchSheet} {
+    .search-list {
+        margin-bottom: 0;
+    }
+    .search-list__options-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* BAND — stays at the top of the viewport under the sticky header */
+    .search-list__nav-helper-wrapper {
+        /* the core declares these on .search-list__options, which the band replaces */
+        --_search-option-button-size: var(--search-control-height);
+        --_search-option-icon-size: 1.8rem;
+
+        position: sticky;
+        top: var(--search-band-top);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem var(--search-band-gap);
+        margin: 0;
+        padding: 0.8rem var(--search-sheet-gutter);
+        border-block: 1px solid var(--search-band-border);
+        background-color: var(--search-band-bg);
+    }
+    .search-list__band-start,
+    .search-list__band-end {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .search-list__band-start {
+        gap: 0.6rem;
+    }
+    .search-list__band-end {
+        gap: var(--search-band-gap);
+        /* stays on the right even when the band wraps into two lines */
+        margin-inline-start: auto;
+    }
+
+    /* STATEMENT — the only unframed, dark item of the band */
+    .search-list__hitcount {
+        margin-inline-end: 1rem;
+        font-size: var(--font-size-body-small);
+        font-weight: 600;
+        color: var(--fg-content-box);
+    }
+
+    /* SETTINGS — same material as the control groups, so the band reads as one row */
+    .search-list__nav-helper-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        height: var(--search-control-height);
+        padding-inline: 1.2rem;
+        border: 1px solid var(--search-group-border);
+        border-radius: var(--search-group-radius);
+        background-color: var(--search-group-bg);
+        transition: background-color 0.18s ease;
+
+        &:hover {
+            background-color: var(--search-group-bg-hover);
+        }
+        &:active {
+            background-color: var(--search-group-bg-pressed);
+        }
+
+        .search-list__nav-helper-label label {
+            font-size: var(--font-size-body-small);
+            color: var(--fg-muted);
+        }
+        .custom-control--select {
+            width: auto;
+            min-height: 0;
+        }
+        .custom-control--select select {
+            width: auto;
+            height: auto;
+            min-height: 0;
+            max-width: none;
+            padding: 0 2rem 0 0;
+            border: 0;
+            background-color: transparent;
+            font-size: var(--font-size-body-small);
+            font-weight: 600;
+        }
+    }
+
+    /* CONTROL GROUPS — one outline around the set, hairlines between its members, no fill at rest */
+    .inputfield-paginator,
+    .search-list__views {
+        display: inline-flex;
+        align-items: center;
+        height: var(--search-control-height);
+        gap: 0;
+        padding: 0;
+        border: 1px solid var(--search-group-border);
+        border-radius: var(--search-group-radius);
+        background-color: transparent;
+        overflow: hidden;
+    }
+    .inputfield-paginator .inputfield-paginator__navigate,
+    .search-list__views .search-list__option-button.btn {
+        border-radius: 0;
+        background-color: var(--search-group-bg);
+        transition: background-color 0.18s ease;
+
+        &:hover {
+            background-color: var(--search-group-bg-hover);
+        }
+        &:active {
+            background-color: var(--search-group-bg-pressed);
+        }
+    }
+    .inputfield-paginator li + li,
+    .search-list__views .search-list__option-button.btn + .search-list__option-button.btn {
+        border-inline-start: 1px solid var(--search-group-border);
+    }
+    .inputfield-paginator .inputfield-paginator__navigate.inactive {
+        &,
+        &:hover,
+        &:active {
+            background-color: var(--search-group-bg-disabled);
+        }
+        a,
+        svg {
+            color: var(--search-group-fg-disabled);
+            fill: var(--search-group-fg-disabled);
+            opacity: 1;
+        }
+    }
+    .inputfield-paginator {
+        ul {
+            gap: 0;
+            padding: 0;
+        }
+        .inputfield-paginator__navigate {
+            min-width: 3.4rem;
+            min-height: 0;
+            height: var(--search-control-height);
+            padding-block: 0;
+        }
+        a,
+        .inputfield-paginator__page-number-label {
+            border: 0;
+            border-radius: 0;
+            background-color: transparent;
+        }
+        a,
+        .inputfield-paginator__page-number-label {
+            min-height: 0;
+            height: var(--search-control-height);
+        }
+        .inputfield-paginator__page-number-input input {
+            min-height: 0;
+            height: calc(var(--search-control-height) - 0.8rem);
+            margin-inline: 0.4rem;
+        }
+    }
+    /* SELECTION IS TINTED, NEVER FILLED — the solid brand stays on the search button */
+    .search-list__option-button.btn {
+        height: var(--search-control-height);
+        min-width: 3.4rem;
+        border: 0;
+        border-radius: 0;
+
+        &.active,
+        &.-active,
+        &[aria-pressed='true'],
+        &[aria-expanded='true'],
+        &.is-modal-trigger-open {
+            &,
+            &:hover,
+            &:focus {
+                background-color: var(--bg-selected);
+                color: var(--fg-selected);
+                border-color: transparent;
+            }
+        }
+    }
+
+    /* THE CHOSEN VIEW IS FILLED AND MORPHS TO A PILL — the one place the band shows the brand besides the search button */
+    .search-list__views .search-list__option-button.btn {
+        &.active,
+        &.-active,
+        &[aria-pressed='true'] {
+            &,
+            &:hover,
+            &:focus {
+                background-color: var(--search-group-bg-selected);
+                color: var(--search-group-fg-selected);
+            }
+        }
+    }
+
+    /* FOCUS — the chip carries the state; a ring around the select inside it reads as a stray box */
+    .search-list__nav-helper-item:focus-within {
+        border-color: var(--brand);
+    }
+    .search-list__nav-helper-item select:focus {
+        .mx-theme-focus-ring(0; 0);
+    }
+
+    /* OVERFLOW — RSS, saved search, export and help behind one button, outside both groups */
+    .search-list__overflow-toggle.btn {
+        border: 1px solid var(--search-group-solo-border);
+        border-radius: var(--search-group-radius);
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--search-group-bg-hover);
+        }
+        &:active {
+            background-color: var(--search-group-bg-pressed);
+        }
+    }
+    .search-list__overflow-menu {
+        min-width: 24rem;
+        padding: 0.6rem;
+        border: 1px solid var(--border-container);
+        border-radius: var(--radius-container);
+        background-color: var(--bg-popover);
+        box-shadow: var(--shadow-floating);
+
+        > * {
+            display: block;
+        }
+        .search-list__save-search > span {
+            display: block;
+        }
+
+        .search-list__option-button.btn,
+        .search-list__export-dropdown-link {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            width: 100%;
+            height: auto;
+            min-width: 0;
+            padding: 0.9rem 1rem;
+            border-radius: var(--radius-button);
+            font-size: var(--font-size-body-small);
+            text-align: start;
+
+            &:hover {
+                background-color: var(--bg-hover-accent);
+            }
+        }
+
+        /* the export keeps its own markup, its menu becomes a section of this one */
+        .search-list__export-dropdown-toggle {
+            display: none;
+        }
+        .search-list__export-dropdown {
+            display: block;
+            position: static;
+            float: none;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: transparent;
+            box-shadow: none;
+        }
+        .search-list__export-dropdown-heading {
+            margin: 0;
+            padding: 1rem 1rem 0.4rem;
+            font-size: var(--font-size-caption);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--fg-muted);
+        }
+    }
+
+    /* TILE VIEW — the only view that needs the gutter on its container */
+    .search-list__hits.grid .search-list__hits-list {
+        padding: 2rem var(--search-sheet-gutter);
+    }
+
+    /* FOOT BAND — the numeric pagination the core renders below the list */
+    .numeric-paginator.-bottom {
+        margin: 0;
+        padding: 1.2rem var(--search-sheet-gutter);
+        border-block-start: 1px solid var(--search-band-border);
+        border-end-start-radius: var(--radius-container);
+        border-end-end-radius: var(--radius-container);
+        background-color: var(--search-band-bg);
+
+        ul {
+            justify-content: center;
+        }
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
@@ -594,8 +1068,103 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    .search-list__hits:not(.grid):not(.list-view) {
+        --_hit-thumb-width: 11rem;
+        --_hit-column-gap: 2rem;
+
+        .search-list__hit-title-heading {
+            font-size: var(--font-size-heading-small);
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    .search-list__hits:not(.grid):not(.list-view) {
+        --_hit-thumb-width: 8.8rem;
+        --_hit-column-gap: 1.6rem;
+
+        /* the actions move below the row, the preview keeps its column */
+        .search-list__hit-inner-structure {
+            grid-template-columns: minmax(0, 1fr);
+            grid-template-areas: 'info' 'actions';
+
+            &:has(.search-list__hit-thumbnail) {
+                grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr);
+                grid-template-areas: 'thumb info' 'actions actions';
+            }
+        }
+        .search-list__hit-options-wrapper {
+            margin-top: 1.6rem;
+        }
+        .search-list__hit:has(.search-list__hit-thumbnail) {
+            .search-list__child-hits-button-wrapper,
+            .search-list__hit-archive-link,
+            .search-list__hit-content {
+                padding-inline-start: 0;
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR TABLETS — the band splits into a line of context and a line of controls */
+@media screen and (max-width: @smallBreakpoint) {
+    @{searchSheet} {
+        .search-list__nav-helper-wrapper {
+            /* the controls need every pixel of the line; the band gap is the cheapest to give */
+            gap: 0.8rem;
+            padding-block: 1rem;
+            /* three lines pinned to the top would eat a fifth of a phone screen */
+            position: static;
+        }
+        .search-list__band-start,
+        .search-list__band-end {
+            flex: 1 1 100%;
+        }
+        .search-list__band-end {
+            gap: 0.8rem;
+            justify-content: space-between;
+            margin-inline-start: 0;
+        }
+        /* the settings share the width instead of pushing each other out */
+        .search-list__nav-helper-item {
+            flex: 1 1 0;
+            min-width: 0;
+
+            .custom-control--select,
+            .custom-control--select select {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR SMARTPHONES — first and last page give way, the arrows carry the navigation */
+@media screen and (max-width: @xSmallBreakpoint) {
+    @{searchSheet} {
+        .search-list__hitcount {
+            flex: 1 1 100%;
+            margin-inline-end: 0;
+        }
+        .inputfield-paginator .inputfield-paginator__navigate-first-svg,
+        .inputfield-paginator .inputfield-paginator__navigate-last-svg {
+            display: none;
+        }
+        /* a setting gets its own line: the label may be long, the value must stay readable */
+        .search-list__nav-helper-item {
+            flex: 1 1 100%;
+            justify-content: space-between;
+
+            .search-list__nav-helper-label {
+                flex: 0 1 auto;
+                min-width: 0;
+            }
+            .custom-control--select,
+            .custom-control--select select {
+                width: auto;
+                max-width: 100%;
+            }
+        }
+    }
 }

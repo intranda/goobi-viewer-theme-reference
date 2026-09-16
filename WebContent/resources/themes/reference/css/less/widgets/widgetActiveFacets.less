@@ -24,6 +24,7 @@
         &:hover,
         &:focus {
             border-color: transparent;
+            box-shadow: none;
         }
     }
     &__badge {
@@ -35,8 +36,8 @@
     &__badge-remove {
         width: 16px;
         height: 16px;
-        color: var(--active-facets-badge-fg-contrast);
-        background: var(--active-facets-badge-fg);
+        color: var(--brand);
+        background: var(--fg-on-brand);
         border-radius: var(--radius-button);
     }
     &__badge-remove-icon-svg {
@@ -56,6 +57,99 @@
     &__reset-icon-svg {
     }
     &__reset-label {
+    }
+}
+
+/* SIDEBAR ACTIVE FILTER SUMMARY */
+:where(.content__wrapper > .content__sidebar)
+    .active-facets-badges.widget-active-facets:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    .active-facets-badges__list {
+        gap: 0.8rem;
+    }
+    .active-facets-badges__list .active-facets-badges__badge {
+        .mx-theme-control-accent();
+        min-width: 3.2rem;
+        min-height: 3.2rem;
+        height: auto;
+        padding: 0.4rem 0.8rem;
+        gap: 0.4rem;
+        border: 1px solid rgb(from var(--brand) r g b / 35%);
+        border-radius: var(--radius-button);
+        color: var(--fg-selected);
+        background-color: var(--bg-selected);
+        font-size: var(--font-size-body-small);
+        font-weight: 400;
+        line-height: var(--line-height-body);
+        &:hover {
+            color: var(--fg-selected);
+            background-color: var(--bg-selected-hover);
+            border-color: var(--brand);
+        }
+        &:active {
+            color: var(--fg-selected);
+            background-color: var(--bg-selected-pressed);
+        }
+        .active-facets-badges__badge-field,
+        .active-facets-badges__badge-remove {
+            color: currentColor;
+        }
+        .active-facets-badges__badge-remove {
+            background: transparent;
+        }
+        &:is(:disabled, .disabled, [aria-disabled='true']) {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+            }
+        }
+    }
+    .widget-active-facets__reset {
+        .mx-theme-control-accent();
+        justify-content: center;
+        min-width: 3.2rem;
+        min-height: 3.2rem;
+        padding: 0.4rem;
+        border-radius: var(--radius-button);
+        .icon-svg {
+            color: currentColor;
+        }
+        &:is(:disabled, .disabled, [aria-disabled='true']) {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+            }
+        }
+        .widget-active-facets__reset-label,
+        &:hover .widget-active-facets__reset-label,
+        &:focus .widget-active-facets__reset-label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            max-width: none;
+            margin: 0;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
+            opacity: 1;
+            transition: none;
+        }
+    }
+}
+
+@media (any-pointer: coarse), (max-width: @smallBreakpoint) {
+    :where(.content__wrapper > .content__sidebar)
+        .active-facets-badges.widget-active-facets:not(
+            :where(.widget .widget, .modal *, .popover *, dialog *, #admin *)
+        ) {
+        .active-facets-badges__list .active-facets-badges__badge,
+        .widget-active-facets__reset {
+            min-width: 4.4rem;
+            min-height: 4.4rem;
+        }
     }
 }
 

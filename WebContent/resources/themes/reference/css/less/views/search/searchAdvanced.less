@@ -55,6 +55,74 @@
     &__input-value {
         background: var(--bg-content-box);
     }
+    &__button-badge.btn {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+
+        .badge-light {
+            color: var(--fg-content-box);
+            background-color: var(--bg-subtle);
+        }
+
+        &:hover .badge-light {
+            color: var(--fg-hover);
+            background-color: var(--bg-hover);
+        }
+
+        &:active .badge-light {
+            color: var(--fg-content-box);
+            background-color: var(--bg-pressed);
+        }
+
+        .badge-warning {
+            color: var(--fg-on-brand);
+            background-color: var(--bg-brand);
+        }
+
+        &:hover .badge-warning {
+            color: var(--fg-on-brand);
+            background-color: var(--bg-brand-hover);
+        }
+
+        &:active .badge-warning {
+            color: var(--fg-on-brand);
+            background-color: var(--bg-brand-pressed);
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+
+        &:disabled,
+        &[aria-disabled='true'],
+        &.disabled,
+        &.btn--inactive {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 1;
+
+                .badge {
+                    color: var(--fg-disabled);
+                    background-color: var(--bg-disabled);
+                }
+            }
+        }
+    }
+
+    input[type='checkbox']:where(:not(#admin *)) {
+        .mx-theme-native-accent();
+    }
+
+    label:has(> input[type='checkbox']:is(:disabled, [aria-disabled='true'])):where(:not(#admin *)) {
+        color: var(--fg-disabled);
+    }
+
     &__select-values {
     }
 

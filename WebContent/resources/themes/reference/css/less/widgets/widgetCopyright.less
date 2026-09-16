@@ -31,6 +31,135 @@
     }
 }
 
+/* COPYRIGHT IN THE NORMAL SIDEBAR */
+:where(.content__wrapper > .content__sidebar)
+    .widget.widget-copyright:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    color: var(--fg-content-box);
+    cursor: pointer;
+
+    &:hover {
+        border-color: var(--border-default);
+    }
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+
+    > .widget__body.widget-copyright__body {
+        margin: 0;
+        padding: 1.6rem;
+        border-radius: inherit;
+        background-color: transparent;
+        transition: background-color 0.2s ease;
+    }
+
+    /* the whole panel is one control: the surface answers hover, press and the open state */
+    &:hover > .widget__body.widget-copyright__body,
+    &.-open > .widget__body.widget-copyright__body {
+        background-color: var(--bg-hover-accent);
+    }
+
+    &:active > .widget__body.widget-copyright__body {
+        background-color: var(--bg-pressed-accent);
+    }
+    .widget-copyright__container {
+        justify-content: center;
+        gap: 1.2rem;
+        min-height: 3.2rem;
+        padding: 0;
+
+        /* empty slot mirroring the chevron, so the licence row centres on the panel */
+        &::before {
+            content: '';
+            flex: 0 0 auto;
+            width: var(--_widget-action-size, 4rem);
+        }
+
+        &::after {
+            .mx-icon-chevron-mask(var(--_widget-action-icon-size, 2rem));
+            content: '';
+            flex: 0 0 auto;
+            width: var(--_widget-action-size, 4rem);
+            height: var(--_widget-action-icon-size, 2rem);
+            background-color: var(--fg-content-box);
+            transition: transform 0.15s ease;
+        }
+        img,
+        svg {
+            display: block;
+            height: 3.2rem;
+            max-width: 5.2rem;
+        }
+    }
+    &:hover .widget-copyright__container::after,
+    &:active .widget-copyright__container::after {
+        background-color: var(--brand);
+    }
+
+    &.-open .widget-copyright__container::after {
+        transform: rotate(180deg);
+    }
+    .widget-copyright__lock {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        margin-inline-start: auto;
+    }
+    .widget-copyright__dot {
+        align-items: center;
+        justify-content: center;
+    }
+    .widget-copyright__status-icon::before {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+    .widget-copyright__icons {
+        align-items: center;
+        min-width: 0;
+        gap: 0.8rem;
+        margin-inline-end: auto;
+    }
+
+    /* EXPANDED INFORMATION */
+    .widget-copyright__additional-information {
+        padding-block-start: 1.6rem;
+    }
+    #copyrightInformation {
+        display: grid;
+        gap: 1.6rem;
+        color: var(--fg-content-box);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+        overflow-wrap: anywhere;
+
+        h3 {
+            margin: 0 0 0.4rem;
+            color: var(--fg-heading-content-box);
+            font-size: var(--font-size-body-small);
+            font-weight: 600;
+            line-height: var(--line-height-body);
+        }
+    }
+    .widget-copyright__access-licence-info,
+    .widget-copyright__copyright {
+        margin: 0;
+        padding: 0;
+    }
+    .widget-copyright__hidden-information a {
+        .mx-theme-control-link();
+        display: inline;
+        padding: 0;
+        background-color: transparent;
+        font-weight: 400;
+        line-height: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

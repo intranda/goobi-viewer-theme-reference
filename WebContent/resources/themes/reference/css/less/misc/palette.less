@@ -1,71 +1,50 @@
 /* ==============================================================
-   Token layer 1: palette (mode-free primitives, prefix --color-)
-   The only file with color values. An entry is a plain color, an
-   alias to another palette color, or a state variant mixed from
-   its base color. Roles live in tokens.less.
-   Pairs follow the core: base = light value, -dark = dark variant.
-   A customer palette overrides entries of this file and nothing else.
+   Palette — the theme's colors; a customer palette overrides
+   entries here and nothing else. Brand tones and links derive in
+   the core; the neutral ramp is CIE L* steps (gulp/tonalRamp.js).
    ==============================================================*/
 
 .mx-theme-palette() {
-    /* BRAND — the customer input; hover and pressed follow the base */
+    /* BRAND */
     --color-brand: #2563eb;
-    --color-brand-hover: color-mix(in srgb, var(--color-brand) 85%, var(--color-neutral-1000));
-    --color-brand-pressed: color-mix(in srgb, var(--color-brand) 70%, var(--color-neutral-1000));
-    --color-brand-dark: #60a5fa;
-    --color-brand-dark-hover: color-mix(in srgb, var(--color-brand-dark) 85%, var(--color-neutral-0));
-    --color-brand-dark-pressed: color-mix(in srgb, var(--color-brand-dark) 70%, var(--color-neutral-0));
-
-    /* BRAND AS TEXT — calmer ink for text, lines and icons; the fill keeps the vivid brand */
-    --color-brand-text: color-mix(in srgb, var(--color-brand) 65%, var(--color-neutral-700));
-    --color-brand-text-dark: color-mix(in srgb, var(--color-brand-dark) 70%, var(--color-neutral-200));
-
-    /* ON BRAND — text and icons on a brand fill */
-    --color-on-brand: var(--color-neutral-0);
-    --color-on-brand-dark: var(--color-neutral-950);
-
-    /* LINK — follows the brand text color */
-    --color-link: var(--color-brand-text);
-    --color-link-hover: color-mix(in srgb, var(--color-link) 80%, var(--color-neutral-1000));
-    --color-link-active: color-mix(in srgb, var(--color-link) 65%, var(--color-neutral-1000));
-    --color-link-dark: var(--color-brand-text-dark);
-    --color-link-dark-hover: color-mix(in srgb, var(--color-link-dark) 80%, var(--color-neutral-0));
-    --color-link-dark-active: color-mix(in srgb, var(--color-link-dark) 65%, var(--color-neutral-0));
 
     /* FOCUS RING */
     --color-focus-ring: var(--color-brand-text);
     --color-focus-ring-dark: var(--color-brand-text-dark);
 
-    /* ACCENT — bookmarks and highlights */
+    /* ACCENT */
     --color-accent: #f59f00;
     --color-accent-dark: #feae1a;
     --color-accent-text: #875100;
     --color-accent-text-dark: #ffd073;
 
-    /* PAGE AND HEADER SURFACES — neutral; a customer may tint them */
-    --color-page: var(--color-neutral-50);
+    /* PAGE AND HEADER */
+    --color-page: color-mix(in srgb, var(--color-brand) 2%, var(--color-neutral-100));
     --color-page-dark: var(--color-neutral-950);
     --color-header: var(--color-neutral-0);
-    --color-header-dark: var(--color-neutral-950);
+    --color-header-dark: var(--color-neutral-900);
 
-    /* NEUTRAL RAMP — 0 lightest … 1000 darkest, even steps, slightly cool */
+    /* NEUTRAL RAMP — CIE L* 100 98 96 94 91 84 77 70 62 50 44 34 28 22 17 12 6 0 */
     --color-neutral-0: #ffffff;
-    --color-neutral-50: #fafafa;
-    --color-neutral-100: #f4f4f5;
-    --color-neutral-200: #e4e4e7;
-    --color-neutral-300: #d4d4d8;
-    --color-neutral-400: #a1a1aa;
-    --color-neutral-500: #71717a;
-    --color-neutral-550: #626269;
-    --color-neutral-600: #52525b;
-    --color-neutral-700: #3f3f46;
-    --color-neutral-800: #27272a;
-    --color-neutral-900: #18181b;
-    --color-neutral-950: #09090b;
+    --color-neutral-50: #f7f9ff;
+    --color-neutral-100: #f1f4f9;
+    --color-neutral-150: #ebeef3;
+    --color-neutral-200: #e3e5eb;
+    --color-neutral-300: #cfd2d7;
+    --color-neutral-350: #bcbec4;
+    --color-neutral-400: #a9abb0;
+    --color-neutral-450: #94969b;
+    --color-neutral-500: #75777c;
+    --color-neutral-550: #66686d;
+    --color-neutral-600: #4e5055;
+    --color-neutral-700: #404247;
+    --color-neutral-800: #333539;
+    --color-neutral-850: #282a2e;
+    --color-neutral-900: #1e2024;
+    --color-neutral-950: #111318;
     --color-neutral-1000: #000000;
 
-    /* STATUS — icon color, soft surface with its text, strong fill with light text;
-       dark surfaces are tints of the status color on the dark content surface */
+    /* SUCCESS */
     --color-success: #15703a;
     --color-success-dark: #3fb950;
     --color-success-text: #116329;
@@ -78,6 +57,7 @@
     --color-success-hover-dark: color-mix(in srgb, var(--color-success-dark) 26%, var(--color-neutral-900));
     --color-success-strong: var(--color-success);
 
+    /* DANGER */
     --color-danger: #b3261e;
     --color-danger-dark: #f85149;
     --color-danger-text: #a40e26;
@@ -90,6 +70,7 @@
     --color-danger-hover-dark: color-mix(in srgb, var(--color-danger-dark) 26%, var(--color-neutral-900));
     --color-danger-strong: var(--color-danger);
 
+    /* WARNING */
     --color-warning-text: #7d4f00;
     --color-warning-text-dark: #e3b341;
     --color-warning-surface: #fff8c5;
@@ -97,10 +78,11 @@
     --color-warning-border-dark: color-mix(in srgb, var(--color-warning-text-dark) 40%, var(--color-neutral-900));
     --color-warning-strong: var(--color-warning-text);
 
+    /* INFO */
     --color-info-strong: #0969da;
     --color-info-strong-dark: #1f6feb;
 
-    /* ENTITY GROUPS — categorical, same in both modes */
+    /* ENTITY GROUPS */
     --color-entity-group-work: #dc7e2e;
     --color-entity-group-person: #b13b29;
     --color-entity-group-agent: #568fb2;
@@ -108,7 +90,7 @@
     --color-entity-group-event: #8966ca;
 }
 
-/* SUBTHEMES — brand pair only; every other entry follows the main palette */
+/* SUBTHEMES — brand pair only */
 .mx-theme-subtheme1-palette() {
     --color-brand: #8a0e13;
     --color-brand-dark: #f28b90;

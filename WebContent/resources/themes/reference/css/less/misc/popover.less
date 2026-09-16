@@ -1,0 +1,98 @@
+/* BOOTSTRAP OVERLAY COLORS */
+:where(html:not(:has(#admin))) {
+    .tooltip {
+        &.show {
+            opacity: 1;
+        }
+
+        .tooltip-inner {
+            color: var(--fg-inverse);
+            background-color: var(--bg-inverse);
+        }
+    }
+
+    .popover:where(:not(:has(.widget-citation, .widget-social-media, imageFilters))) {
+        border-color: var(--border-default);
+
+        .popover-header {
+            color: var(--fg-popover);
+            background-color: var(--bg-popover);
+            border-bottom-color: var(--border-default);
+        }
+
+        &.bs-popover-bottom .popover-header::before,
+        &.bs-popover-auto[x-placement^='bottom'] .popover-header::before {
+            border-bottom-color: var(--bg-popover);
+        }
+    }
+
+    each(top right bottom left, {
+        .tooltip.bs-tooltip-@{value} .arrow::before,
+        .tooltip.bs-tooltip-auto[x-placement^='@{value}'] .arrow::before {
+            border-@{value}-color: var(--bg-inverse);
+        }
+
+        .popover:where(:not(:has(.widget-citation, .widget-social-media, imageFilters))) {
+            &.bs-popover-@{value} > .arrow::before,
+            &.bs-popover-auto[x-placement^='@{value}'] > .arrow::before {
+                border-@{value}-color: var(--border-default);
+            }
+
+            &.bs-popover-@{value} > .arrow::after,
+            &.bs-popover-auto[x-placement^='@{value}'] > .arrow::after {
+                border-@{value}-color: var(--bg-popover);
+            }
+        }
+    });
+}
+
+/* TOOL POPOVER CONTENT */
+imageFilters .imagefilters__label {
+    color: var(--fg-content-box);
+}
+
+.popover:has(imageFilters) .imagefilters__label {
+    color: var(--fg-popover);
+}
+
+imageFilters input.imagefilters__slider,
+imageFilters input.imagefilters__checkbox,
+.popover:has(imageFilters) input.imagefilters__slider,
+.popover:has(imageFilters) input.imagefilters__checkbox {
+    .mx-theme-native-accent();
+}
+
+imageFilters .imagefilters__filter:has(input:disabled):not(:has(input:enabled)) .imagefilters__label {
+    color: var(--fg-disabled);
+}
+
+imageFilters .imagefilters__options .btn.btn--full,
+.popover:has(imageFilters) .imagefilters__options .btn.btn--full,
+.share-image-area .share-image-area__controls .btn.btn--full {
+    .mx-theme-control();
+    border-color: var(--border-default);
+
+    &:disabled,
+    &[aria-disabled='true'],
+    &.disabled {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            .mx-theme-control-disabled();
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
+}

@@ -16,6 +16,29 @@
     }
 }
 
+/* FULL-WIDTH IMAGE IN THE NORMAL SIDEBAR */
+:where(.content__wrapper > .content__sidebar)
+    .widget-highlight:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+    > .widget-highlight__body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .highlighted-object__link {
+        padding: 0;
+    }
+
+    .highlighted-object__image-title {
+        padding-inline: 1.6rem;
+    }
+
+    .highlighted-object__no-image-link {
+        min-height: 4.4rem;
+        padding: 1.2rem 1.6rem;
+        line-height: var(--line-height-body);
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

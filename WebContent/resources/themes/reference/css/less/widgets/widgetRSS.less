@@ -17,6 +17,49 @@
     }
 }
 
+.content__wrapper
+    > .content__sidebar
+    .widget-rss:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+    .widget-rss__entry-title {
+        margin-block-end: 0.2rem;
+    }
+
+    .widget-rss__entry-link {
+        display: block;
+        margin-inline: -0.8rem;
+        padding-block: 0.2rem;
+        padding-inline: 0.8rem;
+        border-radius: var(--radius-container-small);
+        font-weight: 400;
+        color: var(--fg-link-content-box);
+
+        &:hover {
+            color: var(--fg-link-hover);
+            background-color: var(--bg-hover-accent);
+        }
+
+        &:active {
+            color: var(--fg-link-active);
+            background-color: var(--bg-pressed-accent);
+        }
+    }
+
+    .widget-rss__entry-info {
+        margin-block-end: 0.8rem;
+        padding-block-end: 0.8rem;
+        border-block-end: 1px solid rgb(from var(--border-container-accent) r g b / 60%);
+        color: var(--rss-entry-info-fg);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+
+        &:last-child {
+            margin-block-end: 0;
+            padding-block-end: 0;
+            border-block-end: 0;
+        }
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

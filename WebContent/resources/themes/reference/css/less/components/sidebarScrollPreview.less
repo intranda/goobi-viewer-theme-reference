@@ -44,9 +44,8 @@
             color: var(--fg-general);
         }
         &.-highlighted {
-            background-color: var(--bg-brand);
-            color: var(--fg-on-brand);
-            outline: none;
+            background-color: transparent;
+            color: var(--fg-selected);
         }
     }
     &__button-text {
@@ -54,6 +53,27 @@
     &__image {
         &.-loaded {
         }
+    }
+}
+
+/* RECORD SHEET — the rail is a column of the stage: paper thumbs on the same recessed
+   ground, kept apart by space instead of a rule. Its content starts on the page inset
+   like the tool row above it, and its first thumb meets the top edge of the scan. */
+.view-object .sidebar-scroll-preview {
+    .sidebar-scroll-preview__grid {
+        padding: 2.4rem 1.6rem 2.4rem var(--_content-inset, 2.4rem);
+    }
+
+    .sidebar-scroll-preview__image-wrapper {
+        display: block;
+        overflow: hidden;
+        border-radius: var(--radius-container-small);
+        background-color: var(--bg-content-box);
+        box-shadow: 0 1px 2px rgb(from var(--shadow-color) r g b / 8%);
+    }
+
+    .sidebar-scroll-preview__button-text {
+        font-size: var(--font-size-caption);
     }
 }
 

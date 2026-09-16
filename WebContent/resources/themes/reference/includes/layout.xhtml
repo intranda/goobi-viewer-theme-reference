@@ -54,13 +54,6 @@
         <!-- MOBILE OVERLAY -->
         <div class="mobile-overlay"></div>
 
-        <!-- BREADCRUMBS -->
-        <div class="container">
-            <viewerComponent:breadcrumbs
-                showIcon="false"
-                showStartText="false" />
-        </div>
-
         <!-- MAIN -->
         <div
             id="content"
@@ -74,7 +67,11 @@
                         id="main"
                         class="content__main"
                         role="main"
-                        tabindex="-1">
+                        tabindex="-1"
+                        data-label-more-options="#{msg.reference__search_more_options}">
+                        <viewerComponent:breadcrumbs
+                            showIcon="false"
+                            showStartText="false" />
                         <ui:insert name="content" />
 
                         <!-- OPEN MOBILE NAVIGATION -->

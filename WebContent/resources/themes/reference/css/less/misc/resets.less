@@ -3,10 +3,6 @@
    ==============================================================*/
 /* BOOTSTRAP */
 
-.popover-header {
-    color: var(--fg-general);
-    background: var(--bg-content-box);
-}
 .popover-body {
     .btn.btn--full {
         .mx-theme-control-primary();
@@ -80,9 +76,6 @@
         border: 1px solid var(--border-strong);
         background: var(--bg-content-box);
     }
-    .btn.btn--clean {
-        color: var(--fg-content-box);
-    }
     .btn.btn--full {
         .mx-theme-control-primary();
     }
@@ -133,11 +126,36 @@
 .modal-backdrop {
 }
 
-.modal-header {
-    .fancy-close {
-        &::before,
-        &::after {
-            background-color: var(--fg-content-box);
+.modal .modal-header .fancy-close:where(:not(#admin *)) {
+    .mx-theme-control();
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    padding: 0;
+    opacity: 1;
+    background-color: transparent;
+    border-radius: var(--radius-button);
+    transform: none;
+
+    &::before,
+    &::after {
+        background-color: currentColor;
+        transform: rotate(45deg);
+    }
+
+    &:hover::before,
+    &:hover::after {
+        transform: rotate(45deg);
+    }
+
+    &:disabled,
+    &[aria-disabled='true'],
+    &.disabled {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            .mx-theme-control-disabled();
         }
     }
 }

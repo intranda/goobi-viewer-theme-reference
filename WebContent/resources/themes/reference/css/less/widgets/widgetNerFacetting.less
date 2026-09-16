@@ -27,7 +27,7 @@
                 }
                 a {
                     &.active {
-                        background: var(--bg-hover);
+                        background: var(--bg-hover-accent);
                     }
                 }
             }
@@ -56,7 +56,7 @@
                 &:hover {
                 }
                 &.active[data-type='person'] {
-                    color: var(--ner-person-fg);
+                    color: var(--fg-entity-person);
                 }
                 &[data-type='location'] {
                 }
@@ -70,20 +70,20 @@
 /* OVERVIEW */
 #overview {
     .current-tags {
-        background: var(--bg-hover);
+        background: var(--bg-hover-accent);
         &:before {
         }
         .page-tag {
             &.empty {
             }
             &.person {
-                color: var(--ner-person-fg);
+                color: var(--fg-entity-person);
             }
             &.location {
-                color: var(--ner-location-fg);
+                color: var(--fg-entity-location);
             }
             &.corporation {
-                color: var(--ner-institution-fg);
+                color: var(--fg-entity-institution);
             }
         }
     }
@@ -111,14 +111,14 @@
                         &.empty {
                         }
                         &.person {
-                            color: var(--ner-person-fg);
+                            color: var(--fg-entity-person);
                         }
                         &.location {
                         }
                         &.corporation {
                         }
                         &:hover {
-                            background: var(--bg-hover);
+                            background: var(--bg-hover-accent);
                         }
                     }
                 }

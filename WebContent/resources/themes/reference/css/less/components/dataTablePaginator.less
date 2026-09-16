@@ -29,10 +29,42 @@
     &__current-page {
     }
     &__input {
-        input {
+        input:where(:not(#admin *)) {
+            .mx-theme-field();
+            text-align: center;
         }
     }
     &__total-count {
+    }
+
+    &__button.btn:where(:not(#admin *)) {
+        .mx-theme-control();
+        background-color: transparent;
+
+        &:disabled,
+        &[aria-disabled='true'],
+        &.disabled,
+        &.btn--inactive,
+        &.btn-inactive {
+            &,
+            &:hover,
+            &:active,
+            &:focus,
+            &.active,
+            &.active:focus,
+            &.active.focus {
+                .mx-theme-control-disabled();
+                background-color: transparent;
+                border-color: transparent;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &__icon:where(:not(#admin *)),
+    &__icon-svg:where(:not(#admin *)) {
+        color: currentColor;
+        opacity: 1;
     }
 }
 

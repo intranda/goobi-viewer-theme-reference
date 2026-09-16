@@ -26,14 +26,6 @@
     z-index: 2030;
 }
 
-/* ANCHOR OFFSET — keeps the fixed header from covering the anchor target */
-a[name='topDocAnchor']:target::before {
-    content: '';
-    display: block;
-    height: 98px;
-    margin-top: -98px;
-}
-
 /* RIGHT TO LEFT LAYOUT ADAPTATIONS */
 
 @{RTL} {
@@ -103,10 +95,6 @@ a[name='topDocAnchor']:target::before {
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    a[name='topDocAnchor']:target::before {
-        height: 20px;
-        margin-top: -20px;
-    }
     .page-content {
         z-index: unset;
         position: unset;

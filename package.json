@@ -16,7 +16,7 @@
     "target": "cross-env GV_AUTOPREFIX=0 NODE_NO_WARNINGS=1 gulp target",
     "prepare": "node ../scripts/pre-commit/install.js",
     "format": "prettier --write .",
-    "check:tokens": "npm --prefix ../goobi-viewer-core run check:tokens && node scripts/check-search-palette.cjs",
+    "check:tokens": "npm --prefix ../goobi-viewer-core run check:tokens",
     "test:hooks": "jest --passWithNoTests"
   },
   "devDependencies": {

@@ -10,21 +10,55 @@
     &__hits {
         &.list,
         &.list-view {
+            --_list-column-gap: 2.4rem;
+
             .search-list__thumb-bookmark-wrapper {
                 right: -8px;
                 top: -6px;
             }
+
             .search-list__hit {
                 padding: 1.6rem;
             }
             .search-list__hits-list-items {
                 gap: 1.2rem;
             }
+            /* REGISTER — type and title run on two tracks, the tools close the row.
+               The preview, the metadata and the sub-hits are switched off by the core here,
+               so the only thing left to build with is the alignment of these two. */
             .search-list__hit-inner-structure {
-                grid-template-columns: minmax(0, 1fr) auto;
+                grid-template-columns: fit-content(14rem) minmax(0, 1fr) auto;
+                align-items: baseline;
+                gap: 0 var(--_list-column-gap);
+            }
+            /* both wrappers only group the markup; the row itself sets the tracks */
+            .search-list__hit-info-wrapper,
+            .search-list__hit-thumb-wrapper {
+                display: contents;
+            }
+            .search-list__hit-thumbnail {
+                display: none;
+            }
+            .search-list__hit-docstruct {
+                grid-column: 1;
+                grid-row: 1;
+                margin-bottom: 0;
+            }
+            .search-list__hit-top-wrapper {
+                grid-column: 2;
+                grid-row: 1;
+                min-width: 0;
+                margin-bottom: 0;
+            }
+            .search-list__hit-options-wrapper {
+                grid-column: 3;
+                grid-row: 1;
+                align-self: center;
+                margin: 0;
             }
             .search-list__hit-title-heading {
                 font-size: var(--font-size-body-large);
+                line-height: 1.4;
             }
             .search-list__hit-header {
                 .col-12.col-sm-10 {
@@ -46,6 +80,101 @@
     }
 }
 
+/* POINTER DEVICES — the dense list earns its right edge: the tools of a row appear on hover.
+   Outside this query the core keeps them switched off, so touch stays a pure title list. */
+@media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
+    .search-list__hits.list,
+    .search-list__hits.list-view {
+        .search-list__hit-options-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 0.4rem;
+        }
+        .search-list__hit-options-wrapper > * {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+        .search-list__hit:hover .search-list__hit-options-wrapper > *,
+        .search-list__hit:focus-within .search-list__hit-options-wrapper > * {
+            opacity: 1;
+        }
+        /* a record already on the list keeps its mark visible */
+        .search-list__hit-options-button-bookmark.added,
+        .search-list__hit-options-button-bookmark[aria-checked='true'] {
+            opacity: 1;
+        }
+    }
+}
+
+/* SEARCH PAGE RESULT ROWS — the list stays part of the sheet.
+   One hairline in the white space, set on the text axis, keeps the results apart
+   without drawing a frame around each of them or a cut across the sheet. */
+@{searchSheet} .search-list__hits:not(.grid) {
+    --_search-hit-block-inset: 2rem;
+    --_search-hit-bleed: 1.6rem;
+    --_search-hit-gap: 2.4rem;
+
+    &.list-view {
+        --_search-hit-block-inset: 1.2rem;
+        --_search-hit-gap: 1.6rem;
+    }
+
+    .search-list__hits-list {
+        gap: 0;
+    }
+
+    /* a result group keeps the text axis of the rows below it */
+    .search-list__hit-result-group-heading {
+        padding: 1.6rem var(--search-sheet-gutter) 0;
+    }
+
+    .search-list__hits-list-items {
+        gap: var(--_search-hit-gap);
+        padding-block: 1.6rem;
+        padding-inline: calc(var(--search-sheet-gutter) - var(--_search-hit-bleed));
+
+        > .search-list__hit {
+            padding: var(--_search-hit-block-inset) var(--_search-hit-bleed);
+            border: 0;
+            border-radius: var(--radius-container);
+            background-color: transparent;
+            transition: background-color 0.18s ease;
+
+            /* the line lies in the gap, spans the text column and belongs to neither result */
+            & + .search-list__hit::before {
+                content: '';
+                position: absolute;
+                inset-inline: var(--_search-hit-bleed);
+                inset-block-start: calc(var(--_search-hit-gap) / -2);
+                height: 1px;
+                background-color: var(--search-sheet-divider);
+            }
+
+            &:hover,
+            &:focus-within {
+                background-color: var(--bg-hover-accent);
+            }
+
+            /* the group colour moves from the frame to the leading edge */
+            &.docstructtype__work {
+                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--bg-entity-work);
+            }
+            &.docstructtype__person {
+                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--bg-entity-person);
+            }
+            &.docstructtype__agent {
+                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--bg-entity-agent);
+            }
+            &.docstructtype__award {
+                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--bg-entity-award);
+            }
+            &.docstructtype__event {
+                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--bg-entity-event);
+            }
+        }
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
@@ -56,8 +185,33 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    /* the type track gives way first */
+    .search-list__hits.list,
+    .search-list__hits.list-view {
+        --_list-column-gap: 1.6rem;
+
+        .search-list__hit-inner-structure {
+            grid-template-columns: fit-content(10rem) minmax(0, 1fr) auto;
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    /* no room for a second track, so the type takes the line above the title */
+    .search-list__hits.list,
+    .search-list__hits.list-view {
+        .search-list__hit-inner-structure {
+            grid-template-columns: minmax(0, 1fr);
+            row-gap: 0.4rem;
+        }
+        .search-list__hit-docstruct {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .search-list__hit-top-wrapper {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
 }

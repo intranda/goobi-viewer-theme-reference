@@ -88,10 +88,25 @@
     -webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
 }
 
-/* FOCUS RING — one ring for every control; !important beats the core keyboard rule */
-.mx-theme-focus-ring() {
-    outline: 2px solid var(--outline-focus) !important;
-    outline-offset: 2px !important;
+/* ICON STROKE — the one knob; components/icons.less applies it to the drawn icons */
+@iconStroke: 2.4;
+
+/* STROKE ICON MASK — the icon files ship an empty stroke-width and read it from CSS, which a masked
+   file never sees; an inlined path keeps a drawn icon at the stroke of the <use> icons */
+.mx-icon-stroke-mask(@path; @size) {
+    @maskIcon: ~'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27currentColor%27 stroke-width=%27@{iconStroke}%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27@{path}%27/%3E%3C/svg%3E';
+    mask: url('@{maskIcon}') center / @size @size no-repeat;
+    -webkit-mask: url('@{maskIcon}') center / @size @size no-repeat;
+}
+
+.mx-icon-chevron-mask(@size) {
+    .mx-icon-stroke-mask(~'m6 9 6 6 6-6'; @size);
+}
+
+/* FOCUS — visible by default; explicit pointer input uses a compact inset ring */
+.mx-theme-focus-ring(@width: 2px; @offset: 2px) {
+    outline: @width solid var(--outline-focus) !important;
+    outline-offset: @offset !important;
     box-shadow: none !important;
 }
 
@@ -99,6 +114,13 @@
     &,
     body.using-keyboard & {
         .mx-theme-focus-ring();
+    }
+
+    @media (forced-colors: none) {
+        body[data-reference-focus='pointer'] &,
+        body.using-keyboard[data-reference-focus='pointer'] & {
+            .mx-theme-focus-ring(1px; -1px);
+        }
     }
 }
 
@@ -117,6 +139,28 @@
     &:active {
         color: var(--fg-content-box);
         background-color: var(--bg-pressed);
+    }
+
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+}
+
+/* NEUTRAL CONTROL, SIDEBAR — the same states, tinted so the whole column carries the palette */
+.mx-theme-control-accent() {
+    color: var(--fg-content-box);
+    background-color: var(--bg-content-box);
+    border-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+        color: var(--fg-content-box);
+        background-color: var(--bg-hover-accent);
+    }
+
+    &:active {
+        color: var(--fg-content-box);
+        background-color: var(--bg-pressed-accent);
     }
 
     &:focus-visible {
@@ -201,6 +245,77 @@
     }
 }
 
+/* LINK CONTROL */
+.mx-theme-control-link() {
+    &,
+    &:focus,
+    &.focus {
+        color: var(--fg-link);
+    }
+
+    &:hover {
+        color: var(--fg-link-hover);
+    }
+
+    &:active,
+    &.active,
+    &.active:focus,
+    &.active.focus,
+    &:active:focus,
+    &:active.focus {
+        color: var(--fg-link-active);
+    }
+
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+
+    &:disabled,
+    &[aria-disabled='true'],
+    &.disabled,
+    &.btn--inactive {
+        &,
+        &:hover,
+        &:active,
+        &:focus,
+        &.active,
+        &.active:focus,
+        &.active.focus,
+        &:active:focus,
+        &:active.focus {
+            color: var(--fg-disabled);
+            text-decoration: none;
+            opacity: 1;
+        }
+    }
+
+    .icon-wrapper,
+    .icon-svg,
+    .fa {
+        color: currentColor;
+    }
+}
+
+/* NATIVE ACCENT CONTROL */
+.mx-theme-native-accent() {
+    accent-color: var(--brand);
+
+    &:hover,
+    &:active {
+        accent-color: var(--brand-hover);
+    }
+
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+
+    &:disabled,
+    &[aria-disabled='true'] {
+        accent-color: var(--fg-disabled);
+        opacity: 1;
+    }
+}
+
 /* FIELD — text input, select, textarea */
 .mx-theme-field() {
     color: var(--fg-content-box);
@@ -215,7 +330,9 @@
         opacity: 1;
     }
 
-    &:hover:not(:disabled):not([readonly]):not([aria-disabled='true']):not([aria-invalid='true']):not(.ui-state-error) {
+    &:hover:not(:disabled):not([readonly]):not([aria-disabled='true']):not([aria-invalid='true']):not(
+            .ui-state-error
+        ):not(.success):not(.warning):not(.danger) {
         border-color: var(--brand);
     }
 
@@ -243,6 +360,18 @@
         .mx-theme-control-disabled();
         -webkit-text-fill-color: var(--fg-disabled);
         box-shadow: none;
+    }
+
+    &:is(.success, .warning, .danger):where(:not(#admin *)) {
+        &:is([aria-invalid='true'], .ui-state-error) {
+            border-color: var(--fg-danger);
+        }
+
+        &:is(:disabled, [aria-disabled='true']) {
+            .mx-theme-control-disabled();
+            -webkit-text-fill-color: var(--fg-disabled);
+            box-shadow: none;
+        }
     }
 }
 

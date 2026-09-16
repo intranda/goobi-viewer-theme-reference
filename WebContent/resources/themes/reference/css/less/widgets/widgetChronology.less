@@ -79,7 +79,7 @@
         height: 0.6rem;
         border: none;
         border-radius: 999px;
-        background-color: var(--bg-hover);
+        background-color: var(--bg-hover-accent);
     }
 
     .ui-slider-range {
@@ -120,6 +120,260 @@
             text-align: left;
             padding-right: unset;
         }
+    }
+}
+
+/* NORMAL SIDEBAR — shared slider and graph geometry */
+.content__wrapper > .content__sidebar .widget-chronology-slider {
+    min-inline-size: 0;
+    overflow: visible;
+
+    .widget-chronology-slider__body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.6rem;
+        min-inline-size: 0;
+        padding: 1.6rem;
+        border-radius: 0;
+    }
+
+    .widget-chronology-slider__description-text {
+        grid-column: 1 / -1;
+        margin: 0;
+        color: var(--fg-secondary-accent);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+    }
+
+    .widget-chronology-slider__item.chronology-slider-label {
+        flex: 1 1 auto;
+        min-inline-size: 0;
+        margin: 0;
+    }
+
+    .widget-chronology-slider__item.chronology-slider-actions {
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--fg-secondary-accent);
+
+        [data-reset='chrono-slider'] {
+            .mx-theme-control-accent();
+            color: var(--brand);
+            display: inline-flex;
+
+            &:hover,
+            &:active {
+                color: var(--brand-hover);
+            }
+            align-items: center;
+            justify-content: center;
+            inline-size: 4rem;
+            block-size: 4rem;
+            padding: 0;
+            border: 1px solid transparent;
+            border-radius: var(--radius-button);
+
+            .icon-svg {
+                inline-size: var(--_widget-action-icon-size, 1.6rem);
+                block-size: var(--_widget-action-icon-size, 1.6rem);
+                color: currentColor;
+            }
+
+            &:disabled,
+            &[aria-disabled='true'] {
+                .mx-theme-control-disabled();
+            }
+        }
+    }
+
+    :is(.chronology-slider-action-loader, .chronology-slider-action-reset):not(.active) {
+        display: none;
+    }
+
+    .widget-chronology-slider__item:is(.chronology-slider-start, .chronology-slider-end) {
+        min-inline-size: 0;
+        padding: 0;
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .widget-chronology-slider__item-input,
+    .chronology-slider__input-wrapper :is(.chronology-slider__input-start, .chronology-slider__input-end) {
+        .mx-theme-field();
+        inline-size: 100%;
+        min-inline-size: 0;
+        block-size: 4.4rem;
+        min-block-size: 4.4rem;
+        margin: 0;
+        padding: 0.8rem;
+        border-radius: var(--radius-button);
+        font-size: var(--font-size-body);
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+        direction: ltr;
+    }
+
+    .widget-chronology-slider__item.chronology-slider {
+        grid-column: 1 / -1;
+        inline-size: 100%;
+        min-inline-size: 0;
+        margin: 0;
+        padding: 1.2rem 0 1.6rem;
+        background-color: transparent;
+    }
+
+    .widget-chronology-slider__slider {
+        block-size: 0.6rem;
+        margin-inline: 0;
+        border: 1px solid var(--border-input);
+        border-radius: 999px;
+        background: var(--bg-subtle);
+        box-shadow: none;
+
+        .ui-slider-range {
+            block-size: 100%;
+            border: 0;
+            border-radius: inherit;
+            background: var(--brand);
+        }
+
+        .ui-slider-handle {
+            top: 50%;
+            inline-size: 20px;
+            block-size: 20px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: var(--bg-input);
+            box-shadow: none;
+            transform: translateY(-50%);
+            touch-action: none;
+
+            /* the outer handles overhang the track ends so no sliver of the rail shows */
+            &:first-of-type {
+                transform: translate(-2px, -50%);
+            }
+
+            &:last-of-type {
+                transform: translate(2px, -50%);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: -12px;
+                inline-size: auto;
+                block-size: auto;
+                transform: none;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border: 2px solid var(--brand);
+                border-radius: inherit;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background-color: var(--bg-selected-hover);
+
+                &::after {
+                    border-color: var(--brand-hover);
+                }
+            }
+
+            &:active,
+            &.ui-state-active {
+                background-color: var(--brand);
+            }
+
+            &:focus {
+                .mx-theme-focus();
+            }
+        }
+
+        &.ui-state-disabled,
+        &[aria-disabled='true'] {
+            .mx-theme-control-disabled();
+
+            .ui-slider-range {
+                background-color: var(--border-disabled);
+            }
+
+            .ui-slider-handle {
+                .mx-theme-control-disabled();
+                cursor: default;
+
+                &::after {
+                    border-color: var(--border-disabled);
+                }
+            }
+        }
+    }
+
+    /* Chart.js keeps its own drawing size; both canvases share the same bounds. */
+    .chronology-slider:has(.chronology-slider__container) {
+        padding: 0;
+    }
+
+    .chronology-slider__container {
+        position: relative;
+        inline-size: 100%;
+        min-inline-size: 0;
+        aspect-ratio: 2 / 1;
+    }
+
+    .chronology-slider__chart {
+        display: block;
+        max-inline-size: 100%;
+    }
+
+    .chronology-slider__draw {
+        inset-inline: 0;
+        min-inline-size: 100%;
+        max-inline-size: 100%;
+        min-block-size: 100%;
+        max-block-size: 100%;
+    }
+
+    .chronology-slider__input-wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.8rem;
+        margin-block-start: 1.6rem;
+    }
+
+    .chronology-slider__between-year-symbol {
+        margin: 0;
+        color: var(--fg-secondary-accent);
+    }
+
+    .chronology-slider__ok-button {
+        .mx-theme-control-primary();
+        min-inline-size: 4.4rem;
+        min-block-size: 4.4rem;
+        margin: 0;
+        padding: 0.8rem 1.2rem;
+        border: 1px solid transparent;
+        border-radius: var(--radius-button);
+    }
+}
+
+.content__wrapper > .content__sidebar .combined-facets .widget-chronology-slider__body {
+    padding: 0.8rem 0 0;
+}
+
+@media (any-pointer: coarse), (max-width: @smallBreakpoint) {
+    .content__wrapper
+        > .content__sidebar
+        .widget-chronology-slider
+        .widget-chronology-slider__item.chronology-slider-actions
+        [data-reset='chrono-slider'] {
+        inline-size: 4.4rem;
+        block-size: 4.4rem;
     }
 }
 

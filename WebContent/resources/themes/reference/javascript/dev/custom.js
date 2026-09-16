@@ -51,6 +51,91 @@ function initSliders() {
 }
 initSliders();
 
+/*****************************************************************************************
+ * Search toolbar
+ * The core renders the list's statement, settings, pagination and display switches in two
+ * places; the theme collects them in the control band above the result list.
+ ****************************************************************************************/
+function initSearchToolbar() {
+    const band = document.querySelector('.search-list__nav-helper-wrapper');
+    const options = document.querySelector('.search-list__options');
+    if (!band || !options || band.dataset.referenceToolbar) return;
+    band.dataset.referenceToolbar = 'true';
+
+    const group = (name) => {
+        const element = document.createElement('div');
+        element.className = name;
+        return element;
+    };
+    const start = group('search-list__band-start');
+    const end = group('search-list__band-end');
+
+    // modals belong to the page, not to a toolbar
+    options.querySelectorAll('.modal').forEach((modal) => document.body.append(modal));
+
+    // start: what the list is
+    const hitcount = options.querySelector('.search-list__hitcount');
+    if (hitcount) start.append(hitcount);
+    band.querySelectorAll('.search-list__nav-helper-item').forEach((item) => start.append(item));
+
+    // end: where you are in it and how you look at it
+    const paginator = band.querySelector('.inputfield-paginator');
+    if (paginator) end.append(paginator);
+    const views = options.querySelector('.search-list__views');
+    if (views) end.append(views);
+
+    // rare actions move behind one button, keeping their own markup and behaviour
+    const rare = options.querySelectorAll(
+        '.search-list__rss, .search-list__save-search, .search-list__export-dropdown-wrapper, .search-list__help'
+    );
+    if (rare.length) end.append(buildSearchOverflow(rare));
+
+    band.append(start, end);
+    options.remove();
+}
+
+/* Overflow menu of the search band: the moved controls are icons, their labels sit in the markup */
+function buildSearchOverflow(items) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'dropdown search-list__overflow';
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'btn btn--icon search-list__option-button search-list__overflow-toggle';
+    toggle.dataset.toggle = 'dropdown';
+    toggle.setAttribute('aria-haspopup', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    const label = document.querySelector('.content__main')?.dataset.labelMoreOptions;
+    if (label) toggle.setAttribute('aria-label', label);
+    toggle.innerHTML =
+        '<span class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></span>';
+
+    const menu = document.createElement('div');
+    menu.className = 'dropdown-menu dropdown-menu-right search-list__overflow-menu';
+
+    items.forEach((item) => {
+        // tooltips are noise on a menu row
+        item.querySelectorAll('[data-toggle="tooltip"]').forEach((element) => {
+            if (window.jQuery && $(element).tooltip) $(element).tooltip('dispose');
+            element.removeAttribute('data-toggle');
+        });
+        // icon-only controls get the text they already carry as their accessible name
+        item.querySelectorAll('a, button').forEach((control) => {
+            if (control.textContent.trim() || control.matches('.search-list__export-dropdown-toggle')) return;
+            const text = control.getAttribute('aria-label') || control.getAttribute('title');
+            if (!text) return;
+            const name = document.createElement('span');
+            name.className = 'search-list__overflow-label';
+            name.textContent = text;
+            control.append(name);
+        });
+        menu.append(item);
+    });
+
+    wrapper.append(toggle, menu);
+    return wrapper;
+}
+
 $(document).ready(function () {
     var viewerConfig = {
         currentPage: currentPage,
@@ -61,6 +146,48 @@ $(document).ready(function () {
 
     viewerJS.init(viewerConfig);
 
+    initSearchToolbar();
+
+    // Keep the visible fallback unless a pointer explicitly establishes focus origin.
+    document.addEventListener(
+        'pointerdown',
+        () => {
+            document.body.dataset.referenceFocus = 'pointer';
+        },
+        { capture: true, passive: true }
+    );
+    document.addEventListener(
+        'keydown',
+        (event) => {
+            const navigationKeys = [
+                'Tab',
+                'Enter',
+                'Escape',
+                'ArrowUp',
+                'ArrowDown',
+                'ArrowLeft',
+                'ArrowRight',
+                'Home',
+                'End',
+                'PageUp',
+                'PageDown',
+            ];
+            const editing =
+                event.target instanceof Element &&
+                event.target.closest('input, textarea, [contenteditable]:not([contenteditable="false"])');
+            if (
+                event.key === 'Tab' ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.altKey ||
+                (!editing && (navigationKeys.includes(event.key) || event.key === ' '))
+            ) {
+                delete document.body.dataset.referenceFocus;
+            }
+        },
+        true
+    );
+
     // Check if sidebar should be sticky, then activate sticky frontend functions
     // Initialize sticky elements for frontend sidebar
     if ($('[data-target="sticky-sidebar"]').length) {
@@ -68,72 +195,167 @@ $(document).ready(function () {
     }
 
     const $header = $('#header');
-    const $menu = $('#headerMenu');
+    const header = $header[0];
     const $menuToggle = $header.find('[data-open="menu"]');
-    const $languageToggle = $header.find('[data-toggle="local"]');
+    const menu = document.getElementById('headerMenu');
+    const searchPanel = document.getElementById('headerSearchPanel');
+    const $searchToggle = $header.find('[data-toggle="header-search"]');
+    const compactHeader = window.matchMedia('(max-width: 768px)');
+    const $searchInput = $header.find('.header__search input[type="text"]').first();
+    const $accountToggle = $header.find('[data-toggle="user-dropdown"]');
+    const $accountPanel = $header.find('.login-navigation__user-dropdown').first();
+    const panels = Array.from($header.find('.header__panel'));
 
-    // The header stays the same height on scroll. Measure its actual bottom
-    // edge so the drawer also fits wrapped mobile rows and the admin toolbar.
-    function positionHeaderMenu() {
-        if ($header.length) {
-            $header[0].style.setProperty('--_header-bottom', `${$header[0].getBoundingClientRect().bottom}px`);
-        }
+    // Toggles sit in the actions row and in the header navigation; a close button inside a panel is not one.
+    const panelToggle = (panel) => $header.find(`[popovertarget="${panel.id}"]:not([popovertargetaction="hide"])`)[0];
+
+    function positionPanel(panel, anchor) {
+        if (!panel || !anchor) return;
+        const bounds = anchor.getBoundingClientRect();
+        const viewportWidth = document.documentElement.clientWidth;
+        const width = Math.min(parseFloat(getComputedStyle(panel).width) || 320, viewportWidth - 32);
+        const rtl = getComputedStyle(header).direction === 'rtl';
+        // Panels under the navigation line up with the start edge of their toggle, the actions panels with its end edge.
+        const alignStart = panel.dataset.align === 'start';
+        const preferredLeft = alignStart !== rtl ? bounds.left : bounds.right - width;
+        const left = Math.max(16, Math.min(preferredLeft, viewportWidth - width - 16));
+        panel.style.setProperty('--_panel-left', `${left}px`);
+        panel.style.setProperty('--_panel-top', `${bounds.bottom + 8}px`);
     }
-    if ($header.length) {
-        new ResizeObserver(positionHeaderMenu).observe($header[0]);
-        $(window).on('resize', positionHeaderMenu);
-        positionHeaderMenu();
+    function positionPanels() {
+        positionPanel($accountPanel[0], $accountToggle[0]);
+        panels.forEach((panel) => positionPanel(panel, panelToggle(panel)));
+    }
+    if (header) {
+        new ResizeObserver(positionPanels).observe(header);
+        window.addEventListener('resize', positionPanels, { passive: true });
+        window.addEventListener('scroll', positionPanels, { passive: true });
+        positionPanels();
     }
 
-    function closeLanguages(restoreFocus = false) {
-        $('#changeLocal').hide();
-        $languageToggle.attr('aria-expanded', 'false');
-        if (restoreFocus) $languageToggle.trigger('focus');
+    function closeAccount(restoreFocus) {
+        const wasOpen = $accountToggle.attr('aria-expanded') === 'true';
+        $accountPanel.css('display', '').removeClass('-open');
+        $accountToggle.attr('aria-expanded', 'false');
+        if (wasOpen && restoreFocus) $accountToggle.trigger('focus');
+    }
+    function closeSearch(restoreFocus) {
+        if (!searchPanel) return;
+        const wasOpen = !searchPanel.hidden;
+        searchPanel.hidden = compactHeader.matches;
+        $searchToggle.attr({
+            'aria-expanded': 'false',
+            'aria-label': $searchToggle.data('search-label'),
+            title: $searchToggle.data('search-label'),
+        });
+        if (wasOpen && restoreFocus && compactHeader.matches) $searchToggle.trigger('focus');
+    }
+    function openSearch() {
+        if (!searchPanel) return;
+        closePanels();
+        if (menu && menu.open) menu.close();
+        searchPanel.hidden = false;
+        $searchToggle.attr({
+            'aria-expanded': 'true',
+            'aria-label': $searchToggle.data('close-label'),
+            title: $searchToggle.data('close-label'),
+        });
+        $searchInput.trigger('focus');
+    }
+    compactHeader.addEventListener('change', () => {
+        const inputHadFocus = document.activeElement === $searchInput[0];
+        const toggleHadFocus = document.activeElement === $searchToggle[0];
+        closeSearch(inputHadFocus);
+        if (!compactHeader.matches && toggleHadFocus) $searchInput.trigger('focus');
+    });
+    closeSearch();
+    $searchToggle.on('click', function () {
+        if (searchPanel.hidden) openSearch();
+        else closeSearch(true);
+    });
+
+    function closePanels() {
+        closeSearch();
+        panels.forEach((panel) => {
+            if (panel.matches(':popover-open')) panel.hidePopover();
+        });
+        closeAccount();
     }
 
-    function setHeaderMenu(open, restoreFocus = true) {
-        if (!$menu.length) return;
-        positionHeaderMenu();
-        $menu.prop('inert', !open).attr('aria-hidden', String(!open)).toggleClass('-mobileMenuOpen', open);
-        $header.toggleClass('-mobileMenuOpen', open);
-        $header.find('.header__navigation-mobile-background').toggleClass('-mobileMenuOpen', open);
-        $menuToggle
-            .attr('aria-expanded', String(open))
-            .attr('aria-label', $menuToggle.attr(open ? 'data-label-close' : 'data-label-open'));
-        $('html').toggleClass('header-menu-open', open);
-        closeLanguages();
-        if (open) {
-            requestAnimationFrame(function () {
-                $menu.find('[data-close="menu"]').trigger('focus');
+    // Nonmodal panels use the browser's outside-click and Escape handling.
+    panels.forEach((panel) => {
+        const toggle = panelToggle(panel);
+        panel.addEventListener('beforetoggle', (event) => {
+            if (event.newState === 'open') {
+                closeAccount();
+                closeSearch();
+                positionPanels();
+                // Core may have hidden the session list on a previous outside click.
+                $(panel).find('.bookmark-navigation__dropdown').stop(true, true).show();
+            }
+            if (toggle) toggle.setAttribute('aria-expanded', String(event.newState === 'open'));
+        });
+        panel.addEventListener('click', (event) => event.stopPropagation());
+        $(panel)
+            .find('[popovertargetaction="hide"]')
+            .on('click', () => {
+                if (toggle) toggle.focus();
             });
-        } else if (restoreFocus) {
-            $menuToggle.trigger('focus');
-        }
+    });
+
+    // Keep the configured Core account actions and bookmark submenu intact.
+    if ($accountToggle.length && $accountPanel.length) {
+        $accountPanel.attr('id', 'headerAccountMenu');
+        const identity = document.getElementById('headerAccountIdentity');
+        if (identity) $accountPanel[0].prepend(identity.content.cloneNode(true));
+        $accountToggle
+            .attr({ 'aria-controls': 'headerAccountMenu', 'aria-expanded': 'false' })
+            .removeAttr('aria-haspopup')
+            .off('click')
+            .on('click', function (event) {
+                event.stopPropagation();
+                const open = $accountToggle.attr('aria-expanded') !== 'true';
+                closePanels();
+                positionPanels();
+                $accountPanel.toggleClass('-open', open);
+                $accountToggle.attr('aria-expanded', String(open));
+            });
+    }
+    $(document).on('click', function (event) {
+        if (!$(event.target).closest('.header__account').length) closeAccount();
+        if (!$(event.target).closest('.header').length) closeSearch();
+    });
+    $header.find('.header__account').on('focusout', function (event) {
+        if (event.relatedTarget && !this.contains(event.relatedTarget)) closeAccount();
+    });
+    $(document).on('show.bs.modal', function () {
+        closePanels();
+        if (menu && menu.open) menu.close();
+    });
+
+    // Guest bookmarks appear only while the session list contains items.
+    if (window.bookmarksEnabled && viewerJS.bookmarks) {
+        const updateCount = () => {
+            const count = viewerJS.bookmarks.getBookmarksCount();
+            const $toggle = $header.find('[data-header-bookmarks]');
+            const panel = document.getElementById('headerBookmarksPanel');
+            $header.find('[data-header-bookmark-count]').text(count > 99 ? '99+' : count || '');
+            if (!$toggle.length) return;
+            if (count === 0 && panel && panel.matches(':popover-open')) {
+                const hadFocus = panel.contains(document.activeElement) || document.activeElement === $toggle[0];
+                panel.hidePopover();
+                if (hadFocus) $menuToggle.trigger('focus');
+            }
+            $toggle.prop('hidden', count === 0);
+            $toggle.attr('aria-label', `${$toggle.data('bookmark-label')} (${count})`);
+            positionPanels();
+        };
+        viewerJS.bookmarks.listsUpdated.subscribe(updateCount);
+        updateCount();
     }
 
-    $menuToggle.on('click', function () {
-        setHeaderMenu($menu.attr('aria-hidden') !== 'false');
-    });
-    $header.find('[data-close="menu"], .header__navigation-mobile-background').on('click', function () {
-        setHeaderMenu(false);
-    });
-    // Login and bookmark dialogs manage their own focus after leaving the drawer.
-    $(document).on('show.bs.modal', function () {
-        if ($menu.attr('aria-hidden') === 'false') setHeaderMenu(false, false);
-    });
-
-    $languageToggle.on('click', function () {
-        const open = $(this).attr('aria-expanded') !== 'true';
-        $('#changeLocal').toggle(open);
-        $(this).attr('aria-expanded', String(open));
-    });
-    $(document).on('click', function (event) {
-        if (!$(event.target).closest('#changeLocalWrapper').length) closeLanguages();
-    });
-
-    // Keep the configured hierarchy intact, including levels deeper than two.
-    // Replace the core's flyout click handler for these two theme instances.
-    $header
+    // Drawer groups are disclosures; nested levels keep their configured hierarchy.
+    $(menu)
         .find('.navigation [data-toggle="submenu"]')
         .off('click')
         .each(function (index) {
@@ -141,68 +363,38 @@ $(document).ready(function () {
             const $submenu = $trigger.next('.navigation__submenu');
             const submenuId = `header-submenu-${index}`;
             $submenu.attr('id', submenuId);
-            $trigger.attr({ 'aria-controls': submenuId, 'aria-expanded': String($submenu.hasClass('in')) });
-            new MutationObserver(function () {
-                $trigger.attr('aria-expanded', String($submenu.hasClass('in')));
-            }).observe($submenu[0], { attributes: true, attributeFilter: ['class'] });
+            $trigger.attr({ 'aria-controls': submenuId, 'aria-expanded': 'false' }).removeAttr('aria-haspopup');
             $trigger.on('click', function () {
-                const open = !$submenu.hasClass('in');
-                if (!$trigger.closest('#headerMenu').length) {
-                    $trigger.parent().siblings().removeClass('active').find('.navigation__submenu').removeClass('in');
-                    $submenu.removeClass('left');
-                }
-                $submenu.toggleClass('in', open);
-                if (open && !$trigger.closest('#headerMenu').length) {
-                    const bounds = $submenu[0].getBoundingClientRect();
-                    if (bounds.right > document.documentElement.clientWidth || bounds.left < 0) {
-                        $submenu.addClass('left');
-                    }
-                }
-                $trigger.parent().toggleClass('active', open);
-                if (!open) {
-                    $submenu.find('.navigation__submenu').removeClass('in');
-                    $submenu.find('.navigation__submenu-trigger').removeClass('active');
-                }
+                $trigger.attr('aria-expanded', String($trigger.attr('aria-expanded') !== 'true'));
             });
         });
+    if (menu) {
+        $menuToggle.on('click', function () {
+            closePanels();
+            menu.showModal();
+            menu.querySelector('.drawer__body').scrollTop = 0;
+            $menuToggle.attr('aria-expanded', 'true');
+        });
+        $(menu).on('click', '[data-close="menu"]', () => menu.close());
+        menu.addEventListener('click', (event) => {
+            if (event.target === menu) menu.close();
+        });
+        menu.addEventListener('close', () => $menuToggle.attr('aria-expanded', 'false'));
+        $(menu)
+            .find('.navigation__submenu')
+            .has('a[aria-current="page"]')
+            .prev('[data-toggle="submenu"]')
+            .attr('aria-expanded', 'true');
+    }
 
-    const isMac = /Mac|iPhone|iPad/.test(navigator.platform);
-    $header.find('.header__search-shortcut').text(isMac ? '⌘ K' : 'Ctrl K');
-    $header.find('.header__search-box input').attr('aria-keyshortcuts', 'Meta+K Control+K');
     $(document).on('keydown', function (event) {
-        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
-            const $search = $header.find('.header__search-box input').first();
-            if ($search.length) {
-                event.preventDefault();
-                if ($menu.attr('aria-hidden') === 'false') setHeaderMenu(false, false);
-                $search.trigger('focus');
-            }
+        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k' && searchPanel) {
+            event.preventDefault();
+            openSearch();
         }
         if (event.key === 'Escape') {
-            if ($languageToggle.attr('aria-expanded') === 'true') {
-                closeLanguages(true);
-            } else if ($menu.attr('aria-hidden') === 'false') {
-                setHeaderMenu(false);
-            } else {
-                const $submenu = $(event.target).closest('.navigation__submenu');
-                $submenu.removeClass('in').prev('button').trigger('focus');
-                $header.find('.navigation__submenu').removeClass('in');
-            }
-        }
-        if (event.key === 'Tab' && $menu.attr('aria-hidden') === 'false') {
-            const $focusable = $header
-                .find('a[href], button, input, select, textarea, [tabindex="0"]')
-                .filter(':visible')
-                .not(':disabled, [type="hidden"]');
-            const first = $focusable[0];
-            const last = $focusable[$focusable.length - 1];
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
+            closeAccount(true);
+            closeSearch(true);
         }
     });
 

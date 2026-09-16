@@ -89,12 +89,41 @@
     }
 }
 
+/* RECORD SHEET — the page switcher closes the stage band: same surface, no gap, and
+   the numbers stay quiet until touched so only the current page carries the brand */
+.view-object:has(.view-object__image) .numeric-paginator {
+    margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+    margin-block: 0;
+    padding-block: 0.8rem 1.6rem;
+    background-color: var(--bg-subtle);
+
+    li:where(:not(.-active, .inactive, [aria-current='page'])) > :where(a, button) {
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--bg-content-box);
+        }
+
+        &:active {
+            background-color: var(--bg-pressed);
+        }
+    }
+}
+
+/* the rail is a column of the stage, so the switcher centres under the scan, not the band */
+.view-object:has(.-thumbnailPreviewGallery) .numeric-paginator {
+    padding-inline-start: 16.8rem; // mirrors @view-object-rail-width in the core stage grid
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 
-/* BREAKPOINT FOR DESKTOPS */
+/* BREAKPOINT FOR DESKTOPS — the core drops the rail here, so the offset goes with it */
 @media screen and (max-width: @mediumBreakpoint) {
+    .view-object:has(.-thumbnailPreviewGallery) .numeric-paginator {
+        padding-inline-start: 0;
+    }
 }
 
 /* BREAKPOINT FOR TABLETS */

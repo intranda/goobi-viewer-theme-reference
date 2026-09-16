@@ -25,6 +25,12 @@
     }
 }
 
+/* RECIPIENT FIELD */
+.view-feedback select.custom-control--select:where(:not(#admin *)),
+.view-feedback-modal select.custom-control--select:where(:not(#admin *)) {
+    .mx-theme-field();
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

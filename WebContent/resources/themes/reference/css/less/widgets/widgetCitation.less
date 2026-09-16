@@ -56,6 +56,56 @@
     }
 }
 
+/* SIDEBAR CITATION RECOMMENDATION */
+:where(.content__wrapper > .content__sidebar)
+    .widget-citation:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *))
+    > .widget__body {
+    .widget-citation__citerecommendation-dropdown {
+        margin-block-end: 0.8rem;
+        select {
+            .mx-theme-field();
+            min-height: var(--_export-action-size, 3.2rem);
+            border-width: 0;
+            font-size: var(--font-size-body-small);
+        }
+    }
+    .widget-citation__citerecommendation-text-wrapper {
+        gap: 0.8rem;
+        margin-block-end: 0.8rem;
+        .widget-citation__citerecommendation-quote-icon {
+            padding: 0;
+        }
+        .csl-entry {
+            text-align: start;
+        }
+    }
+    .widget-citation__citerecommendation-copy-text {
+        .mx-theme-control-accent();
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: var(--_export-action-size, 3.2rem);
+        padding: 0.8rem;
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-button);
+        font-size: var(--font-size-body);
+        line-height: var(--line-height-body);
+        text-align: start;
+        overflow-wrap: anywhere;
+        &:is(:disabled, .disabled, [aria-disabled='true']) {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+            }
+        }
+    }
+    .widget-citation__citerecommendation-text-info {
+        color: var(--fg-secondary-accent);
+        line-height: var(--line-height-body);
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

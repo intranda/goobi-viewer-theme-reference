@@ -83,8 +83,8 @@
                 color 0.15s ease;
         }
         .ui-state-active {
-            background-color: var(--bg-brand);
-            color: var(--fg-on-brand);
+            background-color: var(--search-group-bg-menu-active);
+            color: var(--fg-content-box);
             border: none;
             margin: 0;
         }
@@ -171,13 +171,95 @@ body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.u
 
     .ui-menu-item .ui-menu-item-wrapper {
         color: var(--fg-content-box);
-        border-inline-start: 3px solid transparent;
+        border-inline-start: var(--search-hit-accent-width) solid transparent;
+
+        &:hover {
+            background-color: var(--search-group-bg-hover);
+        }
     }
 
+    /* the row under the pointer and the row reached by keyboard read the same */
     .ui-menu-item .ui-state-active {
         color: var(--fg-content-box);
-        background-color: var(--bg-selected);
-        border-inline-start: 3px solid var(--brand);
+        background-color: var(--search-group-bg-menu-active);
+        border-inline-start: var(--search-hit-accent-width) solid var(--brand);
+    }
+}
+
+/* SEARCH ROW OF THE SHEET — a form row on the sheet gutter; the fields keep the theme's field language */
+@{searchSheet} {
+    .search-standard {
+        margin-bottom: 0;
+    }
+
+    .search-standard__input-slim {
+        gap: 0.8rem;
+        align-items: center;
+        min-height: 0;
+        padding: 1.2rem var(--search-sheet-gutter);
+        border-block-start: 1px solid var(--search-sheet-divider);
+    }
+
+    /* SCOPE — a field, not a bare cell */
+    .search-standard__filter-select {
+        flex: 0 0 auto;
+        min-width: 0;
+        max-width: none;
+
+        .custom-control--select {
+            display: flex;
+            align-items: center;
+        }
+        .custom-control--select select {
+            height: var(--search-field-height);
+            min-height: var(--search-field-height);
+            width: auto;
+        }
+    }
+
+    .search-standard__input-autocomplete {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+        padding-inline: 0;
+
+        .ui-autocomplete-input {
+            height: var(--search-field-height);
+            min-height: var(--search-field-height);
+            width: 100%;
+            padding-inline: 1.2rem;
+        }
+    }
+
+    .search-standard__submit-button.btn {
+        align-self: center;
+        height: var(--search-field-height);
+        min-height: var(--search-field-height);
+        border-radius: var(--search-group-radius);
+    }
+
+    /* FRAMES — a field is a step firmer than a group outline, not a hard line */
+    .search-standard__filter-select .custom-control--select select,
+    .search-standard__input-autocomplete .ui-autocomplete-input {
+        border-color: var(--search-field-border);
+
+        &:hover {
+            border-color: var(--brand);
+        }
+        /* clicking in shows through the frame; the ring stays for keyboard users below */
+        &:focus {
+            .mx-theme-focus-ring(0; 0);
+            border-color: var(--brand);
+        }
+    }
+}
+
+/* KEYBOARD — the full ring returns for anyone navigating without a pointer */
+body.using-keyboard @{searchSheet} {
+    .search-list__nav-helper-item select:focus,
+    .search-standard__filter-select .custom-control--select select:focus,
+    .search-standard__input-autocomplete .ui-autocomplete-input:focus {
+        .mx-theme-focus-ring(2px; -1px);
     }
 }
 
@@ -191,6 +273,30 @@ body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.u
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    @{searchSheet} {
+        /* the field takes the full line, scope and action share the next one */
+        .search-standard__input-slim {
+            flex-wrap: wrap;
+            padding-block: 1rem;
+        }
+        .search-standard__input-autocomplete {
+            order: -1;
+            flex: 1 1 100%;
+        }
+        .search-standard__filter-select {
+            flex: 1 1 0;
+            min-width: 0;
+
+            .custom-control--select,
+            .custom-control--select select {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+        .search-standard__submit-button.btn {
+            flex: 0 0 auto;
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */

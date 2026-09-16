@@ -5,7 +5,7 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-    border: 1px solid var(--border-faint);
+    border: 1px solid var(--border-container);
     border-radius: var(--radius-container) var(--radius-container) 0 0;
     border-bottom: 0;
 
@@ -31,15 +31,7 @@
         &.fulltext {
         }
         &.add-to-bookmark {
-            background-color: var(--bookmark-added-bg);
             border-radius: var(--radius-container-small);
-            .icon-wrapper svg {
-                stroke: var(--brand);
-                color: var(--bookmark-added-fg);
-            }
-            .icon-bookmark-filled {
-                color: var(--bookmark-added-fg);
-            }
         }
         &.image-filter,
         &.share-image-region {
@@ -48,6 +40,73 @@
             }
         }
     }
+    & &__option {
+        > .image-controls__crowd-link {
+            .mx-theme-control-link();
+        }
+
+        > .btn.btn--icon,
+        > .image-controls__share-image-link {
+            .mx-theme-control();
+            background-color: transparent;
+            border-radius: var(--radius-container-small);
+
+            &.added,
+            &[aria-checked='true'],
+            &[aria-expanded='true'],
+            &.image-controls__share-image-link.active {
+                .mx-theme-control-selected();
+            }
+
+            &:disabled,
+            &[aria-disabled='true'],
+            &.disabled {
+                &,
+                &:hover,
+                &:active,
+                &:focus {
+                    .mx-theme-control-disabled();
+
+                    .icon-wrapper {
+                        transform: none;
+                        filter: none;
+                    }
+                }
+            }
+
+            .icon-wrapper,
+            svg {
+                color: inherit;
+            }
+        }
+
+        &:where(.image-filter:has(> .popover.show)) > .btn.btn--icon {
+            .mx-theme-control-selected();
+        }
+
+        > [data-bookmark-list-type='add'] {
+            .icon-bookmark-outline svg {
+                fill: none;
+                stroke: currentColor;
+            }
+
+            .icon-bookmark-filled svg {
+                fill: currentColor;
+                stroke: none;
+            }
+
+            &:not(.added):not([aria-checked='true']) {
+                .icon-bookmark-outline {
+                    display: inline-flex;
+                }
+
+                .icon-bookmark-filled {
+                    display: none;
+                }
+            }
+        }
+    }
+
     /* ACTIONS */
     &__actions {
         ul {
@@ -59,14 +118,11 @@
     }
     &__action {
         border-radius: var(--radius-container-small);
-        background-color: var(--image-controls-action-bg);
         /* ELEMENT */
         [class*='image-'] {
         }
         &.inactive {
-            opacity: 0.4;
             cursor: default;
-            color: inherit;
             a,
             span,
             button {
@@ -132,8 +188,6 @@
         }
         &.zoom-slider-wrapper {
             .zoom-slider {
-                border-radius: var(--radius-container-small);
-                background: var(--image-controls-action-bg);
                 //Firefox
                 &::-moz-range-thumb {
                 }
@@ -148,8 +202,157 @@
             }
         }
     }
+    & &__action.select {
+        color: var(--fg-content-box);
+        background-color: var(--bg-input);
+        border-color: var(--border-input);
+
+        &:hover {
+            border-color: var(--brand);
+        }
+
+        &:has(select[aria-invalid='true']),
+        &:has(select.ui-state-error) {
+            border-color: var(--fg-danger);
+        }
+
+        &:has(select:disabled),
+        &:has(select[aria-disabled='true']) {
+            .mx-theme-control-disabled();
+        }
+
+        .custom-control--select {
+            color: inherit;
+            background-color: inherit;
+
+            &::after {
+                border-top-color: currentColor;
+            }
+
+            select {
+                .mx-theme-field();
+                border-width: 0;
+            }
+        }
+    }
+
+    & &__action.zoom-slider-wrapper .zoom-slider {
+        color: var(--fg-content-box);
+
+        &::-moz-range-thumb {
+            background-color: var(--fg-general);
+        }
+
+        &::-webkit-slider-thumb {
+            background-color: var(--fg-general);
+        }
+
+        &:hover,
+        &:active {
+            &::-moz-range-thumb {
+                background-color: var(--brand-hover);
+            }
+
+            &::-webkit-slider-thumb {
+                background-color: var(--brand-hover);
+            }
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+
+        &:disabled,
+        &[aria-disabled='true'] {
+            .mx-theme-control-disabled();
+
+            &::-moz-range-thumb {
+                background-color: var(--fg-disabled);
+            }
+
+            &::-webkit-slider-thumb {
+                background-color: var(--fg-disabled);
+            }
+        }
+    }
+
+    & &__action:where(:not(.select-text, .select, .zoom-slider-wrapper)) {
+        color: var(--fg-general);
+        background-color: var(--bg-subtle);
+
+        &:hover {
+            color: var(--fg-on-control-hover);
+            background-color: var(--bg-control-hover);
+        }
+
+        &:active {
+            color: var(--fg-on-control-hover);
+            background-color: var(--bg-pressed);
+        }
+
+        a,
+        button,
+        span {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                color: inherit;
+                fill: currentColor;
+                stroke: currentColor;
+            }
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            .mx-theme-focus();
+        }
+
+        &.single-page-view {
+            .mx-theme-control-selected();
+        }
+
+        &.inactive,
+        &:has(> button:disabled),
+        &:has(> [aria-disabled='true']) {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+            }
+        }
+    }
+
     /* MODIFICATION */
     .labeltext {
+    }
+}
+
+/* RECORD VIEW — the tool row is the top of the stage band, not a bar of its own: same
+   recessed surface, no frame, no gap. The inline padding is the content inset minus the
+   0.7rem inside a 32px action box, so the icon artwork lines up with the title above it. */
+.view-object .image-controls {
+    margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+    padding: 1rem calc(var(--_content-inset, 2.4rem) - 0.7rem);
+    background-color: var(--bg-subtle);
+    border: 0;
+    border-radius: 0;
+
+    .image-controls__actions-additional {
+        border-inline-start-color: var(--border-default);
+    }
+
+    /* controls lift off the band; selected and disabled states keep their own fill */
+    .image-controls__action:where(:not(.select, .select-text, .zoom-slider-wrapper, .inactive, .single-page-view)):hover {
+        background-color: var(--bg-content-box);
+    }
+
+    .image-controls__option
+        > :where(.btn.btn--icon, .image-controls__share-image-link, [data-bookmark-list-type='add']):where(
+            :not(.added, .active, [aria-checked='true'], [aria-expanded='true'], :disabled, [aria-disabled='true'])
+        ):hover {
+        background-color: var(--bg-content-box);
     }
 }
 

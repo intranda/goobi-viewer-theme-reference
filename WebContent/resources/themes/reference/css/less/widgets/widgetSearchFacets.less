@@ -36,7 +36,7 @@
 
     &__list-item-link {
         &.-active {
-            background-color: var(--bg-hover);
+            background-color: var(--bg-hover-accent);
         }
     }
 
@@ -49,8 +49,26 @@
     &__list-item-count {
     }
 
-    &__list-item-control {
+    &__list-item &__list-item-control {
+        &,
+        &.-set,
+        &.-include,
+        &.-exclude {
+            color: var(--brand);
+            background: transparent;
+            border-color: transparent;
+        }
+    }
+
+    &__list-item &__list-item-link:is(:hover, :focus) &__list-item-control,
+    &__list-item &__list-item-control-link:is(:hover, :focus) &__list-item-control {
+        &,
+        &.-include,
+        &.-exclude,
         &.-set {
+            color: var(--brand-hover);
+            background: transparent;
+            border-color: transparent;
         }
     }
 
@@ -61,7 +79,7 @@
     }
 
     &__list {
-        scrollbar-color: var(--border-strong) transparent;
+        scrollbar-color: rgb(from var(--brand) r g b / 40%) transparent;
     }
 
     /* FILTER */
@@ -150,11 +168,11 @@
     }
 
     &__collapse-button {
-        color: var(--widget-expand-icon);
+        color: var(--fg-secondary-accent);
         .icon-svg {
-            width: 22px;
-            height: 22px;
-            margin-top: 0.5rem;
+            width: var(--_widget-action-icon-size, 1.6rem);
+            height: var(--_widget-action-icon-size, 1.6rem);
+            color: currentColor;
         }
         &.-expand,
         &.-collapse {
@@ -165,6 +183,7 @@
     }
 
     &__collapse-chevron-svg {
+        color: var(--brand);
     }
 
     &__collapse-alt-icon {
@@ -211,6 +230,465 @@
                 background-color: var(--bg-brand-hover);
             }
         }
+    }
+}
+
+/* THE VALUE LIST IN THE NORMAL SIDEBAR — same rows, states and spacing as the combined view */
+:where(.content__wrapper > .content__sidebar)
+    .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *)) {
+    --_facet-action-size: 3.2rem;
+    --_facet-row-size: 2.8rem;
+    --_facet-action-gap: 0.4rem;
+    --_facet-meta-size: var(--_facet-row-size);
+
+    .widget > .widget__body:not(:where(.widget-geofacetting__body, .widget-active-facets__body)):not(
+            :has(.widget-search-facets__boolean)
+        ) {
+        padding-block: 0.4rem 0;
+        padding-inline: 0.8rem;
+
+        /* ohne "Alle anzeigen" schliesst der Body den Abschnitt ab */
+        &:not(:has(+ .widget-search-facets__collapse)) {
+            padding-block-end: 1.2rem;
+        }
+    }
+
+    .widget-search-facets__list {
+        gap: 0.2rem;
+        margin-block: 0;
+        margin-inline: 0;
+        padding: 0.4rem;
+        scrollbar-color: rgb(from var(--brand) r g b / 40%) transparent;
+    }
+
+    .widget-search-facets__list-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+        gap: 0;
+        padding: 0;
+        border: 0;
+        border-radius: var(--radius-container-small);
+        line-height: var(--line-height-body);
+
+        &:has(> .widget-search-facets__list-item-control-link) {
+            grid-template-columns: minmax(0, 1fr) auto;
+            column-gap: var(--_facet-action-gap);
+        }
+
+        &:hover {
+            background-color: var(--bg-hover-accent);
+        }
+
+        .widget-search-facets__list-item-link,
+        .widget-search-facets__list-item-control-link {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            min-height: var(--_facet-row-size);
+            padding: 0.4rem;
+            border-radius: var(--radius-container-small);
+            color: var(--fg-content-box);
+            background: transparent;
+            font-weight: 400;
+            line-height: var(--line-height-body);
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                color: var(--fg-content-box);
+                background: transparent;
+                text-decoration: none;
+            }
+
+            &:active {
+                background-color: var(--bg-pressed-accent);
+            }
+
+            &:focus-visible {
+                .mx-theme-focus();
+            }
+        }
+
+        .widget-search-facets__list-item-link {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) var(--_facet-action-size);
+            padding-block: 0;
+            padding-inline-end: 0;
+            overflow: visible;
+        }
+
+        .widget-search-facets__list-item-control-link {
+            justify-content: center;
+            width: var(--_facet-row-size);
+            padding: 0;
+
+            &:hover,
+            &:focus-visible {
+                background-color: var(--bg-pressed-accent);
+            }
+        }
+
+        &.-active,
+        &.-excluded {
+            color: var(--fg-selected);
+            background-color: var(--bg-selected);
+
+            &:hover {
+                background-color: var(--bg-selected-hover);
+            }
+
+            .widget-search-facets__list-item-link {
+                grid-column: 1 / -1;
+                color: var(--fg-selected);
+
+                &:active {
+                    background-color: var(--bg-selected-pressed);
+                }
+            }
+        }
+
+        &.-excluded .widget-search-facets__list-item-label {
+            text-decoration: line-through;
+        }
+
+        .widget-search-facets__list-item-control,
+        &:hover .widget-search-facets__list-item-control,
+        &:focus-within .widget-search-facets__list-item-control {
+            order: 2;
+            justify-self: center;
+            width: var(--_facet-row-size);
+            height: var(--_facet-row-size);
+            margin-inline: 0;
+            border: 0;
+            border-radius: var(--radius-button);
+            background: transparent;
+            opacity: 1;
+            transition: none;
+        }
+
+        /* row controls stay neutral until they are touched; a set filter keeps the row color */
+        .widget-search-facets__list-item-control {
+            &,
+            &.-set,
+            &.-include,
+            &.-exclude {
+                color: var(--fg-content-box);
+            }
+        }
+
+        &:is(.-active, .-excluded) .widget-search-facets__list-item-control {
+            &,
+            &.-set,
+            &.-include,
+            &.-exclude {
+                color: currentColor;
+            }
+        }
+
+        :is(.widget-search-facets__list-item-link, .widget-search-facets__list-item-control-link):is(:hover, :focus)
+            .widget-search-facets__list-item-control {
+            &,
+            &.-set,
+            &.-include,
+            &.-exclude {
+                color: var(--brand);
+            }
+        }
+
+        .widget-search-facets__list-item-link > .widget-search-facets__list-item-control {
+            align-self: center;
+            width: var(--_facet-row-size);
+            height: var(--_facet-row-size);
+
+            &:hover {
+                background-color: var(--bg-pressed-accent);
+            }
+        }
+
+        .widget-search-facets__list-item-control-icon-svg {
+            width: var(--_widget-action-icon-size, 1.6rem);
+            height: var(--_widget-action-icon-size, 1.6rem);
+            color: currentColor;
+        }
+    }
+
+    .widget-search-facets__list-item-text {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: baseline;
+        gap: 0.8rem;
+        order: 1;
+        padding-block: 0.2rem;
+        padding-inline-end: 0.8rem;
+    }
+
+    .widget-search-facets__list-item-label {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .widget-search-facets__list-item-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        justify-self: end;
+        min-width: 2.4rem;
+        min-height: 2.4rem;
+        padding-inline: 0.6rem;
+        border-radius: var(--radius-button);
+        color: var(--fg-secondary-accent);
+        background-color: var(--bg-subtle);
+        font-size: var(--font-size-body-small);
+        font-variant-numeric: tabular-nums;
+        pointer-events: none;
+    }
+
+    /* the region heading stays for screen readers, the panel titles carry it visually */
+    .widget-search-facets__available-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    /* the sliding filter reads as a field, not as a white box on a white topbar */
+    .widget-search-facets__filter input {
+        .mx-theme-field();
+        border-radius: var(--radius-button);
+        box-shadow: var(--shadow-floating);
+    }
+
+    .widget-search-facets__filter .widget-search-facets__filter-button,
+    .widget-geofacetting__actions button,
+    .widget-geomap__expand,
+    .widget-chronology-slider__action-reset-button {
+        color: var(--fg-content-box);
+
+        &:hover,
+        &:active,
+        &:focus-visible {
+            color: var(--brand);
+        }
+    }
+
+    /* the description lines up with the row text, not with the body edge */
+    .widget-search-facets__description-text {
+        margin-block: 0.4rem 0.6rem;
+        padding-inline: 0.8rem;
+        color: var(--fg-secondary-accent);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+    }
+
+    /* the year fields need more air under the panel head than a list of text rows does */
+    .widget-chronology-slider > .widget__body.widget-chronology-slider__body {
+        padding-block-start: 1.2rem;
+        padding-inline: 1.6rem;
+    }
+
+    /* the active filter summary is a band of chips, not a value list */
+    .widget-active-facets > .widget__body.widget-active-facets__body {
+        padding-block: 1.2rem;
+        padding-inline: 1.6rem;
+    }
+
+    /* boolean facets: the button pair of the combined view, inside proper panel padding */
+    .widget > .widget__body:has(.widget-search-facets__boolean) {
+        padding-block: 1.2rem;
+        padding-inline: 1.6rem;
+        background-color: transparent;
+    }
+
+    .widget-search-facets__boolean {
+        gap: 0.8rem;
+    }
+
+    .widget-search-facets__boolean-button-wrapper {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .widget-search-facets__boolean .widget-search-facets__boolean-button {
+        .mx-theme-control-accent();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 4.4rem;
+        padding: 0.8rem;
+        border: 1px solid var(--border-input);
+        border-radius: var(--radius-button);
+        font-weight: 400;
+        line-height: var(--line-height-body);
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        &:focus {
+            color: var(--fg-content-box);
+            background-color: var(--bg-content-box);
+            box-shadow: none;
+        }
+
+        &.-active {
+            .mx-theme-control-selected();
+            font-weight: 500;
+        }
+    }
+
+    /* the map fills its card: no side padding, flush to the bottom, corners clipped by the card */
+    .widget-geofacetting {
+        overflow: hidden;
+    }
+
+    .widget-geofacetting > .widget__body.widget-geofacetting__body {
+        margin: 0;
+        padding: 0;
+
+        .geo-map {
+            border-radius: 0;
+        }
+    }
+
+    /* EXPAND VALUES */
+    .widget-search-facets__collapse {
+        display: flex;
+        justify-content: center;
+        margin-block-start: 0.4rem;
+        padding-inline: 1.2rem;
+        padding-block-end: 1.2rem;
+    }
+
+    .widget-search-facets__collapse-label {
+        display: inline;
+        order: -1;
+        min-width: 0;
+        padding-block: 0.4rem;
+        text-align: start;
+        overflow-wrap: anywhere;
+    }
+
+    .widget-search-facets__collapse-button {
+        .mx-theme-control-accent();
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        width: 100%;
+        min-height: var(--_facet-action-size);
+        margin: 0;
+        padding-block: 0;
+        padding-inline: 0.4rem 0;
+        border: 0;
+        border-radius: var(--radius-button);
+        background-color: transparent;
+        color: var(--brand);
+        font-size: var(--font-size-body-small);
+        font-weight: 500;
+
+        &:hover,
+        &:focus {
+            color: var(--brand-hover);
+            text-decoration: none;
+        }
+
+        .icon-svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            margin: 0;
+            color: currentColor;
+        }
+    }
+
+    .widget-search-facets__collapse-chevron {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: var(--_facet-action-size);
+        height: var(--_facet-action-size);
+    }
+
+    .widget-search-facets__collapse-chevron-svg {
+        color: currentColor;
+    }
+}
+
+/* MOUSE — counts and quick actions share the trailing area, as in the combined view */
+@media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
+    :where(.content__wrapper > .content__sidebar)
+        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *))
+        .widget-search-facets__list-item {
+        &,
+        &:has(> .widget-search-facets__list-item-control-link) {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        &:has(> .widget-search-facets__list-item-control-link) {
+            --_facet-meta-size: calc(var(--_facet-row-size) * 2 + var(--_facet-action-gap));
+
+            .widget-search-facets__list-item-link > .widget-search-facets__list-item-control {
+                inset-inline-end: calc(var(--_facet-row-size) + var(--_facet-action-gap));
+            }
+        }
+
+        .widget-search-facets__list-item-link {
+            display: block;
+            padding-inline-end: 0.4rem;
+
+            > .widget-search-facets__list-item-control {
+                position: absolute;
+                inset-block-start: 50%;
+                inset-inline-end: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        .widget-search-facets__list-item-text {
+            grid-template-columns: minmax(0, 1fr) minmax(var(--_facet-meta-size), max-content);
+            padding-inline-end: 0;
+        }
+
+        .widget-search-facets__list-item-count {
+            text-align: end;
+        }
+
+        .widget-search-facets__list-item-control-link {
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-end: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        &:not(:hover):not(:focus-within) {
+            .widget-search-facets__list-item-control,
+            .widget-search-facets__list-item-control-link {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        &:hover,
+        &:focus-within {
+            .widget-search-facets__list-item-count {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@media (any-pointer: coarse), (max-width: @smallBreakpoint) {
+    :where(.content__wrapper > .content__sidebar)
+        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *)) {
+        --_facet-action-size: 4.4rem;
+        --_facet-row-size: 4.4rem;
     }
 }
 

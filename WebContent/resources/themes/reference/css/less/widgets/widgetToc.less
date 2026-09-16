@@ -15,64 +15,35 @@
     &__title {
     }
     &__title-expand {
-        a {
-            color: var(--fg-general);
-            &:hover,
-            &:active,
-            &:focus {
-                color: var(--fg-general);
-            }
-        }
     }
 
     &__body {
-        li {
-            border-radius: var(--radius-container-small);
-        }
         a:hover {
             background-color: transparent;
         }
     }
     /* ELEMENTS */
     &__elements {
-        scrollbar-color: var(--border-strong) transparent;
+        scrollbar-color: rgb(from var(--brand) r g b / 40%) transparent;
         ul {
             border: 0;
         }
     }
     &__element {
-        &:hover,
-        &:active,
-        &:focus {
-            background: var(--bg-hover);
-        }
         &.parent {
         }
         &.child {
         }
     }
-    &__collapse-svg,
-    &__expand-svg {
-        color: var(--fg-general);
+    &__toggle-icon-svg {
     }
     &__element-expand {
     }
     &__element-link {
-        a {
-            &:hover,
-            &:active,
-            &:focus {
-            }
-        }
         &.has-pagenumber {
         }
         &.non-tree-view {
             &.has-pagenumber {
-            }
-        }
-        &.active {
-            a {
-                color: var(--fg-inverse);
             }
         }
     }
@@ -82,9 +53,180 @@
     &__loader,
     &__overlay {
     }
-    &__loader {
+}
+
+/* TOC IN THE NORMAL SIDEBAR */
+:where(.content__wrapper > .content__sidebar)
+    .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    --_toc-slot: 3.2rem;
+    --_toc-row: 3.8rem;
+    --_toc-mark: 1.6rem;
+    /* depth as a step, with a ceiling so a deep record cannot eat the column */
+    --_toc-step: calc(min(var(--toc-level, 0), 4) * 1.2rem);
+
+    .widget-toc__title {
+        min-width: 0;
+        gap: 0.8rem;
+
+        > .widget__title {
+            flex: 1 1 auto;
+            min-width: 0;
+            max-width: none;
+        }
     }
-    &__overlay {
+
+    .widget-toc__title-expand {
+        flex: 0 0 auto;
+        gap: 0.4rem;
+        margin: 0;
+        margin-inline-start: auto;
+    }
+
+    > form > .widget-toc__body {
+        padding: 0.8rem;
+    }
+
+    .widget-toc__elements > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ROWS — the row itself stays full width, only its content steps */
+    .widget-toc__element {
+        position: relative;
+        align-items: flex-start;
+        min-width: 0;
+        min-height: var(--_toc-row);
+        margin-inline: 0;
+        padding: 0;
+        padding-inline-start: var(--_toc-step);
+        border-radius: var(--radius-container-small);
+
+        &:hover {
+            background-color: var(--bg-hover-accent);
+        }
+    }
+
+    /* THE CONTROL OF A NODE */
+    .widget-toc__element-expand {
+        flex: 0 0 var(--_toc-slot);
+        width: var(--_toc-slot);
+        max-width: var(--_toc-slot);
+    }
+
+    .widget-toc__toggle {
+        .mx-theme-control-accent();
+        justify-content: center;
+        width: var(--_toc-slot);
+        height: var(--_toc-row);
+        padding: 0;
+        border: 0;
+        border-radius: var(--radius-container-small);
+        background-color: transparent;
+        color: var(--brand);
+
+        &:hover {
+            background-color: transparent;
+            color: var(--brand-hover);
+        }
+
+        .widget-toc__toggle-icon-svg {
+            width: var(--_toc-mark);
+            height: var(--_toc-mark);
+            color: currentColor;
+        }
+    }
+
+    /* LABEL */
+    .widget-toc__element-link {
+        &,
+        &.has-pagenumber,
+        &.non-tree-view,
+        &.non-tree-view.has-pagenumber {
+            flex: 1 1 0;
+            width: auto;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        &:not(.non-tree-view) {
+            margin-inline-start: var(--_toc-slot);
+        }
+
+        > a {
+            display: flex;
+            min-height: var(--_toc-row);
+            padding-block: 0.7rem;
+            padding-inline: 0;
+            color: var(--fg-link-content-box);
+            line-height: var(--line-height-body);
+            overflow-wrap: anywhere;
+
+            &:hover {
+                background-color: transparent;
+                text-decoration: none;
+            }
+
+            &:focus-visible {
+                .mx-theme-focus();
+            }
+        }
+    }
+
+    .widget-toc__element-expand + .widget-toc__element-link {
+        margin-inline-start: 0;
+    }
+
+    .widget-toc__element-pagenumber {
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 0;
+        padding-block: 0.8rem;
+        padding-inline: 0.8rem;
+        color: var(--fg-secondary-accent);
+        font-size: var(--font-size-body-small);
+        font-variant-numeric: tabular-nums;
+        line-height: var(--line-height-body);
+    }
+
+    /* THE ENTRY YOU ARE IN — the mark sits on the panel edge, whatever the depth */
+    .widget-toc__element.active {
+        background-color: var(--bg-selected);
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset-block: 0.5rem;
+            inset-inline-start: 0;
+            width: 2px;
+            border-radius: 999px;
+            background-color: var(--brand);
+        }
+
+        .widget-toc__toggle {
+            color: var(--brand);
+        }
+
+        .widget-toc__element-link > a {
+            color: var(--fg-selected);
+            font-weight: 600;
+        }
+
+        .widget-toc__element-pagenumber {
+            color: var(--fg-selected);
+        }
+    }
+}
+
+@media (any-pointer: coarse), (max-width: @smallBreakpoint) {
+    :where(.content__wrapper > .content__sidebar)
+        .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+        --_toc-slot: 4.4rem;
+        --_toc-row: 4.4rem;
     }
 }
 

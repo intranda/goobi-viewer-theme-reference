@@ -60,12 +60,93 @@
     }
 }
 
-/* YES/NO TOGGLE */
-.admin__radio-switch {
-    label {
-        color: var(--fg-general);
+/* PUBLIC YES/NO TOGGLE */
+.admin__radio-switch:where(:not(#admin *)) {
+    label,
+    input:not(:checked) + label:hover {
+        color: var(--fg-secondary);
+        opacity: 1;
     }
+
+    input:checked + label {
+        color: var(--fg-content-box);
+    }
+
+    .toggle-outside {
+        background: var(--bg-input);
+        border: 1px solid var(--border-input);
+    }
+
+    .toggle-inside,
+    input:checked ~ .toggle-outside .toggle-inside {
+        background: var(--fg-content-box);
+        border: 0;
+    }
+
     input ~ input:checked ~ .toggle-outside {
-        background: var(--brand);
+        background: var(--bg-brand);
+        border-color: var(--bg-brand);
+
+        .toggle-inside {
+            background: var(--fg-on-brand);
+        }
     }
+
+    &:hover {
+        .toggle-outside {
+            background: var(--bg-hover);
+            border-color: var(--brand);
+        }
+
+        input ~ input:checked ~ .toggle-outside {
+            background: var(--bg-brand-hover);
+            border-color: var(--bg-brand-hover);
+        }
+    }
+
+    &:has(input:active, label:active) {
+        .toggle-outside {
+            background: var(--bg-pressed);
+        }
+
+        input ~ input:checked ~ .toggle-outside {
+            background: var(--bg-brand-pressed);
+            border-color: var(--bg-brand-pressed);
+        }
+    }
+
+    input:focus-visible ~ .toggle-outside {
+        .mx-theme-focus();
+    }
+
+    input:is(:disabled, [aria-disabled='true'], .disabled) + label,
+    input:is(:disabled, [aria-disabled='true'], .disabled) + label:hover {
+        color: var(--fg-disabled);
+        cursor: default;
+    }
+
+    &:has(input):not(:has(input:enabled:not([aria-disabled='true']):not(.disabled))) {
+        .toggle-outside,
+        input ~ input:checked ~ .toggle-outside {
+            background: var(--bg-disabled);
+            border-color: var(--border-disabled);
+
+            .toggle-inside {
+                background: var(--fg-disabled);
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
 }

@@ -9,17 +9,19 @@
     /* IMAGE */
     &__object-3d,
     &__image {
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-container);
         border-radius: 0 0 var(--radius-container) var(--radius-container);
         border-top: 0;
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-subtle);
         &.-setBorderTop {
-            border-top: 1px solid var(--border-faint);
+            border-top: 1px solid var(--border-container);
         }
     }
     &__image-loader {
     }
     &__image-map {
+        // the scan reads as paper lying on the recessed canvas
+        box-shadow: 0 2px 10px rgb(from var(--shadow-color) r g b / 10%);
         span {
         }
         img {
@@ -64,13 +66,27 @@
     &__webarchive-preview-hover-text {
     }
 
-    // COLORS FOR BORDERS BASED ON DOCSTRUCT TYPE
-    // MAYBE CLEANUP/RECONSTRUCTION NEEDED
+    /* RECORD SHEET — the stage is one recessed band running the full width of the page
+       surface; the scan is the only thing that lifts off it, so nothing draws a second frame */
+    & &__image {
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        border: 0;
+        border-radius: 0;
+    }
+    & &__image &__image-map {
+        // the scan keeps the page inset on both sides, so its edges meet the tool icons
+        max-width: ~'min(120rem, 100% - 2 * var(--_content-inset, 2.4rem))';
+        margin-block: 2.4rem;
+        box-shadow:
+            0 1px 2px rgb(from var(--shadow-color) r g b / 6%),
+            0 12px 28px rgb(from var(--shadow-color) r g b / 12%);
+    }
+
+    // DOCSTRUCT TYPE — the entity colour marks the top edge of the band, no coloured frame
     &.docstructtype__work {
         .image-controls,
         .view-object__image {
-            border-width: 1px;
-            border-color: var(--bg-entity-work);
+            border-block-start: 3px solid var(--bg-entity-work);
         }
         .metadata__wrapper {
             border: 1px solid var(--bg-entity-work);
@@ -79,8 +95,7 @@
     &.docstructtype__person {
         .image-controls,
         .view-object__image {
-            border-width: 1px;
-            border-color: var(--bg-entity-person);
+            border-block-start: 3px solid var(--bg-entity-person);
         }
         .metadata__wrapper {
             border: 1px solid var(--bg-entity-person);
@@ -89,8 +104,7 @@
     &.docstructtype__agent {
         .image-controls,
         .view-object__image {
-            border-width: 1px;
-            border-color: var(--bg-entity-agent);
+            border-block-start: 3px solid var(--bg-entity-agent);
         }
         .metadata__wrapper {
             border: 1px solid var(--bg-entity-agent);
@@ -99,8 +113,7 @@
     &.docstructtype__award {
         .image-controls,
         .view-object__image {
-            border-width: 1px;
-            border-color: var(--bg-entity-award);
+            border-block-start: 3px solid var(--bg-entity-award);
         }
         .metadata__wrapper {
             border: 1px solid var(--bg-entity-award);
@@ -109,12 +122,15 @@
     &.docstructtype__event {
         .image-controls,
         .view-object__image {
-            border-width: 1px;
-            border-color: var(--bg-entity-event);
+            border-block-start: 3px solid var(--bg-entity-event);
         }
         .metadata__wrapper {
             border: 1px solid var(--bg-entity-event);
         }
+    }
+    // the band has one top edge: with a tool row above, the stage does not repeat it
+    & .image-controls + &__image {
+        border-block-start: 0;
     }
 }
 

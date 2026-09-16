@@ -44,8 +44,17 @@
         input {
         }
         button {
-            color: var(--fg-on-brand);
+            color: var(--brand);
         }
+    }
+}
+
+/* AUTOCOMPLETE IN THE NORMAL SIDEBAR */
+:where(.content__wrapper > .content__sidebar)
+    .widget-searchfield:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+    .input-group .ui-autocomplete {
+        flex: 1 1 auto;
+        min-width: 0;
     }
 }
 

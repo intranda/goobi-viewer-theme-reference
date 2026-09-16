@@ -12,7 +12,43 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(24rem, var(--sidebar-width));
         gap: var(--content-gap);
-        padding: 3rem 0 5rem 0;
+        padding-block: 2.4rem 4.8rem;
+
+        > .content__main {
+            --_content-inset: 2.4rem;
+
+            align-self: start;
+            padding: var(--_content-inset);
+            border: 1px solid var(--border-container);
+            border-radius: var(--radius-container);
+            background-color: var(--bg-content-box);
+            color: var(--fg-content-box);
+
+            > h1,
+            > div > h1,
+            .title__header > h1,
+            .search-list__options-container-heading {
+                color: var(--fg-heading-content-box);
+                font-size: var(--font-size-heading-medium);
+                font-weight: 600;
+                line-height: 1.3;
+                overflow-wrap: anywhere;
+            }
+
+            > h1,
+            > div > h1 {
+                margin-block: 0 1.6rem;
+                margin-inline: calc(-1 * var(--_content-inset));
+                padding-block-end: 2rem;
+                padding-inline: var(--_content-inset);
+                border-block-end: 1px solid var(--content-divider);
+            }
+
+            > p,
+            > form.form-horizontal {
+                max-width: var(--text-measure);
+            }
+        }
     }
     &__main {
         min-width: 0;
@@ -106,6 +142,30 @@
     }
 }
 
+/* SEARCH PAGES — the page is one sheet, every part of it a band */
+@{searchSheet} {
+    --_content-inset: 0;
+    padding: 0;
+
+    > .breadcrumbs__wrapper {
+        margin-block: 0;
+        padding: 2.4rem var(--search-sheet-gutter) 0;
+    }
+
+    > h1,
+    > div > h1,
+    .search-list__options-container-heading {
+        margin: 0;
+        padding: 1.2rem var(--search-sheet-gutter) 2rem;
+        border-block-end: 0;
+    }
+
+    > p,
+    > form.form-horizontal {
+        padding-inline: var(--search-sheet-gutter);
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
@@ -121,6 +181,11 @@
         position: unset;
         &__wrapper {
             grid-template-columns: 1fr;
+            padding-block: 1.6rem 3.2rem;
+
+            > .content__main {
+                --_content-inset: 1.6rem;
+            }
         }
         &__main {
         }

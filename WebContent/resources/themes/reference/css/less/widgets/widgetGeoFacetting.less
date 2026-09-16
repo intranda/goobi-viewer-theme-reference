@@ -27,6 +27,27 @@
     border-radius: var(--radius-container);
 }
 
+/* MAP IN THE NORMAL SIDEBAR */
+:where(.content__wrapper > .content__sidebar)
+    .widget-geofacetting:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+    > .widget-geofacetting__body {
+        margin: 1.6rem;
+        padding: 0;
+    }
+}
+
+:where(.content__wrapper > .content__sidebar) .combined-facets .widget-geofacetting > .widget-geofacetting__body {
+    /* the map bleeds out of the section padding to the container edges */
+    margin-block: 0 -1.2rem;
+    margin-inline: -1.6rem;
+    padding-block: 0.8rem 0;
+    padding-inline: 0;
+
+    .geo-map {
+        border-radius: 0;
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

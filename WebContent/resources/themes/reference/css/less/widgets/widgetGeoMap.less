@@ -29,6 +29,21 @@
     }
 }
 
+/* MAP IN THE NORMAL SIDEBAR — the map fills its card, corners clipped by the panel */
+:where(.content__wrapper > .content__sidebar)
+    .widget-geomap:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+    overflow: hidden;
+
+    > .widget-geomap__body {
+        margin: 0;
+        padding: 0;
+
+        .geomap {
+            border-radius: 0;
+        }
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

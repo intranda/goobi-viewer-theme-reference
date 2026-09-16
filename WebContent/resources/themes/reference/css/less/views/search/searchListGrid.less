@@ -12,16 +12,23 @@
             .search-list__hits-list-items {
                 grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
                 gap: 2rem;
-                align-items: start;
+                align-items: stretch;
             }
 
             .search-list__hit-info-wrapper {
                 padding: 1.6rem;
             }
 
+            /* TITLE — three lines at most, so the tiles keep a common lower edge */
             .search-list__hit-title-heading {
                 font-size: var(--font-size-body-large);
-                line-height: 1.5;
+                line-height: 1.4;
+            }
+            .search-list__hit-title-link {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
             }
 
             .search-list__thumb-bookmark-wrapper {
@@ -30,13 +37,30 @@
             }
             form {
             }
+            /* TILE — one card: image band above, title below; every tile of a row shares one height */
             .search-list__hit {
+                display: flex;
+                flex-direction: column;
                 padding: 0;
+                overflow: hidden;
+                transition:
+                    border-color 0.18s ease,
+                    box-shadow 0.18s ease;
+
+                &:hover,
+                &:focus-within {
+                    border-color: var(--border-container-accent);
+                    box-shadow: 0 0.6rem 1.6rem rgb(from var(--shadow-color) r g b / 10%);
+                }
                 .row,
                 [class*='col-'] {
                 }
             }
             .search-list__hit-header {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 auto;
+
                 .row {
                 }
                 .col-12.col-sm-10 {
@@ -44,12 +68,39 @@
                 .col-12.col-sm-2 {
                 }
             }
+            /* the extra height of the row falls below the title, not between image and title */
+            .search-list__hit-inner-structure {
+                flex: 1 1 auto;
+                justify-content: flex-end;
+            }
+            /* without a preview the title centres instead of hanging under an empty band */
+            .search-list__hit:not(:has(.search-list__hit-thumbnail)) .search-list__hit-inner-structure {
+                justify-content: center;
+            }
+            /* IMAGE BAND — one proportion for every tile; the scan fills it and stays clickable */
             .search-list__hit-thumbnail {
+                flex: 0 0 auto;
+                aspect-ratio: 4 / 5;
+                min-height: 0;
                 border-radius: var(--radius-container) var(--radius-container) 0 0;
+                border-block-end: 1px solid var(--border-container);
+                background-color: var(--bg-subtle);
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .search-list__hit-top-wrapper {
                 border: none;
                 margin-bottom: 0;
+            }
+            /* the tile carries its extra metadata as a quiet second line */
+            .search-list__hit-metadata-second {
+                margin-top: 0.8rem;
+                font-size: var(--font-size-body-small);
+                line-height: 1.4;
+                color: var(--fg-muted);
             }
             .search-list__hit-title h3 {
             }
@@ -79,4 +130,17 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    /* two narrow tiles read better than one oversized one */
+    .search-list__hits.grid {
+        .search-list__hits-list-items {
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+            gap: 1.2rem;
+        }
+        .search-list__hit-info-wrapper {
+            padding: 1.2rem;
+        }
+        .search-list__hit-title-heading {
+            font-size: var(--font-size-body);
+        }
+    }
 }
