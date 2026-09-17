@@ -297,14 +297,14 @@ html {
         font-size: var(--font-size-body);
         font-weight: 600;
     }
-    /* SEARCH — narrow at rest, grows towards the start edge while it holds focus */
+    /* SEARCH — narrow at rest, grows towards the start edge while the input holds focus */
     &__search {
         flex: 1 1 auto;
         min-width: 0;
         max-width: 24rem;
         margin-inline-start: auto;
         transition: max-width var(--_expand) cubic-bezier(0.2, 0, 0, 1);
-        &:focus-within {
+        &:has(.form-control:focus) {
             max-width: 48rem;
         }
         &[hidden] {
