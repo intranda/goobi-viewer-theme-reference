@@ -17,46 +17,56 @@
         id="footer"
         class="footer">
         <!-- OBERER BEREICH: 3 Spalten -->
-        <div class="footer__topSection">
+        <div class="footer__top-section">
             <div class="container">
-                <div class="footer__topSection__columns">
-                    <!-- Spalte 1: Über uns -->
-                    <div class="footer__topSection__column">
-                        <h3 class="footer__topSection__heading">Über uns</h3>
-                        <p class="footer__topSection__text">
-                            Der Goobi viewer ist ein Open-Source-Präsentationssystem für digitale Kulturgüter und
-                            historische Dokumente.
-                        </p>
-                        <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-                            <a
-                                href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}"
-                                class="footer__topSection__btn">
-                                #{msg.contact}
-                            </a>
-                        </c:if>
-                        <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
-                            <button
-                                class="footer__topSection__btn"
-                                data-toggle="modal"
-                                data-target="#feedbackModal">
-                                #{msg.contact}
-                            </button>
-                        </c:if>
+                <div class="footer__top-section-columns">
+                    <!-- Spalte 1: Kontakt -->
+                    <div class="footer__top-section-column">
+                        <h3 class="footer__top-section-heading">#{msg.contact}</h3>
+                        <div class="footer__top-section-contact-content">
+                            <address class="footer__top-section-address">
+                                <span>intranda GmbH</span>
+                                <span>Bertha-von-Suttner-Str. 9</span>
+                                <span>37085 Göttingen, Deutschland</span>
+                            </address>
+                            <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                                <a
+                                    href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}"
+                                    class="footer__top-section-btn">
+                                    #{msg.contact}
+                                </a>
+                            </c:if>
+                            <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                                <button
+                                    class="footer__top-section-btn"
+                                    data-toggle="modal"
+                                    data-target="#feedbackModal">
+                                    #{msg.contact}
+                                </button>
+                            </c:if>
+                        </div>
                     </div>
 
-                    <!-- Spalte 2: Kontakt -->
-                    <div class="footer__topSection__column">
-                        <h3 class="footer__topSection__heading">#{msg.contact}</h3>
-                        <address class="footer__topSection__address">
-                            <span>intranda GmbH</span>
-                            <span>Bertha-von-Suttner-Str. 9</span>
-                            <span>37085 Göttingen, Deutschland</span>
-                        </address>
+                    <!-- Spalte 2: Über uns -->
+                    <div class="footer__top-section-column">
+                        <div class="footer__top-section-about">
+                            <h3 class="footer__top-section-heading">Über uns</h3>
+                            <div class="footer__top-section-about-content">
+                                <p class="footer__top-section-text">
+                                    Der Goobi viewer ist ein Open-Source-Präsentationssystem für digitale
+                                    Kulturgüter und historische Dokumente.
+                                </p>
+                                <img
+                                    class="footer__top-section-logo"
+                                    src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/images/template/goobi_logo_white.webp"
+                                    alt="Goobi viewer Logo" />
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Spalte 3: Social Media -->
-                    <div class="footer__topSection__column footer__topSection__column__social">
-                        <h3 class="footer__topSection__heading">Folgen Sie uns</h3>
+                    <div class="footer__top-section-column footer__top-section-column-social">
+                        <h3 class="footer__top-section-heading">Folgen Sie uns</h3>
                         <div class="footer__social">
                             <c:if test="#{adminThemesBean.hasSocialMediaUrl('facebook')}">
                                 <a
@@ -124,23 +134,24 @@
         </div>
 
         <!-- UNTERER BEREICH -->
-        <div class="footer__bottomSection">
+        <div class="footer__bottom-section">
             <div class="container">
                 <!-- Navigation (CMS) + Scroll-to-top nebeneinander -->
-                <div class="footer__bottomSection__nav-row">
+                <div class="footer__bottom-section-nav-row">
                     <nav
-                        class="footer__bottomSection__nav"
+                        class="footer__bottom-section-nav"
                         aria-label="Footer-Navigation">
-                        <ul class="footer__bottomSection__nav__list">
+                        <ul class="footer__bottom-section-nav-list">
                             <ui:repeat
                                 var="navItem"
                                 value="#{cmsBean.navigationMenuItems}">
                                 <h:panelGroup
                                     rendered="#{navItem.valid and navItem.shouldDisplay}"
                                     layout="none">
-                                    <li>
+                                    <li class="footer__bottom-section-nav-item">
                                         <ui:fragment rendered="#{navItem.openInNewWindow}">
                                             <a
+                                                class="footer__bottom-section-nav-link"
                                                 href="#{navItem.navigationUrl}"
                                                 target="_blank"
                                                 rel="noopener">
@@ -148,7 +159,9 @@
                                             </a>
                                         </ui:fragment>
                                         <ui:fragment rendered="#{!navItem.openInNewWindow}">
-                                            <a href="#{navItem.navigationUrl}">#{msg[navItem.itemLabel]}</a>
+                                            <a
+                                                class="footer__bottom-section-nav-link"
+                                                href="#{navItem.navigationUrl}">#{msg[navItem.itemLabel]}</a>
                                         </ui:fragment>
                                     </li>
                                 </h:panelGroup>
@@ -165,55 +178,69 @@
                 </div>
 
                 <!-- Copyright + Legal Links -->
-                <div class="footer__bottomSection__bar">
-                    <ul class="footer__bottomSection__links">
-                        <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
-                            <li class="footer__link-item">
-                                <a href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
-                            </li>
-                        </ui:fragment>
+                <div class="footer__bottom-section-bar-wrapper">
+                    <div class="footer__bottom-section-bar">
+                        <ul class="footer__bottom-section-links">
+                            <ui:fragment rendered="#{configurationBean.sitelinksEnabled}">
+                                <li class="footer__link-item">
+                                    <a
+                                        class="footer__link-item-action"
+                                        href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
+                                </li>
+                            </ui:fragment>
 
-                        <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
                             <li class="footer__link-item">
-                                <a href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">
-                                    #{msg.contact}
+                                <a
+                                    class="footer__link-item-action"
+                                    href="#{request.contextPath}/sitemap/">#{msg.sitemap}</a>
+                            </li>
+
+                            <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                                <li class="footer__link-item">
+                                    <a
+                                        class="footer__link-item-action"
+                                        href="#{adminThemesBean.getFooterUrl('contact', 'default_contact_link')}">
+                                        #{msg.contact}
+                                    </a>
+                                </li>
+                            </c:if>
+
+                            <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
+                                <li class="footer__link-item">
+                                    <button
+                                        class="footer__link-item-action btn btn--icon"
+                                        data-toggle="modal"
+                                        data-target="#feedbackModal">
+                                        #{msg.contact}
+                                    </button>
+                                </li>
+                            </c:if>
+
+                            <li class="footer__link-item">
+                                <a
+                                    class="footer__link-item-action"
+                                    href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">
+                                    #{msg.privacy}
                                 </a>
                             </li>
-                        </c:if>
 
-                        <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
                             <li class="footer__link-item">
-                                <button
-                                    class="btn btn--icon"
-                                    data-toggle="modal"
-                                    data-target="#feedbackModal">
-                                    #{msg.contact}
-                                </button>
+                                <a
+                                    class="footer__link-item-action"
+                                    href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">
+                                    #{msg.imprint}
+                                </a>
                             </li>
-                        </c:if>
+                        </ul>
 
-                        <li class="footer__link-item">
-                            <a
-                                href="#{adminThemesBean.getFooterUrl('privacy', request.contextPath.concat(&quot;/privacy&quot;))}">
-                                #{msg.privacy}
-                            </a>
-                        </li>
-
-                        <li class="footer__link-item">
-                            <a
-                                href="#{adminThemesBean.getFooterUrl('legal', request.contextPath.concat(&quot;/imprint&quot;))}">
-                                #{msg.imprint}
-                            </a>
-                        </li>
-                    </ul>
-
-                    <a
-                        class="footer__link-item"
-                        href="#{msg.intrandaViewer}"
-                        target="_blank"
-                        rel="noopener">
-                        &#169;#{navigationHelper.currentDate.year} powered by Goobi viewer
-                    </a>
+                        <a
+                            class="footer__link-item"
+                            href="#{msg.intrandaViewer}"
+                            target="_blank"
+                            rel="noopener">
+                            &#169;#{navigationHelper.currentDate.year} powered by Goobi viewer
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

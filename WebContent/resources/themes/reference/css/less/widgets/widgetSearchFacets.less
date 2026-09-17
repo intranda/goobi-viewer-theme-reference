@@ -263,9 +263,9 @@
 
     .widget-search-facets__list-item {
         position: relative;
-        display: grid;
+        display: flex;
+        align-items: center;
         grid-template-columns: minmax(0, 1fr);
-        align-items: start;
         gap: 0;
         padding: 0;
         border: 0;
@@ -519,7 +519,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 4.4rem;
+        min-height: 3rem;
         padding: 0.5rem;
         border: 1px solid var(--border-input);
         border-radius: var(--radius-button);
@@ -687,8 +687,8 @@
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
     :where(.content__wrapper > .content__sidebar)
         .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *)) {
-        --_facet-action-size: 4.4rem;
-        --_facet-row-size: 4.4rem;
+        --_facet-action-size: 2.2rem;
+        --_facet-row-size: 2.2rem;
     }
 }
 

@@ -71,7 +71,8 @@
             /* the extra height of the row falls below the title, not between image and title */
             .search-list__hit-inner-structure {
                 flex: 1 1 auto;
-                justify-content: flex-end;
+                flex-direction: column;
+                justify-content: flex-start;
             }
             /* without a preview the title centres instead of hanging under an empty band */
             .search-list__hit:not(:has(.search-list__hit-thumbnail)) .search-list__hit-inner-structure {
@@ -81,7 +82,7 @@
             .search-list__hit-thumbnail {
                 flex: 0 0 auto;
                 aspect-ratio: 4 / 5;
-                min-height: 0;
+                min-height: 175px;
                 border-radius: var(--radius-container) var(--radius-container) 0 0;
                 border-block-end: 1px solid var(--border-container);
                 background-color: var(--bg-subtle);

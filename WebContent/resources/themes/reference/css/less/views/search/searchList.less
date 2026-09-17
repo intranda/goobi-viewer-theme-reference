@@ -603,24 +603,16 @@
 
     .search-list__hit-inner-structure {
         grid-template-columns: minmax(0, 1fr) auto;
-        grid-template-areas: 'info actions';
         align-items: start;
         gap: 0 var(--_hit-column-gap);
 
         &:has(.search-list__hit-thumbnail) {
-            grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr) auto;
-            grid-template-areas: 'thumb info actions';
+            grid-template-columns: var(--_hit-thumb-width) 1fr;
         }
-    }
-
-    /* the wrapper only groups preview and actions in the markup; the row places them itself */
-    .search-list__hit-thumb-wrapper {
-        display: contents;
     }
 
     /* PREVIEW — the scan itself, no frame around it; one proportion for every row */
     .search-list__hit-thumbnail {
-        grid-area: thumb;
         width: 100%;
         aspect-ratio: var(--_hit-thumb-ratio);
 
@@ -656,7 +648,6 @@
     }
 
     .search-list__hit-info-wrapper {
-        grid-area: info;
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
@@ -666,6 +657,11 @@
     .search-list__hit-docstruct {
         order: -1;
         margin-bottom: 0;
+
+        a {
+            padding: 2px 6px;
+            border: 1px solid var(--border-input);
+        }
     }
     .search-list__hit-top-wrapper {
         margin-bottom: 0;
@@ -674,33 +670,19 @@
         font-size: var(--font-size-heading-small);
         line-height: 1.25;
     }
-
-    /* FACTS — a running line of label and value, not a two column table */
-    .search-list__hit-metadata-list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 0.6rem;
-        margin: 0.4rem 0 0;
-        font-size: var(--font-size-body);
-    }
-    .search-list__hit-text-label {
-        color: var(--fg-muted);
-
-        &:not(:first-of-type) {
-            margin-inline-start: 2.4rem;
-        }
-    }
+    .search-list__hit-text-label,
     .search-list__hit-text-value {
-        grid-column: auto;
+        font-weight: 500;
     }
 
     /* TOOLS — present on touch, called up by pointer or keyboard on the desktop */
     .search-list__hit-options-wrapper {
-        grid-area: actions;
         flex-direction: row;
         gap: 0.4rem;
         margin: 0;
+    }
+    .search-list__hit-options-button.btn {
+        height: 36px;
     }
 
     /* the sub-hit toggle and its list continue the text axis instead of the full width */
@@ -794,6 +776,7 @@ body:has(.header.-adminActive) @{searchSheet} {
     }
     .search-list__band-start {
         gap: 0.6rem;
+        max-width: 100%;
     }
     .search-list__band-end {
         gap: var(--search-band-gap);
@@ -1073,6 +1056,10 @@ body:has(.header.-adminActive) @{searchSheet} {
         .search-list__hit-title-heading {
             font-size: var(--font-size-heading-small);
         }
+
+        .search-list__hit-inner-structure:has(.search-list__hit-thumbnail) {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
@@ -1085,11 +1072,9 @@ body:has(.header.-adminActive) @{searchSheet} {
         /* the actions move below the row, the preview keeps its column */
         .search-list__hit-inner-structure {
             grid-template-columns: minmax(0, 1fr);
-            grid-template-areas: 'info' 'actions';
 
             &:has(.search-list__hit-thumbnail) {
                 grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr);
-                grid-template-areas: 'thumb info' 'actions actions';
             }
         }
         .search-list__hit-options-wrapper {

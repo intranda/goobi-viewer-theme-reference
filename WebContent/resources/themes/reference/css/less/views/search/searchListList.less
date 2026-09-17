@@ -27,8 +27,8 @@
                The preview, the metadata and the sub-hits are switched off by the core here,
                so the only thing left to build with is the alignment of these two. */
             .search-list__hit-inner-structure {
-                grid-template-columns: fit-content(14rem) minmax(0, 1fr) auto;
-                align-items: baseline;
+                display: flex;
+                flex-direction: column-reverse;
                 gap: 0 var(--_list-column-gap);
             }
             /* both wrappers only group the markup; the row itself sets the tracks */

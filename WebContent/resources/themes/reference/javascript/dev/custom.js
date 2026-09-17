@@ -399,21 +399,44 @@ $(document).ready(function () {
     });
 
     // toggle mobile sidebar
+    // the sidebar is unmounted (display: none) at rest, not just moved off-screen, so a
+    // fixed-position panel outside the viewport can never make the page pannable/draggable
+    // on mobile browsers. ".-mounted" renders it off-screen, ".-opened" (added a frame later)
+    // slides it in; closing reverses that and only unmounts once the transition has finished.
+    var $mobileSidebar = $('#sidebar');
+
+    function openMobileSidebar() {
+        $('html').addClass('no-overflow');
+        $('.mobile-overlay, [data-close="sidebar"]').fadeIn(300);
+        $('[data-target="mobileSidebarTrigger"]').addClass('-opened');
+
+        $mobileSidebar.addClass('-mounted');
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                $mobileSidebar.addClass('-opened');
+            });
+        });
+    }
+
+    function closeMobileSidebar() {
+        $('html').removeClass('no-overflow');
+        $('.mobile-overlay, [data-close="sidebar"]').fadeOut(300);
+        $('[data-target="mobileSidebarTrigger"]').removeClass('-opened');
+
+        $mobileSidebar.removeClass('-opened');
+        $mobileSidebar.one('transitionend', function (event) {
+            if (event.target === $mobileSidebar.get(0)) {
+                $mobileSidebar.removeClass('-mounted');
+            }
+        });
+    }
+
     $('body').on('click', '[data-open="sidebar"], .mobile-overlay', function () {
-        // ACCESSBILITY FOCUS JUMP
-        //		if (!$("#sidebar").hasClass("-opened")) {
-        //			$('#sidebar a:visible:first').focus();
-        //		} else {
-        //			$('[data-open="sidebar"]').focus();
-        //		}
-        // DEACTIVATE SCROLL WHEN SIDEBAR OPEN
-        $('html').toggleClass('no-overflow');
-        // ADD DARKER OVERLAY ON BACKGROUND
-        $('.mobile-overlay, [data-close="sidebar"]').fadeToggle(300);
-        // TOGGLE SIDEBAR OPEN
-        $('#sidebar').toggleClass('-opened');
-        // TOGGLE SIDEBAR TRIGGER ICON
-        $('[data-target="mobileSidebarTrigger"]').toggleClass('-opened');
+        if ($mobileSidebar.hasClass('-mounted')) {
+            closeMobileSidebar();
+        } else {
+            openMobileSidebar();
+        }
     });
 
     // do things on JSF AJAX event
