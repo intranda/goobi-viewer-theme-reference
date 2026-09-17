@@ -16,7 +16,7 @@ html {
     --_panel-top: 7.2rem;
     --_panel-left: 1.6rem;
     --_control: 4.4rem;
-    --_row: 4.4rem;
+    --_row: 3.6rem;
     --_radius: 10px;
     --_popover-radius: 16px;
     --_speed: 0.14s;
@@ -198,6 +198,10 @@ html {
             color: var(--brand);
             font-weight: 600;
         }
+    }
+    /* A selected row and the hovered row beneath it must not merge into one surface */
+    &__nav-panel-link + &__nav-panel-link {
+        margin-block-start: 0.2rem;
     }
     &__actions {
         display: flex;
@@ -648,6 +652,9 @@ html {
     .header__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
         width: min(32rem, calc(~'100vw - 3.2rem'));
         padding: 0.8rem;
+    }
+    &__account [data-login='true'] .login-navigation__user-dropdown-item + .login-navigation__user-dropdown-item {
+        margin-block-start: 0.2rem;
     }
 }
 /* DRAWER — the complete navigation as a modal side sheet (native <dialog>) */
