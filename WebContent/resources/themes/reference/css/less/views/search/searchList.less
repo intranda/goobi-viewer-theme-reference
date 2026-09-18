@@ -400,8 +400,6 @@
     }
     &__hit-text-value {
     }
-    &__hit-text-area {
-    }
     &__hit-info {
     }
     &__toggle-thumbs {
@@ -441,6 +439,9 @@
         }
     }
     &__hit-content-set {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
         padding-bottom: 1rem;
         &:hover {
             background-color: var(--bg-hover);
@@ -454,7 +455,15 @@
             font-size: var(--font-size-body-small);
         }
     }
+    &__hit-text-area {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+    /* the child-hit preview sits to the left, at half the size of the main result thumbnail */
     &__subhit-thumbnail {
+        order: -1;
+        flex: 0 0 calc(var(--_hit-thumb-width) / 2);
+        width: calc(var(--_hit-thumb-width) / 2);
     }
     &__loader {
     }
@@ -477,14 +486,23 @@
        and the border width is what lets the selected and disabled helpers show their colour at all */
     &__hit-options-button.btn {
         .mx-theme-control();
+        /* a plain, opaque white — .mx-theme-control()'s hover/active states use
+           semi-transparent overlays that let a thumbnail behind the button show through */
+        background-color: #fff;
         border: 1px solid var(--border-strong);
         border-radius: var(--radius-container-small);
         transition:
             background-color 0.15s ease,
             border-color 0.15s ease;
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
+            background-color: #f2f2f2;
             border-color: var(--border-input);
+        }
+
+        &:active {
+            background-color: #ebebeb;
         }
 
         &.added,

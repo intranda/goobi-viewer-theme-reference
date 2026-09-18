@@ -91,6 +91,10 @@
 
     /* CONTROLS */
     --fg-on-control: var(--color-neutral-0);
+    /* solid (not alpha) so hover/active stay legible over arbitrary image content,
+       e.g. the image viewer's floating toolbar buttons */
+    --fg-on-control-hover: var(--fg-general);
+    --bg-control-hover: var(--bg-canvas);
 
     /* BORDERS */
     --border-faint: rgb(from var(--color-neutral-500) r g b / 20%);
@@ -123,8 +127,10 @@
 
     /* STATUS */
     --fg-danger: var(--color-danger);
-    --fg-on-warning: color-mix(in srgb, var(--color-warning-text) 80%, var(--color-neutral-1000));
-    --fg-on-warning-hover: color-mix(in srgb, var(--color-warning-text) 65%, var(--color-neutral-1000));
+    /* fixed instead of derived so the warning looks identical in light and dark mode */
+    --bg-warning: #fed44c;
+    --fg-on-warning: #222;
+    --fg-on-warning-hover: #000;
 
     /* FOCUS */
     --outline-focus: var(--color-focus-ring);
@@ -211,6 +217,10 @@
 
     /* CONTROLS */
     --fg-on-control: var(--color-neutral-900);
+    /* solid (not alpha) so hover/active stay legible over arbitrary image content,
+       e.g. the image viewer's floating toolbar buttons */
+    --fg-on-control-hover: var(--fg-general);
+    --bg-control-hover: var(--bg-canvas);
 
     /* BORDERS */
     --border-faint: rgb(from var(--color-neutral-0) r g b / 6%);
@@ -243,8 +253,10 @@
 
     /* STATUS */
     --fg-danger: var(--color-danger-text-dark);
-    --fg-on-warning: var(--color-warning-text-dark);
-    --fg-on-warning-hover: color-mix(in srgb, var(--color-warning-text-dark) 80%, var(--color-neutral-0));
+    /* fixed instead of derived so the warning looks identical in light and dark mode */
+    --bg-warning: #fed44c;
+    --fg-on-warning: #222;
+    --fg-on-warning-hover: #000;
 
     /* FOCUS */
     --outline-focus: var(--color-focus-ring-dark);

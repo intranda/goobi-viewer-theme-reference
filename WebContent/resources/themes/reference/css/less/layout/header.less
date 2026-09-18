@@ -251,9 +251,8 @@ html {
     &__menu-toggle,
     &__actions [popovertarget='headerBookmarksPanel'] {
         background: var(--bg-subtle);
-        &:hover {
-            background: var(--bg-hover);
-        }
+        &:hover,
+        &:focus-visible,
         &:active,
         &[aria-expanded='true'] {
             background: var(--bg-pressed);
@@ -391,10 +390,11 @@ html {
             border-start-end-radius: var(--_radius);
             border-end-end-radius: var(--_radius);
             .mx-theme-control();
-            background: var(--bg-hover);
+            background: var(--bg-subtle);
             background-clip: padding-box;
-            &:hover {
-                background-color: var(--bg-pressed);
+            &:hover,
+            &:focus-visible {
+                background: var(--bg-pressed);
             }
             .icon-svg {
                 width: 2rem;
@@ -513,17 +513,15 @@ html {
             background-color var(--_speed) ease,
             color var(--_speed) ease;
 
-        &:hover {
-            background: var(--bg-hover);
-            color: var(--fg-hover);
-        }
-
+        &:hover,
         &[aria-expanded='true'] {
             background: var(--bg-pressed);
             color: var(--fg-hover);
         }
 
         &:focus-visible {
+            background: var(--bg-pressed);
+            color: var(--fg-hover);
             .mx-theme-focus();
         }
 

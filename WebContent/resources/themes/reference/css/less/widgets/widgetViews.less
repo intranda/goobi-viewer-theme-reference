@@ -5,6 +5,11 @@
 .widget-views {
 }
 
+/* higher specificity than widgets.less' generic ul rule (.widget:is(...) ul), which otherwise wins */
+.widget.widget-views .widget-views__list {
+    gap: 0.5rem;
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

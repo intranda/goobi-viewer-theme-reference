@@ -14,44 +14,45 @@
     a,
     button,
     span {
-        .mx-theme-control();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
         border: 1px solid transparent;
         border-radius: var(--radius-container-small);
         font-size: var(--font-size-body-small);
         font-weight: 500;
         text-decoration: none;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        color: var(--fg-content-box);
+        background-color: var(--bg-content-box);
+
+        &:active {
+            background-color: var(--bg-pressed);
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
     }
 
-    &__navigate {
-        &.-active,
-        &[aria-current='page'] {
-            > a,
-            > span,
-            > button {
-                border: 1px solid var(--brand);
-                border-radius: var(--radius-container-small);
-                font-weight: 700;
-                .mx-theme-control-selected();
-            }
+    &__navigate.-active,
+    &__navigate[aria-current='page'] {
+        > a,
+        > span,
+        > button {
+            border-color: var(--brand);
+            font-weight: 700;
+            .mx-theme-control-selected();
         }
+    }
 
-        &.inactive a,
-        &.inactive button,
-        a[aria-disabled='true'],
-        button:disabled {
-            &,
-            &:hover,
-            &:active {
-                .mx-theme-control-disabled();
-            }
-        }
+    &__navigate.inactive a,
+    &__navigate.inactive button,
+    a[aria-disabled='true'],
+    button:disabled {
+        .mx-theme-control-disabled();
 
-        &.inactive a i,
-        &.inactive button i {
+        i {
             color: inherit;
         }
     }
@@ -64,19 +65,18 @@
         opacity: 1;
     }
 
-    &__dots {
-        a,
-        span {
-            background: transparent;
-            border: none;
-            color: var(--fg-secondary);
-        }
+    &__dots a,
+    &__dots span {
+        background: transparent;
+        border: none;
+        color: var(--fg-secondary);
     }
 
     &__page-number-label {
-        .mx-theme-control();
         border: 1px solid transparent;
         border-radius: var(--radius-container-small);
+        color: var(--fg-content-box);
+        background-color: var(--bg-content-box);
 
         span {
             color: inherit;
@@ -102,15 +102,18 @@
     padding-block: 0.8rem 1.6rem;
     background-color: var(--bg-subtle);
 
-    li:where(:not(.-active, .inactive, [aria-current='page'])) > :where(a, button) {
-        background-color: transparent;
+    li:not(.-active, .inactive, [aria-current='page']) {
+        > a,
+        > button {
+            background-color: transparent;
 
-        &:hover {
-            background-color: var(--bg-content-box);
-        }
+            &:hover {
+                background-color: var(--bg-content-box);
+            }
 
-        &:active {
-            background-color: var(--bg-pressed);
+            &:active {
+                background-color: var(--bg-pressed);
+            }
         }
     }
 }
