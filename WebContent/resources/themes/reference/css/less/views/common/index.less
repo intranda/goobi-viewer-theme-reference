@@ -1,0 +1,41 @@
+/* The start page uses its CMS components for the heading and page background. */
+.content__wrapper.-index {
+    padding-block-start: 0;
+
+    // A full-bleed block at the end of the page closes it off itself
+    // (:last-of-type, because JSF renders a <script> behind the component)
+    &:has(.cms-search-hero:last-of-type) {
+        padding-block-end: 0;
+    }
+
+    > .content__main {
+        --_content-inset: 0;
+
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .cms-page__title {
+        display: none;
+    }
+
+    .cms-page__edit-page {
+        position: fixed;
+        z-index: 3;
+        inset-block-end: 2rem;
+        inset-inline-end: 2rem;
+        margin: 0;
+        padding: 0;
+        border: 1px solid var(--border-container);
+        border-radius: var(--radius-container);
+        background-color: var(--bg-content-box);
+        box-shadow: var(--shadow-floating);
+
+        a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+        }
+    }
+}

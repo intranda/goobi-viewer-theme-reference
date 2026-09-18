@@ -60,7 +60,7 @@
             class="content">
             <div class="container">
                 <div
-                    class="content__wrapper #{referenceHasSidebar ? '' : '-without-sidebar'}"
+                    class="content__wrapper #{referenceHasSidebar ? '' : '-without-sidebar'} #{navigationHelper.currentPage == 'index' ? '-index' : ''}"
                     data-target="content-wrapper">
                     <!-- CONTENT -->
                     <main
@@ -69,9 +69,12 @@
                         role="main"
                         tabindex="-1"
                         data-label-more-options="#{msg.reference__search_more_options}">
-                        <viewerComponent:breadcrumbs
-                            showIcon="false"
-                            showStartText="false" />
+                        <!-- NO BREADCRUMB ON THE START PAGE — IT WOULD ONLY POINT AT ITSELF -->
+                        <ui:fragment rendered="#{navigationHelper.currentPage != 'index'}">
+                            <viewerComponent:breadcrumbs
+                                showIcon="false"
+                                showStartText="false" />
+                        </ui:fragment>
                         <ui:insert name="content" />
 
                         <!-- OPEN MOBILE NAVIGATION -->
