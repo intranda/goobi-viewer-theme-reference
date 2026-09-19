@@ -168,7 +168,7 @@
     --bg-canvas: var(--color-neutral-950);
     --bg-subtle: var(--color-neutral-850);
     --bg-control: var(--color-neutral-700);
-    --bg-input: var(--color-neutral-950);
+    --bg-input: var(--color-page-dark);
 
     /* TEXT EMPHASIS */
     --fg-secondary: var(--color-neutral-350);
@@ -350,8 +350,8 @@
     --rss-entry-info-fg: var(--brand);
 
     /* FOOTER */
-    --footer-main-bg: color-mix(in srgb, var(--brand-strong) 30%, var(--bg-scrim));
-    --footer-bottom-bg: color-mix(in srgb, var(--brand-strong) 22%, var(--bg-scrim));
+    --footer-main-bg: oklch(from color-mix(in srgb, var(--brand-strong) 30%, var(--bg-scrim)) calc(l * 1.2) c h);
+    --footer-bottom-bg: oklch(from color-mix(in srgb, var(--brand-strong) 22%, var(--bg-scrim)) calc(l * 1.2) c h);
 
     /* COOKIE BANNER */
     --cookie-banner-link-decoration: underline;
