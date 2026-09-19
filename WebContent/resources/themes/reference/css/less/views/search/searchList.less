@@ -486,9 +486,6 @@
        and the border width is what lets the selected and disabled helpers show their colour at all */
     &__hit-options-button.btn {
         .mx-theme-control();
-        /* a plain, opaque white — .mx-theme-control()'s hover/active states use
-           semi-transparent overlays that let a thumbnail behind the button show through */
-        background-color: #fff;
         border: 1px solid var(--border-strong);
         border-radius: var(--radius-container-small);
         transition:
@@ -497,12 +494,12 @@
 
         &:hover,
         &:focus-visible {
-            background-color: #f2f2f2;
+            background-color: var(--bg-control-hover);
             border-color: var(--border-input);
         }
 
         &:active {
-            background-color: #ebebeb;
+            background-color: var(--bg-control-pressed);
         }
 
         &.added,
