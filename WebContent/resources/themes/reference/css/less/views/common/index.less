@@ -1,12 +1,8 @@
 /* The start page uses its CMS components for the heading and page background. */
 .content__wrapper.-index {
-    padding-block-start: 0;
+    --_index-section-surface: color-mix(in srgb, var(--bg-content-box) 72%, var(--bg-canvas));
 
-    // A full-bleed block at the end of the page closes it off itself
-    // (:last-of-type, because JSF renders a <script> behind the component)
-    &:has(.cms-search-hero:last-of-type) {
-        padding-block-end: 0;
-    }
+    padding-block: 0;
 
     > .content__main {
         --_content-inset: 0;
@@ -19,5 +15,11 @@
 
     .cms-page__title {
         display: none;
+    }
+}
+
+.content {
+    &:has(.content__wrapper.-index) + .footer {
+        margin-top: 0;
     }
 }
