@@ -4,24 +4,28 @@
 
 /* FOOTER */
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: var(--font-size-body-small);
+    margin-top: auto;
 
-    position: relative;
-    margin-top: 70px;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--font-size-body-small);
 
-    background-color: var(--footer-main-bg);
-    color: var(--fg-inverse);
+        position: relative;
+        margin-top: 50px;
 
-    /* accent bar: fades from the footer background into the button/brand color and back */
-    &::before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 7px;
-        background: linear-gradient(to left, var(--footer-main-bg), var(--bg-brand), var(--bg-brand), var(--footer-main-bg));
+        background-color: var(--footer-main-bg);
+        color: var(--fg-inverse);
+
+        /* accent bar: fades from the footer background into the button/brand color and back */
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 7px;
+            background: linear-gradient(to left, var(--footer-main-bg), var(--bg-brand), var(--bg-brand), var(--footer-main-bg));
+        }
     }
 
     /* OBERER BEREICH */
@@ -404,8 +408,6 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
     .footer {
-        position: relative;
-
         &__top-section-columns {
             grid-template-columns: 1fr;
             gap: 4.5rem;

@@ -63,14 +63,12 @@
     &__list-expandable,
     &__list-full {
         margin: 0;
-        border: 1px solid var(--border-faint);
+        padding: 0;
+        border: none;
         background-color: var(--bg-content-box);
         border-radius: var(--radius-container);
         li {
             &:first-child {
-            }
-            &:last-child {
-                border: 0;
             }
         }
     }
@@ -105,7 +103,10 @@
     }
     &__list-expandable-elem,
     &__list-full-item {
-        border-radius: var(--radius-container-small);
+        padding: 6px 0px;
+        &:first-child {
+            border-top: none;
+        }
         &.parent {
         }
         &.child {
@@ -146,7 +147,6 @@
     }
     /* TOC FULL */
     &__list-full {
-        border-top: 1px solid var(--border-faint);
     }
     &__list-full-title {
         a {

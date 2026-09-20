@@ -617,13 +617,11 @@
     --_hit-column-gap: 2.8rem;
 
     .search-list__hit-inner-structure {
-        grid-template-columns: minmax(0, 1fr) auto;
+        /* reserve the thumbnail column's width even when no thumbnail is rendered,
+           so hits without a preview keep the same text column start as hits with one */
+        grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr);
         align-items: start;
         gap: 0 var(--_hit-column-gap);
-
-        &:has(.search-list__hit-thumbnail) {
-            grid-template-columns: var(--_hit-thumb-width) 1fr;
-        }
     }
 
     /* PREVIEW — the scan itself, no frame around it; one proportion for every row */
@@ -715,12 +713,10 @@
             color: var(--fg-content-box);
         }
     }
-    .search-list__hit:has(.search-list__hit-thumbnail) {
-        .search-list__child-hits-button-wrapper,
-        .search-list__hit-archive-link,
-        .search-list__hit-content {
-            padding-inline-start: calc(var(--_hit-thumb-width) + var(--_hit-column-gap));
-        }
+    .search-list__child-hits-button-wrapper,
+    .search-list__hit-archive-link,
+    .search-list__hit-content {
+        padding-inline-start: calc(var(--_hit-thumb-width) + var(--_hit-column-gap));
     }
 }
 
@@ -1095,12 +1091,10 @@ body:has(.header.-adminActive) @{searchSheet} {
         .search-list__hit-options-wrapper {
             margin-top: 1.6rem;
         }
-        .search-list__hit:has(.search-list__hit-thumbnail) {
-            .search-list__child-hits-button-wrapper,
-            .search-list__hit-archive-link,
-            .search-list__hit-content {
-                padding-inline-start: 0;
-            }
+        .search-list__child-hits-button-wrapper,
+        .search-list__hit-archive-link,
+        .search-list__hit-content {
+            padding-inline-start: 0;
         }
     }
 }

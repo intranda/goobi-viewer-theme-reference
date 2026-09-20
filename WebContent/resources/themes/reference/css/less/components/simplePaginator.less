@@ -25,14 +25,30 @@
         text-decoration: none;
         color: var(--fg-content-box);
         background-color: var(--bg-content-box);
+    }
+
+    a,
+    button {
+        &:hover {
+            background-color: var(--bg-hover);
+        }
 
         &:active {
             background-color: var(--bg-pressed);
         }
 
         &:focus-visible {
+            background-color: var(--bg-hover);
             .mx-theme-focus();
         }
+    }
+
+    // a span nested inside a link/button must stay transparent, otherwise it stacks its own
+    // background on top of the parent's and every hover/active state looks doubled
+    a > span,
+    button > span {
+        background-color: transparent;
+        border-color: transparent;
     }
 
     &__navigate.-active,
@@ -101,21 +117,6 @@
     margin-block: 0;
     padding-block: 0.8rem 1.6rem;
     background-color: var(--bg-subtle);
-
-    li:not(.-active, .inactive, [aria-current='page']) {
-        > a,
-        > button {
-            background-color: transparent;
-
-            &:hover {
-                background-color: var(--bg-content-box);
-            }
-
-            &:active {
-                background-color: var(--bg-pressed);
-            }
-        }
-    }
 }
 
 /* the rail is a column of the stage, so the switcher centres under the scan, not the band */

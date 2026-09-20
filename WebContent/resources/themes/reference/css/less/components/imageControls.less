@@ -51,6 +51,10 @@
             background-color: transparent;
             border-radius: var(--radius-container-small);
 
+            &:focus-visible {
+                background-color: var(--bg-hover);
+            }
+
             &.added,
             &[aria-checked='true'],
             &[aria-expanded='true'],
@@ -290,6 +294,11 @@
             background-color: var(--bg-control-hover);
         }
 
+        &:has(:focus-visible) {
+            color: var(--fg-on-control-hover);
+            background-color: var(--bg-control-hover);
+        }
+
         a,
         button,
         span {
@@ -320,6 +329,7 @@
             &:active,
             &:focus {
                 .mx-theme-control-disabled();
+                background-color: transparent;
             }
         }
     }
@@ -329,9 +339,9 @@
     }
 }
 
-/* RECORD VIEW — the tool row is the top of the stage band, not a bar of its own: same
-   recessed surface, no frame, no gap. The inline padding is the content inset minus the
-   0.7rem inside a 32px action box, so the icon artwork lines up with the title above it. */
+/* RECORD VIEW — the tool row is the top of the stage band: no frame, no gap. The inline
+   padding is the content inset minus the 0.7rem inside a 32px action box, so the icon
+   artwork lines up with the title above it. */
 .view-object .image-controls {
     margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
     padding: 1rem calc(var(--_content-inset, 2.4rem) - 0.7rem);
@@ -341,18 +351,6 @@
 
     .image-controls__actions-additional {
         border-inline-start-color: var(--border-default);
-    }
-
-    /* controls lift off the band; selected and disabled states keep their own fill */
-    .image-controls__action:where(:not(.select, .select-text, .zoom-slider-wrapper, .inactive, .single-page-view)):hover {
-        background-color: var(--bg-content-box);
-    }
-
-    .image-controls__option
-        > :where(.btn.btn--icon, .image-controls__share-image-link, [data-bookmark-list-type='add']):where(
-            :not(.added, .active, [aria-checked='true'], [aria-expanded='true'], :disabled, [aria-disabled='true'])
-        ):hover {
-        background-color: var(--bg-content-box);
     }
 }
 

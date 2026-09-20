@@ -75,11 +75,10 @@
     }
     & &__image &__image-map {
         // the scan keeps the page inset on both sides, so its edges meet the tool icons
-        max-width: ~'min(120rem, 100% - 2 * var(--_content-inset, 2.4rem))';
-        margin-block: 2.4rem;
-        box-shadow:
-            0 1px 2px rgb(from var(--shadow-color) r g b / 6%),
-            0 12px 28px rgb(from var(--shadow-color) r g b / 12%);
+        max-width: ~'calc(100% - 2 * var(--_content-inset, 2.4rem))';
+        max-height: 70vh;
+        margin-block: 0;
+        box-shadow: 0 0 5px rgb(from var(--shadow-color) r g b / 30%);
     }
 
     // DOCSTRUCT TYPE — the entity colour marks the top edge of the band, no coloured frame
