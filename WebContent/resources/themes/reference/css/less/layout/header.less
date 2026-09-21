@@ -508,7 +508,7 @@ html {
             border-radius: var(--_radius);
         }
     }
-    /* ACCOUNT — the only round control, and the one that closes the row */
+    /* ACCOUNT — same square control as the rest of the row, and the one that closes it */
     &__account [data-login] .login-navigation__toggle-button.btn {
         display: inline-flex;
         align-items: center;
@@ -518,7 +518,7 @@ html {
         height: var(--_control);
         padding: 0;
         border: 0;
-        border-radius: 50%;
+        border-radius: var(--_radius);
         background: var(--bg-subtle);
         color: var(--fg-header);
         font-size: var(--font-size-body-small);
@@ -573,7 +573,7 @@ html {
         height: var(--_control);
         max-height: none;
         border: 1px solid rgb(from var(--fg-header) r g b / 12%);
-        border-radius: 50%;
+        border-radius: var(--_radius);
         object-fit: cover;
         transition: border-color var(--_speed) ease;
     }

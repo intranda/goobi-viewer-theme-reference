@@ -717,6 +717,7 @@
     /* the sub-hit toggle and its list continue the text axis instead of the full width */
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
+        display: inline-flex;
         width: auto;
         margin-top: 1.6rem;
         padding-top: 0;
@@ -756,7 +757,10 @@
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .search-list__hits:not(.grid):not(.list-view) .search-list__hit:hover .search-list__hit-thumbnail:not(.search-list__subhit-thumbnail .search-list__hit-thumbnail) img {
+    .search-list__hits:not(.grid):not(.list-view)
+        .search-list__hit:hover
+        .search-list__hit-thumbnail:not(.search-list__subhit-thumbnail .search-list__hit-thumbnail)
+        img {
         transform: translateY(-0.3rem);
         box-shadow: 0 0.8rem 2rem rgb(from var(--shadow-color) r g b / 18%);
     }
