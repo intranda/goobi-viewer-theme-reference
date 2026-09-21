@@ -115,7 +115,6 @@
         &__archive-download {
             a,
             button {
-                .mx-theme-control();
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -125,11 +124,24 @@
                 border: 0;
                 border-radius: var(--radius-container-small);
                 background-color: transparent;
+                color: var(--fg-content-box);
                 text-decoration: none;
 
                 .icon-wrapper,
                 .icon-svg {
                     color: currentColor;
+                }
+
+                &:hover {
+                    color: var(--fg-link-hover);
+                }
+
+                &:active {
+                    color: var(--fg-link-active);
+                }
+
+                &:focus-visible {
+                    .mx-theme-focus();
                 }
             }
         }
@@ -147,13 +159,11 @@
 
             &:hover {
                 color: var(--fg-link-hover);
-                background-color: var(--bg-hover);
                 text-decoration: none;
             }
 
             &:active {
                 color: var(--fg-link-active);
-                background-color: var(--bg-pressed);
             }
 
             &:focus-visible {
