@@ -5,15 +5,29 @@
 
 .immersive {
     &__panel .widget-search-in-current-item {
+        margin: 0;
+        padding-bottom: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+
         .form-group {
         }
 
         .input-group {
             &:focus-within {
+                border-color: var(--border-default);
+            }
+
+            &:has(.form-control:focus-visible) {
+                .mx-theme-focus-ring();
             }
         }
 
         .form-control {
+            margin: 0;
+
             &::placeholder {
             }
 
@@ -21,6 +35,7 @@
             }
 
             &:focus-visible {
+                outline: none !important;
             }
         }
 
@@ -30,14 +45,31 @@
 
             &:hover {
             }
+
+            &:focus-visible {
+                .mx-theme-focus-ring(2px; -2px);
+            }
         }
 
         .input-group-addon {
+            width: auto;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+
+            &:hover {
+                background: transparent;
+                box-shadow: none;
+            }
         }
 
         .btn {
             &:hover,
             &:focus {
+            }
+
+            &:focus-visible {
+                .mx-theme-focus-ring(2px; -2px);
             }
 
             .icon,

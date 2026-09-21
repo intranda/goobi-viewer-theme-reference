@@ -4,7 +4,11 @@
    ==============================================================*/
 
 .immersive {
+    max-width: var(--page-max-width);
+    padding-bottom: 1.5rem;
+
     &__viewer {
+        margin: 1.5rem var(--page-gutter);
     }
 
     &__canvas {
@@ -48,6 +52,9 @@
 }
 
 #immersiveView .footer {
+    &__inner {
+        margin-top: 0;
+    }
 }
 
 /* BREAKPOINT FOR DESKTOPS */
@@ -56,8 +63,22 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    .immersive {
+        padding-bottom: 0.8rem;
+    }
+
+    .immersive__viewer {
+        margin: 0.8rem var(--page-gutter);
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    .immersive {
+        padding-bottom: 0.4rem;
+    }
+
+    .immersive__viewer {
+        margin: 0.4rem var(--page-gutter);
+    }
 }
