@@ -102,7 +102,9 @@
         cursor: pointer;
         transition: background-color 0.2s ease;
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             text-decoration: none;
             background-color: var(--bg-brand-hover);
             color: var(--fg-on-brand);
@@ -144,7 +146,9 @@
                 transition: opacity 0.2s ease;
             }
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 color: var(--fg-inverse);
                 opacity: 1;
                 gap: 0.9rem;
@@ -169,7 +173,9 @@
             color: var(--fg-inverse);
         }
 
-        a:hover {
+        a:hover,
+        a:active,
+        a:focus {
             text-decoration: underline;
         }
     }
@@ -218,7 +224,9 @@
         font-weight: 600;
         color: var(--fg-inverse);
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             color: var(--fg-inverse);
             text-decoration: underline;
         }
@@ -243,7 +251,9 @@
             font-size: var(--font-size-caption);
             color: rgb(from var(--fg-inverse) r g b / 80%);
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 color: var(--fg-inverse);
                 opacity: 1;
                 text-decoration: underline;
@@ -273,7 +283,9 @@
             font-weight: 400;
         }
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             color: var(--fg-inverse);
             opacity: 1;
             text-decoration: underline;
@@ -301,7 +313,8 @@
                 border-color 0.2s ease,
                 background-color 0.2s ease;
 
-            &:hover {
+            &:hover,
+            &:active {
                 border-color: rgb(from var(--fg-inverse) r g b / 40%);
                 background-color: rgb(from var(--fg-inverse) r g b / 8%);
             }
@@ -334,7 +347,8 @@
             border-color 0.2s ease,
             background-color 0.2s ease;
 
-        &:hover {
+        &:hover,
+        &:active {
             border-color: rgb(from var(--fg-inverse) r g b / 40%);
             background-color: rgb(from var(--fg-inverse) r g b / 8%);
             color: var(--fg-inverse);

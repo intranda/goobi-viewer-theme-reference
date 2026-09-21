@@ -394,7 +394,7 @@ html {
             background-clip: padding-box;
             &:hover,
             &:focus-visible {
-                background: var(--bg-pressed);
+                background-color: var(--bg-pressed);
             }
             .icon-svg {
                 width: 2rem;
@@ -1004,9 +1004,9 @@ html {
         margin: 0;
         margin-inline-start: auto;
         /* Fixed icon/marker geometry; independent of text scale. */
-        width: 1.6rem;
-        height: 1.6rem;
-        color: inherit;
+        width: 2rem;
+        height: 2rem;
+        color: var(--fg-content-box);
         background: currentColor;
         transition: transform var(--_speed) ease;
         .mx-icon-mask(chevron-down);
