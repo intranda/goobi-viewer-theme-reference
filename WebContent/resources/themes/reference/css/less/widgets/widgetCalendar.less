@@ -5,70 +5,272 @@
 .widget-calendar {
     &__body {
     }
+
+    /* SURFACE — the calendar sits on the panel, not on its own popover surface */
     .flatpickr-calendar {
+        background: transparent;
+        color: var(--fg-content-box);
     }
     .flatpickr-innerContainer,
     .flatpickr-rContainer,
     .flatpickr-days {
     }
+    .flatpickr-rContainer {
+        padding-inline: 1.2rem;
+        padding-block-end: 1.2rem;
+    }
     .dayContainer {
+        background: transparent;
+    }
+
+    /* HEAD — the months row is the panel head of a widget without topbar */
+    .flatpickr-months {
+        align-items: center;
+        min-height: 5.6rem;
+        padding: 0.8rem 4.8rem;
+        background: transparent;
+        border-block-end: 1px solid rgb(from var(--border-container-accent) r g b / 60%);
+    }
+    .flatpickr-months .flatpickr-month {
+        height: auto;
+        overflow: visible;
+    }
+    .flatpickr-current-month {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+        height: auto;
+        /* the spinner column is padded back in so month and year read centred */
+        padding: 0;
+        padding-inline-start: 2.4rem;
+    }
+    .flatpickr-current-month,
+    .flatpickr-current-month .cur-month,
+    .flatpickr-current-month input.cur-year {
+        color: var(--fg-heading-content-box);
+        fill: var(--fg-heading-content-box);
+        font-size: var(--font-size-body-large);
+        font-weight: 600;
+        line-height: var(--line-height-body);
+    }
+    .flatpickr-current-month select.flatpickr-monthDropdown-months {
+        background: transparent;
+        border-radius: var(--radius-button);
+
+        &:hover {
+            background-color: var(--bg-hover-accent);
+        }
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+    }
+    .flatpickr-current-month input.cur-year {
+        background: transparent;
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+        color: var(--fg-content-box);
         background: var(--bg-content-box);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--fg-selected);
+            background: var(--bg-selected) !important;
+        }
+    }
+
+    /* MONTH ARROWS — the topbar actions of this panel */
+    .flatpickr-months {
+        .flatpickr-prev-month,
+        .flatpickr-next-month {
+            .mx-theme-control-accent();
+            top: 50%;
+            width: var(--_widget-action-size, 4rem);
+            height: var(--_widget-action-size, 4rem);
+            border-radius: var(--radius-button);
+            background-color: transparent;
+            color: var(--fg-content-box);
+            transform: translateY(-50%);
+
+            &:hover {
+                color: var(--brand);
+                background-color: var(--bg-hover-accent);
+            }
+            &:active {
+                background-color: var(--bg-pressed-accent);
+            }
+            &::after {
+                .mx-icon-chevron-mask(var(--_widget-action-icon-size, 2rem));
+                content: '';
+                width: var(--_widget-action-icon-size, 2rem);
+                height: var(--_widget-action-icon-size, 2rem);
+                margin: 0;
+                border: 0;
+                background-color: currentColor;
+            }
+        }
+        .flatpickr-prev-month {
+            left: 0.8rem;
+            margin-left: 0;
+
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+        .flatpickr-next-month {
+            right: 0.8rem;
+            margin-right: 0;
+
+            &::after {
+                transform: rotate(-90deg);
+            }
+        }
     }
     .flatpickr-prev-month.-disabled-,
     .flatpickr-next-month.-disabled- {
+        color: var(--fg-disabled);
+        opacity: 1;
+    }
+
+    /* YEAR SPINNER — the pair sits beside the digits, never on them */
+    .flatpickr-current-month .numInputWrapper {
+        display: flex;
+        align-items: center;
+        width: calc(4.5ch + 2.4rem);
+        height: 3.2rem;
+        padding-inline-end: 2.4rem;
     }
     .numInputWrapper span.arrowUp,
     .numInputWrapper span.arrowDown {
+        right: 0;
+        width: 2rem;
+        height: 50%;
+        padding: 0;
+        border: 0;
+        border-radius: var(--radius-button);
+
         &:hover {
+            background-color: var(--bg-hover-accent);
         }
         &.-disabled- {
+            color: var(--fg-disabled);
+            opacity: 1;
+
             &:hover {
+                background-color: transparent;
             }
         }
         &::after {
+            .mx-icon-chevron-mask(1.2rem);
+            top: 50%;
+            left: 50%;
+            width: 1.2rem;
+            height: 1.2rem;
+            border: 0;
+            background-color: currentColor;
         }
     }
     .numInputWrapper span.arrowUp::after {
+        transform: translate(-50%, -50%) rotate(180deg);
     }
     .numInputWrapper span.arrowDown::after {
+        transform: translate(-50%, -50%);
     }
-    .flatpickr-day {
+
+    /* WEEKDAYS */
+    .flatpickr-weekdays {
+        padding: 1.2rem 0 0.4rem;
         background: transparent;
+    }
+    span.flatpickr-weekday {
+        color: var(--fg-secondary-accent);
+        font-size: var(--font-size-body-small);
+        font-weight: 600;
+    }
+
+    /* DAYS — only a day that carries issues is a control */
+    .flatpickr-day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: var(--radius-container-small);
+        background: transparent;
+        color: var(--fg-disabled);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+
         &.-has-data- {
-            color: var(--fg-content-box);
+            border-color: rgb(from var(--brand) r g b / 35%);
             background: var(--bg-selected);
+            color: var(--fg-selected);
+            font-weight: 500;
+            cursor: pointer;
+
             &:hover,
-            &:active,
             &:focus {
-                color: var(--fg-content-box);
-                background: var(--bg-hover-accent);
+                border-color: var(--brand);
+                background: var(--bg-selected-hover);
+                color: var(--fg-selected);
+            }
+            &:active {
+                background: var(--bg-selected-pressed);
             }
         }
         &.-current-issue- {
-            font-weight: 700;
-
-            background: var(--bg-brand);
-            color: var(--fg-on-brand);
+            .mx-theme-control-selected();
+            font-weight: 600;
         }
-    }
-    .flatpickr-day.-has-data- {
     }
     .flatpickr-day.-has-multiple-::after {
+        background-color: var(--brand);
     }
-    .flatpickr-day.-has-multiple-.-current-issue-::after {
-    }
+    .flatpickr-day.-has-multiple-.-current-issue-::after,
     .flatpickr-day.-has-multiple-.-current-issue-:hover::after {
+        background-color: var(--fg-on-brand);
     }
-    .flatpickr-months,
-    .flatpickr-weekdays {
-        background: var(--bg-brand);
-    }
+
+    /* ISSUE POPOVER — rendered on the body, so it carries the panel language itself */
     &__popover {
+        border-color: var(--border-container);
+        border-radius: var(--radius-container-small);
+        box-shadow: var(--shadow-floating);
     }
     &__popover-item {
-        &:hover {
+        position: relative;
+        color: var(--fg-popover);
+
+        &:hover,
+        &:focus {
+            color: var(--fg-popover);
+            background-color: var(--bg-hover-accent);
+        }
+        &:active {
+            background-color: var(--bg-pressed-accent);
+        }
+        &:focus-visible {
+            .mx-theme-focus();
         }
         &.-active- {
+            color: var(--fg-popover);
+            background-color: var(--bg-hover-accent);
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset-block: 0.4rem;
+                inset-inline-start: 0;
+                width: 2px;
+                border-radius: 999px;
+                background-color: var(--brand);
+            }
         }
     }
 }
