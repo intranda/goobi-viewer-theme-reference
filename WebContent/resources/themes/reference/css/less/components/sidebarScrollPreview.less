@@ -64,19 +64,78 @@
    like the tool row above it, and its first thumb meets the top edge of the scan. */
 .view-object .sidebar-scroll-preview {
     .sidebar-scroll-preview__grid {
-        padding: 2.4rem 0rem 1rem var(--_content-inset, 2.4rem);
+        padding: 0 0 1rem var(--_content-inset, 2.4rem);
+    }
+
+    /* one plate per page: the scan is the card, the label sits on the ground below it */
+    .sidebar-scroll-preview__link,
+    .sidebar-scroll-preview__button {
+        padding: 0.6rem;
+        overflow: visible;
+        border-radius: var(--radius-container);
+        transition: background-color 0.15s ease;
     }
 
     .sidebar-scroll-preview__image-wrapper {
         display: block;
-        overflow: hidden;
+        overflow: visible;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .sidebar-scroll-preview__image {
         border-radius: var(--radius-container-small);
         background-color: var(--bg-content-box);
+        outline: 1px solid var(--border-faint);
+        outline-offset: -1px;
         box-shadow: 0 1px 2px rgb(from var(--shadow-color) r g b / 8%);
+        transition:
+            opacity 0.25s ease,
+            outline-color 0.15s ease,
+            box-shadow 0.15s ease;
     }
 
     .sidebar-scroll-preview__button-text {
+        margin: 0.6rem 0 0;
+        color: var(--fg-secondary);
         font-size: var(--font-size-caption);
+        line-height: var(--line-height-body);
+    }
+
+    /* HOVER — the sheet lifts, nothing jumps */
+    :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button):hover {
+        background-color: var(--bg-hover-accent);
+
+        .sidebar-scroll-preview__image {
+            transform: none;
+            outline-color: var(--border-input);
+            box-shadow: 0 4px 10px rgb(from var(--shadow-color) r g b / 14%);
+        }
+
+        .sidebar-scroll-preview__button-text {
+            color: var(--fg-general);
+        }
+    }
+
+    /* CURRENT PAGE — the ring traces the same plate that hover tints, scan and label inside */
+    :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button).-highlighted {
+        background-color: var(--bg-selected);
+        outline: 2px solid var(--brand);
+        outline-offset: -2px;
+
+        .sidebar-scroll-preview__image-wrapper {
+            outline: 0;
+        }
+
+        .sidebar-scroll-preview__button-text {
+            color: var(--fg-selected);
+            font-weight: 600;
+        }
+    }
+
+    :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button):focus-visible {
+        .mx-theme-focus();
     }
 }
 

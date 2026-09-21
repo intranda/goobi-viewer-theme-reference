@@ -30,6 +30,8 @@
     }
     &__comment {
         border: 1px solid var(--border-faint);
+        border-radius: var(--radius-container);
+        overflow: hidden;
     }
     &__comment-image {
         img {
@@ -91,6 +93,7 @@
                 &.in {
                 }
                 textarea {
+                    border-radius: var(--radius-container-small);
                     &:focus {
                     }
                 }
@@ -105,14 +108,17 @@
                 background-color: var(--bg-brand);
                 font-weight: 600;
                 border: none;
+                border-radius: var(--radius-button);
                 padding: 0.3rem 1.2rem;
             }
         }
         &-add {
             border: 1px solid var(--border-faint);
+            border-radius: var(--radius-container);
             background-color: var(--bg-content-box);
             textarea {
                 border: 1px solid var(--border-faint);
+                border-radius: var(--radius-container-small);
                 &:focus {
                 }
             }

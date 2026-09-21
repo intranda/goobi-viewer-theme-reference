@@ -78,7 +78,10 @@
         max-width: ~'calc(100% - 2 * var(--_content-inset, 2.4rem))';
         max-height: 70vh;
         margin-block: 0;
-        box-shadow: 0 0 5px rgb(from var(--shadow-color) r g b / 30%);
+        background-color: var(--bg-canvas);
+        outline: 1px solid var(--border-faint);
+        outline-offset: -1px;
+        box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 14%);
     }
 
     // DOCSTRUCT TYPE — the entity colour marks the top edge of the band, no coloured frame

@@ -208,9 +208,31 @@
             border-top: none;
             padding-top: 0;
             margin-top: 1.5rem;
+            cursor: pointer;
+
             &__body {
                 padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+                background-color: transparent;
+                transition: background-color 0.2s ease;
             }
+
+            &:hover,
+            &.-open {
+                .widget-copyright__body {
+                    background-color: var(--bg-hover-accent);
+                }
+            }
+
+            &:active {
+                .widget-copyright__body {
+                    background-color: var(--bg-pressed-accent);
+                }
+            }
+
+            &:focus-visible {
+                .mx-theme-focus();
+            }
+
             &__inner {
                 border: none;
                 padding: 0;
@@ -310,10 +332,21 @@
         }
     }
 
-    /* MODIFICATION */
+    /* MODIFICATION — the accordeon panel is the frame, the widget inside stays flat */
     .widget {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
         background-color: transparent;
         box-shadow: none;
+    }
+
+    /* content lines up with the panel padding */
+    .widget__body {
+        a:not(.badge),
+        dd {
+            padding-inline: 0;
+        }
     }
 }
 
