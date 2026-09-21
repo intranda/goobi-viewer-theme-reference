@@ -66,13 +66,36 @@
                                     aria-labelledby="headerNavToggle#{navStatus.index}">
                                     <ui:repeat
                                         var="childItem"
+                                        varStatus="childStatus"
                                         value="#{navItem.activeChildItems}">
-                                        <!-- Groups carry no destination of their own and stay in the drawer -->
                                         <ui:fragment
                                             rendered="#{childItem.valid and childItem.shouldDisplay and childItem.activeChildItems.isEmpty()}">
                                             <viewerComponent:navigationLink
                                                 navItem="#{childItem}"
                                                 linkClass="header__nav-panel-link" />
+                                        </ui:fragment>
+                                        <!-- GROUP — a child that carries children of its own has no destination, so it becomes a labelled section; deeper levels stay in the drawer -->
+                                        <ui:fragment
+                                            rendered="#{childItem.valid and childItem.shouldDisplay and !childItem.activeChildItems.isEmpty()}">
+                                            <div
+                                                class="header__nav-panel-group"
+                                                role="group"
+                                                aria-labelledby="headerNavGroup#{navStatus.index}_#{childStatus.index}">
+                                                <span
+                                                    id="headerNavGroup#{navStatus.index}_#{childStatus.index}"
+                                                    class="header__nav-panel-group-title">
+                                                    #{msg[childItem.itemLabel]}
+                                                </span>
+                                                <ui:repeat
+                                                    var="leafItem"
+                                                    value="#{childItem.activeChildItems}">
+                                                    <ui:fragment rendered="#{leafItem.valid and leafItem.shouldDisplay}">
+                                                        <viewerComponent:navigationLink
+                                                            navItem="#{leafItem}"
+                                                            linkClass="header__nav-panel-link" />
+                                                    </ui:fragment>
+                                                </ui:repeat>
+                                            </div>
                                         </ui:fragment>
                                     </ui:repeat>
                                 </div>

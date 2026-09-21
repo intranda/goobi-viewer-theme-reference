@@ -203,6 +203,21 @@ html {
     &__nav-panel-link + &__nav-panel-link {
         margin-block-start: 0.2rem;
     }
+    /* A nav child that carries children of its own has no destination; it becomes a section, not a second dropdown */
+    &__nav-panel-group {
+        margin-block-start: 0.8rem;
+        padding-block-start: 0.8rem;
+        border-block-start: 1px solid var(--border-faint);
+    }
+    &__nav-panel-group-title {
+        display: block;
+        padding: 0 1.2rem;
+        margin-block-end: 0.4rem;
+        color: var(--fg-secondary);
+        font-size: var(--font-size-body-small);
+        font-weight: 600;
+        line-height: var(--line-height-body);
+    }
     &__actions {
         display: flex;
         align-items: center;
