@@ -240,9 +240,11 @@ initSliders();
  * places; the theme collects them in the control band above the result list.
  ****************************************************************************************/
 function initSearchToolbar() {
-    const band = document.querySelector('.search-list__nav-helper-wrapper');
     const options = document.querySelector('.search-list__options');
-    if (!band || !options || band.dataset.referenceToolbar) return;
+    if (!options) return;
+    // the core renders the navigation row only for a list of several hits; without it the band is ours to create
+    const band = document.querySelector('.search-list__nav-helper-wrapper') || createSearchBand();
+    if (!band || band.dataset.referenceToolbar) return;
     band.dataset.referenceToolbar = 'true';
 
     const group = (name) => {
@@ -279,6 +281,16 @@ function initSearchToolbar() {
 
     band.append(start, end);
     options.remove();
+}
+
+/* An empty or single-hit result keeps the band: the core renders no navigation row to collect it in */
+function createSearchBand() {
+    const hits = document.querySelector('.search-list__hits');
+    if (!hits) return null;
+    const band = document.createElement('div');
+    band.className = 'search-list__nav-helper-wrapper';
+    hits.before(band);
+    return band;
 }
 
 /* Overflow menu of the search band: the moved controls are icons, their labels sit in the markup */
