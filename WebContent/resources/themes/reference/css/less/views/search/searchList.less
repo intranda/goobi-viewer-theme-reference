@@ -240,15 +240,23 @@
             border-radius: var(--radius-container-small);
         }
     }
-    /* ADVANCED SEARCH INFO */
+    /* ADVANCED SEARCH INFO — the band that takes the place of the search row: query left, way back right */
     &__adv-search-info {
-        /* same padding as the sticky search band (.search-list__nav-helper-wrapper) */
-        padding: 0.8rem var(--search-sheet-gutter);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.4rem var(--search-band-gap);
+        /* same geometry and divider as the search row (.search-standard__input-slim) */
+        padding: 1.2rem var(--search-sheet-gutter);
         background: var(--bg-content-box);
         color: var(--fg-content-box);
-        border-top-color: var(--border-faint);
+        border-block-start: 1px solid var(--search-sheet-divider);
+        font-size: var(--font-size-body-small);
     }
     &__adv-search-info-back {
+        margin-inline-start: auto;
+        font-size: var(--font-size-body-small);
     }
     /* HITS */
     &__hits-geo-map-results-container {
@@ -709,6 +717,7 @@
     /* the sub-hit toggle and its list continue the text axis instead of the full width */
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
+        display: inline-flex;
         width: auto;
         margin-top: 1.6rem;
         padding-top: 0;
@@ -748,7 +757,10 @@
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .search-list__hits:not(.grid):not(.list-view) .search-list__hit:hover .search-list__hit-thumbnail:not(.search-list__subhit-thumbnail .search-list__hit-thumbnail) img {
+    .search-list__hits:not(.grid):not(.list-view)
+        .search-list__hit:hover
+        .search-list__hit-thumbnail:not(.search-list__subhit-thumbnail .search-list__hit-thumbnail)
+        img {
         transform: translateY(-0.3rem);
         box-shadow: 0 0.8rem 2rem rgb(from var(--shadow-color) r g b / 18%);
     }
