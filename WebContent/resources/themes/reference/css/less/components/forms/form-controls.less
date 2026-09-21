@@ -73,13 +73,17 @@
     }
 
     .toggle-outside {
-        background: var(--bg-input);
+        background: var(--bg-subtle);
         border: 1px solid var(--border-input);
     }
 
+    /* KNOB — CENTRED, SAME INSET AT BOTH ENDS */
     .toggle-inside,
     input:checked ~ .toggle-outside .toggle-inside {
-        background: var(--fg-content-box);
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        background: var(--fg-secondary);
         border: 0;
     }
 
@@ -88,6 +92,7 @@
         border-color: var(--bg-brand);
 
         .toggle-inside {
+            left: calc(~'100% - 2.5rem');
             background: var(--fg-on-brand);
         }
     }

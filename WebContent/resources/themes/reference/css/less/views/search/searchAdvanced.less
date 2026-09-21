@@ -22,7 +22,41 @@
     }
     &__loader {
     }
+
+    /* ONE CONTROL SIZE FOR EVERY FIELD OF THE FORM */
+    .custom-control--select {
+        display: flex;
+        align-items: stretch;
+        height: auto;
+        min-height: @field-height;
+
+        select {
+            font-size: var(--font-size-body);
+        }
+    }
+    .cms-module__option-dropdown {
+        height: auto;
+        min-height: @field-height;
+
+        &-trigger {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: var(--font-size-body);
+        }
+        ul {
+            top: 100%;
+        }
+    }
+    input[type='text'] {
+        font-size: var(--font-size-body);
+    }
+
+    &__operator-field-pair-wrapper {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
     &__input-group {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 12px;
         .form-control__select,
         input[type='text'] {
@@ -151,6 +185,11 @@
         }
     }
     &__fuzzy-search-option-wrapper {
+        align-items: center;
+
+        .admin__radio-switch {
+            width: fit-content;
+        }
     }
     &__additional-options-area {
     }
@@ -336,6 +375,8 @@
 
     // GAP SIZING VARIABLE
     // @gap-sizer: 5px;
+    // SHARED CONTROL HEIGHT
+    @field-height: 3.8rem;
 }
 /* MODIFICATION */
 
