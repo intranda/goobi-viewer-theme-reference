@@ -75,21 +75,25 @@
         }
     }
     &__months {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+        gap: 30px;
     }
     &__month {
+        min-height: 270px;
+        border: 1px solid var(--border-container);
+        border-radius: var(--radius-container);
+        background-color: var(--bg-content-box);
     }
     &__month-title {
         padding: 5px 10px;
-        border: 1px solid var(--border-faint);
-        border-bottom: 0;
-
-        background-color: var(--bg-content-box);
     }
     &__month-days,
     &__month-week {
         border: 1px solid var(--border-faint);
         border-top: 0;
-        background-color: var(--bg-content-box);
+        border-left: none;
+        border-right: none;
     }
     &__month-days span,
     &__month-day,
@@ -102,8 +106,16 @@
     &__month-week {
     }
     &__month-day {
+        a,
+        span,
+        button {
+            padding: 7px 10px;
+        }
     }
     &__month-day-empty {
+    }
+    &__month-day-link {
+        border-radius: 0;
     }
     &__month-day-link,
     &__month-day-button {
@@ -127,7 +139,11 @@
     }
     &__newspaper-search-body {
         background: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
+        border-top: 1px solid var(--border-faint);
+        border-bottom: 1px solid var(--border-faint);
+        border-left: none;
+        border-right: none;
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
     }
     &__newspaper-search-title,
     &__issues-title {

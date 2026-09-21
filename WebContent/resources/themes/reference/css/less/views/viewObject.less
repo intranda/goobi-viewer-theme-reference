@@ -20,8 +20,6 @@
     &__image-loader {
     }
     &__image-map {
-        // the scan reads as paper lying on the recessed canvas
-        box-shadow: 0 2px 10px rgb(from var(--shadow-color) r g b / 10%);
         span {
         }
         img {
@@ -78,7 +76,9 @@
         max-width: ~'calc(100% - 2 * var(--_content-inset, 2.4rem))';
         max-height: 70vh;
         margin-block: 0;
-        background-color: var(--bg-canvas);
+        background-color: var(--bg-viewer-canvas);
+        border-radius: var(--radius-container-large);
+        overflow: hidden;
         outline: 1px solid var(--border-faint);
         outline-offset: -1px;
         box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 14%);
