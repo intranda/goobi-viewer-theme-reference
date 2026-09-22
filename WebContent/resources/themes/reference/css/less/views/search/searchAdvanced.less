@@ -207,89 +207,102 @@
         }
     }
 
-    // ENTITY TABS
+    /* ENTITY TABS — the control-group material of the result band, reset from core's flush tabs */
     &__entity-tabs {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    &__entity-tabs-links-wrapper {
+        gap: 0;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        max-width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        border: 1px solid var(--search-group-border);
+        border-radius: var(--search-group-radius);
+        background-color: var(--search-group-bg);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     &__entity-tab-link-wrapper {
+        display: flex;
+        flex: 0 0 auto;
+
+        /* CORNERS — the members round off 1px inside the group outline */
+        @tab-radius: calc(var(--search-group-radius) - 1px);
+
+        &:first-child {
+            border-start-start-radius: @tab-radius;
+            border-end-start-radius: @tab-radius;
+        }
+        &:last-child {
+            border-start-end-radius: @tab-radius;
+            border-end-end-radius: @tab-radius;
+        }
+        & + & {
+            border-inline-start: 1px solid var(--search-group-border);
+        }
         &.-active {
         }
     }
     &__entity-tab-link {
-        background-color: var(--bg-general);
-        // TOP BORDER FOR ENTITY TABS MIXIN
-        .tabpseudoelementmixin1(@color) {
-            border-top: 3px solid @color;
-            padding-top: 7px;
+        justify-content: center;
+        padding: 0 16px;
+        white-space: nowrap;
+        border-radius: inherit;
+        color: var(--fg-content-box);
+        background-color: var(--search-group-bg);
+        font-size: var(--font-size-body-small);
+        transition: background-color 0.18s ease;
+
+        &:hover,
+        &:focus {
+            color: var(--fg-content-box);
+            background-color: var(--search-group-bg-hover);
+        }
+        &:active {
+            background-color: var(--search-group-bg-pressed);
+        }
+        &:focus-visible {
+            .mx-theme-focus();
+            z-index: 1;
         }
 
-        &.-result-group-standard {
-            &:hover,
-            &:focus,
-            &:active {
-                .tabpseudoelementmixin1(var(--brand));
+        /* THE CHOSEN GROUP IS FILLED — same gesture as the chosen view in the result band */
+        &.-active {
+            /* CORE RAISES THE CHOSEN TAB BY 1PX AGAINST THE OLD PANEL EDGE */
+            height: 38px;
+            margin-bottom: 0;
+            background-color: var(--search-group-bg-selected);
+            color: var(--search-group-fg-selected);
+            font-weight: 600;
+        }
+
+        /* ENTITY COLORS CARRY THE FILL OF THE CHOSEN GROUP */
+        .entitySearchAdvancedTabColor(@color; @foreground) {
+            &.-active {
+                background-color: @color;
+                color: @foreground;
             }
         }
-        /* COLORING FOR THE ENTITY GHOUPS */
         &.-result-group-docstructtype__work {
-            &:hover,
-            &:focus,
-            &:active {
-                .tabpseudoelementmixin1(var(--bg-entity-work));
-            }
+            .entitySearchAdvancedTabColor(var(--bg-entity-work); var(--fg-on-bright));
         }
         &.-result-group-docstructtype__person {
-            &:hover,
-            &:focus,
-            &:active {
-                .tabpseudoelementmixin1(var(--bg-entity-person));
-            }
+            .entitySearchAdvancedTabColor(var(--bg-entity-person); var(--fg-inverse));
         }
         &.-result-group-docstructtype__agent {
-            &:hover,
-            &:focus,
-            &:active {
-                .tabpseudoelementmixin1(var(--bg-entity-agent));
-            }
+            .entitySearchAdvancedTabColor(var(--bg-entity-agent); var(--fg-on-bright));
         }
         &.-result-group-docstructtype__award {
-            &:hover,
-            &:focus,
-            &:active {
-                .tabpseudoelementmixin1(var(--bg-entity-award));
-            }
+            .entitySearchAdvancedTabColor(var(--bg-entity-award); var(--fg-on-bright));
         }
         &.-result-group-docstructtype__event {
-            &:hover,
-            &:focus,
-            &:active {
-                .tabpseudoelementmixin1(var(--bg-entity-event));
-            }
+            .entitySearchAdvancedTabColor(var(--bg-entity-event); var(--fg-on-bright));
         }
-        &.-active {
-            padding-top: 7px;
-            background: var(--bg-content-box);
-            color: var(--fg-general);
-            &.-result-group-standard {
-                .tabpseudoelementmixin1(var(--brand));
-            }
-            &.-result-group-docstructtype__work {
-                .tabpseudoelementmixin1(var(--bg-entity-work));
-            }
-            &.-result-group-docstructtype__person {
-                .tabpseudoelementmixin1(var(--bg-entity-person));
-            }
-            &.-result-group-docstructtype__agent {
-                .tabpseudoelementmixin1(var(--bg-entity-agent));
-            }
-            &.-result-group-docstructtype__award {
-                .tabpseudoelementmixin1(var(--bg-entity-award));
-            }
-            &.-result-group-docstructtype__event {
-                .tabpseudoelementmixin1(var(--bg-entity-event));
-            }
-        }
-        border: 1px solid var(--border-faint);
-        border-bottom: none;
     }
     // REWORK NEEDED
     &__action-search-button {
@@ -386,6 +399,15 @@
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
+    .search-advanced {
+        /* NO JS BEHIND THE MOBILE DROPDOWN — the group stays and scrolls sideways */
+        &__entity-tabs-links-wrapper {
+            display: flex;
+        }
+        &__entity-tabs-dropdown-button-wrapper {
+            display: none;
+        }
+    }
 }
 
 /* BREAKPOINT FOR TABLETS */
