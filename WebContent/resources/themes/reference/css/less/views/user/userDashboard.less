@@ -4,81 +4,108 @@
    ==============================================================*/
 /* USER DASHBOARD */
 .user-dashboard {
-    &__form-wrapper-container {
+    /* TOP ZONE */
+    &__top {
     }
-    &__form-wrapper {
-        background-color: var(--bg-content-box);
-        border: none;
-        padding: 0;
-        &.-w50 {
+
+    /* IDENTITY */
+    &__identity {
+    }
+    &__identity-avatar {
+    }
+    &__identity-name {
+    }
+    &__identity-meta {
+    }
+    &__identity-action {
+    }
+
+    /* SURFACES */
+    &__panel {
+    }
+    &__panel-title {
+    }
+
+    /* ACTIVITY TABLE */
+    &__activity-table {
+        th,
+        td {
         }
-        &.-w100 {
+        th:first-child,
+        td:first-child {
         }
-    }
-    &__show-all-link {
-    }
-    &__last-activities-wrapper {
-    }
-    &__last-activities-placeholder-wrappper {
-        p {
+        th:last-child,
+        td:last-child {
         }
-    }
-    &__last-activities-timeline-wrapper {
-    }
-    &__last-activities-timeline-item {
-        &::after {
+        thead th {
         }
-        &::before {
+        tbody tr:nth-child(odd) {
         }
-        &:first-child {
-            &:before {
-            }
-            &:after {
-            }
+        .user-dashboard__sort-hint {
         }
-        &:last-child {
-            &:before {
-            }
+        .user-dashboard__activity-type {
         }
-    }
-    &__last-activities-timeline-item-type {
-    }
-    &__bookmarks-list,
-    &__searches-list {
-    }
-    &__last-activities-wrapper,
-    &__searches-wrapper,
-    &__comments-wrapper {
-        &.-noEntry {
+        .user-dashboard__activity-name {
+        }
+        .user-dashboard__activity-date {
         }
     }
-    &__comments-wrapper {
+
+    &__activity-type-label {
     }
-    &__searches-wrapper {
+
+    /* OVERVIEW CARDS */
+    &__cards {
     }
-    &__searches-list {
+    &__card {
     }
-    &__searches-list-item {
+    &__card-head {
     }
-    &__searches-count,
-    &__comments-count,
-    &__bookmarks-count {
+    &__card-title {
     }
-    &__comments-wrapper {
+    &__card-count {
     }
-    &__comments-list {
+    &__card-form {
     }
-    &__comments-count {
+    /* CARD ROWS */
+    &__card-list {
+        li + li .user-dashboard__card-row {
+        }
     }
-    &__comments-item {
+    &__card-row {
+        &.-stacked {
+        }
+        &:hover,
+        &:focus-visible {
+        }
+        &:hover .user-dashboard__card-row-title,
+        &:focus-visible .user-dashboard__card-row-title {
+        }
     }
-    &__comments-text {
+    &__card-row-title {
+        &.-clamp {
+        }
     }
-    &__comments-open-record {
+    &__card-row-meta {
     }
-    &__sidebar-settings-button-wrapper {
+    &__card-link {
+        &:hover,
+        &:focus-visible {
+        }
+        &:hover span,
+        &:focus-visible span {
+        }
+        .user-dashboard__card-link-icon-svg {
+        }
+        &:hover .user-dashboard__card-link-icon-svg,
+        &:focus-visible .user-dashboard__card-link-icon-svg {
+        }
     }
-    &__sidebar-settings-button {
+
+    /* EMPTY STATE */
+    &__empty {
+    }
+    &__empty-text {
     }
 }
 
