@@ -188,7 +188,7 @@ function initSliders() {
         imageWidth: 600,
         imageHeight: 800,
         swiperConfig: {
-            slidesPerView: 1,
+            slidesPerView: 1.4,
             slidesPerGroup: 1,
             breakpointsBase: 'container',
             spaceBetween: 20,
