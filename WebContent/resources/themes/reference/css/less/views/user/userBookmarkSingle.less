@@ -3,42 +3,28 @@
    style declarations for userBackendViewBookmark.xhtml
    ==============================================================*/
 /* USER VIEW BOOKMARK */
-/* BLOCK */
 .view-bookmark {
-    /* ELEMENT */
     h1 {
     }
-    h2 {
+    &__head {
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        padding-inline: var(--_content-inset, 2.4rem);
     }
-    p {
+    &__head-row {
+    }
+    &__actions {
     }
     &__action {
-        a {
-        }
     }
-    &__single-entry {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
-        &:hover {
-        }
+    &__intro {
     }
-    &__item-image,
-    &__item-info,
-    &__item-action {
+    &__entries {
     }
-    &__item-image {
-        a {
-        }
+    &__entry {
     }
-    &__item-info {
-        h3 {
-        }
-        textarea {
-        }
+    &__empty {
     }
-    &__item-action {
-        a {
-        }
+    &__empty-text {
     }
 }
 

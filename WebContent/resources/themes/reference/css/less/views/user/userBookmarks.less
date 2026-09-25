@@ -1,55 +1,70 @@
 /* ==============================================================
    User Bookmarks
-   style declarations for userBackendBookmark.xhtml
+   style declarations for userBackendBookmarkLists.xhtml
    ==============================================================*/
 /* USER BOOKMARKS */
-/* BLOCK */
 .user-bookmark {
-    /* ELEMENT */
     h1 {
     }
+    &__head {
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        padding-inline: var(--_content-inset, 2.4rem);
+    }
+    &__section {
+    }
+    &__section-head {
+    }
+    &__section-title {
+    }
     /* ADD */
-    &__add-bookmark {
-        input {
-            color: var(--fg-general);
-        }
-        button,
-        a {
-            color: var(--fg-general);
-            svg {
-                stroke: var(--fg-general);
-            }
-        }
-
-        ::placeholder {
-            color: var(--fg-general);
-            opacity: 0.5;
-        }
+    &__add {
+    }
+    &__add-toggle {
+    }
+    &__add-panel {
+    }
+    &__add-field {
+    }
+    &__add-label {
+    }
+    &__add-foot {
+    }
+    &__add-cancel {
+    }
+    &__add-hint {
+    }
+    &__messages {
+    }
+    &__message {
     }
     /* PANEL */
     &__panel {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
-        border-radius: var(--radius-container);
     }
-    &__panel-header {
-        h2,
-        h3 {
-        }
-        a {
-        }
-        small {
-        }
+    &__panel-head {
     }
-    &__panel-body {
-        p {
-        }
+    &__panel-title {
     }
-    &__panel-action {
-        a,
-        button {
-            color: var(--fg-general);
-        }
+    &__panel-badge {
+    }
+    &__panel-meta {
+    }
+    &__panel-intro {
+    }
+    &__panel-foot {
+    }
+    &__panel-share-popover {
+    }
+    /* PREVIEW */
+    &__items-image-preview {
+    }
+    &__single-image {
+    }
+    &__link-more-items {
+    }
+    /* EMPTY */
+    &__empty {
+    }
+    &__empty-text {
     }
 }
 
@@ -63,11 +78,8 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .user-bookmark {
-        &__add-bookmark {
-        }
-    }
 }
+
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }

@@ -11,11 +11,9 @@
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
     xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
     xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
-    <!-- Evaluate the CMS configuration, not its always-present sidebarGroup wrapper.
-         Record pages and non-CMS views keep their own sidebar rendering rules. -->
     <ui:param
         name="referenceHasSidebar"
-        value="#{not facesContext.viewRoot.viewId.endsWith('/cmsPage.xhtml') or cmsBean.cmsWorkPageContext or (cmsBean.currentPage.useDefaultSidebar ? termBrowseBean.browsingMenuEnabled : not empty cmsBean.currentPage.sidebarElements)}" />
+        value="#{(not facesContext.viewRoot.viewId.endsWith('/cmsPage.xhtml') or cmsBean.cmsWorkPageContext or (cmsBean.currentPage.useDefaultSidebar ? termBrowseBean.browsingMenuEnabled : not empty cmsBean.currentPage.sidebarElements)) and not facesContext.viewRoot.viewId.toLowerCase().contains('bookmark')}" />
     <div id="bodyWrapper">
         <!-- ADMIN TOPBAR FRONTEND -->
         <viewerComponent:frontEndAdminTopBar />

@@ -627,7 +627,8 @@
 }
 
 /* HIT ROW — an open result strip: the scan leads, the text breathes, the tools stay out of the way */
-.search-list__hits:not(.grid):not(.list-view) {
+.search-list__hits:not(.grid):not(.list-view),
+.view-bookmark__entries {
     --_hit-thumb-width: 19rem;
     --_hit-thumb-ratio: 4 / 5;
     --_hit-column-gap: 2.8rem;
@@ -739,7 +740,8 @@
 /* POINTER DEVICES — the row answers as a whole: the scan lifts, the tools appear.
    Touch keeps them permanently, like the facet actions. */
 @media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
-    .search-list__hits:not(.grid):not(.list-view) {
+    .search-list__hits:not(.grid):not(.list-view),
+    .view-bookmark__entries {
         .search-list__hit-options-wrapper > * {
             opacity: 0;
             transition: opacity 0.15s ease;
@@ -758,6 +760,10 @@
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     .search-list__hits:not(.grid):not(.list-view)
+        .search-list__hit:hover
+        .search-list__hit-thumbnail:not(.search-list__subhit-thumbnail .search-list__hit-thumbnail)
+        img,
+    .view-bookmark__entries
         .search-list__hit:hover
         .search-list__hit-thumbnail:not(.search-list__subhit-thumbnail .search-list__hit-thumbnail)
         img {
@@ -1079,7 +1085,8 @@ body:has(.header.-adminActive) @{searchSheet} {
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .search-list__hits:not(.grid):not(.list-view) {
+    .search-list__hits:not(.grid):not(.list-view),
+    .view-bookmark__entries {
         --_hit-thumb-width: 11rem;
         --_hit-column-gap: 2rem;
 
@@ -1096,7 +1103,8 @@ body:has(.header.-adminActive) @{searchSheet} {
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-    .search-list__hits:not(.grid):not(.list-view) {
+    .search-list__hits:not(.grid):not(.list-view),
+    .view-bookmark__entries {
         --_hit-thumb-width: 8.8rem;
         --_hit-column-gap: 1.6rem;
 

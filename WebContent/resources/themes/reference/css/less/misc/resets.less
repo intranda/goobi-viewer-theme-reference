@@ -41,6 +41,8 @@
     }
     &:focus {
         background: var(--bg-popover);
+        color: var(--fg-popover);
+        -webkit-text-fill-color: var(--fg-popover);
     }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
@@ -81,10 +83,6 @@
     }
 
     .modal-content {
-        // @bg-content-box / @fg-content-box already resolve to theme-reactive
-        // CSS custom properties, so no light/dark split is needed here. The
-        // bundled bootstrap.custom.css strips background/border/shadow from
-        // .modal-content entirely, so this is the only place providing them.
         background-color: var(--bg-content-box);
         color: var(--fg-content-box);
         border-radius: var(--radius-container);

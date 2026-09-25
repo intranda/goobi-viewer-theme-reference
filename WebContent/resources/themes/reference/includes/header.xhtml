@@ -89,7 +89,8 @@
                                                 <ui:repeat
                                                     var="leafItem"
                                                     value="#{childItem.activeChildItems}">
-                                                    <ui:fragment rendered="#{leafItem.valid and leafItem.shouldDisplay}">
+                                                    <ui:fragment
+                                                        rendered="#{leafItem.valid and leafItem.shouldDisplay}">
                                                         <viewerComponent:navigationLink
                                                             navItem="#{leafItem}"
                                                             linkClass="header__nav-panel-link" />
@@ -174,6 +175,7 @@
                             <div class="header__account-identity">
                                 <img
                                     src="#{userBean.user.getAvatarUrl(80)}"
+                                    data-user-avatar="true"
                                     alt=""
                                     width="40"
                                     height="40" />
