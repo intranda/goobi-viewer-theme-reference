@@ -10,8 +10,8 @@
     }
     &__description,
     &__list {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
         border-radius: var(--radius-container);
     }
     &__description {
@@ -19,15 +19,15 @@
     }
     &__list {
         .card {
-            background-color: var(--bg-general);
+            background-color: var(--bg-page);
             border-radius: var(--radius-container-small);
             h2 a,
             a::before {
-                color: var(--fg-general);
+                color: var(--fg-default);
                 &:focus,
                 &:hover,
                 &:active {
-                    color: var(--fg-general);
+                    color: var(--fg-default);
                 }
             }
         }
@@ -41,15 +41,15 @@
                 &:hover,
                 &:active,
                 &:focus {
-                    color: var(--fg-general);
+                    color: var(--fg-default);
                 }
             }
         }
         .card-body {
-            background-color: var(--bg-content-box);
+            background-color: var(--bg-surface);
             .tpl-faq-single {
                 &__content {
-                    background-color: var(--bg-content-box);
+                    background-color: var(--bg-surface);
                     padding: 0;
                     border: none;
                 }

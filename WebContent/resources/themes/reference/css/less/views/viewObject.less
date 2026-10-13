@@ -9,12 +9,12 @@
     /* IMAGE */
     &__object-3d,
     &__image {
-        border: 1px solid var(--border-container);
+        border: 1px solid var(--container-border);
         border-radius: 0 0 var(--radius-container) var(--radius-container);
         border-top: 0;
         background-color: var(--bg-subtle);
         &.-setBorderTop {
-            border-top: 1px solid var(--border-container);
+            border-top: 1px solid var(--container-border);
         }
     }
     &__image-loader {
@@ -33,7 +33,7 @@
     }
     /* IMAGE MOBILE */
     &__image-mobile {
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
     }
     /* VIDEO, AUDIO, TEXT */
     &__video,
@@ -79,10 +79,10 @@
         max-height: 70vh;
         min-height: 50vh;
         margin-block: 0;
-        background-color: var(--bg-viewer-canvas);
-        border-radius: var(--radius-container-large);
+        background-color: var(--bg-stage);
+        border-radius: var(--view-object-image-radius);
         overflow: hidden;
-        outline: 1px solid var(--border-faint);
+        outline: 1px solid var(--border-subtle);
         outline-offset: -1px;
         box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 14%);
     }
@@ -96,46 +96,46 @@
     &.docstructtype__work {
         .image-controls,
         .view-object__image {
-            border-block-start: 3px solid var(--bg-entity-work);
+            border-block-start: 3px solid var(--color-theme-entity-group-work);
         }
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-work);
+            border: 1px solid var(--color-theme-entity-group-work);
         }
     }
     &.docstructtype__person {
         .image-controls,
         .view-object__image {
-            border-block-start: 3px solid var(--bg-entity-person);
+            border-block-start: 3px solid var(--color-theme-entity-group-person);
         }
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-person);
+            border: 1px solid var(--color-theme-entity-group-person);
         }
     }
     &.docstructtype__agent {
         .image-controls,
         .view-object__image {
-            border-block-start: 3px solid var(--bg-entity-agent);
+            border-block-start: 3px solid var(--color-theme-entity-group-agent);
         }
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-agent);
+            border: 1px solid var(--color-theme-entity-group-agent);
         }
     }
     &.docstructtype__award {
         .image-controls,
         .view-object__image {
-            border-block-start: 3px solid var(--bg-entity-award);
+            border-block-start: 3px solid var(--color-theme-entity-group-award);
         }
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-award);
+            border: 1px solid var(--color-theme-entity-group-award);
         }
     }
     &.docstructtype__event {
         .image-controls,
         .view-object__image {
-            border-block-start: 3px solid var(--bg-entity-event);
+            border-block-start: 3px solid var(--color-theme-entity-group-event);
         }
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-event);
+            border: 1px solid var(--color-theme-entity-group-event);
         }
     }
     // the band has one top edge: with a tool row above, the stage does not repeat it
@@ -145,8 +145,8 @@
 }
 
 .view-object-content {
-    border: 1px solid var(--border-faint);
-    background-color: var(--bg-content-box);
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface);
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -9,7 +9,7 @@
     /* SURFACE — the calendar sits on the panel, not on its own popover surface */
     .flatpickr-calendar {
         background: transparent;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
     .flatpickr-innerContainer,
     .flatpickr-rContainer,
@@ -29,7 +29,7 @@
         min-height: 5.6rem;
         padding: 0.8rem 4.8rem;
         background: transparent;
-        border-block-end: 1px solid rgb(from var(--border-container-accent) r g b / 60%);
+        border-block-end: 1px solid rgb(from var(--sidebar-border) r g b / 60%);
     }
     .flatpickr-months .flatpickr-month {
         height: auto;
@@ -50,8 +50,8 @@
     .flatpickr-current-month,
     .flatpickr-current-month .cur-month,
     .flatpickr-current-month input.cur-year {
-        color: var(--fg-heading-content-box);
-        fill: var(--fg-heading-content-box);
+        color: var(--fg-heading);
+        fill: var(--fg-heading);
         font-size: var(--font-size-body-large);
         font-weight: 600;
         line-height: var(--line-height-body);
@@ -61,7 +61,7 @@
         border-radius: var(--radius-button);
 
         &:hover {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
         &:focus-visible {
             .mx-theme-focus();
@@ -75,8 +75,8 @@
         }
     }
     .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
-        color: var(--fg-content-box);
-        background: var(--bg-content-box);
+        color: var(--fg-default);
+        background: var(--bg-surface);
 
         &:hover,
         &:focus,
@@ -96,15 +96,15 @@
             height: var(--_widget-action-size, 4rem);
             border-radius: var(--radius-button);
             background-color: transparent;
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             transform: translateY(-50%);
 
             &:hover {
-                color: var(--brand);
-                background-color: var(--bg-hover-accent);
+                color: var(--fg-brand);
+                background-color: var(--sidebar-bg-hover);
             }
             &:active {
-                background-color: var(--bg-pressed-accent);
+                background-color: var(--sidebar-bg-pressed);
             }
             &::after {
                 .mx-icon-chevron-mask(var(--_widget-action-icon-size, 2rem));
@@ -157,7 +157,7 @@
         border-radius: var(--radius-button);
 
         &:hover {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
         &.-disabled- {
             color: var(--fg-disabled);
@@ -190,7 +190,7 @@
         background: transparent;
     }
     span.flatpickr-weekday {
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         font-size: var(--font-size-body-small);
         font-weight: 600;
     }
@@ -208,7 +208,7 @@
         line-height: var(--line-height-body);
 
         &.-has-data- {
-            border-color: rgb(from var(--brand) r g b / 35%);
+            border-color: rgb(from var(--border-brand) r g b / 35%);
             background: var(--bg-selected);
             color: var(--fg-selected);
             font-weight: 500;
@@ -216,7 +216,7 @@
 
             &:hover,
             &:focus {
-                border-color: var(--brand);
+                border-color: var(--border-brand);
                 background: var(--bg-selected-hover);
                 color: var(--fg-selected);
             }
@@ -230,7 +230,7 @@
         }
     }
     .flatpickr-day.-has-multiple-::after {
-        background-color: var(--brand);
+        background-color: var(--fg-brand);
     }
     .flatpickr-day.-has-multiple-.-current-issue-::after,
     .flatpickr-day.-has-multiple-.-current-issue-:hover::after {
@@ -239,28 +239,28 @@
 
     /* ISSUE POPOVER — rendered on the body, so it carries the panel language itself */
     &__popover {
-        border-color: var(--border-container);
+        border-color: var(--container-border);
         border-radius: var(--radius-container-small);
-        box-shadow: var(--shadow-floating);
+        box-shadow: var(--shadow-elevated);
     }
     &__popover-item {
         position: relative;
-        color: var(--fg-popover);
+        color: var(--fg-default);
 
         &:hover,
         &:focus {
-            color: var(--fg-popover);
-            background-color: var(--bg-hover-accent);
+            color: var(--fg-default);
+            background-color: var(--sidebar-bg-hover);
         }
         &:active {
-            background-color: var(--bg-pressed-accent);
+            background-color: var(--sidebar-bg-pressed);
         }
         &:focus-visible {
             .mx-theme-focus();
         }
         &.-active- {
-            color: var(--fg-popover);
-            background-color: var(--bg-hover-accent);
+            color: var(--fg-default);
+            background-color: var(--sidebar-bg-hover);
 
             &::before {
                 content: '';
@@ -269,7 +269,7 @@
                 inset-inline-start: 0;
                 width: 2px;
                 border-radius: 999px;
-                background-color: var(--brand);
+                background-color: var(--fg-brand);
             }
         }
     }

@@ -16,7 +16,7 @@
         margin-top: 50px;
 
         background-color: var(--footer-main-bg);
-        color: var(--fg-inverse);
+        color: var(--fg-on-inverse);
 
         /* accent bar: fades from the footer background into the button/brand color and back */
         &::before {
@@ -74,7 +74,7 @@
     &__top-section-heading {
         font-size: var(--font-size-body);
         font-weight: 700;
-        color: var(--fg-inverse);
+        color: var(--fg-on-inverse);
         margin: 0 0 1.8rem;
         padding-bottom: 1rem;
         letter-spacing: 0.3px;
@@ -82,7 +82,7 @@
 
     &__top-section-text {
         margin: 0 0 1.6rem;
-        color: var(--fg-inverse);
+        color: var(--fg-on-inverse);
         line-height: 1.7;
         max-width: 400px;
     }
@@ -127,7 +127,7 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            color: var(--fg-inverse);
+            color: var(--fg-on-inverse);
             padding: 0.3rem 0;
             transition:
                 color 0.2s ease,
@@ -149,7 +149,7 @@
             &:hover,
             &:active,
             &:focus {
-                color: var(--fg-inverse);
+                color: var(--fg-on-inverse);
                 opacity: 1;
                 gap: 0.9rem;
 
@@ -170,7 +170,7 @@
         a {
             display: block;
             padding: 0;
-            color: var(--fg-inverse);
+            color: var(--fg-on-inverse);
         }
 
         a:hover,
@@ -195,7 +195,7 @@
         align-items: flex-start;
         gap: 2rem;
         padding: 1.8rem 0;
-        border-bottom: 1px solid rgb(from var(--fg-inverse) r g b / 8%);
+        border-bottom: 1px solid rgb(from var(--fg-on-inverse) r g b / 8%);
     }
 
     &__bottom-section-nav {
@@ -222,12 +222,12 @@
         padding: 0.5rem 1rem 0.5rem 0;
         font-size: var(--font-size-body-small);
         font-weight: 600;
-        color: var(--fg-inverse);
+        color: var(--fg-on-inverse);
 
         &:hover,
         &:active,
         &:focus {
-            color: var(--fg-inverse);
+            color: var(--fg-on-inverse);
             text-decoration: underline;
         }
     }
@@ -249,12 +249,12 @@
         button {
             padding: 0.3rem 0.8rem;
             font-size: var(--font-size-caption);
-            color: rgb(from var(--fg-inverse) r g b / 80%);
+            color: rgb(from var(--fg-on-inverse) r g b / 80%);
 
             &:hover,
             &:active,
             &:focus {
-                color: var(--fg-inverse);
+                color: var(--fg-on-inverse);
                 opacity: 1;
                 text-decoration: underline;
             }
@@ -277,7 +277,7 @@
         align-items: center;
         padding: 0.3rem 0.8rem;
         font-size: var(--font-size-caption);
-        color: rgb(from var(--fg-inverse) r g b / 80%);
+        color: rgb(from var(--fg-on-inverse) r g b / 80%);
 
         &.btn {
             font-weight: 400;
@@ -286,7 +286,7 @@
         &:hover,
         &:active,
         &:focus {
-            color: var(--fg-inverse);
+            color: var(--fg-on-inverse);
             opacity: 1;
             text-decoration: underline;
         }
@@ -306,8 +306,8 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 2px solid rgb(from var(--fg-inverse) r g b / 16%);
-            color: var(--fg-inverse);
+            border: 2px solid rgb(from var(--fg-on-inverse) r g b / 16%);
+            color: var(--fg-on-inverse);
 
             transition:
                 border-color 0.2s ease,
@@ -315,8 +315,8 @@
 
             &:hover,
             &:active {
-                border-color: rgb(from var(--fg-inverse) r g b / 40%);
-                background-color: rgb(from var(--fg-inverse) r g b / 8%);
+                border-color: rgb(from var(--fg-on-inverse) r g b / 40%);
+                background-color: rgb(from var(--fg-on-inverse) r g b / 8%);
             }
             &:focus-visible {
                 .mx-theme-focus();
@@ -338,8 +338,8 @@
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        border: 2px solid rgb(from var(--fg-inverse) r g b / 16%);
-        color: var(--fg-inverse);
+        border: 2px solid rgb(from var(--fg-on-inverse) r g b / 16%);
+        color: var(--fg-on-inverse);
         cursor: pointer;
         background-color: transparent;
 
@@ -349,9 +349,9 @@
 
         &:hover,
         &:active {
-            border-color: rgb(from var(--fg-inverse) r g b / 40%);
-            background-color: rgb(from var(--fg-inverse) r g b / 8%);
-            color: var(--fg-inverse);
+            border-color: rgb(from var(--fg-on-inverse) r g b / 40%);
+            background-color: rgb(from var(--fg-on-inverse) r g b / 8%);
+            color: var(--fg-on-inverse);
         }
         &:focus-visible {
             .mx-theme-focus();

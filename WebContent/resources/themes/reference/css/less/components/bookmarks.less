@@ -8,7 +8,7 @@
     margin-right: -5px;
     /* ELEMENT */
     &__dropdown-wrapper {
-        background-color: var(--bg-popover);
+        background-color: var(--bg-elevated);
         border-radius: var(--radius-container-small);
 
         & > .btn {
@@ -24,8 +24,8 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
-        color: var(--fg-on-bright);
-        background-color: var(--accent);
+        color: var(--fg-black);
+        background-color: var(--bg-accent);
         position: relative;
         right: 0;
         top: 0;
@@ -46,8 +46,8 @@
         right: -4px;
         border: 1px solid var(--border-default);
         border-radius: var(--radius-container);
-        background-color: var(--bg-content-box);
-        box-shadow: var(--shadow-container);
+        background-color: var(--bg-surface);
+        box-shadow: var(--shadow-surface);
     }
     /* DROPDOWN LIST */
     &__dropdown-list {
@@ -55,7 +55,7 @@
 
         li {
             border-bottom: none;
-            color: var(--fg-content-box);
+            color: var(--fg-default);
 
             &:hover {
                 background-color: var(--bg-hover);
@@ -63,11 +63,11 @@
             &:last-child {
             }
             .empty {
-                color: var(--fg-general);
+                color: var(--fg-default);
             }
         }
         h3 {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
         }
     }
     &__dropdown-list-counter {
@@ -87,7 +87,7 @@
     }
     &__dropdown-list-remove {
         font-size: var(--font-size-body-small);
-        color: var(--fg-general);
+        color: var(--fg-default);
         &:hover,
         &:active,
         &:focus {
@@ -96,7 +96,7 @@
             // keep the icon itself in the regular (non-hover) color; only
             // the text should pick up the ci-color accent
             svg {
-                color: var(--fg-general);
+                color: var(--fg-default);
             }
         }
     }
@@ -132,7 +132,7 @@
         a,
         span,
         h3 {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             &:hover,
             &:focus,
             &:active {
@@ -141,7 +141,7 @@
                 // keep icons in the regular (non-hover) color; only the
                 // text should pick up the ci-color accent
                 svg {
-                    color: var(--fg-content-box);
+                    color: var(--fg-default);
                 }
             }
         }
@@ -175,8 +175,8 @@
     max-height: 420px;
     border: none;
     border-radius: var(--radius-container);
-    background-color: var(--bg-popover);
-    box-shadow: var(--shadow-floating);
+    background-color: var(--bg-elevated);
+    box-shadow: var(--shadow-elevated);
     overflow: hidden;
 
     &.top {
@@ -194,14 +194,14 @@
             width: 12px;
             height: 12px;
             margin-left: -6px;
-            background-color: var(--bg-popover);
+            background-color: var(--bg-elevated);
             box-shadow: -2px -2px 4px rgb(from var(--shadow-color) r g b / 6%);
             transform: rotate(45deg);
         }
     }
 
     label {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 
     /* ELEMENT */
@@ -231,7 +231,7 @@
         padding: 0.85rem 1rem;
         font-weight: 600;
         font-size: var(--font-size-body-small);
-        color: var(--fg-popover);
+        color: var(--fg-default);
         border-bottom: 1px solid var(--border-default);
     }
 
@@ -244,7 +244,7 @@
     }
 
     &__body-loader {
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
     }
 
     &__body-list {
@@ -275,12 +275,12 @@
                 }
             }
             .empty {
-                color: var(--fg-general);
+                color: var(--fg-default);
                 font-style: italic;
             }
         }
         &:hover {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
         }
         span {
         }
@@ -291,10 +291,10 @@
         border-top: 1px solid var(--border-default);
 
         input {
-            background-color: var(--bg-general);
+            background-color: var(--bg-page);
             border: 1px solid var(--border-default);
             border-radius: var(--radius-container-small);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             padding: 0 0.75rem;
         }
         &.added {
@@ -312,7 +312,7 @@
         // nested here (rather than a bare .bookmark-popup__add-icon rule) so
         // this beats core's more specific ".bookmark-popup__footer button svg"
         .bookmark-popup__add-icon {
-            stroke: var(--brand);
+            stroke: var(--fg-brand);
         }
     }
 
@@ -320,8 +320,8 @@
         // nested here for the same reason: core targets
         // ".bookmark-popup__body-list .bookmark-popup__check-icon"
         .bookmark-popup__check-icon {
-            color: var(--brand);
-            stroke: var(--brand);
+            color: var(--fg-brand);
+            stroke: var(--fg-brand);
         }
     }
 

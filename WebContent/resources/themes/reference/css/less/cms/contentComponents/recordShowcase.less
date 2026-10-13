@@ -3,8 +3,8 @@
 
     position: relative;
     overflow: clip;
-    color: var(--fg-general);
-    background-color: color-mix(in srgb, var(--bg-content-box) 72%, var(--bg-canvas));
+    color: var(--fg-default);
+    background-color: color-mix(in srgb, var(--bg-surface) 72%, var(--bg-sunken));
     border-bottom: 1px solid var(--border-default);
 
     &__stage {
@@ -45,7 +45,7 @@
         width: 2.8rem;
         height: 2px;
         margin-bottom: 2rem;
-        background-color: var(--brand);
+        background-color: var(--fg-brand);
     }
 
     &__subline {
@@ -259,7 +259,7 @@
         width: 100%;
         height: auto;
         filter: drop-shadow(0 12px 10px color-mix(in srgb, var(--shadow-color) 20%, transparent))
-            drop-shadow(0 0 16px color-mix(in srgb, var(--brand) 18%, transparent));
+            drop-shadow(0 0 16px color-mix(in srgb, var(--fg-brand) 18%, transparent));
         transform: rotate(-0.8deg);
         transform-origin: center bottom;
         transition:
@@ -322,13 +322,13 @@
     &__link:focus-visible .slider-showcase__image {
         transform: translateY(-0.6rem) rotate(0deg);
         filter: drop-shadow(0 18px 14px color-mix(in srgb, var(--shadow-color) 28%, transparent))
-            drop-shadow(0 0 24px color-mix(in srgb, var(--brand) 28%, transparent));
+            drop-shadow(0 0 24px color-mix(in srgb, var(--fg-brand) 28%, transparent));
     }
 
     &__link:hover .slider-showcase__header,
     &__link:focus-visible .slider-showcase__header {
         transform: translateY(-0.2rem);
-        color: var(--brand);
+        color: var(--fg-brand);
     }
 
     &__link:hover .slider-showcase__header::before,

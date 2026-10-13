@@ -5,10 +5,10 @@
     min-width: 0;
     margin-block-end: 1.6rem;
     padding: 0;
-    border: 1px solid var(--border-container-accent);
+    border: 1px solid var(--sidebar-border);
     border-radius: var(--radius-container);
-    background-color: var(--bg-content-box);
-    color: var(--fg-general);
+    background-color: var(--bg-surface);
+    color: var(--fg-default);
     box-shadow: none;
 
     &__head {
@@ -29,7 +29,7 @@
     &__title {
         min-width: 0;
         margin: 0;
-        color: var(--fg-heading-content-box);
+        color: var(--fg-heading);
         font-size: var(--font-size-body-large);
         font-weight: 600;
         line-height: var(--line-height-body);
@@ -37,11 +37,11 @@
     }
     &__reset {
         .mx-theme-control-accent();
-        color: var(--fg-content-box);
+        color: var(--fg-default);
 
         &:hover,
         &:active {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
         display: inline-flex;
         align-items: center;
@@ -99,7 +99,7 @@
         max-width: none;
         margin: 0;
         padding: 0;
-        color: var(--fg-heading-content-box);
+        color: var(--fg-heading);
         font-size: var(--font-size-body);
         font-weight: var(--combined-facets-title-weight);
         line-height: var(--line-height-body);
@@ -113,7 +113,7 @@
     }
     .widget__description-text {
         margin-block: 0.4rem 0.6rem;
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         font-size: var(--font-size-body-small);
         line-height: var(--line-height-body);
     }
@@ -159,12 +159,12 @@
     .widget-chronology-slider__action-reset-button,
     .widget-chronology-slider__item.chronology-slider-actions,
     .widget-chronology-slider__item.chronology-slider-actions [data-reset='chrono-slider'] {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
 
         &:hover,
         &:active,
         &:focus-visible {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
     }
 
@@ -205,7 +205,7 @@
         }
     }
     .widget-search-facets__filter-icon {
-        color: var(--brand);
+        color: var(--fg-brand);
     }
 
     /* VALUES */
@@ -232,7 +232,7 @@
             column-gap: var(--_facet-action-gap);
         }
         &:hover {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
         .widget-search-facets__list-item-link,
         .widget-search-facets__list-item-control-link {
@@ -242,19 +242,19 @@
             min-height: var(--_facet-row-size);
             padding: 0.4rem;
             border-radius: var(--radius-container-small);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             background: transparent;
             font-weight: 400;
             line-height: var(--line-height-body);
             text-decoration: none;
             &:hover,
             &:focus {
-                color: var(--fg-content-box);
+                color: var(--fg-default);
                 background: transparent;
                 text-decoration: none;
             }
             &:active {
-                background-color: var(--bg-pressed-accent);
+                background-color: var(--sidebar-bg-pressed);
             }
             &:focus-visible {
                 .mx-theme-focus();
@@ -273,7 +273,7 @@
 
             &:hover,
             &:focus-visible {
-                background-color: var(--bg-pressed-accent);
+                background-color: var(--sidebar-bg-pressed);
             }
         }
         &.-active,
@@ -320,7 +320,7 @@
         }
         .widget-search-facets__list-item-link > .widget-search-facets__list-item-control:hover,
         .widget-search-facets__list-item-link:focus-visible > .widget-search-facets__list-item-control {
-            background-color: var(--bg-pressed-accent);
+            background-color: var(--sidebar-bg-pressed);
         }
 
         /* row controls stay neutral until they are touched; a set filter keeps the row color */
@@ -329,7 +329,7 @@
             &.-set,
             &.-include,
             &.-exclude {
-                color: var(--fg-content-box);
+                color: var(--fg-default);
             }
         }
         &:is(.-active, .-excluded) .widget-search-facets__list-item-control {
@@ -346,7 +346,7 @@
             &.-set,
             &.-include,
             &.-exclude {
-                color: var(--brand);
+                color: var(--fg-brand);
             }
         }
 
@@ -379,7 +379,7 @@
         min-height: 2.4rem;
         padding-inline: 0.6rem;
         border-radius: var(--radius-button);
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         background-color: var(--bg-subtle);
         font-size: var(--font-size-body-small);
         font-variant-numeric: tabular-nums;
@@ -406,8 +406,8 @@
         font-weight: 400;
         line-height: var(--line-height-body);
         &:focus {
-            color: var(--fg-content-box);
-            background-color: var(--bg-content-box);
+            color: var(--fg-default);
+            background-color: var(--bg-surface);
             box-shadow: none;
         }
         &:hover {
@@ -431,12 +431,12 @@
         min-height: var(--_facet-action-size);
         padding-block: 0;
         padding-inline: 0.4rem 0;
-        color: var(--brand);
+        color: var(--fg-brand);
         font-size: var(--font-size-body-small);
         font-weight: 500;
         &:hover,
         &:focus {
-            color: var(--brand-hover);
+            color: var(--fg-brand-hover);
             text-decoration: none;
         }
         .icon-svg {
@@ -461,7 +461,7 @@
     .widget-search-facets__collapse-chevron-svg {
         width: 1.6rem;
         height: 1.6rem;
-        color: var(--brand);
+        color: var(--fg-brand);
     }
     .widget-search-facets__collapse-alt-icon {
         display: none;
@@ -483,7 +483,7 @@
         gap: 0.4rem;
         color: var(--fg-selected);
         background-color: var(--bg-selected);
-        border: 1px solid rgb(from var(--brand) r g b / 35%);
+        border: 1px solid rgb(from var(--border-brand) r g b / 35%);
         border-radius: var(--radius-button);
         font-size: var(--font-size-body-small);
         font-weight: 400;
@@ -491,7 +491,7 @@
         &:hover {
             color: var(--fg-selected);
             background-color: var(--bg-selected-hover);
-            border-color: var(--brand);
+            border-color: var(--border-brand);
         }
         &:active {
             background-color: var(--bg-selected-pressed);

@@ -40,11 +40,11 @@
     &__button,
     &__link {
         border-radius: var(--radius-container-small);
-        color: var(--fg-general);
+        color: var(--fg-default);
         &:hover,
         &:active,
         &:focus {
-            color: var(--fg-general);
+            color: var(--fg-default);
         }
         &.-highlighted {
             background-color: transparent;
@@ -86,8 +86,8 @@
 
     .sidebar-scroll-preview__image {
         border-radius: var(--radius-container-small);
-        background-color: var(--bg-content-box);
-        outline: 1px solid var(--border-faint);
+        background-color: var(--bg-surface);
+        outline: 1px solid var(--border-subtle);
         outline-offset: -1px;
         box-shadow: 0 1px 2px rgb(from var(--shadow-color) r g b / 8%);
         transition:
@@ -105,7 +105,7 @@
 
     /* HOVER — the sheet lifts, nothing jumps */
     :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button):hover {
-        background-color: var(--bg-hover-accent);
+        background-color: var(--sidebar-bg-hover);
 
         .sidebar-scroll-preview__image {
             transform: none;
@@ -114,14 +114,14 @@
         }
 
         .sidebar-scroll-preview__button-text {
-            color: var(--fg-general);
+            color: var(--fg-default);
         }
     }
 
     /* CURRENT PAGE — the ring traces the same plate that hover tints, scan and label inside */
     :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button).-highlighted {
         background-color: var(--bg-selected);
-        outline: 2px solid var(--brand);
+        outline: 2px solid var(--fg-brand);
         outline-offset: -2px;
 
         .sidebar-scroll-preview__image-wrapper {

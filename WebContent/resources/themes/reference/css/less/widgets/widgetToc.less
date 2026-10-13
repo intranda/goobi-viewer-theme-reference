@@ -8,7 +8,7 @@
         background: none;
     }
     &__overlay {
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
         opacity: 0.85;
     }
     /* TITLE */
@@ -24,7 +24,7 @@
     }
     /* ELEMENTS */
     &__elements {
-        scrollbar-color: rgb(from var(--brand) r g b / 40%) transparent;
+        scrollbar-color: rgb(from var(--fg-brand) r g b / 40%) transparent;
         ul {
             border: 0;
         }
@@ -106,7 +106,7 @@
         border-radius: var(--radius-container-small);
 
         &:hover {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
     }
 
@@ -126,11 +126,11 @@
         border: 0;
         border-radius: var(--radius-container-small);
         background-color: transparent;
-        color: var(--brand);
+        color: var(--fg-brand);
 
         &:hover {
             background-color: transparent;
-            color: var(--brand-hover);
+            color: var(--fg-brand-hover);
         }
 
         .widget-toc__toggle-icon-svg {
@@ -162,7 +162,7 @@
             min-height: var(--_toc-row);
             padding-block: 0.7rem;
             padding-inline: 0;
-            color: var(--fg-link-content-box);
+            color: var(--fg-link-subtle);
             line-height: var(--line-height-body);
             overflow-wrap: anywhere;
 
@@ -187,7 +187,7 @@
         min-width: 0;
         padding-block: 0.8rem;
         padding-inline: 0.8rem;
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         font-size: var(--font-size-body-small);
         font-variant-numeric: tabular-nums;
         line-height: var(--line-height-body);
@@ -204,11 +204,11 @@
             inset-inline-start: 0;
             width: 2px;
             border-radius: 999px;
-            background-color: var(--brand);
+            background-color: var(--fg-brand);
         }
 
         .widget-toc__toggle {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
 
         .widget-toc__element-link > a {

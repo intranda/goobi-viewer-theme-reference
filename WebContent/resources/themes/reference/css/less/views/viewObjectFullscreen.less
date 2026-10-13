@@ -8,8 +8,8 @@
 .fullscreen {
     /* HEADER */
     &__header {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
         &.fullscreen {
         }
     }
@@ -20,8 +20,8 @@
         button,
         span,
         select {
-            color: var(--fg-general);
-            fill: var(--fg-general);
+            color: var(--fg-default);
+            fill: var(--fg-default);
 
             &:hover,
             &:active,
@@ -43,7 +43,7 @@
 
                 &.in {
                     background-color: transparent;
-                    color: var(--fg-general);
+                    color: var(--fg-default);
                     border-color: transparent;
                 }
 
@@ -96,12 +96,12 @@
     }
     /* PANEL CONTROLS */
     &__view-sidebar-panel-controls {
-        background-color: var(--bg-general);
-        color: var(--fg-general);
+        background-color: var(--bg-page);
+        color: var(--fg-default);
 
         [data-close='all-tabs'],
         [data-open='all-tabs'] {
-            color: var(--fg-general);
+            color: var(--fg-default);
         }
     }
     /* IMAGE */
@@ -140,13 +140,13 @@
     }
     /* SIDEBAR */
     &__view-sidebar-open {
-        background-color: var(--bg-general);
-        color: var(--fg-general);
+        background-color: var(--bg-page);
+        color: var(--fg-default);
         .btn {
-            color: var(--fg-general);
+            color: var(--fg-default);
 
             &::before {
-                color: var(--fg-general);
+                color: var(--fg-default);
             }
 
             &:hover,
@@ -162,9 +162,9 @@
         }
     }
     &__view-sidebar {
-        background-color: var(--bg-general);
+        background-color: var(--bg-page);
         .ui-resizable-handle {
-            border: 1px solid var(--border-faint);
+            border: 1px solid var(--border-subtle);
             &:before,
             &:after {
             }
@@ -177,31 +177,31 @@
         }
     }
     &__view-sidebar-inner {
-        background-color: var(--bg-general);
+        background-color: var(--bg-page);
     }
     &__view-sidebar-controls {
-        background-color: var(--bg-general);
-        color: var(--fg-general);
+        background-color: var(--bg-page);
+        color: var(--fg-default);
 
         .btn {
-            color: var(--fg-general);
+            color: var(--fg-default);
         }
 
         [data-close='fs-sidebar'] {
-            color: var(--fg-general);
+            color: var(--fg-default);
 
             &::before {
-                color: var(--fg-general);
+                color: var(--fg-default);
             }
         }
     }
     &__view-sidebar-share {
-        border-top: 1px solid var(--border-faint);
-        border-bottom: 1px solid var(--border-faint);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
     }
     /* SIDEBAR WORK TITLE */
     &__view-sidebar-work-title {
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
         h1 {
         }
         .widget-copyright {
@@ -219,13 +219,13 @@
             &:hover,
             &.-open {
                 .widget-copyright__body {
-                    background-color: var(--bg-hover-accent);
+                    background-color: var(--sidebar-bg-hover);
                 }
             }
 
             &:active {
                 .widget-copyright__body {
-                    background-color: var(--bg-pressed-accent);
+                    background-color: var(--sidebar-bg-pressed);
                 }
             }
 
@@ -241,7 +241,7 @@
     }
     /* SIDEBAR ACCORDEON */
     &__view-sidebar-accordeon {
-        background-color: var(--bg-general);
+        background-color: var(--bg-page);
     }
     &__view-sidebar-accordeon-panel {
         &.fs-metadata {
@@ -263,18 +263,18 @@
         }
     }
     &__view-sidebar-accordeon-panel-title {
-        color: var(--fg-content-box);
-        background-color: var(--bg-content-box);
-        border-top-color: var(--border-faint);
+        color: var(--fg-default);
+        background-color: var(--bg-surface);
+        border-top-color: var(--border-subtle);
 
         &:hover {
-            color: var(--fg-hover);
-            background-color: var(--bg-hover-accent);
+            color: var(--fg-default);
+            background-color: var(--sidebar-bg-hover);
         }
 
         &:active {
-            color: var(--fg-content-box);
-            background-color: var(--bg-pressed-accent);
+            color: var(--fg-default);
+            background-color: var(--sidebar-bg-pressed);
         }
 
         &:focus-visible {
@@ -299,13 +299,13 @@
                 inset-block: 0;
                 inset-inline-start: 0;
                 width: 3px;
-                background-color: var(--brand);
+                background-color: var(--fg-brand);
                 pointer-events: none;
             }
         }
     }
     &__view-sidebar-accordeon-panel-body {
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
         & > h1 {
         }
     }

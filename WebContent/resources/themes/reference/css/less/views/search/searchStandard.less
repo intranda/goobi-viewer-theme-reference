@@ -3,11 +3,11 @@
     margin-bottom: 1rem;
 
     &__help button {
-        color: var(--fg-general);
+        color: var(--fg-default);
     }
 
     &__title h2 {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 
     &__input-slim {
@@ -15,7 +15,7 @@
     }
 
     &__form {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 
     &__form &__input-autocomplete .ui-autocomplete-input,
@@ -35,7 +35,7 @@
             border: 0;
             background: transparent;
             box-shadow: none;
-            color: var(--fg-content-box);
+            color: var(--fg-default);
 
             &::after {
                 color: currentColor;
@@ -52,7 +52,7 @@
     &__filter-radio label {
         font-size: var(--font-size-body-small);
         font-weight: 400;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 
     &__form &__submit-button.btn {
@@ -65,11 +65,11 @@
 .ui-autocomplete.ui-menu {
     border: none;
     border-radius: var(--radius-container);
-    box-shadow: var(--shadow-container);
+    box-shadow: var(--shadow-surface);
     padding: 0.4rem;
     margin-top: 0.5rem;
 
-    background-color: var(--bg-popover);
+    background-color: var(--bg-elevated);
 
     .ui-menu-item {
         border-radius: var(--radius-container-small);
@@ -77,14 +77,14 @@
         .ui-menu-item-wrapper {
             padding: 0.6rem 1rem;
             border-radius: var(--radius-container-small);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             transition:
                 background-color 0.15s ease,
                 color 0.15s ease;
         }
         .ui-state-active {
             background-color: var(--search-group-bg-menu-active);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             border: none;
             margin: 0;
         }
@@ -165,12 +165,12 @@
 
 /* Search autocomplete integration */
 body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.ui-menu {
-    color: var(--fg-content-box);
-    background-color: var(--bg-content-box);
+    color: var(--fg-default);
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-input);
 
     .ui-menu-item .ui-menu-item-wrapper {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         border-inline-start: var(--search-hit-accent-width) solid transparent;
 
         &:hover {
@@ -180,9 +180,9 @@ body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.u
 
     /* the row under the pointer and the row reached by keyboard read the same */
     .ui-menu-item .ui-state-active {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         background-color: var(--search-group-bg-menu-active);
-        border-inline-start: var(--search-hit-accent-width) solid var(--brand);
+        border-inline-start: var(--search-hit-accent-width) solid var(--border-brand);
     }
 }
 
@@ -244,12 +244,12 @@ body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.u
         border-color: var(--search-field-border);
 
         &:hover {
-            border-color: var(--brand);
+            border-color: var(--border-brand);
         }
         /* clicking in shows through the frame; the ring stays for keyboard users below */
         &:focus {
             .mx-theme-focus-ring(0; 0);
-            border-color: var(--brand);
+            border-color: var(--border-brand);
         }
     }
 }

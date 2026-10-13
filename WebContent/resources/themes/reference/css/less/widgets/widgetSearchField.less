@@ -13,22 +13,22 @@
         input {
             border-radius: var(--radius-container);
             margin-right: 0.5rem;
-            box-shadow: var(--shadow-container);
+            box-shadow: var(--shadow-surface);
         }
     }
     .form-control {
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         padding: 2rem 1.2rem;
     }
     .input-group {
-        background-color: var(--bg-general);
+        background-color: var(--bg-page);
         input {
         }
     }
     .input-group-addon {
         display: flex;
         justify-content: center;
-        box-shadow: var(--shadow-container);
+        box-shadow: var(--shadow-surface);
         background-color: var(--bg-brand);
         border-radius: var(--radius-container-small);
         width: 41px;
@@ -37,14 +37,14 @@
         &:hover {
             background-color: var(--bg-brand-hover);
             box-shadow:
-                var(--shadow-container),
-                0 0 0 3px var(--bg-brand-tint);
+                var(--shadow-surface),
+                0 0 0 3px var(--bg-brand-subtle);
         }
 
         input {
         }
         button {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
     }
 }

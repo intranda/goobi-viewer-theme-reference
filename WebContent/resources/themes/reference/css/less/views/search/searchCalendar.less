@@ -25,7 +25,7 @@
     &__century-year-link {
         a {
             border-radius: var(--radius-container-small);
-            background-color: var(--bg-brand-tint);
+            background-color: var(--bg-brand-subtle);
             border: none;
         }
     }
@@ -39,8 +39,8 @@
         }
     }
     &__input {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
         input {
         }
         .form-horizontal {
@@ -66,11 +66,11 @@
     }
     &__day-popover {
         a {
-            color: var(--fg-popover);
+            color: var(--fg-default);
             &:hover,
             &:active,
             &:focus {
-                color: var(--fg-popover);
+                color: var(--fg-default);
             }
         }
     }
@@ -81,16 +81,16 @@
     }
     &__month {
         min-height: 270px;
-        border: 1px solid var(--border-container);
+        border: 1px solid var(--container-border);
         border-radius: var(--radius-container);
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
     }
     &__month-title {
         padding: 5px 10px;
     }
     &__month-days,
     &__month-week {
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         border-top: 0;
         border-left: none;
         border-right: none;
@@ -120,7 +120,7 @@
     &__month-day-link,
     &__month-day-button {
         background-color: var(--bg-selected);
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         &:focus,
         &:hover,
         &:active {
@@ -138,9 +138,9 @@
     &__newspaper-search {
     }
     &__newspaper-search-body {
-        background: var(--bg-content-box);
-        border-top: 1px solid var(--border-faint);
-        border-bottom: 1px solid var(--border-faint);
+        background: var(--bg-surface);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
         border-left: none;
         border-right: none;
         margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
@@ -175,7 +175,7 @@
     &__month-day {
         &.active {
             a {
-                color: var(--fg-inverse);
+                color: var(--fg-on-inverse);
             }
         }
     }

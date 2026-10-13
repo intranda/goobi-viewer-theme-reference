@@ -6,14 +6,14 @@
 
 /* BLOCK */
 .widget-chronology-slider {
-    color: var(--fg-content-box);
+    color: var(--fg-default);
     &__item {
         &-input {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             width: 100%;
             text-align: center;
             font-weight: 600;
-            background-color: var(--bg-content-box);
+            background-color: var(--bg-surface);
             border: 1px solid var(--border-default);
             border-radius: var(--radius-container-small);
             padding: 0.4rem 0.6rem;
@@ -23,13 +23,13 @@
             &:hover,
             &:focus {
                 outline: none;
-                border-color: var(--brand);
-                box-shadow: 0 0 0 3px var(--bg-brand-tint);
+                border-color: var(--border-brand);
+                box-shadow: 0 0 0 3px var(--bg-brand-subtle);
             }
         }
         &.chronology-slider-label,
         &.chronology-slider-actions {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
         }
         &.chronology-slider-label {
             font-weight: 600;
@@ -43,7 +43,7 @@
             img {
             }
             [data-reset='chrono-slider'] {
-                color: var(--fg-content-box);
+                color: var(--fg-default);
                 transition: color 0.2s ease;
                 &:hover {
                     color: var(--fg-link-hover);
@@ -79,11 +79,11 @@
         height: 0.6rem;
         border: none;
         border-radius: 999px;
-        background-color: var(--bg-hover-accent);
+        background-color: var(--sidebar-bg-hover);
     }
 
     .ui-slider-range {
-        background-color: var(--brand);
+        background-color: var(--fg-brand);
         border-radius: 999px;
     }
 
@@ -91,10 +91,10 @@
         top: -0.5rem;
         width: 1.5rem;
         height: 1.5rem;
-        background-color: var(--bg-content-box);
-        border: 2px solid var(--brand);
+        background-color: var(--bg-surface);
+        border: 2px solid var(--border-brand);
         border-radius: 50%;
-        box-shadow: var(--shadow-container);
+        box-shadow: var(--shadow-surface);
         cursor: pointer;
         outline: none;
         transition:
@@ -102,10 +102,10 @@
             background-color 0.2s ease;
         &:hover,
         &:focus {
-            box-shadow: 0 0 0 5px var(--bg-brand-tint);
+            box-shadow: 0 0 0 5px var(--bg-brand-subtle);
         }
         &.ui-state-active {
-            background-color: var(--brand);
+            background-color: var(--fg-brand);
         }
     }
 }
@@ -139,7 +139,7 @@
     .widget-chronology-slider__description-text {
         grid-column: 1 / -1;
         margin: 0;
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         font-size: var(--font-size-body-small);
         line-height: var(--line-height-body);
     }
@@ -153,16 +153,16 @@
     .widget-chronology-slider__item.chronology-slider-actions {
         align-items: center;
         gap: 0.4rem;
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
 
         [data-reset='chrono-slider'] {
             .mx-theme-control-accent();
-            color: var(--brand);
+            color: var(--fg-brand);
             display: inline-flex;
 
             &:hover,
             &:active {
-                color: var(--brand-hover);
+                color: var(--fg-brand-hover);
             }
             align-items: center;
             justify-content: center;
@@ -234,7 +234,7 @@
             block-size: 100%;
             border: 0;
             border-radius: inherit;
-            background: var(--brand);
+            background: var(--fg-brand);
         }
 
         .ui-slider-handle {
@@ -271,7 +271,7 @@
                 content: '';
                 position: absolute;
                 inset: 0;
-                border: 2px solid var(--brand);
+                border: 2px solid var(--border-brand);
                 border-radius: inherit;
                 pointer-events: none;
             }
@@ -280,13 +280,13 @@
                 background-color: var(--bg-selected-hover);
 
                 &::after {
-                    border-color: var(--brand-hover);
+                    border-color: var(--fg-brand-hover);
                 }
             }
 
             &:active,
             &.ui-state-active {
-                background-color: var(--brand);
+                background-color: var(--fg-brand);
             }
 
             &:focus {
@@ -348,7 +348,7 @@
 
     .chronology-slider__between-year-symbol {
         margin: 0;
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
     }
 
     .chronology-slider__ok-button {

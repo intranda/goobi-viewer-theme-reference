@@ -10,7 +10,7 @@
     &__thumb-bookmark-wrapper {
         right: 6px;
         top: 6px;
-        background: var(--bg-content-box);
+        background: var(--bg-surface);
         border-radius: 50px;
         height: 28px;
         width: 28px;
@@ -18,7 +18,7 @@
         justify-content: center;
         align-items: center;
         .bookmark-toggle__icon {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
     }
     /* ELEMENT */
@@ -41,7 +41,7 @@
     /* ICON BUTTON STRIP */
     &__option-button.btn {
         position: relative;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         background-color: transparent;
         border: 2px solid transparent;
         box-shadow: none;
@@ -49,7 +49,7 @@
         border-radius: var(--radius-button);
 
         &:hover {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             background-color: var(--bg-hover);
         }
         &:active {
@@ -78,7 +78,7 @@
             &.active,
             &.-active,
             &[aria-pressed='true'] {
-                border-color: var(--brand);
+                border-color: var(--border-brand);
             }
         }
         &,
@@ -123,7 +123,7 @@
         padding: 2px;
         border: 0;
         border-radius: var(--radius-button);
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
         button {
         }
         [data-view='search-list-default'] {
@@ -223,12 +223,12 @@
         }
     }
     &__nav-helper-wrapper {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
     &__nav-helper-wrapper .custom-control--select {
         border: none;
         background: transparent;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         box-shadow: none;
 
         &::after {
@@ -249,8 +249,8 @@
         gap: 0.4rem var(--search-band-gap);
         /* same geometry and divider as the search row (.search-standard__input-slim) */
         padding: 1.2rem var(--search-sheet-gutter);
-        background: var(--bg-content-box);
-        color: var(--fg-content-box);
+        background: var(--bg-surface);
+        color: var(--fg-default);
         border-block-start: 1px solid var(--search-sheet-divider);
         font-size: var(--font-size-body-small);
     }
@@ -276,26 +276,26 @@
         gap: 1.2rem;
     }
     &__hit {
-        background-color: var(--bg-content-box);
-        color: var(--fg-content-box);
-        border: 1px solid var(--border-container);
+        background-color: var(--bg-surface);
+        color: var(--fg-default);
+        border: 1px solid var(--container-border);
         border-radius: var(--radius-container);
         padding: clamp(1.6rem, 2vw, 2.4rem);
         /* COLORING FOR THE ENTITY GHOUPS */
         &.docstructtype__work {
-            border: 1px solid var(--bg-entity-work);
+            border: 1px solid var(--color-theme-entity-group-work);
         }
         &.docstructtype__person {
-            border: 1px solid var(--bg-entity-person);
+            border: 1px solid var(--color-theme-entity-group-person);
         }
         &.docstructtype__agent {
-            border: 1px solid var(--bg-entity-agent);
+            border: 1px solid var(--color-theme-entity-group-agent);
         }
         &.docstructtype__award {
-            border: 1px solid var(--bg-entity-award);
+            border: 1px solid var(--color-theme-entity-group-award);
         }
         &.docstructtype__event {
-            border: 1px solid var(--bg-entity-event);
+            border: 1px solid var(--color-theme-entity-group-event);
         }
     }
     &__hit-header {
@@ -335,11 +335,11 @@
         text-underline-offset: 0.15em;
 
         &:hover {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             text-decoration-line: underline;
         }
         &:active {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             background-color: var(--bg-pressed);
         }
         &:focus-visible {
@@ -351,7 +351,7 @@
     }
     &__no-thumb-bookmark {
         &[data-bookmark-list-type='add'] {
-            color: var(--brand);
+            color: var(--fg-brand);
             &.added,
             &:hover {
             }
@@ -363,7 +363,7 @@
             border: 2px solid var(--border-default);
         }
         [data-bookmark-list-type='add'] {
-            color: var(--brand);
+            color: var(--fg-brand);
             &.added,
             &:hover {
             }
@@ -394,13 +394,13 @@
 
             &:hover {
                 background-color: transparent;
-                color: var(--fg-content-box);
+                color: var(--fg-default);
                 text-decoration: underline;
                 text-underline-offset: 0.3em;
             }
             &:active {
                 background-color: transparent;
-                color: var(--fg-content-box);
+                color: var(--fg-default);
             }
             &:focus-visible {
                 .mx-theme-focus();
@@ -421,18 +421,18 @@
     }
     &__toggle-thumbs {
         .-active {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
     }
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
         font-size: var(--font-size-body-small);
-        color: var(--fg-general);
+        color: var(--fg-default);
         border-top: 1px solid var(--border-default);
         &:hover,
         &:focus,
         &:active {
-            color: var(--fg-general);
+            color: var(--fg-default);
         }
         &:hover,
         &:focus,
@@ -463,7 +463,7 @@
         &:hover {
             background-color: var(--bg-hover);
             a {
-                color: var(--fg-general);
+                color: var(--fg-default);
             }
         }
     }
@@ -552,8 +552,8 @@
 
     &__hit-citation-dropdown,
     &__hit-export-dropdown {
-        color: var(--fg-popover);
-        background-color: var(--bg-popover);
+        color: var(--fg-default);
+        background-color: var(--bg-elevated);
         border: 1px solid var(--border-default);
     }
 
@@ -728,7 +728,7 @@
         &:hover,
         &:focus,
         &:active {
-            color: var(--fg-content-box);
+            color: var(--fg-default);
         }
     }
     .search-list__child-hits-button-wrapper,
@@ -825,7 +825,7 @@ body:has(.header.-adminActive) @{searchSheet} {
         margin-inline-end: 1rem;
         font-size: var(--font-size-body-small);
         font-weight: 600;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 
     /* SETTINGS — same material as the control groups, so the band reads as one row */
@@ -977,7 +977,7 @@ body:has(.header.-adminActive) @{searchSheet} {
 
     /* FOCUS — the chip carries the state; a ring around the select inside it reads as a stray box */
     .search-list__nav-helper-item:focus-within {
-        border-color: var(--brand);
+        border-color: var(--border-brand);
     }
     .search-list__nav-helper-item select:focus {
         .mx-theme-focus-ring(0; 0);
@@ -999,10 +999,10 @@ body:has(.header.-adminActive) @{searchSheet} {
     .search-list__overflow-menu {
         min-width: 24rem;
         padding: 0.6rem;
-        border: 1px solid var(--border-container);
+        border: 1px solid var(--container-border);
         border-radius: var(--radius-container);
-        background-color: var(--bg-popover);
-        box-shadow: var(--shadow-floating);
+        background-color: var(--bg-elevated);
+        box-shadow: var(--shadow-elevated);
 
         > * {
             display: block;
@@ -1026,7 +1026,7 @@ body:has(.header.-adminActive) @{searchSheet} {
             text-align: start;
 
             &:hover {
-                background-color: var(--bg-hover-accent);
+                background-color: var(--sidebar-bg-hover);
             }
         }
 

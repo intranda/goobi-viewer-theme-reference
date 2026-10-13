@@ -6,7 +6,7 @@
         }
 
         .tooltip-inner {
-            color: var(--fg-inverse);
+            color: var(--fg-on-inverse);
             background-color: var(--bg-inverse);
         }
     }
@@ -15,14 +15,14 @@
         border-color: var(--border-default);
 
         .popover-header {
-            color: var(--fg-popover);
-            background-color: var(--bg-popover);
+            color: var(--fg-default);
+            background-color: var(--bg-elevated);
             border-bottom-color: var(--border-default);
         }
 
         &.bs-popover-bottom .popover-header::before,
         &.bs-popover-auto[x-placement^='bottom'] .popover-header::before {
-            border-bottom-color: var(--bg-popover);
+            border-bottom-color: var(--bg-elevated);
         }
     }
 
@@ -40,7 +40,7 @@
 
             &.bs-popover-@{value} > .arrow::after,
             &.bs-popover-auto[x-placement^='@{value}'] > .arrow::after {
-                border-@{value}-color: var(--bg-popover);
+                border-@{value}-color: var(--bg-elevated);
             }
         }
     });
@@ -48,11 +48,11 @@
 
 /* TOOL POPOVER CONTENT */
 imageFilters .imagefilters__label {
-    color: var(--fg-content-box);
+    color: var(--fg-default);
 }
 
 .popover:has(imageFilters) .imagefilters__label {
-    color: var(--fg-popover);
+    color: var(--fg-default);
 }
 
 imageFilters input.imagefilters__slider,

@@ -24,9 +24,9 @@ html {
     position: sticky;
     top: var(--_top);
     z-index: 2019;
-    color: var(--fg-header);
-    background: var(--bg-header);
-    border-bottom: 1px solid var(--border-container);
+    color: var(--header-fg);
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--container-border);
     box-shadow: 0 0 4px rgb(from var(--shadow-color) r g b / 17%);
     &.-adminActive {
         --_top: @admin-topbar-frontend-height;
@@ -76,7 +76,7 @@ html {
             width: 1px;
             height: 2.8rem;
             margin-inline-end: 1.6rem;
-            background: var(--border-container);
+            background: var(--container-border);
         }
     }
     &__nav-item {
@@ -110,7 +110,7 @@ html {
         }
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
             text-decoration: none;
         }
         &:active {
@@ -121,11 +121,11 @@ html {
         }
         &[aria-current='page'] {
             background: var(--bg-selected);
-            color: var(--brand);
+            color: var(--fg-brand);
             font-weight: 600;
             &:hover {
                 background: var(--bg-selected-hover);
-                color: var(--brand);
+                color: var(--fg-brand);
             }
             &:active {
                 background: var(--bg-selected-pressed);
@@ -147,7 +147,7 @@ html {
         }
         &[aria-expanded='true'] {
             background: var(--bg-pressed);
-            color: var(--fg-hover);
+            color: var(--fg-default);
             .icon-svg {
                 color: inherit;
                 transform: rotate(180deg);
@@ -156,7 +156,7 @@ html {
     }
     /* THE BRANCH THE CURRENT PAGE SITS IN */
     &__nav-item:has([aria-current='page']) > &__nav-toggle {
-        color: var(--brand);
+        color: var(--fg-brand);
         font-weight: 600;
         .icon-svg {
             color: inherit;
@@ -175,7 +175,7 @@ html {
         min-height: var(--_row);
         padding: 0 1.2rem;
         border-radius: var(--_radius);
-        color: var(--fg-popover);
+        color: var(--fg-default);
         font-size: var(--font-size-body-small);
         line-height: var(--line-height-body);
         text-decoration: none;
@@ -184,7 +184,7 @@ html {
             color var(--_speed) ease;
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
             text-decoration: none;
         }
         &:active {
@@ -195,7 +195,7 @@ html {
         }
         &[aria-current='page'] {
             background: var(--bg-selected);
-            color: var(--brand);
+            color: var(--fg-brand);
             font-weight: 600;
         }
     }
@@ -207,7 +207,7 @@ html {
     &__nav-panel-group {
         margin-block-start: 0.8rem;
         padding-block-start: 0.8rem;
-        border-block-start: 1px solid var(--border-faint);
+        border-block-start: 1px solid var(--border-subtle);
     }
     &__nav-panel-group-title {
         display: block;
@@ -244,7 +244,7 @@ html {
             color var(--_speed) ease;
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
             text-decoration: none;
         }
         &:active,
@@ -291,9 +291,9 @@ html {
         overscroll-behavior: contain;
         border: 1px solid var(--border-default);
         border-radius: var(--_popover-radius);
-        background: var(--bg-popover);
-        color: var(--fg-popover);
-        box-shadow: var(--shadow-floating);
+        background: var(--bg-elevated);
+        color: var(--fg-default);
+        box-shadow: var(--shadow-elevated);
     }
     &__panel:not(:popover-open) {
         display: none;
@@ -443,7 +443,7 @@ html {
         border-radius: 99px;
         background: var(--bg-brand);
         color: var(--fg-on-brand);
-        box-shadow: 0 0 0 2px var(--bg-header);
+        box-shadow: 0 0 0 2px var(--header-bg);
         font-size: var(--font-size-caption);
         font-weight: 600;
         line-height: 1.4;
@@ -520,7 +520,7 @@ html {
         border: 0;
         border-radius: var(--_radius);
         background: var(--bg-subtle);
-        color: var(--fg-header);
+        color: var(--header-fg);
         font-size: var(--font-size-body-small);
         font-weight: 500;
         white-space: nowrap;
@@ -531,12 +531,12 @@ html {
         &:hover,
         &[aria-expanded='true'] {
             background: var(--bg-pressed);
-            color: var(--fg-hover);
+            color: var(--fg-default);
         }
 
         &:focus-visible {
             background: var(--bg-pressed);
-            color: var(--fg-hover);
+            color: var(--fg-default);
             .mx-theme-focus();
         }
 
@@ -572,7 +572,7 @@ html {
         width: var(--_control);
         height: var(--_control);
         max-height: none;
-        border: 1px solid rgb(from var(--fg-header) r g b / 12%);
+        border: 1px solid rgb(from var(--header-fg) r g b / 12%);
         border-radius: var(--_radius);
         object-fit: cover;
         transition: border-color var(--_speed) ease;
@@ -580,7 +580,7 @@ html {
     /* The picture covers the button, so its edge carries the state */
     &__account [data-login] .login-navigation__toggle-button.btn:hover .login-navigation__mini-avatar,
     &__account [data-login] .login-navigation__toggle-button.btn[aria-expanded='true'] .login-navigation__mini-avatar {
-        border-color: rgb(from var(--fg-header) r g b / 40%);
+        border-color: rgb(from var(--header-fg) r g b / 40%);
     }
 
     &__account-identity {
@@ -635,14 +635,14 @@ html {
             min-height: var(--_row);
             padding: 0 1.2rem;
             border-radius: var(--_radius);
-            color: var(--fg-popover);
+            color: var(--fg-default);
             line-height: var(--line-height-body);
             text-decoration: none;
         }
 
         &__user-dropdown-item-link:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
         }
 
         &__user-dropdown-item-link:focus-visible {
@@ -693,9 +693,9 @@ html {
     margin: 0;
     padding: 0;
     border: 0;
-    background: var(--bg-content-box);
-    color: var(--fg-content-box);
-    box-shadow: var(--shadow-floating);
+    background: var(--bg-surface);
+    color: var(--fg-default);
+    box-shadow: var(--shadow-elevated);
     overscroll-behavior: contain;
     translate: 100% 0;
     transition:
@@ -742,7 +742,7 @@ html {
 
     &__title {
         margin: 0;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         font-size: var(--font-size-heading-small);
         font-weight: 600;
         line-height: var(--line-height-body);
@@ -759,7 +759,7 @@ html {
         border: 0;
         border-radius: var(--radius-container);
         background: transparent;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         cursor: pointer;
         transition:
             background-color var(--_speed) ease,
@@ -767,7 +767,7 @@ html {
 
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
         }
 
         &:active {
@@ -818,7 +818,7 @@ html {
         width: auto;
         margin: 0 0 1.2rem;
         padding-inline: var(--_row-inset);
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         font-size: var(--font-size-body);
         font-weight: 600;
         line-height: var(--line-height-body);
@@ -854,7 +854,7 @@ html {
 
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
         }
 
         &:active {
@@ -863,9 +863,9 @@ html {
 
         &[aria-pressed='true'] {
             border-color: var(--border-input);
-            background: var(--bg-content-box);
-            color: var(--fg-content-box);
-            box-shadow: var(--shadow-container);
+            background: var(--bg-surface);
+            color: var(--fg-default);
+            box-shadow: var(--shadow-surface);
         }
 
         &:focus-visible {
@@ -891,7 +891,7 @@ html {
         border: 0;
         border-radius: var(--radius-container);
         background: transparent;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         font-size: var(--font-size-body);
         font-weight: 500;
         line-height: var(--line-height-body);
@@ -905,12 +905,12 @@ html {
 
         &:focus {
             background: transparent;
-            color: var(--fg-content-box);
+            color: var(--fg-default);
         }
 
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
             text-decoration: none;
         }
 
@@ -981,7 +981,7 @@ html {
     .navigation li.active > button {
         position: relative;
         background: var(--bg-selected);
-        color: var(--brand);
+        color: var(--fg-brand);
         font-weight: 600;
 
         &::before {
@@ -992,12 +992,12 @@ html {
             /* Fixed icon/marker geometry; independent of text scale. */
             width: 3px;
             border-radius: 3px;
-            background: var(--brand);
+            background: var(--fg-brand);
         }
 
         &:hover {
             background: var(--bg-selected-hover);
-            color: var(--brand);
+            color: var(--fg-brand);
         }
 
         &:active {
@@ -1007,7 +1007,7 @@ html {
 
     /* THE BRANCH THE CURRENT PAGE SITS IN */
     .navigation li:has(a[aria-current='page']) > button {
-        color: var(--brand);
+        color: var(--fg-brand);
     }
 
     /* DISCLOSURE — aria-expanded is the state, the chevron follows it */
@@ -1018,7 +1018,7 @@ html {
         /* Fixed icon/marker geometry; independent of text scale. */
         width: 2rem;
         height: 2rem;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         background: currentColor;
         transition: transform var(--_speed) ease;
         .mx-icon-mask(chevron-down);
@@ -1045,7 +1045,7 @@ html {
         min-height: var(--_row);
         padding: 0.8rem var(--_row-inset);
         border-radius: var(--radius-container);
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         font-size: var(--font-size-body);
         font-weight: 600;
         line-height: var(--line-height-body);
@@ -1058,7 +1058,7 @@ html {
 
         &:hover {
             background: var(--bg-hover);
-            color: var(--fg-hover);
+            color: var(--fg-default);
         }
 
         &:active {
@@ -1132,7 +1132,7 @@ html {
             border: 0;
             border-radius: var(--radius-container);
             background: transparent;
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             font-size: var(--font-size-body-small);
             font-weight: 500;
             line-height: var(--line-height-body);
@@ -1145,12 +1145,12 @@ html {
 
             &:focus {
                 background: transparent;
-                color: var(--fg-content-box);
+                color: var(--fg-default);
             }
 
             &:hover {
                 background: var(--bg-hover);
-                color: var(--fg-hover);
+                color: var(--fg-default);
                 text-decoration: none;
             }
 
@@ -1167,7 +1167,7 @@ html {
             }
 
             &[aria-current='true'] {
-                color: var(--fg-content-box);
+                color: var(--fg-default);
                 font-weight: 600;
 
                 &::after {

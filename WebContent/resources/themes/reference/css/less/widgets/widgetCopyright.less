@@ -6,7 +6,7 @@
     padding: 0;
 
     &__body {
-        background-color: rgb(from var(--brand) r g b / 20%);
+        background-color: rgb(from var(--fg-brand) r g b / 20%);
         margin: 0;
     }
 
@@ -14,27 +14,27 @@
         padding-top: 0.8rem;
     }
     .rs-svg-path {
-        fill: var(--fg-general);
+        fill: var(--fg-default);
     }
     .paragraph-svg-path {
-        fill: var(--fg-general);
+        fill: var(--fg-default);
     }
     .rs-svg-path,
     .paragraph-svg-path {
-        fill: var(--fg-content-box);
+        fill: var(--fg-default);
     }
     &__dot {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
     &__status-icon {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 }
 
 /* COPYRIGHT IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
     .widget.widget-copyright:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
-    color: var(--fg-content-box);
+    color: var(--fg-default);
     cursor: pointer;
 
     &:hover {
@@ -55,11 +55,11 @@
     /* the whole panel is one control: the surface answers hover, press and the open state */
     &:hover > .widget__body.widget-copyright__body,
     &.-open > .widget__body.widget-copyright__body {
-        background-color: var(--bg-hover-accent);
+        background-color: var(--sidebar-bg-hover);
     }
 
     &:active > .widget__body.widget-copyright__body {
-        background-color: var(--bg-pressed-accent);
+        background-color: var(--sidebar-bg-pressed);
     }
     .widget-copyright__container {
         justify-content: center;
@@ -80,7 +80,7 @@
             flex: 0 0 auto;
             width: var(--_widget-action-size, 4rem);
             height: var(--_widget-action-icon-size, 2rem);
-            background-color: var(--fg-content-box);
+            background-color: var(--fg-default);
             transition: transform 0.15s ease;
         }
         img,
@@ -92,7 +92,7 @@
     }
     &:hover .widget-copyright__container::after,
     &:active .widget-copyright__container::after {
-        background-color: var(--brand);
+        background-color: var(--fg-brand);
     }
 
     &.-open .widget-copyright__container::after {
@@ -126,14 +126,14 @@
     #copyrightInformation {
         display: grid;
         gap: 1.6rem;
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         font-size: var(--font-size-body-small);
         line-height: var(--line-height-body);
         overflow-wrap: anywhere;
 
         h3 {
             margin: 0 0 0.4rem;
-            color: var(--fg-heading-content-box);
+            color: var(--fg-heading);
             font-size: var(--font-size-body-small);
             font-weight: 600;
             line-height: var(--line-height-body);

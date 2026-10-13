@@ -27,7 +27,7 @@
 }
 
 /* CSS TRIANGLE */
-.mx-triangle(@top: 0; @left: 0; @bWidth: 10px; @bcTop: transparent; @bcRight: transparent; @bcBottom: var(--fg-general); @bcLeft: transparent) {
+.mx-triangle(@top: 0; @left: 0; @bWidth: 10px; @bcTop: transparent; @bcRight: transparent; @bcBottom: var(--fg-default); @bcLeft: transparent) {
     position: relative;
 
     &:after {
@@ -126,18 +126,18 @@
 
 /* NEUTRAL CONTROL — colors and states of a plain action; the caller sets border and radius */
 .mx-theme-control() {
-    color: var(--fg-content-box);
-    background-color: var(--bg-content-box);
+    color: var(--fg-default);
+    background-color: var(--bg-surface);
     border-color: transparent;
     box-shadow: none;
 
     &:hover {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         background-color: var(--bg-hover);
     }
 
     &:active {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         background-color: var(--bg-pressed);
     }
 
@@ -148,19 +148,19 @@
 
 /* NEUTRAL CONTROL, SIDEBAR — the same states, tinted so the whole column carries the palette */
 .mx-theme-control-accent() {
-    color: var(--fg-content-box);
-    background-color: var(--bg-content-box);
+    color: var(--fg-default);
+    background-color: var(--bg-surface);
     border-color: transparent;
     box-shadow: none;
 
     &:hover {
-        color: var(--fg-content-box);
-        background-color: var(--bg-hover-accent);
+        color: var(--fg-default);
+        background-color: var(--sidebar-bg-hover);
     }
 
     &:active {
-        color: var(--fg-content-box);
-        background-color: var(--bg-pressed-accent);
+        color: var(--fg-default);
+        background-color: var(--sidebar-bg-pressed);
     }
 
     &:focus-visible {
@@ -263,7 +263,7 @@
     &.active.focus,
     &:active:focus,
     &:active.focus {
-        color: var(--fg-link-active);
+        color: var(--fg-link-pressed);
     }
 
     &:focus-visible {
@@ -298,11 +298,11 @@
 
 /* NATIVE ACCENT CONTROL */
 .mx-theme-native-accent() {
-    accent-color: var(--brand);
+    accent-color: var(--fg-brand);
 
     &:hover,
     &:active {
-        accent-color: var(--brand-hover);
+        accent-color: var(--fg-brand-hover);
     }
 
     &:focus-visible {
@@ -318,10 +318,10 @@
 
 /* FIELD — text input, select, textarea */
 .mx-theme-field() {
-    color: var(--fg-content-box);
+    color: var(--fg-default);
     background-color: var(--bg-input);
     border: 1px solid var(--border-input);
-    caret-color: var(--fg-content-box);
+    caret-color: var(--fg-default);
     box-shadow: none;
     transition: border-color 0.12s ease;
 
@@ -333,7 +333,7 @@
     &:hover:not(:disabled):not([readonly]):not([aria-disabled='true']):not([aria-invalid='true']):not(
             .ui-state-error
         ):not(.success):not(.warning):not(.danger) {
-        border-color: var(--brand);
+        border-color: var(--border-brand);
     }
 
     &:focus {
@@ -350,9 +350,9 @@
     }
 
     &:-webkit-autofill {
-        -webkit-text-fill-color: var(--fg-content-box);
+        -webkit-text-fill-color: var(--fg-default);
         -webkit-box-shadow: 0 0 0 1000px var(--bg-input) inset;
-        caret-color: var(--fg-content-box);
+        caret-color: var(--fg-default);
     }
 
     &:disabled,

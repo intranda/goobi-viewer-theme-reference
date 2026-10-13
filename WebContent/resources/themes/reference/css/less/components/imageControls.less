@@ -5,7 +5,7 @@
 /* IMAGE CONTROLS */
 /* BLOCK */
 .image-controls {
-    border: 1px solid var(--border-container);
+    border: 1px solid var(--container-border);
     border-radius: var(--radius-container) var(--radius-container) 0 0;
     border-bottom: 0;
 
@@ -211,12 +211,12 @@
         }
     }
     & &__action.select {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         background-color: var(--bg-input);
         border-color: var(--border-input);
 
         &:hover {
-            border-color: var(--brand);
+            border-color: var(--border-brand);
         }
 
         &:has(select[aria-invalid='true']),
@@ -245,24 +245,24 @@
     }
 
     & &__action.zoom-slider-wrapper .zoom-slider {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
 
         &::-moz-range-thumb {
-            background-color: var(--fg-general);
+            background-color: var(--fg-default);
         }
 
         &::-webkit-slider-thumb {
-            background-color: var(--fg-general);
+            background-color: var(--fg-default);
         }
 
         &:hover,
         &:active {
             &::-moz-range-thumb {
-                background-color: var(--brand-hover);
+                background-color: var(--fg-brand-hover);
             }
 
             &::-webkit-slider-thumb {
-                background-color: var(--brand-hover);
+                background-color: var(--fg-brand-hover);
             }
         }
 
@@ -285,7 +285,7 @@
     }
 
     & &__action:where(:not(.select-text, .select, .zoom-slider-wrapper)) {
-        color: var(--fg-general);
+        color: var(--fg-default);
         background-color: var(--bg-subtle);
 
         &:hover {

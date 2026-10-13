@@ -11,7 +11,7 @@
 }
 
 .custom-control__icon {
-    color: var(--brand);
+    color: var(--fg-brand);
 }
 
 /* TEXT FIELDS — Bootstrap .form-control reads the field roles */
@@ -26,8 +26,8 @@
 
     border-radius: var(--radius-container-small);
 
-    background: var(--bg-popover);
-    color: var(--fg-popover);
+    background: var(--bg-elevated);
+    color: var(--fg-default);
     &:after {
     }
     &:after {
@@ -41,8 +41,8 @@
     select {
         font-size: var(--font-size-body-small);
 
-        background: var(--bg-popover);
-        color: var(--fg-popover);
+        background: var(--bg-elevated);
+        color: var(--fg-default);
         &.disabled {
         }
     }
@@ -55,7 +55,7 @@
     border-radius: var(--radius-container-small);
 
     &-trigger {
-        background: var(--bg-popover);
+        background: var(--bg-elevated);
         border-radius: var(--radius-container-small);
     }
 }
@@ -69,7 +69,7 @@
     }
 
     input:checked + label {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
 
     .toggle-outside {
@@ -100,7 +100,7 @@
     &:hover {
         .toggle-outside {
             background: var(--bg-hover);
-            border-color: var(--brand);
+            border-color: var(--border-brand);
         }
 
         input ~ input:checked ~ .toggle-outside {

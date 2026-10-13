@@ -3,7 +3,7 @@
    style declarations for widget_nerFacetting.xhtml
    ==============================================================*/
 #widgetNerFacetting {
-    border: 1px solid var(--border-faint);
+    border: 1px solid var(--border-subtle);
     h2 {
         margin: 0;
         padding: 0.7rem 1.5rem;
@@ -15,10 +15,10 @@
     }
     .facetting-content {
         .nav-tabs {
-            border-bottom: 1px solid var(--border-faint);
+            border-bottom: 1px solid var(--border-subtle);
             li {
                 a {
-                    background: var(--bg-content-box);
+                    background: var(--bg-surface);
                     border: none;
                     border-radius: 0;
                     border-bottom: 1px solid var(--border-strong);
@@ -27,13 +27,13 @@
                 }
                 a {
                     &.active {
-                        background: var(--bg-hover-accent);
+                        background: var(--sidebar-bg-hover);
                     }
                 }
             }
         }
         .tab-content {
-            background: var(--bg-content-box);
+            background: var(--bg-surface);
             .tab-pane {
                 &.active {
                 }
@@ -70,7 +70,7 @@
 /* OVERVIEW */
 #overview {
     .current-tags {
-        background: var(--bg-hover-accent);
+        background: var(--sidebar-bg-hover);
         &:before {
         }
         .page-tag {
@@ -118,7 +118,7 @@
                         &.corporation {
                         }
                         &:hover {
-                            background: var(--bg-hover-accent);
+                            background: var(--sidebar-bg-hover);
                         }
                     }
                 }

@@ -1,30 +1,17 @@
 /* ==============================================================
-   Palette — the theme's colors; a customer palette overrides
-   entries here and nothing else. Brand tones and links derive in
-   the core; the neutral ramp is CIE L* steps (gulp/tonalRamp.js).
+   Palette — the theme's colours; a customer palette overrides
+   entries here and nothing else. Two sections: core palette
+   lines the theme rebinds (same names as the core) and the
+   theme's own colours (always --color-theme-*).
    ==============================================================*/
 
 .mx-theme-palette() {
+    /* ---------- CORE PALETTE — overrides, same names as the core ---------- */
+
     /* BRAND */
     --color-brand: #1b73b3;
 
-    /* FOCUS RING */
-    --color-focus-ring: var(--color-brand-text);
-    --color-focus-ring-dark: var(--color-brand-text-dark);
-
-    /* ACCENT */
-    --color-accent: #f59f00;
-    --color-accent-dark: #feae1a;
-    --color-accent-text: #875100;
-    --color-accent-text-dark: #ffd073;
-
-    /* PAGE AND HEADER */
-    --color-page: #f7f8f9;
-    --color-page-dark: oklch(from var(--color-neutral-900) calc(l - 0.011) c h);
-    --color-header: var(--color-neutral-0);
-    --color-header-dark: var(--color-neutral-900);
-
-    /* NEUTRAL RAMP */
+    /* NEUTRAL RAMP — CIE L* steps (gulp/tonalRamp.js) */
     --color-neutral-0: #ffffff;
     --color-neutral-50: #f7f9ff;
     --color-neutral-100: #f1f4f9;
@@ -82,34 +69,29 @@
     --color-info-strong: #0969da;
     --color-info-strong-dark: #1f6feb;
 
+    /* COMPONENT COLOURS */
+    --color-on-ocr-word: light-dark(var(--color-neutral-0), var(--color-neutral-900));
+
+    /* ---------- THEME PALETTE — own colours, always --color-theme-* ---------- */
+
+    /* PAGE */
+    --color-theme-page: #f7f8f9;
+
     /* ENTITY GROUPS */
-    --color-entity-group-work: #dc7e2e;
-    --color-entity-group-person: #b13b29;
-    --color-entity-group-agent: #568fb2;
-    --color-entity-group-award: #2e8d38;
-    --color-entity-group-event: #8966ca;
+    --color-theme-entity-group-work: #dc7e2e;
+    --color-theme-entity-group-person: #b13b29;
+    --color-theme-entity-group-agent: #568fb2;
+    --color-theme-entity-group-award: #2e8d38;
+    --color-theme-entity-group-event: #8966ca;
 }
 
 /* SUBTHEMES — brand pair only */
 .mx-theme-subtheme1-palette() {
     --color-brand: #8a0e13;
-    --color-brand-dark: #f28b90;
+    --color-brand-400: #f28b90;
 }
 
 .mx-theme-subtheme2-palette() {
     --color-brand: #095d42;
-    --color-brand-dark: #6bc9a5;
-}
-
-/* Responsive */
-@media screen and (max-width: @largeBreakpoint) {
-}
-
-@media screen and (max-width: @mediumBreakpoint) {
-}
-
-@media screen and (max-width: @smallBreakpoint) {
-}
-
-@media screen and (max-width: @xSmallBreakpoint) {
+    --color-brand-400: #6bc9a5;
 }

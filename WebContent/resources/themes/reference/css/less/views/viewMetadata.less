@@ -7,27 +7,27 @@
 .view-metadata {
     &.docstructtype__work {
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-work);
+            border: 1px solid var(--color-theme-entity-group-work);
         }
     }
     &.docstructtype__person {
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-person);
+            border: 1px solid var(--color-theme-entity-group-person);
         }
     }
     &.docstructtype__agent {
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-agent);
+            border: 1px solid var(--color-theme-entity-group-agent);
         }
     }
     &.docstructtype__award {
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-award);
+            border: 1px solid var(--color-theme-entity-group-award);
         }
     }
     &.docstructtype__event {
         .metadata__wrapper {
-            border: 1px solid var(--bg-entity-event);
+            border: 1px solid var(--color-theme-entity-group-event);
         }
     }
 }
@@ -50,8 +50,8 @@
         &.-isBoxed {
             border-radius: var(--radius-container);
 
-            border: 1px solid var(--border-faint);
-            background-color: var(--bg-content-box);
+            border: 1px solid var(--border-subtle);
+            background-color: var(--bg-surface);
 
             .metadata__ungrouped-wrapper {
                 border: none;
@@ -61,7 +61,7 @@
             }
         }
         a {
-            color: var(--fg-link-content-box);
+            color: var(--fg-link-subtle);
         }
     }
     /* ELEMENTS / EVENTS */
@@ -123,7 +123,7 @@
     &__locked-value-icon {
     }
     &__element-wrapper-single {
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         dt {
         }
     }
@@ -155,17 +155,17 @@
     &__event-inside-wrapper {
     }
     &__grouped-wrapper {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
         dt,
         dd {
         }
         .metadata__element-wrapper {
-            background-color: var(--bg-content-box);
+            background-color: var(--bg-surface);
         }
     }
     &__ungrouped-wrapper {
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         &:last-child {
         }
     }
@@ -174,7 +174,7 @@
         }
     }
     &__heading {
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
         &.level-1,
         &.level-2 {
             &:before {

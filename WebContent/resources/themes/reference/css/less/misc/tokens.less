@@ -1,11 +1,14 @@
 /* ==============================================================
    Tokens — the theme's binding of the core token names.
-   Base and the two semantic blocks redefine core roles the theme
-   means differently; the feature blocks hold tokens of the theme's
-   own components. Both mode blocks declare the same names.
+   The same four mixins as the core. Every line is either a core
+   override (role grammar, property first) or a theme token
+   (component grammar, property last). Both mode blocks declare
+   the same names.
    ==============================================================*/
 
 .mx-theme-base() {
+    /* ---------- CORE OVERRIDES ---------- */
+
     /* TYPOGRAPHY */
     --font-family:
         'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -13,269 +16,22 @@
     --font-family-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
 
     /* LAYOUT */
-    --page-max-width: 192rem;
     --page-gutter: clamp(1.6rem, 2.5vw, 4.8rem);
-    --sidebar-width: clamp(25rem, 24vw, 38rem);
-    --content-gap: clamp(2.4rem, 2.5vw, 3.8rem);
 
     /* SHAPE */
     --radius-container: 8px;
     --radius-container-small: 6px;
-    --radius-container-large: 2rem;
     --radius-button: 6px;
-}
 
-.mx-theme-semantic-light() {
-    /* PAGE */
-    --bg-general: var(--color-page);
-    --fg-general: var(--color-neutral-900);
+    /* ---------- THEME TOKENS ---------- */
 
-    /* CONTENT BOX */
-    --bg-content-box: var(--color-neutral-0);
-    --fg-content-box: var(--color-neutral-900);
+    /* LAYOUT */
+    --sidebar-width: clamp(25rem, 24vw, 38rem);
+    --content-gap: clamp(2.4rem, 2.5vw, 3.8rem);
+    --view-object-image-radius: 2rem;
 
-    /* POPOVER */
-    --bg-popover: var(--color-neutral-0);
-    --fg-popover: var(--color-neutral-900);
-
-    /* HEADER */
-    --bg-header: var(--color-header);
-    --fg-header: var(--color-neutral-700);
-
-    /* NEUTRAL SURFACES */
-    --bg-canvas: var(--color-neutral-200);
-    --bg-subtle: var(--color-neutral-150);
-    --bg-control: var(--color-neutral-100);
-    --bg-input: var(--color-neutral-0);
-
-    /* TEXT EMPHASIS */
-    --fg-secondary: var(--color-neutral-600);
-    --fg-muted: var(--color-neutral-550);
-    --fg-placeholder: var(--color-neutral-550);
-
-    /* HEADINGS */
-    --fg-heading: var(--color-neutral-950);
-    --fg-heading-content-box: var(--color-neutral-950);
-
-    /* LINKS */
-    --fg-link: var(--color-link);
-    --fg-link-hover: var(--color-link-hover);
-    --fg-link-active: var(--color-link-active);
-    --fg-link-content-box: var(--color-neutral-900);
-
-    /* SELECTION */
-    --bg-selected: color-mix(in srgb, var(--color-brand) 8%, var(--color-neutral-0));
-    --bg-selected-hover: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-0));
-    --bg-selected-pressed: color-mix(in srgb, var(--color-brand) 18%, var(--color-neutral-0));
-    --fg-selected: var(--color-neutral-900);
-
-    /* HOVER AND PRESSED */
-    --bg-hover: rgb(from var(--color-neutral-1000) r g b / 6%);
-    --fg-hover: var(--color-neutral-900);
-    --bg-pressed: rgb(from var(--color-neutral-1000) r g b / 10%);
-
-    /* ACCENTED NEUTRALS */
-    --bg-hover-accent: rgb(from var(--color-brand) r g b / 8%);
-    --bg-pressed-accent: rgb(from var(--color-brand) r g b / 14%);
-    --border-container-accent: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-200));
-    --fg-secondary-accent: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-600));
-    --content-divider: var(--border-container);
-
-    /* DISABLED */
-    --bg-disabled: var(--color-neutral-100);
-    --fg-disabled: var(--color-neutral-500);
-    --border-disabled: var(--color-neutral-200);
-
-    /* INVERSE */
-    --bg-inverse: var(--color-neutral-800);
-    --bg-inverse-hover: var(--color-neutral-700);
-
-    /* CONTROLS */
-    --fg-on-control: var(--color-neutral-0);
-    /* solid (not alpha) so hover/active stay legible over arbitrary image content,
-       e.g. the image viewer's floating toolbar buttons */
-    --fg-on-control-hover: var(--fg-general);
-    --bg-control-hover: var(--bg-canvas);
-    --bg-control-pressed: var(--color-neutral-300);
-
-    /* BORDERS */
-    --border-faint: rgb(from var(--color-neutral-500) r g b / 20%);
-    --border-container: var(--color-neutral-200);
-    --border-default: var(--color-neutral-200);
-    --border-strong: var(--color-neutral-300);
-    --border-input: var(--color-neutral-500);
-    --border-emphasis: var(--color-neutral-600);
-
-    /* BRAND */
-    --brand: var(--color-brand-text);
-    --brand-hover: color-mix(in srgb, var(--color-brand-text) 80%, var(--color-neutral-1000));
-    --brand-strong: color-mix(in srgb, var(--color-brand) 50%, var(--color-neutral-1000));
-    --bg-brand: var(--color-brand-fill);
-    --bg-brand-hover: var(--color-brand-hover);
-    --bg-brand-pressed: var(--color-brand-pressed);
-    --bg-brand-tint: rgb(from var(--color-brand) r g b / 8%);
-    --fg-on-brand: var(--color-on-brand);
-
-    /* ACCENT */
-    --accent: var(--color-accent);
-    --fg-accent: var(--color-accent-text);
-
-    /* ENTITY GROUPS */
-    --bg-entity-work: var(--color-entity-group-work);
-    --bg-entity-person: var(--color-entity-group-person);
-    --bg-entity-agent: var(--color-entity-group-agent);
-    --bg-entity-award: var(--color-entity-group-award);
-    --bg-entity-event: var(--color-entity-group-event);
-
-    /* STATUS */
-    --fg-danger: var(--color-danger);
-
-    /* FOCUS */
-    --outline-focus: var(--color-focus-ring);
-
-    /* SHADOWS */
-    --shadow-color: var(--color-neutral-1000);
-    --shadow-container: 0 1px 2px rgb(from var(--shadow-color) r g b / 4%);
-    --shadow-floating:
-        0 12px 32px rgb(from var(--shadow-color) r g b / 12%), 0 2px 6px rgb(from var(--shadow-color) r g b / 6%);
-
-    /* VIEWER CANVAS */
-    --bg-viewer-canvas: var(--color-neutral-900);
-    --bg-viewer-canvas-stripe: var(--color-neutral-800);
-
-    /* PRINT */
-    --fg-print-link: var(--color-neutral-700);
-    --border-print: var(--color-neutral-400);
-}
-
-.mx-theme-semantic-dark() {
-    /* PAGE */
-    --bg-general: var(--color-page-dark);
-    --fg-general: var(--color-neutral-100);
-
-    /* CONTENT BOX */
-    --bg-content-box: var(--color-neutral-900);
-    --fg-content-box: var(--color-neutral-100);
-
-    /* POPOVER */
-    --bg-popover: var(--color-neutral-800);
-    --fg-popover: var(--color-neutral-100);
-
-    /* HEADER */
-    --bg-header: var(--color-header-dark);
-    --fg-header: var(--color-neutral-200);
-
-    /* NEUTRAL SURFACES */
-    --bg-canvas: var(--color-neutral-950);
-    --bg-subtle: var(--color-neutral-850);
-    --bg-control: var(--color-neutral-700);
-    --bg-input: var(--color-page-dark);
-
-    /* TEXT EMPHASIS */
-    --fg-secondary: var(--color-neutral-350);
-    --fg-muted: var(--color-neutral-450);
-    --fg-placeholder: var(--color-neutral-450);
-
-    /* HEADINGS */
-    --fg-heading: var(--color-neutral-50);
-    --fg-heading-content-box: var(--color-neutral-50);
-
-    /* LINKS */
-    --fg-link: var(--color-link-dark);
-    --fg-link-hover: var(--color-link-dark-hover);
-    --fg-link-active: var(--color-link-dark-active);
-    --fg-link-content-box: var(--color-neutral-100);
-
-    /* SELECTION */
-    --bg-selected: color-mix(in srgb, var(--color-brand-dark) 12%, var(--color-neutral-900));
-    --bg-selected-hover: color-mix(in srgb, var(--color-brand-dark) 18%, var(--color-neutral-900));
-    --bg-selected-pressed: color-mix(in srgb, var(--color-brand-dark) 24%, var(--color-neutral-900));
-    --fg-selected: var(--color-neutral-100);
-
-    /* HOVER AND PRESSED */
-    --bg-hover: rgb(from var(--color-neutral-0) r g b / 8%);
-    --fg-hover: var(--color-neutral-100);
-    --bg-pressed: rgb(from var(--color-neutral-0) r g b / 12%);
-
-    /* ACCENTED NEUTRALS */
-    --bg-hover-accent: rgb(from var(--color-brand-dark) r g b / 12%);
-    --bg-pressed-accent: rgb(from var(--color-brand-dark) r g b / 18%);
-    --border-container-accent: color-mix(in srgb, var(--color-brand-dark) 12%, var(--color-neutral-800));
-    --fg-secondary-accent: color-mix(in srgb, var(--color-brand-dark) 12%, var(--color-neutral-350));
-    --content-divider: var(--border-container);
-
-    /* DISABLED */
-    --bg-disabled: var(--color-neutral-850);
-    --fg-disabled: var(--color-neutral-450);
-    --border-disabled: var(--color-neutral-700);
-
-    /* INVERSE */
-    --bg-inverse: var(--color-neutral-700);
-    --bg-inverse-hover: var(--color-neutral-600);
-
-    /* CONTROLS */
-    --fg-on-control: var(--color-neutral-900);
-    /* solid (not alpha) so hover/active stay legible over arbitrary image content,
-       e.g. the image viewer's floating toolbar buttons */
-    --fg-on-control-hover: var(--fg-general);
-    --bg-control-hover: var(--bg-canvas);
-    --bg-control-pressed: var(--color-neutral-300);
-
-    /* BORDERS */
-    --border-faint: rgb(from var(--color-neutral-0) r g b / 6%);
-    --border-container: var(--color-neutral-800);
-    --border-default: var(--color-neutral-700);
-    --border-strong: var(--color-neutral-600);
-    --border-input: var(--color-neutral-500);
-    --border-emphasis: var(--color-neutral-400);
-
-    /* BRAND */
-    --brand: var(--color-brand-text-dark);
-    --brand-hover: color-mix(in srgb, var(--color-brand-text-dark) 80%, var(--color-neutral-0));
-    --brand-strong: color-mix(in srgb, var(--color-brand) 55%, var(--color-neutral-950));
-    --bg-brand: var(--color-brand-dark);
-    --bg-brand-hover: var(--color-brand-dark-hover);
-    --bg-brand-pressed: var(--color-brand-dark-pressed);
-    --bg-brand-tint: rgb(from var(--color-brand-dark) r g b / 15%);
-    --fg-on-brand: var(--color-on-brand-dark);
-
-    /* ACCENT */
-    --accent: var(--color-accent-dark);
-    --fg-accent: var(--color-accent-text-dark);
-
-    /* ENTITY GROUPS */
-    --bg-entity-work: var(--color-entity-group-work);
-    --bg-entity-person: var(--color-entity-group-person);
-    --bg-entity-agent: var(--color-entity-group-agent);
-    --bg-entity-award: var(--color-entity-group-award);
-    --bg-entity-event: var(--color-entity-group-event);
-
-    /* STATUS */
-    --fg-danger: var(--color-danger-text-dark);
-
-    /* FOCUS */
-    --outline-focus: var(--color-focus-ring-dark);
-
-    /* SHADOWS */
-    --shadow-color: var(--color-neutral-1000);
-    --shadow-container:
-        inset 0 1px 0 rgb(from var(--color-neutral-0) r g b / 6%), 0 1px 2px rgb(from var(--shadow-color) r g b / 40%);
-    --shadow-floating:
-        inset 0 1px 0 rgb(from var(--color-neutral-0) r g b / 8%),
-        0 12px 32px rgb(from var(--shadow-color) r g b / 55%), 0 2px 6px rgb(from var(--shadow-color) r g b / 40%);
-
-    /* VIEWER CANVAS */
-    --bg-viewer-canvas: var(--color-neutral-900);
-    --bg-viewer-canvas-stripe: var(--color-neutral-800);
-
-    /* PRINT */
-    --fg-print-link: var(--color-neutral-700);
-    --border-print: var(--color-neutral-400);
-}
-
-.mx-theme-features() {
     /* BOOKMARKS */
-    --bookmark-added-bg: rgb(from var(--accent) r g b / 20%);
+    --bookmark-added-bg: rgb(from var(--bg-accent) r g b / 20%);
     --bookmark-added-fg: var(--fg-accent);
 
     /* SEARCH SHEET */
@@ -289,80 +45,201 @@
     --search-group-bg-disabled: transparent;
 }
 
-.mx-theme-features-light() {
+.mx-theme-semantic-light() {
+    /* ---------- CORE OVERRIDES — core group order ---------- */
+
+    /* SURFACES */
+    --bg-page: var(--color-theme-page);
+    --bg-sunken: var(--color-neutral-200);
+    --bg-inverse: var(--color-neutral-800);
+    --bg-inverse-hover: var(--color-neutral-700);
+    --bg-input: var(--color-neutral-0);
+
+    /* TEXT */
+    --fg-default: var(--color-neutral-900);
+    --fg-muted: var(--color-neutral-550);
+    --fg-placeholder: var(--color-neutral-550);
+    --fg-heading: var(--color-neutral-950);
+
+    /* LINKS */
+    --fg-link-subtle: var(--fg-default);
+
+    /* STATES */
+    --bg-selected: color-mix(in srgb, var(--color-brand) 8%, var(--color-neutral-0));
+    --bg-selected-hover: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-0));
+    --bg-selected-pressed: color-mix(in srgb, var(--color-brand) 18%, var(--color-neutral-0));
+
+    /* BORDERS */
+    --border-subtle: rgb(from var(--color-neutral-500) r g b / 20%);
+    --border-default: var(--color-neutral-200);
+    --border-strong: var(--color-neutral-300);
+    --border-input: var(--color-neutral-500);
+
+    /* BRAND */
+    --fg-brand-hover: color-mix(in srgb, var(--fg-brand) 80%, var(--color-neutral-1000));
+    --bg-brand-strong: color-mix(in srgb, var(--color-brand) 50%, var(--color-neutral-1000));
+
+    /* STATUS */
+    --fg-danger: var(--color-danger);
+
+    /* FOCUS */
+    --outline-focus: var(--fg-brand);
+
+    /* SHADOWS */
+    --shadow-color: var(--color-neutral-1000);
+    --shadow-surface: 0 1px 2px rgb(from var(--shadow-color) r g b / 4%);
+    --shadow-elevated:
+        0 12px 32px rgb(from var(--shadow-color) r g b / 12%), 0 2px 6px rgb(from var(--shadow-color) r g b / 6%);
+
+    /* ---------- THEME TOKENS ---------- */
+
+    /* HEADER */
+    --header-bg: var(--color-neutral-0);
+    --header-fg: var(--color-neutral-700);
+
+    /* CONTAINERS */
+    --container-border: var(--color-neutral-200);
+
+    /* SIDEBAR — brand-tinted neutrals so the whole column carries the palette */
+    --sidebar-bg-hover: rgb(from var(--color-brand) r g b / 8%);
+    --sidebar-bg-pressed: rgb(from var(--color-brand) r g b / 14%);
+    --sidebar-border: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-200));
+    --sidebar-fg-secondary: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-600));
+
     /* SEARCH SHEET */
-    --search-sheet-divider: var(--border-container);
-    --search-band-bg: var(--bg-general);
-    --search-band-border: var(--border-container);
+    --search-sheet-divider: var(--container-border);
+    --search-band-bg: var(--bg-page);
+    --search-band-border: var(--container-border);
     --search-group-bg: transparent;
-    --search-group-border: var(--border-container);
-    --search-group-solo-border: var(--border-container);
+    --search-group-border: var(--container-border);
+    --search-group-solo-border: var(--container-border);
     --search-field-border: var(--border-strong);
-    --search-group-bg-hover: var(--bg-hover-accent);
-    --search-group-bg-pressed: var(--bg-pressed-accent);
+    --search-group-bg-hover: var(--sidebar-bg-hover);
+    --search-group-bg-pressed: var(--sidebar-bg-pressed);
     --search-group-bg-menu-active: var(--bg-selected);
     --search-group-bg-selected: var(--bg-brand);
     --search-group-fg-selected: var(--fg-on-brand);
-    --search-group-fg-disabled: color-mix(in srgb, var(--fg-content-box) 38%, transparent);
+    --search-group-fg-disabled: color-mix(in srgb, var(--fg-default) 38%, transparent);
 
     /* WIDGETS */
     --combined-facets-title-weight: 600;
-    --rss-entry-info-fg: var(--brand);
+    --rss-entry-info-fg: var(--fg-brand);
 
     /* FOOTER */
-    --footer-main-bg: var(--brand-strong);
-    --footer-bottom-bg: color-mix(in srgb, var(--brand-strong) 70%, var(--bg-scrim));
+    --footer-main-bg: var(--bg-brand-strong);
+    --footer-bottom-bg: color-mix(in srgb, var(--bg-brand-strong) 70%, var(--bg-scrim));
 
     /* COOKIE BANNER */
     --cookie-banner-link-decoration: none;
 
     /* COPYRIGHT INDICATOR */
     --copyright-indicator-inset-shadow:
-        inset 0 0 2px rgb(from var(--fg-on-bright) r g b / 30%),
-        inset 0 2px 2px rgb(from var(--fg-on-bright) r g b / 25%);
+        inset 0 0 2px rgb(from var(--fg-black) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-black) r g b / 25%);
 
     /* NER NAVIGATION */
     --ner-navigation-bg: var(--bg-hover);
-    --ner-navigation-bg-hover: var(--bg-content-box);
+    --ner-navigation-bg-hover: var(--bg-surface);
 
     /* MODAL AND USER SEARCH */
-    --modal-card-border: rgb(from var(--fg-on-bright) r g b / 12.5%);
+    --modal-card-border: rgb(from var(--fg-black) r g b / 12.5%);
     --user-search-action-border: var(--border-strong);
 }
 
-.mx-theme-features-dark() {
+.mx-theme-semantic-dark() {
+    /* ---------- CORE OVERRIDES — core group order ---------- */
+
+    /* SURFACES */
+    --bg-page: oklch(from var(--color-neutral-900) calc(l - 0.011) c h);
+    --bg-sunken: var(--color-neutral-950);
+    --bg-inverse: var(--color-neutral-700);
+    --bg-inverse-hover: var(--color-neutral-600);
+    --bg-input: var(--bg-page);
+
+    /* TEXT */
+    --fg-default: var(--color-neutral-100);
+    --fg-muted: var(--color-neutral-450);
+    --fg-placeholder: var(--color-neutral-450);
+    --fg-heading: var(--color-neutral-50);
+
+    /* LINKS */
+    --fg-link-subtle: var(--fg-default);
+
+    /* STATES */
+    --bg-selected: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-900));
+    --bg-selected-hover: color-mix(in srgb, var(--color-brand-400) 18%, var(--color-neutral-900));
+    --bg-selected-pressed: color-mix(in srgb, var(--color-brand-400) 24%, var(--color-neutral-900));
+
+    /* BORDERS */
+    --border-subtle: rgb(from var(--color-neutral-0) r g b / 6%);
+    --border-default: var(--color-neutral-700);
+    --border-strong: var(--color-neutral-600);
+    --border-input: var(--color-neutral-500);
+
+    /* BRAND */
+    --fg-brand-hover: color-mix(in srgb, var(--fg-brand) 80%, var(--color-neutral-0));
+    --bg-brand-strong: color-mix(in srgb, var(--color-brand) 55%, var(--color-neutral-950));
+
+    /* STATUS */
+    --fg-danger: var(--color-danger-text-dark);
+
+    /* FOCUS */
+    --outline-focus: var(--fg-brand);
+
+    /* SHADOWS */
+    --shadow-color: var(--color-neutral-1000);
+    --shadow-surface:
+        inset 0 1px 0 rgb(from var(--color-neutral-0) r g b / 6%), 0 1px 2px rgb(from var(--shadow-color) r g b / 40%);
+    --shadow-elevated:
+        inset 0 1px 0 rgb(from var(--color-neutral-0) r g b / 8%),
+        0 12px 32px rgb(from var(--shadow-color) r g b / 55%), 0 2px 6px rgb(from var(--shadow-color) r g b / 40%);
+
+    /* ---------- THEME TOKENS ---------- */
+
+    /* HEADER */
+    --header-bg: var(--color-neutral-900);
+    --header-fg: var(--color-neutral-200);
+
+    /* CONTAINERS */
+    --container-border: var(--color-neutral-800);
+
+    /* SIDEBAR */
+    --sidebar-bg-hover: rgb(from var(--color-brand-400) r g b / 12%);
+    --sidebar-bg-pressed: rgb(from var(--color-brand-400) r g b / 18%);
+    --sidebar-border: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-800));
+    --sidebar-fg-secondary: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-350));
+
     /* SEARCH SHEET */
-    --search-sheet-divider: var(--border-container);
-    --search-band-bg: var(--bg-general);
-    --search-band-border: var(--border-container);
+    --search-sheet-divider: var(--container-border);
+    --search-band-bg: var(--bg-page);
+    --search-band-border: var(--container-border);
     --search-group-bg: transparent;
-    --search-group-border: var(--border-container);
-    --search-group-solo-border: var(--border-container);
+    --search-group-border: var(--container-border);
+    --search-group-solo-border: var(--container-border);
     --search-field-border: var(--border-strong);
-    --search-group-bg-hover: var(--bg-hover-accent);
-    --search-group-bg-pressed: var(--bg-pressed-accent);
+    --search-group-bg-hover: var(--sidebar-bg-hover);
+    --search-group-bg-pressed: var(--sidebar-bg-pressed);
     --search-group-bg-menu-active: var(--bg-selected);
     --search-group-bg-selected: var(--bg-brand);
     --search-group-fg-selected: var(--fg-on-brand);
-    --search-group-fg-disabled: color-mix(in srgb, var(--fg-content-box) 38%, transparent);
+    --search-group-fg-disabled: color-mix(in srgb, var(--fg-default) 38%, transparent);
 
     /* WIDGETS */
     --combined-facets-title-weight: 700;
-    --rss-entry-info-fg: var(--brand);
+    --rss-entry-info-fg: var(--fg-brand);
 
     /* FOOTER */
-    --footer-main-bg: oklch(from color-mix(in srgb, var(--brand-strong) 30%, var(--bg-scrim)) calc(l * 1.2) c h);
-    --footer-bottom-bg: oklch(from color-mix(in srgb, var(--brand-strong) 22%, var(--bg-scrim)) calc(l * 1.2) c h);
+    --footer-main-bg: oklch(from color-mix(in srgb, var(--bg-brand-strong) 30%, var(--bg-scrim)) calc(l * 1.2) c h);
+    --footer-bottom-bg: oklch(from color-mix(in srgb, var(--bg-brand-strong) 22%, var(--bg-scrim)) calc(l * 1.2) c h);
 
     /* COOKIE BANNER */
     --cookie-banner-link-decoration: underline;
 
     /* COPYRIGHT INDICATOR */
     --copyright-indicator-inset-shadow:
-        inset 0 0 2px rgb(from var(--fg-inverse) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-inverse) r g b / 25%);
+        inset 0 0 2px rgb(from var(--fg-on-inverse) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-on-inverse) r g b / 25%);
 
     /* NER NAVIGATION */
-    --ner-navigation-bg: var(--bg-content-box);
+    --ner-navigation-bg: var(--bg-surface);
     --ner-navigation-bg-hover: var(--bg-hover);
 
     /* MODAL AND USER SEARCH */
@@ -375,36 +252,18 @@
     .mx-theme-palette();
     .mx-theme-base();
     .mx-theme-semantic-light();
-    .mx-theme-features();
-    .mx-theme-features-light();
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         .mx-theme-semantic-dark();
-        .mx-theme-features-dark();
     }
 }
 
 .color-theme-dark {
     .mx-theme-semantic-dark();
-    .mx-theme-features-dark();
 }
 
 .color-theme-light {
     .mx-theme-semantic-light();
-    .mx-theme-features-light();
-}
-
-/* Responsive */
-@media screen and (max-width: @largeBreakpoint) {
-}
-
-@media screen and (max-width: @mediumBreakpoint) {
-}
-
-@media screen and (max-width: @smallBreakpoint) {
-}
-
-@media screen and (max-width: @xSmallBreakpoint) {
 }

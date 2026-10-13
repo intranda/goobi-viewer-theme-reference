@@ -36,7 +36,7 @@
 
     &__list-item-link {
         &.-active {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
     }
 
@@ -54,7 +54,7 @@
         &.-set,
         &.-include,
         &.-exclude {
-            color: var(--brand);
+            color: var(--fg-brand);
             background: transparent;
             border-color: transparent;
         }
@@ -66,7 +66,7 @@
         &.-include,
         &.-exclude,
         &.-set {
-            color: var(--brand-hover);
+            color: var(--fg-brand-hover);
             background: transparent;
             border-color: transparent;
         }
@@ -79,7 +79,7 @@
     }
 
     &__list {
-        scrollbar-color: rgb(from var(--brand) r g b / 40%) transparent;
+        scrollbar-color: rgb(from var(--fg-brand) r g b / 40%) transparent;
     }
 
     /* FILTER */
@@ -106,7 +106,7 @@
             pointer-events: none;
 
             border-radius: var(--radius-container-small);
-            box-shadow: var(--shadow-container);
+            box-shadow: var(--shadow-surface);
             transition:
                 width 0.3s ease,
                 opacity 0.2s ease;
@@ -131,8 +131,8 @@
                 opacity: 1;
                 pointer-events: all;
             }
-            background-color: var(--bg-popover);
-            color: var(--fg-popover);
+            background-color: var(--bg-elevated);
+            color: var(--fg-default);
         }
     }
 
@@ -168,7 +168,7 @@
     }
 
     &__collapse-button {
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         .icon-svg {
             width: var(--_widget-action-icon-size, 1.6rem);
             height: var(--_widget-action-icon-size, 1.6rem);
@@ -183,7 +183,7 @@
     }
 
     &__collapse-chevron-svg {
-        color: var(--brand);
+        color: var(--fg-brand);
     }
 
     &__collapse-alt-icon {
@@ -213,8 +213,8 @@
     &__boolean-button {
         border-radius: var(--radius-button);
         border: none;
-        color: var(--brand);
-        background-color: var(--bg-popover);
+        color: var(--fg-brand);
+        background-color: var(--bg-elevated);
 
         &:hover {
             color: var(--fg-on-brand);
@@ -258,7 +258,7 @@
         margin-block: 0;
         margin-inline: 0;
         padding: 0.4rem;
-        scrollbar-color: rgb(from var(--brand) r g b / 40%) transparent;
+        scrollbar-color: rgb(from var(--fg-brand) r g b / 40%) transparent;
     }
 
     .widget-search-facets__list-item {
@@ -278,7 +278,7 @@
         }
 
         &:hover {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
 
         .widget-search-facets__list-item-link,
@@ -289,7 +289,7 @@
             min-height: var(--_facet-row-size);
             padding: 0.4rem;
             border-radius: var(--radius-container-small);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             background: transparent;
             font-weight: 400;
             line-height: var(--line-height-body);
@@ -297,13 +297,13 @@
 
             &:hover,
             &:focus {
-                color: var(--fg-content-box);
+                color: var(--fg-default);
                 background: transparent;
                 text-decoration: none;
             }
 
             &:active {
-                background-color: var(--bg-pressed-accent);
+                background-color: var(--sidebar-bg-pressed);
             }
 
             &:focus-visible {
@@ -326,7 +326,7 @@
 
             &:hover,
             &:focus-visible {
-                background-color: var(--bg-pressed-accent);
+                background-color: var(--sidebar-bg-pressed);
             }
         }
 
@@ -374,7 +374,7 @@
             &.-set,
             &.-include,
             &.-exclude {
-                color: var(--fg-content-box);
+                color: var(--fg-default);
             }
         }
 
@@ -393,7 +393,7 @@
             &.-set,
             &.-include,
             &.-exclude {
-                color: var(--brand);
+                color: var(--fg-brand);
             }
         }
 
@@ -403,7 +403,7 @@
             height: var(--_facet-row-size);
 
             &:hover {
-                background-color: var(--bg-pressed-accent);
+                background-color: var(--sidebar-bg-pressed);
             }
         }
 
@@ -439,7 +439,7 @@
         min-height: 2.4rem;
         padding-inline: 0.6rem;
         border-radius: var(--radius-button);
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         background-color: var(--bg-subtle);
         font-size: var(--font-size-body-small);
         font-variant-numeric: tabular-nums;
@@ -467,12 +467,12 @@
     .widget-geofacetting__actions button,
     .widget-geomap__expand,
     .widget-chronology-slider__action-reset-button {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
 
         &:hover,
         &:active,
         &:focus-visible {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
     }
 
@@ -480,7 +480,7 @@
     .widget-search-facets__description-text {
         margin-block: 0.4rem 0.6rem;
         padding-inline: 0.8rem;
-        color: var(--fg-secondary-accent);
+        color: var(--sidebar-fg-secondary);
         font-size: var(--font-size-body-small);
         line-height: var(--line-height-body);
     }
@@ -530,8 +530,8 @@
         }
 
         &:focus {
-            color: var(--fg-content-box);
-            background-color: var(--bg-content-box);
+            color: var(--fg-default);
+            background-color: var(--bg-surface);
             box-shadow: none;
         }
 
@@ -587,13 +587,13 @@
         border: 0;
         border-radius: var(--radius-button);
         background-color: transparent;
-        color: var(--brand);
+        color: var(--fg-brand);
         font-size: var(--font-size-body-small);
         font-weight: 500;
 
         &:hover,
         &:focus {
-            color: var(--brand-hover);
+            color: var(--fg-brand-hover);
             text-decoration: none;
         }
 

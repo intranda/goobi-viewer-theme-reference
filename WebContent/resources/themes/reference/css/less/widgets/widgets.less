@@ -4,13 +4,13 @@
    ==============================================================*/
 /* WIDGETS */
 .widget {
-    border: 1px solid var(--border-container);
+    border: 1px solid var(--container-border);
     border-radius: var(--radius-container);
-    box-shadow: var(--shadow-container);
+    box-shadow: var(--shadow-surface);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 
-    background-color: var(--bg-content-box);
+    background-color: var(--bg-surface);
 
     &__topbar {
         border-radius: var(--radius-container);
@@ -33,7 +33,7 @@
             border-radius: var(--radius-container-small);
 
             &:hover {
-                color: var(--fg-heading-content-box);
+                color: var(--fg-heading);
                 background-color: var(--bg-hover);
                 text-decoration: none;
             }
@@ -85,14 +85,14 @@
         }
         .badge,
         .badge-dark {
-            border: 1px solid rgb(from var(--brand) r g b / 35%);
+            border: 1px solid rgb(from var(--border-brand) r g b / 35%);
             border-radius: var(--radius-container-small);
             background-color: var(--bg-selected);
             color: var(--fg-selected);
 
             &:hover,
             &:focus {
-                border-color: var(--brand);
+                border-color: var(--border-brand);
                 background-color: var(--bg-selected-hover);
                 color: var(--fg-selected);
             }
@@ -145,9 +145,9 @@
     --_widget-action-icon-size: 2rem;
     padding: 0;
     margin-block-end: 1.6rem;
-    border: 1px solid var(--border-container-accent);
+    border: 1px solid var(--sidebar-border);
     border-radius: var(--radius-container);
-    background-color: var(--bg-content-box);
+    background-color: var(--bg-surface);
     box-shadow: none;
 
     > .widget__topbar,
@@ -156,7 +156,7 @@
         min-height: 5.6rem;
         margin: 0;
         padding: 0.8rem 1.6rem;
-        border-block-end: 1px solid rgb(from var(--border-container-accent) r g b / 60%);
+        border-block-end: 1px solid rgb(from var(--sidebar-border) r g b / 60%);
         border-radius: 0;
 
         &:not(:has(*)) {
@@ -167,7 +167,7 @@
         .widget__title h2 {
             margin: 0;
             min-width: 0;
-            color: var(--fg-heading-content-box);
+            color: var(--fg-heading);
             font-size: var(--font-size-body-large);
             font-weight: 600;
             line-height: var(--line-height-body);
@@ -235,7 +235,7 @@
     .widget-geofacetting__action-reset,
     .widget-rss__rss-link {
         .mx-theme-control-accent();
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         display: inline-flex;
         flex: 0 0 auto;
         align-items: center;
@@ -251,7 +251,7 @@
 
         &:hover,
         &:active {
-            color: var(--brand);
+            color: var(--fg-brand);
         }
 
         .icon-svg {
@@ -297,7 +297,7 @@
             width: var(--_widget-action-size);
             height: var(--_widget-action-size);
             border-radius: var(--radius-button);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
 
             .icon-svg {
                 width: var(--_widget-action-icon-size);
@@ -307,11 +307,11 @@
         }
 
         &:hover .widget__topbar-icon-collapsible {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
 
         &:active .widget__topbar-icon-collapsible {
-            background-color: var(--bg-pressed-accent);
+            background-color: var(--sidebar-bg-pressed);
         }
     }
 
@@ -352,7 +352,7 @@
             width: var(--_widget-action-size);
             height: var(--_widget-action-size);
             border-radius: var(--radius-button);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
 
             > .icon-svg {
                 display: none;
@@ -369,11 +369,11 @@
         }
 
         &:hover > .icon-wrapper {
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
         }
 
         &:active > .icon-wrapper {
-            background-color: var(--bg-pressed-accent);
+            background-color: var(--sidebar-bg-pressed);
         }
 
         &[aria-expanded='true'] > .icon-wrapper::after {
@@ -429,7 +429,7 @@
                 padding-block: var(--_nav-row-padding, 0.2rem);
                 padding-inline: 0.8rem;
                 border-radius: var(--radius-container-small);
-                color: var(--fg-link-content-box);
+                color: var(--fg-link-subtle);
                 font-weight: 400;
                 line-height: var(--line-height-body);
                 overflow-wrap: anywhere;
@@ -438,12 +438,12 @@
             > a {
                 &:hover {
                     color: var(--fg-link);
-                    background-color: var(--bg-hover-accent);
+                    background-color: var(--sidebar-bg-hover);
                     text-decoration: none;
                 }
 
                 &:active {
-                    background-color: var(--bg-pressed-accent);
+                    background-color: var(--sidebar-bg-pressed);
                 }
 
                 &:focus-visible {
@@ -462,7 +462,7 @@
                     inset-inline-start: 0;
                     width: 2px;
                     border-radius: var(--radius-container-small);
-                    background-color: var(--brand);
+                    background-color: var(--fg-brand);
                 }
 
                 > a {
@@ -555,7 +555,7 @@
 
         button {
             .mx-theme-control-accent();
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -569,13 +569,13 @@
             border-radius: 0;
             border-start-end-radius: var(--radius-container-small);
             border-end-end-radius: var(--radius-container-small);
-            background-color: var(--bg-hover-accent);
+            background-color: var(--sidebar-bg-hover);
             background-clip: padding-box;
             font-size: var(--font-size-body);
             line-height: var(--line-height-body);
             &:hover {
-                color: var(--brand);
-                background-color: var(--bg-pressed-accent);
+                color: var(--fg-brand);
+                background-color: var(--sidebar-bg-pressed);
             }
             .icon-svg {
                 width: 2rem;

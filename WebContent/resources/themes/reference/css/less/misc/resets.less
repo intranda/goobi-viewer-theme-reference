@@ -12,7 +12,7 @@
 .tooltipp {
 }
 .admin__form-help-text {
-    color: var(--fg-general);
+    color: var(--fg-default);
     opacity: 0.6;
 }
 
@@ -33,22 +33,22 @@
 }
 /* FORMS */
 .form-control {
-    color: var(--fg-popover);
-    background: var(--bg-popover);
+    color: var(--fg-default);
+    background: var(--bg-elevated);
     &:disabled {
         background: var(--bg-subtle);
         color: var(--fg-secondary);
     }
     &:focus {
-        background: var(--bg-popover);
-        color: var(--fg-popover);
-        -webkit-text-fill-color: var(--fg-popover);
+        background: var(--bg-elevated);
+        color: var(--fg-default);
+        -webkit-text-fill-color: var(--fg-default);
     }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
-        -webkit-text-fill-color: var(--fg-popover);
-        -webkit-box-shadow: 0 0 0 1000px var(--bg-popover) inset;
+        -webkit-text-fill-color: var(--fg-default);
+        -webkit-box-shadow: 0 0 0 1000px var(--bg-elevated) inset;
         transition: background-color 9999s ease-in-out 0s;
     }
 }
@@ -65,34 +65,34 @@
 /* MODALS */
 .modal {
     z-index: 9999;
-    color: var(--fg-content-box);
+    color: var(--fg-default);
 
     h1,
     h2,
     h3,
     h4,
     h5 {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
     }
     .custom-control--select {
         border: 1px solid var(--border-strong);
-        background: var(--bg-content-box);
+        background: var(--bg-surface);
     }
     .btn.btn--full {
         .mx-theme-control-primary();
     }
 
     .modal-content {
-        background-color: var(--bg-content-box);
-        color: var(--fg-content-box);
+        background-color: var(--bg-surface);
+        color: var(--fg-default);
         border-radius: var(--radius-container);
-        box-shadow: var(--shadow-floating);
+        box-shadow: var(--shadow-elevated);
     }
     .card {
         border: 1px solid var(--modal-card-border);
     }
     .card-body {
-        background: var(--bg-content-box);
+        background: var(--bg-surface);
     }
 }
 
@@ -167,7 +167,7 @@
 }
 
 .data-table-paginator__button {
-    background-color: var(--bg-general);
+    background-color: var(--bg-page);
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

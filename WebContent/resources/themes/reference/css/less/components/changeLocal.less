@@ -10,10 +10,10 @@
     left: 1.2rem;
     min-width: 160px;
     padding: 0.5rem;
-    background-color: var(--bg-content-box);
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-container);
-    box-shadow: var(--shadow-container);
+    box-shadow: var(--shadow-surface);
     z-index: 2030;
     //	&:before {
     //		content: "";
@@ -39,7 +39,7 @@
         }
     }
     button {
-        color: var(--fg-content-box);
+        color: var(--fg-default);
         font-size: var(--font-size-body-small);
         padding: 0.55rem 1rem;
         border-radius: var(--radius-container-small);
@@ -50,13 +50,13 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: var(--bg-brand-tint);
+            background-color: var(--bg-brand-subtle);
             color: var(--fg-link-hover);
             text-decoration: none;
         }
         &.activeLang {
-            background-color: var(--bg-brand-tint);
-            color: var(--brand);
+            background-color: var(--bg-brand-subtle);
+            color: var(--fg-brand);
             font-weight: 600;
         }
     }

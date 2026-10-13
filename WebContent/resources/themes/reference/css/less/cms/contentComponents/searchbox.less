@@ -12,15 +12,15 @@
     }
 
     .input-group .form-control {
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         border-radius: var(--radius-container);
-        box-shadow: var(--shadow-container);
+        box-shadow: var(--shadow-surface);
         transition: box-shadow 0.15s ease;
 
         &:focus {
             box-shadow:
-                var(--shadow-container),
-                0 0 0 3px var(--bg-brand-tint);
+                var(--shadow-surface),
+                0 0 0 3px var(--bg-brand-subtle);
         }
     }
 
@@ -33,14 +33,14 @@
         .btn {
             height: 100%;
             border-radius: var(--radius-container);
-            box-shadow: var(--shadow-container);
+            box-shadow: var(--shadow-surface);
             transition: box-shadow 0.15s ease;
 
             &:hover,
             &:focus {
                 box-shadow:
-                    var(--shadow-container),
-                    0 0 0 3px var(--bg-brand-tint);
+                    var(--shadow-surface),
+                    0 0 0 3px var(--bg-brand-subtle);
             }
         }
     }

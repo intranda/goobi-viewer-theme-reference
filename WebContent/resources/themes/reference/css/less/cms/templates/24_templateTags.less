@@ -11,21 +11,21 @@
     h1 {
         & + h2 {
             margin-bottom: 0;
-            border: 1px solid var(--border-faint);
+            border: 1px solid var(--border-subtle);
             border-bottom: 0;
-            background-color: var(--bg-content-box);
-            color: var(--fg-content-box);
+            background-color: var(--bg-surface);
+            color: var(--fg-default);
         }
     }
 }
 
 .content-component__tag-cloud > h2:first-child {
     margin-bottom: 0;
-    border: 1px solid var(--border-faint);
+    border: 1px solid var(--border-subtle);
     border-bottom: 0;
-    background-color: var(--bg-content-box);
-    color: var(--fg-content-box);
-    border-top: 1px solid var(--border-faint);
+    background-color: var(--bg-surface);
+    color: var(--fg-default);
+    border-top: 1px solid var(--border-subtle);
     padding: 20px 20px 10px 20px;
 }
 
@@ -33,22 +33,22 @@
 .tag-cloud__wrapper {
     margin: 0;
     padding: 2rem;
-    border: 1px solid var(--border-faint);
+    border: 1px solid var(--border-subtle);
     border-top: 0;
     border-bottom: 0;
-    background-color: var(--bg-content-box);
-    color: var(--fg-content-box);
+    background-color: var(--bg-surface);
+    color: var(--fg-default);
     &:last-child {
-        border-bottom: 1px solid var(--border-faint);
+        border-bottom: 1px solid var(--border-subtle);
     }
     & + h2 {
         margin-bottom: 0;
         padding: 10px 20px;
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         border-top: 0;
         border-bottom: 0;
-        background-color: var(--bg-content-box);
-        color: var(--fg-content-box);
+        background-color: var(--bg-surface);
+        color: var(--fg-default);
     }
 }
 
@@ -87,23 +87,23 @@
         border-top: 0;
         border-bottom: 0;
         &:last-child {
-            border-bottom: 1px solid var(--border-faint);
+            border-bottom: 1px solid var(--border-subtle);
         }
     }
 }
 
 each(range(100),{
-    .tag@{value} a { color: var(--fg-link-content-box); }
+    .tag@{value} a { color: var(--fg-link-subtle); }
 });
 
 .tag-cloud {
     h2 {
         margin-bottom: 0;
         padding: 10px;
-        border: 1px solid var(--border-faint);
+        border: 1px solid var(--border-subtle);
         border-top: 0;
         border-bottom: 0;
-        background-color: var(--bg-content-box);
+        background-color: var(--bg-surface);
     }
 }
 

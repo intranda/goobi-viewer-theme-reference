@@ -7,19 +7,19 @@
 .collections {
     a,
     button {
-        color: var(--fg-link-content-box);
+        color: var(--fg-link-subtle);
         &:focus,
         &:hover,
         &:active {
-            color: var(--fg-link-content-box);
+            color: var(--fg-link-subtle);
         }
     }
 
     border-top: none;
     /* ELEMENT */
     &__wrapper {
-        background-color: var(--bg-content-box);
-        border: 1px solid var(--border-faint);
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
         border-radius: var(--radius-container);
     }
 }
@@ -28,7 +28,7 @@
     .row {
     }
     &__item {
-        border-top: 1px solid var(--border-faint);
+        border-top: 1px solid var(--border-subtle);
     }
     &__structure,
     &__title,
@@ -68,7 +68,7 @@
 
     .collection {
         &__item {
-            border-top-color: var(--content-divider);
+            border-top-color: var(--container-border);
 
             > .row {
                 align-items: flex-start;
@@ -124,7 +124,7 @@
                 border: 0;
                 border-radius: var(--radius-container-small);
                 background-color: transparent;
-                color: var(--fg-content-box);
+                color: var(--fg-default);
                 text-decoration: none;
 
                 .icon-wrapper,
@@ -137,7 +137,7 @@
                 }
 
                 &:active {
-                    color: var(--fg-link-active);
+                    color: var(--fg-link-pressed);
                 }
 
                 &:focus-visible {
@@ -152,7 +152,7 @@
             padding-block: 1rem;
             padding-inline: 0 0.8rem;
             border-radius: var(--radius-container-small);
-            color: var(--fg-content-box);
+            color: var(--fg-default);
             font-weight: 500;
             line-height: var(--line-height-body);
             overflow-wrap: anywhere;
@@ -163,7 +163,7 @@
             }
 
             &:active {
-                color: var(--fg-link-active);
+                color: var(--fg-link-pressed);
             }
 
             &:focus-visible {
