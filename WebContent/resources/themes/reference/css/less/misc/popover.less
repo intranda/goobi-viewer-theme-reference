@@ -1,98 +1,142 @@
-/* BOOTSTRAP OVERLAY COLORS */
-:where(html:not(:has(#admin))) {
-    .tooltip {
-        &.show {
-            opacity: 1;
+/* ==============================================================
+   Popover
+   style declarations for Bootstrap tooltips and popovers
+   ==============================================================*/
+/* TOOLTIPS */
+.tooltip {
+    &.show {
+        opacity: 1;
+    }
+
+    .tooltip-inner {
+        color: var(--fg-on-inverse);
+        background-color: var(--bg-inverse);
+    }
+
+    &.bs-tooltip-top .arrow::before {
+        border-top-color: var(--bg-inverse);
+    }
+
+    &.bs-tooltip-right .arrow::before {
+        border-right-color: var(--bg-inverse);
+    }
+
+    &.bs-tooltip-bottom .arrow::before {
+        border-bottom-color: var(--bg-inverse);
+    }
+
+    &.bs-tooltip-left .arrow::before {
+        border-left-color: var(--bg-inverse);
+    }
+}
+
+/* POPOVERS */
+.popover:not(.popover--tool) {
+    border-color: var(--border-default);
+
+    .popover-header {
+        color: var(--fg-default);
+        background-color: var(--bg-elevated);
+        border-bottom-color: var(--border-default);
+    }
+
+    &.bs-popover-bottom .popover-header::before {
+        border-bottom-color: var(--bg-elevated);
+    }
+
+    &.bs-popover-top > .arrow {
+        &::before {
+            border-top-color: var(--border-default);
         }
 
-        .tooltip-inner {
-            color: var(--fg-on-inverse);
-            background-color: var(--bg-inverse);
+        &::after {
+            border-top-color: var(--bg-elevated);
         }
     }
 
-    .popover:where(:not(:has(.widget-citation, .widget-social-media, imageFilters))) {
-        border-color: var(--border-default);
+    &.bs-popover-right > .arrow {
+        &::before {
+            border-right-color: var(--border-default);
+        }
 
-        .popover-header {
-            color: var(--fg-default);
-            background-color: var(--bg-elevated);
+        &::after {
+            border-right-color: var(--bg-elevated);
+        }
+    }
+
+    &.bs-popover-bottom > .arrow {
+        &::before {
             border-bottom-color: var(--border-default);
         }
 
-        &.bs-popover-bottom .popover-header::before,
-        &.bs-popover-auto[x-placement^='bottom'] .popover-header::before {
+        &::after {
             border-bottom-color: var(--bg-elevated);
         }
     }
 
-    each(top right bottom left, {
-        .tooltip.bs-tooltip-@{value} .arrow::before,
-        .tooltip.bs-tooltip-auto[x-placement^='@{value}'] .arrow::before {
-            border-@{value}-color: var(--bg-inverse);
+    &.bs-popover-left > .arrow {
+        &::before {
+            border-left-color: var(--border-default);
         }
 
-        .popover:where(:not(:has(.widget-citation, .widget-social-media, imageFilters))) {
-            &.bs-popover-@{value} > .arrow::before,
-            &.bs-popover-auto[x-placement^='@{value}'] > .arrow::before {
-                border-@{value}-color: var(--border-default);
-            }
-
-            &.bs-popover-@{value} > .arrow::after,
-            &.bs-popover-auto[x-placement^='@{value}'] > .arrow::after {
-                border-@{value}-color: var(--bg-elevated);
-            }
+        &::after {
+            border-left-color: var(--bg-elevated);
         }
-    });
+    }
 }
 
-/* TOOL POPOVER CONTENT */
-imageFilters .imagefilters__label {
-    color: var(--fg-default);
-}
+/* IMAGE FILTERS, ALSO INSIDE TOOL POPOVERS */
+imageFilters,
+.popover--tool {
+    .imagefilters {
+        &__label {
+            color: var(--fg-default);
+        }
+    }
 
-.popover:has(imageFilters) .imagefilters__label {
-    color: var(--fg-default);
-}
-
-imageFilters input.imagefilters__slider,
-imageFilters input.imagefilters__checkbox,
-.popover:has(imageFilters) input.imagefilters__slider,
-.popover:has(imageFilters) input.imagefilters__checkbox {
-    .mx-theme-native-accent();
+    input.imagefilters__slider,
+    input.imagefilters__checkbox {
+        .mx-theme-native-accent();
+    }
 }
 
 imageFilters .imagefilters__filter:has(input:disabled):not(:has(input:enabled)) .imagefilters__label {
     color: var(--fg-disabled);
 }
 
-imageFilters .imagefilters__options .btn.btn--full,
-.popover:has(imageFilters) .imagefilters__options .btn.btn--full,
-.share-image-area .share-image-area__controls .btn.btn--full {
-    .mx-theme-control();
-    border-color: var(--border-default);
+/* TOOL BUTTONS: IMAGE FILTERS, SHARE IMAGE AREA */
+imageFilters .imagefilters__options,
+.popover--tool .imagefilters__options,
+.share-image-area .share-image-area__controls {
+    .btn.btn--full {
+        .mx-theme-control();
+        border-color: var(--border-default);
 
-    &:disabled,
-    &[aria-disabled='true'],
-    &.disabled {
-        &,
-        &:hover,
-        &:active,
-        &:focus {
-            .mx-theme-control-disabled();
+        &:disabled,
+        &[aria-disabled='true'],
+        &.disabled {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+            }
         }
     }
 }
 
-/* Responsive */
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
+/* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 }
 
+/* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }

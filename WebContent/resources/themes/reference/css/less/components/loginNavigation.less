@@ -2,30 +2,15 @@
    Login Navigation
    style declarations for loginNavigation.xhtml
    ==============================================================*/
-/* LOGIN NAVIGATION */
-/* BLOCK */
 .login-navigation {
-    /* NOT LOGGED IN */
-    [data-login='false'] {
-        button[data-toggle='modal'] {
-            display: block;
-        }
-    }
     &__toggle-button {
         font-size: var(--font-size-body-small);
         font-weight: 500;
     }
+
     /* LOGGED IN */
-    [data-login='true'] {
-        button[data-toggle='modal'] {
-            display: block;
-        }
-        .login-navigation {
-            /* TOGGLE USER DROPDOWN */
-            &__user-name {
-                padding-right: 0;
-            }
-        }
+    [data-login='true'] .login-navigation__user-name {
+        padding-right: 0;
     }
 }
 

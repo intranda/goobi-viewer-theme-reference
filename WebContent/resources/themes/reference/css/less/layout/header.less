@@ -5,8 +5,6 @@ html:has(.drawer[open]) {
     overflow: hidden;
 }
 
-/* The header sticks to the top of the scrollport, so every fragment jump and every
-   scrollIntoView has to stop short of it -- otherwise the target lands underneath. */
 html {
     scroll-padding-top: 15rem;
 }
@@ -59,14 +57,13 @@ html {
             .mx-theme-focus();
         }
     }
-    /* ENTRY POINTS — navigation next to the logo; no resting surface, so the filled tools stay the tools */
+    /* ENTRY POINTS */
     &__nav {
         display: flex;
         align-items: center;
         flex: 0 0 auto;
         gap: 0.4rem;
         margin-inline-start: 1.2rem;
-        /* No entry survived the filters: the divider must not stay behind on its own */
         &:not(:has(.header__nav-link)) {
             display: none;
         }
@@ -132,11 +129,10 @@ html {
             }
         }
     }
-    /* DISCLOSURE — aria-expanded is the state, the chevron follows it */
+    /* DISCLOSURE */
     &__nav-toggle {
         .icon-svg {
             flex: 0 0 auto;
-            /* Fixed icon geometry; independent of text scale. */
             width: 1.6rem;
             height: 1.6rem;
             color: var(--fg-secondary);
@@ -162,9 +158,8 @@ html {
             color: inherit;
         }
     }
-    /* Outranks the shared panel recipe further down the file */
     &__panel&__nav-panel {
-        width: min(32rem, calc(~'100vw - 3.2rem'));
+        width: min(32rem, calc(100vw - 3.2rem));
         padding: 0.8rem;
     }
     &__nav-panel-link {
@@ -199,11 +194,9 @@ html {
             font-weight: 600;
         }
     }
-    /* A selected row and the hovered row beneath it must not merge into one surface */
     &__nav-panel-link + &__nav-panel-link {
         margin-block-start: 0.2rem;
     }
-    /* A nav child that carries children of its own has no destination; it becomes a section, not a second dropdown */
     &__nav-panel-group {
         margin-block-start: 0.8rem;
         padding-block-start: 0.8rem;
@@ -277,14 +270,14 @@ html {
         display: none;
     }
     &__panel,
-    .header__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
+    &__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
         position: fixed;
         inset: auto;
         top: var(--_panel-top);
         left: var(--_panel-left);
-        width: min(42rem, calc(~'100vw - 3.2rem'));
+        width: min(42rem, calc(100vw - 3.2rem));
         max-width: none;
-        max-height: calc(~'100dvh - var(--_panel-top) - 1.6rem');
+        max-height: calc(100dvh - var(--_panel-top) - 1.6rem);
         margin: 0;
         padding: 1.6rem;
         overflow: auto;
@@ -315,7 +308,7 @@ html {
         font-size: var(--font-size-body);
         font-weight: 600;
     }
-    /* SEARCH — narrow at rest, grows towards the start edge while the input holds focus */
+    /* SEARCH */
     &__search {
         flex: 1 1 auto;
         min-width: 0;
@@ -508,7 +501,7 @@ html {
             border-radius: var(--_radius);
         }
     }
-    /* ACCOUNT — same square control as the rest of the row, and the one that closes it */
+    /* ACCOUNT */
     &__account [data-login] .login-navigation__toggle-button.btn {
         display: inline-flex;
         align-items: center;
@@ -561,12 +554,12 @@ html {
         gap: 0;
     }
 
-    .header__account [data-login] .login-navigation__user-icon {
+    &__account [data-login] .login-navigation__user-icon {
         display: flex;
         padding: 0;
     }
 
-    /* AVATAR — fills its control, so the surface below is only the backdrop of the default silhouette */
+    /* AVATAR */
     &__account [data-login] .login-navigation__user-icon img.login-navigation__mini-avatar {
         box-sizing: border-box;
         width: var(--_control);
@@ -577,7 +570,6 @@ html {
         object-fit: cover;
         transition: border-color var(--_speed) ease;
     }
-    /* The picture covers the button, so its edge carries the state */
     &__account [data-login] .login-navigation__toggle-button.btn:hover .login-navigation__mini-avatar,
     &__account [data-login] .login-navigation__toggle-button.btn[aria-expanded='true'] .login-navigation__mini-avatar {
         border-color: rgb(from var(--header-fg) r g b / 40%);
@@ -609,7 +601,7 @@ html {
         }
     }
 
-    /* ACCOUNT MENU — same rows as every other popover, no core hover indent */
+    /* ACCOUNT MENU */
     .login-navigation [data-login='true'] .login-navigation {
         &__user-dropdown {
             display: none;
@@ -662,15 +654,15 @@ html {
         }
     }
 
-    .header__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
-        width: min(32rem, calc(~'100vw - 3.2rem'));
+    &__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
+        width: min(32rem, calc(100vw - 3.2rem));
         padding: 0.8rem;
     }
     &__account [data-login='true'] .login-navigation__user-dropdown-item + .login-navigation__user-dropdown-item {
         margin-block-start: 0.2rem;
     }
 }
-/* DRAWER — the complete navigation as a modal side sheet (native <dialog>) */
+/* DRAWER */
 .drawer {
     --_row: 4.8rem;
     --_section-gap: 2.4rem;
@@ -685,7 +677,7 @@ html {
     inset-inline: auto 0;
     z-index: 2040;
     flex-direction: column;
-    width: min(38rem, calc(~'100% - 2.4rem'));
+    width: min(38rem, calc(100% - 2.4rem));
     height: 100vh;
     height: 100dvh;
     max-width: none;
@@ -728,7 +720,7 @@ html {
         }
     }
 
-    /* HEAD — close stays reachable while the content scrolls */
+    /* HEAD */
     &__head {
         display: flex;
         align-items: center;
@@ -737,7 +729,7 @@ html {
         flex: 0 0 auto;
         min-height: 7.2rem;
         padding-block: max(1.2rem, env(safe-area-inset-top)) 1.2rem;
-        padding-inline: calc(~'var(--_inset) + var(--_row-inset)') var(--_inset);
+        padding-inline: calc(var(--_inset) + var(--_row-inset)) var(--_inset);
     }
 
     &__title {
@@ -878,9 +870,10 @@ html {
         }
     }
 
-    /* ROW — one recipe for navigation entries and tools */
+    /* ROW */
     .navigation a,
     .navigation button {
+        display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 1.2rem;
@@ -929,13 +922,7 @@ html {
         }
     }
 
-    /* NAVIGATION ROWS */
-    .navigation a,
-    .navigation button {
-        display: flex;
-    }
-
-    /* NAVIGATION — one column, groups open in place */
+    /* NAVIGATION */
     .navigation__list {
         .mx-list-reset();
         display: flex;
@@ -975,7 +962,7 @@ html {
         display: block;
     }
 
-    /* CURRENT PAGE — tinted row with a marker at the start edge */
+    /* CURRENT PAGE */
     .navigation a[aria-current='page'],
     .navigation li.active > a,
     .navigation li.active > button {
@@ -989,7 +976,6 @@ html {
             position: absolute;
             inset-block: 1.2rem;
             inset-inline-start: 0;
-            /* Fixed icon/marker geometry; independent of text scale. */
             width: 3px;
             border-radius: 3px;
             background: var(--fg-brand);
@@ -1010,12 +996,11 @@ html {
         color: var(--fg-brand);
     }
 
-    /* DISCLOSURE — aria-expanded is the state, the chevron follows it */
+    /* DISCLOSURE */
     .navigation .caret {
         flex: 0 0 auto;
         margin: 0;
         margin-inline-start: auto;
-        /* Fixed icon/marker geometry; independent of text scale. */
         width: 2rem;
         height: 2rem;
         color: var(--fg-default);
@@ -1097,7 +1082,7 @@ html {
         padding-top: 0.8rem;
     }
 
-    /* LANGUAGES — inline disclosure with current-language marker */
+    /* LANGUAGES */
     .change-local {
         display: block;
         position: static;
@@ -1224,37 +1209,40 @@ html {
 }
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
-    /* The entry points fall back into the drawer before they squeeze the search field */
-    .header__nav {
-        display: none;
+    .header {
+        &__nav {
+            display: none;
+        }
     }
 }
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .header [data-toggle='header-search'] {
-        display: inline-flex;
-    }
-    .header__bar {
-        min-height: 6.4rem;
-        padding-block: 0.8rem;
-        gap: 0.8rem;
-    }
-    .header__logo img {
-        height: 4.4rem;
-    }
-    .header__actions {
-        gap: 0.8rem;
-        margin-inline-start: auto;
-    }
-    .header__bar:has(.header__search:not([hidden])) {
-        flex-wrap: wrap;
-        padding-bottom: 1.6rem;
-    }
-    .header__search {
-        order: 3;
-        flex: 0 0 100%;
-        max-width: none;
-        margin: 0;
+    .header {
+        [data-toggle='header-search'] {
+            display: inline-flex;
+        }
+        &__bar {
+            min-height: 6.4rem;
+            padding-block: 0.8rem;
+            gap: 0.8rem;
+        }
+        &__logo img {
+            height: 4.4rem;
+        }
+        &__actions {
+            gap: 0.8rem;
+            margin-inline-start: auto;
+        }
+        &__bar:has(.header__search:not([hidden])) {
+            flex-wrap: wrap;
+            padding-bottom: 1.6rem;
+        }
+        &__search {
+            order: 3;
+            flex: 0 0 100%;
+            max-width: none;
+            margin: 0;
+        }
     }
 }
 /* BREAKPOINT FOR SMARTPHONES */

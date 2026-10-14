@@ -18,13 +18,18 @@
         background-color: var(--footer-main-bg);
         color: var(--fg-on-inverse);
 
-        /* accent bar: fades from the footer background into the button/brand color and back */
         &::before {
             content: '';
             display: block;
             width: 100%;
             height: 7px;
-            background: linear-gradient(to left, var(--footer-main-bg), var(--bg-brand), var(--bg-brand), var(--footer-main-bg));
+            background: linear-gradient(
+                to left,
+                var(--footer-main-bg),
+                var(--bg-brand),
+                var(--bg-brand),
+                var(--footer-main-bg)
+            );
         }
     }
 
@@ -48,9 +53,6 @@
         &-social {
             align-items: flex-end;
         }
-    }
-
-    &__top-section-about {
     }
 
     &__top-section-contact-content {
@@ -111,55 +113,6 @@
         }
     }
 
-    &__top-section-nav {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-
-        li {
-            display: flex;
-        }
-
-        a {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: var(--fg-on-inverse);
-            padding: 0.3rem 0;
-            transition:
-                color 0.2s ease,
-                gap 0.2s ease;
-
-            &::before {
-                content: '';
-                display: inline-block;
-                flex-shrink: 0;
-                width: 5px;
-                height: 5px;
-                border-right: 1.5px solid currentColor;
-                border-top: 1.5px solid currentColor;
-                transform: rotate(45deg);
-                opacity: 0.6;
-                transition: opacity 0.2s ease;
-            }
-
-            &:hover,
-            &:active,
-            &:focus {
-                color: var(--fg-on-inverse);
-                opacity: 1;
-                gap: 0.9rem;
-
-                &::before {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-
     &__top-section-address {
         display: flex;
         flex-direction: column;
@@ -214,9 +167,6 @@
         gap: 0;
     }
 
-    &__bottom-section-nav-item {
-    }
-
     &__bottom-section-nav-link {
         display: block;
         padding: 0.5rem 1rem 0.5rem 0;
@@ -230,9 +180,6 @@
             color: var(--fg-on-inverse);
             text-decoration: underline;
         }
-    }
-
-    &__bottom-section-bar-wrapper {
     }
 
     &__bottom-section-bar {
@@ -395,7 +342,7 @@
     }
 }
 
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
     .footer {
         &__top-section-columns {

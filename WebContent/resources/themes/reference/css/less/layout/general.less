@@ -1,17 +1,7 @@
 /* ==============================================================
    General Styling
    ==============================================================*/
-html,
 body {
-}
-
-html {
-    font-size: 62.5%; // sets basic font-size to 10px for easier rem use
-}
-
-body {
-    font-family: var(--font-family);
-    font-size: var(--font-size-body);
     font-feature-settings: 'kern' 1;
     font-kerning: normal;
     -webkit-font-smoothing: antialiased;
@@ -19,13 +9,12 @@ body {
     background-color: var(--bg-page);
     color: var(--fg-default);
 
-    // Keyboard focus: one ring for every control, replaces the core ring
     &.using-keyboard :focus-visible {
         .mx-theme-focus-ring();
     }
 }
 
-// Controls report :focus-visible for keyboard focus only; works before body.using-keyboard is set
+/* KEYBOARD FOCUS RING */
 button,
 .btn,
 a,
@@ -35,10 +24,7 @@ a,
     }
 }
 
-@{RTL} body {
-    // text-align: right;
-}
-
+/* TEXT */
 h1,
 h2,
 h3,
@@ -70,14 +56,9 @@ ol {
     margin-bottom: 2rem;
 }
 
-ul {
-}
-
-ol {
-}
-
 a {
     color: var(--fg-link);
+
     &:hover,
     &:active,
     &:focus {
@@ -85,13 +66,8 @@ a {
     }
 }
 
-small {
-    font-size: var(--font-size-caption);
-}
-
 table,
 .table {
-    width: 100%;
     margin-bottom: 2rem;
 }
 

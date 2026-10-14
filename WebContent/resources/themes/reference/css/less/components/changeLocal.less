@@ -2,11 +2,10 @@
    Change Local
    style declarations for changeLocal.xhtml
    ==============================================================*/
-/* BLOCK */
 .change-local {
     display: none;
     position: absolute;
-    top: calc(~'100% + 8px');
+    top: calc(100% + 8px);
     left: 1.2rem;
     min-width: 160px;
     padding: 0.5rem;
@@ -15,29 +14,17 @@
     border-radius: var(--radius-container);
     box-shadow: var(--shadow-surface);
     z-index: 2030;
-    //	&:before {
-    //		content: "";
-    //		position: absolute;
-    //		display: block;
-    //		width: 0;
-    //		height: 0;
-    //		top: -1.2rem;
-    //		left: 50%;
-    //		margin-left: -.6rem;
-    //		border-width: .6rem;
-    //		border-style: solid;
-    //		border-color: transparent transparent var(--fg-secondary) transparent;
-    //	}
-    ul {
-    }
+
     li {
         display: list-item;
         float: none;
         margin: 0;
+
         button {
             width: 100%;
         }
     }
+
     button {
         color: var(--fg-default);
         font-size: var(--font-size-body-small);
@@ -47,6 +34,7 @@
         transition:
             background-color 0.15s ease,
             color 0.15s ease;
+
         &:hover,
         &:active,
         &:focus {
@@ -54,13 +42,12 @@
             color: var(--fg-link-hover);
             text-decoration: none;
         }
+
         &.activeLang {
             background-color: var(--bg-brand-subtle);
             color: var(--fg-brand);
             font-weight: 600;
         }
-    }
-    img {
     }
 }
 

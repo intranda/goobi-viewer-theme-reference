@@ -51,11 +51,11 @@
     }
     &__main {
         min-width: 0;
-        scroll-margin-top: 150px; // offset for fixed top navigation
+        scroll-margin-top: 150px;
     }
     &__sidebar {
         min-width: 200px;
-        scroll-margin-top: 150px; // offset for fixed top navigation
+        scroll-margin-top: 150px;
     }
 
     &__wrapper.-without-sidebar,
@@ -71,7 +71,7 @@
         display: none;
         position: fixed;
         bottom: 18px;
-        left: calc(~'100% - 50px');
+        left: calc(100% - 50px);
         background: var(--bg-brand);
         z-index: 2031;
         border-radius: var(--radius-button);
@@ -116,16 +116,6 @@
                 transform: translateX(25%) rotate(-45deg) scaleX(0.9);
             }
         }
-        //		&.-arrow {
-        //			.bar {}
-        //			.bar:nth-child(1) {
-        //				transform: translateX(-25%) rotate(45deg) scaleX(0.9);
-        //				left: -2px;
-        //			}
-        //			.bar:nth-child(2) {
-        //				transform: translateX(25%) rotate(-45deg) scaleX(0.9);
-        //			}
-        //		}
     }
 
     &__mobile-sidebar-trigger-icon {
@@ -141,7 +131,7 @@
     }
 }
 
-/* SEARCH PAGES — the page is one sheet, every part of it a band */
+/* SEARCH PAGES */
 @{searchSheet} {
     --_content-inset: 0;
     padding: 0;
@@ -169,7 +159,7 @@
 @media screen and (max-width: @largeBreakpoint) {
 }
 
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
@@ -186,13 +176,7 @@
                 --_content-inset: 1.6rem;
             }
         }
-        &__main {
-        }
-        /* closed by default: fully unmounted (display: none), not just moved off-screen —
-           a fixed element parked outside the viewport via an offset can still let mobile
-           browsers pan/drag the page horizontally to "reach" it, even with overflow-x: hidden
-           on html. JS mounts it (.-mounted) before sliding it in (.-opened) and unmounts it
-           again once the closing transition ends, so nothing off-screen is ever draggable. */
+        /* SIDEBAR: MOUNTED BY JS, THEN OPENED */
         &__sidebar {
             display: none;
             pointer-events: none;

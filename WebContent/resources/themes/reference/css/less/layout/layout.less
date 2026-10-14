@@ -1,20 +1,19 @@
 /* ==============================================================
    Layout
    ==============================================================*/
-
+/* PAGE FRAME */
 #bodyWrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
-}
 
-/* FLUID OUTER MARGINS — scoped to the frontend frame so admin dialogs keep their sizing */
-#bodyWrapper .container {
-    width: 100%;
-    max-width: var(--page-max-width);
-    margin-inline: auto;
-    padding-inline: var(--page-gutter);
+    .container {
+        width: 100%;
+        max-width: var(--page-max-width);
+        margin-inline: auto;
+        padding-inline: var(--page-gutter);
+    }
 }
 
 /* MOBILE OVERLAY */
@@ -26,66 +25,7 @@
     z-index: 2030;
 }
 
-/* RIGHT TO LEFT LAYOUT ADAPTATIONS */
-
-@{RTL} {
-    .page-header {
-        &__top-actions-login {
-            margin-left: unset;
-            margin-right: 1.5rem;
-        }
-        &__top-mobile-sidebar {
-            text-align: left;
-        }
-        &__actions {
-            margin-left: unset;
-            margin-right: auto;
-        }
-        &__logo {
-            img {
-                margin-left: 2rem;
-                margin-right: unset;
-            }
-        }
-        &__actions-language,
-        &__actions-bookmark,
-        &__actions-login,
-        &__actions-search-button {
-            border-right: 1px solid var(--fg-secondary);
-            border-left: none;
-        }
-        &__actions-search-button {
-            &.-searchOn {
-                border-right: none;
-            }
-        }
-        &__actions-language-button {
-        }
-    }
-    .page-content {
-        &__main {
-            padding-right: unset;
-            padding-left: 1.5rem;
-        }
-        &__sidebar {
-            padding-right: 1.5rem;
-            padding-left: unset;
-        }
-    }
-    .page-footer {
-        &__social {
-            margin-left: unset;
-            margin-right: auto;
-        }
-        &__links a + span {
-            padding-left: 0;
-        }
-        &__links span {
-            padding-right: 1.2rem;
-        }
-    }
-}
-
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 
@@ -95,55 +35,8 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .page-content {
-        z-index: unset;
-        position: unset;
-        &__wrapper {
-            flex-wrap: wrap;
-        }
-        &__main {
-            flex: 0 0 100%;
-            max-width: 100%;
-            padding-right: 0;
-        }
-        &__sidebar {
-            flex: unset;
-            position: fixed;
-            top: 0;
-            right: -100%;
-            bottom: 0;
-            width: 60%;
-            max-width: unset;
-            padding: 1.5rem;
-            padding-top: 4rem;
-            background-color: var(--bg-page);
-            transition: right 0.3s ease;
-            overflow-y: auto;
-            z-index: 2031;
-            &.in {
-                right: 0;
-            }
-        }
-    }
-    .page-footer {
-        position: relative;
-    }
-}
-
-@{RTL} {
-    .page-content {
-        &__sidebar {
-            padding: 1.5rem;
-        }
-    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-    .page-content {
-        &__sidebar {
-            right: -80%;
-            width: 80%;
-        }
-    }
 }

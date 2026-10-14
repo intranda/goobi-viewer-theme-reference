@@ -1,7 +1,7 @@
 /* ==============================================================
-   style declarations for sidebarMenu component
+   Sidebar Menu
+   style declarations for sidebarMenu.xhtml
    ==============================================================*/
-
 .sidebar-menu {
     button,
     a {
@@ -9,62 +9,54 @@
         display: block;
         width: 100%;
         text-align: left;
-        padding: 14px 20px 14px;
-        padding-bottom: 0;
+        padding: 14px 20px 0;
+
         &:hover,
         &:focus,
         &:active {
             color: var(--fg-on-inverse);
         }
     }
-    button {
-    }
-    a {
-    }
-    ul {
-    }
+
     li {
         background: var(--bg-brand);
     }
+
     span {
         border-bottom: 1px dotted rgb(from var(--fg-on-inverse) r g b / 40%);
         display: block;
         padding-bottom: 1.4rem;
         padding-left: 1.4rem;
     }
-    &__submenu-container {
-    }
-    &__submenu-button {
-        &.-active {
-        }
-    }
+
     &__submenu {
         font-size: var(--font-size-body);
-        ul {
-        }
+
         li {
             background: var(--bg-subtle);
             padding-bottom: 0;
             color: var(--fg-default);
+
             &:hover,
             &:focus,
             &:active {
                 background: var(--bg-brand);
                 color: var(--fg-on-brand);
+
                 a {
                     color: var(--fg-on-brand);
                 }
             }
-            &:last-of-type {
-                span {
-                    border-bottom: none;
-                }
+
+            &:last-of-type span {
+                border-bottom: none;
             }
         }
+
         a {
-            padding: 10px 20px 14px;
-            padding-bottom: 0;
+            padding: 10px 20px 0;
             color: var(--fg-default);
+
             &:hover,
             &:focus,
             &:active {
@@ -72,6 +64,7 @@
                 background: transparent;
             }
         }
+
         span {
             border-bottom: 1px dotted var(--fg-muted);
             padding-left: 2.6rem;

@@ -1,49 +1,34 @@
 /* ==============================================================
    Resets for CSS Libs
    ==============================================================*/
-/* BOOTSTRAP */
-
+/* POPOVERS */
 .popover-body {
     .btn.btn--full {
         .mx-theme-control-primary();
     }
 }
 
-.tooltipp {
-}
+/* FORMS */
 .admin__form-help-text {
     color: var(--fg-default);
     opacity: 0.6;
 }
 
-/* TABS */
-.nav-tabs {
-    li {
-        a {
-        }
-        span {
-        }
-        &.active {
-            a {
-            }
-        }
-    }
-}
-.tab-pane {
-}
-/* FORMS */
 .form-control {
     color: var(--fg-default);
     background: var(--bg-elevated);
+
     &:disabled {
         background: var(--bg-subtle);
         color: var(--fg-secondary);
     }
+
     &:focus {
         background: var(--bg-elevated);
         color: var(--fg-default);
         -webkit-text-fill-color: var(--fg-default);
     }
+
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
@@ -52,16 +37,7 @@
         transition: background-color 9999s ease-in-out 0s;
     }
 }
-.form-horizontal {
-    .form-group {
-        label {
-        }
-        .form-control {
-        }
-        .btn {
-        }
-    }
-}
+
 /* MODALS */
 .modal {
     z-index: 9999;
@@ -74,10 +50,12 @@
     h5 {
         color: var(--fg-default);
     }
+
     .custom-control--select {
         border: 1px solid var(--border-strong);
         background: var(--bg-surface);
     }
+
     .btn.btn--full {
         .mx-theme-control-primary();
     }
@@ -88,11 +66,47 @@
         border-radius: var(--radius-container);
         box-shadow: var(--shadow-elevated);
     }
+
     .card {
         border: 1px solid var(--modal-card-border);
     }
+
     .card-body {
         background: var(--bg-surface);
+    }
+
+    .modal-header .fancy-close {
+        .mx-theme-control();
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        padding: 0;
+        opacity: 1;
+        background-color: transparent;
+        border-radius: var(--radius-button);
+        transform: none;
+
+        &::before,
+        &::after {
+            background-color: currentColor;
+            transform: rotate(45deg);
+        }
+
+        &:hover::before,
+        &:hover::after {
+            transform: rotate(45deg);
+        }
+
+        &:disabled,
+        &[aria-disabled='true'],
+        &.disabled {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+            }
+        }
     }
 }
 
@@ -101,8 +115,7 @@
 }
 
 .modal-open {
-    #bodyWrapper > *:not(#pageHeader),
-    .page-header {
+    #bodyWrapper > * {
         filter: blur(3px);
     }
 }
@@ -110,64 +123,6 @@
 .alt-backdrop,
 .modal-backdrop.show {
     opacity: 0.6;
-}
-
-.modal.fade .modal-dialog {
-}
-
-.modal-open[style] {
-}
-
-.modal-backdrop.show {
-}
-
-.modal-backdrop {
-}
-
-.modal .modal-header .fancy-close:where(:not(#admin *)) {
-    .mx-theme-control();
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    padding: 0;
-    opacity: 1;
-    background-color: transparent;
-    border-radius: var(--radius-button);
-    transform: none;
-
-    &::before,
-    &::after {
-        background-color: currentColor;
-        transform: rotate(45deg);
-    }
-
-    &:hover::before,
-    &:hover::after {
-        transform: rotate(45deg);
-    }
-
-    &:disabled,
-    &[aria-disabled='true'],
-    &.disabled {
-        &,
-        &:hover,
-        &:active,
-        &:focus {
-            .mx-theme-control-disabled();
-        }
-    }
-}
-
-.modal-body {
-}
-
-@media screen and (min-width: 576px) {
-    .modal-dialog {
-    }
-}
-
-.data-table-paginator__button {
-    background-color: var(--bg-page);
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

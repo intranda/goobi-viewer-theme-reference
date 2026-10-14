@@ -1,25 +1,16 @@
 /* ==============================================================
-   Thumbnail paginator
-   Style declarations for thumbnailPaginator.xhtml
+   Sidebar Scroll Preview
+   style declarations for sidebarScrollPreview.xhtml
    ==============================================================*/
-
-/* THUMBNAIL PAGINATOR */
-
 .sidebar-scroll-preview {
-    &__inner {
-    }
     &__grid {
-        .simplebar-track {
-            &.simplebar-vertical {
-                width: 8px;
-            }
-        }
-        .simplebar-scrollbar {
-            // match the muted, solid-color scrollbar used elsewhere via the
-            // native `scrollbar-color` property (see widgetToc.less,
-            // widgetSearchFacets.less): an always-visible rounded pill
-            // instead of the library's default fading, 50%-opacity one
+        .simplebar-track.simplebar-vertical {
             width: 8px;
+        }
+
+        .simplebar-scrollbar {
+            width: 8px;
+
             &:before {
                 top: 0;
                 bottom: 0;
@@ -32,51 +23,79 @@
             }
         }
     }
+
     &__item {
         min-width: 0;
         max-width: 100%;
         margin-bottom: 10px;
     }
+
     &__button,
     &__link {
         border-radius: var(--radius-container-small);
         color: var(--fg-default);
+
         &:hover,
         &:active,
         &:focus {
             color: var(--fg-default);
         }
+
         &.-highlighted {
             background-color: transparent;
             color: var(--fg-selected);
         }
     }
-    &__button-text {
-    }
-    &__image {
-        &.-loaded {
-        }
-    }
 }
 
-/* RECORD SHEET — the rail is a column of the stage: paper thumbs on the same recessed
-   ground, kept apart by space instead of a rule. Its content starts on the page inset
-   like the tool row above it, and its first thumb meets the top edge of the scan. */
+/* RECORD VIEW */
 .view-object .sidebar-scroll-preview {
-    .sidebar-scroll-preview__grid {
+    &__grid {
         padding: 0 0 1rem var(--_content-inset, 2.4rem);
     }
 
-    /* one plate per page: the scan is the card, the label sits on the ground below it */
-    .sidebar-scroll-preview__link,
-    .sidebar-scroll-preview__button {
+    &__link,
+    &__button {
         padding: 0.6rem;
         overflow: visible;
         border-radius: var(--radius-container);
         transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: var(--sidebar-bg-hover);
+
+            .sidebar-scroll-preview__image {
+                transform: none;
+                outline-color: var(--border-input);
+                box-shadow: 0 4px 10px rgb(from var(--shadow-color) r g b / 14%);
+            }
+
+            .sidebar-scroll-preview__button-text {
+                color: var(--fg-default);
+            }
+        }
+
+        &.-highlighted {
+            background-color: var(--bg-selected);
+            outline: 2px solid var(--fg-brand);
+            outline-offset: -2px;
+
+            .sidebar-scroll-preview__image-wrapper {
+                outline: 0;
+            }
+
+            .sidebar-scroll-preview__button-text {
+                color: var(--fg-selected);
+                font-weight: 600;
+            }
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
     }
 
-    .sidebar-scroll-preview__image-wrapper {
+    &__image-wrapper {
         display: block;
         overflow: visible;
         border-radius: 0;
@@ -84,7 +103,7 @@
         box-shadow: none;
     }
 
-    .sidebar-scroll-preview__image {
+    &__image {
         border-radius: var(--radius-container-small);
         background-color: var(--bg-surface);
         outline: 1px solid var(--border-subtle);
@@ -96,55 +115,11 @@
             box-shadow 0.15s ease;
     }
 
-    .sidebar-scroll-preview__button-text {
+    &__button-text {
         margin: 0.6rem 0 0;
         color: var(--fg-secondary);
         font-size: var(--font-size-caption);
         line-height: var(--line-height-body);
-    }
-
-    /* HOVER — the sheet lifts, nothing jumps */
-    :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button):hover {
-        background-color: var(--sidebar-bg-hover);
-
-        .sidebar-scroll-preview__image {
-            transform: none;
-            outline-color: var(--border-input);
-            box-shadow: 0 4px 10px rgb(from var(--shadow-color) r g b / 14%);
-        }
-
-        .sidebar-scroll-preview__button-text {
-            color: var(--fg-default);
-        }
-    }
-
-    /* CURRENT PAGE — the ring traces the same plate that hover tints, scan and label inside */
-    :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button).-highlighted {
-        background-color: var(--bg-selected);
-        outline: 2px solid var(--fg-brand);
-        outline-offset: -2px;
-
-        .sidebar-scroll-preview__image-wrapper {
-            outline: 0;
-        }
-
-        .sidebar-scroll-preview__button-text {
-            color: var(--fg-selected);
-            font-weight: 600;
-        }
-    }
-
-    :is(.sidebar-scroll-preview__link, .sidebar-scroll-preview__button):focus-visible {
-        .mx-theme-focus();
-    }
-}
-
-@{RTL} {
-    .sidebar-scroll-preview {
-        &__grid {
-            .simplebar-track {
-            }
-        }
     }
 }
 
@@ -158,17 +133,6 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .thumbnail-paginator {
-        &__item {
-            &.-activePage {
-                .thumbnail-paginator__image {
-                }
-            }
-        }
-        &__image {
-            height: 160px;
-        }
-    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */

@@ -3,27 +3,6 @@
    style declarations for everything else
    ==============================================================*/
 
-/* EDIT CMS PAGE LINK — rendered by the generic cmsPage.xhtml template for any
-   editable CMS page (not just the start page), so it stays fixed on every page */
-.cms-page__edit-page {
-    position: fixed;
-    z-index: 1000;
-    inset-block-end: 2rem;
-    inset-inline-end: 2rem;
-    margin: 0;
-    padding: 0;
-    border: 1px solid var(--container-border);
-    border-radius: var(--radius-container);
-    background-color: var(--bg-surface);
-    box-shadow: var(--shadow-elevated);
-
-    a {
-        display: flex;
-        align-items: center;
-        padding: 0.8rem 1.2rem;
-    }
-}
-
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
