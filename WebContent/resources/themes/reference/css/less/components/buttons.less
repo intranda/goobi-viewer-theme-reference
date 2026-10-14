@@ -2,37 +2,18 @@
    Buttons
    style declarations for buttons
    ==============================================================*/
-/* BUTTONS */
-
-/* MODIFICATIONS */
 .btn {
     font-weight: 500;
     border-radius: var(--radius-button);
-}
 
-.btn.btn--full {
-    .mx-theme-control-primary();
-}
-
-.btn--clean,
-.btn--link {
-    .mx-theme-control-link();
-}
-
-.btn--hidden {
-}
-
-.btn--inactive {
-}
-
-.btn--icon {
-    &:hover,
-    &:active,
-    &:focus {
+    &.btn--full {
+        .mx-theme-control-primary();
     }
-}
 
-a.btn--icon {
+    &--clean,
+    &--link {
+        .mx-theme-control-link();
+    }
 }
 
 /* SMALL AJAX LOADER ON BUTTONS */

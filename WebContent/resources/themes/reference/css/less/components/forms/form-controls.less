@@ -1,52 +1,30 @@
 /* ==============================================================
-   Form Conrols
+   Form Controls
    style declarations for form controls
    ==============================================================*/
 .custom-control {
-    input[type='checkbox'],
-    input[type='radio'] {
-    }
     &__icon {
+        color: var(--fg-brand);
     }
 }
 
-.custom-control__icon {
-    color: var(--fg-brand);
-}
-
-/* TEXT FIELDS — Bootstrap .form-control reads the field roles */
+/* TEXT FIELDS */
 .form-control {
     .mx-theme-field();
     border-radius: var(--radius-container-small);
 }
 
-/* MODIFICATIONS */
+/* SELECT */
 .custom-control--select {
     border: 1px solid var(--border-input);
-
     border-radius: var(--radius-container-small);
-
     background: var(--bg-elevated);
     color: var(--fg-default);
-    &:after {
-    }
-    &:after {
-    }
-    &.multiple {
-        &:after {
-        }
-        select {
-        }
-    }
+
     select {
         font-size: var(--font-size-body-small);
-
         background: var(--bg-elevated);
         color: var(--fg-default);
-        &.disabled {
-        }
-    }
-    select[disabled='disabled'] {
     }
 }
 
@@ -61,7 +39,7 @@
 }
 
 /* PUBLIC YES/NO TOGGLE */
-.admin__radio-switch:where(:not(#admin *)) {
+.admin__radio-switch {
     label,
     input:not(:checked) + label:hover {
         color: var(--fg-secondary);
@@ -77,7 +55,7 @@
         border: 1px solid var(--border-input);
     }
 
-    /* KNOB — CENTRED, SAME INSET AT BOTH ENDS */
+    /* KNOB */
     .toggle-inside,
     input:checked ~ .toggle-outside .toggle-inside {
         top: 50%;
@@ -92,7 +70,7 @@
         border-color: var(--bg-brand);
 
         .toggle-inside {
-            left: calc(~'100% - 2.5rem');
+            left: calc(100% - 2.5rem);
             background: var(--fg-on-brand);
         }
     }
@@ -143,15 +121,18 @@
     }
 }
 
-/* Responsive */
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
+/* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 }
 
+/* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }
