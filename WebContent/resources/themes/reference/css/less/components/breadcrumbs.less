@@ -22,12 +22,10 @@
             min-width: 0;
         }
 
-        /* first chip starts on the content edge */
         > .breadcrumbs__crumb:first-child {
             margin-inline-start: -0.5rem;
         }
     }
-    /* ELEMENT */
     a,
     span {
         padding: 0.3rem 0.5rem;
@@ -55,7 +53,7 @@
             color: var(--fg-muted);
         }
     }
-    /* separator: text glyph on the shared baseline, same distance to both labels */
+    /* SEPARATOR */
     &__crumb {
         align-items: baseline;
     }
@@ -112,7 +110,7 @@
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
-/* BREAKPOINT FOR TABLETS — only the parent as a back link */
+/* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
     .breadcrumbs {
         &__wrapper {

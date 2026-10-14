@@ -2,42 +2,14 @@
    Datatable Paginator
    style declarations for dataTablePaginator.xhtml
    ==============================================================*/
-/* DATATABLE PAGINATOR */
-/* BLOCK */
 .data-table-paginator {
-    /* ELEMENT */
-    ul {
-    }
-    li {
-    }
-    a,
-    span {
-    }
-    &__page-count {
-        span {
-        }
-        .data-table-paginator__current-page {
-        }
-        .data-table-paginator__input {
-        }
-        .data-table-paginator__total-count {
-        }
-    }
-    &__total-count,
-    &__current-page {
-    }
-    &__current-page {
-    }
     &__input {
-        input:where(:not(#admin *)) {
+        input {
             .mx-theme-field();
             text-align: center;
         }
     }
-    &__total-count {
-    }
-
-    &__button.btn:where(:not(#admin *)) {
+    &__button.btn {
         .mx-theme-control();
         background-color: transparent;
 
@@ -61,15 +33,11 @@
         }
     }
 
-    &__icon:where(:not(#admin *)),
-    &__icon-svg:where(:not(#admin *)) {
+    &__icon,
+    &__icon-svg {
         color: currentColor;
         opacity: 1;
     }
-}
-
-#txtMoveTo2,
-input[id*='cmdMoveTo'] {
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
