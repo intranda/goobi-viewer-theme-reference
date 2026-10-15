@@ -7,26 +7,26 @@
 /* BLOCK */
 .widget-chronology-slider {
     color: var(--fg-default);
-    &__item {
-        &-input {
-            color: var(--fg-default);
-            width: 100%;
-            text-align: center;
-            font-weight: 600;
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-container-small);
-            padding: 0.4rem 0.6rem;
-            transition:
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
-            &:hover,
-            &:focus {
-                outline: none;
-                border-color: var(--border-brand);
-                box-shadow: 0 0 0 3px var(--bg-brand-subtle);
-            }
+    &__item-input {
+        color: var(--fg-default);
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-container-small);
+        padding: 0.4rem 0.6rem;
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+        &:hover,
+        &:focus {
+            outline: none;
+            border-color: var(--border-brand);
+            box-shadow: 0 0 0 3px var(--bg-brand-subtle);
         }
+    }
+    &__item {
         &.chronology-slider-label,
         &.chronology-slider-actions {
             color: var(--fg-default);
@@ -36,12 +36,6 @@
             font-size: var(--font-size-body);
         }
         &.chronology-slider-actions {
-            ul {
-            }
-            li {
-            }
-            img {
-            }
             [data-reset='chrono-slider'] {
                 color: var(--fg-default);
                 transition: color 0.2s ease;
@@ -50,23 +44,10 @@
                 }
             }
         }
-        &.chronology-slider-action-loader,
-        &.chronology-slider-action-reset {
-            &.active {
-            }
-        }
-        &.chronology-slider-action-loader {
-        }
-        &.chronology-slider-action-reset {
-        }
         &.chronology-slider-start,
         &.chronology-slider-end {
             font-size: var(--font-size-body-small);
             background-color: transparent;
-        }
-        &.chronology-slider-start {
-        }
-        &.chronology-slider-end {
         }
         &.chronology-slider {
             background-color: transparent;
@@ -123,7 +104,7 @@
     }
 }
 
-/* NORMAL SIDEBAR — shared slider and graph geometry */
+/* NORMAL SIDEBAR */
 .content__wrapper > .content__sidebar .widget-chronology-slider {
     min-inline-size: 0;
     overflow: visible;
@@ -159,11 +140,6 @@
             .mx-theme-control-accent();
             color: var(--fg-brand);
             display: inline-flex;
-
-            &:hover,
-            &:active {
-                color: var(--fg-brand-hover);
-            }
             align-items: center;
             justify-content: center;
             inline-size: 4rem;
@@ -171,6 +147,11 @@
             padding: 0;
             border: 1px solid transparent;
             border-radius: var(--radius-button);
+
+            &:hover,
+            &:active {
+                color: var(--fg-brand-hover);
+            }
 
             .icon-svg {
                 inline-size: var(--_widget-action-icon-size, 1.6rem);
@@ -249,7 +230,7 @@
             transform: translateY(-50%);
             touch-action: none;
 
-            /* the outer handles overhang the track ends so no sliver of the rail shows */
+            /* OUTER HANDLES */
             &:first-of-type {
                 transform: translate(-2px, -50%);
             }
@@ -313,7 +294,7 @@
         }
     }
 
-    /* Chart.js keeps its own drawing size; both canvases share the same bounds. */
+    /* CHART CANVASES */
     .chronology-slider:has(.chronology-slider__container) {
         padding: 0;
     }

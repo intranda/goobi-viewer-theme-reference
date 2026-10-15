@@ -3,17 +3,10 @@
    style declarations for calendar widget
    ==============================================================*/
 .widget-calendar {
-    &__body {
-    }
-
-    /* SURFACE — the calendar sits on the panel, not on its own popover surface */
+    /* SURFACE */
     .flatpickr-calendar {
         background: transparent;
         color: var(--fg-default);
-    }
-    .flatpickr-innerContainer,
-    .flatpickr-rContainer,
-    .flatpickr-days {
     }
     .flatpickr-rContainer {
         padding-inline: 1.2rem;
@@ -23,7 +16,7 @@
         background: transparent;
     }
 
-    /* HEAD — the months row is the panel head of a widget without topbar */
+    /* HEAD */
     .flatpickr-months {
         align-items: center;
         min-height: 5.6rem;
@@ -43,7 +36,6 @@
         gap: 0.4rem;
         width: 100%;
         height: auto;
-        /* the spinner column is padded back in so month and year read centred */
         padding: 0;
         padding-inline-start: 2.4rem;
     }
@@ -86,7 +78,7 @@
         }
     }
 
-    /* MONTH ARROWS — the topbar actions of this panel */
+    /* MONTH ARROWS */
     .flatpickr-months {
         .flatpickr-prev-month,
         .flatpickr-next-month {
@@ -139,7 +131,7 @@
         opacity: 1;
     }
 
-    /* YEAR SPINNER — the pair sits beside the digits, never on them */
+    /* YEAR SPINNER */
     .flatpickr-current-month .numInputWrapper {
         display: flex;
         align-items: center;
@@ -195,7 +187,7 @@
         font-weight: 600;
     }
 
-    /* DAYS — only a day that carries issues is a control */
+    /* DAYS */
     .flatpickr-day {
         display: flex;
         align-items: center;
@@ -237,7 +229,7 @@
         background-color: var(--fg-on-brand);
     }
 
-    /* ISSUE POPOVER — rendered on the body, so it carries the panel language itself */
+    /* ISSUE POPOVER */
     &__popover {
         border-color: var(--container-border);
         border-radius: var(--radius-container-small);
