@@ -23,15 +23,13 @@
             .search-list__hits-list-items {
                 gap: 1.2rem;
             }
-            /* REGISTER — type and title run on two tracks, the tools close the row.
-               The preview, the metadata and the sub-hits are switched off by the core here,
-               so the only thing left to build with is the alignment of these two. */
+            /* REGISTER: TYPE AND TITLE ON TWO TRACKS, THE TOOLS CLOSE THE ROW */
             .search-list__hit-inner-structure {
                 display: flex;
                 flex-direction: column-reverse;
                 gap: 0 var(--_list-column-gap);
             }
-            /* both wrappers only group the markup; the row itself sets the tracks */
+            /* THE WRAPPERS ONLY GROUP THE MARKUP */
             .search-list__hit-info-wrapper,
             .search-list__hit-thumb-wrapper {
                 display: contents;
@@ -64,28 +62,11 @@
                 font-size: var(--font-size-body-large);
                 line-height: 1.4;
             }
-            .search-list__hit-header {
-                .col-12.col-sm-10 {
-                }
-                .col-12.col-sm-2 {
-                }
-            }
-            .search-list__hit-thumbnail,
-            .search-list__hit-type,
-            .search-list__hit-info,
-            .search-list__hit-content {
-            }
-            .search-list--highlight {
-            }
         }
-    }
-    a[data-toggle='hit-content'],
-    button[data-toggle='hit-content'] {
     }
 }
 
-/* POINTER DEVICES — the dense list earns its right edge: the tools of a row appear on hover.
-   Outside this query the core keeps them switched off, so touch stays a pure title list. */
+/* POINTER DEVICES: THE TOOLS OF A ROW APPEAR ON HOVER */
 @media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
     .search-list__hits.list,
     .search-list__hits.list-view {
@@ -102,7 +83,7 @@
         .search-list__hit:focus-within .search-list__hit-options-wrapper > * {
             opacity: 1;
         }
-        /* a record already on the list keeps its mark visible */
+        /* A BOOKMARKED RECORD KEEPS ITS MARK VISIBLE */
         .search-list__hit-options-button-bookmark.added,
         .search-list__hit-options-button-bookmark[aria-checked='true'] {
             opacity: 1;
@@ -110,9 +91,7 @@
     }
 }
 
-/* SEARCH PAGE RESULT ROWS — the list stays part of the sheet.
-   One hairline in the white space, set on the text axis, keeps the results apart
-   without drawing a frame around each of them or a cut across the sheet. */
+/* SEARCH PAGE RESULT ROWS: ONE HAIRLINE ON THE TEXT AXIS KEEPS THE RESULTS APART */
 @{searchSheet} .search-list__hits:not(.grid) {
     --_search-hit-block-inset: 2rem;
     --_search-hit-bleed: 1.6rem;
@@ -127,7 +106,7 @@
         gap: 0;
     }
 
-    /* a result group keeps the text axis of the rows below it */
+    /* A RESULT GROUP KEEPS THE TEXT AXIS OF THE ROWS */
     .search-list__hit-result-group-heading {
         padding: 1.6rem var(--search-sheet-gutter) 0;
     }
@@ -144,7 +123,7 @@
             background-color: transparent;
             transition: background-color 0.18s ease;
 
-            /* the line lies in the gap, spans the text column and belongs to neither result */
+            /* THE LINE LIES IN THE GAP AND BELONGS TO NEITHER RESULT */
             & + .search-list__hit::before {
                 content: '';
                 position: absolute;
@@ -157,23 +136,6 @@
             &:hover,
             &:focus-within {
                 background-color: var(--sidebar-bg-hover);
-            }
-
-            /* the group colour moves from the frame to the leading edge */
-            &.docstructtype__work {
-                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--color-theme-entity-group-work);
-            }
-            &.docstructtype__person {
-                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--color-theme-entity-group-person);
-            }
-            &.docstructtype__agent {
-                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--color-theme-entity-group-agent);
-            }
-            &.docstructtype__award {
-                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--color-theme-entity-group-award);
-            }
-            &.docstructtype__event {
-                box-shadow: inset var(--search-hit-accent-width) 0 0 var(--color-theme-entity-group-event);
             }
         }
     }
@@ -189,7 +151,7 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    /* the type track gives way first */
+    /* THE TYPE TRACK GIVES WAY FIRST */
     .search-list__hits.list,
     .search-list__hits.list-view {
         --_list-column-gap: 1.6rem;
@@ -202,7 +164,7 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-    /* no room for a second track, so the type takes the line above the title */
+    /* THE TYPE TAKES THE LINE ABOVE THE TITLE */
     .search-list__hits.list,
     .search-list__hits.list-view {
         .search-list__hit-inner-structure {

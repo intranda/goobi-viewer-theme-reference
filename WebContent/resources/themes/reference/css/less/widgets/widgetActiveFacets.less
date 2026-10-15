@@ -7,12 +7,6 @@
 /* BLOCK */
 .active-facets-badges {
     /* ELEMENTS */
-    &__list {
-    }
-    &.widget-active-facets &__list {
-    }
-    &__list-item {
-    }
     &__list &__badge {
         height: 24px;
         padding-block: 0;
@@ -27,12 +21,6 @@
             box-shadow: none;
         }
     }
-    &__badge {
-    }
-    &__badge-label {
-    }
-    &__badge-field {
-    }
     &__badge-remove {
         width: 16px;
         height: 16px;
@@ -44,25 +32,11 @@
         width: 10px;
         height: 10px;
     }
-    &__more {
-    }
-}
-
-/* WIDGET EMBEDDING */
-.widget-active-facets {
-    &__topbar {
-    }
-    &__reset {
-    }
-    &__reset-icon-svg {
-    }
-    &__reset-label {
-    }
 }
 
 /* SIDEBAR ACTIVE FILTER SUMMARY */
 :where(.content__wrapper > .content__sidebar)
-    .active-facets-badges.widget-active-facets:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    .active-facets-badges.widget-active-facets:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
     .active-facets-badges__list {
         gap: 0.8rem;
     }
@@ -142,9 +116,7 @@
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
     :where(.content__wrapper > .content__sidebar)
-        .active-facets-badges.widget-active-facets:not(
-            :where(.widget .widget, .modal *, .popover *, dialog *, #admin *)
-        ) {
+        .active-facets-badges.widget-active-facets:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
         .active-facets-badges__list .active-facets-badges__badge,
         .widget-active-facets__reset {
             min-width: 4.4rem;

@@ -3,8 +3,6 @@
    style declarations for searchList.xhtml
    ==============================================================*/
 /* SEARCH LIST */
-/* VARIABLES */
-
 /* BLOCK */
 .search-list {
     &__thumb-bookmark-wrapper {
@@ -25,15 +23,7 @@
     &__options-container {
         margin-bottom: 2rem;
     }
-    &__options-container-heading {
-    }
-    &__title {
-        h2 {
-        }
-    }
     &__options {
-        form {
-        }
         > * + * {
             border-left: none;
         }
@@ -98,25 +88,8 @@
             }
         }
     }
-    &__hitcount,
-    &__rss,
-    &__save-search,
-    &__excel-export {
-    }
     &__hitcount {
         font-weight: 600;
-    }
-    &__rss {
-    }
-    &__save-search {
-    }
-    &__excel-export {
-        a {
-        }
-        .excel-export-loader {
-            img {
-            }
-        }
     }
     &__views {
         gap: 2px;
@@ -124,106 +97,12 @@
         border: 0;
         border-radius: var(--radius-button);
         background-color: var(--bg-surface);
-        button {
-        }
-        [data-view='search-list-default'] {
-        }
-        [data-view='search-list-grid'] {
-        }
-        [data-view='search-list-list'] {
-        }
-    }
-    &__ris-export {
-    }
-    &__help {
-    }
-    /* EXPORT DROPDOWN */
-    &__export-dropdown-wrapper {
-    }
-    &__export-dropdown {
-    }
-    &__export-dropdown-toggle {
-    }
-    &__export-dropdown-heading {
-    }
-    &__export-dropdown-link {
-    }
-    &__hit-export-dropdown-wrapper {
-    }
-    &__hit-export-dropdown {
-    }
-    &__hit-export-dropdown-toggle {
-    }
-    &__hit-export-dropdown-heading {
-    }
-    &__hit-export-dropdown-link {
-    }
-    &__options-wrapper {
-    }
-    /* CURRENT SEARCH */
-    &__label {
-    }
-    &__current-search {
-        margin-bottom: 1.5rem;
-        .form-group {
-        }
-        .input-group-addon {
-            a {
-                &:hover,
-                &:focus,
-                &:active {
-                }
-            }
-            &.reset,
-            &.search {
-                a,
-                button {
-                    line-height: unset;
-                }
-            }
-            &.reset {
-                &.focus {
-                }
-            }
-            &.search {
-                a {
-                }
-            }
-            input[type='submit'] {
-                padding: 10px 20px;
-            }
-        }
-        .form-control {
-            &:focus {
-            }
-        }
-        & + hr {
-            display: none;
-        }
-    }
-    /* LINKS */
-    &__links {
-        button {
-        }
-        form {
-        }
-        a {
-            font-size: var(--font-size-body-small);
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    /* SORTING */
-    &__sorting {
-        .custom-control {
-        }
-        select {
-        }
     }
     &__nav-helper-wrapper {
         color: var(--fg-default);
+        margin-bottom: 3.2rem;
+        padding-bottom: 0;
+        border-bottom: 0;
     }
     &__nav-helper-wrapper .custom-control--select {
         border: none;
@@ -240,14 +119,13 @@
             border-radius: var(--radius-container-small);
         }
     }
-    /* ADVANCED SEARCH INFO — the band that takes the place of the search row: query left, way back right */
+    /* ADVANCED SEARCH INFO */
     &__adv-search-info {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 0.4rem var(--search-band-gap);
-        /* same geometry and divider as the search row (.search-standard__input-slim) */
         padding: 1.2rem var(--search-sheet-gutter);
         background: var(--bg-surface);
         color: var(--fg-default);
@@ -259,19 +137,6 @@
         font-size: var(--font-size-body-small);
     }
     /* HITS */
-    &__hits-geo-map-results-container {
-    }
-    &__geomap {
-    }
-    &__hits {
-    }
-    &__nav-helper {
-    }
-    &__nav-helper-wrapper {
-        margin-bottom: 3.2rem;
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
     &__hits-list {
         gap: 1.2rem;
     }
@@ -281,26 +146,6 @@
         border: 1px solid var(--container-border);
         border-radius: var(--radius-container);
         padding: clamp(1.6rem, 2vw, 2.4rem);
-        /* COLORING FOR THE ENTITY GHOUPS */
-        &.docstructtype__work {
-            border: 1px solid var(--color-theme-entity-group-work);
-        }
-        &.docstructtype__person {
-            border: 1px solid var(--color-theme-entity-group-person);
-        }
-        &.docstructtype__agent {
-            border: 1px solid var(--color-theme-entity-group-agent);
-        }
-        &.docstructtype__award {
-            border: 1px solid var(--color-theme-entity-group-award);
-        }
-        &.docstructtype__event {
-            border: 1px solid var(--color-theme-entity-group-event);
-        }
-    }
-    &__hit-header {
-    }
-    &__hit-header-inner {
     }
     &__hit-number-wrapper {
         background: var(--bg-brand);
@@ -308,16 +153,8 @@
     &__hit-number {
         font-size: var(--font-size-caption);
     }
-    &__hit-title,
-    &__hit-type,
-    &__hit-info {
-    }
-    &__hit-title {
-        h3 {
-            font-size: var(--font-size-body);
-        }
-        &.-noThumbnail {
-        }
+    &__hit-title h3 {
+        font-size: var(--font-size-body);
     }
     &__hit-title-heading {
         font-size: var(--font-size-heading-small);
@@ -347,16 +184,6 @@
             text-decoration-line: underline;
         }
     }
-    &__hit-title-text {
-    }
-    &__no-thumb-bookmark {
-        &[data-bookmark-list-type='add'] {
-            color: var(--fg-brand);
-            &.added,
-            &:hover {
-            }
-        }
-    }
     &__hit-thumbnail {
         img {
             border-radius: var(--radius-container-small);
@@ -364,21 +191,14 @@
         }
         [data-bookmark-list-type='add'] {
             color: var(--fg-brand);
-            &.added,
-            &:hover {
-            }
         }
     }
-    &__hit-type {
-    }
-    /* DOCUMENT TYPE — a spoken line above the title, not a filled chip */
+    /* DOCUMENT TYPE */
     &__hit-docstruct {
         font-size: var(--font-size-caption);
         color: var(--fg-muted);
         ul {
             column-gap: 0.2rem;
-        }
-        li {
         }
         li + li:before {
             color: var(--fg-muted);
@@ -407,23 +227,6 @@
             }
         }
     }
-    &__hit-text {
-        font-size: var(--font-size-body-small);
-    }
-    &__hit-text-label,
-    &__hit-text-value {
-    }
-    &__hit-text-label {
-    }
-    &__hit-text-value {
-    }
-    &__hit-info {
-    }
-    &__toggle-thumbs {
-        .-active {
-            color: var(--fg-brand);
-        }
-    }
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
         font-size: var(--font-size-body-small);
@@ -434,26 +237,10 @@
         &:active {
             color: var(--fg-default);
         }
-        &:hover,
-        &:focus,
-        &:active {
-        }
-        &.in {
-        }
-        .search-list__loader {
-        }
-        &.active {
-        }
     }
-    &__hit-content {
-        dl {
-            margin-bottom: 0;
-            font-size: var(--font-size-body-small);
-        }
-        dt {
-        }
-        dd {
-        }
+    &__hit-content dl {
+        margin-bottom: 0;
+        font-size: var(--font-size-body-small);
     }
     &__hit-content-set {
         display: flex;
@@ -467,29 +254,19 @@
             }
         }
     }
-    &__hit-content-more {
-        .btn {
-            font-size: var(--font-size-body-small);
-        }
+    &__hit-content-more .btn {
+        font-size: var(--font-size-body-small);
     }
     &__hit-text-area {
         flex: 1 1 auto;
         min-width: 0;
     }
-    /* the child-hit preview sits to the left, at half the size of the main result thumbnail */
+    /* CHILD HIT PREVIEW AT HALF THE THUMBNAIL WIDTH */
     &__subhit-thumbnail {
         flex: 0 0 calc(var(--_hit-thumb-width) / 2);
         width: calc(var(--_hit-thumb-width) / 2);
     }
-    &__loader {
-    }
     /* BROWSE ELEMENT */
-    &__hit-inner-structure {
-    }
-    &__hit-thumb-wrapper {
-    }
-    &__hit-info-wrapper {
-    }
     &__hit-top-wrapper {
         padding-bottom: 0;
         margin-bottom: 0.8rem;
@@ -498,8 +275,7 @@
     &__hit-options-wrapper {
         margin-left: 0.5rem;
     }
-    /* the icon keeps an edge: on a hovered row the plain surface alone would not read as a control,
-       and the border width is what lets the selected and disabled helpers show their colour at all */
+    /* OPTION BUTTONS KEEP AN EDGE */
     &__hit-options-button.btn {
         .mx-theme-control();
         border: 1px solid var(--border-strong);
@@ -563,85 +339,29 @@
         border: 1px solid transparent;
         border-radius: var(--radius-container-small);
     }
-    &__hit-options-button-download {
-    }
-    &__hit-options-button-clipboard {
-    }
-    &__hit-options-button-citation {
-    }
-    &__hit-export-dropdown-toggle {
-    }
-    &__hit-metadata-list {
-    }
-    &__hit-metadata-second {
-    }
-    &__struct-title,
-    &__struct-chapter {
-    }
     &__struct-title {
         margin-bottom: 0.5rem;
         h4 {
             line-height: var(--line-height-body);
         }
     }
-    &__metadata-info {
-        td {
-            &:first-child {
-            }
-        }
-    }
-    &__struct-child-hits {
-        a {
-        }
-    }
-    &__struct-chapter {
-    }
-    &__struct-chapter + .search-list__struct-title {
-    }
-    /* FACETS HEADING */
-    &__facets-heading {
-    }
-    /* SEARCH GROUP STYLES */
-    &__hit-result-group-heading {
-    }
-    &__expand-group-link {
-    }
-}
-/* MODIFICATION */
-.search-list--highlight {
 }
 
-/* STACKED MV THUMBNAIL */
-.stacked-thumbnail {
-}
-.stacked-thumbnail-before,
-.stacked-thumbnail-after {
-}
-.stacked-thumbnail-after {
-}
-.stacked-thumbnail a img {
-}
-.search-list__current-search .input-group-addon.search {
-}
-.search-list__current-search .input-group-append.search {
-}
-
-/* HIT ROW — an open result strip: the scan leads, the text breathes, the tools stay out of the way */
+/* HIT ROW */
 .search-list__hits:not(.grid):not(.list-view),
 .view-bookmark__entries {
     --_hit-thumb-width: 19rem;
     --_hit-thumb-ratio: 4 / 5;
     --_hit-column-gap: 2.8rem;
 
+    /* THE THUMBNAIL COLUMN IS RESERVED EVEN WITHOUT A PREVIEW */
     .search-list__hit-inner-structure {
-        /* reserve the thumbnail column's width even when no thumbnail is rendered,
-           so hits without a preview keep the same text column start as hits with one */
         grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr);
         align-items: start;
         gap: 0 var(--_hit-column-gap);
     }
 
-    /* PREVIEW — the scan itself, no frame around it; one proportion for every row */
+    /* PREVIEW */
     .search-list__hit-thumbnail {
         width: 100%;
         aspect-ratio: var(--_hit-thumb-ratio);
@@ -663,7 +383,7 @@
                 transform 0.18s ease,
                 box-shadow 0.18s ease;
         }
-        /* multivolume keeps its stacked cards inside the same slot */
+        /* MULTIVOLUME STACK STAYS IN THE SLOT */
         a.stackedThumbEffect {
             margin: 0;
 
@@ -683,7 +403,7 @@
         gap: 0.8rem;
     }
 
-    /* the document type reads as a kicker above the title */
+    /* DOCUMENT TYPE AS KICKER ABOVE THE TITLE */
     .search-list__hit-docstruct {
         order: -1;
         margin-bottom: 0;
@@ -705,7 +425,7 @@
         font-weight: 500;
     }
 
-    /* TOOLS — present on touch, called up by pointer or keyboard on the desktop */
+    /* TOOLS */
     .search-list__hit-options-wrapper {
         flex-direction: row;
         gap: 0.4rem;
@@ -715,7 +435,7 @@
         height: 36px;
     }
 
-    /* the sub-hit toggle and its list continue the text axis instead of the full width */
+    /* SUB-HIT TOGGLE ON THE TEXT AXIS */
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
         display: inline-flex;
@@ -731,14 +451,9 @@
             color: var(--fg-default);
         }
     }
-    .search-list__child-hits-button-wrapper,
-    .search-list__hit-archive-link,
-    .search-list__hit-content {
-    }
 }
 
-/* POINTER DEVICES — the row answers as a whole: the scan lifts, the tools appear.
-   Touch keeps them permanently, like the facet actions. */
+/* POINTER DEVICES: THE TOOLS APPEAR ON HOVER, TOUCH KEEPS THEM */
 @media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
     .search-list__hits:not(.grid):not(.list-view),
     .view-bookmark__entries {
@@ -750,7 +465,7 @@
         .search-list__hit:focus-within .search-list__hit-options-wrapper > * {
             opacity: 1;
         }
-        /* a record already on the list keeps its mark visible */
+        /* A BOOKMARKED RECORD KEEPS ITS MARK VISIBLE */
         .search-list__hit-options-button-bookmark.added,
         .search-list__hit-options-button-bookmark[aria-checked='true'] {
             opacity: 1;
@@ -772,7 +487,7 @@
     }
 }
 
-/* SEARCH PAGE CONTROL BAND — the header row of the result list */
+/* SEARCH PAGE CONTROL BAND */
 body:has(.header.-adminActive) @{searchSheet} {
     --_search-band-offset: @admin-topbar-frontend-height;
 }
@@ -780,95 +495,96 @@ body:has(.header.-adminActive) @{searchSheet} {
 @{searchSheet} {
     .search-list {
         margin-bottom: 0;
-    }
-    .search-list__options-container {
-        margin: 0;
-        padding: 0;
-    }
 
-    /* BAND — stays at the top of the viewport under the sticky header */
-    .search-list__nav-helper-wrapper {
-        /* the core declares these on .search-list__options, which the band replaces */
-        --_search-option-button-size: var(--search-control-height);
-        --_search-option-icon-size: 1.8rem;
-
-        position: sticky;
-        top: var(--search-band-top);
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem var(--search-band-gap);
-        margin: 0;
-        padding: 0.8rem var(--search-sheet-gutter);
-        border-block: 1px solid var(--search-band-border);
-    }
-    .search-list__band-start,
-    .search-list__band-end {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .search-list__band-start {
-        gap: 0.6rem;
-        max-width: 100%;
-    }
-    .search-list__band-end {
-        gap: var(--search-band-gap);
-        /* stays on the right even when the band wraps into two lines */
-        margin-inline-start: auto;
-    }
-
-    /* STATEMENT — the only unframed, dark item of the band */
-    .search-list__hitcount {
-        margin-inline-end: 1rem;
-        font-size: var(--font-size-body-small);
-        font-weight: 600;
-        color: var(--fg-default);
-    }
-
-    /* SETTINGS — same material as the control groups, so the band reads as one row */
-    .search-list__nav-helper-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        height: var(--search-control-height);
-        padding-inline: 1.2rem;
-        border: 1px solid var(--search-group-border);
-        border-radius: var(--search-group-radius);
-        background-color: var(--search-group-bg);
-        transition: background-color 0.18s ease;
-
-        &:hover {
-            background-color: var(--search-group-bg-hover);
-        }
-        &:active {
-            background-color: var(--search-group-bg-pressed);
+        &__options-container {
+            margin: 0;
+            padding: 0;
         }
 
-        .search-list__nav-helper-label label {
-            font-size: var(--font-size-body-small);
-            color: var(--fg-muted);
+        /* BAND: STICKY UNDER THE HEADER */
+        &__nav-helper-wrapper {
+            /* THE CORE DECLARES THESE ON .search-list__options, WHICH THE BAND REPLACES */
+            --_search-option-button-size: var(--search-control-height);
+            --_search-option-icon-size: 1.8rem;
+
+            position: sticky;
+            top: var(--search-band-top);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem var(--search-band-gap);
+            margin: 0;
+            padding: 0.8rem var(--search-sheet-gutter);
+            border-block: 1px solid var(--search-band-border);
         }
-        .custom-control--select {
-            width: auto;
-            min-height: 0;
+        &__band-start,
+        &__band-end {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        .custom-control--select select {
-            width: auto;
-            height: auto;
-            min-height: 0;
-            max-width: none;
-            padding: 0 2rem 0 0;
-            border: 0;
-            background-color: transparent;
+        &__band-start {
+            gap: 0.6rem;
+            max-width: 100%;
+        }
+        &__band-end {
+            gap: var(--search-band-gap);
+            /* STAYS ON THE RIGHT WHEN THE BAND WRAPS */
+            margin-inline-start: auto;
+        }
+
+        /* STATEMENT */
+        &__hitcount {
+            margin-inline-end: 1rem;
             font-size: var(--font-size-body-small);
             font-weight: 600;
+            color: var(--fg-default);
+        }
+
+        /* SETTINGS */
+        &__nav-helper-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            height: var(--search-control-height);
+            padding-inline: 1.2rem;
+            border: 1px solid var(--search-group-border);
+            border-radius: var(--search-group-radius);
+            background-color: var(--search-group-bg);
+            transition: background-color 0.18s ease;
+
+            &:hover {
+                background-color: var(--search-group-bg-hover);
+            }
+            &:active {
+                background-color: var(--search-group-bg-pressed);
+            }
+
+            .search-list__nav-helper-label label {
+                font-size: var(--font-size-body-small);
+                color: var(--fg-muted);
+            }
+            .custom-control--select {
+                width: auto;
+                min-height: 0;
+            }
+            .custom-control--select select {
+                width: auto;
+                height: auto;
+                min-height: 0;
+                max-width: none;
+                padding: 0 2rem 0 0;
+                border: 0;
+                background-color: transparent;
+                font-size: var(--font-size-body-small);
+                font-weight: 600;
+            }
         }
     }
 
-    /* CONTROL GROUPS — one outline around the set, hairlines between its members, no fill at rest */
+    /* CONTROL GROUPS */
     .inputfield-paginator,
     .search-list__views {
         display: inline-flex;
@@ -939,129 +655,132 @@ body:has(.header.-adminActive) @{searchSheet} {
             margin-inline: 0.4rem;
         }
     }
-    /* SELECTION IS TINTED, NEVER FILLED — the solid brand stays on the search button */
-    .search-list__option-button.btn {
-        height: var(--search-control-height);
-        min-width: 3.4rem;
-        border: 0;
-        border-radius: 0;
 
-        &.active,
-        &.-active,
-        &[aria-pressed='true'],
-        &[aria-expanded='true'],
-        &.is-modal-trigger-open {
-            &,
-            &:hover,
-            &:focus {
-                background-color: var(--bg-selected);
-                color: var(--fg-selected);
-                border-color: transparent;
+    .search-list {
+        /* SELECTION IS TINTED, NEVER FILLED */
+        &__option-button.btn {
+            height: var(--search-control-height);
+            min-width: 3.4rem;
+            border: 0;
+            border-radius: 0;
+
+            &.active,
+            &.-active,
+            &[aria-pressed='true'],
+            &[aria-expanded='true'],
+            &.is-modal-trigger-open {
+                &,
+                &:hover,
+                &:focus {
+                    background-color: var(--bg-selected);
+                    color: var(--fg-selected);
+                    border-color: transparent;
+                }
             }
         }
-    }
 
-    /* THE CHOSEN VIEW IS FILLED AND MORPHS TO A PILL — the one place the band shows the brand besides the search button */
-    .search-list__views .search-list__option-button.btn {
-        &.active,
-        &.-active,
-        &[aria-pressed='true'] {
-            &,
-            &:hover,
-            &:focus {
-                background-color: var(--search-group-bg-selected);
-                color: var(--search-group-fg-selected);
+        /* THE CHOSEN VIEW IS FILLED */
+        &__views .search-list__option-button.btn {
+            &.active,
+            &.-active,
+            &[aria-pressed='true'] {
+                &,
+                &:hover,
+                &:focus {
+                    background-color: var(--search-group-bg-selected);
+                    color: var(--search-group-fg-selected);
+                }
             }
         }
-    }
 
-    /* FOCUS — the chip carries the state; a ring around the select inside it reads as a stray box */
-    .search-list__nav-helper-item:focus-within {
-        border-color: var(--border-brand);
-    }
-    .search-list__nav-helper-item select:focus {
-        .mx-theme-focus-ring(0; 0);
-    }
-
-    /* OVERFLOW — RSS, saved search, export and help behind one button, outside both groups */
-    .search-list__overflow-toggle.btn {
-        border: 1px solid var(--search-group-solo-border);
-        border-radius: var(--search-group-radius);
-        background-color: transparent;
-
-        &:hover {
-            background-color: var(--search-group-bg-hover);
+        /* FOCUS: THE CHIP CARRIES THE STATE */
+        &__nav-helper-item:focus-within {
+            border-color: var(--border-brand);
         }
-        &:active {
-            background-color: var(--search-group-bg-pressed);
-        }
-    }
-    .search-list__overflow-menu {
-        min-width: 24rem;
-        padding: 0.6rem;
-        border: 1px solid var(--container-border);
-        border-radius: var(--radius-container);
-        background-color: var(--bg-elevated);
-        box-shadow: var(--shadow-elevated);
-
-        > * {
-            display: block;
-        }
-        .search-list__save-search > span {
-            display: block;
+        &__nav-helper-item select:focus {
+            .mx-theme-focus-ring(0; 0);
         }
 
-        .search-list__option-button.btn,
-        .search-list__export-dropdown-link {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 1rem;
-            width: 100%;
-            height: auto;
-            min-width: 0;
-            padding: 0.9rem 1rem;
-            border-radius: var(--radius-button);
-            font-size: var(--font-size-body-small);
-            text-align: start;
+        /* OVERFLOW: RSS, SAVED SEARCH, EXPORT AND HELP BEHIND ONE BUTTON */
+        &__overflow-toggle.btn {
+            border: 1px solid var(--search-group-solo-border);
+            border-radius: var(--search-group-radius);
+            background-color: transparent;
 
             &:hover {
-                background-color: var(--sidebar-bg-hover);
+                background-color: var(--search-group-bg-hover);
+            }
+            &:active {
+                background-color: var(--search-group-bg-pressed);
+            }
+        }
+        &__overflow-menu {
+            min-width: 24rem;
+            padding: 0.6rem;
+            border: 1px solid var(--container-border);
+            border-radius: var(--radius-container);
+            background-color: var(--bg-elevated);
+            box-shadow: var(--shadow-elevated);
+
+            > * {
+                display: block;
+            }
+            .search-list__save-search > span {
+                display: block;
+            }
+
+            .search-list__option-button.btn,
+            .search-list__export-dropdown-link {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1rem;
+                width: 100%;
+                height: auto;
+                min-width: 0;
+                padding: 0.9rem 1rem;
+                border-radius: var(--radius-button);
+                font-size: var(--font-size-body-small);
+                text-align: start;
+
+                &:hover {
+                    background-color: var(--sidebar-bg-hover);
+                }
+            }
+
+            /* THE EXPORT MENU BECOMES A SECTION OF THIS MENU */
+            .search-list__export-dropdown-toggle {
+                display: none;
+            }
+            .search-list__export-dropdown {
+                display: block;
+                position: static;
+                float: none;
+                min-width: 0;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                background-color: transparent;
+                box-shadow: none;
+            }
+            .search-list__export-dropdown-heading {
+                margin: 0;
+                padding: 1rem 1rem 0.4rem;
+                font-size: var(--font-size-caption);
+                font-weight: 600;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: var(--fg-muted);
             }
         }
 
-        /* the export keeps its own markup, its menu becomes a section of this one */
-        .search-list__export-dropdown-toggle {
-            display: none;
-        }
-        .search-list__export-dropdown {
-            display: block;
-            position: static;
-            float: none;
-            min-width: 0;
-            margin: 0;
-            padding: 0;
-            border: 0;
-            background-color: transparent;
-            box-shadow: none;
-        }
-        .search-list__export-dropdown-heading {
-            margin: 0;
-            padding: 1rem 1rem 0.4rem;
-            font-size: var(--font-size-caption);
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--fg-muted);
+        /* TILE VIEW NEEDS THE GUTTER ON ITS CONTAINER */
+        &__hits.grid .search-list__hits-list {
+            padding: 2rem var(--search-sheet-gutter);
         }
     }
 
-    /* TILE VIEW — the only view that needs the gutter on its container */
-    .search-list__hits.grid .search-list__hits-list {
-        padding: 2rem var(--search-sheet-gutter);
-    }
-
-    /* FOOT BAND — the numeric pagination the core renders below the list */
+    /* FOOT BAND */
     .numeric-paginator.-bottom {
         margin: 0;
         padding: 1.2rem var(--search-sheet-gutter);
@@ -1099,37 +818,12 @@ body:has(.header.-adminActive) @{searchSheet} {
             gap: 10px;
         }
     }
-}
 
-/* BREAKPOINT FOR SMARTPHONES */
-@media screen and (max-width: @xSmallBreakpoint) {
-    .search-list__hits:not(.grid):not(.list-view),
-    .view-bookmark__entries {
-        --_hit-thumb-width: 8.8rem;
-        --_hit-column-gap: 1.6rem;
-
-        /* the actions move below the row, the preview keeps its column */
-        .search-list__hit-inner-structure {
-            grid-template-columns: minmax(0, 1fr);
-        }
-        .search-list__hit-inner-structure .search-list__hit-thumbnail {
-            width: auto;
-        }
-        .search-list__hit-title-link {
-            flex-direction: column;
-            gap: 5px;
-        }
-    }
-}
-
-/* BREAKPOINT FOR TABLETS — the band splits into a line of context and a line of controls */
-@media screen and (max-width: @smallBreakpoint) {
+    /* THE BAND SPLITS INTO A LINE OF CONTEXT AND A LINE OF CONTROLS */
     @{searchSheet} {
         .search-list__nav-helper-wrapper {
-            /* the controls need every pixel of the line; the band gap is the cheapest to give */
             gap: 0.8rem;
             padding-block: 1rem;
-            /* three lines pinned to the top would eat a fifth of a phone screen */
             position: static;
         }
         .search-list__band-start,
@@ -1141,7 +835,6 @@ body:has(.header.-adminActive) @{searchSheet} {
             justify-content: space-between;
             margin-inline-start: 0;
         }
-        /* the settings share the width instead of pushing each other out */
         .search-list__nav-helper-item {
             flex: 1 1 0;
             min-width: 0;
@@ -1155,8 +848,27 @@ body:has(.header.-adminActive) @{searchSheet} {
     }
 }
 
-/* BREAKPOINT FOR SMARTPHONES — first and last page give way, the arrows carry the navigation */
+/* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    .search-list__hits:not(.grid):not(.list-view),
+    .view-bookmark__entries {
+        --_hit-thumb-width: 8.8rem;
+        --_hit-column-gap: 1.6rem;
+
+        /* THE ACTIONS MOVE BELOW THE ROW */
+        .search-list__hit-inner-structure {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .search-list__hit-inner-structure .search-list__hit-thumbnail {
+            width: auto;
+        }
+        .search-list__hit-title-link {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+
+    /* FIRST AND LAST PAGE GIVE WAY, EVERY SETTING GETS ITS OWN LINE */
     @{searchSheet} {
         .search-list__hitcount {
             flex: 1 1 100%;
@@ -1166,7 +878,6 @@ body:has(.header.-adminActive) @{searchSheet} {
         .inputfield-paginator .inputfield-paginator__navigate-last-svg {
             display: none;
         }
-        /* a setting gets its own line: the label may be long, the value must stay readable */
         .search-list__nav-helper-item {
             flex: 1 1 100%;
             justify-content: space-between;

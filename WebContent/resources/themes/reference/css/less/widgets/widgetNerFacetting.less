@@ -16,30 +16,18 @@
     .facetting-content {
         .nav-tabs {
             border-bottom: 1px solid var(--border-subtle);
-            li {
-                a {
-                    background: var(--bg-surface);
-                    border: none;
-                    border-radius: 0;
-                    border-bottom: 1px solid var(--border-strong);
-                    .glyphicon {
-                    }
-                }
-                a {
-                    &.active {
-                        background: var(--sidebar-bg-hover);
-                    }
+            li a {
+                background: var(--bg-surface);
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid var(--border-strong);
+                &.active {
+                    background: var(--sidebar-bg-hover);
                 }
             }
         }
         .tab-content {
             background: var(--bg-surface);
-            .tab-pane {
-                &.active {
-                }
-                h3 {
-                }
-            }
         }
     }
 }
@@ -48,22 +36,8 @@
 #overview,
 #section {
     border: none;
-    .tag-filter-description {
-    }
-    .filter-tags {
-        li {
-            a {
-                &:hover {
-                }
-                &.active[data-type='person'] {
-                    color: var(--fg-entity-person);
-                }
-                &[data-type='location'] {
-                }
-                &[data-type='corporation'] {
-                }
-            }
-        }
+    .filter-tags li a.active[data-type='person'] {
+        color: var(--fg-entity-person);
     }
 }
 
@@ -71,111 +45,18 @@
 #overview {
     .current-tags {
         background: var(--sidebar-bg-hover);
-        &:before {
-        }
-        .page-tag {
-            &.empty {
-            }
-            &.person {
-                color: var(--fg-entity-person);
-            }
-            &.location {
-                color: var(--fg-entity-location);
-            }
-            &.corporation {
-                color: var(--fg-entity-institution);
+    }
+    .overview-content .overview-scale li {
+        .page-number a {
+            color: var(--fg-link);
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--fg-heading);
             }
         }
-    }
-    .set-tag-range {
-    }
-    .overview-content {
-        .overview-scale {
-            li {
-                div {
-                }
-                .page-number {
-                    a {
-                        color: var(--fg-link);
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            color: var(--fg-heading);
-                        }
-                    }
-                }
-                .tag-container {
-                    .page-tag {
-                        &:hover {
-                        }
-                        &.empty {
-                        }
-                        &.person {
-                            color: var(--fg-entity-person);
-                        }
-                        &.location {
-                        }
-                        &.corporation {
-                        }
-                        &:hover {
-                            background: var(--sidebar-bg-hover);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* SECTION */
-#section {
-}
-
-#sliderScale {
-    .scale-page {
-        &.start {
-        }
-        &.end {
-        }
-    }
-    .slider-description {
-    }
-    .scale-stripes {
-        li {
-            &.middle {
-            }
-            &:last-child {
-            }
-        }
-    }
-    .scale-section-stripe {
-    }
-}
-
-#sliderVertical {
-    .ui-slider-handle {
-        &:after {
-        }
-        &:focus {
-        }
-        .page-bubble {
-            &:before {
-            }
-        }
-    }
-}
-
-#sectionTags {
-    .page-tag {
-        &:hover {
-        }
-        &.empty {
-        }
-        &.person {
-        }
-        &.location {
-        }
-        &.corporation {
+        .tag-container .page-tag:hover {
+            background: var(--sidebar-bg-hover);
         }
     }
 }

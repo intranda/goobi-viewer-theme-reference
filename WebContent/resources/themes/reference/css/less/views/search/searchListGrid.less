@@ -19,7 +19,7 @@
                 padding: 1.6rem;
             }
 
-            /* TITLE — three lines at most, so the tiles keep a common lower edge */
+            /* TITLE: THREE LINES AT MOST */
             .search-list__hit-title-heading {
                 font-size: var(--font-size-body-large);
                 line-height: 1.4;
@@ -28,9 +28,7 @@
                 right: 6px;
                 top: 6px;
             }
-            form {
-            }
-            /* TILE — one card: image band above, title below; every tile of a row shares one height */
+            /* TILE: IMAGE BAND ABOVE, TITLE BELOW, ONE HEIGHT PER ROW */
             .search-list__hit {
                 display: flex;
                 flex-direction: column;
@@ -45,33 +43,23 @@
                     border-color: var(--sidebar-border);
                     box-shadow: 0 0.6rem 1.6rem rgb(from var(--shadow-color) r g b / 10%);
                 }
-                .row,
-                [class*='col-'] {
-                }
             }
             .search-list__hit-header {
                 display: flex;
                 flex-direction: column;
                 flex: 1 1 auto;
-
-                .row {
-                }
-                .col-12.col-sm-10 {
-                }
-                .col-12.col-sm-2 {
-                }
             }
-            /* the extra height of the row falls below the title, not between image and title */
+            /* THE EXTRA HEIGHT FALLS BELOW THE TITLE */
             .search-list__hit-inner-structure {
                 flex: 1 1 auto;
                 flex-direction: column;
                 justify-content: flex-start;
             }
-            /* without a preview the title centres instead of hanging under an empty band */
+            /* WITHOUT A PREVIEW THE TITLE CENTRES */
             .search-list__hit:not(:has(.search-list__hit-thumbnail)) .search-list__hit-inner-structure {
                 justify-content: center;
             }
-            /* IMAGE BAND — one proportion for every tile; the scan fills it and stays clickable */
+            /* IMAGE BAND */
             .search-list__hit-thumbnail {
                 flex: 0 0 auto;
                 aspect-ratio: 4 / 5;
@@ -89,24 +77,14 @@
                 border: none;
                 margin-bottom: 0;
             }
-            /* the tile carries its extra metadata as a quiet second line */
+            /* SECOND METADATA LINE */
             .search-list__hit-metadata-second {
                 margin-top: 0.8rem;
                 font-size: var(--font-size-body-small);
                 line-height: 1.4;
                 color: var(--fg-muted);
             }
-            .search-list__hit-title h3 {
-            }
-            .search-list__hit-thumbnail img,
-            .search-list__hit-type,
-            .search-list__hit-info,
-            .search-list__hit-content {
-            }
         }
-    }
-    a[data-toggle='hit-content'],
-    button[data-toggle='hit-content'] {
     }
 }
 
@@ -124,7 +102,7 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
-    /* two narrow tiles read better than one oversized one */
+    /* TWO NARROW TILES INSTEAD OF ONE OVERSIZED */
     .search-list__hits.grid {
         .search-list__hits-list-items {
             grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));

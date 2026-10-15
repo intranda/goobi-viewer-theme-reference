@@ -3,62 +3,27 @@
    style declarations for viewNerFacetting.xhtml
    ==============================================================*/
 #nerFacetting {
-    h2 {
-    }
     .facetting-content {
         .nav-tabs {
             border-bottom: 1px solid var(--border-subtle);
             li {
                 a {
                     border: 1px solid var(--border-subtle);
-
                     background: var(--ner-navigation-bg);
-                    .glyphicon {
-                    }
                 }
                 &.active a {
                     color: var(--fg-default);
-
                     background: var(--ner-navigation-bg-hover);
                 }
             }
         }
         .tab-content {
             background: var(--bg-surface);
-            .tab-pane {
-                &.active {
-                }
-                h3 {
-                }
-            }
         }
     }
 }
 
-/* OVERVIEW & SECTION */
-#nerFacetting #overview,
-#nerFacetting #section {
-    .tag-filter-description {
-    }
-    .set-tag-range {
-    }
-    .filter-tags {
-        li {
-            a {
-                &:hover {
-                }
-                &[data-type='person'] {
-                }
-                &[data-type='location'] {
-                }
-                &[data-type='corporation'] {
-                }
-            }
-        }
-    }
-}
-
-// LOADER STYLES
+/* LOADER */
 #nerFacettingLoader {
     background-color: var(--bg-page);
 }
@@ -68,105 +33,13 @@
     border: 1px solid var(--border-subtle);
     .current-tags {
         background: var(--bg-hover);
-        &:before {
-        }
-        .page-tag {
-            &.empty {
-            }
-            &.person {
-                color: var(--fg-entity-person);
-            }
-            &.location {
-                color: var(--fg-entity-location);
-            }
-            &.corporation {
-                color: var(--fg-entity-institution);
-            }
-        }
     }
-    .overview-content {
-        .overview-scale {
-            li {
-                div {
-                }
-                .page-number {
-                    a {
-                        color: var(--fg-link);
-                        &:hover,
-                        &:active,
-                        &:focus {
-                        }
-                    }
-                }
-                .tag-container {
-                    .page-tag {
-                        &:hover {
-                            background-color: var(--bg-hover);
-                        }
-                        &.empty {
-                        }
-                        &.person {
-                        }
-                        &.location {
-                        }
-                        &.corporation {
-                        }
-                    }
-                }
-            }
+    .overview-content .overview-scale li {
+        .page-number a {
+            color: var(--fg-link);
         }
-    }
-}
-
-/* SECTION */
-#nerFacetting #section {
-}
-
-#nerFacetting #sliderScale {
-    .scale-page {
-        &.start {
-        }
-        &.end {
-        }
-    }
-    .slider-description {
-    }
-    .scale-stripes {
-        li {
-            &.middle {
-            }
-            &:last-child {
-            }
-        }
-    }
-    .scale-section-stripe {
-    }
-}
-
-#nerFacetting #sliderVertical {
-    .ui-slider-handle {
-        &:after {
-        }
-        &:focus {
-        }
-        .page-bubble {
-            &:before {
-            }
-        }
-    }
-}
-
-#nerFacetting #sectionTags {
-    .page-tag {
-        &:hover {
-        }
-        &.empty {
-        }
-        &.person {
-        }
-        &.location {
-        }
-        &.corporation {
+        .tag-container .page-tag:hover {
+            background-color: var(--bg-hover);
         }
     }
 }

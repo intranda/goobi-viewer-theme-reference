@@ -10,43 +10,15 @@
         margin-bottom: 2rem;
     }
 
-    &__topbar {
-    }
-
-    &__title {
-    }
-
-    &__body {
-        ul {
-        }
-
-        li {
-            &.active {
-            }
-        }
-    }
-
     &__body:has(.widget-search-facets__boolean) {
         padding: 0;
         background-color: transparent;
-    }
-
-    &__list-item {
     }
 
     &__list-item-link {
         &.-active {
             background-color: var(--sidebar-bg-hover);
         }
-    }
-
-    &__list-item-label {
-    }
-
-    &__list-item-text {
-    }
-
-    &__list-item-count {
     }
 
     &__list-item &__list-item-control {
@@ -72,19 +44,11 @@
         }
     }
 
-    &__list-item-control-link {
-    }
-
-    &__list-item-control-icon-svg {
-    }
-
     &__list {
         scrollbar-color: rgb(from var(--fg-brand) r g b / 40%) transparent;
     }
 
-    /* FILTER */
-    // overridden to slide the filter input in/out like the header search field,
-    // instead of core's abrupt display:none/block toggle
+    /* FILTER SLIDES IN LIKE THE HEADER SEARCH FIELD */
     &__filter {
         top: 0;
         right: 1rem;
@@ -94,9 +58,6 @@
         display: flex;
         align-items: center;
 
-        input,
-        button {
-        }
         input {
             display: block;
             width: 0;
@@ -104,12 +65,14 @@
             overflow: hidden;
             opacity: 0;
             pointer-events: none;
-
             border-radius: var(--radius-container-small);
             box-shadow: var(--shadow-surface);
             transition:
                 width 0.3s ease,
                 opacity 0.2s ease;
+            background-color: var(--bg-elevated);
+            color: var(--fg-default);
+
             &::-webkit-input-placeholder {
                 color: var(--fg-placeholder);
                 opacity: 1;
@@ -131,8 +94,6 @@
                 opacity: 1;
                 pointer-events: all;
             }
-            background-color: var(--bg-elevated);
-            color: var(--fg-default);
         }
     }
 
@@ -141,32 +102,7 @@
         z-index: 1;
     }
 
-    &__filter-icon {
-    }
-
-    &__filter-icon-svg {
-    }
-
-    &__filter-input {
-    }
-
-    /* COLLECTION/GROUPS */
-    &__collection,
-    &__groups {
-        ul {
-        }
-    }
-
-    &__collection {
-    }
-
-    &__groups {
-    }
-
     /* COLLAPSE FACETS */
-    &__collapse {
-    }
-
     &__collapse-button {
         color: var(--sidebar-fg-secondary);
         .icon-svg {
@@ -174,40 +110,10 @@
             height: var(--_widget-action-icon-size, 1.6rem);
             color: currentColor;
         }
-        &.-expand,
-        &.-collapse {
-        }
-    }
-
-    &__collapse-chevron {
     }
 
     &__collapse-chevron-svg {
         color: var(--fg-brand);
-    }
-
-    &__collapse-alt-icon {
-    }
-
-    &__collapse-alt-icon-svg {
-    }
-
-    &__collapse-label {
-    }
-
-    &__section-toggle {
-    }
-
-    &__section-toggle-icon-svg {
-    }
-
-    &__collapse-button-icon-svg {
-    }
-
-    &__boolean {
-    }
-
-    &__boolean-button-wrapper {
     }
 
     &__boolean-button {
@@ -233,21 +139,22 @@
     }
 }
 
-/* THE VALUE LIST IN THE NORMAL SIDEBAR — same rows, states and spacing as the combined view */
+/* THE VALUE LIST IN THE NORMAL SIDEBAR: SAME ROWS, STATES AND SPACING AS THE COMBINED VIEW */
 :where(.content__wrapper > .content__sidebar)
-    .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *)) {
+    .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *)) {
     --_facet-action-size: 3.2rem;
     --_facet-row-size: 2.8rem;
     --_facet-action-gap: 0.4rem;
     --_facet-meta-size: var(--_facet-row-size);
 
-    .widget > .widget__body:not(:where(.widget-geofacetting__body, .widget-active-facets__body)):not(
+    .widget
+        > .widget__body:not(:where(.widget-geofacetting__body, .widget-active-facets__body)):not(
             :has(.widget-search-facets__boolean)
         ) {
         padding-block: 0.4rem 0;
         padding-inline: 0.8rem;
 
-        /* ohne "Alle anzeigen" schliesst der Body den Abschnitt ab */
+        /* WITHOUT AN EXPAND BUTTON THE BODY CLOSES THE SECTION */
         &:not(:has(+ .widget-search-facets__collapse)) {
             padding-block-end: 1.2rem;
         }
@@ -368,7 +275,7 @@
             transition: none;
         }
 
-        /* row controls stay neutral until they are touched; a set filter keeps the row color */
+        /* ROW CONTROLS STAY NEUTRAL UNTIL TOUCHED, A SET FILTER KEEPS THE ROW COLOR */
         .widget-search-facets__list-item-control {
             &,
             &.-set,
@@ -446,7 +353,7 @@
         pointer-events: none;
     }
 
-    /* the region heading stays for screen readers, the panel titles carry it visually */
+    /* THE REGION HEADING STAYS FOR SCREEN READERS */
     .widget-search-facets__available-title {
         position: absolute;
         width: 1px;
@@ -457,7 +364,7 @@
         white-space: nowrap;
     }
 
-    /* the sliding filter reads as a field, not as a white box on a white topbar */
+    /* THE SLIDING FILTER READS AS A FIELD */
     .widget-search-facets__filter input {
         .mx-theme-field();
         border-radius: var(--radius-button);
@@ -476,7 +383,7 @@
         }
     }
 
-    /* the description lines up with the row text, not with the body edge */
+    /* THE DESCRIPTION LINES UP WITH THE ROW TEXT */
     .widget-search-facets__description-text {
         margin-block: 0.4rem 0.6rem;
         padding-inline: 0.8rem;
@@ -485,19 +392,19 @@
         line-height: var(--line-height-body);
     }
 
-    /* the year fields need more air under the panel head than a list of text rows does */
+    /* THE YEAR FIELDS NEED MORE AIR UNDER THE PANEL HEAD */
     .widget-chronology-slider > .widget__body.widget-chronology-slider__body {
         padding-block-start: 1.2rem;
         padding-inline: 1.6rem;
     }
 
-    /* the active filter summary is a band of chips, not a value list */
+    /* THE ACTIVE FILTER SUMMARY IS A BAND OF CHIPS */
     .widget-active-facets > .widget__body.widget-active-facets__body {
         padding-block: 1.2rem;
         padding-inline: 1.6rem;
     }
 
-    /* boolean facets: the button pair of the combined view, inside proper panel padding */
+    /* BOOLEAN FACETS: THE BUTTON PAIR INSIDE PANEL PADDING */
     .widget > .widget__body:has(.widget-search-facets__boolean) {
         padding-block: 1.2rem;
         padding-inline: 1.6rem;
@@ -541,7 +448,7 @@
         }
     }
 
-    /* the map fills its card: no side padding, flush to the bottom, corners clipped by the card */
+    /* THE MAP FILLS ITS CARD */
     .widget-geofacetting {
         overflow: hidden;
     }
@@ -619,10 +526,10 @@
     }
 }
 
-/* MOUSE — counts and quick actions share the trailing area, as in the combined view */
+/* MOUSE: COUNTS AND QUICK ACTIONS SHARE THE TRAILING AREA */
 @media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
     :where(.content__wrapper > .content__sidebar)
-        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *))
+        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *))
         .widget-search-facets__list-item {
         &,
         &:has(> .widget-search-facets__list-item-control-link) {
@@ -685,7 +592,7 @@
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
     :where(.content__wrapper > .content__sidebar)
-        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *, #admin *)) {
+        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *)) {
         --_facet-action-size: 2.2rem;
         --_facet-row-size: 2.2rem;
     }

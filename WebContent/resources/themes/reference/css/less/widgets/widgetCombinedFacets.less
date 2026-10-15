@@ -1,4 +1,8 @@
-/* Combined search filters */
+/* ==============================================================
+   Widget Combined Facets
+   style declarations for widget_combinedFacets.xhtml
+   ==============================================================*/
+/* COMBINED SEARCH FILTERS */
 .combined-facets {
     --_facet-action-size: 3.2rem;
     --_facet-row-size: 2.8rem;
@@ -38,11 +42,6 @@
     &__reset {
         .mx-theme-control-accent();
         color: var(--fg-default);
-
-        &:hover,
-        &:active {
-            color: var(--fg-brand);
-        }
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -53,6 +52,11 @@
         border-radius: var(--radius-button);
         background-color: transparent;
         text-decoration: none;
+
+        &:hover,
+        &:active {
+            color: var(--fg-brand);
+        }
         .icon-svg {
             color: currentColor;
         }
@@ -151,8 +155,7 @@
         height: 3.2rem;
     }
 
-    /* the head controls stay neutral — the brand marks the action, not the controls;
-       the geo and chronology sections bring their own buttons and follow the same rule */
+    /* HEAD CONTROLS STAY NEUTRAL, THE BRAND MARKS THE ACTION */
     .widget-search-facets__section-toggle,
     .widget-search-facets__filter .widget-search-facets__filter-button,
     .widget-geofacetting__actions button,
@@ -323,7 +326,7 @@
             background-color: var(--sidebar-bg-pressed);
         }
 
-        /* row controls stay neutral until they are touched; a set filter keeps the row color */
+        /* ROW CONTROLS STAY NEUTRAL UNTIL TOUCHED, A SET FILTER KEEPS THE ROW COLOR */
         .widget-search-facets__list-item-control {
             &,
             &.-set,
@@ -510,7 +513,7 @@
     }
 }
 
-/* MOUSE — counts and quick actions share the trailing area */
+/* MOUSE: COUNTS AND QUICK ACTIONS SHARE THE TRAILING AREA */
 @media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
     .combined-facets .widget-search-facets__list-item {
         --_facet-meta-size: var(--_facet-row-size);
@@ -584,12 +587,15 @@
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
+
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
+
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 }
+
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }

@@ -3,38 +3,19 @@
    style declarations for widget_searchresultNavigation.xhtml
    ==============================================================*/
 
-.widget-search-result-navigation {
-    &__topbar {
-    }
-    &__title {
-    }
-    &__body {
-    }
-    &__wrapper {
-    }
-    &__left {
-    }
-    &__center {
-    }
-    &__right {
-    }
-    &__back-to-collection {
-    }
-}
-
 /* HIT NAVIGATION IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
-    .widget.widget-search-result-navigation:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
-    /* fill of the progress rail; the core hands the position in --hit-progress */
+    .widget.widget-search-result-navigation:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+    /* FILL OF THE PROGRESS RAIL, THE CORE HANDS THE POSITION IN --hit-progress */
     --_hit-fill: max(1.4rem, calc(var(--hit-progress, 0) * 1%));
     position: relative;
 
-    /* room for the way back, which sits in the head */
+    /* ROOM FOR THE WAY BACK IN THE HEAD */
     > .widget__topbar {
         padding-inline-end: 5.6rem;
     }
 
-    /* STEPPER ROW — count on the text edge, the two steps as one pair on the action edge */
+    /* STEPPER ROW */
     .widget-search-result-navigation__wrapper {
         display: flex;
         align-items: center;
@@ -42,7 +23,7 @@
         margin: 0;
     }
 
-    /* the empty slot keeps its width, so the pair does not move at the last hit */
+    /* THE EMPTY SLOT KEEPS ITS WIDTH */
     .widget-search-result-navigation__left,
     .widget-search-result-navigation__right {
         flex: 0 0 var(--_widget-action-size, 4rem);
@@ -76,7 +57,7 @@
         }
     }
 
-    /* a missing neighbouring hit arrives as a span instead of a link */
+    /* A MISSING NEIGHBOURING HIT ARRIVES AS A SPAN */
     .widget-search-result-navigation__left > span,
     .widget-search-result-navigation__right > span {
         .mx-theme-control-disabled();
@@ -126,7 +107,7 @@
         text-align: start;
     }
 
-    /* PROGRESS RAIL — how far into the result set this hit lies */
+    /* PROGRESS RAIL */
     .widget-search-result-navigation__body::after {
         content: '';
         display: block;
@@ -140,8 +121,7 @@
         );
     }
 
-    /* WAY BACK — a head action next to the title, its label read out but not shown */
-    /* THE WAY BACK — a back arrow in the head, neutral like every other panel action */
+    /* WAY BACK: A HEAD ACTION NEXT TO THE TITLE, LABEL READ OUT BUT NOT SHOWN */
     .widget-search-result-navigation__back-to-collection {
         position: absolute;
         inset-block-start: 0.8rem;
@@ -195,7 +175,7 @@
 
 @{RTL} {
     :where(.content__wrapper > .content__sidebar)
-        .widget.widget-search-result-navigation:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+        .widget.widget-search-result-navigation:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
         .widget-search-result-navigation__body::after {
             background-image: linear-gradient(
                 to left,
