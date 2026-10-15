@@ -140,8 +140,7 @@
 }
 
 /* THE VALUE LIST IN THE NORMAL SIDEBAR: SAME ROWS, STATES AND SPACING AS THE COMBINED VIEW */
-:where(.content__wrapper > .content__sidebar)
-    .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget-search-facets@{notFacetsSelfOrOverlay} {
     --_facet-action-size: 3.2rem;
     --_facet-row-size: 2.8rem;
     --_facet-action-gap: 0.4rem;
@@ -528,9 +527,7 @@
 
 /* MOUSE: COUNTS AND QUICK ACTIONS SHARE THE TRAILING AREA */
 @media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
-    :where(.content__wrapper > .content__sidebar)
-        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *))
-        .widget-search-facets__list-item {
+    @{sidebar} .widget-search-facets@{notFacetsSelfOrOverlay} .widget-search-facets__list-item {
         &,
         &:has(> .widget-search-facets__list-item-control-link) {
             grid-template-columns: minmax(0, 1fr);
@@ -591,8 +588,7 @@
 }
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
-    :where(.content__wrapper > .content__sidebar)
-        .widget-search-facets:not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *)) {
+    @{sidebar} .widget-search-facets@{notFacetsSelfOrOverlay} {
         --_facet-action-size: 2.2rem;
         --_facet-row-size: 2.2rem;
     }

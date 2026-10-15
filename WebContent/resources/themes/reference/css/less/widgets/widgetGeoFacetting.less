@@ -23,8 +23,7 @@
 }
 
 /* MAP IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget-geofacetting:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget-geofacetting@{notFacetsOrOverlay} {
     > .widget-geofacetting__body {
         margin: 1.6rem;
         padding: 0;
@@ -32,7 +31,7 @@
 }
 
 /* THE MAP BLEEDS TO THE CONTAINER EDGES OF THE COMBINED VIEW */
-:where(.content__wrapper > .content__sidebar) .combined-facets .widget-geofacetting > .widget-geofacetting__body {
+@{sidebar} .combined-facets .widget-geofacetting > .widget-geofacetting__body {
     margin-block: 0 -1.2rem;
     margin-inline: -1.6rem;
     padding-block: 0.8rem 0;

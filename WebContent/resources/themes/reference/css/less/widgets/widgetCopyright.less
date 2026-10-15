@@ -22,8 +22,7 @@
 }
 
 /* COPYRIGHT IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget.widget-copyright:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget.widget-copyright@{notOverlay} {
     color: var(--fg-default);
     cursor: pointer;
 

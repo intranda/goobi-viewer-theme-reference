@@ -105,7 +105,7 @@
 }
 
 /* NORMAL SIDEBAR */
-.content__wrapper > .content__sidebar .widget-chronology-slider {
+@{sidebarStrict} .widget-chronology-slider {
     min-inline-size: 0;
     overflow: visible;
 
@@ -343,13 +343,12 @@
     }
 }
 
-.content__wrapper > .content__sidebar .combined-facets .widget-chronology-slider__body {
+@{sidebarStrict} .combined-facets .widget-chronology-slider__body {
     padding: 0.8rem 0 0;
 }
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
-    .content__wrapper
-        > .content__sidebar
+    @{sidebarStrict}
         .widget-chronology-slider
         .widget-chronology-slider__item.chronology-slider-actions
         [data-reset='chrono-slider'] {

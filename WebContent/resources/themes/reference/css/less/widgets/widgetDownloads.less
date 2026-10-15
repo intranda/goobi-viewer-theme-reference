@@ -10,9 +10,7 @@
 }
 
 /* SIDEBAR DOWNLOAD DETAILS */
-:where(.content__wrapper > .content__sidebar)
-    .widget-downloads:not(:where(.widget .widget, .modal *, .popover *, dialog *))
-    > .widget__body {
+@{sidebar} .widget-downloads@{notOverlay} > .widget__body {
     .widget-downloads__page-range-downloads-inputs-wrapper-inner {
         gap: 0.8rem;
         margin-block-end: 0.8rem;

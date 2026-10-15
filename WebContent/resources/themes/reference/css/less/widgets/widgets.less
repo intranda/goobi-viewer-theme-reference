@@ -114,7 +114,7 @@
 }
 
 /* SIDEBAR PANEL SHELLS */
-:where(.content__wrapper > .content__sidebar)
+@{sidebar}
     .widget:not(
         :where(
             .combined-facets .widget,
@@ -478,10 +478,7 @@
 }
 
 /* SEARCH WIDGETS IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget:is(.widget-searchfield, .widget-search-in-current-item):not(
-        :where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)
-    ) {
+@{sidebar} .widget:is(.widget-searchfield, .widget-search-in-current-item)@{notFacetsOrOverlay} {
     > form {
         margin: 0;
         padding: 1.6rem;
@@ -580,7 +577,7 @@
 
 /* TOUCH */
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
-    :where(.content__wrapper > .content__sidebar) {
+    @{sidebar} {
         --_nav-row-size: 4.4rem;
         --_nav-row-padding: 1rem;
     }

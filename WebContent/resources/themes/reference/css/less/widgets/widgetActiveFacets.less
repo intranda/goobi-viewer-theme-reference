@@ -35,8 +35,7 @@
 }
 
 /* SIDEBAR ACTIVE FILTER SUMMARY */
-:where(.content__wrapper > .content__sidebar)
-    .active-facets-badges.widget-active-facets:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .active-facets-badges.widget-active-facets@{notOverlay} {
     .active-facets-badges__list {
         gap: 0.8rem;
     }
@@ -115,8 +114,7 @@
 }
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
-    :where(.content__wrapper > .content__sidebar)
-        .active-facets-badges.widget-active-facets:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+    @{sidebar} .active-facets-badges.widget-active-facets@{notOverlay} {
         .active-facets-badges__list .active-facets-badges__badge,
         .widget-active-facets__reset {
             min-width: 4.4rem;

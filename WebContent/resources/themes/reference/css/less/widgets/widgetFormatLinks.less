@@ -3,11 +3,7 @@
    style declarations for widget_formatLinks.xhtml
    ==============================================================*/
 /* SIDEBAR EXPORT ACTIONS */
-:where(.content__wrapper > .content__sidebar)
-    :is(.widget-downloads, .widget-citation, .widget-format-links):not(
-        :where(.widget .widget, .modal *, .popover *, dialog *)
-    )
-    > .widget__body {
+@{sidebar} :is(.widget-downloads, .widget-citation, .widget-format-links)@{notOverlay} > .widget__body {
     --_export-action-size: 3.2rem;
 
     .widget__badge-container:not(:where(.modal *, .popover *, dialog *, .widget .widget .widget__badge-container)) {
@@ -67,11 +63,7 @@
 }
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
-    :where(.content__wrapper > .content__sidebar)
-        :is(.widget-downloads, .widget-citation, .widget-format-links):not(
-            :where(.widget .widget, .modal *, .popover *, dialog *)
-        )
-        > .widget__body {
+    @{sidebar} :is(.widget-downloads, .widget-citation, .widget-format-links)@{notOverlay} > .widget__body {
         --_export-action-size: 4.4rem;
     }
 }

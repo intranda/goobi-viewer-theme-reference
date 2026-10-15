@@ -24,8 +24,7 @@
 }
 
 /* ANNOTATIONS IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget-annotations:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget-annotations@{notOverlay} {
     .widget__body ul {
         display: flex;
         flex-direction: column;

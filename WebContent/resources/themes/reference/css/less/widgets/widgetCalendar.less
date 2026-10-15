@@ -268,8 +268,7 @@
 }
 
 /* FULL-WIDTH CALENDAR IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget-calendar:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget-calendar@{notFacetsOrOverlay} {
     > .widget-calendar__body {
         margin: 0;
         padding: 0;

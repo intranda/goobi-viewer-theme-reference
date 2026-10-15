@@ -17,9 +17,7 @@
     }
 }
 
-.content__wrapper
-    > .content__sidebar
-    .widget-rss:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebarStrict} .widget-rss@{notFacetsOrOverlay} {
     .widget-rss__entry-title {
         margin-block-end: 0.2rem;
     }

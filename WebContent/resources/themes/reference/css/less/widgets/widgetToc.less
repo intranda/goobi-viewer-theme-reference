@@ -22,8 +22,7 @@
 }
 
 /* TOC IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget.widget-toc@{notFacetsOrOverlay} {
     --_toc-slot: 3.2rem;
     --_toc-row: 3.8rem;
     --_toc-mark: 1.6rem;
@@ -189,8 +188,7 @@
 }
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
-    :where(.content__wrapper > .content__sidebar)
-        .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+    @{sidebar} .widget.widget-toc@{notFacetsOrOverlay} {
         --_toc-slot: 4.4rem;
         --_toc-row: 4.4rem;
     }

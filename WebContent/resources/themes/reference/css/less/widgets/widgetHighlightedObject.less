@@ -3,8 +3,7 @@
    style declarations for widget_highlightedobject.xhtml
    ==============================================================*/
 /* FULL-WIDTH IMAGE IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget-highlight:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget-highlight@{notFacetsOrOverlay} {
     > .widget-highlight__body {
         margin: 0;
         padding: 0;

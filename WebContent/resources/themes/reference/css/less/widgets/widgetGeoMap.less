@@ -14,8 +14,7 @@
 }
 
 /* MAP IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget-geomap:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget-geomap@{notFacetsOrOverlay} {
     overflow: hidden;
 
     > .widget-geomap__body {

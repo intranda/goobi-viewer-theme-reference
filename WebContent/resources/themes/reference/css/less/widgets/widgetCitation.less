@@ -20,9 +20,7 @@
 }
 
 /* SIDEBAR CITATION RECOMMENDATION */
-:where(.content__wrapper > .content__sidebar)
-    .widget-citation:not(:where(.widget .widget, .modal *, .popover *, dialog *))
-    > .widget__body {
+@{sidebar} .widget-citation@{notOverlay} > .widget__body {
     .widget-citation__citerecommendation-dropdown {
         margin-block-end: 0.8rem;
         select {

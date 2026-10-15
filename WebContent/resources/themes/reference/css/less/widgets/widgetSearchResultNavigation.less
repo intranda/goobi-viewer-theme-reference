@@ -4,8 +4,7 @@
    ==============================================================*/
 
 /* HIT NAVIGATION IN THE NORMAL SIDEBAR */
-:where(.content__wrapper > .content__sidebar)
-    .widget.widget-search-result-navigation:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+@{sidebar} .widget.widget-search-result-navigation@{notOverlay} {
     /* FILL OF THE PROGRESS RAIL, THE CORE HANDS THE POSITION IN --hit-progress */
     --_hit-fill: max(1.4rem, calc(var(--hit-progress, 0) * 1%));
     position: relative;
@@ -174,8 +173,7 @@
 }
 
 @{RTL} {
-    :where(.content__wrapper > .content__sidebar)
-        .widget.widget-search-result-navigation:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
+    @{sidebar} .widget.widget-search-result-navigation@{notOverlay} {
         .widget-search-result-navigation__body::after {
             background-image: linear-gradient(
                 to left,

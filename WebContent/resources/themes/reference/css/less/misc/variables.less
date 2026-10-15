@@ -12,6 +12,13 @@
 /* Search pages that render as one sheet */
 @searchSheet: ~'.content__wrapper > .content__main:has(#searchList, .tpl-search)';
 
+/* Sidebar hull: a widget at the top level of the normal sidebar */
+@sidebar: ~':where(.content__wrapper > .content__sidebar)';
+@sidebarStrict: ~'.content__wrapper > .content__sidebar';
+@notOverlay: ~':not(:where(.widget .widget, .modal *, .popover *, dialog *))';
+@notFacetsOrOverlay: ~':not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *))';
+@notFacetsSelfOrOverlay: ~':not(:where(.combined-facets, .combined-facets *, .modal *, .popover *, dialog *))';
+
 /* Responsive */
 @media screen and (max-width: @largeBreakpoint) {
 }
