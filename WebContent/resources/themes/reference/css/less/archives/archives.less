@@ -22,13 +22,6 @@
         border-bottom: none;
         color: var(--fg-on-brand);
     }
-    &-tree {
-        &__entry {
-            a {
-                color: var(--fg-default);
-            }
-        }
-    }
     &__tree-heading {
         background-color: var(--bg-brand);
         border: 1px solid var(--border-subtle);
@@ -68,7 +61,16 @@
     }
 }
 
-// BLUR EFFECT FOR ARCHIVE BACKGROUND WHILE MODAL IS OPEN
+/* TREE ENTRY */
+.archives-tree {
+    &__entry {
+        a {
+            color: var(--fg-default);
+        }
+    }
+}
+
+/* BLUR WHILE THE MODAL IS OPEN */
 .-archivesLoaded {
     filter: blur(3px);
 }
@@ -80,6 +82,7 @@
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
+
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 }

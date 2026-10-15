@@ -2,46 +2,14 @@
    View archive tree
    style declarations for archivetree.xhtml
    ==============================================================*/
-
 /* EAD TREE */
 .archives-tree {
     background-color: transparent;
     border-color: var(--border-default);
     border-radius: var(--radius-container);
-
-    &__inner {
-    }
     &__expand-minimize-all {
         a {
             color: var(--fg-default);
-            &:last-child {
-            }
-        }
-    }
-    &__entry {
-        &:first-child {
-            .archives-tree__list-entry-title {
-            }
-        }
-        &.child {
-            .archives-tree__metadata-box {
-            }
-        }
-    }
-    &__list-entry-title {
-        a {
-        }
-    }
-    &__title {
-    }
-    &__selected {
-    }
-    &__active-title {
-        &::after {
-        }
-    }
-    &__inactive-title {
-        &::after {
         }
     }
     &__expandable-icon {
@@ -54,24 +22,6 @@
             }
         }
     }
-    &__metadata-box {
-    }
-    &__metadata-box-fields-row {
-    }
-    &__metadata-box-field-name {
-    }
-    &__metadata-box-field-value {
-    }
-    &__metadata-box-links {
-        a {
-        }
-    }
-    &__loader {
-    }
-}
-
-// ajax loading indicator for ead tree
-#AJAXLoader.archives-tree__loader {
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -84,18 +34,6 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .archives-tree {
-        &__entry {
-            &.parent {
-            }
-            &.child {
-            }
-        }
-        &__metadata-box-fields-row {
-        }
-        &__metadata-box-field-name {
-        }
-    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
