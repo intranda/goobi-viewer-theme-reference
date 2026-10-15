@@ -17,64 +17,21 @@
             border-top: 1px solid var(--container-border);
         }
     }
-    &__image-loader {
-    }
-    &__image-map {
-        span {
-        }
-        img {
-        }
-        .ugcBox {
-            &.focus {
-            }
-            &.drawing {
-            }
-        }
-    }
     /* IMAGE MOBILE */
     &__image-mobile {
         background-color: var(--bg-surface);
     }
-    /* VIDEO, AUDIO, TEXT */
-    &__video,
-    &__audio,
-    &__text {
-    }
-    /* VIDEO */
-    &__video {
-    }
-    /* AUDIO */
-    &__audio {
-    }
-    /* TEXT */
-    &__text {
-    }
-    /* WEBARCHIVE */
-    &__webarchive-preview {
-        img {
-        }
-        &:hover,
-        &:focus-visible {
-        }
-    }
-    &__webarchive-preview-overlay {
-    }
-    &__webarchive-preview-hover-icon {
-    }
-    &__webarchive-preview-hover-text {
-    }
 
-    /* RECORD SHEET — the stage is one recessed band running the full width of the page
-       surface; the scan is the only thing that lifts off it, so nothing draws a second frame */
+    /* RECORD SHEET: THE STAGE IS ONE RECESSED BAND, ONLY THE SCAN LIFTS OFF IT */
     & &__image {
         margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
-        // a sliver of the band stays visible below the scan
+        /* A SLIVER OF THE BAND STAYS VISIBLE BELOW THE SCAN */
         padding-block-end: 2rem;
         border: 0;
         border-radius: 0;
     }
     & &__image &__image-map {
-        // the scan keeps the page inset on both sides, so its edges meet the tool icons
+        /* THE SCAN KEEPS THE PAGE INSET, ITS EDGES MEET THE TOOL ICONS */
         max-width: ~'calc(100% - 2 * var(--_content-inset, 2.4rem))';
         max-height: 70vh;
         min-height: 50vh;
@@ -87,58 +44,12 @@
         box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 14%);
     }
 
-    // PAGE LIST — the tool row above the scan already navigates pages
+    /* PAGE LIST: THE TOOL ROW ABOVE THE SCAN NAVIGATES PAGES */
     #simplePaginator {
         display: none;
     }
 
-    // DOCSTRUCT TYPE — the entity colour marks the top edge of the band, no coloured frame
-    &.docstructtype__work {
-        .image-controls,
-        .view-object__image {
-            border-block-start: 3px solid var(--color-theme-entity-group-work);
-        }
-        .metadata__wrapper {
-            border: 1px solid var(--color-theme-entity-group-work);
-        }
-    }
-    &.docstructtype__person {
-        .image-controls,
-        .view-object__image {
-            border-block-start: 3px solid var(--color-theme-entity-group-person);
-        }
-        .metadata__wrapper {
-            border: 1px solid var(--color-theme-entity-group-person);
-        }
-    }
-    &.docstructtype__agent {
-        .image-controls,
-        .view-object__image {
-            border-block-start: 3px solid var(--color-theme-entity-group-agent);
-        }
-        .metadata__wrapper {
-            border: 1px solid var(--color-theme-entity-group-agent);
-        }
-    }
-    &.docstructtype__award {
-        .image-controls,
-        .view-object__image {
-            border-block-start: 3px solid var(--color-theme-entity-group-award);
-        }
-        .metadata__wrapper {
-            border: 1px solid var(--color-theme-entity-group-award);
-        }
-    }
-    &.docstructtype__event {
-        .image-controls,
-        .view-object__image {
-            border-block-start: 3px solid var(--color-theme-entity-group-event);
-        }
-        .metadata__wrapper {
-            border: 1px solid var(--color-theme-entity-group-event);
-        }
-    }
-    // the band has one top edge: with a tool row above, the stage does not repeat it
+    /* ONE TOP EDGE: WITH A TOOL ROW ABOVE, THE STAGE DOES NOT REPEAT IT */
     & .image-controls + &__image {
         border-block-start: 0;
     }

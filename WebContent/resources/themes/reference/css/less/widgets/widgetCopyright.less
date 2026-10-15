@@ -13,16 +13,6 @@
     &__container {
         padding-top: 0.8rem;
     }
-    .rs-svg-path {
-        fill: var(--fg-default);
-    }
-    .paragraph-svg-path {
-        fill: var(--fg-default);
-    }
-    .rs-svg-path,
-    .paragraph-svg-path {
-        fill: var(--fg-default);
-    }
     &__dot {
         color: var(--fg-default);
     }
@@ -33,7 +23,7 @@
 
 /* COPYRIGHT IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
-    .widget.widget-copyright:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    .widget.widget-copyright:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
     color: var(--fg-default);
     cursor: pointer;
 
@@ -52,7 +42,7 @@
         transition: background-color 0.2s ease;
     }
 
-    /* the whole panel is one control: the surface answers hover, press and the open state */
+    /* THE WHOLE PANEL IS ONE CONTROL */
     &:hover > .widget__body.widget-copyright__body,
     &.-open > .widget__body.widget-copyright__body {
         background-color: var(--sidebar-bg-hover);
@@ -67,7 +57,7 @@
         min-height: 3.2rem;
         padding: 0;
 
-        /* empty slot mirroring the chevron, so the licence row centres on the panel */
+        /* EMPTY SLOT MIRRORS THE CHEVRON */
         &::before {
             content: '';
             flex: 0 0 auto;

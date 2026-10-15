@@ -1,6 +1,6 @@
 /* ==============================================================
    Image Controls
-   Style declarations for imageControls.xhtml
+   style declarations for imageControls.xhtml
    ==============================================================*/
 /* IMAGE CONTROLS */
 /* BLOCK */
@@ -22,18 +22,7 @@
     }
 
     /* DOCUMENT OPTIONS */
-    &__options {
-        ul {
-        }
-        li {
-        }
-    }
     &__option {
-        a,
-        button {
-        }
-        &.fulltext {
-        }
         &.add-to-bookmark {
             border-radius: var(--radius-container-small);
         }
@@ -116,19 +105,8 @@
     }
 
     /* ACTIONS */
-    &__actions {
-        ul {
-        }
-        li {
-        }
-    }
-    &__select-text {
-    }
     &__action {
         border-radius: var(--radius-container-small);
-        /* ELEMENT */
-        [class*='image-'] {
-        }
         &.inactive {
             cursor: default;
             a,
@@ -137,76 +115,10 @@
                 cursor: default;
             }
         }
-        /* ELEMENT */
-        &.start {
-        }
         &.page-browse,
         &.select {
             .custom-control--select {
                 background: transparent;
-            }
-        }
-        &.page-browse {
-            a,
-            span {
-            }
-        }
-        &.back {
-        }
-        &.select-text {
-            span {
-            }
-        }
-        &.select {
-            .form-control__select {
-                select {
-                }
-            }
-        }
-        &.forward {
-        }
-        &.end {
-        }
-        &.double-page-view,
-        &.single-page-view,
-        &.switch-pages {
-            [class*='image-'] {
-            }
-        }
-        &.double-page-view {
-        }
-        &.single-page-view {
-        }
-        &.switch-pages {
-            [class*='image-'] {
-            }
-        }
-        &.rotate-left,
-        &.rotate-right {
-            [class*='image-'] {
-            }
-        }
-        &.rotate-left {
-        }
-        &.rotate-right {
-        }
-        &.reset {
-        }
-        &.enter-fullscreen {
-        }
-        &.zoom-slider-wrapper {
-            .zoom-slider {
-                //Firefox
-                &::-moz-range-thumb {
-                }
-                &:focus {
-                }
-                &::-webkit-slider-thumb {
-                }
-                &::-webkit-slider-runnable-track {
-                }
-            }
-            .zoom-slider-handle {
             }
         }
     }
@@ -337,15 +249,9 @@
             }
         }
     }
-
-    /* MODIFICATION */
-    .labeltext {
-    }
 }
 
-/* RECORD VIEW — the tool row is the top of the stage band: no frame, no gap. The inline
-   padding is the content inset minus the 0.7rem inside a 32px action box, so the icon
-   artwork lines up with the title above it. */
+/* RECORD VIEW: THE TOOL ROW IS THE TOP OF THE STAGE BAND, ICONS LINE UP WITH THE TITLE */
 .view-object .image-controls {
     margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
     padding: 1rem calc(var(--_content-inset, 2.4rem) - 0.7rem);
@@ -358,7 +264,7 @@
     }
 }
 
-/* BREAKPOINT FOR LARGE DESKTOP */
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 

@@ -2,71 +2,11 @@
    Copyright indicator
    style declarations for licences related to record
    ==============================================================*/
-
 .copyright-indicator {
-    .svg-fill {
-        fill: var(--fg-default);
+    /* TRAFFIC LIGHT */
+    &__traffic-light-style-circle {
+        box-shadow: var(--copyright-indicator-inset-shadow);
     }
-    .svg-stroke {
-        stroke: var(--fg-default);
-    }
-    &__label-style {
-        border: 1px solid var(--border-subtle);
-
-        background: var(--bg-surface);
-        &.-green {
-            .copyright-indicator__status-icon {
-                &:before {
-                }
-            }
-            .copyright-indicator__dot-wrapper {
-            }
-        }
-        &.-yellow {
-            .copyright-indicator__status-icon {
-                &:before {
-                }
-            }
-            .copyright-indicator__dot-wrapper {
-            }
-        }
-        &.-red {
-            .copyright-indicator__status-icon {
-                &:before {
-                }
-            }
-            .copyright-indicator__dot-wrapper {
-            }
-        }
-    }
-    &__dot-wrapper {
-    }
-    &__dot {
-        color: var(--fg-default);
-    }
-    &__icon-wrapper {
-        img,
-        svg {
-        }
-    }
-    // TRAFFIC LIGHT STYLE
-    &__traffic-light-style {
-        &-circle-wrapper {
-        }
-        &-circle {
-            box-shadow: var(--copyright-indicator-inset-shadow);
-        }
-        &-icon-wrapper {
-            img,
-            svg {
-            }
-        }
-    }
-    &__hidden-information {
-    }
-}
-
-#copyrightInformation {
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -80,6 +20,7 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 }
+
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }
