@@ -1,10 +1,10 @@
 /* ==============================================================
    Style declarations for userBackendAnnotations.xhtml
    ==============================================================*/
+/* USER ANNOTATIONS */
 #userAnnotations {
     .admin__search-action {
         background: var(--bg-surface);
-
         border: 1px solid var(--user-search-action-border);
         &:hover,
         &:active,
@@ -24,19 +24,10 @@
 }
 
 /* USER ANNOTATIONS TABLE */
-#userAnnotationsTable {
-}
-
 .user-annotations {
     &__table {
         border: 1px solid var(--border-subtle);
         background: var(--bg-surface);
-    }
-    &__table-title {
-    }
-    &__table-body {
-    }
-    .admin__table-sorting-arrow-hidden {
     }
     &__table-title-target,
     &__table-title-campaign,
@@ -45,25 +36,15 @@
         button {
             color: var(--fg-link);
         }
-        &:hover {
-            .admin__table-sorting-arrow-hidden {
-            }
-        }
     }
     &__table-entry {
         &:hover {
             background: var(--bg-hover);
-            .user-annotations__table-entry-action-link {
-            }
         }
-    }
-    &__table-entry-label-record {
-    }
-    &__table-entry-action-link {
     }
 }
 
-// NEEDS TO BE REWORKED
+/* CAMPAIGN ANNOTATIONS */
 #campaignAnnotations {
     .admin__search-action {
         background: var(--bg-surface);

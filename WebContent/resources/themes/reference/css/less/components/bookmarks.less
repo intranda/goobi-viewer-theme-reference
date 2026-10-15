@@ -3,10 +3,9 @@
    style declarations for all bookmark actions,
    ==============================================================*/
 /* BOOKMARK NAVIGATION */
-/* BLOCK */
 .bookmark-navigation {
     margin-right: -5px;
-    /* ELEMENT */
+    /* DROPDOWN WRAPPER */
     &__dropdown-wrapper {
         background-color: var(--bg-elevated);
         border-radius: var(--radius-container-small);
@@ -18,7 +17,7 @@
             background-color: var(--bookmark-added-bg);
         }
     }
-    /* TOOGLE DROPDOWN */
+    /* TOGGLE */
     &__counter {
         display: flex;
         justify-content: center;
@@ -36,8 +35,6 @@
     &__string {
         font-weight: 700;
         color: var(--fg-accent);
-    }
-    &__icon {
     }
     /* DROPDOWN */
     &__dropdown {
@@ -60,8 +57,6 @@
             &:hover {
                 background-color: var(--bg-hover);
             }
-            &:last-child {
-            }
             .empty {
                 color: var(--fg-default);
             }
@@ -73,18 +68,6 @@
     &__dropdown-list-counter {
         background-color: var(--bg-brand);
     }
-    &__dropdown-title {
-        line-height: 1.3;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /*! autoprefixer: off */
-        -webkit-box-orient: vertical;
-        /*! autoprefixer: on */
-    }
-    &__dropdown-list-image {
-    }
     &__dropdown-list-remove {
         font-size: var(--font-size-body-small);
         color: var(--fg-default);
@@ -92,9 +75,6 @@
         &:active,
         &:focus {
             color: var(--fg-link-hover);
-
-            // keep the icon itself in the regular (non-hover) color; only
-            // the text should pick up the ci-color accent
             svg {
                 color: var(--fg-default);
             }
@@ -104,10 +84,6 @@
     &__dropdown-list-actions {
         border-top: 1px solid var(--border-default);
         background-color: transparent;
-    }
-    &__dropdown-list-single-entry {
-    }
-    &__dropdown-list-title {
     }
     &__dropdown-list-reset,
     &__dropdown-list-send,
@@ -120,7 +96,7 @@
             background-color: var(--bg-hover);
         }
     }
-    /* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
+    /* DROPDOWN LINKS */
     &__dropdown-list-single-entry,
     &__dropdown-list-title,
     &__dropdown-list-remove,
@@ -137,36 +113,16 @@
             &:focus,
             &:active {
                 color: var(--fg-link-hover);
-
-                // keep icons in the regular (non-hover) color; only the
-                // text should pick up the ci-color accent
                 svg {
                     color: var(--fg-default);
                 }
             }
         }
     }
-    &__dropdown-list-reset {
-    }
-    &__dropdown-list-send,
-    &__dropdown-list-mirador {
-        a {
-            span {
-            }
-        }
-    }
-    &__dropdown-list-send {
-    }
-    &__dropdown-list-mirador {
-    }
 }
 
-/* POPUPS */
-/* BLOCK */
+/* POPUP */
 .bookmark-popup {
-    // override core's fixed 280x350 box + absolutely positioned/magic-number
-    // sections with a proper flex column: sizes to content up to a max
-    // height, with only the list scrolling
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -179,12 +135,6 @@
     box-shadow: var(--shadow-elevated);
     overflow: hidden;
 
-    &.top {
-    }
-    &.right {
-    }
-    &.left {
-    }
     &.bottom {
         &:before {
             content: '';
@@ -204,7 +154,7 @@
         color: var(--fg-default);
     }
 
-    /* ELEMENT */
+    /* SECTIONS */
     &__header,
     &__radio-buttons,
     &__body,
@@ -282,7 +232,9 @@
         &:hover {
             color: var(--fg-default);
         }
-        span {
+        .bookmark-popup__check-icon {
+            color: var(--fg-brand);
+            stroke: var(--fg-brand);
         }
     }
 
@@ -297,8 +249,6 @@
             color: var(--fg-default);
             padding: 0 0.75rem;
         }
-        &.added {
-        }
     }
 
     &__add-button {
@@ -308,24 +258,9 @@
         &:hover {
             background-color: var(--bg-hover);
         }
-
-        // nested here (rather than a bare .bookmark-popup__add-icon rule) so
-        // this beats core's more specific ".bookmark-popup__footer button svg"
         .bookmark-popup__add-icon {
             stroke: var(--fg-brand);
         }
-    }
-
-    &__body-list {
-        // nested here for the same reason: core targets
-        // ".bookmark-popup__body-list .bookmark-popup__check-icon"
-        .bookmark-popup__check-icon {
-            color: var(--fg-brand);
-            stroke: var(--fg-brand);
-        }
-    }
-
-    &__list {
     }
 }
 

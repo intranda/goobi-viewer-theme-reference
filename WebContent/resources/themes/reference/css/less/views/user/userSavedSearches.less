@@ -3,7 +3,6 @@
    style declarations for userBackendSearches.xhtml
    ==============================================================*/
 /* MY SEARCHES */
-/* BLOCK */
 .my-searches {
     background: var(--bg-surface);
     border: 1px solid var(--container-border);
@@ -15,40 +14,20 @@
         border: 0;
     }
 
-    /* ELEMENT */
-    h1 {
-    }
+    /* TABLE */
     &__table {
         margin-bottom: 0;
         color: var(--fg-default);
-        thead {
-            tr {
-                th {
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                    &:nth-child(3) {
-                    }
-                }
-            }
-        }
         tbody {
             tr {
                 &:hover {
                     background: var(--bg-hover);
                 }
-                td {
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                    &:nth-child(3) {
-                    }
-                }
             }
         }
     }
+
+    /* ACTIONS */
     &__action,
     &__delete-button {
         color: var(--fg-link);
@@ -58,8 +37,6 @@
             color: var(--fg-link);
         }
     }
-    &__action {
-    }
     &__delete-button {
         color: var(--fg-danger);
         &:hover,
@@ -67,8 +44,6 @@
         &:focus {
             color: var(--fg-danger);
         }
-    }
-    &__delete-modal {
     }
 }
 
