@@ -6,31 +6,13 @@
 /* BLOCK */
 #searchHelpAccordion {
     /* ELEMENT */
-    &.card-group {
-        .card {
-            border: 1px solid var(--container-border);
-            border-radius: var(--radius-container);
-            overflow: hidden;
-        }
+    &.card-group .card {
+        border: 1px solid var(--container-border);
+        border-radius: var(--radius-container);
+        overflow: hidden;
     }
-    .card-header {
-    }
-    .card-title {
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    .card-body {
-        p {
-            &:last-child {
-            }
-            span {
-                background: var(--bg-hover);
-            }
-        }
+    .card-body p span {
+        background: var(--bg-hover);
     }
 }
 

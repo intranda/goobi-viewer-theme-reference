@@ -5,73 +5,23 @@
 /* BLOCK */
 .search-calendar {
     /* ELEMENT */
-    .btn {
-    }
-    &__title {
-        h1 {
-        }
-    }
-    &__century-outer {
-    }
-    &__century-grid {
-    }
-    &__century-year {
-    }
     &__century-year-link,
     &__century-year-text {
         border-radius: var(--radius-container-small);
         border: 1px solid var(--border-input);
     }
-    &__century-year-link {
-        a {
-            border-radius: var(--radius-container-small);
-            background-color: var(--bg-brand-subtle);
-            border: none;
-        }
+    &__century-year-link a {
+        border-radius: var(--radius-container-small);
+        background-color: var(--bg-brand-subtle);
+        border: none;
     }
-    &__century-separator-heading {
-    }
-    &__toggle {
-        &.btn {
-        }
+    &__day-popover a {
+        color: var(--fg-default);
+
+        &:hover,
         &:active,
         &:focus {
-        }
-    }
-    &__input {
-        background-color: var(--bg-surface);
-        border: 1px solid var(--border-subtle);
-        input {
-        }
-        .form-horizontal {
-        }
-        .form-group {
-        }
-        .col-sm-4 {
-        }
-        .col-sm-8 {
-        }
-        .control-label {
-        }
-        .form-control {
-        }
-    }
-    &__select-wrapper {
-        select {
-        }
-    }
-    &__reset {
-        .btn {
-        }
-    }
-    &__day-popover {
-        a {
             color: var(--fg-default);
-            &:hover,
-            &:active,
-            &:focus {
-                color: var(--fg-default);
-            }
         }
     }
     &__months {
@@ -95,24 +45,15 @@
         border-left: none;
         border-right: none;
     }
-    &__month-days span,
-    &__month-day,
-    &__month-day-empty {
-    }
-    &__month-days {
-        span {
-        }
-    }
-    &__month-week {
-    }
     &__month-day {
         a,
         span,
         button {
             padding: 7px 10px;
         }
-    }
-    &__month-day-empty {
+        &.active a {
+            color: var(--fg-on-inverse);
+        }
     }
     &__month-day-link {
         border-radius: 0;
@@ -121,6 +62,7 @@
     &__month-day-button {
         background-color: var(--bg-selected);
         color: var(--fg-default);
+
         &:focus,
         &:hover,
         &:active {
@@ -128,15 +70,8 @@
             color: var(--fg-on-brand);
         }
     }
-    &__action {
-    }
-    &__incomplete {
-        .label {
-        }
-    }
+
     /* NEWSPAPER SEARCH */
-    &__newspaper-search {
-    }
     &__newspaper-search-body {
         background: var(--bg-surface);
         border-top: 1px solid var(--border-subtle);
@@ -144,40 +79,6 @@
         border-left: none;
         border-right: none;
         margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
-    }
-    &__newspaper-search-title,
-    &__issues-title {
-    }
-    &__issues-header {
-    }
-    &__year-select {
-    }
-    &__search-field {
-    }
-    &__newspaper-search-date {
-    }
-    &__newspaper-search-date-label {
-    }
-    &__newspaper-search-date-fields {
-    }
-    &__newspaper-search-date-sep {
-    }
-    &__newspaper-search-btn {
-    }
-    /* YEAR GRID */
-    &__year-grid {
-    }
-    &__decade-header {
-    }
-    &__year-chip {
-    }
-    /* MODIFICATION */
-    &__month-day {
-        &.active {
-            a {
-                color: var(--fg-on-inverse);
-            }
-        }
     }
 }
 

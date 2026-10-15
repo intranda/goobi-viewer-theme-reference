@@ -2,9 +2,31 @@
    Search Advanced
    style declarations for searchAdvanced.xhtml
    ==============================================================*/
-/* SAERCH ADVANCED */
-/* BLOCK */
+/* SEARCH ADVANCED */
 .search-advanced {
+    /* SHARED CONTROL HEIGHT */
+    @field-height: 3.8rem;
+
+    /* ENTITY FILL MIXINS */
+    .entityFill(@color; @foreground) {
+        border: 1px solid @color;
+        background: @color;
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: @foreground;
+            background: @color;
+            border-color: @color;
+        }
+    }
+    .entityFillActive(@color; @foreground) {
+        &.-active {
+            background-color: @color;
+            color: @foreground;
+        }
+    }
+
     /* ELEMENT */
     &__entry-area {
         background-color: var(--bg-surface);
@@ -12,15 +34,9 @@
         gap: 12px;
         border-radius: var(--radius-container);
 
-        span.remove {
+        .remove:hover {
+            color: var(--fg-default);
         }
-        .remove {
-            &:hover {
-                color: var(--fg-default);
-            }
-        }
-    }
-    &__loader {
     }
 
     /* ONE CONTROL SIZE FOR EVERY FIELD OF THE FORM */
@@ -58,33 +74,13 @@
     &__input-group {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 12px;
+
         .form-control__select,
         input[type='text'] {
             border-radius: var(--radius-container-small);
             background: var(--bg-elevated);
             color: var(--fg-default);
         }
-        input[type='text'] {
-            &:focus {
-                & + .input-group-addon {
-                }
-            }
-        }
-        .custom-control--select {
-            &:after {
-            }
-            select[disabled] {
-            }
-        }
-        select {
-        }
-        button {
-        }
-        .row .col-sm-1 {
-        }
-    }
-
-    &__input-group-field {
     }
     &__input-value {
         background: var(--bg-surface);
@@ -149,41 +145,14 @@
         }
     }
 
-    input[type='checkbox']:where(:not(#admin *)) {
+    input[type='checkbox'] {
         .mx-theme-native-accent();
     }
 
-    label:has(> input[type='checkbox']:is(:disabled, [aria-disabled='true'])):where(:not(#admin *)) {
+    label:has(> input[type='checkbox']:is(:disabled, [aria-disabled='true'])) {
         color: var(--fg-disabled);
     }
 
-    &__select-values {
-    }
-
-    &__action {
-    }
-    &__additional-wrapper {
-        color: var(--fg-default);
-    }
-    &__input-col {
-        a,
-        button {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-            &[disabled='disabled'] {
-            }
-        }
-        span {
-        }
-        .form-group {
-        }
-    }
-    &__action {
-        .btn {
-        }
-    }
     &__fuzzy-search-option-wrapper {
         align-items: center;
 
@@ -191,23 +160,13 @@
             width: fit-content;
         }
     }
-    &__additional-options-area {
-    }
     &__nav-helper-box {
         background-color: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-container);
     }
-    &__nav-helper-item {
-    }
-    &__nav-helper-label {
-    }
-    &__custom-control {
-        select {
-        }
-    }
 
-    /* ENTITY TABS — the control-group material of the result band, reset from core's flush tabs */
+    /* ENTITY TABS */
     &__entity-tabs {
         max-width: 100%;
         margin-bottom: 10px;
@@ -231,7 +190,7 @@
         display: flex;
         flex: 0 0 auto;
 
-        /* CORNERS — the members round off 1px inside the group outline */
+        /* CORNERS */
         @tab-radius: calc(var(--search-group-radius) - 1px);
 
         &:first-child {
@@ -244,8 +203,6 @@
         }
         & + & {
             border-inline-start: 1px solid var(--search-group-border);
-        }
-        &.-active {
         }
     }
     &__entity-tab-link {
@@ -271,7 +228,7 @@
             z-index: 1;
         }
 
-        /* THE CHOSEN GROUP IS FILLED — same gesture as the chosen view in the result band */
+        /* ACTIVE TAB */
         &.-active {
             /* CORE RAISES THE CHOSEN TAB BY 1PX AGAINST THE OLD PANEL EDGE */
             height: 38px;
@@ -281,117 +238,76 @@
             font-weight: 600;
         }
 
-        /* ENTITY COLORS CARRY THE FILL OF THE CHOSEN GROUP */
-        .entitySearchAdvancedTabColor(@color; @foreground) {
-            &.-active {
-                background-color: @color;
-                color: @foreground;
-            }
-        }
+        /* ENTITY COLORS */
         &.-result-group-docstructtype__work {
-            .entitySearchAdvancedTabColor(var(--color-theme-entity-group-work); var(--fg-black));
+            .entityFillActive(var(--color-theme-entity-group-work); var(--fg-black));
         }
         &.-result-group-docstructtype__person {
-            .entitySearchAdvancedTabColor(var(--color-theme-entity-group-person); var(--fg-on-inverse));
+            .entityFillActive(var(--color-theme-entity-group-person); var(--fg-on-inverse));
         }
         &.-result-group-docstructtype__agent {
-            .entitySearchAdvancedTabColor(var(--color-theme-entity-group-agent); var(--fg-black));
+            .entityFillActive(var(--color-theme-entity-group-agent); var(--fg-black));
         }
         &.-result-group-docstructtype__award {
-            .entitySearchAdvancedTabColor(var(--color-theme-entity-group-award); var(--fg-black));
+            .entityFillActive(var(--color-theme-entity-group-award); var(--fg-black));
         }
         &.-result-group-docstructtype__event {
-            .entitySearchAdvancedTabColor(var(--color-theme-entity-group-event); var(--fg-black));
+            .entityFillActive(var(--color-theme-entity-group-event); var(--fg-black));
         }
     }
-    // REWORK NEEDED
     &__action-search-button {
-        // SUBMIT BUTTON COLORS MIXIN
-        .entitySearchAdvancedButtonColor(@color; @foreground) {
-            border: 1px solid @color;
-            background: @color;
-            &,
-            &:hover,
-            &:focus,
-            &:active {
-                color: @foreground;
-                background: @color;
-                border-color: @color;
-            }
-        }
         &.-result-group-docstructtype__work {
-            .entitySearchAdvancedButtonColor(var(--color-theme-entity-group-work); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-work); var(--fg-black));
         }
         &.-result-group-docstructtype__person {
-            .entitySearchAdvancedButtonColor(var(--color-theme-entity-group-person); var(--fg-on-inverse));
+            .entityFill(var(--color-theme-entity-group-person); var(--fg-on-inverse));
         }
         &.-result-group-docstructtype__agent {
-            .entitySearchAdvancedButtonColor(var(--color-theme-entity-group-agent); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-agent); var(--fg-black));
         }
         &.-result-group-docstructtype__award {
-            .entitySearchAdvancedButtonColor(var(--color-theme-entity-group-award); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-award); var(--fg-black));
         }
         &.-result-group-docstructtype__event {
-            .entitySearchAdvancedButtonColor(var(--color-theme-entity-group-event); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-event); var(--fg-black));
         }
     }
 
-    // ENTITY TABS MOBILE DROPDOWN
+    /* ENTITY TABS MOBILE DROPDOWN */
     &__entity-tabs-dropdown {
         border: 1px solid var(--border-subtle);
         border-top: none;
         background-color: var(--bg-surface);
     }
-    &__entity-tabs-dropdown-button-wrapper {
-    }
     &__entity-tabs-dropdown-toggle-button {
         border: 1px solid var(--border-subtle);
         border-bottom: none;
-        background-color: var(--bg-page);
         background: var(--bg-surface);
         color: var(--fg-default);
+
         &:hover {
             color: var(--fg-default);
         }
-        // MOBILE ENTITY DROPDOWN TOGGLE BUTTON COLORS MIXIN
-        .entitySearchAdvancedDropdownToggleColor(@color; @foreground) {
-            border: 1px solid @color;
-            background: @color;
-            &,
-            &:hover,
-            &:focus,
-            &:active {
-                color: @foreground;
-                background: @color;
-                border-color: @color;
-            }
-        }
         &.-result-group-docstructtype__work {
-            .entitySearchAdvancedDropdownToggleColor(var(--color-theme-entity-group-work); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-work); var(--fg-black));
         }
         &.-result-group-docstructtype__person {
-            .entitySearchAdvancedDropdownToggleColor(var(--color-theme-entity-group-person); var(--fg-on-inverse));
+            .entityFill(var(--color-theme-entity-group-person); var(--fg-on-inverse));
         }
         &.-result-group-docstructtype__agent {
-            .entitySearchAdvancedDropdownToggleColor(var(--color-theme-entity-group-agent); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-agent); var(--fg-black));
         }
         &.-result-group-docstructtype__award {
-            .entitySearchAdvancedDropdownToggleColor(var(--color-theme-entity-group-award); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-award); var(--fg-black));
         }
         &.-result-group-docstructtype__event {
-            .entitySearchAdvancedDropdownToggleColor(var(--color-theme-entity-group-event); var(--fg-black));
+            .entityFill(var(--color-theme-entity-group-event); var(--fg-black));
         }
     }
     &__entity-tabs-dropdown-link {
         color: var(--fg-link-subtle);
     }
-
-    // GAP SIZING VARIABLE
-    // @gap-sizer: 5px;
-    // SHARED CONTROL HEIGHT
-    @field-height: 3.8rem;
 }
-/* MODIFICATION */
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
@@ -400,7 +316,7 @@
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
     .search-advanced {
-        /* NO JS BEHIND THE MOBILE DROPDOWN — the group stays and scrolls sideways */
+        /* NO MOBILE DROPDOWN, THE GROUP SCROLLS SIDEWAYS */
         &__entity-tabs-links-wrapper {
             display: flex;
         }
