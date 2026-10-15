@@ -51,15 +51,18 @@
         color: var(--fg-default);
     }
 
+    /* CUSTOM CONTROL SELECT */
     .custom-control--select {
         border: 1px solid var(--border-strong);
         background: var(--bg-surface);
     }
 
+    /* BUTTON */
     .btn.btn--full {
         .mx-theme-control-primary();
     }
 
+    /* MODAL CONTENT */
     .modal-content {
         background-color: var(--bg-surface);
         color: var(--fg-default);
@@ -67,6 +70,7 @@
         box-shadow: var(--shadow-elevated);
     }
 
+    /* CARD */
     .card {
         border: 1px solid var(--modal-card-border);
     }
@@ -75,6 +79,7 @@
         background: var(--bg-surface);
     }
 
+    /* MODAL HEADER */
     .modal-header .fancy-close {
         .mx-theme-control();
         width: 44px;
@@ -110,16 +115,19 @@
     }
 }
 
+/* BODY WRAPPER */
 #bodyWrapper {
     transition: filter 0.2s linear;
 }
 
+/* MODAL OPEN */
 .modal-open {
     #bodyWrapper > * {
         filter: blur(3px);
     }
 }
 
+/* ALT BACKDROP */
 .alt-backdrop,
 .modal-backdrop.show {
     opacity: 0.6;

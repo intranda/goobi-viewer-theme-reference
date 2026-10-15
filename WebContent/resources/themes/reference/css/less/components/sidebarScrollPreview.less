@@ -3,6 +3,7 @@
    style declarations for sidebarScrollPreview.xhtml
    ==============================================================*/
 .sidebar-scroll-preview {
+    /* GRID */
     &__grid {
         .simplebar-track.simplebar-vertical {
             width: 8px;
@@ -24,12 +25,14 @@
         }
     }
 
+    /* ITEM */
     &__item {
         min-width: 0;
         max-width: 100%;
         margin-bottom: 10px;
     }
 
+    /* BUTTON */
     &__button,
     &__link {
         border-radius: var(--radius-container-small);
@@ -50,6 +53,7 @@
 
 /* RECORD VIEW */
 .view-object .sidebar-scroll-preview {
+    /* GRID */
     &__grid {
         padding: 0 0 1rem var(--_content-inset, 2.4rem);
     }
@@ -95,6 +99,7 @@
         }
     }
 
+    /* IMAGE */
     &__image-wrapper {
         display: block;
         overflow: visible;
@@ -115,6 +120,7 @@
             box-shadow 0.15s ease;
     }
 
+    /* BUTTON TEXT */
     &__button-text {
         margin: 0.6rem 0 0;
         color: var(--fg-secondary);

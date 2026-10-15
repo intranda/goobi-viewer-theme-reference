@@ -9,12 +9,14 @@
 }
 
 .widget-annotations {
+    /* ENTRY */
     &__entry {
         padding: 0.5rem;
         &.-onpage {
             border-left-color: var(--border-brand);
         }
     }
+    /* PAGE */
     &__page {
         span {
             background: var(--bg-brand);
@@ -25,6 +27,7 @@
 
 /* ANNOTATIONS IN THE NORMAL SIDEBAR */
 @{sidebar} .widget-annotations@{notOverlay} {
+    /* LIST */
     .widget__body ul {
         display: flex;
         flex-direction: column;
@@ -45,6 +48,7 @@
         }
     }
 
+    /* ENTRY */
     .widget-annotations__entry {
         display: flex;
         align-items: center;
@@ -71,6 +75,7 @@
         }
     }
 
+    /* TYPE */
     .widget-annotations__type {
         display: inline-flex;
         flex: 0 0 auto;
@@ -83,6 +88,7 @@
         }
     }
 
+    /* CONTENT */
     .widget-annotations__content {
         flex: 1 1 auto;
         min-width: 0;
@@ -116,6 +122,7 @@
         }
     }
 
+    /* PAGE */
     .widget-annotations__page {
         flex: 0 0 auto;
         margin-inline-start: auto;

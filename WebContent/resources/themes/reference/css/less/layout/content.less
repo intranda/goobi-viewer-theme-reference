@@ -6,6 +6,7 @@
 .content {
     z-index: 2;
 
+    /* WRAPPER */
     &__wrapper {
         position: relative;
         display: grid;
@@ -49,15 +50,18 @@
             }
         }
     }
+    /* MAIN */
     &__main {
         min-width: 0;
         scroll-margin-top: 150px;
     }
+    /* SIDEBAR */
     &__sidebar {
         min-width: 200px;
         scroll-margin-top: 150px;
     }
 
+    /* WITHOUT SIDEBAR */
     &__wrapper.-without-sidebar,
     &__wrapper:not(:has(.sidebar__inner > *)) {
         grid-template-columns: 1fr;
@@ -67,6 +71,7 @@
             display: none;
         }
     }
+    /* MOBILE SIDEBAR TRIGGER */
     &__mobile-sidebar-trigger {
         display: none;
         position: fixed;

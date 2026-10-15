@@ -4,9 +4,8 @@
    ==============================================================*/
 /* WIDGET ACTIVE FACETS */
 
-/* BLOCK */
 .active-facets-badges {
-    /* ELEMENTS */
+    /* BADGE */
     &__list &__badge {
         height: 24px;
         padding-block: 0;
@@ -21,6 +20,7 @@
             box-shadow: none;
         }
     }
+    /* BADGE REMOVE */
     &__badge-remove {
         width: 16px;
         height: 16px;
@@ -36,6 +36,7 @@
 
 /* SIDEBAR ACTIVE FILTER SUMMARY */
 @{sidebar} .active-facets-badges.widget-active-facets@{notOverlay} {
+    /* LIST */
     .active-facets-badges__list {
         gap: 0.8rem;
     }
@@ -78,6 +79,7 @@
             }
         }
     }
+    /* RESET */
     .widget-active-facets__reset {
         .mx-theme-control-accent();
         justify-content: center;

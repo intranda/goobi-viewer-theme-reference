@@ -9,6 +9,7 @@ html {
     scroll-padding-top: 15rem;
 }
 
+/* HEADER */
 .header {
     --_top: 0px;
     --_panel-top: 7.2rem;
@@ -30,6 +31,7 @@ html {
         --_top: @admin-topbar-frontend-height;
     }
 
+    /* BAR */
     &__bar {
         display: flex;
         align-items: center;
@@ -40,6 +42,7 @@ html {
         margin-inline: auto;
         padding: 1.2rem var(--page-gutter);
     }
+    /* LOGO */
     &__logo {
         display: flex;
         align-items: center;
@@ -158,10 +161,12 @@ html {
             color: inherit;
         }
     }
+    /* NAV PANEL */
     &__panel&__nav-panel {
         width: min(32rem, calc(100vw - 3.2rem));
         padding: 0.8rem;
     }
+    /* NAV PANEL LINKS */
     &__nav-panel-link {
         display: flex;
         align-items: center;
@@ -211,12 +216,14 @@ html {
         font-weight: 600;
         line-height: var(--line-height-body);
     }
+    /* ACTIONS */
     &__actions {
         display: flex;
         align-items: center;
         flex: 0 0 auto;
         gap: 0.8rem;
     }
+    /* ICON BUTTON */
     &__icon-button {
         position: relative;
         display: inline-flex;
@@ -269,6 +276,7 @@ html {
     [data-header-bookmarks][hidden] {
         display: none;
     }
+    /* ACCOUNT PANEL */
     &__panel,
     &__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
         position: fixed;
@@ -422,6 +430,7 @@ html {
         display: flex;
         align-items: center;
     }
+    /* BOOKMARKS */
     &__bookmark-count {
         position: absolute;
         inset-block-start: -0.2rem;
@@ -459,9 +468,11 @@ html {
         color: var(--fg-muted);
         font-size: var(--font-size-body-small);
     }
+    /* BOOKMARKS EMPTY */
     &__bookmarks:has(bookmarklistsession) &__bookmark-empty {
         display: none;
     }
+    /* BOOKMARK DROPDOWN */
     &__bookmark-content .bookmark-navigation__dropdown {
         position: static;
         width: 100%;
@@ -654,6 +665,7 @@ html {
         }
     }
 
+    /* ACCOUNT */
     &__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
         width: min(32rem, calc(100vw - 3.2rem));
         padding: 0.8rem;
@@ -732,6 +744,7 @@ html {
         padding-inline: calc(var(--_inset) + var(--_row-inset)) var(--_inset);
     }
 
+    /* TITLE */
     &__title {
         margin: 0;
         color: var(--fg-default);
@@ -740,6 +753,7 @@ html {
         line-height: var(--line-height-body);
     }
 
+    /* CLOSE */
     &__close {
         display: inline-flex;
         align-items: center;
@@ -776,6 +790,7 @@ html {
         }
     }
 
+    /* BODY */
     &__body {
         display: flex;
         flex-direction: column;
@@ -786,11 +801,13 @@ html {
         overflow-y: auto;
     }
 
+    /* NAVIGATION */
     &__navigation {
         flex: 0 0 auto;
         padding-bottom: 3.2rem;
     }
 
+    /* PREFERENCES */
     &__preferences {
         flex: 0 0 auto;
         margin-top: auto;
@@ -798,6 +815,7 @@ html {
         border-top: 1px solid var(--border-default);
     }
 
+    /* APPEARANCE */
     &__appearance {
         min-width: 0;
         margin: 0 0 var(--_section-gap);
@@ -805,6 +823,7 @@ html {
         border: 0;
     }
 
+    /* SECTION TITLE */
     &__section-title {
         float: none;
         width: auto;
@@ -816,6 +835,7 @@ html {
         line-height: var(--line-height-body);
     }
 
+    /* SEGMENTS */
     &__segments {
         display: flex;
         gap: 0.4rem;
@@ -824,6 +844,7 @@ html {
         background: var(--bg-subtle);
     }
 
+    /* SEGMENT */
     &__segment {
         display: flex;
         flex: 1 1 0;
@@ -930,10 +951,12 @@ html {
         gap: 2px;
     }
 
+    /* NAVIGATION */
     .navigation li {
         width: 100%;
     }
 
+    /* SUBMENU */
     .navigation__submenu {
         position: static;
         display: none;
@@ -958,6 +981,7 @@ html {
         }
     }
 
+    /* SUBMENU OPEN */
     .navigation [data-toggle='submenu'][aria-expanded='true'] + .navigation__submenu {
         display: block;
     }
@@ -1023,6 +1047,7 @@ html {
         color: var(--fg-secondary);
     }
 
+    /* LANGUAGE */
     &__language-toggle {
         display: flex;
         align-items: center;
@@ -1181,6 +1206,7 @@ html {
     }
 }
 
+/* RTL */
 @{RTL} .drawer {
     translate: -100% 0;
 

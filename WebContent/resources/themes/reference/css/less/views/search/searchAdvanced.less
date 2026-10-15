@@ -27,7 +27,7 @@
         }
     }
 
-    /* ELEMENT */
+    /* ENTRY AREA */
     &__entry-area {
         background-color: var(--bg-surface);
         border: 1px solid var(--border-subtle);
@@ -50,6 +50,7 @@
             font-size: var(--font-size-body);
         }
     }
+    /* OPTION DROPDOWN */
     .cms-module__option-dropdown {
         height: auto;
         min-height: @field-height;
@@ -68,9 +69,11 @@
         font-size: var(--font-size-body);
     }
 
+    /* OPERATOR FIELD PAIR WRAPPER */
     &__operator-field-pair-wrapper {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     }
+    /* INPUT GROUP */
     &__input-group {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 12px;
@@ -85,6 +88,7 @@
     &__input-value {
         background: var(--bg-surface);
     }
+    /* BUTTON BADGE */
     &__button-badge.btn {
         &,
         &:hover,
@@ -153,6 +157,7 @@
         color: var(--fg-disabled);
     }
 
+    /* FUZZY SEARCH OPTION WRAPPER */
     &__fuzzy-search-option-wrapper {
         align-items: center;
 
@@ -160,6 +165,7 @@
             width: fit-content;
         }
     }
+    /* NAV HELPER BOX */
     &__nav-helper-box {
         background-color: var(--bg-surface);
         border: 1px solid var(--border-subtle);
@@ -255,6 +261,7 @@
             .entityFillActive(var(--color-theme-entity-group-event); var(--fg-black));
         }
     }
+    /* ACTION SEARCH BUTTON */
     &__action-search-button {
         &.-result-group-docstructtype__work {
             .entityFill(var(--color-theme-entity-group-work); var(--fg-black));

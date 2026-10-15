@@ -4,11 +4,13 @@
    ==============================================================*/
 /* BREADCRUMBS */
 .breadcrumbs {
+    /* WRAPPER */
     &__wrapper {
         margin-block: 1.6rem 0;
         font-size: var(--font-size-body-small);
         color: var(--fg-secondary);
     }
+    /* LIST */
     &__list {
         display: flex;
         justify-content: flex-start;
@@ -47,6 +49,7 @@
             .mx-theme-focus();
         }
     }
+    /* STARTTEXT */
     &__starttext {
         span {
             padding-inline-start: 0;
@@ -92,6 +95,7 @@
     }
 }
 
+/* RTL */
 @{RTL} .breadcrumbs__crumb + li {
     &:before {
         content: '\2039';

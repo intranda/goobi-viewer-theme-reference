@@ -2,9 +2,8 @@
    Search Calendar
    style declarations for searchCalendar.xhtml
    ==============================================================*/
-/* BLOCK */
 .search-calendar {
-    /* ELEMENT */
+    /* CENTURY YEAR LINK */
     &__century-year-link,
     &__century-year-text {
         border-radius: var(--radius-container-small);
@@ -15,6 +14,7 @@
         background-color: var(--bg-brand-subtle);
         border: none;
     }
+    /* DAY POPOVER */
     &__day-popover a {
         color: var(--fg-default);
 
@@ -24,11 +24,13 @@
             color: var(--fg-default);
         }
     }
+    /* MONTHS */
     &__months {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
         gap: 30px;
     }
+    /* MONTH */
     &__month {
         min-height: 270px;
         border: 1px solid var(--container-border);

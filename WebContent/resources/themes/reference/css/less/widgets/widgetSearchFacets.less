@@ -4,17 +4,20 @@
    ==============================================================*/
 /* WIDGET SEARCH FACETS */
 .widget-search-facets {
+    /* AVAILABLE TITLE */
     &__available-title {
         font-weight: 400;
         font-size: var(--font-size-body);
         margin-bottom: 2rem;
     }
 
+    /* BODY WITH BOOLEAN */
     &__body:has(.widget-search-facets__boolean) {
         padding: 0;
         background-color: transparent;
     }
 
+    /* LIST ITEM LINK */
     &__list-item-link {
         &.-active {
             background-color: var(--sidebar-bg-hover);
@@ -116,6 +119,7 @@
         color: var(--fg-brand);
     }
 
+    /* BOOLEAN BUTTON */
     &__boolean-button {
         border-radius: var(--radius-button);
         border: none;
@@ -146,6 +150,7 @@
     --_facet-action-gap: 0.4rem;
     --_facet-meta-size: var(--_facet-row-size);
 
+    /* WIDGET BODY */
     .widget
         > .widget__body:not(:where(.widget-geofacetting__body, .widget-active-facets__body)):not(
             :has(.widget-search-facets__boolean)
@@ -159,6 +164,7 @@
         }
     }
 
+    /* LIST */
     .widget-search-facets__list {
         gap: 0.2rem;
         margin-block: 0;
@@ -410,6 +416,7 @@
         background-color: transparent;
     }
 
+    /* BOOLEAN */
     .widget-search-facets__boolean {
         gap: 0.8rem;
     }

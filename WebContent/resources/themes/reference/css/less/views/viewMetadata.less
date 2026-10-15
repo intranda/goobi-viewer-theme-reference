@@ -3,7 +3,6 @@
    style declarations for viewMetadata.xhtml
    ==============================================================*/
 /* METADATA */
-/* BLOCK */
 .view-metadata {
     &.docstructtype__work {
         .metadata__wrapper {
@@ -31,10 +30,13 @@
         }
     }
 }
+/* METADATA */
 .metadata {
+    /* BOOKMARK ICON */
     .bookmark-toggle__icon {
         border-radius: var(--radius-container-small);
     }
+    /* BOOKMARK BUTTON */
     &__bookmark-button {
         &[data-bookmark-list-type='add'] {
             color: var(--bookmark-added-fg);
@@ -42,6 +44,7 @@
             border-radius: var(--radius-container-small);
         }
     }
+    /* WRAPPER */
     &__wrapper {
         &.-isBoxed {
             border-radius: var(--radius-container);
@@ -58,10 +61,11 @@
             color: var(--fg-link-subtle);
         }
     }
-    /* ELEMENT */
+    /* ELEMENT WRAPPER SINGLE */
     &__element-wrapper-single {
         border: 1px solid var(--border-subtle);
     }
+    /* GROUPED WRAPPER */
     &__grouped-wrapper {
         background-color: var(--bg-surface);
         border: 1px solid var(--border-subtle);
@@ -69,14 +73,17 @@
             background-color: var(--bg-surface);
         }
     }
+    /* UNGROUPED WRAPPER */
     &__ungrouped-wrapper {
         border: 1px solid var(--border-subtle);
     }
+    /* HEADING */
     &__heading {
         background-color: var(--bg-surface);
     }
 }
 
+/* MAIN COLUMN TITLE */
 .content__wrapper > .content__main .view-metadata .metadata__title-wrapper {
     margin-bottom: 0;
 }
