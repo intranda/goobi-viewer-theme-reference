@@ -3,46 +3,16 @@
    style declarations for widget_annotations.xhtml
    ==============================================================*/
 #widgetAnnotations {
-    h2 {
-    }
-    ul {
-        li {
-            .dl-horizontal {
-                dt {
-                }
-                dd {
-                }
-            }
-        }
-    }
     #user_generated_content_nav .ugc-highlight {
         background-color: var(--sidebar-bg-hover);
     }
 }
 
 .widget-annotations {
-    .widget__body {
-        &.-scrollable {
-        }
-    }
     &__entry {
         padding: 0.5rem;
-        button {
-        }
         &.-onpage {
             border-left-color: var(--border-brand);
-        }
-    }
-    &__type {
-    }
-    &__text {
-    }
-    &__link {
-    }
-    &__button {
-        &:hover {
-        }
-        &.disabled {
         }
     }
     &__page {
@@ -53,9 +23,9 @@
     }
 }
 
-/* ANNOTATIONS IN THE NORMAL SIDEBAR — the row pattern of the facet values */
+/* ANNOTATIONS IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
-    .widget-annotations:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    .widget-annotations:not(:where(.widget .widget, .modal *, .popover *, dialog *)) {
     .widget__body ul {
         display: flex;
         flex-direction: column;
@@ -65,7 +35,7 @@
         list-style: none;
     }
 
-    /* the row box sits on the li: the entry carries bootstrap's p-0 utility */
+    /* ROW */
     .widget__body li {
         margin-inline: -0.8rem;
         padding: 0.2rem 0.8rem;
@@ -84,7 +54,7 @@
         color: var(--fg-default);
         text-decoration: none;
 
-        /* the entry on the current page keeps its marker, in the row's proportions */
+        /* ENTRY ON THE CURRENT PAGE */
         &.-onpage {
             border: 0;
             border-inline-start: 2px solid var(--border-brand);
@@ -120,7 +90,7 @@
         overflow-wrap: anywhere;
     }
 
-    /* the normdata trigger is an action icon like everywhere else */
+    /* NORMDATA TRIGGER */
     .widget-annotations__button {
         display: inline-flex;
         align-items: center;
@@ -152,7 +122,7 @@
         margin-inline-start: auto;
     }
 
-    /* the page number reads like a facet count, not like a filled button */
+    /* PAGE NUMBER */
     .widget-annotations__page span {
         display: inline-flex;
         align-items: center;
@@ -167,7 +137,7 @@
         font-variant-numeric: tabular-nums;
     }
 
-    /* the annotation the page currently shows is a selection, not a hover */
+    /* CURRENT ANNOTATION */
     #user_generated_content_nav .ugc-highlight {
         background-color: var(--bg-selected);
         color: var(--fg-selected);

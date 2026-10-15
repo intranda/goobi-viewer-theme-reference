@@ -75,10 +75,7 @@
         }
     }
 
-    &__body-icon-svg {
-    }
-
-    /* one chip language in the sidebar: tinted surface, brand edge, brand-toned label */
+    /* BADGES */
     &__badge-container {
         .badge {
             font-weight: 500;
@@ -107,24 +104,12 @@
         font-size: var(--font-size-body);
     }
 
-    .widget-usage__page-download-pdf,
     .widget-downloads__page-download-pdf,
     .widget-downloads__work-download-pdf {
         .icon-wrapper {
             width: 15px;
             height: 15px;
         }
-    }
-}
-
-.widget-admin {
-    &__topbar {
-    }
-
-    &__title {
-    }
-
-    &__body {
     }
 }
 
@@ -137,8 +122,7 @@
             .modal .widget,
             .popover .widget,
             dialog .widget,
-            .widget-user-interactions,
-            #admin .widget
+            .widget-user-interactions
         )
     ) {
     --_widget-action-size: 4rem;
@@ -193,7 +177,7 @@
             padding-inline: 0;
         }
 
-        /* links are text by default; the list widgets add their own row surface */
+        /* BODY LINKS */
         a {
             padding: 0;
             font-weight: 400;
@@ -213,7 +197,7 @@
         }
     }
 
-    /* PANEL HEAD ICONS — one size and one neutral color, whatever the widget contributes */
+    /* PANEL HEAD ICONS */
     .widget__topbar-icon-svg {
         width: var(--_widget-action-icon-size);
         height: var(--_widget-action-icon-size);
@@ -260,7 +244,7 @@
             color: currentColor;
         }
 
-        /* the badge drops its own fill and joins the neutral action icons */
+        /* BADGE AS ACTION ICON */
         .icon-badge {
             width: var(--_widget-action-icon-size);
             height: var(--_widget-action-icon-size);
@@ -284,7 +268,7 @@
         }
     }
 
-    /* the map reset stays hidden until the core marks it active */
+    /* MAP RESET */
     .widget-geofacetting__action-reset:not(.active) {
         display: none;
     }
@@ -422,7 +406,7 @@
             margin: 0;
             border-radius: var(--radius-container-small);
 
-            /* a row that is not a link (the current version, the current view) keeps the box */
+            /* ROW */
             > :is(a, span) {
                 display: block;
                 min-height: var(--_nav-row-size, 2.8rem);
@@ -496,7 +480,7 @@
 /* SEARCH WIDGETS IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
     .widget:is(.widget-searchfield, .widget-search-in-current-item):not(
-        :where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *, #admin *)
+        :where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)
     ) {
     > form {
         margin: 0;
@@ -594,7 +578,7 @@
     }
 }
 
-/* TOUCH — navigation rows go back to the large target */
+/* TOUCH */
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
     :where(.content__wrapper > .content__sidebar) {
         --_nav-row-size: 4.4rem;

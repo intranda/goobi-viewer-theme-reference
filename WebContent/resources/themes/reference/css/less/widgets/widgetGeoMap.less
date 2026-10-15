@@ -8,28 +8,12 @@
         margin: 0 1.2rem;
         background-color: transparent;
     }
-    &__expand {
-    }
     .geomap {
         border-radius: var(--radius-container);
     }
-
-    /* CMS BACKEND WIDGET */
-    &__input {
-    }
-    &__input-spacer {
-        background-color: var(--border-strong);
-    }
-    &__action {
-        .col-2 {
-            border-bottom: 1px solid var(--border-strong);
-        }
-    }
-    &__overlay-check {
-    }
 }
 
-/* MAP IN THE NORMAL SIDEBAR — the map fills its card, corners clipped by the panel */
+/* MAP IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
     .widget-geomap:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
     overflow: hidden;

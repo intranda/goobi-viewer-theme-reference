@@ -2,44 +2,10 @@
    Widget Format Links
    style declarations for widget_formatLinks.xhtml
    ==============================================================*/
-
-#widgetFormatLinks {
-}
-.widget-format-links {
-    &__topbar {
-    }
-    &__license-text {
-        a {
-        }
-    }
-    &__subtitle {
-    }
-    &__page-downloads {
-        a,
-        form,
-        button {
-        }
-        .badge {
-            &:hover,
-            &:active,
-            &:focus {
-            }
-        }
-    }
-    &__work-downloads {
-        a {
-        }
-        .badge {
-        }
-    }
-    &__work-download-ris {
-    }
-}
-
-/* SIDEBAR EXPORT ACTIONS — shared Core badge containers */
+/* SIDEBAR EXPORT ACTIONS */
 :where(.content__wrapper > .content__sidebar)
     :is(.widget-downloads, .widget-citation, .widget-format-links):not(
-        :where(.widget .widget, .modal *, .popover *, dialog *, #admin *)
+        :where(.widget .widget, .modal *, .popover *, dialog *)
     )
     > .widget__body {
     --_export-action-size: 3.2rem;
@@ -103,7 +69,7 @@
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
     :where(.content__wrapper > .content__sidebar)
         :is(.widget-downloads, .widget-citation, .widget-format-links):not(
-            :where(.widget .widget, .modal *, .popover *, dialog *, #admin *)
+            :where(.widget .widget, .modal *, .popover *, dialog *)
         )
         > .widget__body {
         --_export-action-size: 4.4rem;

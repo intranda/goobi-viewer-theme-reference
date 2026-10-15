@@ -7,16 +7,6 @@
     &::-webkit-scrollbar-track {
         background: none;
     }
-    &__overlay {
-        background-color: var(--bg-surface);
-        opacity: 0.85;
-    }
-    /* TITLE */
-    &__title {
-    }
-    &__title-expand {
-    }
-
     &__body {
         a:hover {
             background-color: transparent;
@@ -29,39 +19,15 @@
             border: 0;
         }
     }
-    &__element {
-        &.parent {
-        }
-        &.child {
-        }
-    }
-    &__toggle-icon-svg {
-    }
-    &__element-expand {
-    }
-    &__element-link {
-        &.has-pagenumber {
-        }
-        &.non-tree-view {
-            &.has-pagenumber {
-            }
-        }
-    }
-    &__element-pagenumber {
-    }
-    /* LOADING */
-    &__loader,
-    &__overlay {
-    }
 }
 
 /* TOC IN THE NORMAL SIDEBAR */
 :where(.content__wrapper > .content__sidebar)
-    .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+    .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
     --_toc-slot: 3.2rem;
     --_toc-row: 3.8rem;
     --_toc-mark: 1.6rem;
-    /* depth as a step, with a ceiling so a deep record cannot eat the column */
+    /* DEPTH STEP */
     --_toc-step: calc(min(var(--toc-level, 0), 4) * 1.2rem);
 
     .widget-toc__title {
@@ -94,7 +60,7 @@
         padding: 0;
     }
 
-    /* ROWS — the row itself stays full width, only its content steps */
+    /* ROWS */
     .widget-toc__element {
         position: relative;
         align-items: flex-start;
@@ -193,7 +159,7 @@
         line-height: var(--line-height-body);
     }
 
-    /* THE ENTRY YOU ARE IN — the mark sits on the panel edge, whatever the depth */
+    /* ACTIVE ENTRY */
     .widget-toc__element.active {
         background-color: var(--bg-selected);
 
@@ -224,7 +190,7 @@
 
 @media (any-pointer: coarse), (max-width: @smallBreakpoint) {
     :where(.content__wrapper > .content__sidebar)
-        .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *, #admin *)) {
+        .widget.widget-toc:not(:where(.combined-facets *, .widget .widget, .modal *, .popover *, dialog *)) {
         --_toc-slot: 4.4rem;
         --_toc-row: 4.4rem;
     }

@@ -2,46 +2,11 @@
    Widget Citation
    style declarations for widget_citation.xhtml
    ==============================================================*/
-#widgetCitation {
-}
 .widget-citation {
     padding: 0;
-    &__topbar {
-    }
-    &__title {
-    }
-    &__license-text {
-        a {
-        }
-    }
-    &__subtitle {
-    }
-    &__page-downloads {
-        a,
-        form {
-        }
-        .badge {
-            &:hover,
-            &:active,
-            &:focus {
-            }
-        }
-    }
-    &__work-downloads {
-        a {
-        }
-        .badge {
-        }
-    }
-    &__work-download-ris {
-    }
-    &__citerecommendation-dropdown {
-    }
     &__citerecommendation-text-wrapper {
         .icon-wrapper {
             color: var(--fg-default);
-        }
-        .csl-entry {
         }
     }
     &__citerecommendation-copy-text {
@@ -52,13 +17,11 @@
             color: var(--fg-default);
         }
     }
-    &__citerecommendation-text-info {
-    }
 }
 
 /* SIDEBAR CITATION RECOMMENDATION */
 :where(.content__wrapper > .content__sidebar)
-    .widget-citation:not(:where(.widget .widget, .modal *, .popover *, dialog *, #admin *))
+    .widget-citation:not(:where(.widget .widget, .modal *, .popover *, dialog *))
     > .widget__body {
     .widget-citation__citerecommendation-dropdown {
         margin-block-end: 0.8rem;
