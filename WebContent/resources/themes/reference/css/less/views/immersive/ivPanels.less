@@ -3,63 +3,8 @@
    core: css/less/views/immersive/ivPanels.less
    ==============================================================*/
 
-.immersive {
-    &__panel {
-        &-left {
-            &.is-open {
-            }
-        }
-    }
-
-    &__panel-header {
-    }
-
-    &__panel-title {
-    }
-
-    &__panel-resize-handle {
-        &::after {
-        }
-
-        &:hover::after {
-        }
-    }
-
-    &.-panel-open &__panel-resize-handle {
-    }
-
-    &.-resizing {
-        .immersive__panel-resize-handle::after {
-        }
-    }
-
-    &__viewer:fullscreen:not(.is-double-page) {
-    }
-
-    &__viewer:-webkit-full-screen:not(.is-double-page) {
-    }
-}
-
-/* PANEL VARIANTS */
-.immersive__panel-toc {
-}
-
-.immersive__panel-metadata {
-}
-
-.immersive__panel-search {
-}
-
-.immersive__panel-fulltext {
-}
-
-.immersive__search-hint {
-}
-
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
-    .immersive__viewer {
-    }
 }
 
 /* BREAKPOINT FOR TABLETS */
