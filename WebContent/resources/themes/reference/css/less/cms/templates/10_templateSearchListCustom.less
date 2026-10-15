@@ -2,42 +2,16 @@
    CMS Template "Search List Custom"
    style declarations for cms_template_10_searchListCustom.xhtml
    ==============================================================*/
-/* TPL SEARCH LIST CUSTOM */
-/* BLOCK */
+
 .tpl-search-list-custom {
-    /* ELEMENT */
     &__list {
         padding: 10px;
         border: 1px solid var(--border-subtle);
         background-color: var(--bg-surface);
-        .row {
-            &:last-child {
-                .tpl-search-list-custom__list-element {
-                    padding-bottom: 0;
-                    border-bottom: 0;
-                }
-            }
-        }
-    }
-    &__list-element {
-    }
-    &__list-image {
-    }
-    &__list-text {
-        .dl-horizontal {
-            dt,
-            dd {
-            }
-            dt {
-            }
-            dd {
-            }
-        }
-    }
-    &__list-text-person {
-        &:after {
-        }
-        &:last-child:after {
+
+        .row:last-child .tpl-search-list-custom__list-element {
+            padding-bottom: 0;
+            border-bottom: 0;
         }
     }
 }

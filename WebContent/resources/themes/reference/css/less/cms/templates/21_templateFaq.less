@@ -2,28 +2,28 @@
    CMS Template "FAQ"
    style declarations for cms_template_21_faq.xhtml
    ==============================================================*/
-/* FAQ */
-/* BLOCK */
+
 .tpl-faq {
-    /* ELEMENT */
-    h1 {
-    }
     &__description,
     &__list {
         background-color: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-container);
     }
+
     &__description {
         border-radius: var(--radius-container);
     }
+
     &__list {
         .card {
             background-color: var(--bg-page);
             border-radius: var(--radius-container-small);
+
             h2 a,
             a::before {
                 color: var(--fg-default);
+
                 &:focus,
                 &:hover,
                 &:active {
@@ -31,11 +31,11 @@
                 }
             }
         }
+
         .card-header {
             border-radius: var(--radius-container-small);
-            &:hover {
-            }
         }
+
         .card-title {
             a {
                 &:hover,
@@ -45,8 +45,10 @@
                 }
             }
         }
+
         .card-body {
             background-color: var(--bg-surface);
+
             .tpl-faq-single {
                 &__content {
                     background-color: var(--bg-surface);
