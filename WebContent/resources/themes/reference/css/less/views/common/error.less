@@ -2,39 +2,17 @@
    Error
    style declarations for error.xhtml and errorHttp4xx/500.xhtml
    ==============================================================*/
-/* ERROR */
-
+/* LIGHT SCHEME ON ERROR PAGES */
 body:has(.view-error-page) {
     color-scheme: light;
     .mx-theme-semantic-light();
 }
 
-/* BLOCK */
-.view-error {
-    /* ELEMENTS */
-    h1 {
-    }
-    p {
-    }
-
-    /* ELEMENTS (errorHttp4xx/500.xhtml) */
-    &-card {
-        border-radius: var(--radius-container);
-        border: 1px solid var(--border-subtle);
-        border-top: 4px solid var(--fg-danger);
-    }
-    &__image {
-    }
-    &__headline {
-    }
-    &__code {
-    }
-    &__title {
-    }
-    &__message {
-    }
-    &__actions {
-    }
+/* ERROR CARD */
+.view-error-card {
+    border-radius: var(--radius-container);
+    border: 1px solid var(--border-subtle);
+    border-top: 4px solid var(--fg-danger);
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -1,4 +1,8 @@
-/* The start page uses its CMS components for the heading and page background. */
+/* ==============================================================
+   Index
+   style declarations for index.xhtml
+   ==============================================================*/
+/* START PAGE */
 .content__wrapper.-index {
     --_index-section-surface: color-mix(in srgb, var(--bg-surface) 72%, var(--bg-sunken));
 
@@ -18,8 +22,25 @@
     }
 }
 
+/* FOOTER AFTER THE START PAGE */
 .content {
     &:has(.content__wrapper.-index) + .footer {
         margin-top: 0;
     }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }

@@ -3,18 +3,8 @@
    style declarations for feedback.xhtml
    ==============================================================*/
 /* FEEDBACK */
-/* BLOCK */
 .view-feedback {
-    /* ELEMENT */
-    h1 {
-    }
-    p {
-    }
     .form-group {
-        label {
-        }
-        input {
-        }
         textarea {
             min-height: 150px;
             resize: vertical;
@@ -30,8 +20,8 @@
 }
 
 /* RECIPIENT FIELD */
-.view-feedback select.custom-control--select:where(:not(#admin *)),
-.view-feedback-modal select.custom-control--select:where(:not(#admin *)) {
+.view-feedback select.custom-control--select,
+.view-feedback-modal select.custom-control--select {
     .mx-theme-field();
 }
 
