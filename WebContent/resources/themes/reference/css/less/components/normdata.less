@@ -1,21 +1,18 @@
 /* ==============================================================
    Normdata
-   style declarations for normdata.xhtml 
+   style declarations for normdata.xhtml
    ==============================================================*/
-.normdataLink:where(:not(#admin *)),
-.normdataDetailLink:where(:not(#admin *)) {
+/* NORMDATA */
+.normdataLink,
+.normdataDetailLink {
     .mx-theme-control-link();
 }
 
-.normdata-preloader {
-}
-
-.closeAllPopovers:where(:not(#admin *)),
-.normdata-popover .normdata-popover-title .normdata-popover-close:where(:not(#admin *)) {
+.closeAllPopovers,
+.normdata-popover .normdata-popover-title .normdata-popover-close {
     .mx-theme-control();
     background-color: transparent;
     border-radius: var(--radius-button);
-
     &:disabled,
     &[aria-disabled='true'],
     &.disabled {
@@ -26,7 +23,6 @@
             .mx-theme-control-disabled();
         }
     }
-
     .icon-wrapper,
     .icon-svg {
         color: currentColor;
@@ -35,20 +31,6 @@
 
 .normdata-popover {
     z-index: 2020;
-    .normdata-popover-title {
-        h3 {
-        }
-        .normdata-popover-close {
-        }
-    }
-    .normdata-popover-content {
-        .dl-horizontal {
-            dt {
-            }
-            dd {
-            }
-        }
-    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

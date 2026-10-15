@@ -40,67 +40,22 @@
     }
     &__comment-metadata {
         color: var(--fg-default);
-        span {
-        }
-        &-creator {
-        }
-        &-date {
-        }
     }
     &__comment-info {
         color: var(--fg-default);
-
         background: var(--bg-surface);
     }
     &__comment-content {
         background-color: var(--bg-surface);
-        &-options {
-            background-color: var(--bg-surface);
-            border-bottom: 0;
-            span {
-            }
-            a,
-            button {
-                &:hover,
-                &:active,
-                &:focus {
-                }
-            }
-            &-last-change {
-            }
-            &-cancel,
-            &-edit,
-            &-save {
-                &.in {
-                }
-            }
-            &-cancel {
-            }
-            &-edit {
-            }
-            &-save {
-            }
-            &-delete {
-            }
-            &-text,
-            &-text-edit {
-            }
-            &-text {
-                &.in {
-                }
-            }
-            &-text-edit {
-                &.in {
-                }
-                textarea {
-                    border-radius: var(--radius-container-small);
-                    &:focus {
-                    }
-                }
-            }
-        }
     }
-    &__comment-content-loader {
+    &__comment-content-options {
+        background-color: var(--bg-surface);
+        border-bottom: 0;
+    }
+    &__comment-content-options-text-edit {
+        textarea {
+            border-radius: var(--radius-container-small);
+        }
     }
     &__add-comment {
         label {
@@ -112,20 +67,14 @@
                 padding: 0.3rem 1.2rem;
             }
         }
-        &-add {
+    }
+    &__add-comment-add {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-container);
+        background-color: var(--bg-surface);
+        textarea {
             border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-container);
-            background-color: var(--bg-surface);
-            textarea {
-                border: 1px solid var(--border-subtle);
-                border-radius: var(--radius-container-small);
-                &:focus {
-                }
-            }
-        }
-        &-submit {
-            .btn {
-            }
+            border-radius: var(--radius-container-small);
         }
     }
 }
