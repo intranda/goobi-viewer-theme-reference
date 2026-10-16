@@ -2,30 +2,22 @@
 	Styling for content component search facets
    ==============================================================*/
 
-.content-component__search-facets {
-    &-wrapper {
+.content-component__search-facets-link {
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface);
+    color: var(--fg-link-subtle);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: var(--bg-hover);
+        color: var(--fg-default);
     }
-    &-list {
-    }
-    &-list-entry {
-    }
-    &-link {
-        border: 1px solid var(--border-subtle);
+
+    &.-active {
+        color: var(--fg-default);
         background-color: var(--bg-surface);
-        color: var(--fg-link-subtle);
-        &:hover,
-        &:active,
-        &:focus {
-            background-color: var(--bg-hover);
-            color: var(--fg-default);
-        }
-        &.-active {
-            color: var(--fg-default);
-            background-color: var(--bg-surface);
-            font-weight: 700;
-        }
-    }
-    &-reset {
+        font-weight: 700;
     }
 }
 

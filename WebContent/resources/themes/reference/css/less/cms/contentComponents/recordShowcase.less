@@ -1,3 +1,8 @@
+/* ==============================================================
+   CMS Component "Record Showcase"
+   style declarations for the reference recordshowcase content component
+   ==============================================================*/
+
 .cms-record-showcase {
     --_showcase-heading-fluid: 4.6vw;
 
@@ -374,6 +379,11 @@ html[dir='rtl'] {
     }
 }
 
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
     .cms-record-showcase {
         &__header {
@@ -388,6 +398,7 @@ html[dir='rtl'] {
     }
 }
 
+/* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
     .cms-record-showcase {
         --_showcase-heading-fluid: 8vw;
@@ -411,6 +422,11 @@ html[dir='rtl'] {
     }
 }
 
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+}
+
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
     .cms-record-showcase *,
     .cms-record-showcase *::before,
