@@ -2,35 +2,19 @@
    Print CSS
    style declarations for print views
    ==============================================================*/
+
 @media print {
-    * {
-    }
     a,
     a:visited {
         color: var(--fg-print-link) !important;
         text-decoration: underline;
     }
+
     a:link:after {
         content: '';
     }
+
     abbr[title]:after {
         content: '';
-    }
-    pre,
-    blockquote {
-    }
-    thead {
-    }
-    tr,
-    img {
-    }
-    @page {
-    }
-    p,
-    h1,
-    h2 {
-    }
-    h1,
-    h2 {
     }
 }
