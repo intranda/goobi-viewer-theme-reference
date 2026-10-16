@@ -2,66 +2,37 @@
    Main Navigation
    style declarations for crowdsourcingNavigation.xhtml
    ==============================================================*/
+
 #mainnav {
     background-color: var(--bg-brand);
     border-color: var(--bg-brand);
-    ul {
-        li {
-            a {
-                color: var(--fg-on-brand);
-                &:hover,
-                &:focus,
-                &:active {
-                    color: var(--fg-on-brand);
-                }
-            }
+
+    ul li a {
+        color: var(--fg-on-brand);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--fg-on-brand);
         }
     }
+
     .dropdown-menu > li {
         width: 100%;
+
         &.divider {
             min-height: inherit;
         }
     }
+
     .dropdown-menu > li > a {
         color: var(--fg-secondary);
+
         &:hover,
         &:focus,
         &:active {
             color: var(--fg-secondary);
             background-color: var(--bg-subtle);
-        }
-    }
-    .navbar-header {
-        .navbar-brand {
-            img {
-            }
-        }
-    }
-    .navbar-collapse {
-        .navbar-right {
-            li {
-                a {
-                    .glyphicon {
-                    }
-                }
-            }
-            .dropdown {
-                .dropdown-toggle {
-                }
-                .dropdown-menu {
-                    h3 {
-                    }
-                    li {
-                        a {
-                            .glyphicon {
-                            }
-                        }
-                    }
-                    .divider {
-                    }
-                }
-            }
         }
     }
 }
