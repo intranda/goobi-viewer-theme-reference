@@ -1,8 +1,6 @@
 /* ==============================================================
    LESS Mixins
-   Technical helpers, then the theme control helpers. Control
-   helpers read semantic roles only; components decide which
-   state applies to which selector.
+   technical helpers and theme control helpers
    ==============================================================*/
 /* CLEARFLOATS */
 .mx-clearfloats {
@@ -14,33 +12,6 @@
 
     &:after {
         clear: both;
-    }
-}
-
-/* BACKGROUND IMAGE */
-.mx-bgi(@image; @pX: center; @pY: center; @size: auto) {
-    background-image: url(@image);
-    background-repeat: no-repeat;
-    background-position: @pX @pY;
-    -webkit-background-size: @size;
-    background-size: @size;
-}
-
-/* CSS TRIANGLE */
-.mx-triangle(@top: 0; @left: 0; @bWidth: 10px; @bcTop: transparent; @bcRight: transparent; @bcBottom: var(--fg-default); @bcLeft: transparent) {
-    position: relative;
-
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: @top;
-        left: @left;
-        width: 0;
-        height: 0;
-        border-width: @bWidth;
-        border-style: solid;
-        border-color: @bcTop @bcRight @bcBottom @bcLeft;
     }
 }
 
@@ -66,13 +37,6 @@
     overflow: hidden;
 }
 
-/* GRID */
-.mx-grid(@width: 145px; @gap: 15px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(@width, 1fr));
-    grid-gap: @gap;
-}
-
 /* LIST RESET */
 .mx-list-reset {
     margin: 0;
@@ -88,11 +52,10 @@
     -webkit-mask: url('@{iconResource}') center/100% 100% no-repeat;
 }
 
-/* ICON STROKE — the one knob; components/icons.less applies it to the drawn icons */
+/* ICON STROKE */
 @iconStroke: 2.4;
 
-/* STROKE ICON MASK — the icon files ship an empty stroke-width and read it from CSS, which a masked
-   file never sees; an inlined path keeps a drawn icon at the stroke of the <use> icons */
+/* STROKE ICON MASK */
 .mx-icon-stroke-mask(@path; @size) {
     @maskIcon: ~'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27currentColor%27 stroke-width=%27@{iconStroke}%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27@{path}%27/%3E%3C/svg%3E';
     mask: url('@{maskIcon}') center / @size @size no-repeat;
@@ -103,7 +66,7 @@
     .mx-icon-stroke-mask(~'m6 9 6 6 6-6'; @size);
 }
 
-/* FOCUS — visible by default; explicit pointer input uses a compact inset ring */
+/* FOCUS RING */
 .mx-theme-focus-ring(@width: 2px; @offset: 2px) {
     outline: @width solid var(--outline-focus) !important;
     outline-offset: @offset !important;
@@ -124,7 +87,7 @@
     }
 }
 
-/* NEUTRAL CONTROL — colors and states of a plain action; the caller sets border and radius */
+/* NEUTRAL CONTROL */
 .mx-theme-control() {
     color: var(--fg-default);
     background-color: var(--bg-surface);
@@ -146,7 +109,7 @@
     }
 }
 
-/* NEUTRAL CONTROL, SIDEBAR — the same states, tinted so the whole column carries the palette */
+/* SIDEBAR CONTROL */
 .mx-theme-control-accent() {
     color: var(--fg-default);
     background-color: var(--bg-surface);
@@ -168,7 +131,7 @@
     }
 }
 
-/* SELECTED CONTROL — compact active switch, current page: brand fill */
+/* SELECTED CONTROL */
 .mx-theme-control-selected() {
     color: var(--fg-on-brand);
     background-color: var(--bg-brand);
@@ -195,7 +158,7 @@
     opacity: 1;
 }
 
-/* PRIMARY CONTROL — main button with all states */
+/* PRIMARY CONTROL */
 .mx-theme-control-primary() {
     &,
     &:focus,
@@ -316,7 +279,7 @@
     }
 }
 
-/* FIELD — text input, select, textarea */
+/* FIELD */
 .mx-theme-field() {
     color: var(--fg-default);
     background-color: var(--bg-input);
@@ -375,15 +338,18 @@
     }
 }
 
-/* Responsive */
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
+/* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
 }
 
+/* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }
