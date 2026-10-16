@@ -28,8 +28,8 @@
     --view-object-image-radius: 2rem;
 
     /* BOOKMARKS */
-    --bookmark-added-bg: rgb(from var(--bg-accent) r g b / 20%);
-    --bookmark-added-fg: var(--fg-accent);
+    --bookmark-bg-added: rgb(from var(--bg-accent) r g b / 20%);
+    --bookmark-fg-added: var(--fg-accent);
 
     /* SEARCH SHEET */
     --search-sheet-gutter: 2.4rem;
@@ -39,7 +39,6 @@
     --search-field-height: 4.4rem;
     --search-hit-accent-width: 3px;
     --search-group-radius: var(--radius-button);
-    --search-group-bg-disabled: transparent;
 }
 
 .mx-theme-semantic-light() {
@@ -104,12 +103,12 @@
     --sidebar-fg-secondary: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-600));
 
     /* SEARCH SHEET */
-    --search-sheet-divider: var(--container-border);
+    --search-sheet-border: var(--container-border);
     --search-band-bg: var(--bg-page);
     --search-band-border: var(--container-border);
     --search-group-bg: transparent;
     --search-group-border: var(--container-border);
-    --search-group-solo-border: var(--container-border);
+    --search-group-border-solo: var(--container-border);
     --search-field-border: var(--border-strong);
     --search-group-bg-hover: var(--sidebar-bg-hover);
     --search-group-bg-pressed: var(--sidebar-bg-pressed);
@@ -117,6 +116,7 @@
     --search-group-bg-selected: var(--bg-brand);
     --search-group-fg-selected: var(--fg-on-brand);
     --search-group-fg-disabled: color-mix(in srgb, var(--fg-default) 38%, transparent);
+    --search-group-bg-disabled: transparent;
 
     /* WIDGETS */
     --combined-facets-title-weight: 600;
@@ -206,12 +206,12 @@
     --sidebar-fg-secondary: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-350));
 
     /* SEARCH SHEET */
-    --search-sheet-divider: var(--container-border);
+    --search-sheet-border: var(--container-border);
     --search-band-bg: var(--bg-page);
     --search-band-border: var(--container-border);
     --search-group-bg: transparent;
     --search-group-border: var(--container-border);
-    --search-group-solo-border: var(--container-border);
+    --search-group-border-solo: var(--container-border);
     --search-field-border: var(--border-strong);
     --search-group-bg-hover: var(--sidebar-bg-hover);
     --search-group-bg-pressed: var(--sidebar-bg-pressed);
@@ -219,6 +219,7 @@
     --search-group-bg-selected: var(--bg-brand);
     --search-group-fg-selected: var(--fg-on-brand);
     --search-group-fg-disabled: color-mix(in srgb, var(--fg-default) 38%, transparent);
+    --search-group-bg-disabled: transparent;
 
     /* WIDGETS */
     --combined-facets-title-weight: 700;
