@@ -1,9 +1,6 @@
 /* ==============================================================
-   Tokens — the theme's binding of the core token names.
-   The same four mixins as the core. Every line is either a core
-   override (role grammar, property first) or a theme token
-   (component grammar, property last). Both mode blocks declare
-   the same names.
+   Tokens
+   the theme's binding of the core token names
    ==============================================================*/
 
 .mx-theme-base() {
@@ -46,7 +43,7 @@
 }
 
 .mx-theme-semantic-light() {
-    /* ---------- CORE OVERRIDES — core group order ---------- */
+    /* ---------- CORE OVERRIDES ---------- */
 
     /* SURFACES */
     --bg-page: var(--color-theme-page);
@@ -100,7 +97,7 @@
     /* CONTAINERS */
     --container-border: var(--color-neutral-200);
 
-    /* SIDEBAR — brand-tinted neutrals so the whole column carries the palette */
+    /* SIDEBAR */
     --sidebar-bg-hover: rgb(from var(--color-brand) r g b / 8%);
     --sidebar-bg-pressed: rgb(from var(--color-brand) r g b / 14%);
     --sidebar-border: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-200));
@@ -146,7 +143,7 @@
 }
 
 .mx-theme-semantic-dark() {
-    /* ---------- CORE OVERRIDES — core group order ---------- */
+    /* ---------- CORE OVERRIDES ---------- */
 
     /* SURFACES */
     --bg-page: oklch(from var(--color-neutral-900) calc(l - 0.011) c h);
@@ -248,7 +245,7 @@
     --user-search-action-border: transparent;
 }
 
-/* WIRING — same selectors and order as the core */
+/* WIRING */
 :root {
     .mx-theme-palette();
     .mx-theme-base();

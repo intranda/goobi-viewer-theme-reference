@@ -1,17 +1,15 @@
 /* ==============================================================
-   Palette — the theme's colours; a customer palette overrides
-   entries here and nothing else. Two sections: core palette
-   lines the theme rebinds (same names as the core) and the
-   theme's own colours (always --color-theme-*).
+   Palette
+   the theme's colours, core overrides and own colours
    ==============================================================*/
 
 .mx-theme-palette() {
-    /* ---------- CORE PALETTE — overrides, same names as the core ---------- */
+    /* ---------- CORE PALETTE ---------- */
 
     /* BRAND */
     --color-brand: #1b73b3;
 
-    /* NEUTRAL RAMP — CIE L* steps (gulp/tonalRamp.js) */
+    /* NEUTRAL RAMP */
     --color-neutral-0: #ffffff;
     --color-neutral-50: #f7f9ff;
     --color-neutral-100: #f1f4f9;
@@ -72,7 +70,7 @@
     /* COMPONENT COLOURS */
     --color-on-ocr-word: light-dark(var(--color-neutral-0), var(--color-neutral-900));
 
-    /* ---------- THEME PALETTE — own colours, always --color-theme-* ---------- */
+    /* ---------- THEME PALETTE ---------- */
 
     /* PAGE */
     --color-theme-page: #f7f8f9;
@@ -85,7 +83,7 @@
     --color-theme-entity-group-event: #8966ca;
 }
 
-/* SUBTHEMES — brand pair only */
+/* SUBTHEMES */
 .mx-theme-subtheme1-palette() {
     --color-brand: #8a0e13;
     --color-brand-400: #f28b90;
