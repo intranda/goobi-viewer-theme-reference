@@ -8,19 +8,15 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:c="http://java.sun.com/jsp/jstl/core"
-    xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components"
     lang="#{navigationHelper.localeString}"
     dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}">
-    <!-- templateName determines which CSS + JS libraries will be included -->
+    <!-- TEMPLATE NAME, SELECTS THE CSS AND JS LIBRARIES -->
     <c:set
         var="templateName"
         value="templateBlankUnstyled" />
 
-    <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
+    <!-- EXCLUDED LIBRARIES BY NAME -->
     <c:set
         var="excludeCSS"
         value="#{['themeCSS']}" />
@@ -28,6 +24,7 @@
         var="excludeJS"
         value="#{[]}" />
 
+    <!-- HEAD -->
     <h:head profile="http://dublincore.org/documents/dcq-html/">
         <ui:insert name="head" />
 
@@ -57,7 +54,7 @@
                 value="-cachetimestamp=2026-9-19-16-22-53" />
         </ui:include>
 
-        <!-- SETS HTML FONT SIZE TO 100 % - BECAUSE MIRADOR DELIVERS OWN STYLES BASED ON REM UNITS -->
+        <!-- HTML FONT SIZE 100 PERCENT, MIRADOR USES REM -->
         <ui:fragment rendered="#{navigationHelper.currentPage == 'mirador'}">
             <style>
                 html {
@@ -81,21 +78,21 @@
     </h:head>
     <ui:insert name="metadata" />
 
+    <!-- BODY -->
     <h:body id="viewer">
         <f:view locale="#{navigationHelper.locale}">
-        
-        	<div class="messages">
+            <div class="messages">
                 <h:messages
                     id="messages"
                     infoClass="alert alert-success"
                     errorClass="alert alert-danger" />
             </div>
-        
+
             <!-- MAINTENANCE INFO -->
             <ui:include src="/resources/includes/maintenanceMode.xhtml" />
             <ui:insert name="content" />
 
-            <!-- REPLACEMENT FOR customJS.xhtml AND custom.js -->
+            <!-- REPLACES CUSTOMJS.XHTML AND CUSTOM.JS -->
             <script>
                 var currentPage = '#{navigationHelper.currentPage}';
                 var currentLang = '#{navigationHelper.localeString}';
@@ -115,6 +112,7 @@
 
         <!-- COOKIE BANNER -->
         <ui:include src="/resources/includes/cookieBanner.xhtml" />
+
         <!-- PIWIK -->
         <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
             <viewerComponent:piwikTracking

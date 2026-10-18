@@ -1,20 +1,13 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:c="http://java.sun.com/jsp/jstl/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
-    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
-    <!-- add response header for current language -->
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- LANGUAGE RESPONSE HEADER -->
     <f:event
         type="preRenderView"
         listener="#{facesContext.externalContext.response.setHeader('Content-Language', navigationHelper.locale.language)}" />
 
+    <!-- VIEWER INIT SCRIPT -->
     <script>
         var currentPage = "#{navigationHelper.currentPage}";
         var currentLang = "#{navigationHelper.localeString}";
@@ -23,47 +16,44 @@
         var userLoggedIn = #{userBean.loggedIn};
         var bookmarksEnabled = #{configurationBean.bookmarksEnabled};
         viewerJS.mapBoxConfig = {
-                token: "#{configurationBean.mapBoxToken}",
-                user: "#{configurationBean.mapBoxUser}",
-                styleId: "#{configurationBean.mapBoxStyleId}"
+            token: "#{configurationBean.mapBoxToken}",
+            user: "#{configurationBean.mapBoxUser}",
+            styleId: "#{configurationBean.mapBoxStyleId}",
         };
         var rootURL = "#{request.contextPath}";
         var restURL = "#{configurationBean.restApiUrl}";
         viewerJS.disclaimerConfig = #{disclaimerBean.disclaimerConfig};
         viewerJS.useWebSocket = #{activeDocumentBean.requiresWebSocket};
 
+        if (currentPage === 'fullscreen') {
+            var fullscreenConfig = {
+                msg: {
+                    fileNotFound: "#{msg.noImage_fileNotFound}",
+                },
+                // OPENPANEL 'NONE' CLOSES ALL PANELS
+                openPanel: 'panel-1',
+                persistentIdentifier: "#{activeDocumentBean.topDocumentIddoc}",
+            };
 
-        // set fullscreen config
-        if ( currentPage === "fullscreen" ) {
-        	var fullscreenConfig = {
-        		msg: {
-               		fileNotFound: "#{msg.noImage_fileNotFound}"
-               	},
-                   // set standard open panel for sidebar in fullscreen mode, openPanel: "none" for all panels closed
-               	openPanel: "panel-1",
-               	persistentIdentifier: "#{activeDocumentBean.topDocumentIddoc}"
-               };
-
-        	viewerJS.fullscreen.init( fullscreenConfig );
+            viewerJS.fullscreen.init(fullscreenConfig);
         }
 
-        // init admin module
-        if ( currentPage.indexOf( 'admin' ) > -1 ) {
-           	adminJS.init();
+        if (currentPage.indexOf('admin') > -1) {
+            adminJS.init();
         }
 
-        // init cms module functions
         cmsJS.modules.init();
 
-           viewerJS.thumbnailLoader = new viewerJS.loadThumbnails("#{request.contextPath}#{navigationHelper.getResource('images/image_not_found.png')}",
-                  					"#{request.contextPath}#{navigationHelper.getResource('images/thumbnail_access_denied.jpg')}");
+        viewerJS.thumbnailLoader = new viewerJS.loadThumbnails(
+            "#{request.contextPath}#{navigationHelper.getResource('images/image_not_found.png')}",
+            "#{request.contextPath}#{navigationHelper.getResource('images/thumbnail_access_denied.jpg')}"
+        );
     </script>
     <script
         src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/custom.min.js?${navigationHelper.buildVersion}&amp;cachetimestamp=2026-9-19-16-22-53"></script>
     <script
         src="#{request.contextPath}/resources/themes/#{navigationHelper.theme}/javascript/dist/#{navigationHelper.theme}-tags.js?${navigationHelper.buildVersion}&amp;cachetimestamp=2026-9-19-16-22-53"></script>
     <script>
-        //TODO: replace with better solution so colorTheme gets set earlier
         // switchTheme(#{sessionBean.get('colorTheme')});
     </script>
 </ui:composition>

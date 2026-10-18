@@ -4,24 +4,17 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:c="http://java.sun.com/jsp/jstl/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-    xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
-    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions">
     <!-- FOOTER -->
     <footer
         id="footer"
         class="footer">
         <div class="footer__inner">
-            <!-- OBERER BEREICH: 3 Spalten -->
+            <!-- TOP SECTION -->
             <div class="footer__top-section">
                 <div class="container">
                     <div class="footer__top-section-columns">
-                        <!-- Spalte 1: Kontakt -->
+                        <!-- COLUMN 1, CONTACT -->
                         <div class="footer__top-section-column">
                             <h3 class="footer__top-section-heading">#{msg.contact}</h3>
                             <div class="footer__top-section-contact-content">
@@ -48,7 +41,7 @@
                             </div>
                         </div>
 
-                        <!-- Spalte 2: Über uns -->
+                        <!-- COLUMN 2, ABOUT -->
                         <div class="footer__top-section-column">
                             <div class="footer__top-section-about">
                                 <h3 class="footer__top-section-heading">Über uns</h3>
@@ -70,7 +63,7 @@
                             </div>
                         </div>
 
-                        <!-- Spalte 3: Social Media -->
+                        <!-- COLUMN 3, SOCIAL MEDIA -->
                         <div class="footer__top-section-column footer__top-section-column-social">
                             <h3 class="footer__top-section-heading">Folgen Sie uns</h3>
                             <div class="footer__social">
@@ -85,7 +78,6 @@
                                         <util:icon icon="brand-facebook" />
                                     </a>
                                 </c:if>
-
                                 <c:if test="#{adminThemesBean.hasSocialMediaUrl('github')}">
                                     <a
                                         href="https://github.com/#{adminThemesBean.currentTheme.getSocialMediaLink('github').linkUrl}"
@@ -97,7 +89,6 @@
                                         <util:icon icon="brand-github" />
                                     </a>
                                 </c:if>
-
                                 <c:if test="#{adminThemesBean.hasSocialMediaUrl('twitter')}">
                                     <a
                                         href="https://twitter.com/#{adminThemesBean.currentTheme.getSocialMediaLink('twitter').linkUrl}"
@@ -109,7 +100,6 @@
                                         <util:icon icon="brand-x" />
                                     </a>
                                 </c:if>
-
                                 <c:if test="#{adminThemesBean.hasSocialMediaUrl('youtube')}">
                                     <a
                                         href="https://youtube.com/#{adminThemesBean.currentTheme.getSocialMediaLink('youtube').linkUrl}"
@@ -121,7 +111,6 @@
                                         <util:icon icon="brand-youtube" />
                                     </a>
                                 </c:if>
-
                                 <c:if test="#{adminThemesBean.hasSocialMediaUrl('instagram')}">
                                     <a
                                         href="https://instagram.com/#{adminThemesBean.currentTheme.getSocialMediaLink('instagram').linkUrl}"
@@ -139,10 +128,10 @@
                 </div>
             </div>
 
-            <!-- UNTERER BEREICH -->
+            <!-- BOTTOM SECTION -->
             <div class="footer__bottom-section">
                 <div class="container">
-                    <!-- Navigation (CMS) + Scroll-to-top nebeneinander -->
+                    <!-- CMS NAVIGATION AND SCROLL TO TOP -->
                     <div class="footer__bottom-section-nav-row">
                         <nav
                             class="footer__bottom-section-nav"
@@ -174,7 +163,6 @@
                                 </ui:repeat>
                             </ul>
                         </nav>
-
                         <button
                             class="footer__scroll-top"
                             onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
@@ -183,7 +171,7 @@
                         </button>
                     </div>
 
-                    <!-- Copyright + Legal Links -->
+                    <!-- COPYRIGHT AND LEGAL LINKS -->
                     <div class="footer__bottom-section-bar-wrapper">
                         <div class="footer__bottom-section-bar">
                             <ul class="footer__bottom-section-links">
@@ -194,13 +182,11 @@
                                             href="#{request.contextPath}/sitelinks/">#{msg.sitelinks}</a>
                                     </li>
                                 </ui:fragment>
-
                                 <li class="footer__link-item">
                                     <a
                                         class="footer__link-item-action"
                                         href="#{request.contextPath}/sitemap/">#{msg.sitemap}</a>
                                 </li>
-
                                 <c:if test="#{not empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
                                     <li class="footer__link-item">
                                         <a
@@ -210,7 +196,6 @@
                                         </a>
                                     </li>
                                 </c:if>
-
                                 <c:if test="#{empty adminThemesBean.currentTheme.getFooterLink('contact').linkUrl}">
                                     <li class="footer__link-item">
                                         <button
@@ -221,7 +206,6 @@
                                         </button>
                                     </li>
                                 </c:if>
-
                                 <li class="footer__link-item">
                                     <a
                                         class="footer__link-item-action"
@@ -229,7 +213,6 @@
                                         #{msg.privacy}
                                     </a>
                                 </li>
-
                                 <li class="footer__link-item">
                                     <a
                                         class="footer__link-item-action"
@@ -239,6 +222,7 @@
                                 </li>
                             </ul>
 
+                            <!-- POWERED BY -->
                             <a
                                 class="footer__link-item"
                                 href="#{msg.intrandaViewer}"

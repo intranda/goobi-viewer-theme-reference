@@ -8,20 +8,16 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:c="http://java.sun.com/jsp/jstl/core"
-    xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components"
     lang="#{navigationHelper.localeString}"
     dir="#{navigationHelper.localeString eq 'ar' or navigationHelper.localeString eq 'iw' ? 'rtl' : 'ltr'}"
     class="#{sessionBean.get('colorTheme')}">
-    <!-- templateName determines which CSS + JS libraries will be included -->
+    <!-- TEMPLATE NAME, SELECTS THE CSS AND JS LIBRARIES -->
     <c:set
         var="templateName"
         value="templateCrowdsourcing" />
 
-    <!-- You can force exclude default css or js: Add a string to one of the arrays below (ex. 'bootstrap', 'themeCss'; 'all' excludes all CSS or JS files) -->
+    <!-- EXCLUDED LIBRARIES BY NAME -->
     <c:set
         var="excludeCSS"
         value="#{['themeCSS']}" />
@@ -29,10 +25,10 @@
         var="excludeJS"
         value="#{[]}" />
 
+    <!-- HEAD -->
     <h:head profile="http://dublincore.org/documents/dcq-html/">
         <ui:insert name="head" />
         <meta temp="crowd" />
-
         <title>Crowdsourcing - #{adminThemesBean.getThemeLabel(configurationBean.name)}</title>
 
         <!-- META TAGS -->
@@ -67,7 +63,7 @@
             rel="stylesheet"
             href="#{request.contextPath}/resources/css/dist/viewer.min.css?${navigationHelper.buildVersion}" />
 
-        <!-- QUICK CSS IN VIEWER BACKEND - ADDS <style> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
+        <!-- QUICK CSS, INCLUDE KEEPS IDE VALIDATION -->
         <ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.mainThemeName)}">
             <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
                 <ui:param
@@ -75,6 +71,7 @@
                     value="#{adminThemesBean.getStylesheet(adminThemesBean.mainThemeName)}"></ui:param>
             </ui:include>
         </ui:fragment>
+
         <!-- QUICK CSS FROM SUBTHEMES -->
         <ui:fragment rendered="#{adminThemesBean.stylesheetExists(adminThemesBean.currentSubThemeName)}">
             <ui:include src="/resources/includes/templateHeads/quickcss.xhtml">
@@ -97,7 +94,7 @@
                 value="-cachetimestamp=2026-9-19-16-22-53" />
         </ui:include>
 
-        <!-- QUICK JS IN VIEWER BACKEND - ADDS <script> NODE - INSERTED WITH INCLUDE FOR CORRECT IDE VALIDATION -->
+        <!-- QUICK JS, INCLUDE KEEPS IDE VALIDATION -->
         <ui:fragment rendered="#{adminThemesBean.javascriptExists(adminThemesBean.mainThemeName)}">
             <ui:include src="/resources/includes/templateHeads/quickjs.xhtml">
                 <ui:param
@@ -105,6 +102,7 @@
                     value="#{adminThemesBean.getJavascript(adminThemesBean.mainThemeName)}"></ui:param>
             </ui:include>
         </ui:fragment>
+
         <!-- QUICK JS FROM SUBTHEMES -->
         <ui:fragment rendered="#{adminThemesBean.javascriptExists(adminThemesBean.currentSubThemeName)}">
             <ui:include src="/resources/includes/templateHeads/quickjs.xhtml">
@@ -115,8 +113,10 @@
         </ui:fragment>
     </h:head>
 
+    <!-- METADATA -->
     <ui:insert name="metadata" />
 
+    <!-- BODY -->
     <h:body id="crowd">
         <h:panelGroup id="subBody">
             <f:view locale="#{navigationHelper.locale}">
@@ -129,6 +129,7 @@
 
             <!-- COOKIE BANNER -->
             <ui:include src="/resources/includes/cookieBanner.xhtml" />
+
             <!-- PIWIK -->
             <ui:fragment rendered="#{configurationBean.piwikTrackingEnabled}">
                 <viewerComponent:piwikTracking

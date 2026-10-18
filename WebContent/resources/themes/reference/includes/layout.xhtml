@@ -1,16 +1,9 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:c="http://java.sun.com/jsp/jstl/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-    xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
-    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+    xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components">
     <ui:param
         name="referenceHasSidebar"
         value="#{(not facesContext.viewRoot.viewId.endsWith('/cmsPage.xhtml') or cmsBean.cmsWorkPageContext or (cmsBean.currentPage.useDefaultSidebar ? termBrowseBean.browsingMenuEnabled : not empty cmsBean.currentPage.sidebarElements)) and not facesContext.viewRoot.viewId.toLowerCase().contains('bookmark')}" />
@@ -67,7 +60,7 @@
                         role="main"
                         tabindex="-1"
                         data-label-more-options="#{msg.reference__search_more_options}">
-                        <!-- NO BREADCRUMB ON THE START PAGE — IT WOULD ONLY POINT AT ITSELF -->
+                        <!-- NO BREADCRUMB ON THE START PAGE -->
                         <ui:fragment rendered="#{navigationHelper.currentPage != 'index'}">
                             <viewerComponent:breadcrumbs
                                 showIcon="false"
@@ -102,9 +95,6 @@
                             <div
                                 class="sidebar__inner -refreshHCsticky"
                                 data-target="sticky-sidebar">
-                                <!-- ALTERNATIVE SIDEBAR MENU COMPONENT -->
-                                <!-- <viewerComponent:sidebarMenu /> -->
-
                                 <!-- SIDEBAR WIDGETS -->
                                 <ui:insert name="sidebar" />
                             </div>
@@ -120,6 +110,7 @@
 
     <!--  GENERIC OVERLAY -->
     <ui:include src="/resources/includes/overlay.xhtml" />
+
     <!-- FULL OVERLAY LOADING SCREEN (DISPLAYED WHILE REDIRECTING PAGES) -->
     <ui:include src="/resources/includes/loadingOverlay.xhtml" />
 

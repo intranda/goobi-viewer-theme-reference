@@ -2,21 +2,17 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:util="http://goobi.io/util"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:c="http://java.sun.com/jsp/jstl/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:fn="http://java.sun.com/jsp/jstl/functions"
     xmlns:jsf="http://xmlns.jcp.org/jsf"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-    xmlns:viewer="http://xmlns.jcp.org/jsf/composite/components/partner"
     xmlns:viewerComponent="http://xmlns.jcp.org/jsf/composite/components"
-    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets"
-    xmlns:templateComponent="http://xmlns.jcp.org/jsf/composite/themes/reference/components">
+    xmlns:widgetComponent="http://xmlns.jcp.org/jsf/composite/components/widgets">
     <header
         id="header"
         class="header #{userBean.admin ? '-adminActive' : ''}">
         <div class="header__bar">
-            <!-- LOGO — the only start page link of the header -->
+            <!-- LOGO, THE ONLY START PAGE LINK -->
             <a
                 class="header__logo"
                 href="#{request.contextPath}/"
@@ -30,7 +26,7 @@
                     alt="#{adminThemesBean.getThemeLabel(configurationBean.name)} Logo" />
             </a>
 
-            <!-- ENTRY POINTS — the first three items of the CMS menu; everything else stays in the drawer -->
+            <!-- ENTRY POINTS, FIRST THREE CMS MENU ITEMS -->
             <nav
                 class="header__nav"
                 aria-label="#{msg.reference__header_navigation}">
@@ -46,7 +42,8 @@
                                     navItem="#{navItem}"
                                     linkClass="header__nav-link" />
                             </ui:fragment>
-                            <!-- WITH SUBMENU — the children open in a popover, like the other header panels -->
+
+                            <!-- WITH SUBMENU, CHILDREN IN A POPOVER -->
                             <ui:fragment rendered="#{!navItem.activeChildItems.isEmpty()}">
                                 <button
                                     type="button"
@@ -74,7 +71,8 @@
                                                 navItem="#{childItem}"
                                                 linkClass="header__nav-panel-link" />
                                         </ui:fragment>
-                                        <!-- GROUP — a child that carries children of its own has no destination, so it becomes a labelled section; deeper levels stay in the drawer -->
+
+                                        <!-- GROUP, LABELLED SECTION WITHOUT LINK (DEEPER LEVELS IN THE DRAWER) -->
                                         <ui:fragment
                                             rendered="#{childItem.valid and childItem.shouldDisplay and !childItem.activeChildItems.isEmpty()}">
                                             <div
@@ -106,6 +104,7 @@
                 </ui:repeat>
             </nav>
 
+            <!-- SEARCH PANEL -->
             <div
                 id="headerSearchPanel"
                 class="header__search"
@@ -165,7 +164,7 @@
                     <util:icon icon="menu-2" />
                 </button>
 
-                <!-- ACCOUNT — the round one closes the row -->
+                <!-- ACCOUNT -->
                 <div
                     class="header__account header__menu-anchor"
                     data-account-label="#{userBean.loggedIn ? msg.login__custom_name += ': ' += userBean.user.displayName : msg.userNotLoggedIn}">
@@ -187,6 +186,7 @@
             </div>
         </div>
 
+        <!-- BOOKMARKS PANEL -->
         <ui:fragment rendered="#{configurationBean.bookmarksEnabled}">
             <section
                 id="headerBookmarksPanel"
@@ -210,7 +210,7 @@
                 </div>
                 <p class="header__bookmark-empty">#{msg.bookmarkList_noEntryWarning}</p>
                 <div class="header__bookmark-content">
-                    <!-- Core uses this mount point for session lists and account bookmarks. -->
+                    <!-- BOOKMARKS MOUNT POINT, USED BY CORE -->
                     <span
                         class="header__bookmark-hook"
                         data-bookmark-list-type="dropdown"
@@ -219,7 +219,7 @@
             </section>
         </ui:fragment>
 
-        <!-- DRAWER — the complete navigation as a modal dialog; focus, Escape, scrim and the inert page come from the browser -->
+        <!-- DRAWER, NATIVE MODAL DIALOG -->
         <dialog
             id="headerMenu"
             class="drawer"
@@ -245,6 +245,7 @@
                         megaMenu="false" />
                 </div>
 
+                <!-- PREFERENCES -->
                 <div class="drawer__preferences">
                     <h:form
                         id="headerAppearance"
