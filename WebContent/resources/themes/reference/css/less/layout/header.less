@@ -663,6 +663,33 @@ html {
         &__user-dropdown-item-link:hover &__user-dropdown-item-icon-text svg {
             color: inherit;
         }
+
+        &__bookmarks-small-list::before {
+            inset-inline-start: 2.1rem;
+        }
+
+        &__bookmarks-entry {
+            min-height: calc(var(--_row) - 0.6rem);
+            border-radius: var(--_radius);
+        }
+
+        &__bookmarks-link,
+        &__bookmarks-overview-link {
+            align-self: stretch;
+            padding-block: 0;
+            padding-inline: 4rem 0.8rem;
+            line-height: var(--line-height-body);
+        }
+
+        &__bookmarks-overview-link {
+            padding-inline-end: 0;
+        }
+
+        &__bookmarks-link:focus-visible,
+        &__bookmarks-overview-link:focus-visible,
+        &__bookmarks-action:focus-visible {
+            .mx-theme-focus();
+        }
     }
 
     /* ACCOUNT */
@@ -672,6 +699,11 @@ html {
     }
     &__account [data-login='true'] .login-navigation__user-dropdown-item + .login-navigation__user-dropdown-item {
         margin-block-start: 0.2rem;
+    }
+    &__account [data-login='true'] .login-navigation__user-dropdown-item.-group-start {
+        margin-block-start: 0.8rem;
+        padding-block-start: 0.8rem;
+        border-block-start: 1px solid var(--border-subtle);
     }
 }
 /* DRAWER */
