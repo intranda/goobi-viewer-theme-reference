@@ -1,34 +1,14 @@
 /* ==============================================================
    Style declarations for userBackendComments.xhtml
    ==============================================================*/
-/* USER COMMENTS TABLE */
+/* USER BACKEND COMMENTS */
+.user-backend-comments {
+    .data-table__row {
+    }
+}
+
+/* USER COMMENTS */
 .user-comments {
-    .admin__table-sorting {
-        &__heading {
-            color: var(--fg-default);
-        }
-    }
-    &__table-entry-label {
-        color: var(--fg-default);
-    }
-    .admin__search-action {
-        background: var(--bg-surface);
-        border: 1px solid var(--user-search-action-border);
-        &:hover,
-        &:active,
-        &:focus {
-            .btn--icon {
-                color: var(--fg-default);
-            }
-        }
-    }
-    .data-table-paginator__button {
-        &:hover,
-        &:active,
-        &:focus {
-            color: var(--fg-default);
-        }
-    }
     &__edit-comment-button {
         color: var(--fg-link);
         &:hover {

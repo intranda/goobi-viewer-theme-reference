@@ -2,65 +2,14 @@
    Style declarations for userBackendAnnotations.xhtml
    ==============================================================*/
 /* USER ANNOTATIONS */
-#userAnnotations {
-    .admin__search-action {
-        background: var(--bg-surface);
-        border: 1px solid var(--user-search-action-border);
-        &:hover,
-        &:active,
-        &:focus {
-            .btn--icon {
-                color: var(--fg-default);
-            }
-        }
-    }
-    .data-table-paginator__button {
-        &:hover,
-        &:active,
-        &:focus {
-            color: var(--fg-default);
-        }
-    }
-}
-
-/* USER ANNOTATIONS TABLE */
 .user-annotations {
-    &__table {
-        border: 1px solid var(--border-subtle);
-        background: var(--bg-surface);
-    }
-    &__table-title-target,
-    &__table-title-campaign,
-    &__table-title-date,
-    &__table-title-review-state {
-        button {
-            color: var(--fg-link);
-        }
-    }
-    &__table-entry {
-        &:hover {
-            background: var(--bg-hover);
-        }
+    .data-table__row {
     }
 }
 
 /* CAMPAIGN ANNOTATIONS */
-#campaignAnnotations {
-    .admin__search-action {
-        background: var(--bg-surface);
-        border: 1px solid var(--border-subtle);
-    }
-    .admin__table-content {
-        border: 1px solid var(--border-subtle);
-        background: var(--bg-surface);
-    }
-    .admin__table-title {
-        background: var(--bg-surface);
-    }
-    .admin__table-entry {
-        &:hover {
-            background: var(--bg-hover);
-        }
+.campaign-annotations {
+    .data-table__row {
     }
 }
 
