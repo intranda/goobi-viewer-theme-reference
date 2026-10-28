@@ -277,8 +277,7 @@ html {
         display: none;
     }
     /* ACCOUNT PANEL */
-    &__panel,
-    &__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
+    &__panel {
         position: fixed;
         inset: auto;
         top: var(--_panel-top);
@@ -693,9 +692,16 @@ html {
     }
 
     /* ACCOUNT */
+    /* the dropdown stays absolutely positioned below its toggle (core), no JS positioning (TEST) */
     &__account .login-navigation [data-login='true'] .login-navigation__user-dropdown {
+        top: ~'calc(100% + 8px)';
         width: min(32rem, calc(100vw - 3.2rem));
+        max-height: calc(100dvh - 9rem);
         padding: 0.8rem;
+        overflow: auto;
+        overscroll-behavior: contain;
+        border-radius: var(--_popover-radius);
+        box-shadow: var(--shadow-elevated);
     }
     &__account [data-login='true'] .login-navigation__user-dropdown-item + .login-navigation__user-dropdown-item {
         margin-block-start: 0.2rem;

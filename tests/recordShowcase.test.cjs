@@ -9,6 +9,13 @@ const source = fs.readFileSync(
     path.resolve(__dirname, '../WebContent/resources/themes/reference/javascript/dev/custom.js'),
     'utf8'
 );
+const showcaseSource = fs.readFileSync(
+    path.resolve(
+        __dirname,
+        '../../goobi-viewer-core/src/main/resources/META-INF/resources/resources/javascript/dev/modules/cms/cmsJS.recordShowcase.js'
+    ),
+    'utf8'
+);
 const swiperSource = fs.readFileSync(
     path.resolve(
         __dirname,
@@ -52,6 +59,7 @@ function setup(t) {
         },
     });
     window.eval(swiperSource);
+    window.eval(showcaseSource);
     window.eval(source);
 
     function mount(count = 7, root, width = 1199) {
