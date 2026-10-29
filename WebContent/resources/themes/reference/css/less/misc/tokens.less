@@ -20,6 +20,23 @@
     --radius-container-small: 6px;
     --radius-button: 6px;
 
+    /* SEARCH LIST HIT ROW: THE THUMBNAIL COLUMN IS RESERVED EVEN WITHOUT A PREVIEW */
+    --search-list-hit-thumbnail-width: 19rem;
+    --search-list-hit-thumbnail-ratio: 4 / 5;
+    --search-list-hit-thumbnail-fill: 100%;
+    --search-list-hit-thumbnail-image-max-height: none;
+    --search-list-hit-thumbnail-image-fit: cover;
+    --search-list-hit-thumbnail-image-position: center top;
+    --search-list-hit-column-gap: 2.8rem;
+    --search-list-hit-row-gap: 0;
+    --search-list-hit-align-items: start;
+    --search-list-hit-options-direction: row;
+    --search-list-hit-options-gap: 0.4rem;
+    --search-list-grid-column-min: min(100%, 24rem);
+    --search-list-grid-gap: 2rem;
+    --search-list-grid-thumbnail-ratio: 4 / 5;
+    --search-list-grid-thumbnail-link-height: 100%;
+
     /* ---------- THEME TOKENS ---------- */
 
     /* LAYOUT */
@@ -249,6 +266,21 @@
     .mx-theme-palette();
     .mx-theme-base();
     .mx-theme-semantic-light();
+}
+
+/* SEARCH LIST HIT ROW: NARROWER THUMBNAIL COLUMN ON SMALLER SCREENS */
+@media screen and (max-width: @smallBreakpoint) {
+    :root {
+        --search-list-hit-thumbnail-width: 11rem;
+        --search-list-hit-column-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
+    :root {
+        --search-list-hit-thumbnail-width: 8.8rem;
+        --search-list-hit-column-gap: 1.6rem;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

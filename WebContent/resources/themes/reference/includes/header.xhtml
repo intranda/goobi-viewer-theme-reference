@@ -264,47 +264,40 @@
                                     type="button"
                                     jsf:id="appearanceLight"
                                     class="drawer__segment"
+                                    data-color-mode="color-theme-light"
                                     aria-label="#{msg.reference__color_light}"
                                     title="#{msg.button__theme_color_switch_light}"
                                     aria-pressed="#{sessionBean.get('colorTheme') eq 'color-theme-light'}"
                                     jsf:actionListener="#{sessionBean.put('colorTheme', 'color-theme-light')}">
                                     <span>#{msg.reference__color_light}</span>
-                                    <f:ajax
-                                        render="@form"
-                                        onevent="referenceApplyAppearance" />
+                                    <f:ajax render="@none" />
                                 </button>
                                 <button
                                     type="button"
                                     jsf:id="appearanceDark"
                                     class="drawer__segment"
+                                    data-color-mode="color-theme-dark"
                                     aria-label="#{msg.reference__color_dark}"
                                     title="#{msg.button__theme_color_switch_dark}"
                                     aria-pressed="#{sessionBean.get('colorTheme') eq 'color-theme-dark'}"
                                     jsf:actionListener="#{sessionBean.put('colorTheme', 'color-theme-dark')}">
                                     <span>#{msg.reference__color_dark}</span>
-                                    <f:ajax
-                                        render="@form"
-                                        onevent="referenceApplyAppearance" />
+                                    <f:ajax render="@none" />
                                 </button>
                                 <button
                                     type="button"
                                     jsf:id="appearanceSystem"
                                     class="drawer__segment"
+                                    data-color-mode=""
                                     aria-label="#{msg.reference__color_system}"
                                     title="#{msg.cms_widgets__type_automatic}"
                                     aria-pressed="#{sessionBean.get('colorTheme') ne 'color-theme-light' and sessionBean.get('colorTheme') ne 'color-theme-dark'}"
                                     jsf:actionListener="#{sessionBean.put('colorTheme', '')}">
                                     <span>#{msg.reference__color_system}</span>
-                                    <f:ajax
-                                        render="@form"
-                                        onevent="referenceApplyAppearance" />
+                                    <f:ajax render="@none" />
                                 </button>
                             </div>
                         </section>
-                        <input
-                            type="hidden"
-                            id="headerAppearanceValue"
-                            value="#{sessionBean.get('colorTheme')}" />
                     </h:form>
                     <ui:fragment rendered="#{fn:length(navigationHelper.supportedLanguages) > 1}">
                         <details class="drawer__language">
@@ -336,13 +329,36 @@
                 referenceAccountToggle.setAttribute('aria-label', referenceAccount.dataset.accountLabel);
             }
 
-            function referenceApplyAppearance(data) {
-                if (data.status !== 'success') return;
-                var mode = document.getElementById('headerAppearanceValue').value;
-                document.documentElement.classList.remove('color-theme-light', 'color-theme-dark');
-                if (mode) document.documentElement.classList.add(mode);
-                document.getElementById(data.source.id).focus({ preventScroll: true });
+            // Disable all transitions while the color mode class changes, so that
+            // every element switches at once instead of fading at different speeds.
+            function referenceWithoutTransitions(change) {
+                var style = document.createElement('style');
+                style.textContent = '*, *::before, *::after { transition: none !important; }';
+                document.head.appendChild(style);
+                change();
+                // Force a style recalculation while transitions are still disabled
+                void document.documentElement.offsetHeight;
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        style.remove();
+                    });
+                });
             }
+
+            // Apply the color mode immediately on click. The JSF ajax request on the button
+            // only stores the choice in the session in the background (render="@none").
+            document.addEventListener('click', function (event) {
+                var button = event.target.closest('.drawer__segment[data-color-mode]');
+                if (!button) return;
+                var mode = button.dataset.colorMode;
+                referenceWithoutTransitions(function () {
+                    document.documentElement.classList.remove('color-theme-light', 'color-theme-dark');
+                    if (mode) document.documentElement.classList.add(mode);
+                });
+                button.parentElement.querySelectorAll('.drawer__segment').forEach(function (segment) {
+                    segment.setAttribute('aria-pressed', String(segment === button));
+                });
+            });
         </script>
     </header>
 </ui:composition>

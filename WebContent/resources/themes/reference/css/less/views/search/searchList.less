@@ -4,21 +4,6 @@
    ==============================================================*/
 /* SEARCH LIST */
 .search-list {
-    /* THUMB BOOKMARK */
-    &__thumb-bookmark-wrapper {
-        right: 6px;
-        top: 6px;
-        background: var(--bg-surface);
-        border-radius: 50px;
-        height: 28px;
-        width: 28px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .bookmark-toggle__icon {
-            color: var(--fg-brand);
-        }
-    }
     /* OPTIONS */
     &__options-container {
         margin-bottom: 2rem;
@@ -131,13 +116,11 @@
         gap: 0.4rem var(--search-band-gap);
         padding: 1.2rem var(--search-sheet-gutter);
         background: var(--bg-surface);
-        color: var(--fg-default);
         border-block-start: 1px solid var(--search-sheet-border);
         font-size: var(--font-size-body-small);
     }
     &__adv-search-info-back {
         margin-inline-start: auto;
-        font-size: var(--font-size-body-small);
     }
     /* HITS */
     &__hits-list {
@@ -146,13 +129,9 @@
     /* HIT */
     &__hit {
         background-color: var(--bg-surface);
-        color: var(--fg-default);
         border: 1px solid var(--container-border);
         border-radius: var(--radius-container);
         padding: clamp(1.6rem, 2vw, 2.4rem);
-    }
-    &__hit-number-wrapper {
-        background: var(--bg-brand);
     }
     &__hit-number {
         font-size: var(--font-size-caption);
@@ -193,9 +172,6 @@
             border-radius: var(--radius-container-small);
             border: 2px solid var(--border-default);
         }
-        [data-bookmark-list-type='add'] {
-            color: var(--fg-brand);
-        }
     }
     /* DOCUMENT TYPE */
     &__hit-docstruct {
@@ -234,20 +210,13 @@
     a[data-toggle='hit-content'],
     button[data-toggle='hit-content'] {
         font-size: var(--font-size-body-small);
-        color: var(--fg-default);
         border-top: 1px solid var(--border-default);
-        &:hover,
-        &:focus,
-        &:active {
-            color: var(--fg-default);
-        }
     }
     &__hit-content dl {
         margin-bottom: 0;
         font-size: var(--font-size-body-small);
     }
     &__hit-content-set {
-        display: flex;
         align-items: flex-start;
         gap: 1.2rem;
         padding-bottom: 1rem;
@@ -267,8 +236,8 @@
     }
     /* CHILD HIT PREVIEW AT HALF THE THUMBNAIL WIDTH */
     &__subhit-thumbnail {
-        flex: 0 0 calc(var(--_hit-thumb-width) / 2);
-        width: calc(var(--_hit-thumb-width) / 2);
+        flex: 0 0 calc(var(--search-list-hit-thumbnail-width) / 2);
+        width: calc(var(--search-list-hit-thumbnail-width) / 2);
     }
     /* BROWSE ELEMENT */
     &__hit-top-wrapper {
@@ -276,17 +245,24 @@
         margin-bottom: 0.8rem;
         border-bottom: 0;
     }
-    &__hit-options-wrapper {
-        margin-left: 0.5rem;
-    }
     /* OPTION BUTTONS KEEP AN EDGE */
     &__hit-options-button.btn {
-        .mx-theme-control();
+        /* NOT .mx-theme-control(): ITS HOVER AND ACTIVE BACKGROUNDS WOULD BE OVERWRITTEN BELOW */
+        color: var(--fg-default);
+        background-color: var(--bg-surface);
+        box-shadow: none;
         border: 1px solid var(--border-strong);
         border-radius: var(--radius-container-small);
+        /* THE REVEAL FADE OF THE CORE MUST STAY IN THE LIST, A OWN TRANSITION REPLACES IT */
         transition:
             background-color 0.15s ease,
-            border-color 0.15s ease;
+            border-color 0.15s ease,
+            var(--search-list-hit-options-transition);
+
+        &:hover,
+        &:active {
+            color: var(--fg-default);
+        }
 
         &:hover,
         &:focus-visible {
@@ -296,6 +272,10 @@
 
         &:active {
             background-color: var(--bg-control-pressed);
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
         }
 
         &.added,
@@ -355,34 +335,10 @@
 /* HIT ROW */
 .search-list__hits:not(.grid):not(.list-view),
 .view-bookmark__entries {
-    --_hit-thumb-width: 19rem;
-    --_hit-thumb-ratio: 4 / 5;
-    --_hit-column-gap: 2.8rem;
-
-    /* THE THUMBNAIL COLUMN IS RESERVED EVEN WITHOUT A PREVIEW */
-    .search-list__hit-inner-structure {
-        grid-template-columns: var(--_hit-thumb-width) minmax(0, 1fr);
-        align-items: start;
-        gap: 0 var(--_hit-column-gap);
-    }
-
     /* PREVIEW */
     .search-list__hit-thumbnail {
-        width: 100%;
-        aspect-ratio: var(--_hit-thumb-ratio);
-
-        a {
-            width: 100%;
-            height: 100%;
-        }
         img {
-            width: 100%;
-            height: 100%;
-            max-height: none;
-            object-fit: cover;
-            object-position: center top;
             border: 0;
-            border-radius: var(--radius-container-small);
             box-shadow: 0 0.2rem 0.8rem rgb(from var(--shadow-color) r g b / 14%);
             transition:
                 transform 0.18s ease,
@@ -431,11 +387,6 @@
     }
 
     /* TOOLS */
-    .search-list__hit-options-wrapper {
-        flex-direction: row;
-        gap: 0.4rem;
-        margin: 0;
-    }
     .search-list__hit-options-button.btn {
         height: 36px;
     }
@@ -454,26 +405,6 @@
         &:focus,
         &:active {
             color: var(--fg-default);
-        }
-    }
-}
-
-/* POINTER DEVICES: THE TOOLS APPEAR ON HOVER, TOUCH KEEPS THEM */
-@media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
-    .search-list__hits:not(.grid):not(.list-view),
-    .view-bookmark__entries {
-        .search-list__hit-options-wrapper > * {
-            opacity: 0;
-            transition: opacity 0.15s ease;
-        }
-        .search-list__hit:hover .search-list__hit-options-wrapper > *,
-        .search-list__hit:focus-within .search-list__hit-options-wrapper > * {
-            opacity: 1;
-        }
-        /* A BOOKMARKED RECORD KEEPS ITS MARK VISIBLE */
-        .search-list__hit-options-button-bookmark.added,
-        .search-list__hit-options-button-bookmark[aria-checked='true'] {
-            opacity: 1;
         }
     }
 }
@@ -811,16 +742,8 @@ body:has(.header.-adminActive) @{searchSheet} {
 @media screen and (max-width: @smallBreakpoint) {
     .search-list__hits:not(.grid):not(.list-view),
     .view-bookmark__entries {
-        --_hit-thumb-width: 11rem;
-        --_hit-column-gap: 2rem;
-
         .search-list__hit-title-heading {
             font-size: var(--font-size-heading-small);
-        }
-
-        .search-list__hit-inner-structure:has(.search-list__hit-thumbnail) {
-            grid-template-columns: 1fr;
-            gap: 10px;
         }
     }
 
@@ -857,16 +780,6 @@ body:has(.header.-adminActive) @{searchSheet} {
 @media screen and (max-width: @xSmallBreakpoint) {
     .search-list__hits:not(.grid):not(.list-view),
     .view-bookmark__entries {
-        --_hit-thumb-width: 8.8rem;
-        --_hit-column-gap: 1.6rem;
-
-        /* THE ACTIONS MOVE BELOW THE ROW */
-        .search-list__hit-inner-structure {
-            grid-template-columns: minmax(0, 1fr);
-        }
-        .search-list__hit-inner-structure .search-list__hit-thumbnail {
-            width: auto;
-        }
         .search-list__hit-title-link {
             flex-direction: column;
             gap: 5px;

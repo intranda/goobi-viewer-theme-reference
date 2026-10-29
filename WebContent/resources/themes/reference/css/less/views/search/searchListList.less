@@ -6,14 +6,8 @@
 .search-list {
     /* HITS */
     &__hits {
-        &.list,
         &.list-view {
             --_list-column-gap: 2.4rem;
-
-            .search-list__thumb-bookmark-wrapper {
-                right: -8px;
-                top: -6px;
-            }
 
             .search-list__hit {
                 padding: 1.6rem;
@@ -26,11 +20,6 @@
                 display: flex;
                 flex-direction: column-reverse;
                 gap: 0 var(--_list-column-gap);
-            }
-            /* THE WRAPPERS ONLY GROUP THE MARKUP */
-            .search-list__hit-info-wrapper,
-            .search-list__hit-thumb-wrapper {
-                display: contents;
             }
             .search-list__hit-thumbnail {
                 display: none;
@@ -60,31 +49,6 @@
                 font-size: var(--font-size-body-large);
                 line-height: 1.4;
             }
-        }
-    }
-}
-
-/* POINTER DEVICES: THE TOOLS OF A ROW APPEAR ON HOVER */
-@media (min-width: (@smallBreakpoint + 1)) and (hover: hover) and (pointer: fine) and (~'not (any-pointer: coarse)') {
-    .search-list__hits.list,
-    .search-list__hits.list-view {
-        .search-list__hit-options-wrapper {
-            display: flex;
-            flex-direction: row;
-            gap: 0.4rem;
-        }
-        .search-list__hit-options-wrapper > * {
-            opacity: 0;
-            transition: opacity 0.15s ease;
-        }
-        .search-list__hit:hover .search-list__hit-options-wrapper > *,
-        .search-list__hit:focus-within .search-list__hit-options-wrapper > * {
-            opacity: 1;
-        }
-        /* A BOOKMARKED RECORD KEEPS ITS MARK VISIBLE */
-        .search-list__hit-options-button-bookmark.added,
-        .search-list__hit-options-button-bookmark[aria-checked='true'] {
-            opacity: 1;
         }
     }
 }
@@ -152,7 +116,6 @@
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
     /* THE TYPE TRACK GIVES WAY FIRST */
-    .search-list__hits.list,
     .search-list__hits.list-view {
         --_list-column-gap: 1.6rem;
 
@@ -165,7 +128,6 @@
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
     /* THE TYPE TAKES THE LINE ABOVE THE TITLE */
-    .search-list__hits.list,
     .search-list__hits.list-view {
         .search-list__hit-inner-structure {
             grid-template-columns: minmax(0, 1fr);

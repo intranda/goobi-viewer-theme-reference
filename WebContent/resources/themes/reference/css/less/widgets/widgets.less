@@ -487,6 +487,11 @@
     }
 }
 
+/* NO BOTTOM MARGIN FOR THE WIDGET IN THE LAST FORM WRAPPER OF THE SIDEBAR */
+@{sidebar} .widget__form-wrapper:last-child .widget@{notFacetsOrOverlay} {
+    margin-block-end: 0;
+}
+
 /* SEARCH WIDGETS IN THE NORMAL SIDEBAR */
 @{sidebar} .widget:is(.widget-searchfield, .widget-search-in-current-item)@{notFacetsOrOverlay} {
     > form {
