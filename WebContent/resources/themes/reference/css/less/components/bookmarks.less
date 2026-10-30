@@ -65,6 +65,60 @@
             color: var(--fg-default);
         }
     }
+    &__dropdown-list-counter {
+        background-color: var(--bg-brand);
+    }
+    &__dropdown-list-remove {
+        font-size: var(--font-size-body-small);
+        color: var(--fg-default);
+        &:hover,
+        &:active,
+        &:focus {
+            color: var(--fg-link-hover);
+            svg {
+                color: var(--fg-default);
+            }
+        }
+    }
+    /* DROPDOWN ACTIONS */
+    &__dropdown-list-actions {
+        border-top: 1px solid var(--border-default);
+        background-color: transparent;
+    }
+    &__dropdown-list-reset,
+    &__dropdown-list-send,
+    &__dropdown-list-search,
+    &__dropdown-list-mirador {
+        border-bottom: none;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: var(--bg-hover);
+        }
+    }
+    /* DROPDOWN LINKS */
+    &__dropdown-list-single-entry,
+    &__dropdown-list-title,
+    &__dropdown-list-remove,
+    &__dropdown-list-reset,
+    &__dropdown-list-send,
+    &__dropdown-list-search,
+    &__dropdown-list-mirador {
+        button,
+        a,
+        span,
+        h3 {
+            color: var(--fg-default);
+            &:hover,
+            &:focus,
+            &:active {
+                color: var(--fg-link-hover);
+                svg {
+                    color: var(--fg-default);
+                }
+            }
+        }
+    }
 }
 
 /* POPUP */

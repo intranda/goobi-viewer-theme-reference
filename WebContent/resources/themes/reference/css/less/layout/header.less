@@ -487,6 +487,29 @@ html {
             max-height: none;
             overflow: visible;
         }
+        .bookmark-navigation__dropdown-list-single-entry {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 4.4rem;
+            align-items: start;
+        }
+        .bookmark-navigation__dropdown-list-title,
+        .bookmark-navigation__dropdown-list-remove {
+            width: auto;
+            max-width: none;
+        }
+        .bookmark-navigation__dropdown-list-remove [data-bookmark-list-type='delete'] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.4rem;
+            height: 4.4rem;
+            border-radius: var(--_radius);
+        }
+        .bookmark-navigation__dropdown-list-actions a,
+        .bookmark-navigation__dropdown-list-actions button {
+            min-height: 4.4rem;
+            border-radius: var(--_radius);
+        }
     }
     /* ACCOUNT */
     &__account [data-login] .login-navigation__toggle-button.btn {
@@ -642,6 +665,29 @@ html {
 
         &__bookmarks-small-list::before {
             inset-inline-start: 2.1rem;
+        }
+
+        &__bookmarks-entry {
+            min-height: calc(var(--_row) - 0.6rem);
+            border-radius: var(--_radius);
+        }
+
+        &__bookmarks-link,
+        &__bookmarks-overview-link {
+            align-self: stretch;
+            padding-block: 0;
+            padding-inline: 4rem 0.8rem;
+            line-height: var(--line-height-body);
+        }
+
+        &__bookmarks-overview-link {
+            padding-inline-end: 0;
+        }
+
+        &__bookmarks-link:focus-visible,
+        &__bookmarks-overview-link:focus-visible,
+        &__bookmarks-action:focus-visible {
+            .mx-theme-focus();
         }
     }
 
