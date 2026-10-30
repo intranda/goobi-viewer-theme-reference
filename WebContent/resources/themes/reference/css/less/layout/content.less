@@ -57,6 +57,8 @@
     }
     /* SIDEBAR */
     &__sidebar {
+        /* hcSticky needs a positioned parent and would otherwise set this inline */
+        position: relative;
         min-width: 200px;
         scroll-margin-top: 150px;
     }
