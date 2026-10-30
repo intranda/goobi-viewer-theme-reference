@@ -3,7 +3,7 @@
    technical helpers and theme control helpers
    ==============================================================*/
 /* CLEARFLOATS */
-.mx-clearfloats {
+.mx-clearfloats() {
     &:before,
     &:after {
         content: ' ';
@@ -16,19 +16,19 @@
 }
 
 /* VISIBLE */
-.mx-visible {
+.mx-visible() {
     display: block !important;
     visibility: visible !important;
 }
 
 /* HIDDEN */
-.mx-hidden {
+.mx-hidden() {
     display: none !important;
     visibility: hidden !important;
 }
 
 /* VISUALLY HIDDEN */
-.mx-v-hidden {
+.mx-v-hidden() {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -38,7 +38,7 @@
 }
 
 /* LIST RESET */
-.mx-list-reset {
+.mx-list-reset() {
     margin: 0;
     padding: 0;
     list-style: none;

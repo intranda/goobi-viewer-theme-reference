@@ -1,18 +1,16 @@
 /* ==============================================================
    Error
    style declarations for error.xhtml and errorHttp4xx/500.xhtml
+   The core renders these pages with fixed --color-error-* palette entries.
+   Override them here, e.g. in .view-error-page, only if the theme needs a different look.
    ==============================================================*/
-/* LIGHT SCHEME ON ERROR PAGES */
-body:has(.view-error-page) {
-    color-scheme: light;
-    .mx-theme-semantic-light();
+/* ERROR PAGE */
+.view-error-page {
 }
 
 /* ERROR CARD */
 .view-error-card {
-    border-radius: var(--radius-container);
-    border: 1px solid var(--border-subtle);
-    border-top: 4px solid var(--fg-danger);
+    margin-top: 2rem;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

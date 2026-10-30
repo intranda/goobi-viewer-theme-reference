@@ -18,9 +18,6 @@
     /* HEAD */
     &__head {
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         gap: 0.8rem;
         min-height: 5.6rem;
         margin: 0;
@@ -45,8 +42,6 @@
     &__reset {
         .mx-theme-control-accent();
         color: var(--fg-default);
-        display: inline-flex;
-        align-items: center;
         justify-content: center;
         width: 4rem;
         height: 4rem;
@@ -91,15 +86,11 @@
     }
     /* TOPBAR */
     .widget__topbar {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto auto;
-        align-items: center;
         gap: 0 0.4rem;
         min-height: 3.2rem;
         padding: 0;
         border: 0;
         border-radius: 0;
-        overflow: visible;
     }
     /* TITLE */
     .widget__title {
@@ -204,7 +195,6 @@
     }
     .widget-search-facets__filter .widget-search-facets__filter-button,
     .widget-search-facets__filter .widget-search-facets__filter-button:hover {
-        position: static;
         inset: auto;
         width: 3.2rem;
         height: 3.2rem;

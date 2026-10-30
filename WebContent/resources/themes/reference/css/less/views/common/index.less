@@ -4,8 +4,6 @@
    ==============================================================*/
 /* START PAGE */
 .content__wrapper.-index {
-    --_index-section-surface: color-mix(in srgb, var(--bg-surface) 72%, var(--bg-sunken));
-
     padding-block: 0;
 
     > .content__main {
@@ -19,13 +17,6 @@
 
     .cms-page__title {
         display: none;
-    }
-}
-
-/* FOOTER AFTER THE START PAGE */
-.content {
-    &:has(.content__wrapper.-index) + .footer {
-        margin-top: 0;
     }
 }
 
