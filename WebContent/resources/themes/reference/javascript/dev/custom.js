@@ -159,10 +159,26 @@ $(document).ready(function () {
     // Initialize sticky elements for frontend sidebar
     if ($('[data-target="sticky-sidebar"]').length) {
         viewerJS.stickyElements.init({ initFrontend: true });
-        // the core default (top: 100) leaves too little breathing room above the sidebar
-        // once it re-sticks while scrolling back up; widen it for this theme without
-        // touching the core module
-        $('[data-target="sticky-sidebar"]').hcSticky('update', { top: 130 });
+        // hcSticky treats the sidebar as stuck as soon as its natural page position is above
+        // the configured top offset. A fixed value larger than that position (header height +
+        // content padding) pins the sidebar at scroll position 0 and leaves a gap above it.
+        // So the offset is derived from the layout: sticky header + the spacing the content
+        // wrapper already has above the sidebar.
+        const updateStickySidebarOffset = () => {
+            const stickyHeader = document.getElementById('header');
+            const contentWrapper = document.querySelector('.content__wrapper');
+            if (!stickyHeader || !contentWrapper) return;
+            const top = Math.floor(
+                stickyHeader.getBoundingClientRect().bottom + parseFloat(getComputedStyle(contentWrapper).paddingTop)
+            );
+            $('[data-target="sticky-sidebar"]').hcSticky('update', { top });
+        };
+        updateStickySidebarOffset();
+        let stickySidebarResizeTimer = 0;
+        window.addEventListener('resize', () => {
+            clearTimeout(stickySidebarResizeTimer);
+            stickySidebarResizeTimer = setTimeout(updateStickySidebarOffset, 150);
+        });
     }
 
     const $header = $('#header');
