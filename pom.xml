@@ -17,7 +17,7 @@
 	<name>Goobi viewer - Theme Reference</name>
 
 	<properties>
-		<revision>26.10</revision>
+		<revision>26.11</revision>
 		<changelist>-SNAPSHOT</changelist>
 		<themeName>reference</themeName>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
@@ -28,18 +28,18 @@
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-core</artifactId>
-			<version>${parent.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-config</artifactId>
-			<version>${parent.version}</version>
+			<version>${project.parent.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.goobi.viewer</groupId>
 			<artifactId>viewer-connector</artifactId>
-			<version>${parent.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
 
