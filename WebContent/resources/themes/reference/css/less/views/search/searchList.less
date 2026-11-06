@@ -30,9 +30,6 @@
         &:active {
             background-color: var(--bg-pressed);
         }
-        &:focus-visible {
-            .mx-theme-focus();
-        }
         &.active,
         &.-active,
         &.is-modal-trigger-open,
@@ -163,7 +160,6 @@
             background-color: var(--bg-pressed);
         }
         &:focus-visible {
-            .mx-theme-focus();
             text-decoration-line: underline;
         }
     }
@@ -201,9 +197,6 @@
             &:active {
                 background-color: transparent;
                 color: var(--fg-default);
-            }
-            &:focus-visible {
-                .mx-theme-focus();
             }
         }
     }
@@ -272,10 +265,6 @@
 
         &:active {
             background-color: var(--bg-control-pressed);
-        }
-
-        &:focus-visible {
-            .mx-theme-focus();
         }
 
         &.added,
