@@ -517,6 +517,11 @@ body:has(.header.-adminActive) @{searchSheet} {
                 font-size: var(--font-size-body-small);
                 font-weight: 600;
             }
+            /* THE SELECT IS TRANSPARENT, SO THE DROPDOWN LIST NEEDS ITS OWN COLORS */
+            .custom-control--select select option {
+                background-color: var(--bg-elevated);
+                color: var(--fg-default);
+            }
         }
     }
 
