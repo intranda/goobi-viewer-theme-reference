@@ -76,6 +76,15 @@ const paths = {
     cssDist: `${base}/css/dist/`,
 };
 
+/**
+ * Deployment subfolders (relative to the deployment dir) the theme JS bundles are mirrored to:
+ * the path the browser loads them from and its WEB-INF/classes copy (same targets as the CSS).
+ */
+const JS_DEPLOY_DIRS = [
+    `resources/themes/${THEME.name}/javascript/dist`,
+    `WEB-INF/classes/resources/themes/${THEME.name}/javascript/dist`,
+];
+
 /** Standard banner header prepended to built files. */
 const banner = `/*!\n * This file is part of the Goobi viewer - a content presentation and management application for digitized objects.\n * - http://www.intranda.com\n * - http://digiverso.com\n * GPLv2 or later. NO WARRANTY.\n */\n`;
 
@@ -561,7 +570,7 @@ function bundleCustomJS(changedFilePath = null) {
     const started = tStart();
     const srcList = JS_SOURCES.map((p) => joinPosix(paths.jsDev, p));
     const outProj = path.join(paths.jsDist, 'custom.min.js');
-    const outDeploy = HAS_DEPLOYMENT ? path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', 'custom.min.js') : null;
+    const outDeploy = HAS_DEPLOYMENT ? JS_DEPLOY_DIRS.map((dir) => path.join(DEPLOYMENT_DIR, dir, 'custom.min.js')) : [];
 
     return gulp
         .src(srcList, { allowEmpty: true })
@@ -569,7 +578,8 @@ function bundleCustomJS(changedFilePath = null) {
         .pipe(concat('custom.min.js', { newLine: ';' }))
         .pipe(header(banner))
         .pipe(gulp.dest(paths.jsDist))
-        .pipe(safeDest('resources/javascript/dist'))
+        .pipe(safeDest(JS_DEPLOY_DIRS[0]))
+        .pipe(safeDest(JS_DEPLOY_DIRS[1]))
         .on('finish', () => {
             logTask({
                 name: 'js_custom',
@@ -577,7 +587,7 @@ function bundleCustomJS(changedFilePath = null) {
                 changed: changedFilePath,
                 src: joinPosix(paths.jsDev, `{${JS_SOURCES.join(',')}}`),
                 projOut: [outProj],
-                deployOut: outDeploy ? [outDeploy] : [],
+                deployOut: outDeploy,
             });
         });
 }
@@ -593,7 +603,7 @@ function compileRiotTags(changedFilePath = null) {
     if (typeof changedFilePath === 'function') changedFilePath = null;
     const started = tStart();
     const outProj = path.join(paths.jsDist, `${THEME.name}-tags.js`);
-    const outDeploy = HAS_DEPLOYMENT ? path.join(DEPLOYMENT_DIR, 'resources/javascript/dist', `${THEME.name}-tags.js`) : null;
+    const outDeploy = HAS_DEPLOYMENT ? JS_DEPLOY_DIRS.map((dir) => path.join(DEPLOYMENT_DIR, dir, `${THEME.name}-tags.js`)) : [];
 
     return gulp
         .src(joinPosix(paths.jsDev, '*.tag'), { allowEmpty: true })
@@ -601,7 +611,8 @@ function compileRiotTags(changedFilePath = null) {
         .pipe(riot({ compact: true }))
         .pipe(concat(`${THEME.name}-tags.js`))
         .pipe(gulp.dest(paths.jsDist))
-        .pipe(safeDest('resources/javascript/dist'))
+        .pipe(safeDest(JS_DEPLOY_DIRS[0]))
+        .pipe(safeDest(JS_DEPLOY_DIRS[1]))
         .on('finish', () => {
             logTask({
                 name: 'riotTags',
@@ -609,7 +620,7 @@ function compileRiotTags(changedFilePath = null) {
                 changed: changedFilePath,
                 src: joinPosix(paths.jsDev, '*.tag'),
                 projOut: [outProj],
-                deployOut: outDeploy ? [outDeploy] : [],
+                deployOut: outDeploy,
             });
         });
 }

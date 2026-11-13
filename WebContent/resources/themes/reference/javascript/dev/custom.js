@@ -71,6 +71,7 @@ function initSliders() {
             },
             on: {
                 // record showcase controls
+                // wires the record showcase controls (scrubber, steps, progress) of the CMS component to this slider
                 beforeInit: cmsJS.recordShowcase.init,
             },
             breakpoints: {
