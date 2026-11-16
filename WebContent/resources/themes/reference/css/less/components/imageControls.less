@@ -1,122 +1,271 @@
 /* ==============================================================
    Image Controls
-   Style declarations for imageControls.xhtml
+   style declarations for imageControls.xhtml
    ==============================================================*/
 /* IMAGE CONTROLS */
-/* BLOCK */
 .image-controls {
+    border: 1px solid var(--container-border);
+    border-radius: var(--radius-container) var(--radius-container) 0 0;
     border-bottom: 0;
+
+    /* LINKS */
+    &__crowd-link,
+    &__campaign-link,
+    &__share-image-link {
+        &:hover {
+            color: var(--fg-link-hover);
+        }
+    }
+
+    /* ACTIONS ADDITIONAL */
+    &__actions-additional {
+        padding-inline-start: 0;
+    }
+
     /* DOCUMENT OPTIONS */
-    &__options {
-        ul {
-        }
-        li {
-        }
-    }
     &__option {
-        a,
-        button {
-        }
-        &.fulltext {
-        }
         &.add-to-bookmark {
+            border-radius: var(--radius-container-small);
+        }
+        &.image-filter,
+        &.share-image-region {
+            &:hover {
+                color: var(--fg-link-hover);
+            }
         }
     }
+    & &__option {
+        > .image-controls__crowd-link {
+            .mx-theme-control-link();
+        }
+
+        > .btn.btn--icon,
+        > .image-controls__share-image-link {
+            .mx-theme-control();
+            background-color: transparent;
+            border-radius: var(--radius-container-small);
+
+            &:focus-visible {
+                background-color: var(--bg-hover);
+            }
+
+            &.added,
+            &[aria-checked='true'],
+            &[aria-expanded='true'],
+            &.image-controls__share-image-link.active {
+                .mx-theme-control-selected();
+            }
+
+            &:disabled,
+            &[aria-disabled='true'],
+            &.disabled {
+                &,
+                &:hover,
+                &:active,
+                &:focus {
+                    .mx-theme-control-disabled();
+
+                    .icon-wrapper {
+                        transform: none;
+                        filter: none;
+                    }
+                }
+            }
+
+            .icon-wrapper,
+            svg {
+                color: inherit;
+            }
+        }
+
+        &:where(.image-filter:has(> .popover.show)) > .btn.btn--icon {
+            .mx-theme-control-selected();
+        }
+
+        > [data-bookmark-list-type='add'] {
+            .icon-bookmark-outline svg {
+                fill: none;
+                stroke: currentColor;
+            }
+
+            .icon-bookmark-filled svg {
+                fill: currentColor;
+                stroke: none;
+            }
+
+            &:not(.added):not([aria-checked='true']) {
+                .icon-bookmark-outline {
+                    display: inline-flex;
+                }
+
+                .icon-bookmark-filled {
+                    display: none;
+                }
+            }
+        }
+    }
+
     /* ACTIONS */
-    &__actions {
-        ul {
-        }
-        li {
-        }
-    }
-    &__select-text {
-    }
     &__action {
-        /* ELEMENT */
-        [class*='image-'] {
-        }
+        border-radius: var(--radius-container-small);
         &.inactive {
+            cursor: default;
             a,
             span,
             button {
+                cursor: default;
             }
-        }
-        /* ELEMENT */
-        &.start {
         }
         &.page-browse,
         &.select {
-        }
-        &.page-browse {
-            a,
-            span {
-            }
-        }
-        &.back {
-        }
-        &.select-text {
-            span {
-            }
-        }
-        &.select {
-            .form-control__select {
-                select {
-                }
-            }
-        }
-        &.forward {
-        }
-        &.end {
-        }
-        &.double-page-view,
-        &.single-page-view,
-        &.switch-pages {
-            [class*='image-'] {
-            }
-        }
-        &.double-page-view {
-        }
-        &.single-page-view {
-        }
-        &.switch-pages {
-            [class*='image-'] {
-            }
-        }
-        &.rotate-left,
-        &.rotate-right {
-            [class*='image-'] {
-            }
-        }
-        &.rotate-left {
-        }
-        &.rotate-right {
-        }
-        &.reset {
-        }
-        &.enter-fullscreen {
-        }
-        &.zoom-slider-wrapper {
-            .zoom-slider {
-                //Firefox
-                &::-moz-range-thumb {
-                }
-                &:focus {
-                }
-                &::-webkit-slider-thumb {
-                }
-                &::-webkit-slider-runnable-track {
-                }
-            }
-            .zoom-slider-handle {
+            .custom-control--select {
+                background: transparent;
             }
         }
     }
-    /* MODIFICATION */
-    .labeltext {
+    & &__action.select {
+        color: var(--fg-default);
+        background-color: var(--bg-input);
+        border-color: var(--border-input);
+
+        &:hover {
+            border-color: var(--border-brand);
+        }
+
+        &:has(select[aria-invalid='true']),
+        &:has(select.ui-state-error) {
+            border-color: var(--fg-danger);
+        }
+
+        &:has(select:disabled),
+        &:has(select[aria-disabled='true']) {
+            .mx-theme-control-disabled();
+        }
+
+        .custom-control--select {
+            color: inherit;
+            background-color: inherit;
+
+            &::after {
+                border-top-color: currentColor;
+            }
+
+            select {
+                .mx-theme-field();
+                border-width: 0;
+            }
+        }
+    }
+
+    & &__action.zoom-slider-wrapper .zoom-slider {
+        color: var(--fg-default);
+
+        &::-moz-range-thumb {
+            background-color: var(--fg-default);
+        }
+
+        &::-webkit-slider-thumb {
+            background-color: var(--fg-default);
+        }
+
+        &:hover,
+        &:active {
+            &::-moz-range-thumb {
+                background-color: var(--fg-brand-hover);
+            }
+
+            &::-webkit-slider-thumb {
+                background-color: var(--fg-brand-hover);
+            }
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+
+        &:disabled,
+        &[aria-disabled='true'] {
+            .mx-theme-control-disabled();
+
+            &::-moz-range-thumb {
+                background-color: var(--fg-disabled);
+            }
+
+            &::-webkit-slider-thumb {
+                background-color: var(--fg-disabled);
+            }
+        }
+    }
+
+    & &__action:where(:not(.select-text, .select, .zoom-slider-wrapper)) {
+        color: var(--fg-default);
+        background-color: var(--bg-subtle);
+
+        &:hover {
+            color: var(--fg-on-control-hover);
+            background-color: var(--bg-control-hover);
+        }
+
+        &:active {
+            color: var(--fg-on-control-hover);
+            background-color: var(--bg-control-hover);
+        }
+
+        &:has(:focus-visible) {
+            color: var(--fg-on-control-hover);
+            background-color: var(--bg-control-hover);
+        }
+
+        a,
+        button,
+        span {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                color: inherit;
+                fill: currentColor;
+                stroke: currentColor;
+            }
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            .mx-theme-focus();
+        }
+
+        &.single-page-view {
+            .mx-theme-control-selected();
+        }
+
+        &.inactive,
+        &:has(> button:disabled),
+        &:has(> [aria-disabled='true']) {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
+                background-color: transparent;
+            }
+        }
     }
 }
 
-/* BREAKPOINT FOR LARGE DESKTOP */
+/* RECORD VIEW: THE TOOL ROW IS THE TOP OF THE STAGE BAND, ICONS LINE UP WITH THE TITLE */
+.view-object .image-controls {
+    margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+    padding: 1rem calc(var(--_content-inset, 2.4rem) - 0.7rem);
+    background-color: var(--bg-subtle);
+    border: 0;
+    border-radius: 0;
+
+    .image-controls__actions-additional {
+        border-inline-start: none;
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 

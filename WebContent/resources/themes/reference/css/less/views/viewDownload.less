@@ -3,68 +3,60 @@
    style declarations for viewDownload.xhtml
    ==============================================================*/
 /* DOWNLOAD */
-/* BLOCK */
 .download {
-    /* ELEMENT */
+    /* STATUS */
     &__status {
-        h1 {
-        }
         .card {
-            background: @bg-content-box;
-            border: @border;
-            color: @fg-content-box;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--fg-default);
         }
         .card-header {
-            background: @bg-content-box;
-            border-bottom: @border;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
         }
         .card-title {
-            color: @fg-content-box;
+            color: var(--fg-default);
         }
         .card-body {
-            color: @fg-content-box;
-        }
-    }
-    &__status-loader {
-        img {
+            color: var(--fg-default);
         }
     }
     &__status-license-text {
-        background-color: @bg-content-box;
-        color: @fg-content-box;
+        background-color: var(--bg-surface);
+        color: var(--fg-default);
     }
+    /* CHECKBOX */
     .checkbox label {
-        color: @fg-content-box;
+        color: var(--fg-default);
     }
 }
 
-#downloadBtn {
-}
-
+/* AGREE LICENSE */
 #agreeLicense {
-    accent-color: @ci-color1;
+    accent-color: var(--bg-brand);
 }
 
+/* SUCCESS CARD */
 .card.card-success {
-    background: @bg-content-box;
-    border: @border;
-    color: @fg-content-box;
-
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--fg-default);
     .card-header {
-        background: @bg-content-box;
-        border-bottom-color: @middlegray;
+        background: var(--bg-surface);
+        border-bottom-color: var(--border-strong);
         .card-title {
-            color: @fg-content-box;
+            color: var(--fg-default);
         }
     }
     .card-body {
-        color: @fg-content-box;
+        color: var(--fg-default);
         .checkbox {
             label {
-                color: @fg-content-box;
+                color: var(--fg-default);
             }
             input[type='checkbox'] {
-                accent-color: @ci-color1;
+                accent-color: var(--bg-brand);
             }
         }
     }

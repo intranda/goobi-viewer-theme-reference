@@ -3,18 +3,8 @@
    style declarations for feedback.xhtml
    ==============================================================*/
 /* FEEDBACK */
-/* BLOCK */
 .view-feedback {
-    /* ELEMENT */
-    h1 {
-    }
-    p {
-    }
     .form-group {
-        label {
-        }
-        input {
-        }
         textarea {
             min-height: 150px;
             resize: vertical;
@@ -23,6 +13,16 @@
             margin: 0;
         }
     }
+}
+
+.content__wrapper > .content__main > form.form-horizontal:has(> .view-feedback) {
+    max-width: none;
+}
+
+/* RECIPIENT FIELD */
+.view-feedback select.custom-control--select,
+.view-feedback-modal select.custom-control--select {
+    .mx-theme-field();
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

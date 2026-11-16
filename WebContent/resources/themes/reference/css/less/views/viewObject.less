@@ -3,123 +3,59 @@
    style declarations for viewObject.xhtml
    ==============================================================*/
 /* VIEW OBJECT */
-/* BLOCK */
 .view-object {
-    /* ELEMENT */
     /* IMAGE */
     &__object-3d,
     &__image {
-        border: @border;
+        border: 1px solid var(--container-border);
+        border-radius: 0 0 var(--radius-container) var(--radius-container);
         border-top: 0;
-        background-color: @bg-content-box;
+        background-color: var(--bg-subtle);
         &.-setBorderTop {
-            border-top: @border;
-        }
-    }
-    &__image-loader {
-    }
-    &__image-map {
-        span {
-        }
-        img {
-        }
-        .ugcBox {
-            &.focus {
-            }
-            &.drawing {
-            }
+            border-top: 1px solid var(--container-border);
         }
     }
     /* IMAGE MOBILE */
     &__image-mobile {
-        background-color: @bg-content-box;
-    }
-    /* VIDEO, AUDIO, TEXT */
-    &__video,
-    &__audio,
-    &__text {
-    }
-    /* VIDEO */
-    &__video {
-    }
-    /* AUDIO */
-    &__audio {
-    }
-    /* TEXT */
-    &__text {
-    }
-    /* WEBARCHIVE */
-    &__webarchive-preview {
-        img {
-        }
-        &:hover,
-        &:focus-visible {
-        }
-    }
-    &__webarchive-preview-overlay {
-    }
-    &__webarchive-preview-hover-icon {
-    }
-    &__webarchive-preview-hover-text {
+        background-color: var(--bg-surface);
     }
 
-    // COLORS FOR BORDERS BASED ON DOCSTRUCT TYPE
-    // MAYBE CLEANUP/RECONSTRUCTION NEEDED
-    &.docstructtype__work {
-        .image-controls,
-        .view-object__image {
-            border-width: 1px;
-            border-color: #dc7e2e;
-        }
-        .metadata__wrapper {
-            border: 1px solid #dc7e2e;
-        }
+    /* RECORD SHEET: THE STAGE IS ONE RECESSED BAND, ONLY THE SCAN LIFTS OFF IT */
+    & &__image {
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        /* A SLIVER OF THE BAND STAYS VISIBLE BELOW THE SCAN */
+        padding-block-end: 2rem;
+        border: 0;
+        border-radius: 0;
     }
-    &.docstructtype__person {
-        .image-controls,
-        .view-object__image {
-            border-width: 1px;
-            border-color: #b13b29;
-        }
-        .metadata__wrapper {
-            border: 1px solid #b13b29;
-        }
+    & &__image &__image-map {
+        /* THE SCAN KEEPS THE PAGE INSET, ITS EDGES MEET THE TOOL ICONS */
+        max-width: ~'calc(100% - 2 * var(--_content-inset, 2.4rem))';
+        max-height: 70vh;
+        min-height: 50vh;
+        margin-block: 0;
+        background-color: var(--bg-stage);
+        border-radius: var(--view-object-image-radius);
+        overflow: hidden;
+        outline: 1px solid var(--border-subtle);
+        outline-offset: -1px;
+        box-shadow: 0 1px 6px rgb(from var(--shadow-color) r g b / 14%);
     }
-    &.docstructtype__agent {
-        .image-controls,
-        .view-object__image {
-            border-width: 1px;
-            border-color: #568fb2;
-        }
-        .metadata__wrapper {
-            border: 1px solid #568fb2;
-        }
+
+    /* PAGE LIST: THE TOOL ROW ABOVE THE SCAN NAVIGATES PAGES */
+    #simplePaginator {
+        display: none;
     }
-    &.docstructtype__award {
-        .image-controls,
-        .view-object__image {
-            border-width: 1px;
-            border-color: #2e8d38;
-        }
-        .metadata__wrapper {
-            border: 1px solid #2e8d38;
-        }
-    }
-    &.docstructtype__event {
-        .image-controls,
-        .view-object__image {
-            border-width: 1px;
-            border-color: #8966ca;
-        }
-        .metadata__wrapper {
-            border: 1px solid #8966ca;
-        }
+
+    /* ONE TOP EDGE: WITH A TOOL ROW ABOVE, THE STAGE DOES NOT REPEAT IT */
+    & .image-controls + &__image {
+        border-block-start: 0;
     }
 }
 
 .view-object-content {
-    border: @border;
-    background-color: @bg-content-box;
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface);
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

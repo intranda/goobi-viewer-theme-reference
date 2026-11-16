@@ -3,9 +3,7 @@
    core: css/less/views/immersive/ivPopovers.less
    ==============================================================*/
 
-.popover:has(.widget-citation),
-.popover:has(.widget-social-media),
-.popover:has(imageFilters) {
+.popover--tool {
     & :focus-visible {
     }
 
@@ -32,7 +30,7 @@
     }
 }
 
-.popover:has(.widget-citation) {
+.popover--tool {
     .widget-citation__topbar {
     }
     .widget-citation__body {
@@ -72,7 +70,7 @@
     }
 }
 
-.popover:has(.widget-social-media) {
+.popover--tool {
     .widget-social-media__body {
     }
 
@@ -89,7 +87,7 @@
     }
 }
 
-.popover:has(imageFilters) {
+.popover--tool {
     input[type='range'],
     input[type='checkbox'] {
     }

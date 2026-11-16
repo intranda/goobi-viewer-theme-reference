@@ -3,57 +3,150 @@
    style declarations for widget_annotations.xhtml
    ==============================================================*/
 #widgetAnnotations {
-    h2 {
-    }
-    ul {
-        li {
-            .dl-horizontal {
-                dt {
-                }
-                dd {
-                }
-            }
-        }
-    }
     #user_generated_content_nav .ugc-highlight {
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background-color: @bg-hover;
-			});
-            .mx-light-mode-rules ({
-			});
-        }
+        background-color: var(--sidebar-bg-hover);
     }
 }
 
 .widget-annotations {
-    .widget__body {
-        &.-scrollable {
-        }
-    }
+    /* ENTRY */
     &__entry {
-        button {
-        }
+        padding: 0.5rem;
         &.-onpage {
-            border-left-color: @ci-color1;
+            border-left-color: var(--border-brand);
         }
     }
-    &__type {
-    }
-    &__text {
-    }
-    &__link {
-    }
-    &__button {
-        &:hover {
-        }
-        &.disabled {
-        }
-    }
+    /* PAGE */
     &__page {
         span {
-            background: @ci-color1;
+            background: var(--bg-brand);
+            border-radius: var(--radius-container-small);
         }
+    }
+}
+
+/* ANNOTATIONS IN THE NORMAL SIDEBAR */
+@{sidebar} .widget-annotations@{notOverlay} {
+    /* LIST */
+    .widget__body ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* ROW */
+    .widget__body li {
+        margin-inline: -0.8rem;
+        padding: 0.2rem 0.8rem;
+        border-radius: var(--radius-container-small);
+
+        &:hover {
+            background-color: var(--sidebar-bg-hover);
+        }
+    }
+
+    /* ENTRY */
+    .widget-annotations__entry {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        min-height: var(--_facet-row-size, 2.8rem);
+        color: var(--fg-default);
+        text-decoration: none;
+
+        /* ENTRY ON THE CURRENT PAGE */
+        &.-onpage {
+            border: 0;
+            border-inline-start: 2px solid var(--border-brand);
+            padding-inline-start: 0.6rem;
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--fg-default);
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+    }
+
+    /* TYPE */
+    .widget-annotations__type {
+        display: inline-flex;
+        flex: 0 0 auto;
+        color: var(--sidebar-fg-secondary);
+
+        .icon-svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            color: currentColor;
+        }
+    }
+
+    /* CONTENT */
+    .widget-annotations__content {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* NORMDATA TRIGGER */
+    .widget-annotations__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0;
+        border: 0;
+        border-radius: var(--radius-button);
+        background: transparent;
+        color: var(--fg-default);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--fg-brand);
+            background-color: var(--sidebar-bg-pressed);
+        }
+
+        .icon-svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            color: currentColor;
+        }
+    }
+
+    /* PAGE */
+    .widget-annotations__page {
+        flex: 0 0 auto;
+        margin-inline-start: auto;
+    }
+
+    /* PAGE NUMBER */
+    .widget-annotations__page span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.4rem;
+        min-height: 2.4rem;
+        padding-inline: 0.6rem;
+        border-radius: var(--radius-button);
+        background-color: var(--bg-subtle);
+        color: var(--sidebar-fg-secondary);
+        font-size: var(--font-size-body-small);
+        font-variant-numeric: tabular-nums;
+    }
+
+    /* CURRENT ANNOTATION */
+    #user_generated_content_nav .ugc-highlight {
+        background-color: var(--bg-selected);
+        color: var(--fg-selected);
     }
 }
 

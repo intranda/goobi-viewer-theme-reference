@@ -2,55 +2,160 @@
    Browse
    style declarations for browse.xhtml
    ==============================================================*/
-/* BROWSE */
-/* BLOCK */
+/* COLLECTIONS */
 .collections {
     a,
     button {
-        color: @lk-content-box;
+        color: var(--fg-link-subtle);
         &:focus,
         &:hover,
         &:active {
-            color: @lk-content-box;
+            color: var(--fg-link-subtle);
         }
     }
 
     border-top: none;
-    /* ELEMENT */
     &__wrapper {
-        background-color: @bg-content-box;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-container);
     }
 }
+
+/* COLLECTION */
 .collection {
-    border: @border;
-    border-top: 0;
-    /* ELEMENT */
-    .row {
-    }
     &__item {
-        border-top: @border;
+        border-top: 1px solid var(--border-subtle);
     }
-    &__structure,
-    &__title,
-    &__description-toggle,
-    &__rss {
-        a,
-        button {
+}
+
+/* COLLECTIONS WITHIN THE MAIN CONTENT SURFACE */
+.content__wrapper > .content__main {
+    .collections__wrapper {
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+
+        > .collection > .collection__item:first-child {
+            border-top: 0;
         }
     }
-    &__structure {
-    }
-    &__title {
-    }
-    &__top-element {
-    }
-    &__description-toggle,
-    &__rss {
-    }
-    &__description {
-    }
-    /* MODIFICATION */
-    &__item--level-0 {
+
+    .collection {
+        &__item {
+            border-top-color: var(--container-border);
+
+            > .row {
+                align-items: flex-start;
+
+                > .collection__structure-col {
+                    flex: 0 0 4.4rem;
+                    max-width: 4.4rem;
+                }
+
+                > .collection__structure-col + .col-7 {
+                    flex: 1 1 12rem;
+                    min-width: 0;
+                    max-width: none;
+                }
+
+                > .collection__item-end {
+                    flex: 0 0 auto;
+                    flex-wrap: wrap;
+                    width: auto;
+                    max-width: 100%;
+                    padding: 0;
+                    margin-inline-start: auto;
+                }
+
+                > .col-2.col-sm-1:not(.collection__structure-col) {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    min-height: 0;
+                    height: 0;
+                }
+
+                > .col-12.col-sm-11 {
+                    flex: 0 0 calc(100% - 4.4rem);
+                    min-width: 0;
+                    max-width: calc(100% - 4.4rem);
+                    margin-inline-start: 4.4rem;
+                }
+            }
+        }
+
+        &__structure,
+        &__description-toggle,
+        &__rss,
+        &__archive-download {
+            a,
+            button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 4.4rem;
+                min-height: 4.4rem;
+                padding: 0;
+                border: 0;
+                border-radius: var(--radius-container-small);
+                background-color: transparent;
+                color: var(--fg-default);
+                text-decoration: none;
+
+                .icon-wrapper,
+                .icon-svg {
+                    color: currentColor;
+                }
+
+                &:hover {
+                    color: var(--fg-link-hover);
+                }
+
+                &:active {
+                    color: var(--fg-link-pressed);
+                }
+
+                &:focus-visible {
+                    .mx-theme-focus();
+                }
+            }
+        }
+
+        &__title a {
+            display: block;
+            min-height: 4.4rem;
+            padding-block: 1rem;
+            padding-inline: 0 0.8rem;
+            border-radius: var(--radius-container-small);
+            color: var(--fg-default);
+            font-weight: 500;
+            line-height: var(--line-height-body);
+            overflow-wrap: anywhere;
+
+            &:hover {
+                color: var(--fg-link-hover);
+                text-decoration: none;
+            }
+
+            &:active {
+                color: var(--fg-link-pressed);
+            }
+
+            &:focus-visible {
+                .mx-theme-focus();
+            }
+        }
+
+        &__description {
+            padding: 0.4rem 0 1.6rem;
+            padding-inline-end: 1.6rem;
+            color: var(--fg-secondary);
+            line-height: var(--line-height-body);
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 

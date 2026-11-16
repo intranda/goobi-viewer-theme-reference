@@ -1,29 +1,16 @@
 /* ==============================================================
    Error
    style declarations for error.xhtml and errorHttp4xx/500.xhtml
+   The core renders these pages with fixed --color-error-* palette entries.
+   Override them here, e.g. in .view-error-page, only if the theme needs a different look.
    ==============================================================*/
-/* ERROR */
-/* BLOCK */
-.view-error {
-    /* ELEMENTS */
-    h1 {
-    }
-    p {
-    }
+/* ERROR PAGE */
+.view-error-page {
+}
 
-    /* ELEMENTS (errorHttp4xx/500.xhtml) */
-    &__image {
-    }
-    &__headline {
-    }
-    &__code {
-    }
-    &__title {
-    }
-    &__message {
-    }
-    &__actions {
-    }
+/* ERROR CARD */
+.view-error-card {
+    margin-top: 2rem;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

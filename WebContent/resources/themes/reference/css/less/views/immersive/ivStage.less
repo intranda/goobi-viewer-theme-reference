@@ -4,74 +4,23 @@
    ==============================================================*/
 
 .immersive {
+    max-width: var(--page-max-width);
+    padding-bottom: 1.5rem;
+
     &__viewer {
+        margin: 1.5rem var(--page-gutter);
     }
 
-    &--fullscreen {
+    body.is-immersive-fullscreen & {
+        max-width: none;
+        padding-bottom: 0;
     }
-
-    &--fullscreen &__viewer {
-    }
-
-    &__canvas {
-    }
-
-    &__image-map {
-    }
-
-    &__image-denied {
-    }
-
-    &__image-denied-inner {
-    }
-
-    &__image-denied-text {
-    }
-
-    &__page-denied {
-    }
-
-    &__page-denied-inner {
-    }
-
-    &__page-denied-img {
-    }
-
-    &__page-denied-text {
-    }
-
-    &__xfade {
-    }
-
-    &__content {
-    }
-
-    &__content.container {
-    }
-}
-
-.immersive :focus-visible {
 }
 
 #immersiveView .footer {
-}
-
-body.is-immersive-fullscreen {
-}
-
-.immersive__image-map .openseadragon-canvas:focus-visible {
-}
-
-.immersive__page-denied[hidden] {
-}
-
-.immersive__stage-loader {
-}
-
-.immersive__stage-loader .ajax-loader__animated-image {
-}
-
-.immersive__stage-loader[hidden] {
+    &__inner {
+        margin-top: 0;
+    }
 }
 
 /* BREAKPOINT FOR DESKTOPS */
@@ -80,8 +29,22 @@ body.is-immersive-fullscreen {
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    .immersive {
+        padding-bottom: 0.8rem;
+    }
+
+    .immersive__viewer {
+        margin: 0.8rem var(--page-gutter);
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    .immersive {
+        padding-bottom: 0.4rem;
+    }
+
+    .immersive__viewer {
+        margin: 0.4rem var(--page-gutter);
+    }
 }

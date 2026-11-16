@@ -1,54 +1,12 @@
 /* ==============================================================
    User Bookmarks
-   style declarations for userBackendBookmark.xhtml
+   style declarations for userBackendBookmarkLists.xhtml
    ==============================================================*/
 /* USER BOOKMARKS */
-/* BLOCK */
 .user-bookmark {
-    /* ELEMENT */
-    h1 {
-    }
-    /* ADD */
-    &__add-bookmark {
-        input {
-            color: @fg-general;
-        }
-        button,
-        a {
-            color: @fg-general;
-            svg {
-                stroke: @fg-general;
-            }
-        }
-
-        ::placeholder {
-            color: @fg-general;
-            opacity: 0.5;
-        }
-    }
-    /* PANEL */
-    &__panel {
-        background-color: @bg-content-box;
-        border: @border;
-    }
-    &__panel-header {
-        h2,
-        h3 {
-        }
-        a {
-        }
-        small {
-        }
-    }
-    &__panel-body {
-        p {
-        }
-    }
-    &__panel-action {
-        a,
-        button {
-            color: @fg-general;
-        }
+    &__head {
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        padding-inline: var(--_content-inset, 2.4rem);
     }
 }
 
@@ -62,11 +20,8 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .user-bookmark {
-        &__add-bookmark {
-        }
-    }
 }
+
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
 }

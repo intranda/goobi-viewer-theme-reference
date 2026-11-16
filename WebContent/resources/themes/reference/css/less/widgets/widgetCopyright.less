@@ -3,61 +3,161 @@
    style declarations for widget_copyrightInfo.xhtml
    ==============================================================*/
 .widget-copyright {
-    border-top: @border;
-    background: white;
-    .rs-svg-path {
-        fill: #000;
+    padding: 0;
+
+    /* BODY */
+    &__body {
+        background-color: rgb(from var(--fg-brand) r g b / 20%);
+        margin: 0;
     }
-    .paragraph-svg-path {
-        fill: #000;
+
+    /* CONTAINER */
+    &__container {
+        padding-top: 0.8rem;
     }
-    & when (@colorModes = true) {
-        .mx-light-mode-rules ({
-			.rs-svg-path {
-				fill: #000;
-			}
-			.paragraph-svg-path {
-				fill: #000;
-			}
-		});
-        .mx-dark-mode-rules ({
-			.rs-svg-path {
-				fill: #fff;
-			}
-			.paragraph-svg-path {
-				fill: #fff;
-			}
-		});
-    }
-    & when (@colorModes = true) {
-        .mx-light-mode-rules ({
-			background: white;
-		});
-        .mx-dark-mode-rules ({
-			background: @bg-content-box;
-		});
-    }
+    /* DOT */
     &__dot {
-        color: #000;
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: #000;
-			});
-            .mx-dark-mode-rules ({
-				color: white;
-			});
+        color: var(--fg-default);
+    }
+    /* STATUS ICON */
+    &__status-icon {
+        color: var(--fg-default);
+    }
+}
+
+/* COPYRIGHT IN THE NORMAL SIDEBAR */
+@{sidebar} .widget.widget-copyright@{notOverlay} {
+    color: var(--fg-default);
+    cursor: pointer;
+
+    &:hover {
+        border-color: var(--border-default);
+    }
+    &:focus-visible {
+        .mx-theme-focus();
+    }
+
+    /* BODY */
+    > .widget__body.widget-copyright__body {
+        margin: 0;
+        padding: 1.6rem;
+        border-radius: inherit;
+        background-color: transparent;
+        transition: background-color 0.2s ease;
+    }
+
+    /* THE WHOLE PANEL IS ONE CONTROL */
+    &:hover > .widget__body.widget-copyright__body,
+    &.-open > .widget__body.widget-copyright__body {
+        background-color: var(--sidebar-bg-hover);
+    }
+
+    &:active > .widget__body.widget-copyright__body {
+        background-color: var(--sidebar-bg-pressed);
+    }
+    /* CONTAINER */
+    .widget-copyright__container {
+        justify-content: center;
+        gap: 1.2rem;
+        min-height: 3.2rem;
+        padding: 0;
+
+        /* EMPTY SLOT MIRRORS THE CHEVRON */
+        &::before {
+            content: '';
+            flex: 0 0 auto;
+            width: var(--_widget-action-size, 4rem);
+        }
+
+        &::after {
+            .mx-icon-chevron-mask(var(--_widget-action-icon-size, 2rem));
+            content: '';
+            flex: 0 0 auto;
+            width: var(--_widget-action-size, 4rem);
+            height: var(--_widget-action-icon-size, 2rem);
+            background-color: var(--fg-default);
+            transition: transform 0.15s ease;
+        }
+        img,
+        svg {
+            display: block;
+            height: 3.2rem;
+            max-width: 5.2rem;
         }
     }
-    &__status-icon {
-        color: @black;
+    &:hover .widget-copyright__container::after,
+    &:active .widget-copyright__container::after {
+        background-color: var(--fg-brand);
+    }
 
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: @black;
-			});
-            .mx-dark-mode-rules ({
-				color: @white;
-			});
+    &.-open .widget-copyright__container::after {
+        transform: rotate(180deg);
+    }
+    /* LOCK */
+    .widget-copyright__lock {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        margin-inline-start: auto;
+    }
+    /* DOT */
+    .widget-copyright__dot {
+        align-items: center;
+        justify-content: center;
+    }
+    /* STATUS ICON */
+    .widget-copyright__status-icon::before {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+    /* ICONS */
+    .widget-copyright__icons {
+        align-items: center;
+        min-width: 0;
+        gap: 0.8rem;
+        margin-inline-end: auto;
+    }
+
+    /* EXPANDED INFORMATION */
+    .widget-copyright__additional-information {
+        padding-block-start: 1.6rem;
+    }
+    /* COPYRIGHT INFORMATION */
+    #copyrightInformation {
+        display: grid;
+        gap: 1.6rem;
+        color: var(--fg-default);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+        overflow-wrap: anywhere;
+
+        h3 {
+            margin: 0 0 0.4rem;
+            color: var(--fg-heading);
+            font-size: var(--font-size-body-small);
+            font-weight: 600;
+            line-height: var(--line-height-body);
+        }
+    }
+    /* LICENCE INFO */
+    .widget-copyright__access-licence-info,
+    .widget-copyright__copyright {
+        margin: 0;
+        padding: 0;
+    }
+    /* HIDDEN INFORMATION LINKS */
+    .widget-copyright__hidden-information a {
+        .mx-theme-control-link();
+        display: inline;
+        padding: 0;
+        background-color: transparent;
+        font-weight: 400;
+        line-height: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
         }
     }
 }

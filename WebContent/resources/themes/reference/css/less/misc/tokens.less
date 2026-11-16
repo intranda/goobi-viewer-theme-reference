@@ -1,0 +1,324 @@
+/* ==============================================================
+   Tokens
+   the theme's binding of the core token names
+   ==============================================================*/
+
+.mx-theme-base() {
+    /* ---------- CORE OVERRIDES ---------- */
+
+    /* TYPOGRAPHY */
+    --font-family:
+        'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-family-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+
+    /* LAYOUT */
+    --page-gutter: clamp(1.6rem, 2.5vw, 4.8rem);
+
+    /* SHAPE */
+    --radius-container: 8px;
+    --radius-container-small: 6px;
+    --radius-button: 6px;
+
+    /* SEARCH LIST HIT ROW: THE THUMBNAIL COLUMN IS RESERVED EVEN WITHOUT A PREVIEW */
+    --search-list-hit-thumbnail-width: 19rem;
+    --search-list-hit-thumbnail-ratio: 4 / 5;
+    --search-list-hit-thumbnail-fill: 100%;
+    --search-list-hit-thumbnail-image-max-height: none;
+    --search-list-hit-thumbnail-image-fit: cover;
+    --search-list-hit-thumbnail-image-position: center top;
+    --search-list-hit-column-gap: 2.8rem;
+    --search-list-hit-row-gap: 0;
+    --search-list-hit-align-items: start;
+    --search-list-hit-options-gap: 0.4rem;
+    --search-list-grid-column-min: min(100%, 24rem);
+    --search-list-grid-gap: 2rem;
+    --search-list-grid-thumbnail-ratio: 4 / 5;
+    --search-list-grid-thumbnail-link-height: 100%;
+
+    /* LAYOUT TAGS */
+    --alto-stroke-fill-alpha: 40%;
+
+    /* ---------- THEME TOKENS ---------- */
+
+    /* LAYOUT */
+    --sidebar-width: clamp(25rem, 24vw, 38rem);
+    --content-gap: clamp(2.4rem, 2.5vw, 3.8rem);
+    --view-object-image-radius: 2rem;
+
+    /* BOOKMARKS */
+    --bookmark-bg-added: rgb(from var(--bg-accent) r g b / 20%);
+    --bookmark-fg-added: var(--fg-accent);
+
+    /* SEARCH SHEET */
+    --search-sheet-gutter: 2.4rem;
+    --search-band-gap: 1.4rem;
+    --search-band-top: calc(8.1rem + var(--_search-band-offset, 0rem));
+    --search-control-height: 3.4rem;
+    --search-field-height: 4.4rem;
+    --search-hit-accent-width: 3px;
+    --search-group-radius: var(--radius-button);
+}
+
+.mx-theme-semantic-light() {
+    /* ---------- CORE OVERRIDES ---------- */
+
+    /* SURFACES */
+    --bg-page: var(--color-theme-page);
+    --bg-sunken: var(--color-neutral-200);
+    --bg-inverse: var(--color-neutral-800);
+    --bg-inverse-hover: var(--color-neutral-700);
+    --bg-input: var(--color-neutral-0);
+
+    /* TEXT */
+    --fg-default: var(--color-neutral-900);
+    --fg-muted: var(--color-neutral-550);
+    --fg-placeholder: var(--color-neutral-550);
+    --fg-heading: var(--color-neutral-950);
+
+    /* LINKS */
+    --fg-link-subtle: var(--fg-default);
+
+    /* STATES */
+    --bg-selected: color-mix(in srgb, var(--color-brand) 8%, var(--color-neutral-0));
+    --bg-selected-hover: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-0));
+    --bg-selected-pressed: color-mix(in srgb, var(--color-brand) 18%, var(--color-neutral-0));
+
+    /* BORDERS */
+    --border-subtle: rgb(from var(--color-neutral-500) r g b / 20%);
+    --border-default: var(--color-neutral-200);
+    --border-strong: var(--color-neutral-300);
+    --border-input: var(--color-neutral-500);
+
+    /* BRAND */
+    --fg-brand-hover: color-mix(in srgb, var(--fg-brand) 80%, var(--color-neutral-1000));
+    --bg-brand-strong: color-mix(in srgb, var(--color-brand) 50%, var(--color-neutral-1000));
+
+    /* STATUS */
+    --fg-danger: var(--color-danger);
+
+    /* FOCUS */
+    --outline-focus: var(--fg-brand);
+
+    /* SHADOWS */
+    --shadow-color: var(--color-neutral-1000);
+    --shadow-surface: 0 1px 2px rgb(from var(--shadow-color) r g b / 4%);
+    --shadow-elevated:
+        0 12px 32px rgb(from var(--shadow-color) r g b / 12%), 0 2px 6px rgb(from var(--shadow-color) r g b / 6%);
+
+    /* LAYOUT TAGS */
+    --alto-underline-color: var(--color-theme-layout-tag-underline);
+    --alto-tag-color-1: var(--color-theme-layout-tag-1);
+    --alto-tag-color-2: var(--color-theme-layout-tag-2);
+    --alto-tag-color-3: var(--color-theme-layout-tag-3);
+    --alto-tag-color-4: var(--color-theme-layout-tag-4);
+    --alto-tag-color-5: var(--color-theme-layout-tag-5);
+    --alto-tag-color-6: var(--color-theme-layout-tag-6);
+    --alto-tag-color-7: var(--color-theme-layout-tag-7);
+    --alto-tag-color-8: var(--color-theme-layout-tag-8);
+    --alto-tag-fill-alpha: 12%;
+
+    /* ---------- THEME TOKENS ---------- */
+
+    /* HEADER */
+    --header-bg: var(--color-neutral-0);
+    --header-fg: var(--color-neutral-700);
+
+    /* CONTAINERS */
+    --container-border: var(--color-neutral-200);
+
+    /* SIDEBAR */
+    --sidebar-bg-hover: rgb(from var(--color-brand) r g b / 8%);
+    --sidebar-bg-pressed: rgb(from var(--color-brand) r g b / 14%);
+    --sidebar-border: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-200));
+    --sidebar-fg-secondary: color-mix(in srgb, var(--color-brand) 12%, var(--color-neutral-600));
+
+    /* SEARCH SHEET */
+    --search-sheet-border: var(--container-border);
+    --search-band-bg: var(--bg-page);
+    --search-band-border: var(--container-border);
+    --search-group-bg: transparent;
+    --search-group-border: var(--container-border);
+    --search-group-border-solo: var(--container-border);
+    --search-field-border: var(--border-strong);
+    --search-group-bg-hover: var(--sidebar-bg-hover);
+    --search-group-bg-pressed: var(--sidebar-bg-pressed);
+    --search-group-bg-menu-active: var(--bg-selected);
+    --search-group-bg-selected: var(--bg-brand);
+    --search-group-fg-selected: var(--fg-on-brand);
+    --search-group-fg-disabled: color-mix(in srgb, var(--fg-default) 38%, transparent);
+    --search-group-bg-disabled: transparent;
+
+    /* WIDGETS */
+    --combined-facets-title-weight: 600;
+    --rss-entry-info-fg: var(--fg-brand);
+
+    /* FOOTER */
+    --footer-main-bg: var(--bg-brand-strong);
+    --footer-bottom-bg: color-mix(in srgb, var(--bg-brand-strong) 70%, var(--bg-scrim));
+
+    /* COOKIE BANNER */
+    --cookie-banner-link-decoration: none;
+
+    /* COPYRIGHT INDICATOR */
+    --copyright-indicator-inset-shadow:
+        inset 0 0 2px rgb(from var(--fg-black) r g b / 30%), inset 0 2px 2px rgb(from var(--fg-black) r g b / 25%);
+
+    /* NER NAVIGATION */
+    --ner-navigation-bg: var(--bg-hover);
+    --ner-navigation-bg-hover: var(--bg-surface);
+
+    /* MODAL */
+    --modal-card-border: rgb(from var(--fg-black) r g b / 12.5%);
+}
+
+.mx-theme-semantic-dark() {
+    /* ---------- CORE OVERRIDES ---------- */
+
+    /* SURFACES */
+    --bg-page: oklch(from var(--color-neutral-900) calc(l - 0.011) c h);
+    --bg-sunken: var(--color-neutral-950);
+    --bg-inverse: var(--color-neutral-700);
+    --bg-inverse-hover: var(--color-neutral-600);
+    --bg-input: var(--bg-page);
+
+    /* TEXT */
+    --fg-default: var(--color-neutral-100);
+    --fg-muted: var(--color-neutral-450);
+    --fg-placeholder: var(--color-neutral-450);
+    --fg-heading: var(--color-neutral-50);
+
+    /* LINKS */
+    --fg-link-subtle: var(--fg-default);
+
+    /* STATES */
+    --bg-selected: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-900));
+    --bg-selected-hover: color-mix(in srgb, var(--color-brand-400) 18%, var(--color-neutral-900));
+    --bg-selected-pressed: color-mix(in srgb, var(--color-brand-400) 24%, var(--color-neutral-900));
+
+    /* BORDERS */
+    --border-subtle: rgb(from var(--color-neutral-0) r g b / 6%);
+    --border-default: var(--color-neutral-700);
+    --border-strong: var(--color-neutral-600);
+    --border-input: var(--color-neutral-500);
+
+    /* BRAND */
+    --fg-brand-hover: color-mix(in srgb, var(--fg-brand) 80%, var(--color-neutral-0));
+    --bg-brand-strong: color-mix(in srgb, var(--color-brand) 55%, var(--color-neutral-950));
+
+    /* STATUS */
+    --fg-danger: var(--color-danger-text-dark);
+
+    /* FOCUS */
+    --outline-focus: var(--fg-brand);
+
+    /* SHADOWS */
+    --shadow-color: var(--color-neutral-1000);
+    --shadow-surface:
+        inset 0 1px 0 rgb(from var(--color-neutral-0) r g b / 6%), 0 1px 2px rgb(from var(--shadow-color) r g b / 40%);
+    --shadow-elevated:
+        inset 0 1px 0 rgb(from var(--color-neutral-0) r g b / 8%),
+        0 12px 32px rgb(from var(--shadow-color) r g b / 55%), 0 2px 6px rgb(from var(--shadow-color) r g b / 40%);
+
+    /* LAYOUT TAGS */
+    --alto-underline-color: var(--color-theme-layout-tag-underline-dark);
+    --alto-tag-color-1: var(--color-theme-layout-tag-1-dark);
+    --alto-tag-color-2: var(--color-theme-layout-tag-2-dark);
+    --alto-tag-color-3: var(--color-theme-layout-tag-3-dark);
+    --alto-tag-color-4: var(--color-theme-layout-tag-4-dark);
+    --alto-tag-color-5: var(--color-theme-layout-tag-5-dark);
+    --alto-tag-color-6: var(--color-theme-layout-tag-6-dark);
+    --alto-tag-color-7: var(--color-theme-layout-tag-7-dark);
+    --alto-tag-color-8: var(--color-theme-layout-tag-8-dark);
+    --alto-tag-fill-alpha: 18%;
+
+    /* ---------- THEME TOKENS ---------- */
+
+    /* HEADER */
+    --header-bg: var(--color-neutral-900);
+    --header-fg: var(--color-neutral-200);
+
+    /* CONTAINERS */
+    --container-border: var(--color-neutral-800);
+
+    /* SIDEBAR */
+    --sidebar-bg-hover: rgb(from var(--color-brand-400) r g b / 12%);
+    --sidebar-bg-pressed: rgb(from var(--color-brand-400) r g b / 18%);
+    --sidebar-border: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-800));
+    --sidebar-fg-secondary: color-mix(in srgb, var(--color-brand-400) 12%, var(--color-neutral-350));
+
+    /* SEARCH SHEET */
+    --search-sheet-border: var(--container-border);
+    --search-band-bg: var(--bg-page);
+    --search-band-border: var(--container-border);
+    --search-group-bg: transparent;
+    --search-group-border: var(--container-border);
+    --search-group-border-solo: var(--container-border);
+    --search-field-border: var(--border-strong);
+    --search-group-bg-hover: var(--sidebar-bg-hover);
+    --search-group-bg-pressed: var(--sidebar-bg-pressed);
+    --search-group-bg-menu-active: var(--bg-selected);
+    --search-group-bg-selected: var(--bg-brand);
+    --search-group-fg-selected: var(--fg-on-brand);
+    --search-group-fg-disabled: color-mix(in srgb, var(--fg-default) 38%, transparent);
+    --search-group-bg-disabled: transparent;
+
+    /* WIDGETS */
+    --combined-facets-title-weight: 700;
+    --rss-entry-info-fg: var(--fg-brand);
+
+    /* FOOTER */
+    --footer-main-bg: oklch(from color-mix(in srgb, var(--bg-brand-strong) 30%, var(--bg-scrim)) calc(l * 1.2) c h);
+    --footer-bottom-bg: oklch(from color-mix(in srgb, var(--bg-brand-strong) 22%, var(--bg-scrim)) calc(l * 1.2) c h);
+
+    /* COOKIE BANNER */
+    --cookie-banner-link-decoration: underline;
+
+    /* COPYRIGHT INDICATOR */
+    --copyright-indicator-inset-shadow:
+        inset 0 0 2px rgb(from var(--fg-on-inverse) r g b / 30%),
+        inset 0 2px 2px rgb(from var(--fg-on-inverse) r g b / 25%);
+
+    /* NER NAVIGATION */
+    --ner-navigation-bg: var(--bg-surface);
+    --ner-navigation-bg-hover: var(--bg-hover);
+
+    /* MODAL */
+    --modal-card-border: transparent;
+}
+
+/* WIRING */
+:root {
+    .mx-theme-palette();
+    .mx-theme-base();
+    .mx-theme-semantic-light();
+}
+
+/* SEARCH LIST HIT ROW: NARROWER THUMBNAIL COLUMN ON SMALLER SCREENS */
+@media screen and (max-width: @smallBreakpoint) {
+    :root {
+        --search-list-hit-thumbnail-width: 11rem;
+        --search-list-hit-column-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: @xSmallBreakpoint) {
+    :root {
+        --search-list-hit-thumbnail-width: 8.8rem;
+        --search-list-hit-column-gap: 1.6rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        .mx-theme-semantic-dark();
+    }
+}
+
+.color-theme-dark {
+    .mx-theme-semantic-dark();
+}
+
+.color-theme-light {
+    .mx-theme-semantic-light();
+}

@@ -2,116 +2,41 @@
    Widget Downloads
    style declarations for widget_downloads.xhtml
    ==============================================================*/
-#widgetDownloads {
-}
 .widget-downloads {
-    &__topbar {
-    }
-    &__title {
-    }
-    &__body {
-    }
-    &__license-text {
-    }
-    &__subtitle {
-    }
-    // BADGE CONTAINER STYLING
-    &__page-download,
-    &__image-fragment-wrapper,
-    &__work-downloads {
-    }
+    padding: 0;
+}
 
-    &__page-downloads {
+/* SIDEBAR DOWNLOAD DETAILS */
+@{sidebar} .widget-downloads@{notOverlay} > .widget__body {
+    /* PAGE RANGE DOWNLOADS */
+    .widget-downloads__page-range-downloads-inputs-wrapper-inner {
+        gap: 0.8rem;
+        margin-block-end: 0.8rem;
     }
-    &__page-download-pdf {
+    .widget-downloads__page-range-downloads-select-from {
+        flex: 1 1 0;
+        min-width: 0;
+        select {
+            .mx-theme-field();
+            min-height: var(--_export-action-size, 3.2rem);
+            border-width: 0;
+            font-size: var(--font-size-body-small);
+        }
     }
-    &__page-download-jpeg {
-    }
-    &__page-download-alto {
-    }
-    &__page-download-tei {
-    }
-    &__page-download-fulltext {
-    }
-    &__download-image-size-form {
-    }
-    &__download-image-size-option-wrapper {
-    }
-    &__download-image-size-radio-label {
-    }
-    &__download-image-size-radio-size {
-    }
-    &__download-image-size-radio-format {
-    }
-    &__download-image-size-button-wrapper {
-        color: @fg-general;
-    }
-    &__work-downloads {
-    }
-    &__work-download-ris {
-    }
-    &__work-download-alto {
-    }
-    &__work-download-tei {
-    }
-    &__work-download-fulltext {
-    }
-    &__work-download-pdf {
-    }
-    &__work-download-epub {
-    }
-    &__work-download-toc {
-    }
-
-    &__image-fragment-wrapper {
-        display: none;
-    }
-
-    &__image-fragment {
-    }
-    &__image-fragment-page {
-    }
-    &__image-fragment-image {
-    }
-    &__download-image-size-form {
-    }
-    &__download-image-size-button {
-    }
-
-    // ADDITIONAL FILES DOWNLOADS
-    &__additional-files-wrapper {
-    }
-    &__additional-files-text {
-    }
-    &__additional-files-list {
-    }
-
-    // PAGE RANGE STYLES
-    &__page-range-downloads {
-    }
-    &__page-range-downloads-box {
-    }
-    &__page-range-downloads-inputs-wrapper {
-    }
-    &__page-range-downloads-inputs-wrapper-inner {
-    }
-    &__page-range-pdf-link {
-    }
-    &__page-range-downloads-select-from {
-    }
-    &__page-range-downloads-select-to {
-    }
-    &__page-range-pdf-link {
-    }
-
-    // MEDIA FILES DOWNLOADS
-    &__media {
-    }
-    &__media-video-download-link {
-    }
-    &__media-audio-download-link {
-    }
-    &__media-model-download-link {
+    /* ADDITIONAL FILES LIST */
+    .widget-downloads__additional-files-list {
+        gap: 0.8rem;
+        margin-block: 0.8rem 0;
+        > li > a {
+            .mx-theme-control-link();
+            display: flex;
+            align-items: center;
+            min-height: var(--_export-action-size, 3.2rem);
+            padding-block: 0.4rem;
+            border-radius: var(--radius-button);
+            line-height: var(--line-height-body);
+            overflow-wrap: anywhere;
+        }
     }
 }
 

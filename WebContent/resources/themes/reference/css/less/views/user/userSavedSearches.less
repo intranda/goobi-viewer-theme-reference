@@ -3,64 +3,47 @@
    style declarations for userBackendSearches.xhtml
    ==============================================================*/
 /* MY SEARCHES */
-/* BLOCK */
 .my-searches {
-    background: @bg-content-box;
-    border: @border;
-    /* ELEMENT */
-    h1 {
+    background: var(--bg-surface);
+    border: 1px solid var(--container-border);
+    border-radius: var(--radius-container);
+    padding: 1.6rem;
+
+    > .alert {
+        margin-bottom: 0;
+        border: 0;
     }
+
+    /* TABLE */
     &__table {
         margin-bottom: 0;
-        color: @fg-general;
-        thead {
-            tr {
-                th {
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                    &:nth-child(3) {
-                    }
-                }
-            }
-        }
+        color: var(--fg-default);
         tbody {
             tr {
                 &:hover {
-                    background: @bg-hover;
-                }
-                td {
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                    &:nth-child(3) {
-                    }
+                    background: var(--bg-hover);
                 }
             }
         }
     }
+
+    /* ACTIONS */
     &__action,
     &__delete-button {
-        color: @lk-general;
+        color: var(--fg-link);
         &:hover,
         &:active,
         &:focus {
-            color: @lk-general;
+            color: var(--fg-link);
         }
-    }
-    &__action {
     }
     &__delete-button {
-        color: @red;
+        color: var(--fg-danger);
         &:hover,
         &:active,
         &:focus {
-            color: @red;
+            color: var(--fg-danger);
         }
-    }
-    &__delete-modal {
     }
 }
 

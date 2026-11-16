@@ -2,17 +2,29 @@
    Widget Highlighted Object
    style declarations for widget_highlightedobject.xhtml
    ==============================================================*/
+/* FULL-WIDTH IMAGE IN THE NORMAL SIDEBAR */
+@{sidebar} .widget-highlight@{notFacetsOrOverlay} {
+    /* BODY */
+    > .widget-highlight__body {
+        margin: 0;
+        padding: 0;
+    }
 
-.widget-highlight {
-    &:hover {
-        .widget-highlighted-object__action-link {
-        }
+    /* LINK */
+    .highlighted-object__link {
+        padding: 0;
     }
-    &__action-link {
+
+    /* IMAGE TITLE */
+    .highlighted-object__image-title {
+        padding-inline: 1.6rem;
     }
-    .highlighted-object {
-        &__image-title {
-        }
+
+    /* NO IMAGE LINK */
+    .highlighted-object__no-image-link {
+        min-height: 4.4rem;
+        padding: 1.2rem 1.6rem;
+        line-height: var(--line-height-body);
     }
 }
 

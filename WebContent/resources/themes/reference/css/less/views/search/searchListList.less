@@ -3,36 +3,105 @@
    style declarations for searchList.xhtml
    ==============================================================*/
 /* SEARCH LIST LIST */
-/* BLOCK */
 .search-list {
-    /* ELEMENT */
     /* HITS */
     &__hits {
-        &.list,
         &.list-view {
-            .search-list__thumb-bookmark-wrapper {
-                right: -8px;
-                top: -6px;
-            }
+            --_list-column-gap: 2.4rem;
+
             .search-list__hit {
+                padding: 1.6rem;
             }
-            .search-list__hit-header {
-                .col-12.col-sm-10 {
-                }
-                .col-12.col-sm-2 {
-                }
+            .search-list__hits-list-items {
+                gap: 1.2rem;
             }
-            .search-list__hit-thumbnail,
-            .search-list__hit-type,
-            .search-list__hit-info,
-            .search-list__hit-content {
+            /* REGISTER: TYPE AND TITLE ON TWO TRACKS, THE TOOLS CLOSE THE ROW */
+            .search-list__hit-inner-structure {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 0 var(--_list-column-gap);
             }
-            .search-list--highlight {
+            .search-list__hit-thumbnail {
+                display: none;
+            }
+            .search-list__hit-docstruct {
+                grid-column: 1;
+                grid-row: 1;
+                margin-bottom: 0;
+            }
+            .search-list__hit-top-wrapper {
+                grid-column: 2;
+                grid-row: 1;
+                min-width: 0;
+                margin-bottom: 0;
+            }
+            .search-list__hit-options-wrapper {
+                grid-column: 3;
+                grid-row: 1;
+                align-self: center;
+                margin: 0;
+                top: -4px;
+            }
+            .search-list__hit-options-button.btn {
+                height: 36px;
+            }
+            .search-list__hit-title-heading {
+                font-size: var(--font-size-body-large);
+                line-height: 1.4;
             }
         }
     }
-    a[data-toggle='hit-content'],
-    button[data-toggle='hit-content'] {
+}
+
+/* SEARCH PAGE RESULT ROWS: ONE HAIRLINE ON THE TEXT AXIS KEEPS THE RESULTS APART */
+@{searchSheet} .search-list__hits:not(.grid) {
+    --_search-hit-block-inset: 2rem;
+    --_search-hit-bleed: 1.6rem;
+    --_search-hit-gap: 2.4rem;
+
+    &.list-view {
+        --_search-hit-block-inset: 1.2rem;
+        --_search-hit-gap: 1.6rem;
+    }
+
+    /* HITS LIST */
+    .search-list__hits-list {
+        gap: 0;
+    }
+
+    /* A RESULT GROUP KEEPS THE TEXT AXIS OF THE ROWS */
+    .search-list__hit-result-group-heading {
+        padding: 1.6rem var(--search-sheet-gutter) 0;
+    }
+
+    /* HITS LIST ITEMS */
+    .search-list__hits-list-items {
+        gap: var(--_search-hit-gap);
+        padding-block: 1.6rem;
+        padding-inline: calc(var(--search-sheet-gutter) - var(--_search-hit-bleed));
+
+        > .search-list__hit {
+            padding: var(--_search-hit-block-inset) var(--_search-hit-bleed);
+            border: 0;
+            border-radius: var(--radius-container);
+            background-color: transparent;
+            transition: background-color 0.18s ease;
+
+            /* THE LINE LIES IN THE GAP AND BELONGS TO NEITHER RESULT */
+            & + .search-list__hit::before {
+                content: '';
+                position: absolute;
+                inset-inline: var(--_search-hit-bleed);
+                inset-block-start: calc(var(--_search-hit-gap) / -2);
+                height: 1px;
+                background-color: var(--search-sheet-border);
+            }
+
+            &:hover,
+            &:focus-within {
+                background-color: var(--sidebar-bg-hover);
+            }
+        }
     }
 }
 
@@ -46,8 +115,31 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    /* THE TYPE TRACK GIVES WAY FIRST */
+    .search-list__hits.list-view {
+        --_list-column-gap: 1.6rem;
+
+        .search-list__hit-inner-structure {
+            grid-template-columns: fit-content(10rem) minmax(0, 1fr) auto;
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    /* THE TYPE TAKES THE LINE ABOVE THE TITLE */
+    .search-list__hits.list-view {
+        .search-list__hit-inner-structure {
+            grid-template-columns: minmax(0, 1fr);
+            row-gap: 0.4rem;
+        }
+        .search-list__hit-docstruct {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .search-list__hit-top-wrapper {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
 }

@@ -2,30 +2,14 @@
    CMS Template "Tags"
    style declarations for cms_template_25_tags.xhtml
    ==============================================================*/
-/* ==============================================================
-   CMS Template "Tags"
-   style declarations for cms_template_25_tags.xhtml
-   ==============================================================*/
-/* TAGS */
-#ta {
-    h1 {
-        & + h2 {
-            margin-bottom: 0;
-            border: @border;
-            border-bottom: 0;
-            background-color: @bg-content-box;
-            color: @fg-content-box;
-        }
-    }
-}
 
 .content-component__tag-cloud > h2:first-child {
     margin-bottom: 0;
-    border: @border;
+    border: 1px solid var(--border-subtle);
     border-bottom: 0;
-    background-color: @bg-content-box;
-    color: @fg-content-box;
-    border-top: @border;
+    background-color: var(--bg-surface);
+    color: var(--fg-default);
+    border-top: 1px solid var(--border-subtle);
     padding: 20px 20px 10px 20px;
 }
 
@@ -33,26 +17,24 @@
 .tag-cloud__wrapper {
     margin: 0;
     padding: 2rem;
-    border: @border;
+    border: 1px solid var(--border-subtle);
     border-top: 0;
     border-bottom: 0;
-    background-color: @bg-content-box;
-    color: @fg-content-box;
+    background-color: var(--bg-surface);
+    color: var(--fg-default);
+
     &:last-child {
-        border-bottom: @border;
+        border-bottom: 1px solid var(--border-subtle);
     }
+
     & + h2 {
         margin-bottom: 0;
         padding: 10px 20px;
-        border: @border;
+        border: 1px solid var(--border-subtle);
         border-top: 0;
         border-bottom: 0;
-        background-color: @bg-content-box;
-        color: @fg-content-box;
-    }
-
-    .tagcloudElement[class^='tag'] a {
-        // color: @fg-content-box !important;
+        background-color: var(--bg-surface);
+        color: var(--fg-default);
     }
 }
 
@@ -63,53 +45,27 @@
 }
 
 .tpl-tags {
-    /* ELEMENT */
-    &__content {
-        h1 {
-        }
-    }
-    &__text,
-    #tagcloudWrapper {
-        //    	padding: 10px;
-        //    	border: @border;
-        //    	background-color: @bg-content-box;
-        & + h2 {
-            //    		margin-bottom: 0;
-            //	    	padding: 10px;
-            //	    	border: @border;
-            //	    	border-top: 0;
-            //	    	border-bottom: 0;
-            //	    	background-color: @bg-content-box;
-        }
-    }
     &__text {
         margin-bottom: 0;
         border-bottom: 0;
     }
+
     #tagcloudWrapper {
         margin: 0;
         border-top: 0;
         border-bottom: 0;
+
         &:last-child {
-            border-bottom: @border;
+            border-bottom: 1px solid var(--border-subtle);
         }
     }
 }
 
-each(range(100),{
-    .tag@{value} a { color: @lk-content-box !important; }
-});
-
-.tag-cloud {
-    h2 {
-        margin-bottom: 0;
-        padding: 10px;
-        border: @border;
-        border-top: 0;
-        border-bottom: 0;
-        background-color: @bg-content-box;
+each(range(100), {
+    .tag@{value} a {
+        color: var(--fg-link-subtle);
     }
-}
+});
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {

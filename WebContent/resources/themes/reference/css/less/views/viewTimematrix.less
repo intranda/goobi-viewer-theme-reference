@@ -2,127 +2,44 @@
    View Timematrix
    style declarations for viewTimematrix.xhtml
    ==============================================================*/
+/* TIMEMATRIX */
 .timematrix {
-    h1 {
-    }
-    p {
-    }
-    h2 {
-    }
-    &__subarea {
-    }
-    &__selection-header {
-    }
-    &__loader {
-        img {
-        }
-    }
-    &__loaderImg {
-        img {
-        }
-    }
+    /* SELECTION */
     &__selection {
-        background-color: @bg-content-box;
-        border: @border;
-        #locateTimematrix {
-        }
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-container);
         #slider-range {
-            .ui-slider-range {
-            }
             .ui-slider-handle {
-                border: 1px solid @ci-color1;
-                background-color: @ci-color1;
-                &.top {
-                }
-                &:focus {
-                }
-                .timematrix-slider-bubble-startDate,
-                .timematrix-slider-bubble-endDate {
-                }
-                .timematrix-slider-bubble-endDate {
-                }
-            }
-            .ui-slider-handle {
-                &::before {
-                }
-                &:last-child {
-                    &::before {
-                    }
-                }
+                border: 1px solid var(--bg-brand);
+                background-color: var(--bg-brand);
             }
         }
-        .btn {
-        }
-        button {
-        }
     }
-    &__selectionRangeInput {
-    }
-    &__bar {
-    }
+    /* PERIOD */
     &__period {
         label,
         input {
-            background-color: @bg-content-box;
-            color: @fg-content-box;
-        }
-        span {
-            &:last-of-type {
-            }
+            background-color: var(--bg-surface);
+            color: var(--fg-default);
         }
     }
+    /* HITS FORM */
     &__hitsForm {
         label,
         input {
-            background-color: @bg-content-box;
-            color: @fg-content-box;
-        }
-        label::after {
+            background-color: var(--bg-surface);
+            color: var(--fg-default);
         }
     }
-    &__hitsInput {
-        span {
-        }
-        input {
-        }
-    }
-    &__objects {
-    }
-
+    /* CONTENT */
     &__content {
-        border: @border;
+        border: 1px solid var(--border-subtle);
     }
+    /* IMAGE */
     &__img {
-        img {
-        }
-        img[onError] {
-        }
+        border-radius: var(--radius-container);
     }
-    &__text {
-        &:hover {
-        }
-        p {
-        }
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    &__img img:hover + &__text {
-    }
-    &__footer {
-        a {
-            &:hover,
-            &:active,
-            &:focus {
-            }
-        }
-    }
-}
-
-.tpl-timeMatrix__text {
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

@@ -11,6 +11,7 @@
     <filter-mapping>
         <filter-name>UrlRedirectFilter</filter-name>
         <url-pattern>*.xhtml</url-pattern>
+        <url-pattern>/index.html</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
     

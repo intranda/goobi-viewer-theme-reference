@@ -1,265 +1,135 @@
 /* ==============================================================
    Resets for CSS Libs
    ==============================================================*/
-/* BOOTSTRAP */
-
-.popover-header {
-    color: @fg-general;
-    background: @bg-content-box;
-}
+/* POPOVERS */
 .popover-body {
-    .btn--full {
-        color: white;
-    }
-    .mx-dark-mode-rules ({
-		a {
-			color: #222;
-			&:hover,
-			&:focus,
-			&:active {
-				color: #222;
-			}
-		}
-		.btn--full {
-			color: white;
-			&:hover,
-			&:focus,
-			&:active {
-				color: white;
-			}
-		}
-	});
-    .mx-light-mode-rules ({
-		.btn--full {
-			color: white;
-			&:hover,
-			&:focus,
-			&:active {
-				color: white;
-			}
-		}
-	});
-}
-
-.tooltipp {
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-			color: #222;
-		});
-        .mx-light-mode-rules ({
-		});
-    }
-}
-.admin__form-help-text {
-    color: @fg-general;
-    opacity: 0.6;
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-			color: @fg-general;
-			opacity: 0.6;
-		});
-        .mx-light-mode-rules ({
-			color: @fg-general;
-			opacity: 0.6;
-		});
+    .btn.btn--full {
+        .mx-theme-control-primary();
     }
 }
 
-/* TABS */
-.nav-tabs {
-    li {
-        a {
-        }
-        span {
-        }
-        &.active {
-            a {
-            }
-        }
-    }
-}
-.tab-pane {
-}
 /* FORMS */
+.admin__form-help-text {
+    color: var(--fg-default);
+    opacity: 0.6;
+}
+
 .form-control {
+    color: var(--fg-default);
+    background: var(--bg-elevated);
+
     &:disabled {
-        background: #e9ecef;
+        background: var(--bg-subtle);
+        color: var(--fg-secondary);
     }
-    background: @white;
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-			&:disabled {
-				background: #e9ecef;
-			}
-			background: @fg-controls;
-		});
-        .mx-light-mode-rules ({
-			&:disabled {
-				background: #e9ecef;
-			}
-			background: @white;
-		});
-    }
+
     &:focus {
+        background: var(--bg-elevated);
+        color: var(--fg-default);
+        -webkit-text-fill-color: var(--fg-default);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--fg-default);
+        -webkit-box-shadow: 0 0 0 1000px var(--bg-elevated) inset;
+        transition: background-color 9999s ease-in-out 0s;
     }
 }
-.form-horizontal {
-    .form-group {
-        label {
-        }
-        .form-control {
-        }
-        .btn {
-        }
-    }
-}
+
 /* MODALS */
 .modal {
-    z-index: 9999;
-    color: rgb(33, 37, 41);
-    & when (@colorModes = true) {
-        .mx-light-mode-rules ({
-            color: rgb(33, 37, 41);
-        });
-        .mx-dark-mode-rules ({
-            color: @fg-content-box;
-        });
-    }
+    color: var(--fg-default);
 
     h1,
     h2,
     h3,
     h4,
     h5 {
-        color: rgb(33, 37, 41);
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: rgb(33, 37, 41);
-			});
-            .mx-dark-mode-rules ({
-				color: @fg-content-box;
-			});
-        }
+        color: var(--fg-default);
     }
+
+    /* CUSTOM CONTROL SELECT */
     .custom-control--select {
-        border: 1px solid #ccc;
-        background: @white;
+        border: 1px solid var(--border-strong);
+        background: var(--bg-surface);
     }
-    .btn.btn--clean {
-        color: rgb(33, 37, 41);
 
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-				color: rgb(33, 37, 41);
-			});
-            .mx-dark-mode-rules ({
-                color: @fg-general;
-			});
-        }
-    }
+    /* BUTTON */
     .btn.btn--full {
-        background: @ci-color1;
-        border-color: @ci-color1;
+        .mx-theme-control-primary();
     }
 
+    /* MODAL CONTENT */
     .modal-content {
-        background-color: @white;
-        color: rgb(33, 37, 41);
-        & when (@colorModes = true) {
-            .mx-light-mode-rules ({
-                background-color: @white;
-                color: rgb(33, 37, 41);
-            });
-            .mx-dark-mode-rules ({
-                background-color: @bg-content-box;
-                color: @fg-content-box;
-            });
-        }
+        background-color: var(--bg-surface);
+        color: var(--fg-default);
+        border-radius: var(--radius-container);
+        box-shadow: var(--shadow-elevated);
     }
-	.card {
-		& when (@colorModes = true) {
-		    .mx-light-mode-rules ({
-				border: 1px solid rgba(0,0,0,0.125);
-			});
-		    .mx-dark-mode-rules ({
-		        border: none;
-			});
-		}
-	}
-	.card-body {
-		& when (@colorModes = true) {
-		    .mx-light-mode-rules ({
-				background: transparent;
-			});
-		    .mx-dark-mode-rules ({
-		        background: @bg-content-box;
-			});
-		} 
-	}
-}
 
-#bodyWrapper {
-    transition: filter 0.2s linear;
-}
-
-.modal-open {
-    #bodyWrapper > *:not(#pageHeader),
-    .page-header {
-        filter: blur(3px);
+    /* CARD */
+    .card {
+        border: 1px solid var(--modal-card-border);
     }
-}
 
-.alt-backdrop,
-.modal-backdrop.show {
-    opacity: 0.6;
-}
+    .card-body {
+        background: var(--bg-surface);
+    }
 
-.modal.fade .modal-dialog {
-}
+    /* MODAL HEADER */
+    .modal-header .fancy-close {
+        .mx-theme-control();
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        padding: 0;
+        opacity: 1;
+        background-color: transparent;
+        border-radius: var(--radius-button);
+        transform: none;
 
-.modal-open[style] {
-}
-
-.modal-backdrop.show {
-}
-
-.modal-backdrop {
-}
-
-.modal-header {
-    .fancy-close {
         &::before,
         &::after {
-            & when (@colorModes = true) {
-                .mx-light-mode-rules ({
-                    background-color: @black;
-                });
-                .mx-dark-mode-rules ({
-                    background-color: @fg-content-box;
-                });
+            background-color: currentColor;
+            transform: rotate(45deg);
+        }
+
+        &:hover::before,
+        &:hover::after {
+            transform: rotate(45deg);
+        }
+
+        &:disabled,
+        &[aria-disabled='true'],
+        &.disabled {
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+                .mx-theme-control-disabled();
             }
         }
     }
 }
 
-.modal-body {
+/* BODY WRAPPER */
+#bodyWrapper {
+    transition: filter 0.2s linear;
 }
 
-@media screen and (min-width: 576px) {
-    .modal-dialog {
+/* MODAL OPEN */
+.modal-open {
+    #bodyWrapper > * {
+        filter: blur(3px);
     }
 }
 
-.data-table-paginator__button {
-    background-color: @bg-general;
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-			background-color: @bg-general;
-		});
-        .mx-light-mode-rules ({
-			background-color: @bg-general;
-		});
-    }
+/* ALT BACKDROP */
+.alt-backdrop,
+.modal-backdrop.show {
+    opacity: 0.6;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

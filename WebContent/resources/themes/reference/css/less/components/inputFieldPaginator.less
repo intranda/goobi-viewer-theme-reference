@@ -1,53 +1,77 @@
 /* ==============================================================
-   Input field paginator
-   style declarations for component inputFieldPaginator.xhtml
+   Input Field Paginator
+   style declarations for inputFieldPaginator.xhtml
    ==============================================================*/
-/* BLOCK */
-
 .inputfield-paginator {
+    color: var(--fg-default);
+
     ul {
+        width: fit-content;
+        max-width: 100%;
+        padding: 3px;
+        border: 0;
+        background-color: transparent;
     }
+
+    /* NAVIGATE */
     &__navigate {
-        border: @border;
-        background-color: @bg-content-box;
-        &:hover {
-            background: @bg-hover;
+        background: transparent;
+        border-radius: var(--radius-container-small);
+        box-shadow: none;
+        padding-block: 0;
+
+        a {
+            .mx-theme-control();
+            border: 1px solid transparent;
+            border-radius: var(--radius-container-small);
+            background-color: transparent;
+            min-height: 35px;
+            text-decoration: none;
         }
-        &.inactive {
-            &:hover {
-                background-color: @bg-content-box;
+
+        &.inactive a,
+        a[aria-disabled='true'] {
+            &,
+            &:hover,
+            &:active {
+                .mx-theme-control-disabled();
+                background-color: transparent;
+                border-color: transparent;
             }
         }
+
+        &.inactive svg {
+            opacity: 1;
+        }
+
+        .icon-wrapper,
         svg {
-            fill: @black;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					fill: @white;
-				});
-                .mx-light-mode-rules ({
-					fill: @black;
-	  			});
-            }
+            color: currentColor;
+            fill: currentColor;
+            opacity: 1;
         }
     }
+
     &__navigate-text {
+        padding: 0;
     }
+
+    /* PAGE NUMBER */
     &__page-number-label {
+        .mx-theme-control();
+        border: 1px solid transparent;
+        border-radius: var(--radius-container-small);
+        background-color: transparent;
+        min-height: 35px;
+        padding-inline: 0.6rem;
     }
+
     &__page-number-input {
         input {
-            border: none;
-            outline: none;
-            background-color: transparent;
-            color: @fg-general;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					color: @fg-general;
-				});
-                .mx-light-mode-rules ({
-					color: @fg-general;
-	  			});
-            }
+            .mx-theme-field();
+            min-height: 35px;
+            border-radius: var(--radius-container-small);
+            text-align: center;
         }
     }
 }

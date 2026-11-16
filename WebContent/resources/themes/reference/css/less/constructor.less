@@ -9,13 +9,15 @@
 
 /* CORE VARIABLES AND MIXINS */
 @import 'misc/variables.less';
+@import 'misc/palette.less';
+@import 'misc/tokens.less';
 @import 'misc/fonts.less';
 @import 'misc/mixins.less';
 @import 'misc/print.less';
 @import 'misc/resets.less';
+@import 'misc/popover.less';
 @import 'misc/accessibility.less';
 @import 'misc/misc.less';
-@import 'views/immersive/ivLayoutTagColors.less';
 
 @import 'layout/layout.less';
 @import 'layout/general.less';
@@ -35,15 +37,16 @@
 @import 'components/buttons.less';
 @import 'components/changeLocal.less';
 @import 'components/colorThemeToggle.less';
+@import 'components/themeLogo.less';
 @import 'components/copyrightIndicator.less';
 @import 'components/dataTablePaginator.less';
 @import 'components/downloadModal.less';
 @import 'components/bornDigital.less';
+@import 'components/icons.less';
 @import 'components/imageControls.less';
 @import 'components/inputFieldPaginator.less';
 @import 'components/loginNavigation.less';
 @import 'components/metaMuseal.less';
-@import 'components/navigation.less';
 @import 'components/nerPopovers.less';
 @import 'components/normdata.less';
 @import 'components/searchHelpText.less';
@@ -98,8 +101,10 @@
 
 /* COMMON VIEWS */
 @import 'views/common/browse.less';
+@import 'views/common/dataTable.less';
 @import 'views/common/error.less';
 @import 'views/common/feedback.less';
+@import 'views/common/index.less';
 @import 'views/common/privacy.less';
 @import 'views/common/sitelinks.less';
 @import 'views/common/sitemap.less';
@@ -129,6 +134,7 @@
 @import 'views/search/searchTermList.less';
 
 /* USER VIEWS */
+@import 'views/user/profilePicture.less';
 @import 'views/user/user.less';
 @import 'views/user/userActivity.less';
 @import 'views/user/userAnnotations.less';
@@ -171,9 +177,16 @@
 
 /* ARCHIVES */
 @import 'archives/archives.less';
+@import 'archives/archivesList.less';
 @import 'archives/archivesTree.less';
+@import 'archives/cardCatalog/ccLayout.less';
+@import 'archives/cardCatalog/ccSidebar.less';
+@import 'archives/cardCatalog/ccOverview.less';
+@import 'archives/cardCatalog/ccStage.less';
+@import 'archives/cardCatalog/ccStrip.less';
 
 /* CMS TEMPLATES */
+@import 'cms/templates/cmsPage.less';
 @import 'cms/templates/01_templateGeneric.less';
 @import 'cms/templates/02_templateNewsOverview.less';
 @import 'cms/templates/03_templateNewsDetail.less';
@@ -207,10 +220,28 @@
 @import 'cms/templates/32_templateGalleryText.less';
 @import 'cms/templates/33_templateSlider.less';
 
-// SINGLE CMS CONTENT COMPONENT FRONTEND LAYOUT FILE
-@import 'cms/contentComponents/highlightedObject.less';
-@import 'cms/contentComponents/searchFacets.less';
-@import 'cms/contentComponents/splitText.less';
-@import 'cms/contentComponents/dividerLine.less';
-@import 'cms/contentComponents/searchbox.less';
-@import 'cms/contentComponents/sectionHeader.less';
+/* CMS content components */
+@import 'cms/components/highlightedObject.less';
+@import 'cms/components/searchFacets.less';
+@import 'cms/components/slider.less';
+@import 'cms/components/splitText.less';
+@import 'cms/components/dividerLine.less';
+@import 'cms/components/searchbox.less';
+@import 'cms/components/sectionHeader.less';
+@import 'cms/components/recordShowcase.less';
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+}

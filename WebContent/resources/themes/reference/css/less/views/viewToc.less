@@ -3,60 +3,29 @@
    style declarations for viewToc.xhtml
    ==============================================================*/
 /* VIEW TOC */
-/* BLOCK */
 .toc {
     /* TOC METADATA */
     &__metadata {
-		border: @border;
-		background-color: @bg-content-box;
-    }
-    &__metadata-thumbnail {
-    }
-    &__metadata-thumbnail-placeholder {
-    }
-    &__metadata-content {
+        background-color: var(--bg-surface);
     }
     /* MULTI VOLUME TOC */
-    /* ELEMENT */
-    h3 {
-    }
-    &__multi-volume {
-    }
-    &__mv-group {
-    }
     &__mv-element {
-        background-color: @bg-content-box;
+        background-color: var(--bg-surface);
         padding: 10px 0;
-        border: @border;
+        border: 1px solid var(--border-subtle);
         border-bottom: none;
         transition: all 0s linear;
         &:hover {
-            background-color: @lightgray;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					background-color: @bg-hover;
-				});
-                .mx-light-mode-rules ({
-					background-color: @lightgray;
-				});
-            }
+            background-color: var(--bg-subtle);
         }
         &.level-0 {
             h3 {
                 display: none;
             }
         }
-        a {
-        }
-        .row {
-        }
         &:last-child {
-            border-bottom: @border;
+            border-bottom: 1px solid var(--border-subtle);
         }
-    }
-    &__mv-element-title {
-    }
-    &__mv-element-link {
     }
     &__mv-element-img {
         text-align: right;
@@ -64,148 +33,26 @@
             display: inline-block;
         }
     }
-    &__list-outer-list {
-    }
     /* TOC TREEVIEW */
-    /* ELEMENT */
     &__list-expandable,
     &__list-full {
         margin: 0;
-        border: @border;
-        background-color: @bg-content-box;
-        li {
-            &:first-child {
-            }
-            &:last-child {
-                border: 0;
-            }
-        }
-    }
-    &__list-expandable-title,
-    &__list-full-title {
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    &__list-expandable-number,
-    &__list-full-number {
-        li {
-        }
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    &__list-expandable-download-button,
-    &__list-full-download-button {
-    }
-    /* EXPAND ALL */
-    &__list-expandable-all {
-    }
-    /* TOC EXPANDABLE */
-    &__list-expandable {
+        padding: 0;
+        border: none;
+        background-color: var(--bg-surface);
+        border-radius: var(--radius-container);
     }
     &__list-expandable-elem,
     &__list-full-item {
-        &.parent {
-        }
-        &.child {
-        }
-    }
-    &__list-expandable-title-wrapper,
-    &__list-full-title-wrapper {
-    }
-    &__list-expandable-elem--hidden {
-    }
-    &__list-expandable-elem--expanded {
-    }
-    &__list-expandable-expand {
-        a {
-        }
-    }
-    &__list-expandable-toggle {
-    }
-    &__list-expandable-title {
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    &__list-expandable-expand-button {
-    }
-    &__list-expandable-number {
-        li {
-        }
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
+        padding: 6px 0px;
+        &:first-child {
+            border-top: none;
         }
     }
     /* TOC FULL */
-    &__list-full {
-        border-top: @border;
-    }
-    &__list-full-title {
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
     &__list-full-number {
         li {
             border: none;
-        }
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    //	.toc__list-expandable li:hover a, .toc__list-full li:hover a {
-    //		color: @fg-hover;
-    //	}
-    // TILE/GRID VIEW OF TOC ENTRIES
-    &__mv-tile-grid-heading {
-    }
-    &__mv-tile-grid {
-        background: @bg-content-box;
-        border: @border;
-    }
-    &__mv-tile {
-    }
-    &__mv-tile-image {
-    }
-    &__mv-tile-image-wrapper {
-    }
-    &__mv-tile-title-wrapper {
-    }
-    &__mv-tile-title {
-    }
-}
-
-/* DOWNLOAD MODAL */
-#reCaptchaWrapper {
-}
-
-div[id*='Modal'] {
-    p {
-    }
-    .email-form {
-        .form-group {
-            p {
-            }
         }
     }
 }

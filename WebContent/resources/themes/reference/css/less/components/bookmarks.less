@@ -3,111 +3,87 @@
    style declarations for all bookmark actions,
    ==============================================================*/
 /* BOOKMARK NAVIGATION */
-/* BLOCK */
 .bookmark-navigation {
     margin-right: -5px;
-    /* ELEMENT */
+    /* DROPDOWN WRAPPER */
     &__dropdown-wrapper {
+        background-color: var(--bg-elevated);
+        border-radius: var(--radius-container-small);
+
         & > .btn {
-            font-size: @fontMedium;
+            border-radius: var(--radius-container-small);
+            font-size: var(--font-size-body-small);
+            padding: 0.4rem 0.6rem;
+            background-color: var(--bookmark-bg-added);
         }
     }
-    /* TOOGLE DROPDOWN */
+    /* TOGGLE */
     &__counter {
-        background-color: @ci-color1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        color: var(--fg-black);
+        background-color: var(--bg-accent);
         position: relative;
-        right: 0.4rem;
-        top: -0.9rem;
-        border-radius: 30px;
+        right: 0;
+        top: 0;
+        border-radius: var(--radius-container-small);
         height: 20px;
         width: 20px;
     }
     &__string {
         font-weight: 700;
-        color: @fg-header;
-    }
-    &__icon {
+        color: var(--fg-accent);
     }
     /* DROPDOWN */
     &__dropdown {
         z-index: 2020;
-        top: calc(~'100% + 4px');
-        border: none;
+        top: calc(~'100% + 8px');
         right: -4px;
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-container);
+        background-color: var(--bg-surface);
+        box-shadow: var(--shadow-surface);
     }
     /* DROPDOWN LIST */
     &__dropdown-list {
-        background-color: @middleblack;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background: @bg-active;
-			});
-            .mx-light-mode-rules ({
-				background-color: @middleblack;
-			});
-        }
+        background-color: transparent;
+
         li {
             border-bottom: none;
-            color: @white;
+            color: var(--fg-default);
+
             &:hover {
-                background-color: @middleblackHover;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						background: @bg-hover;
-					});
-                    .mx-light-mode-rules ({
-						background-color: @middleblackHover;
-					});
-                }
-            }
-            &:last-child {
+                background-color: var(--bg-hover);
             }
             .empty {
+                color: var(--fg-default);
             }
         }
         h3 {
+            color: var(--fg-default);
         }
     }
     &__dropdown-list-counter {
-        background-color: @ci-color1;
-    }
-    &__dropdown-title {
-        line-height: 1.3;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /*! autoprefixer: off */
-        -webkit-box-orient: vertical;
-        /*! autoprefixer: on */
-    }
-    &__dropdown-list-image {
+        background-color: var(--bg-brand);
     }
     &__dropdown-list-remove {
-        font-size: @fontMedium;
-        color: @black;
+        font-size: var(--font-size-body-small);
+        color: var(--fg-default);
         &:hover,
         &:active,
         &:focus {
-            color: @black;
+            color: var(--fg-link-hover);
+            svg {
+                color: var(--fg-default);
+            }
         }
     }
     /* DROPDOWN ACTIONS */
     &__dropdown-list-actions {
-        border-top: none;
-        background-color: @middleblack;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background: @bg-active;
-			});
-            .mx-light-mode-rules ({
-				background-color: @middleblack;
-			});
-        }
-    }
-    &__dropdown-list-single-entry {
-    }
-    &__dropdown-list-title {
+        border-top: 1px solid var(--border-default);
+        background-color: transparent;
     }
     &__dropdown-list-reset,
     &__dropdown-list-send,
@@ -117,18 +93,10 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: @middleblackHover;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					background: @bg-hover;
-				});
-                .mx-light-mode-rules ({
-					background-color: @middleblackHover;
-				});
-            }
+            background-color: var(--bg-hover);
         }
     }
-    /* COLOR OF ALL LINKS/BUTTONS OF LOGGED OUT BOOKMARK LIST */
+    /* DROPDOWN LINKS */
     &__dropdown-list-single-entry,
     &__dropdown-list-title,
     &__dropdown-list-remove,
@@ -140,99 +108,156 @@
         a,
         span,
         h3 {
-            color: @white;
+            color: var(--fg-default);
             &:hover,
             &:focus,
             &:active {
-                color: @white;
+                color: var(--fg-link-hover);
+                svg {
+                    color: var(--fg-default);
+                }
             }
         }
-    }
-    &__dropdown-list-reset {
-    }
-    &__dropdown-list-send,
-    &__dropdown-list-mirador {
-        a {
-            span {
-            }
-        }
-    }
-    &__dropdown-list-send {
-    }
-    &__dropdown-list-mirador {
     }
 }
 
-/* POPUPS */
-/* BLOCK */
+/* POPUP */
 .bookmark-popup {
-    &.top {
-    }
-    &.right {
-    }
-    button {
-        color: #222 !important;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: calc(100vw - 2rem);
+    height: auto;
+    max-height: 420px;
+    border: none;
+    border-radius: var(--radius-container);
+    background-color: var(--bg-elevated);
+    box-shadow: var(--shadow-elevated);
+    overflow: hidden;
+
+    &.bottom {
+        &:before {
+            content: '';
+            top: -6px;
+            width: 12px;
+            height: 12px;
+            margin-left: -6px;
+            background-color: var(--bg-elevated);
+            box-shadow: -2px -2px 4px rgb(from var(--shadow-color) r g b / 6%);
+        }
     }
 
     label {
-        color: #222;
+        color: var(--fg-default);
     }
-    &__radio-buttons {
-        background: white;
-    }
-    &.bottom {
-        &:before {
-        }
-    }
-    &.left {
-    }
-    /* ELEMENT */
+
+    /* SECTIONS */
     &__header,
+    &__radio-buttons,
     &__body,
     &__footer {
+        position: static;
+        height: auto;
     }
+
+    &__radio-buttons {
+        background: transparent;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--border-default);
+
+        label {
+            gap: 0.4rem;
+            font-size: var(--font-size-body-small);
+        }
+        input {
+            margin: 0 0.4rem 0 0;
+        }
+    }
+
     &__header {
-        color: #222 !important;
+        padding: 0.85rem 1rem;
+        font-weight: 600;
+        font-size: var(--font-size-body-small);
+        color: var(--fg-default);
+        border-bottom: 1px solid var(--border-default);
     }
+
     &__body {
+        flex: 1 1 auto;
+        min-height: 0;
+        max-height: none;
+        overflow-y: auto;
+        padding: 0.4rem;
     }
+
     &__body-loader {
+        background-color: var(--bg-surface);
     }
+
     &__body-list {
         li {
+            border-bottom: none;
+            border-radius: var(--radius-container-small);
+            margin-bottom: 2px;
+
             &:hover,
             &:active,
             &:focus {
-                background-color: @lightgray;
+                background-color: var(--bg-hover);
             }
             button {
+                border-radius: var(--radius-container-small);
                 &.btn {
                     &:hover,
                     &:active,
                     &:focus {
-                        color: @black;
+                        color: var(--fg-link-hover);
                     }
                 }
                 span {
-                    background-color: @ci-color1;
+                    background-color: var(--bg-brand);
+                    border-radius: 999px;
+                    padding: 0.1rem 0.55rem;
+                    font-weight: 600;
                 }
             }
             .empty {
+                color: var(--fg-default);
+                font-style: italic;
             }
         }
         &:hover {
-            color: @black;
+            color: var(--fg-default);
         }
-        span {
+        .bookmark-popup__check-icon {
+            color: var(--fg-brand);
+            stroke: var(--fg-brand);
         }
     }
+
     &__footer {
+        padding: 0.6rem 0.75rem;
+        border-top: 1px solid var(--border-default);
+
         input {
-        }
-        &.added {
+            background-color: var(--bg-page);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-container-small);
+            color: var(--fg-default);
+            padding: 0 0.75rem;
         }
     }
-    &__list {
+
+    &__add-button {
+        border-radius: var(--radius-container-small);
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: var(--bg-hover);
+        }
+        .bookmark-popup__add-icon {
+            stroke: var(--fg-brand);
+        }
     }
 }
 

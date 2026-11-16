@@ -3,22 +3,45 @@
    style declarations for widget_searchInCurrentItem.xhtml
    ==============================================================*/
 /* WIDGET SEARCH IN CURRENT ITEM */
-/* BLOCK */
 .widget-search-in-current-item {
-    /* ELEMENT */
+    padding: 0;
+    /* FORM */
     .form-group {
-    }
-    .input-group {
+        border-radius: var(--radius-container);
+
         input {
+            border-radius: var(--radius-container);
+            box-shadow: var(--shadow-surface);
         }
+    }
+    .form-control {
+        color: var(--fg-default);
+        background-color: var(--bg-input);
+        border: 1px solid var(--border-subtle);
+        padding: 0.8rem 1.2rem;
+    }
+    /* INPUT GROUP */
+    .input-group {
+        background-color: var(--bg-page);
     }
     .input-group-addon {
-        border-color: @ci-color1;
-        background-color: @ci-color1;
-        input {
-        }
+        display: flex;
+        justify-content: center;
+        box-shadow: var(--shadow-surface);
+        background-color: var(--bg-brand);
+        border-radius: var(--radius-container-small);
+        width: 41px;
+        border: none;
+
         button {
-            color: @white;
+            color: var(--fg-on-brand);
+        }
+
+        &:hover {
+            background-color: var(--bg-brand-hover);
+            box-shadow:
+                var(--shadow-surface),
+                0 0 0 3px var(--bg-brand-subtle);
         }
     }
 }

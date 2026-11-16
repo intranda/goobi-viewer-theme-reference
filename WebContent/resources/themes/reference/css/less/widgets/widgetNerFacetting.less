@@ -3,43 +3,31 @@
    style declarations for widget_nerFacetting.xhtml
    ==============================================================*/
 #widgetNerFacetting {
-    border: @border;
+    border: 1px solid var(--border-subtle);
     h2 {
         margin: 0;
         padding: 0.7rem 1.5rem;
-        font-size: @fontNormal;
+        font-size: var(--font-size-body);
         font-weight: 400;
-        color: @white;
-        border-bottom: 1px solid @ci-color1;
-        background-color: @ci-color1;
+        color: var(--fg-on-brand);
+        border-bottom: 1px solid var(--bg-brand);
+        background-color: var(--bg-brand);
     }
     .facetting-content {
         .nav-tabs {
-            border-bottom: @border;
-            li {
-                a {
-                    background: @bg-content-box;
-                    border: none;
-                    border-radius: 0;
-                    border-bottom: 1px solid @middlegray;
-                    .glyphicon {
-                    }
-                }
-                a {
-                    &.active {
-                        background: @bg-hover;
-                    }
+            border-bottom: 1px solid var(--border-subtle);
+            li a {
+                background: var(--bg-surface);
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid var(--border-strong);
+                &.active {
+                    background: var(--sidebar-bg-hover);
                 }
             }
         }
         .tab-content {
-            background: @bg-content-box;
-            .tab-pane {
-                &.active {
-                }
-                h3 {
-                }
-            }
+            background: var(--bg-surface);
         }
     }
 }
@@ -48,158 +36,29 @@
 #overview,
 #section {
     border: none;
-    .tag-filter-description {
-    }
-    .filter-tags {
-        li {
-            a {
-                &:hover {
-                }
-                &.active[data-type='person'] {
-                    color: @personColor;
-                    & when (@colorModes = true) {
-                        .mx-dark-mode-rules ({
-						color: @lk-general;
-					});
-                        .mx-light-mode-rules ({
-						color: @personColor;
-					});
-                    }
-                }
-                &[data-type='location'] {
-                }
-                &[data-type='corporation'] {
-                }
-            }
-        }
+    .filter-tags li a.active[data-type='person'] {
+        color: var(--fg-entity-person);
     }
 }
 
 /* OVERVIEW */
 #overview {
+    /* CURRENT TAGS */
     .current-tags {
-        background: @bg-hover;
-        &:before {
-        }
-        .page-tag {
-            &.empty {
-            }
-            &.person {
-                color: @personColor;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						color: @lk-general;
-					});
-                    .mx-light-mode-rules ({
-						color: @personColor;
-					});
-                }
-            }
-            &.location {
-                color: @locationColor;
-            }
-            &.corporation {
-                color: @corporationColor;
+        background: var(--sidebar-bg-hover);
+    }
+    /* OVERVIEW SCALE */
+    .overview-content .overview-scale li {
+        .page-number a {
+            color: var(--fg-link);
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--fg-heading);
             }
         }
-    }
-    .set-tag-range {
-    }
-    .overview-content {
-        .overview-scale {
-            li {
-                div {
-                }
-                .page-number {
-                    a {
-                        color: @lk-general;
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            color: @lh-general;
-                        }
-                    }
-                }
-                .tag-container {
-                    .page-tag {
-                        &:hover {
-                        }
-                        &.empty {
-                        }
-                        &.person {
-                            color: @personColor;
-                            & when (@colorModes = true) {
-                                .mx-dark-mode-rules ({
-									color: @lk-general;
-								});
-                                .mx-light-mode-rules ({
-									color: @personColor;
-								});
-                            }
-                        }
-                        &.location {
-                        }
-                        &.corporation {
-                        }
-                        &:hover {
-                            background: @bg-hover;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* SECTION */
-#section {
-}
-
-#sliderScale {
-    .scale-page {
-        &.start {
-        }
-        &.end {
-        }
-    }
-    .slider-description {
-    }
-    .scale-stripes {
-        li {
-            &.middle {
-            }
-            &:last-child {
-            }
-        }
-    }
-    .scale-section-stripe {
-    }
-}
-
-#sliderVertical {
-    .ui-slider-handle {
-        &:after {
-        }
-        &:focus {
-        }
-        .page-bubble {
-            &:before {
-            }
-        }
-    }
-}
-
-#sectionTags {
-    .page-tag {
-        &:hover {
-        }
-        &.empty {
-        }
-        &.person {
-        }
-        &.location {
-        }
-        &.corporation {
+        .tag-container .page-tag:hover {
+            background: var(--sidebar-bg-hover);
         }
     }
 }

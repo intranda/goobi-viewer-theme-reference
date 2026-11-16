@@ -4,9 +4,26 @@
 /* STANDARD THEME */
 @import 'constructor.less';
 
-/* SUBTHEME COLORS */
-@ci-color1: #095d42;
-@ci-hovercolor1: #1f7358;
+/* BRAND OVERRIDES */
+:root {
+    .mx-theme-subtheme2-palette();
+}
 
 /* OVERWRITES */
 @import 'layout.less';
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+}

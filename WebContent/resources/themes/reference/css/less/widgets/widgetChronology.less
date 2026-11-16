@@ -4,65 +4,95 @@
    ==============================================================*/
 /* WIDGET CHRONOLOGY */
 
-/* BLOCK */
 .widget-chronology-slider {
-    color: var(--fg-content-box);
-    &__item {
-        &-input {
-            color: @fg-content-box;
+    color: var(--fg-default);
+    /* ITEM INPUT */
+    &__item-input {
+        color: var(--fg-default);
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-container-small);
+        padding: 0.4rem 0.6rem;
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+        &:hover,
+        &:focus {
+            outline: none;
+            border-color: var(--border-brand);
+            box-shadow: 0 0 0 3px var(--bg-brand-subtle);
         }
+    }
+    &__item {
         &.chronology-slider-label,
         &.chronology-slider-actions {
-            color: @white;
+            color: var(--fg-default);
         }
         &.chronology-slider-label {
-            font-weight: 400;
-            font-size: @fontNormal;
+            font-weight: 600;
+            font-size: var(--font-size-body);
         }
         &.chronology-slider-actions {
-            ul {
-            }
-            li {
-            }
-            img {
-            }
             [data-reset='chrono-slider'] {
-                color: @white;
+                color: var(--fg-default);
+                transition: color 0.2s ease;
+                &:hover {
+                    color: var(--fg-link-hover);
+                }
             }
-        }
-        &.chronology-slider-action-loader,
-        &.chronology-slider-action-reset {
-            &.active {
-            }
-        }
-        &.chronology-slider-action-loader {
-        }
-        &.chronology-slider-action-reset {
         }
         &.chronology-slider-start,
         &.chronology-slider-end {
-            font-size: @fontMedium;
-            background-color: @bg-content-box;
-        }
-        &.chronology-slider-start {
-        }
-        &.chronology-slider-end {
+            font-size: var(--font-size-body-small);
+            background-color: transparent;
         }
         &.chronology-slider {
-            background-color: @bg-content-box;
+            background-color: transparent;
+            padding: 1rem 0.5rem 1.6rem;
+            margin-top: 15px;
         }
     }
-	.ui-slider-range {
-	    background-color: @ci-color1;
-	}
 
-	.ui-slider-handle {
-	    width: 1rem;
-	    height: 1rem;
-	    border: 1px solid @middleblack;
-	}
+    /* SLIDER */
+    .ui-slider {
+        height: 0.6rem;
+        border: none;
+        border-radius: 999px;
+        background-color: var(--sidebar-bg-hover);
+    }
+
+    .ui-slider-range {
+        background-color: var(--fg-brand);
+        border-radius: 999px;
+    }
+
+    .ui-slider-handle {
+        top: -0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: var(--bg-surface);
+        border: 2px solid var(--border-brand);
+        border-radius: 50%;
+        box-shadow: var(--shadow-surface);
+        cursor: pointer;
+        outline: none;
+        transition:
+            box-shadow 0.2s ease,
+            background-color 0.2s ease;
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 0 5px var(--bg-brand-subtle);
+        }
+        &.ui-state-active {
+            background-color: var(--fg-brand);
+        }
+    }
 }
 
+/* RTL */
 @{RTL} .widget-chronology-slider {
     &__item {
         &.chronology-slider-start {
@@ -73,6 +103,267 @@
             text-align: left;
             padding-right: unset;
         }
+    }
+}
+
+/* NORMAL SIDEBAR */
+@{sidebarStrict} .widget-chronology-slider {
+    min-inline-size: 0;
+    overflow: visible;
+
+    /* BODY */
+    .widget-chronology-slider__body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.6rem;
+        min-inline-size: 0;
+        padding: 1.6rem;
+        border-radius: 0;
+    }
+
+    /* DESCRIPTION TEXT */
+    .widget-chronology-slider__description-text {
+        grid-column: 1 / -1;
+        margin: 0;
+        color: var(--sidebar-fg-secondary);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+    }
+
+    /* LABEL AND ACTIONS */
+    .widget-chronology-slider__item.chronology-slider-label {
+        flex: 1 1 auto;
+        min-inline-size: 0;
+        margin: 0;
+    }
+
+    .widget-chronology-slider__item.chronology-slider-actions {
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--sidebar-fg-secondary);
+
+        [data-reset='chrono-slider'] {
+            .mx-theme-control-accent();
+            color: var(--fg-brand);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            inline-size: 4rem;
+            block-size: 4rem;
+            padding: 0;
+            border: 1px solid transparent;
+            border-radius: var(--radius-button);
+
+            &:hover,
+            &:active {
+                color: var(--fg-brand-hover);
+            }
+
+            .icon-svg {
+                inline-size: var(--_widget-action-icon-size, 1.6rem);
+                block-size: var(--_widget-action-icon-size, 1.6rem);
+                color: currentColor;
+            }
+
+            &:disabled,
+            &[aria-disabled='true'] {
+                .mx-theme-control-disabled();
+            }
+        }
+    }
+
+    :is(.chronology-slider-action-loader, .chronology-slider-action-reset):not(.active) {
+        display: none;
+    }
+
+    /* START AND END */
+    .widget-chronology-slider__item:is(.chronology-slider-start, .chronology-slider-end) {
+        min-inline-size: 0;
+        padding: 0;
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .widget-chronology-slider__item-input,
+    .chronology-slider__input-wrapper :is(.chronology-slider__input-start, .chronology-slider__input-end) {
+        .mx-theme-field();
+        inline-size: 100%;
+        min-inline-size: 0;
+        block-size: 4.4rem;
+        min-block-size: 4.4rem;
+        margin: 0;
+        padding: 0.8rem;
+        border-radius: var(--radius-button);
+        font-size: var(--font-size-body);
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+        direction: ltr;
+    }
+
+    .widget-chronology-slider__item.chronology-slider {
+        grid-column: 1 / -1;
+        inline-size: 100%;
+        min-inline-size: 0;
+        margin: 0;
+        padding: 1.2rem 0 1.6rem;
+        background-color: transparent;
+    }
+
+    /* SLIDER */
+    .widget-chronology-slider__slider {
+        block-size: 0.6rem;
+        margin-inline: 0;
+        border: 1px solid var(--border-input);
+        border-radius: 999px;
+        background: var(--bg-subtle);
+        box-shadow: none;
+
+        .ui-slider-range {
+            block-size: 100%;
+            border: 0;
+            border-radius: inherit;
+            background: var(--fg-brand);
+        }
+
+        .ui-slider-handle {
+            top: 50%;
+            inline-size: 20px;
+            block-size: 20px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: var(--bg-input);
+            box-shadow: none;
+            transform: translateY(-50%);
+            touch-action: none;
+
+            /* OUTER HANDLES */
+            &:first-of-type {
+                transform: translate(-2px, -50%);
+            }
+
+            &:last-of-type {
+                transform: translate(2px, -50%);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: -12px;
+                inline-size: auto;
+                block-size: auto;
+                transform: none;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border: 2px solid var(--border-brand);
+                border-radius: inherit;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background-color: var(--bg-selected-hover);
+
+                &::after {
+                    border-color: var(--fg-brand-hover);
+                }
+            }
+
+            &:active,
+            &.ui-state-active {
+                background-color: var(--fg-brand);
+            }
+
+            &:focus {
+                .mx-theme-focus();
+            }
+        }
+
+        &.ui-state-disabled,
+        &[aria-disabled='true'] {
+            .mx-theme-control-disabled();
+
+            .ui-slider-range {
+                background-color: var(--border-disabled);
+            }
+
+            .ui-slider-handle {
+                .mx-theme-control-disabled();
+                cursor: default;
+
+                &::after {
+                    border-color: var(--border-disabled);
+                }
+            }
+        }
+    }
+
+    /* CHART CANVASES */
+    .chronology-slider:has(.chronology-slider__container) {
+        padding: 0;
+    }
+
+    .chronology-slider__container {
+        position: relative;
+        inline-size: 100%;
+        min-inline-size: 0;
+        aspect-ratio: 2 / 1;
+    }
+
+    .chronology-slider__chart {
+        display: block;
+        max-inline-size: 100%;
+    }
+
+    .chronology-slider__draw {
+        inset-inline: 0;
+        min-inline-size: 100%;
+        max-inline-size: 100%;
+        min-block-size: 100%;
+        max-block-size: 100%;
+    }
+
+    /* INPUT ROW */
+    .chronology-slider__input-wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.8rem;
+        margin-block-start: 1.6rem;
+    }
+
+    /* BETWEEN YEAR SYMBOL */
+    .chronology-slider__between-year-symbol {
+        margin: 0;
+        color: var(--sidebar-fg-secondary);
+    }
+
+    /* OK BUTTON */
+    .chronology-slider__ok-button {
+        .mx-theme-control-primary();
+        min-inline-size: 4.4rem;
+        min-block-size: 4.4rem;
+        margin: 0;
+        padding: 0.8rem 1.2rem;
+        border: 1px solid transparent;
+        border-radius: var(--radius-button);
+    }
+}
+
+@{sidebarStrict} .combined-facets .widget-chronology-slider__body {
+    padding: 0.8rem 0 0;
+}
+
+@media (any-pointer: coarse), (max-width: @smallBreakpoint) {
+    @{sidebarStrict}
+        .widget-chronology-slider
+        .widget-chronology-slider__item.chronology-slider-actions
+        [data-reset='chrono-slider'] {
+        inline-size: 4.4rem;
+        block-size: 4.4rem;
     }
 }
 

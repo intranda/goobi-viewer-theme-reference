@@ -3,192 +3,45 @@
    style declarations for viewNerFacetting.xhtml
    ==============================================================*/
 #nerFacetting {
-    h2 {
-    }
     .facetting-content {
         .nav-tabs {
-            border-bottom: @border;
+            border-bottom: 1px solid var(--border-subtle);
             li {
                 a {
-                    border: @border;
-                    background: @bg-hover;
-                    & when (@colorModes = true) {
-                        .mx-dark-mode-rules ({
-							background: @bg-content-box;
-						});
-                        .mx-light-mode-rules ({
-							background: @bg-hover;
-						});
-                    }
-                    .glyphicon {
-                    }
+                    border: 1px solid var(--border-subtle);
+                    background: var(--ner-navigation-bg);
                 }
                 &.active a {
-                    color: @fg-general;
-                    background: @white;
-                    & when (@colorModes = true) {
-                        .mx-dark-mode-rules ({
-							background: @bg-hover;
-						});
-                        .mx-light-mode-rules ({
-							background: @white;
-						});
-                    }
+                    color: var(--fg-default);
+                    background: var(--ner-navigation-bg-hover);
                 }
             }
         }
         .tab-content {
-            background: @bg-content-box;
-            .tab-pane {
-                &.active {
-                }
-                h3 {
-                }
-            }
+            background: var(--bg-surface);
         }
     }
 }
 
-/* OVERVIEW & SECTION */
-#nerFacetting #overview,
-#nerFacetting #section {
-    .tag-filter-description {
-    }
-    .set-tag-range {
-    }
-    .filter-tags {
-        li {
-            a {
-                &:hover {
-                }
-                &[data-type='person'] {
-                }
-                &[data-type='location'] {
-                }
-                &[data-type='corporation'] {
-                }
-            }
-        }
-    }
-}
-
-// LOADER STYLES
+/* LOADER */
 #nerFacettingLoader {
-    background-color: @bg-general;
+    background-color: var(--bg-page);
 }
 
 /* OVERVIEW */
 #nerFacetting #overview {
-    border: @border;
+    border: 1px solid var(--border-subtle);
+    /* CURRENT TAGS */
     .current-tags {
-        background: @bg-hover;
-        &:before {
-        }
-        .page-tag {
-            &.empty {
-            }
-            &.person {
-                color: @personColor;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						color: @lk-general;
-					});
-                    .mx-light-mode-rules ({
-						color: @personColor;
-					});
-                }
-            }
-            &.location {
-                color: @locationColor;
-            }
-            &.corporation {
-                color: @corporationColor;
-            }
-        }
+        background: var(--bg-hover);
     }
-    .overview-content {
-        .overview-scale {
-            li {
-                div {
-                }
-                .page-number {
-                    a {
-                        color: @lk-general;
-                        &:hover,
-                        &:active,
-                        &:focus {
-                        }
-                    }
-                }
-                .tag-container {
-                    .page-tag {
-                        &:hover {
-                            background-color: @bg-hover;
-                        }
-                        &.empty {
-                        }
-                        &.person {
-                        }
-                        &.location {
-                        }
-                        &.corporation {
-                        }
-                    }
-                }
-            }
+    /* OVERVIEW SCALE */
+    .overview-content .overview-scale li {
+        .page-number a {
+            color: var(--fg-link);
         }
-    }
-}
-
-/* SECTION */
-#nerFacetting #section {
-}
-
-#nerFacetting #sliderScale {
-    .scale-page {
-        &.start {
-        }
-        &.end {
-        }
-    }
-    .slider-description {
-    }
-    .scale-stripes {
-        li {
-            &.middle {
-            }
-            &:last-child {
-            }
-        }
-    }
-    .scale-section-stripe {
-    }
-}
-
-#nerFacetting #sliderVertical {
-    .ui-slider-handle {
-        &:after {
-        }
-        &:focus {
-        }
-        .page-bubble {
-            &:before {
-            }
-        }
-    }
-}
-
-#nerFacetting #sectionTags {
-    .page-tag {
-        &:hover {
-        }
-        &.empty {
-        }
-        &.person {
-        }
-        &.location {
-        }
-        &.corporation {
+        .tag-container .page-tag:hover {
+            background-color: var(--bg-hover);
         }
     }
 }

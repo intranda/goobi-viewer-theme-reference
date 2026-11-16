@@ -1,0 +1,63 @@
+/* ==============================================================
+	Styling for content component frontend search box
+   ==============================================================*/
+
+.content-component__search-box-heading {
+    margin-bottom: 10px;
+}
+
+.content-component__search-box {
+    .input-group {
+        gap: 0.75rem;
+    }
+
+    .input-group .form-control {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-container);
+        box-shadow: var(--shadow-surface);
+        transition: box-shadow 0.15s ease;
+
+        &:focus {
+            box-shadow:
+                var(--shadow-surface),
+                0 0 0 3px var(--bg-brand-subtle);
+        }
+    }
+
+    .input-group .input-group-addon {
+        border: none;
+        border-radius: var(--radius-container);
+        background-color: transparent;
+        padding: 0;
+
+        .btn {
+            height: 100%;
+            border-radius: var(--radius-container);
+            box-shadow: var(--shadow-surface);
+            transition: box-shadow 0.15s ease;
+
+            &:hover,
+            &:focus {
+                box-shadow:
+                    var(--shadow-surface),
+                    0 0 0 3px var(--bg-brand-subtle);
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
+}

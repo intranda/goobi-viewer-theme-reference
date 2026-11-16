@@ -1,164 +1,212 @@
 /* ==============================================================
    Search Standard
-   style declarations for searchOptions.xhtml
+   style declarations for searchStandard.xhtml
    ==============================================================*/
-/* SEARCH STANDARD */
-/* BLOCK */
+/* SEARCH FORM */
 .search-standard {
-    //	background-color: @bg-content-box;
-    //  	border: @border;
-    /* ELEMENT */
-    &__help {
-        button {
-            color: @fg-general;
-        }
-    }
-    &__title {
-        h2 {
-            color: @fg-content-box;
-        }
-    }
-    &__input {
-    }
+    margin-bottom: 1rem;
+
+    /* INPUT SLIM */
     &__input-slim {
+        gap: 0.75rem;
     }
-    &__input-label,
-    &__filter-label {
+
+    /* FORM */
+    &__form {
+        color: var(--fg-default);
     }
-    &__input-label {
+
+    &__form &__input-autocomplete .ui-autocomplete-input,
+    &__form &__filter-select select,
+    &__form &__submit-button.btn {
+        min-height: 4.4rem;
+        font-size: var(--font-size-body);
     }
-    &__input-autocomplete {
-        .ui-autocomplete {
-            .ui-autocomplete-input {
-                background: @white;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-						background: @fg-controls;
-						color: @black;
-					});
-                    .mx-light-mode-rules ({
-						background: @white;
-					});
-                }
-            }
-        }
+
+    &__form &__input-autocomplete .ui-autocomplete-input {
+        .mx-theme-field();
+        border-radius: var(--radius-container-small);
     }
-    &__filter {
-    }
-    &__filter-label {
-    }
-    &__filter-radio {
-        label {
-            font-size: @fontMedium;
-            font-weight: 400;
-            color: @fg-content-box;
-        }
-    }
-    &__filter-select {
+
+    &__form &__filter-select {
         .custom-control--select {
-            & select {
-                background: #f7f7f7;
-                & when (@colorModes = true) {
-                    .mx-dark-mode-rules ({
-                        background: @fg-controls;
-					});
-                    .mx-light-mode-rules ({
-						background: #f7f7f7;
-					});
-                }
-            }
-        }
-    }
-    &__filter-link {
-        a {
-        }
-    }
-    &__action {
-        .btn--default {
-            background: #f7f7f7;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-					background: @fg-general;
-				});
-                .mx-light-mode-rules ({
-					background: #f7f7f7;
-				});
-            }
-        }
-    }
-    /* MODIFICATION */
-}
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            color: var(--fg-default);
 
-/* AUTOCOMPLETE PANEL */
-.ui-autocomplete-panel {
-    ul.ui-autocomplete-items {
-        li.ui-autocomplete-item {
-            span.ui-autocomplete-query {
+            &::after {
+                color: currentColor;
+                border-top-color: currentColor;
             }
         }
-        li.ui-state-highlight {
+
+        select {
+            .mx-theme-field();
+            border-radius: var(--radius-container-small);
         }
+    }
+
+    &__form &__submit-button.btn {
+        .mx-theme-control-primary();
+        padding-inline: 1.5rem;
     }
 }
 
-/* SEARCH HELP MODAL */
-/* BLOCK */
-.search-help {
-    /* ELEMENT */
-    .modal-dialog {
-    }
-    .modal-content {
-    }
-    .modal-header {
-    }
-    .modal-title {
-    }
-    .modal-body {
-    }
-    .card-group {
-        .card {
+/* AUTOCOMPLETE DROPDOWN (jQuery UI menu, appended to body) */
+.ui-autocomplete.ui-menu {
+    border: none;
+    border-radius: var(--radius-container);
+    box-shadow: var(--shadow-surface);
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+    background-color: var(--bg-elevated);
+
+    .ui-menu-item {
+        border-radius: var(--radius-container-small);
+
+        .ui-menu-item-wrapper {
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius-container-small);
+            color: var(--fg-default);
+            transition:
+                background-color 0.15s ease,
+                color 0.15s ease;
+        }
+        .ui-state-active {
+            background-color: var(--search-group-bg-menu-active);
+            color: var(--fg-default);
+            border: none;
+            margin: 0;
         }
     }
-    .card-header {
-    }
-    .card-title {
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-    }
-    .card-body {
-        p {
-            &:last-child {
-            }
-            span {
-            }
-        }
-    }
-    .modal-footer {
-    }
-    /* MODIFICATION */
 }
 
-/* SEARCH TILE */
-/* BLOCK */
-.search-tile {
-    /* ELEMENT */
-    &__description {
-        h2 {
+/* AUTOCOMPLETE WHILE THE SEARCH FIELD HAS FOCUS */
+body:has(.search-standard__form .ui-autocomplete-input:focus) .ui-autocomplete.ui-menu {
+    color: var(--fg-default);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-input);
+
+    .ui-menu-item .ui-menu-item-wrapper {
+        color: var(--fg-default);
+        border-inline-start: var(--search-hit-accent-width) solid transparent;
+
+        &:hover {
+            background-color: var(--search-group-bg-hover);
         }
     }
-    &__icon {
+
+    /* POINTER ROW AND KEYBOARD ROW */
+    .ui-menu-item .ui-state-active {
+        color: var(--fg-default);
+        background-color: var(--search-group-bg-menu-active);
+        border-inline-start: var(--search-hit-accent-width) solid var(--border-brand);
     }
-    &__input {
-    }
-    &__action {
-        .btn {
+}
+
+/* SEARCH ROW OF THE SHEET */
+@{searchSheet} {
+    .search-standard {
+        --_row-padding: 1.2rem;
+        margin-bottom: 0;
+
+        &__input-slim {
+            align-items: center;
+            min-height: 0;
+            padding: var(--_row-padding) var(--search-sheet-gutter);
+            border-block-start: 1px solid var(--search-sheet-border);
+        }
+
+        &__input-slim:not(.-with-filters) {
+            gap: 0.8rem;
+
+            .ui-autocomplete-input {
+                padding-inline-end: 1.2rem;
+            }
+
+            .search-standard__submit-button.btn {
+                border-radius: var(--search-group-radius);
+            }
+        }
+
+        /* SCOPE */
+        &__filter-select {
+            flex: 0 0 auto;
+            min-width: 0;
+            max-width: none;
+
+            .custom-control--select {
+                display: flex;
+                align-items: center;
+            }
+            .custom-control--select select {
+                height: var(--search-field-height);
+                min-height: var(--search-field-height);
+                width: auto;
+            }
+        }
+
+        &__input-autocomplete {
+            display: flex;
+            align-items: center;
+            flex: 1 1 auto;
+            padding-inline: 0;
+
+            .ui-autocomplete-input {
+                height: var(--search-field-height);
+                min-height: var(--search-field-height);
+                width: 100%;
+                padding-inline-start: 1.2rem;
+            }
+        }
+
+        &__submit-button.btn {
+            align-self: center;
+            height: var(--search-field-height);
+            min-height: var(--search-field-height);
+        }
+
+        /* FRAMES */
+        &__filter-select .custom-control--select select,
+        &__input-autocomplete .ui-autocomplete-input {
+            border-color: var(--search-field-border);
+
+            &:hover {
+                border-color: var(--border-brand);
+            }
+            &:focus {
+                .mx-theme-focus-ring(0; 0);
+                border-color: var(--border-brand);
+            }
+        }
+
+        /* QUICK FILTERS */
+        .search-quick-filters {
+            top: calc(100% - var(--_row-padding));
+            right: var(--search-sheet-gutter);
+            left: var(--search-sheet-gutter);
+            border-color: var(--search-field-border);
+        }
+
+        .search-quick-filters__status-bar.-outer {
+            margin-top: calc(-1 * var(--_row-padding));
+            padding: 0.8rem var(--search-sheet-gutter) var(--_row-padding);
         }
     }
-    /* MODIFICATION */
+}
+
+/* KEYBOARD FOCUS RING */
+body.using-keyboard @{searchSheet} {
+    .search-list__nav-helper-item select:focus,
+    .search-standard__filter-select .custom-control--select select:focus,
+    .search-standard__input-slim:not(.-with-filters) .search-standard__input-autocomplete .ui-autocomplete-input:focus {
+        .mx-theme-focus-ring(2px; -1px);
+    }
+
+    .search-standard__input-slim.-with-filters .search-standard__input-autocomplete .ui-autocomplete-input:focus {
+        .mx-theme-focus-ring();
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -171,6 +219,38 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
+    @{searchSheet} {
+        .search-standard {
+            --_row-padding: 1rem;
+
+            /* FIELD ON ITS OWN LINE */
+            &__input-slim:not(.-with-filters) {
+                flex-wrap: wrap;
+            }
+            &__input-autocomplete {
+                order: -1;
+                flex: 1 1 100%;
+            }
+            &__filter-select {
+                flex: 1 1 0;
+                min-width: 0;
+
+                .custom-control--select,
+                .custom-control--select select {
+                    width: 100%;
+                    min-width: 0;
+                }
+            }
+            &__submit-button.btn {
+                flex: 0 0 auto;
+            }
+
+            /* QUICK FILTERS */
+            .search-quick-filters {
+                margin: calc(-1 * var(--_row-padding)) var(--search-sheet-gutter) var(--_row-padding);
+            }
+        }
+    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */

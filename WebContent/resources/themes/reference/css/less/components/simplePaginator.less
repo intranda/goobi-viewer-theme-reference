@@ -1,132 +1,108 @@
 /* ==============================================================
-   Simple (Numeric) Paginator
+   Numeric Paginator
    style declarations for simplePaginator.xhtml
    ==============================================================*/
-/* NUMERIC PAGINATOR */
-/* BLOCK */
 .numeric-paginator {
-    /* ELEMENT */
+    color: var(--fg-default);
+    margin: 20px 0;
+
     ul {
+        gap: 6px;
     }
+
     li {
-        border: @border;
-        &.numeric-paginator__navigate-text {
-            border: none;
-            background: none;
-        }
+        border: none;
     }
+
     a,
-    button {
-        font-size: @fontMedium;
-        background-color: @bg-content-box;
-    }
-    a,
-    button {
-        color: @lk-general;
-        background: @bg-content-box;
-        &:hover,
-        &:active,
-        &:focus {
-            color: @lk-general;
-            background-color: @ci-color1;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-			    background-color: @bg-active;
-				color: @white;
-			  });
-                .mx-light-mode-rules ({
-			    background-color: @bg-hover;
-				// color: @white; 
-				color: @fg-general;
-			  });
-            }
-        }
-    }
+    button,
     span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+        border: 1px solid transparent;
+        border-radius: var(--radius-container-small);
+        font-size: var(--font-size-body-small);
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--fg-default);
+        background-color: var(--bg-surface);
     }
-    &__dots {
-        a,
-        span {
-            background-color: transparent;
-            border: 0;
+
+    a,
+    button {
+        &:hover {
+            background-color: var(--bg-hover);
+        }
+
+        &:active {
+            background-color: var(--bg-pressed);
+        }
+
+        &:focus-visible {
+            background-color: var(--bg-hover);
+            .mx-theme-focus();
         }
     }
-    &__navigate {
-        &.-active {
-            a,
-            span,
-            button {
-                color: @bg-content-box;
-                background-color: @ci-color1;
-                &:hover,
-                &:active,
-                &:focus {
-                }
-                & when (@colorModes = true) {
-                    .mx-light-mode-rules ({
-					 background-color: @ci-color1;
-				  });
-                    .mx-dark-mode-rules ({
-					color: @white;
-				    background-color: @bg-active;
-				  });
-                }
-            }
-        }
-        &.inactive {
-            a {
-                i {
-                }
-            }
+
+    a > span,
+    button > span {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    /* NAVIGATE ACTIVE */
+    &__navigate.-active,
+    &__navigate[aria-current='page'] {
+        > a,
+        > span,
+        > button {
+            border-color: var(--border-brand);
+            font-weight: 700;
+            .mx-theme-control-selected();
         }
     }
-    /* MODIFICATION */
-    li.numeric-paginator__dots {
-    }
-    li.numeric-paginator__active {
-        border: @border;
-    }
-    &__page-number-label {
-        span,
-        a,
-        button {
-            border: none;
-            background: none;
+
+    &__navigate.inactive a,
+    &__navigate.inactive button,
+    a[aria-disabled='true'],
+    button:disabled {
+        .mx-theme-control-disabled();
+
+        i {
+            color: inherit;
         }
     }
-    &__page-number-input {
-        margin-bottom: 0px;
-        background-color: @white;
-        color: @black;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-			margin-bottom: 2px;
-		  });
-            .mx-light-mode-rules ({
-			margin-bottom: 0px;
-		    background-color: @white;
-			color: @black;
-		  });
-        }
-        input {
-            border: none;
-            outline: none;
-            padding-top: 2px;
-            background-color: @white;
-            color: @black;
-            & when (@colorModes = true) {
-                .mx-dark-mode-rules ({
-		    background-color: @bg-active;
-			color: @white;
-		  });
-                .mx-light-mode-rules ({
-			padding-top: 2px;
-		    background-color: @white;
-			color: @black;
-		  });
-            }
-        }
+
+    /* ICONS */
+    .icon-wrapper,
+    svg,
+    i {
+        color: currentColor;
+        fill: currentColor;
+        opacity: 1;
     }
+
+    /* DOTS */
+    &__dots a,
+    &__dots span {
+        background: transparent;
+        border: none;
+        color: var(--fg-secondary);
+    }
+}
+
+/* RECORD VIEW */
+.view-object:has(.view-object__image) .numeric-paginator {
+    margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+    margin-block: 0;
+    padding-block: 0.8rem 1.6rem;
+    background-color: var(--bg-subtle);
+}
+
+.view-object:has(.-thumbnailPreviewGallery) .numeric-paginator {
+    padding-inline-start: 16.8rem;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */
@@ -135,6 +111,9 @@
 
 /* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
+    .view-object:has(.-thumbnailPreviewGallery) .numeric-paginator {
+        padding-inline-start: 0;
+    }
 }
 
 /* BREAKPOINT FOR TABLETS */

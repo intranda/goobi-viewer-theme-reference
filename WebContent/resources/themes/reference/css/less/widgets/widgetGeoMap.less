@@ -3,26 +3,29 @@
    style declarations for widget_geoMap.xhtml
    ==============================================================*/
 .widget-geomap {
+    /* BODY */
     &__body {
         padding: 0;
+        margin: 0 1.2rem;
+        background-color: transparent;
     }
-    &__expand {
-    }
+    /* GEOMAP */
     .geomap {
+        border-radius: var(--radius-container);
     }
+}
 
-    /* CMS BACKEND WIDGET */
-    &__input {
-    }
-    &__input-spacer {
-        background-color: @middlegray;
-    }
-    &__action {
-        .col-2 {
-            border-bottom: 1px solid @middlegray;
+/* MAP IN THE NORMAL SIDEBAR */
+@{sidebar} .widget-geomap@{notFacetsOrOverlay} {
+    overflow: hidden;
+
+    > .widget-geomap__body {
+        margin: 0;
+        padding: 0;
+
+        .geomap {
+            border-radius: 0;
         }
-    }
-    &__overlay-check {
     }
 }
 

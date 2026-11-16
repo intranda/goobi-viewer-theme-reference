@@ -1,59 +1,131 @@
 /* ==============================================================
-   Thumbnail paginator
-   Style declarations for thumbnailPaginator.xhtml
+   Sidebar Scroll Preview
+   style declarations for sidebarScrollPreview.xhtml
    ==============================================================*/
-
-/* THUMBNAIL PAGINATOR */
-
 .sidebar-scroll-preview {
-    &__inner {
-    }
+    /* GRID */
     &__grid {
-        .simplebar-track {
+        .simplebar-track.simplebar-vertical {
+            width: 8px;
         }
+
         .simplebar-scrollbar {
+            width: 8px;
+
             &:before {
-                & when (@colorModes = true) {
-                    .mx-light-mode-rules ({
-						background-color: #000;
-					});
-                    .mx-dark-mode-rules ({
-						background-color: #fff;
-					});
-                }
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-radius: 4px;
+                opacity: 1;
+                transition: none;
+                background-color: var(--border-strong);
             }
         }
     }
+
+    /* ITEM */
     &__item {
+        min-width: 0;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
+
+    /* BUTTON */
     &__button,
     &__link {
-        color: @fg-general;
+        border-radius: var(--radius-container-small);
+        color: var(--fg-default);
+
         &:hover,
         &:active,
         &:focus {
-            color: @fg-general;
+            color: var(--fg-default);
         }
+
         &.-highlighted {
-            background-color: @ci-color1;
-            color: white;
-            outline: none;
-        }
-    }
-    &__button-text {
-    }
-    &__image {
-        &.-loaded {
+            background-color: transparent;
+            color: var(--fg-selected);
         }
     }
 }
 
-@{RTL} {
-    .sidebar-scroll-preview {
-        &__grid {
-            .simplebar-track {
+/* RECORD VIEW */
+.view-object .sidebar-scroll-preview {
+    /* GRID */
+    &__grid {
+        padding: 0 0 1rem var(--_content-inset, 2.4rem);
+    }
+
+    &__link,
+    &__button {
+        padding: 0.6rem;
+        overflow: visible;
+        border-radius: var(--radius-container);
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: var(--sidebar-bg-hover);
+
+            .sidebar-scroll-preview__image {
+                transform: none;
+                outline-color: var(--border-input);
+                box-shadow: 0 4px 10px rgb(from var(--shadow-color) r g b / 14%);
+            }
+
+            .sidebar-scroll-preview__button-text {
+                color: var(--fg-default);
             }
         }
+
+        &.-highlighted {
+            background-color: var(--bg-selected);
+            outline: 2px solid var(--fg-brand);
+            outline-offset: -2px;
+
+            .sidebar-scroll-preview__image-wrapper {
+                outline: 0;
+            }
+
+            .sidebar-scroll-preview__button-text {
+                color: var(--fg-selected);
+                font-weight: 600;
+            }
+        }
+
+        &:focus-visible {
+            .mx-theme-focus();
+        }
+    }
+
+    /* IMAGE */
+    &__image-wrapper {
+        display: block;
+        overflow: visible;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &__image {
+        border-radius: var(--radius-container-small);
+        background-color: var(--bg-surface);
+        outline: 1px solid var(--border-subtle);
+        outline-offset: -1px;
+        box-shadow: 0 1px 2px rgb(from var(--shadow-color) r g b / 8%);
+        transition:
+            opacity 0.25s ease,
+            outline-color 0.15s ease,
+            box-shadow 0.15s ease;
+    }
+
+    /* BUTTON TEXT */
+    &__button-text {
+        margin: 0.6rem 0 0;
+        color: var(--fg-secondary);
+        font-size: var(--font-size-caption);
+        line-height: var(--line-height-body);
     }
 }
 
@@ -67,17 +139,6 @@
 
 /* BREAKPOINT FOR TABLETS */
 @media screen and (max-width: @smallBreakpoint) {
-    .thumbnail-paginator {
-        &__item {
-            &.-activePage {
-                .thumbnail-paginator__image {
-                }
-            }
-        }
-        &__image {
-            height: 160px;
-        }
-    }
 }
 
 /* BREAKPOINT FOR SMARTPHONES */

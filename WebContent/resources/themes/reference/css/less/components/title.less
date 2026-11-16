@@ -2,39 +2,36 @@
    Title
    style declarations for title.xhtml
    ==============================================================*/
-/* TITLE */
-.title {
-    /* HEADER */
+/* DOCUMENT IDENTITY WITHIN THE MAIN SURFACE */
+.content__wrapper > .content__main .title {
     &__header {
-        h1,
-        h2 {
+        margin-block-end: 1.6rem;
+        margin-inline: calc(-1 * var(--_content-inset, 2.4rem));
+        padding-block-end: 2rem;
+        padding-inline: var(--_content-inset, 2.4rem);
+        border-block-end: 1px solid var(--container-border);
+
+        > h1 {
+            flex-wrap: wrap;
+            row-gap: 0.8rem;
+        }
+
+        .copyright-indicator {
+            margin-block-end: 0;
         }
     }
-    &__header-page-type {
-    }
+
     &__header-label {
+        flex: 1 1 20rem;
+        min-width: 0;
+        margin-block-end: 0;
+        overflow-wrap: anywhere;
     }
-    /* BODY */
-    &__body {
-    }
-    &__body-download {
-    }
-    &__body-metadata {
-        dl {
-            dt,
-            dd {
-            }
-            dt {
-            }
-            dd {
-            }
-        }
-    }
-    &__body-metadata-breadcrumbs {
-        a,
-        i {
-        }
-    }
+}
+
+/* RECORD VIEW */
+.content__wrapper > .content__main .view-object .title__header {
+    margin-block-end: 0;
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

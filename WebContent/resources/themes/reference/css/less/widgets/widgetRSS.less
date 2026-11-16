@@ -5,7 +5,7 @@
 .widget-rss {
     &__entry-info {
         line-height: 1.1;
-        border-bottom: @border;
+        border-bottom: 1px solid var(--border-subtle);
 
         &:last-child {
             border-bottom: none;
@@ -14,6 +14,47 @@
 
     &__entry-link {
         font-weight: 400;
+    }
+}
+
+@{sidebarStrict} .widget-rss@{notFacetsOrOverlay} {
+    .widget-rss__entry-title {
+        margin-block-end: 0.2rem;
+    }
+
+    .widget-rss__entry-link {
+        display: block;
+        margin-inline: -0.8rem;
+        padding-block: 0.2rem;
+        padding-inline: 0.8rem;
+        border-radius: var(--radius-container-small);
+        font-weight: 400;
+        color: var(--fg-link-subtle);
+
+        &:hover {
+            color: var(--fg-link-hover);
+            background-color: var(--sidebar-bg-hover);
+        }
+
+        &:active {
+            color: var(--fg-link-pressed);
+            background-color: var(--sidebar-bg-pressed);
+        }
+    }
+
+    .widget-rss__entry-info {
+        margin-block-end: 0.8rem;
+        padding-block-end: 0.8rem;
+        border-block-end: 1px solid rgb(from var(--sidebar-border) r g b / 60%);
+        color: var(--rss-entry-info-fg);
+        font-size: var(--font-size-body-small);
+        line-height: var(--line-height-body);
+
+        &:last-child {
+            margin-block-end: 0;
+            padding-block-end: 0;
+            border-block-end: 0;
+        }
     }
 }
 

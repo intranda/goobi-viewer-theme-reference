@@ -1,115 +1,79 @@
 /* ==============================================================
    General Styling
    ==============================================================*/
-html,
+/* BODY */
 body {
-}
-
-html {
-    font-size: 62.5%; // sets basic font-size to 10px for easier rem use
-}
-
-body {
-    font-family: @fontFamily;
-    font-size: @fontMedium;
     font-feature-settings: 'kern' 1;
     font-kerning: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: @bg-general;
-    color: @fg-general;
+    background-color: var(--bg-page);
+    color: var(--fg-default);
 
-    // Style focused elements when navigating with the keyboard
-    // Define rules in the mixin `.mx-focus-visible`
     &.using-keyboard :focus-visible {
-        .mx-focus-visible !important;
-    }
-
-    // No outline offset when an input is in focus
-    // Does not apply if inputs are styled as buttons
-    &.using-keyboard input:not(.btn):focus-visible {
-        outline-offset: 0 !important;
+        .mx-theme-focus-ring();
     }
 }
 
-@{RTL} body {
-    // text-align: right;
+/* KEYBOARD FOCUS RING */
+button,
+.btn,
+a,
+[tabindex] {
+    &:focus-visible {
+        .mx-theme-focus-ring();
+    }
 }
 
+/* TEXT */
 h1,
 h2,
 h3,
 h4,
 h5,
+h6,
 .h1,
 .h2,
 .h3,
 .h4,
-.h5 {
-    line-height: 1.2;
+.h5,
+.h6 {
     margin-top: 0;
     margin-bottom: 2rem;
     font-weight: 600;
 }
 
-h1,
-.h1 {
-    font-size: 2.8rem;
-}
-
-h2,
-.h2 {
-    font-size: 2.1rem;
-}
-
-h3,
-.h3 {
-    font-size: 1.8rem;
-}
-
-h4,
-h5,
-.h4,
-.h5 {
-    font-size: 1.6rem;
-}
-
+/* PARAGRAPHS */
 p {
     margin-bottom: 2rem;
 }
 
+/* PREFORMATTED TEXT */
 pre {
     margin-bottom: 2rem;
 }
 
+/* LISTS */
 ul,
 ol {
     padding-left: 4rem;
     margin-bottom: 2rem;
 }
 
-ul {
-}
-
-ol {
-}
-
+/* LINKS */
 a {
-    color: @lk-general;
+    color: var(--fg-link);
+
     &:hover,
     &:active,
     &:focus {
-        color: @lh-general;
+        color: var(--fg-heading);
     }
 }
 
-small {
-    font-size: @fontSmall;
-}
-
+/* TABLES */
 table,
 .table {
-    width: 100%;
     margin-bottom: 2rem;
 }
 

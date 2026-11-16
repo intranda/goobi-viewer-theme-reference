@@ -2,30 +2,25 @@
    Alphabetic Paginator
    style declarations for alphabeticPaginator.xhtml
    ==============================================================*/
-/* ALPHABETIC PAGINATOR */
-/* BLOCK */
 .alphabetic-paginator {
-    /* ELEMENT */
-    ul {
-    }
     li {
-        border: @border;
+        border: 1px solid var(--border-subtle);
         &.active {
             a {
-                color: white;
-                background-color: @ci-color1;
+                color: var(--fg-on-brand);
+                background-color: var(--bg-brand);
                 text-decoration: none;
             }
         }
     }
     a {
-        background-color: @bg-content-box;
-        color: @lk-content-box;
+        background-color: var(--bg-surface);
+        color: var(--fg-link-subtle);
         &:hover,
         &:active,
         &:focus {
-            background-color: @bg-hover;
-            color: @fg-general;
+            background-color: var(--bg-hover);
+            color: var(--fg-default);
         }
     }
 }

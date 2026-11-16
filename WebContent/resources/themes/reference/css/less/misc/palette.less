@@ -1,0 +1,114 @@
+/* ==============================================================
+   Palette
+   the theme's colours, core overrides and own colours
+   ==============================================================*/
+
+.mx-theme-palette() {
+    /* ---------- CORE PALETTE ---------- */
+
+    /* BRAND */
+    --color-brand: #1b73b3;
+
+    /* NEUTRAL RAMP */
+    --color-neutral-0: #ffffff;
+    --color-neutral-50: #f7f9ff;
+    --color-neutral-100: #f1f4f9;
+    --color-neutral-150: #ebeef3;
+    --color-neutral-200: #e3e5eb;
+    --color-neutral-300: #cfd2d7;
+    --color-neutral-350: #bcbec4;
+    --color-neutral-400: #a9abb0;
+    --color-neutral-450: #94969b;
+    --color-neutral-500: #75777c;
+    --color-neutral-550: #66686d;
+    --color-neutral-600: #4e5055;
+    --color-neutral-700: #404247;
+    --color-neutral-800: #333539;
+    --color-neutral-850: #282a2e;
+    --color-neutral-900: #1e2024;
+    --color-neutral-950: #111318;
+    --color-neutral-1000: #000000;
+
+    /* SUCCESS */
+    --color-success: #15703a;
+    --color-success-dark: #3fb950;
+    --color-success-text: #116329;
+    --color-success-text-dark: #7ee787;
+    --color-success-surface: #dafbe1;
+    --color-success-surface-dark: color-mix(in srgb, var(--color-success-dark) 16%, var(--color-neutral-900));
+    --color-success-border: color-mix(in srgb, var(--color-success) 40%, var(--color-success-surface));
+    --color-success-border-dark: color-mix(in srgb, var(--color-success-dark) 40%, var(--color-neutral-900));
+    --color-success-hover: color-mix(in srgb, var(--color-success) 12%, var(--color-success-surface));
+    --color-success-hover-dark: color-mix(in srgb, var(--color-success-dark) 26%, var(--color-neutral-900));
+    --color-success-strong: var(--color-success);
+
+    /* DANGER */
+    --color-danger: #b3261e;
+    --color-danger-dark: #f85149;
+    --color-danger-text: #a40e26;
+    --color-danger-text-dark: #ff7b72;
+    --color-danger-surface: #ffebe9;
+    --color-danger-surface-dark: color-mix(in srgb, var(--color-danger-dark) 16%, var(--color-neutral-900));
+    --color-danger-border: color-mix(in srgb, var(--color-danger) 40%, var(--color-danger-surface));
+    --color-danger-border-dark: color-mix(in srgb, var(--color-danger-dark) 40%, var(--color-neutral-900));
+    --color-danger-hover: color-mix(in srgb, var(--color-danger) 12%, var(--color-danger-surface));
+    --color-danger-hover-dark: color-mix(in srgb, var(--color-danger-dark) 26%, var(--color-neutral-900));
+    --color-danger-strong: var(--color-danger);
+
+    /* WARNING */
+    --color-warning-text: #7d4f00;
+    --color-warning-text-dark: #e3b341;
+    --color-warning-surface: #fff8c5;
+    --color-warning-border-dark: color-mix(in srgb, var(--color-warning-text-dark) 40%, var(--color-neutral-900));
+    --color-warning-strong: var(--color-warning-text);
+
+    /* INFO */
+    --color-info-strong: #0969da;
+    --color-info-strong-dark: #1f6feb;
+
+    /* COMPONENT COLOURS */
+    --color-on-ocr-word: light-dark(var(--color-neutral-0), var(--color-neutral-900));
+
+    /* ---------- THEME PALETTE ---------- */
+
+    /* PAGE */
+    --color-theme-page: #f7f8f9;
+
+    /* ENTITY GROUPS */
+    --color-theme-entity-group-work: #dc7e2e;
+    --color-theme-entity-group-person: #b13b29;
+    --color-theme-entity-group-agent: #568fb2;
+    --color-theme-entity-group-award: #2e8d38;
+    --color-theme-entity-group-event: #8966ca;
+
+    /* LAYOUT TAGS */
+    --color-theme-layout-tag-1: #d9480f;
+    --color-theme-layout-tag-1-dark: #ff922b;
+    --color-theme-layout-tag-2: #2b8a3e;
+    --color-theme-layout-tag-2-dark: #40c057;
+    --color-theme-layout-tag-3: #7b1fa2;
+    --color-theme-layout-tag-3-dark: #c586d9;
+    --color-theme-layout-tag-4: #01579b;
+    --color-theme-layout-tag-4-dark: #56b4e9;
+    --color-theme-layout-tag-5: #00695c;
+    --color-theme-layout-tag-5-dark: #4db6ac;
+    --color-theme-layout-tag-6: #ad1457;
+    --color-theme-layout-tag-6-dark: #f28ba8;
+    --color-theme-layout-tag-7: #455a64;
+    --color-theme-layout-tag-7-dark: #aab4c4;
+    --color-theme-layout-tag-8: #827717;
+    --color-theme-layout-tag-8-dark: #dce775;
+    --color-theme-layout-tag-underline: #b45f04;
+    --color-theme-layout-tag-underline-dark: #d9822b;
+}
+
+/* SUBTHEMES */
+.mx-theme-subtheme1-palette() {
+    --color-brand: #8a0e13;
+    --color-brand-400: #f28b90;
+}
+
+.mx-theme-subtheme2-palette() {
+    --color-brand: #095d42;
+    --color-brand-400: #6bc9a5;
+}

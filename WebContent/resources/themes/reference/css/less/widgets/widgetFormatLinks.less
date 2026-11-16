@@ -2,37 +2,69 @@
    Widget Format Links
    style declarations for widget_formatLinks.xhtml
    ==============================================================*/
+/* SIDEBAR EXPORT ACTIONS */
+@{sidebar} :is(.widget-downloads, .widget-citation, .widget-format-links)@{notOverlay} > .widget__body {
+    --_export-action-size: 3.2rem;
 
-#widgetFormatLinks {
-}
-.widget-format-links {
-    &__topbar {
-    }
-    &__license-text {
-        a {
+    .widget__badge-container:not(:where(.modal *, .popover *, dialog *, .widget .widget .widget__badge-container)) {
+        gap: 0.8rem;
+        margin-block-end: 1.6rem;
+        &:last-child {
+            margin-block-end: 0;
         }
     }
-    &__subtitle {
+    .widget__badge-container-heading:not(
+        :where(.modal *, .popover *, dialog *, .widget .widget .widget__badge-container-heading)
+    ) {
+        margin-block: 0;
+        font-size: var(--font-size-body);
+        font-weight: 600;
+        line-height: var(--line-height-body);
     }
-    &__page-downloads {
-        a,
-        form,
-        button {
+    .widget__badge-container :is(a, button).badge:not(:where(.modal *, .popover *, dialog *, .widget .widget .badge)) {
+        .mx-theme-control-accent();
+        min-width: var(--_export-action-size, 3.2rem);
+        min-height: var(--_export-action-size, 3.2rem);
+        height: auto;
+        max-width: 100%;
+        padding: 0.4rem 1.2rem;
+        gap: 0.4rem;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-button);
+        background-color: var(--bg-subtle);
+        font-size: var(--font-size-body-small);
+        font-weight: 500;
+        line-height: var(--line-height-body);
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-decoration: none;
+        &:hover {
+            background-color: var(--sidebar-bg-pressed);
+            border-color: var(--border-input);
         }
-        .badge {
+        &:active {
+            border-color: var(--border-brand);
+        }
+        .icon-text {
+            line-height: inherit;
+        }
+        .icon-svg {
+            color: currentColor;
+        }
+        &:is(:disabled, .disabled, [aria-disabled='true']) {
+            &,
             &:hover,
             &:active,
             &:focus {
+                .mx-theme-control-disabled();
             }
         }
     }
-    &__work-downloads {
-        a {
-        }
-        .badge {
-        }
-    }
-    &__work-download-ris {
+}
+
+@media (any-pointer: coarse), (max-width: @smallBreakpoint) {
+    @{sidebar} :is(.widget-downloads, .widget-citation, .widget-format-links)@{notOverlay} > .widget__body {
+        --_export-action-size: 4.4rem;
     }
 }
 

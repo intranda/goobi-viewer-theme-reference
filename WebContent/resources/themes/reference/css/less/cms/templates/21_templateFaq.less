@@ -2,50 +2,56 @@
    CMS Template "FAQ"
    style declarations for cms_template_21_faq.xhtml
    ==============================================================*/
-/* FAQ */
-/* BLOCK */
+
 .tpl-faq {
-    /* ELEMENT */
-    h1 {
-    }
     &__description,
     &__list {
-        background-color: @bg-content-box;
-        border: @border;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-container);
     }
+
     &__description {
+        border-radius: var(--radius-container);
     }
+
     &__list {
         .card {
-            background-color: @bg-general;
+            background-color: var(--bg-page);
+            border-radius: var(--radius-container-small);
+
             h2 a,
             a::before {
-                color: @fg-general;
+                color: var(--fg-default);
+
                 &:focus,
                 &:hover,
                 &:active {
-                    color: @fg-general;
+                    color: var(--fg-default);
                 }
             }
         }
-        .card-heading {
-            &:hover {
-            }
+
+        .card-header {
+            border-radius: var(--radius-container-small);
         }
+
         .card-title {
             a {
                 &:hover,
                 &:active,
                 &:focus {
-                    color: @fg-general;
+                    color: var(--fg-default);
                 }
             }
         }
+
         .card-body {
-            background-color: @bg-content-box;
+            background-color: var(--bg-surface);
+
             .tpl-faq-single {
                 &__content {
-                    background-color: @bg-content-box;
+                    background-color: var(--bg-surface);
                     padding: 0;
                     border: none;
                 }

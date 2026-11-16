@@ -3,20 +3,53 @@
    style declarations for widget_searchField.xhtml
    ==============================================================*/
 /* WIDGET SEARCHFIELD */
-/* BLOCK */
 .widget-searchfield {
-    /* ELEMENT */
+    padding: 0;
+    /* FORM */
     .form-group {
-    }
-    .input-group {
+        border-radius: var(--radius-container);
+
         input {
+            border-radius: var(--radius-container);
+            margin-right: 0.5rem;
+            box-shadow: var(--shadow-surface);
         }
+    }
+    .form-control {
+        border: 1px solid var(--border-subtle);
+        padding: 2rem 1.2rem;
+    }
+    /* INPUT GROUP */
+    .input-group {
+        background-color: var(--bg-page);
     }
     .input-group-addon {
-        border-color: @ci-color1;
-        background-color: @ci-color1;
-        input {
+        display: flex;
+        justify-content: center;
+        box-shadow: var(--shadow-surface);
+        background-color: var(--bg-brand);
+        border-radius: var(--radius-container-small);
+        width: 41px;
+        border: none;
+
+        &:hover {
+            background-color: var(--bg-brand-hover);
+            box-shadow:
+                var(--shadow-surface),
+                0 0 0 3px var(--bg-brand-subtle);
         }
+
+        button {
+            color: var(--fg-brand);
+        }
+    }
+}
+
+/* AUTOCOMPLETE IN THE NORMAL SIDEBAR */
+@{sidebar} .widget-searchfield@{notFacetsOrOverlay} {
+    .input-group .ui-autocomplete {
+        flex: 1 1 auto;
+        min-width: 0;
     }
 }
 

@@ -3,46 +3,49 @@
    style declarations for searchList.xhtml
    ==============================================================*/
 /* SEARCH LIST GRID */
-/* BLOCK */
 .search-list {
-    /* ELEMENT */
     /* HITS */
     &__hits {
         &.grid {
-            .search-list__thumb-bookmark-wrapper {
-                right: 6px;
-                top: 6px;
+            .search-list__hit-info-wrapper {
+                padding: 1.6rem;
             }
-            form {
+
+            /* TITLE: THREE LINES AT MOST */
+            .search-list__hit-title-heading {
+                font-size: var(--font-size-body-large);
+                line-height: 1.4;
             }
+            /* TILE HOVER */
             .search-list__hit {
-                .row,
-                [class*='col-'] {
+                transition:
+                    border-color 0.18s ease,
+                    box-shadow 0.18s ease;
+
+                &:hover,
+                &:focus-within {
+                    border-color: var(--sidebar-border);
+                    box-shadow: 0 0.6rem 1.6rem rgb(from var(--shadow-color) r g b / 10%);
                 }
             }
-            .search-list__hit-header {
-                .row {
-                }
-                .col-12.col-sm-10 {
-                }
-                .col-12.col-sm-2 {
-                }
-            }
+            /* IMAGE BAND */
             .search-list__hit-thumbnail {
-                a {
-                }
+                border-radius: var(--radius-container) var(--radius-container) 0 0;
+                border-block-end: 1px solid var(--container-border);
+                background-color: var(--bg-subtle);
             }
-            .search-list__hit-title h3 {
+            .search-list__hit-top-wrapper {
+                border: none;
+                margin-bottom: 0;
             }
-            .search-list__hit-thumbnail img,
-            .search-list__hit-type,
-            .search-list__hit-info,
-            .search-list__hit-content {
+            /* SECOND METADATA LINE */
+            .search-list__hit-metadata-second {
+                margin-top: 0.8rem;
+                font-size: var(--font-size-body-small);
+                line-height: 1.4;
+                color: var(--fg-muted);
             }
         }
-    }
-    a[data-toggle='hit-content'],
-    button[data-toggle='hit-content'] {
     }
 }
 
@@ -60,4 +63,17 @@
 
 /* BREAKPOINT FOR SMARTPHONES */
 @media screen and (max-width: @xSmallBreakpoint) {
+    /* TWO NARROW TILES INSTEAD OF ONE OVERSIZED */
+    .search-list__hits.grid {
+        .search-list__hits-list-items {
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+            gap: 1.2rem;
+        }
+        .search-list__hit-info-wrapper {
+            padding: 1.2rem;
+        }
+        .search-list__hit-title-heading {
+            font-size: var(--font-size-body);
+        }
+    }
 }

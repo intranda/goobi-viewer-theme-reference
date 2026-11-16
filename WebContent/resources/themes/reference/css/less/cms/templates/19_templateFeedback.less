@@ -2,42 +2,22 @@
    CMS Template "Feedback"
    style declarations for cms_template_19_feedback.xhtml
    ==============================================================*/
-/* TPL FEEDBACK */
-/* BLOCK */
-.view-feedback {
-    border: @border;
-    background-color: @bg-content-box;
-}
 
 .tpl-feedback {
-    h1 {
-    }
-    a {
-    }
-    /* ELEMENT */
     &__text {
         position: relative;
         top: 1px;
         padding: 10px;
         margin-bottom: 0;
-        border: @border;
+        border: 1px solid var(--border-subtle);
         border-bottom: 0;
-        background-color: @bg-content-box;
+        background-color: var(--bg-surface);
     }
-    .form-group {
-        label {
-        }
-        input {
-        }
-        .btn {
-        }
-        textarea {
-        }
-    }
-    /* MODIFICATION */
 }
 
-/* BREAKPOINT FOR LATGE DESKTOPS */
+/* MODIFICATION */
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 

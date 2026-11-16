@@ -1,35 +1,38 @@
 /* ==============================================================
    Normdata
-   style declarations for normdata.xhtml 
+   style declarations for normdata.xhtml
    ==============================================================*/
+/* NORMDATA */
 .normdataLink,
 .normdataDetailLink {
-    color: @ci-color1;
+    .mx-theme-control-link();
 }
 
-.normdata-preloader {
+/* POPOVER CONTROLS */
+.closeAllPopovers,
+.normdata-popover .normdata-popover-title .normdata-popover-close {
+    .mx-theme-control();
+    background-color: transparent;
+    border-radius: var(--radius-button);
+    &:disabled,
+    &[aria-disabled='true'],
+    &.disabled {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            .mx-theme-control-disabled();
+        }
+    }
+    .icon-wrapper,
+    .icon-svg {
+        color: currentColor;
+    }
 }
 
-.closeAllPopovers {
-}
-
+/* NORMDATA POPOVER */
 .normdata-popover {
-    background: @bg-content-box;
     z-index: 2020;
-    .normdata-popover-title {
-        h3 {
-        }
-        .normdata-popover-close {
-        }
-    }
-    .normdata-popover-content {
-        .dl-horizontal {
-            dt {
-            }
-            dd {
-            }
-        }
-    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

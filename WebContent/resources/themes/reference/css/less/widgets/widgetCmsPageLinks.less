@@ -3,12 +3,36 @@
    style declarations for widget_cmsPageLinks.xhtml
    ==============================================================*/
 /* CMS PAGE LINKS */
-/* BLOCK */
 [id*='widgetCmsPageLinks'] {
     &:after {
-        border: 1px solid @middlegray;
+        border: 1px solid var(--border-strong);
         border-top: none;
-        background-color: @white;
+        background-color: var(--bg-surface);
+    }
+}
+
+@{sidebarStrict} .widget-cms-page-links {
+    h2:not(.widget__title) {
+        margin: 0;
+        padding-block: 1.2rem;
+        padding-inline: 1.6rem;
+        border-block-end: 1px solid rgb(from var(--sidebar-border) r g b / 60%);
+        color: var(--fg-heading);
+        font-size: var(--font-size-body-large);
+        font-weight: 600;
+        line-height: var(--line-height-body);
+        overflow-wrap: anywhere;
+    }
+
+    &:has(.collapse:not(.show)) h2:not(.widget__title) {
+        border-block-end-color: transparent;
+    }
+
+    ul {
+        max-height: 25rem;
+        overflow-y: auto;
+        overscroll-behavior-block: contain;
+        scrollbar-gutter: stable;
     }
 }
 

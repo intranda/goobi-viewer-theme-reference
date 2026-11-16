@@ -1,20 +1,20 @@
 /* ==============================================================
    Access Ticket Modal & Object Page Styles
    ==============================================================*/
-
-.access-ticket-modal {
-}
-
 .access-ticket-info {
+    /* INNER */
     &__inner {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+
         p {
-            color: @fg-general;
+            color: var(--fg-default);
         }
-        background: @bg-content-box;
-        border: @border;
     }
+
+    /* OBJECT TITLE */
     &__object-title {
-        color: @fg-general;
+        color: var(--fg-default);
     }
 }
 
@@ -22,7 +22,7 @@
 @media screen and (max-width: @largeBreakpoint) {
 }
 
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 

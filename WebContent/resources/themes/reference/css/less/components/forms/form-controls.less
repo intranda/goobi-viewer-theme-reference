@@ -1,68 +1,141 @@
 /* ==============================================================
-   Form Conrols
+   Form Controls
    style declarations for form controls
    ==============================================================*/
 .custom-control {
-    input[type='checkbox'],
-    input[type='radio'] {
-    }
     &__icon {
+        color: var(--fg-brand);
     }
 }
 
-.custom-control__icon {
-    color: @ci-color1;
+/* TEXT FIELDS */
+.form-control {
+    .mx-theme-field();
+    border-radius: var(--radius-container-small);
 }
 
-/* MODIFICATIONS */
+/* SELECT */
 .custom-control--select {
-    border: @border;
-    background-color: @bg-content-box;
-    & when (@colorModes = true) {
-        background: @white;
-        .mx-dark-mode-rules ({
-			background: @fg-controls;
-		});
-        .mx-light-mode-rules ({
-			background: @white;
-		});
-    }
-    &:after {
-    }
-    &:after {
-    }
-    &.multiple {
-        &:after {
-        }
-        select {
-        }
-    }
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius-container-small);
+    background: var(--bg-elevated);
+    color: var(--fg-default);
+
     select {
-        font-size: @fontMedium;
-        background: @white;
-        & when (@colorModes = true) {
-            .mx-dark-mode-rules ({
-				background: @fg-controls;
-			});
-            .mx-light-mode-rules ({
-				background: @white;
-			});
-        }
-        &.disabled {
-        }
-    }
-    select[disabled='disabled'] {
+        font-size: var(--font-size-body-small);
+        background: var(--bg-elevated);
+        color: var(--fg-default);
     }
 }
 
-.cms-module__option-dropdown-trigger {
-    background: @white;
-    & when (@colorModes = true) {
-        .mx-dark-mode-rules ({
-            background: @fg-controls;
-        });
-        .mx-light-mode-rules ({
-            background: @white;
-        });
+/* OPTION DROPDOWN */
+.cms-module__option-dropdown {
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius-container-small);
+
+    &-trigger {
+        background: var(--bg-elevated);
+        border-radius: var(--radius-container-small);
     }
+}
+
+/* PUBLIC YES/NO TOGGLE */
+.admin__radio-switch {
+    label,
+    input:not(:checked) + label:hover {
+        color: var(--fg-secondary);
+        opacity: 1;
+    }
+
+    input:checked + label {
+        color: var(--fg-default);
+    }
+
+    /* TOGGLE */
+    .toggle-outside {
+        background: var(--bg-subtle);
+        border: 1px solid var(--border-input);
+    }
+
+    /* KNOB */
+    .toggle-inside,
+    input:checked ~ .toggle-outside .toggle-inside {
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        background: var(--fg-secondary);
+        border: 0;
+    }
+
+    /* TOGGLE CHECKED */
+    input ~ input:checked ~ .toggle-outside {
+        background: var(--bg-brand);
+        border-color: var(--bg-brand);
+
+        .toggle-inside {
+            left: calc(100% - 2.5rem);
+            background: var(--fg-on-brand);
+        }
+    }
+
+    &:hover {
+        .toggle-outside {
+            background: var(--bg-hover);
+            border-color: var(--border-brand);
+        }
+
+        input ~ input:checked ~ .toggle-outside {
+            background: var(--bg-brand-hover);
+            border-color: var(--bg-brand-hover);
+        }
+    }
+
+    &:has(input:active, label:active) {
+        .toggle-outside {
+            background: var(--bg-pressed);
+        }
+
+        input ~ input:checked ~ .toggle-outside {
+            background: var(--bg-brand-pressed);
+            border-color: var(--bg-brand-pressed);
+        }
+    }
+
+    input:focus-visible ~ .toggle-outside {
+        .mx-theme-focus();
+    }
+
+    input:is(:disabled, [aria-disabled='true'], .disabled) + label,
+    input:is(:disabled, [aria-disabled='true'], .disabled) + label:hover {
+        color: var(--fg-disabled);
+        cursor: default;
+    }
+
+    &:has(input):not(:has(input:enabled:not([aria-disabled='true']):not(.disabled))) {
+        .toggle-outside,
+        input ~ input:checked ~ .toggle-outside {
+            background: var(--bg-disabled);
+            border-color: var(--border-disabled);
+
+            .toggle-inside {
+                background: var(--fg-disabled);
+            }
+        }
+    }
+}
+
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
+}
+
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
+}
+
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }

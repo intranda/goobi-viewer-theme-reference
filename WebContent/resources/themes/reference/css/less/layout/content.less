@@ -4,50 +4,95 @@
 
 /* PAGE CONTENT AREA */
 .content {
-    background: @bg-general;
     z-index: 2;
+
+    /* WRAPPER */
     &__wrapper {
         position: relative;
         display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 3rem;
-        padding: 2rem 0 5rem 0;
+        grid-template-columns: minmax(0, 1fr) minmax(24rem, var(--sidebar-width));
+        gap: var(--content-gap);
+        padding-top: 3rem;
+
+        > .content__main {
+            --_content-inset: 2.4rem;
+
+            align-self: start;
+            padding: var(--_content-inset);
+            border: 1px solid var(--sidebar-border);
+            border-radius: var(--radius-container);
+            background-color: var(--bg-surface);
+            color: var(--fg-default);
+
+            > h1,
+            > div > h1,
+            .title__header > h1,
+            .search-list__options-container-heading {
+                color: var(--fg-heading);
+                font-size: var(--font-size-heading-medium);
+                font-weight: 600;
+                line-height: 1.3;
+                overflow-wrap: anywhere;
+            }
+
+            > h1,
+            > div > h1 {
+                margin-block: 0 1.6rem;
+                margin-inline: calc(-1 * var(--_content-inset));
+                padding-block-end: 2rem;
+                padding-inline: var(--_content-inset);
+                border-block-end: 1px solid var(--container-border);
+            }
+
+            > p,
+            > form.form-horizontal {
+                max-width: var(--text-measure);
+            }
+        }
     }
+    /* MAIN */
     &__main {
         min-width: 0;
-        scroll-margin-top: 150px; // offset for fixed top navigation
+        scroll-margin-top: 150px;
     }
+    /* SIDEBAR */
     &__sidebar {
+        /* hcSticky needs a positioned parent and would otherwise set this inline */
+        position: relative;
         min-width: 200px;
-        scroll-margin-top: 150px; // offset for fixed top navigation
+        scroll-margin-top: 150px;
     }
 
+    /* WITHOUT SIDEBAR */
+    &__wrapper.-without-sidebar,
     &__wrapper:not(:has(.sidebar__inner > *)) {
         grid-template-columns: 1fr;
 
-        .content__sidebar {
+        .content__sidebar,
+        .content__mobile-sidebar-trigger {
             display: none;
         }
     }
+    /* MOBILE SIDEBAR TRIGGER */
     &__mobile-sidebar-trigger {
         display: none;
         position: fixed;
         bottom: 18px;
-        left: calc(~'100% - 50px');
-        background: @ci-color1;
+        left: calc(100% - 50px);
+        background: var(--bg-brand);
         z-index: 2031;
-        border-radius: 40px;
+        border-radius: var(--radius-button);
         transition: left 0.3s ease;
         &.-opened {
             left: 15px;
             .content__mobile-sidebar-trigger-button {
                 .bar:nth-child(1) {
                     transform: translateX(0) rotate(45deg) scaleX(1.4);
-                    background: @white;
+                    background: var(--fg-on-inverse);
                 }
                 .bar:nth-child(2) {
                     transform: translateX(0) rotate(-45deg) scaleX(1.4);
-                    background: @white;
+                    background: var(--fg-on-inverse);
                 }
             }
         }
@@ -61,7 +106,7 @@
         .bar {
             width: 18px;
             height: 2px;
-            background: @white;
+            background: var(--fg-on-inverse);
             position: absolute;
             top: 13px;
             left: -1px;
@@ -78,16 +123,6 @@
                 transform: translateX(25%) rotate(-45deg) scaleX(0.9);
             }
         }
-        //		&.-arrow {
-        //			.bar {}
-        //			.bar:nth-child(1) {
-        //				transform: translateX(-25%) rotate(45deg) scaleX(0.9);
-        //				left: -2px;
-        //			}
-        //			.bar:nth-child(2) {
-        //				transform: translateX(25%) rotate(-45deg) scaleX(0.9);
-        //			}
-        //		}
     }
 
     &__mobile-sidebar-trigger-icon {
@@ -103,11 +138,35 @@
     }
 }
 
+/* SEARCH PAGES */
+@{searchSheet} {
+    --_content-inset: 0;
+    padding: 0;
+
+    > .breadcrumbs__wrapper {
+        margin-block: 0;
+        padding: 2.4rem var(--search-sheet-gutter) 0;
+    }
+
+    > h1,
+    > div > h1,
+    .search-list__options-container-heading {
+        margin: 0;
+        padding: 1.2rem var(--search-sheet-gutter) 2rem;
+        border-block-end: 0;
+    }
+
+    > p,
+    > form.form-horizontal {
+        padding-inline: var(--search-sheet-gutter);
+    }
+}
+
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }
 
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 
@@ -118,27 +177,38 @@
         position: unset;
         &__wrapper {
             grid-template-columns: 1fr;
+            padding-block: 1.6rem 3.2rem;
+
+            > .content__main {
+                --_content-inset: 1.6rem;
+            }
         }
-        &__main {
-        }
+        /* SIDEBAR: MOUNTED BY JS, THEN OPENED */
         &__sidebar {
-            visibility: hidden;
+            display: none;
+            pointer-events: none;
             flex: unset;
-            position: fixed !important;
+            position: fixed;
             top: 0;
-            right: -60%;
+            right: 0;
             bottom: 0;
             width: 60%;
             max-width: unset;
             padding: 1.5rem;
             padding-top: 4rem;
-            background-color: @bg-general;
-            transition: right 0.3s ease;
+            background-color: var(--bg-page);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
             overflow-y: auto;
             z-index: 2031;
+
+            &.-mounted {
+                display: block;
+            }
+
             &.-opened {
-                right: 0;
-                visibility: visible;
+                pointer-events: auto;
+                transform: translateX(0);
             }
         }
         &__mobile-sidebar-trigger {
@@ -151,7 +221,6 @@
 @media screen and (max-width: @xSmallBreakpoint) {
     .content {
         &__sidebar {
-            right: -80%;
             width: 80%;
         }
     }

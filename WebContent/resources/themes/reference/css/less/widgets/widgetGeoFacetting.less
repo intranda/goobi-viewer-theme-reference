@@ -5,19 +5,41 @@
 .widget-geofacetting {
     &__body {
         padding: 0;
-    }
+        margin: 0 1.2rem;
 
-    &__actions {
-        color: @white;
-
-        .btn {
-            color: @white;
+        .geo-map {
+            border-radius: var(--radius-container);
         }
     }
 }
 
 .widget-geomap .geomap__options_wrapper {
     display: none;
+}
+
+/* MAP CONTAINER */
+.geo-map {
+    border-radius: var(--radius-container);
+}
+
+/* MAP IN THE NORMAL SIDEBAR */
+@{sidebar} .widget-geofacetting@{notFacetsOrOverlay} {
+    > .widget-geofacetting__body {
+        margin: 1.6rem;
+        padding: 0;
+    }
+}
+
+/* THE MAP BLEEDS TO THE CONTAINER EDGES OF THE COMBINED VIEW */
+@{sidebar} .combined-facets .widget-geofacetting > .widget-geofacetting__body {
+    margin-block: 0 -1.2rem;
+    margin-inline: -1.6rem;
+    padding-block: 0.8rem 0;
+    padding-inline: 0;
+
+    .geo-map {
+        border-radius: 0;
+    }
 }
 
 /* BREAKPOINT FOR LARGE DESKTOPS */

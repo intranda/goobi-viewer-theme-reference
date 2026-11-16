@@ -2,43 +2,25 @@
    Widget RelatedGroups
    style declarations for widget_RelatedGroups.xhtml
    ==============================================================*/
-#widgetRelatedGroups {
+.related-groups-section {
+    /* GRID */
+    &__grid {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-container);
+    }
+    /* VIEW ALL */
+    &__view-all {
+        border-radius: var(--radius-container);
+    }
+    /* CARD IMAGE */
+    &__card-image {
+        border-radius: var(--radius-container);
+        img {
+            border-radius: var(--radius-container);
+        }
+    }
 }
 
-.widget-related-groups {
-    &__list {
-        h2 {
-        }
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-            }
-        }
-        ul {
-        }
-    }
-    &__series {
-        h2 {
-            a {
-                &:hover,
-                &:focus,
-                &:active {
-                }
-            }
-        }
-    }
-    &__anchor {
-        h2 {
-            a {
-                &:hover,
-                &:focus,
-                &:active {
-                }
-            }
-        }
-    }
-}
 /* BREAKPOINT FOR LARGE DESKTOPS */
 @media screen and (max-width: @largeBreakpoint) {
 }

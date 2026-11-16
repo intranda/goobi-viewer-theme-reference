@@ -1,54 +1,15 @@
 /* ==============================================================
-   Theme styles for cookie banner
-   ==============================================================*/
-
-/* ==============================================================
    Cookie Banner
    style declarations for cookieBanner.xhtml
    ==============================================================*/
-
-/* COOKIE BANNER */
 .cookie-banner {
-    &__icon-wrapper {
-    }
-    &__icon {
-    }
-    // Variables for animation
-    --roll-in-x1: 100px;
-    --roll-in-x2: -100px;
-    --rotate1: 90deg;
-    --rotate2: 360deg;
-    &__info-inserted-content {
-    }
     &__info {
-        background-color: @bg-general;
-        color: @fg-general;
+        background-color: var(--bg-page);
+        color: var(--fg-default);
+
         a {
-            text-decoration: none;
-            & when (@colorModes = true) {
-                .mx-light-mode-rules ({
-					text-decoration: none;
-				});
-                .mx-dark-mode-rules ({
-					text-decoration: underline;
-				});
-            }
+            text-decoration: var(--cookie-banner-link-decoration);
         }
-        p {
-        }
-    }
-    &__info-inner {
-    }
-    &__info-actions {
-    }
-    &__accept-button,
-    &__decline-button {
-    }
-    &__accept-button {
-    }
-    &__decline-button {
-    }
-    &__overlay {
     }
 }
 
@@ -56,7 +17,7 @@
 @media screen and (max-width: @largeBreakpoint) {
 }
 
-/* BREAKPOINT FOR DESKTOP */
+/* BREAKPOINT FOR DESKTOPS */
 @media screen and (max-width: @mediumBreakpoint) {
 }
 

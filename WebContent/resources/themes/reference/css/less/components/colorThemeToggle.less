@@ -1,32 +1,20 @@
 /* ==============================================================
-   colorThemeToggle
-   style declarations for 
+   Color Theme Toggle
+   style declarations for colorThemeToggle.xhtml
    ==============================================================*/
 
-.color-theme-switch {
-    &.active {
-        display: flex;
-    }
-    &.hide {
-        display: none;
-    }
+/* BREAKPOINT FOR LARGE DESKTOPS */
+@media screen and (max-width: @largeBreakpoint) {
 }
 
-.color-theme-switch-light {
-    display: none;
-}
-.color-theme-switch-dark {
-    display: flex;
+/* BREAKPOINT FOR DESKTOPS */
+@media screen and (max-width: @mediumBreakpoint) {
 }
 
-@media (prefers-color-scheme: dark) {
-    .color-theme-switch-dark {
-        display: none;
-    }
-    .color-theme-switch-light {
-        display: flex;
-    }
-    .color-theme-switch-dark.hide {
-        display: hide;
-    }
+/* BREAKPOINT FOR TABLETS */
+@media screen and (max-width: @smallBreakpoint) {
+}
+
+/* BREAKPOINT FOR SMARTPHONES */
+@media screen and (max-width: @xSmallBreakpoint) {
 }
