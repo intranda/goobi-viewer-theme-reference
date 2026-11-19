@@ -66,23 +66,37 @@
     .mx-icon-stroke-mask(~'m6 9 6 6 6-6'; @size);
 }
 
-/* FOCUS RING */
+/* FOCUS RING: SINGLE RING WITH CUSTOM WIDTH AND OFFSET FOR COMPONENTS THAT NEED THEIR OWN GEOMETRY (0; 0 SWITCHES IT OFF) */
 .mx-theme-focus-ring(@width: 2px; @offset: 2px) {
     outline: @width solid var(--outline-focus) !important;
     outline-offset: @offset !important;
     box-shadow: none !important;
 }
 
+/* FOCUS RING: DOUBLE RING (LIGHT INNER OUTLINE, COLORED OUTER SHADOW) SO IT KEEPS 3:1 ON ANY BACKGROUND, COLORS COME FROM THE CORE TOKENS */
+.mx-theme-focus-ring-double() {
+    outline: 2px solid var(--outline-focus-inner) !important;
+    outline-offset: -2px !important;
+    box-shadow: 0 0 0 4px var(--outline-focus) !important;
+}
+
+/* FOCUS RING FOR POINTER: SOFT ACCENT RING, KEPT APART FROM THE KEYBOARD RING */
+.mx-theme-focus-ring-pointer() {
+    outline: 1px solid var(--fg-brand) !important;
+    outline-offset: -1px !important;
+    box-shadow: none !important;
+}
+
 .mx-theme-focus() {
     &,
     body.using-keyboard & {
-        .mx-theme-focus-ring();
+        .mx-theme-focus-ring-double();
     }
 
     @media (forced-colors: none) {
         body[data-reference-focus='pointer'] &,
         body.using-keyboard[data-reference-focus='pointer'] & {
-            .mx-theme-focus-ring(1px; -1px);
+            .mx-theme-focus-ring-pointer();
         }
     }
 }
@@ -103,10 +117,6 @@
         color: var(--fg-default);
         background-color: var(--bg-pressed);
     }
-
-    &:focus-visible {
-        .mx-theme-focus();
-    }
 }
 
 /* SIDEBAR CONTROL */
@@ -124,10 +134,6 @@
     &:active {
         color: var(--fg-default);
         background-color: var(--sidebar-bg-pressed);
-    }
-
-    &:focus-visible {
-        .mx-theme-focus();
     }
 }
 
@@ -182,10 +188,6 @@
         border-color: var(--bg-brand-pressed);
     }
 
-    &:focus-visible {
-        .mx-theme-focus();
-    }
-
     &:disabled,
     &[aria-disabled='true'],
     &.disabled,
@@ -229,10 +231,6 @@
         color: var(--fg-link-pressed);
     }
 
-    &:focus-visible {
-        .mx-theme-focus();
-    }
-
     &:disabled,
     &[aria-disabled='true'],
     &.disabled,
@@ -266,10 +264,6 @@
     &:hover,
     &:active {
         accent-color: var(--fg-brand-hover);
-    }
-
-    &:focus-visible {
-        .mx-theme-focus();
     }
 
     &:disabled,

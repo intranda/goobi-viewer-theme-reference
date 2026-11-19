@@ -56,9 +56,6 @@ html {
             max-width: min(22rem, 100%);
             object-fit: contain;
         }
-        &:focus-visible {
-            .mx-theme-focus();
-        }
     }
     /* ENTRY POINTS */
     &__nav {
@@ -115,9 +112,6 @@ html {
         }
         &:active {
             background: var(--bg-pressed);
-        }
-        &:focus-visible {
-            .mx-theme-focus();
         }
         &[aria-current='page'] {
             background: var(--bg-selected);
@@ -190,9 +184,6 @@ html {
         &:active {
             background: var(--bg-pressed);
         }
-        &:focus-visible {
-            .mx-theme-focus();
-        }
         &[aria-current='page'] {
             background: var(--bg-selected);
             color: var(--fg-brand);
@@ -250,9 +241,6 @@ html {
         &:active,
         &[aria-expanded='true'] {
             background: var(--bg-pressed);
-        }
-        &:focus-visible {
-            .mx-theme-focus();
         }
         .icon-svg {
             width: 2.2rem;
@@ -371,9 +359,6 @@ html {
             border: 1px solid var(--border-default);
             border-radius: var(--_radius);
             background: var(--bg-input);
-            &:focus-visible {
-                .mx-theme-focus();
-            }
         }
         .widget-searchfield .input-group-addon {
             position: absolute;
@@ -540,7 +525,6 @@ html {
         &:focus-visible {
             background: var(--bg-pressed);
             color: var(--fg-default);
-            .mx-theme-focus();
         }
 
         .icon-svg {
@@ -647,10 +631,6 @@ html {
             color: var(--fg-default);
         }
 
-        &__user-dropdown-item-link:focus-visible {
-            .mx-theme-focus();
-        }
-
         &__user-dropdown-item-text {
             color: inherit;
         }
@@ -682,12 +662,6 @@ html {
 
         &__bookmarks-overview-link {
             padding-inline-end: 0;
-        }
-
-        &__bookmarks-link:focus-visible,
-        &__bookmarks-overview-link:focus-visible,
-        &__bookmarks-action:focus-visible {
-            .mx-theme-focus();
         }
     }
 
@@ -818,10 +792,6 @@ html {
             background: var(--bg-pressed);
         }
 
-        &:focus-visible {
-            .mx-theme-focus();
-        }
-
         .icon-svg {
             width: 2rem;
             height: 2rem;
@@ -919,10 +889,6 @@ html {
             box-shadow: var(--shadow-surface);
         }
 
-        &:focus-visible {
-            .mx-theme-focus();
-        }
-
         .icon-svg {
             width: 1.8rem;
             height: 1.8rem;
@@ -968,10 +934,6 @@ html {
 
         &:active {
             background: var(--bg-pressed);
-        }
-
-        &:focus-visible {
-            .mx-theme-focus();
         }
 
         .icon-svg {
@@ -1113,10 +1075,6 @@ html {
             background: var(--bg-pressed);
         }
 
-        &:focus-visible {
-            .mx-theme-focus();
-        }
-
         .icon-wrapper {
             flex: 0 0 auto;
             transition: transform var(--_speed) ease;
@@ -1235,10 +1193,6 @@ html {
                 &:active {
                     background: var(--bg-pressed);
                 }
-            }
-
-            &:focus-visible {
-                .mx-theme-focus();
             }
         }
     }
