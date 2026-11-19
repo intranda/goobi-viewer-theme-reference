@@ -73,7 +73,7 @@
                                         title="#{msg.social__follow_on_facebook}"
                                         target="_blank"
                                         rel="noopener"
-                                        aria-label="#{msg.social__follow_on_facebook}">
+                                        aria-label="#{msg.social__follow_on_facebook} #{msg.a11y__opens_in_new_tab}">
                                         <span class="sr-only">#{msg.social__follow_on_facebook}</span>
                                         <util:icon icon="brand-facebook" />
                                     </a>
@@ -84,7 +84,7 @@
                                         title="#{msg.social__follow_on_github}"
                                         target="_blank"
                                         rel="noopener"
-                                        aria-label="#{msg.social__follow_on_github}">
+                                        aria-label="#{msg.social__follow_on_github} #{msg.a11y__opens_in_new_tab}">
                                         <span class="sr-only">#{msg.social__follow_on_github}</span>
                                         <util:icon icon="brand-github" />
                                     </a>
@@ -95,7 +95,7 @@
                                         title="#{msg.social__follow_on_twitter}"
                                         target="_blank"
                                         rel="noopener"
-                                        aria-label="#{msg.social__follow_on_twitter}">
+                                        aria-label="#{msg.social__follow_on_twitter} #{msg.a11y__opens_in_new_tab}">
                                         <span class="sr-only">#{msg.social__follow_on_twitter}</span>
                                         <util:icon icon="brand-x" />
                                     </a>
@@ -106,7 +106,7 @@
                                         title="#{msg.social__follow_on_youtube}"
                                         target="_blank"
                                         rel="noopener"
-                                        aria-label="#{msg.social__follow_on_youtube}">
+                                        aria-label="#{msg.social__follow_on_youtube} #{msg.a11y__opens_in_new_tab}">
                                         <span class="sr-only">#{msg.social__follow_on_youtube}</span>
                                         <util:icon icon="brand-youtube" />
                                     </a>
@@ -117,7 +117,7 @@
                                         title="#{msg.social__follow_on_instagram}"
                                         target="_blank"
                                         rel="noopener"
-                                        aria-label="#{msg.social__follow_on_instagram}">
+                                        aria-label="#{msg.social__follow_on_instagram} #{msg.a11y__opens_in_new_tab}">
                                         <span class="sr-only">#{msg.social__follow_on_instagram}</span>
                                         <util:icon icon="brand-instagram" />
                                     </a>
@@ -229,6 +229,7 @@
                                 target="_blank"
                                 rel="noopener">
                                 &#169;#{navigationHelper.currentDate.year} powered by Goobi viewer
+                                <span class="sr-only">#{msg.a11y__opens_in_new_tab}</span>
                             </a>
                         </div>
                     </div>

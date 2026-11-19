@@ -16,6 +16,13 @@ const showcaseSource = fs.readFileSync(
     ),
     'utf8'
 );
+const showcaseSource = fs.readFileSync(
+    path.resolve(
+        __dirname,
+        '../../goobi-viewer-core/src/main/resources/META-INF/resources/resources/javascript/dev/modules/cms/cmsJS.recordShowcase.js'
+    ),
+    'utf8'
+);
 const swiperSource = fs.readFileSync(
     path.resolve(
         __dirname,
