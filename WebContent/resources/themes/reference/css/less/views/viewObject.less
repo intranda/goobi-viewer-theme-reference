@@ -53,6 +53,17 @@
     }
 }
 
+/* FULLSCREEN: THE SCAN FILLS THE STAGE, NO PAGE WIDTH CAP OR GUTTER FROM CORE */
+.fullscreen {
+    .view-object__object-3d,
+    .view-object__image {
+        .view-object__image-map {
+            max-width: none;
+            margin: 0;
+        }
+    }
+}
+
 .view-object-content {
     border: 1px solid var(--border-subtle);
     background-color: var(--bg-surface);
